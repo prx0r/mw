@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moltwork Oracle</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'SF Mono', 'Fira Code', monospace; background: #0a0a0a; color: #e0e0e0; padding: 20px; }
+  h1 { color: #00ff88; font-size: 1.4em; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.8em; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .card { background: #111; border: 1px solid #222; border-radius: 6px; padding: 14px; }
+  .card .label { color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
+  .card .value { color: #00ff88; font-size: 1.8em; font-weight: bold; margin-top: 4px; }
+  .card .sub { color: #888; font-size: 0.75em; margin-top: 2px; }
+  .section { margin-bottom: 24px; }
+  .section h2 { color: #00ff88; font-size: 1em; margin-bottom: 10px; border-bottom: 1px solid #222; padding-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.8em; }
+  th { text-align: left; color: #666; font-weight: normal; text-transform: uppercase; font-size: 0.7em; letter-spacing: 1px; padding: 6px 8px; border-bottom: 1px solid #222; }
+  td { padding: 6px 8px; border-bottom: 1px solid #1a1a1a; }
+  tr:hover td { background: #151515; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .bar { height: 6px; background: #00ff88; border-radius: 3px; margin-top: 4px; }
+  .bar-bg { height: 6px; background: #1a1a1a; border-radius: 3px; width: 100%; }
+  .dist-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 0.8em; }
+  .dist-label { width: 70px; color: #888; }
+  .dist-bar { flex: 1; }
+  .dist-count { width: 40px; text-align: right; color: #00ff88; }
+  .event { padding: 4px 0; font-size: 0.8em; border-bottom: 1px solid #1a1a1a; }
+  .event .type { color: #00ff88; }
+  .event .time { color: #555; }
+  .event .title { color: #aaa; }
+  #loading { color: #666; padding: 40px; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>MOLTWORK ORACLE</h1>
+<div class="subtitle">DefiLlama for autonomous work</div>
+
+<div id="loading">Loading...</div>
+
+<div id="dashboard" style="display:none">
+
+  <!-- Overview Cards -->
+  <div class="grid" id="overview"></div>
+
+  <!-- Market Table -->
+  <div class="section">
+    <h2>Markets</h2>
+    <table id="markets-table">
+      <thead><tr>
+        <th>Market</th><th class="num">Opps</th><th class="num">Total</th>
+        <th class="num">Median</th><th class="num">Avg</th><th>Last Active</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Two columns -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+    <!-- Reward Distribution -->
+    <div class="section">
+      <h2>Reward Distribution</h2>
+      <div id="rewards-dist"></div>
+    </div>
+
+    <!-- Top Skills -->
+    <div class="section">
+      <h2>Top Skills</h2>
+      <table id="skills-table">
+        <thead><tr><th>Skill</th><th class="num">Opps</th><th class="num">Total</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Top Opportunities -->
+  <div class="section">
+    <h2>Top Opportunities</h2>
+    <table id="opps-table">
+      <thead><tr>
+        <th>Reward</th><th>Market</th><th>Title</th><th>Skills</th><th>First Seen</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Recent Events -->
+  <div class="section">
+    <h2>Recent Events</h2>
+    <div id="events"></div>
+  </div>
+
+</div>
+
+<script>
+const API = '';
+
+async function fetch_(path) {
+  const r = await fetch(API + path);
+  return r.json();
+}
+
+function $(id) { return document.getElementById(id); }
+function fmt$(n) { return n >= 1000 ? '$' + (n/1000).toFixed(1) + 'K' : '$' + Math.round(n); }
+function fmtNum(n) { return n.toLocaleString(); }
+
+async function load() {
+  try {
+    const [totals, byMarket, dist, skills, opps, events] = await Promise.all([
+      fetch_('/v1/totals'),
+      fetch_('/v1/totals/by-market'),
+      fetch_('/v1/rewards/distribution'),
+      fetch_('/v1/totals/by-skill'),
+      fetch_('/v1/opportunities?limit=10&sort=reward_usd'),
+      fetch_('/v1/events?limit=15'),
+    ]);
+
+    // Overview cards
+    $('overview').innerHTML = [
+      { label: 'Active Opportunities', value: fmtNum(totals.active_opportunities), sub: `${totals.markets} markets` },
+      { label: 'Total Rewards', value: fmt$(totals.total_reward_usd), sub: `median ${fmt$(totals.median_reward_usd)}` },
+      { label: 'Avg Reward', value: fmt$(totals.avg_reward_usd), sub: `p90 ${fmt$(totals.p90_reward_usd)}` },
+      { label: 'Skills Tracked', value: fmtNum(totals.skills), sub: `${totals.categories} categories` },
+      { label: 'Observations', value: fmtNum(totals.observations), sub: `${totals.events} events` },
+    ].map(c => `
+      <div class="card">
+        <div class="label">${c.label}</div>
+        <div class="value">${c.value}</div>
+        <div class="sub">${c.sub}</div>
+      </div>
+    `).join('');
+
+    // Market table
+    const maxReward = Math.max(...byMarket.markets.map(m => m.total_reward_usd || 0));
+    $('markets-table').querySelector('tbody').innerHTML = byMarket.markets.map(m => `
+      <tr>
+        <td>${m.market_id}</td>
+        <td class="num">${fmtNum(m.opportunities)}</td>
+        <td class="num">${fmt$(m.total_reward_usd || 0)}</td>
+        <td class="num">${fmt$(m.avg_reward_usd || 0)}</td>
+        <td class="num">${fmt$(m.avg_reward_usd || 0)}</td>
+        <td>${(m.last_active || '').slice(0,10)}</td>
+      </tr>
+    `).join('');
+
+    // Reward distribution
+    const maxDist = Math.max(...dist.distribution.map(d => d.count));
+    $('rewards-dist').innerHTML = dist.distribution.map(d => `
+      <div class="dist-row">
+        <div class="dist-label">${d.range}</div>
+        <div class="dist-bar">
+          <div class="bar-bg">
+            <div class="bar" style="width:${maxDist ? (d.count/maxDist*100) : 0}%"></div>
+          </div>
+        </div>
+        <div class="dist-count">${d.count}</div>
+      </div>
+    `).join('');
+
+    // Skills table
+    $('skills-table').querySelector('tbody').innerHTML = skills.skills.slice(0,10).map(s => `
+      <tr>
+        <td>${s.slug}</td>
+        <td class="num">${fmtNum(s.opportunities)}</td>
+        <td class="num">${fmt$(s.total_reward_usd || 0)}</td>
+      </tr>
+    `).join('');
+
+    // Opportunities table
+    $('opps-table').querySelector('tbody').innerHTML = opps.opportunities.slice(0,10).map(o => `
+      <tr>
+        <td class="num" style="color:#00ff88;font-weight:bold">${fmt$(o.reward_usd || 0)}</td>
+        <td>${o.market_id}</td>
+        <td>${(o.canonical_title || '').slice(0,60)}</td>
+        <td>${(o.skill_list || '').split(',').slice(0,2).join(', ')}</td>
+        <td>${(o.first_seen_at || '').slice(0,10)}</td>
+      </tr>
+    `).join('');
+
+    // Events
+    $('events').innerHTML = events.events.map(e => `
+      <div class="event">
+        <span class="type">${e.event_type}</span>
+        <span class="title"> ${(e.canonical_title || '').slice(0,50)}</span>
+        <span class="time"> ${(e.observed_at || '').slice(0,16)}</span>
+      </div>
+    `).join('');
+
+    $('loading').style.display = 'none';
+    $('dashboard').style.display = 'block';
+  } catch(e) {
+    $('loading').textContent = 'Error: ' + e.message;
+  }
+}
+
+load();
+setInterval(load, 30000);
+</script>
+</body>
+</html>
