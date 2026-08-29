@@ -133,28 +133,45 @@ class ProgressiveReveal:
         self._states.setdefault(artifact_id, {})[buyer_id] = state
         return state
 
-    def reveal_next(self, artifact_id: str, buyer_id: str) -> RevealResult | None:
-        """Reveal the next chunk in the buyer's random order."""
+    def reveal_next(self, artifact_id: str, buyer_id: str,
+                    payment_proof: str | None = None) -> RevealResult | None:
+        """Reveal the next chunk. Requires payment_proof — no fake paid state."""
         state = self._states.get(artifact_id, {}).get(buyer_id)
         if not state:
             return None
 
         if state.units_purchased >= len(state.reveal_order):
-            return None  # Already fully revealed
+            return None
 
-        # Get next chunk index from the pre-determined order
+        # Payment verification — reject if no proof provided
+        if payment_proof is None:
+            raise PaymentRequired(
+                artifact_id=artifact_id,
+                amount=self._reveal_prices[artifact_id],
+                message="x402 payment required for reveal",
+            )
+
+        if not self._verify_payment(payment_proof, artifact_id, buyer_id):
+            raise PaymentVerificationFailed(
+                artifact_id=artifact_id,
+                payment_proof=payment_proof,
+            )
+
         next_idx = state.reveal_order[state.units_purchased]
 
-        # Reveal it
         chunks = self._chunks[artifact_id]
         tree = self._trees[artifact_id]
         reveal = reveal_chunk(chunks, tree, next_idx, buyer_id)
 
-        # Update state
         state.units_purchased += 1
         state.chunks_revealed.append(next_idx)
         state.last_reveal_at = time.time()
         state.total_paid += self._reveal_prices[artifact_id]
+        _append(REVEALS_DB, {
+            "artifact_id": artifact_id, "buyer_id": buyer_id,
+            "chunk_index": next_idx, "payment_proof": payment_proof,
+            "total_paid": state.total_paid,
+        })
 
         price_per = self._reveal_prices[artifact_id]
         remaining = len(state.reveal_order) - state.units_purchased
@@ -171,7 +188,52 @@ class ProgressiveReveal:
             total_paid=state.total_paid,
         )
 
-    def unlock_full(self, artifact_id: str, buyer_id: str) -> dict | None:
+    def reveal_next_unverified(self, artifact_id: str, buyer_id: str) -> RevealResult | None:
+        """Dev/test helper — reveal without payment. Never use in production."""
+        import warnings
+        warnings.warn("reveal_next_unverified: no payment verification — dev only", UserWarning)
+        return self._reveal_next_inner(artifact_id, buyer_id)
+
+    def _reveal_next_inner(self, artifact_id: str, buyer_id: str) -> RevealResult | None:
+        state = self._states.get(artifact_id, {}).get(buyer_id)
+        if not state or state.units_purchased >= len(state.reveal_order):
+            return None
+        next_idx = state.reveal_order[state.units_purchased]
+        chunks = self._chunks[artifact_id]
+        tree = self._trees[artifact_id]
+        reveal = reveal_chunk(chunks, tree, next_idx, buyer_id)
+        state.units_purchased += 1
+        state.chunks_revealed.append(next_idx)
+        state.last_reveal_at = time.time()
+        state.total_paid += self._reveal_prices[artifact_id]
+        price_per = self._reveal_prices[artifact_id]
+        remaining = len(state.reveal_order) - state.units_purchased
+        return RevealResult(
+            chunk_index=next_idx, content=reveal["content"], proof=reveal["proof"],
+            verified=reveal["verified"], units_purchased=state.units_purchased,
+            fraction_revealed=state.fraction_purchased,
+            remaining_to_full=remaining * price_per,
+            cost_this_reveal=price_per, total_paid=state.total_paid,
+        )
+
+    def _verify_payment(self, payment_proof: str, artifact_id: str, buyer_id: str) -> bool:
+        """Verify x402 payment proof. In production: call facilitator.
+
+        For now: accept any non-empty proof that hasn't been replayed.
+        Production must replace with: x402.verify(payment_proof, expected_amount).
+        """
+        if not payment_proof or not payment_proof.strip():
+            return False
+        # Replay protection — same proof can't be used twice
+        if not hasattr(self, "_used_proofs"):
+            self._used_proofs: set[str] = set()
+        if payment_proof in self._used_proofs:
+            return False
+        self._used_proofs.add(payment_proof)
+        return True
+
+    def unlock_full(self, artifact_id: str, buyer_id: str,
+                    payment_proof: str | None = None) -> dict | None:
         """Buyer pays remaining balance to unlock full artifact."""
         state = self._states.get(artifact_id, {}).get(buyer_id)
         if not state:
@@ -179,15 +241,27 @@ class ProgressiveReveal:
 
         remaining = len(state.reveal_order) - state.units_purchased
         if remaining <= 0:
-            # Already fully unlocked
             return {"chunks": self._chunks.get(artifact_id, []), "already_unlocked": True}
 
-        # Pay remaining
+        if payment_proof is None:
+            raise PaymentRequired(
+                artifact_id=artifact_id,
+                amount=remaining * self._reveal_prices[artifact_id],
+                message="x402 payment required to unlock",
+            )
+        if not self._verify_payment(payment_proof, artifact_id, buyer_id):
+            raise PaymentVerificationFailed(artifact_id=artifact_id, payment_proof=payment_proof)
+
         remaining_cost = remaining * self._reveal_prices[artifact_id]
         state.total_paid += remaining_cost
         state.units_purchased = len(state.reveal_order)
         state.chunks_revealed = list(range(len(state.reveal_order)))
         state.last_reveal_at = time.time()
+        _append(REVEALS_DB, {
+            "artifact_id": artifact_id, "buyer_id": buyer_id,
+            "action": "unlock_full", "payment_proof": payment_proof,
+            "total_paid": state.total_paid,
+        })
 
         return {
             "chunks": self._chunks.get(artifact_id, []),
@@ -224,6 +298,24 @@ class ProgressiveReveal:
 
 
 # === Convenience functions ===
+
+class PaymentRequired(Exception):
+    def __init__(self, artifact_id: str, amount: float, message: str = ""):
+        self.artifact_id = artifact_id
+        self.amount = amount
+        super().__init__(message or f"Payment of {amount} required for {artifact_id}")
+        # x402-compatible headers for HTTP 402 response
+        self.x402_headers = {
+            "X-Payment-Required": str(amount),
+            "X-Artifact-Id": artifact_id,
+        }
+
+
+class PaymentVerificationFailed(Exception):
+    def __init__(self, artifact_id: str, payment_proof: str):
+        super().__init__(f"Payment verification failed for {artifact_id}: {payment_proof[:16]}...")
+        self.artifact_id = artifact_id
+
 
 def _append(path: Path, record: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)

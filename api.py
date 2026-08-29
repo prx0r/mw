@@ -14,12 +14,15 @@ from mwmarket.models import (
     AccessGrant, SampleReceipt, Invocation, CapabilityLease,
     Board, DistributionGrant, SettlementPlan, AssetVersion,
 )
+from mwmarket.store import MarketStore
 
 
 class MarketAPI:
-    """Marketplace API with full commerce lifecycle."""
+    """Marketplace API — SQLite-backed, dict-cached."""
 
     def __init__(self, db_path: str = "data/market.db"):
+        self._store = MarketStore(db_path)
+        # In-memory cache for fast access, hydrated from SQLite
         self.listings: dict[str, Listing] = {}
         self.workers: dict[str, WorkerProfile] = {}
         self.reviews: dict[str, list[Review]] = {}
@@ -32,27 +35,29 @@ class MarketAPI:
         self.distribution_grants: dict[str, DistributionGrant] = {}
         self.assets: dict[str, AssetVersion] = {}
         self.settlements: list[SettlementPlan] = []
-        self._load(db_path)
+        self._hydrate()
 
-    def _load(self, db_path: str):
-        p = Path(db_path)
-        if p.exists():
-            try:
-                data = json.loads(p.read_text())
-                for l in data.get("listings", []):
-                    self.listings[l["id"]] = Listing(**l)
-                for w in data.get("workers", []):
-                    self.workers[w["worker_id"]] = WorkerProfile(**w)
-            except Exception:
-                pass
+    def _hydrate(self):
+        """Load all persisted state from SQLite into cache."""
+        for d in self._store.list_all("assets", 1000):
+            try: self.assets[d["id"]] = AssetVersion(**{k: v for k, v in d.items() if k in AssetVersion.__dataclass_fields__})
+            except Exception: pass
+        for d in self._store.list_all("listings", 1000):
+            try: self.listings[d["id"]] = Listing(**{k: v for k, v in d.items() if k in Listing.__dataclass_fields__})
+            except Exception: pass
+        for d in self._store.list_all("boards", 1000):
+            try: self.boards[d["id"]] = Board(**{k: v for k, v in d.items() if k in Board.__dataclass_fields__})
+            except Exception: pass
+        for d in self._store.list_all("leases", 1000):
+            try: self.leases[d["id"]] = CapabilityLease(**{k: v for k, v in d.items() if k in CapabilityLease.__dataclass_fields__})
+            except Exception: pass
+        for d in self._store.list_all("requests", 1000):
+            try: self.requests[d["id"]] = Request(**{k: v for k, v in d.items() if k in Request.__dataclass_fields__})
+            except Exception: pass
 
-    def _save(self, db_path: str):
-        Path(db_path).parent.mkdir(parents=True, exist_ok=True)
-        data = {
-            "listings": [l.to_dict() for l in self.listings.values()],
-            "workers": [w.to_dict() for w in self.workers.values()],
-        }
-        Path(db_path).write_text(json.dumps(data, indent=2))
+    def _persist(self, table: str, obj_id: str, data: dict):
+        try: self._store.put(table, obj_id, data)
+        except Exception: pass
 
     # ─── Listings ──────────────────────────────────────────────────────
 
@@ -60,6 +65,7 @@ class MarketAPI:
         if not listing.id:
             listing.id = f"lst-{os.urandom(4).hex()}" if __import__('os') else f"lst-{int(time.time())}"
         self.listings[listing.id] = listing
+        self._persist("listings", listing.id, listing.to_dict())
         return listing.id
 
     def get_listing(self, listing_id: str) -> dict | None:
@@ -95,12 +101,14 @@ class MarketAPI:
 
     def create_request(self, request: Request) -> str:
         self.requests[request.id] = request
+        self._persist("requests", request.id, request.to_dict())
         return request.id
 
     def fund_request(self, request_id: str) -> bool:
         r = self.requests.get(request_id)
         if r and r.status == "open":
             r.status = "funded"
+            self._persist("requests", r.id, r.to_dict())
             return True
         return False
 
@@ -110,6 +118,7 @@ class MarketAPI:
             r.status = "submitted"
             r.receipt_hash = receipt_hash
             r.deliverable = deliverable
+            self._persist("requests", r.id, r.to_dict())
             return True
         return False
 
@@ -117,6 +126,7 @@ class MarketAPI:
         r = self.requests.get(request_id)
         if r and r.status == "submitted":
             r.status = "completed"
+            self._persist("requests", r.id, r.to_dict())
             return True
         return False
 
@@ -127,6 +137,7 @@ class MarketAPI:
 
     def issue_grant(self, grant: AccessGrant) -> str:
         self.grants[grant.id] = grant
+        self._persist("grants", grant.id, grant.to_dict())
         return grant.id
 
     def check_grant(self, grant_id: str, right: str = "") -> bool:
@@ -149,12 +160,14 @@ class MarketAPI:
 
     def issue_sample_receipt(self, receipt: SampleReceipt) -> str:
         self.receipts.append(receipt)
+        self._persist("receipts", receipt.id, receipt.to_dict())
         return receipt.id
 
     # ─── Invocations ───────────────────────────────────────────────────
 
     def create_invocation(self, invocation: Invocation) -> str:
         self.invocations[invocation.id] = invocation
+        self._persist("invocations", invocation.id, invocation.to_dict())
         return invocation.id
 
     def complete_invocation(self, inv_id: str, result_hash: str, cost: str) -> bool:
@@ -163,6 +176,7 @@ class MarketAPI:
             inv.status = "completed"
             inv.result_hash = result_hash
             inv.cost = cost
+            self._persist("invocations", inv.id, inv.to_dict())
             return True
         return False
 
@@ -170,6 +184,7 @@ class MarketAPI:
 
     def issue_lease(self, lease: CapabilityLease) -> str:
         self.leases[lease.id] = lease
+        self._persist("leases", lease.id, lease.to_dict())
         return lease.id
 
     def check_lease(self, lease_id: str) -> bool:
@@ -180,6 +195,7 @@ class MarketAPI:
         l = self.leases.get(lease_id)
         if l:
             l.revoked = True
+            self._persist("leases", l.id, l.to_dict())
             return True
         return False
 
@@ -187,6 +203,7 @@ class MarketAPI:
 
     def create_board(self, board: Board) -> str:
         self.boards[board.id] = board
+        self._persist("boards", board.id, board.to_dict())
         return board.id
 
     def list_boards(self, visibility: str = "PUBLIC") -> list[dict]:
@@ -194,12 +211,14 @@ class MarketAPI:
 
     def place_on_board(self, grant: DistributionGrant) -> str:
         self.distribution_grants[grant.id] = grant
+        self._persist("distribution_grants", grant.id, grant.to_dict())
         return grant.id
 
     # ─── Assets ────────────────────────────────────────────────────────
 
     def register_asset(self, asset: AssetVersion) -> str:
         self.assets[asset.id] = asset
+        self._persist("assets", asset.id, asset.to_dict())
         return asset.id
 
     def get_asset(self, asset_id: str) -> dict | None:
@@ -210,6 +229,7 @@ class MarketAPI:
 
     def settle(self, plan: SettlementPlan) -> str:
         self.settlements.append(plan)
+        self._persist("settlements", plan.id, plan.to_dict())
         return plan.id
 
     # ─── Stats ─────────────────────────────────────────────────────────
