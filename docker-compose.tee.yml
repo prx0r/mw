@@ -1,0 +1,24 @@
+# TEE deployment — run WorkerKit inside dstack TDX
+# Usage: docker compose -f docker-compose.tee.yml up
+services:
+  workerkit:
+    image: moltwork/workerkit@sha256:REPLACE_WITH_DIGEST  # never :latest
+    environment:
+      - WORKERKIT_MODE=tee
+      - BASE_SEPOLIA_RPC=${BASE_SEPOLIA_RPC:-https://sepolia.base.org}
+      - ERC8183_CONTRACT=${ERC8183_CONTRACT:-}
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock  # Guest API
+    ports:
+      - "8001:8001"  # WorkerKit API
+      - "8002:8002"  # Attestation endpoint
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+
+  # Optional: Private AI Gateway for ACI receipts
+  # aci-gateway:
+  #   image: dstack/private-ai-gateway@sha256:REPLACE
+  #   environment:
+  #     - UPSTREAM=tinfoil
