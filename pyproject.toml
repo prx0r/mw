@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "workerkit"
+version = "0.1.0"
+description = "Economic runtime for autonomous agents"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.scripts]
+wk = "workerkit.wk:main"
+workerkit = "workerkit.wk:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["workerkit"]
