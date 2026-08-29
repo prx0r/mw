@@ -196,18 +196,21 @@ app.post("/workers/:id/run", async (c) => {
     // Send the task
     await session.send(body.task);
 
-    // Collect response
+    // Collect response with timeout
     let output = "";
     const toolCalls: Array<{ name: string; args: any }> = [];
     const toolResults: Array<{ name: string; result: any }> = [];
+    const streamTimeout = (body.timeout || 60) * 1000;
+    const deadline = Date.now() + streamTimeout;
 
     for await (const message of session.stream()) {
+      if (Date.now() > deadline) break;
       if (message.type === "assistant") {
         output += message.content || "";
       } else if (message.type === "tool_call") {
-        toolCalls.push({ name: message.tool_call?.name || "", args: message.tool_call?.arguments });
+        toolCalls.push({ name: message.toolName || "", args: message.toolInput });
       } else if (message.type === "tool_result") {
-        toolResults.push({ name: message.tool_call?.name || "", result: message.content });
+        toolResults.push({ name: message.toolName || "", result: message.content });
       }
     }
 
@@ -428,3 +431,26 @@ app.post("/workers/:id/recall", async (c) => {
 });
 
 export default app;
+
+// ─── Start server (Node.js) ──────────────────────────────────────────
+import { serve } from "@hono/node-server";
+
+const port = Number(process.env.PORT ?? 3000);
+console.log(`Runtime Letta service starting on port ${port}...`);
+
+// Verify Letta backend is working
+const client = new LettaAgentClient({ backend: "local" });
+try {
+  const models = await client.models.list();
+  const mimo = models.entries?.filter((m: any) => m.id?.includes("mimo")) || [];
+  console.log(`Letta backend OK. ${mimo.length} mimo models available.`);
+} catch (e: any) {
+  console.warn(`Warning: Could not verify Letta backend: ${e.message}`);
+}
+
+serve({
+  fetch: app.fetch,
+  port,
+}, (info) => {
+  console.log(`Runtime Letta service running on http://localhost:${info.port}`);
+});

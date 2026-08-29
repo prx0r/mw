@@ -11,7 +11,10 @@ import time
 import uuid
 from dataclasses import dataclass, field, asdict
 from typing import Any
-from workerkit.core.taxonomy import Taxonomy, TAXONOMY_VERSION
+try:
+    from core.taxonomy import Taxonomy, TAXONOMY_VERSION
+except ImportError:
+    from core.taxonomy import Taxonomy, TAXONOMY_VERSION
 
 
 def uid() -> str:
@@ -84,15 +87,17 @@ class WorkerEvent:
     self_hash: str = ""
 
     def canonical_bytes(self) -> bytes:
-        """One canonical serialization for hashing/attestation."""
+        """RFC 8785 JCS canonical serialization for hashing/attestation."""
+        from core.hashing import jcs
         data = {
+            "schema": "moltwork:event:v1",
             "id": self.id, "run_id": self.run_id, "sequence": self.sequence,
             "event_type": self.event_type, "occurred_at": self.occurred_at,
             "recorded_at": self.recorded_at, "witness_source": self.witness_source,
             "actor_type": self.actor_type, "payload": self.payload,
             "previous_event_hash": self.previous_event_hash,
         }
-        return json.dumps(data, sort_keys=True).encode()
+        return jcs(data)
 
     def compute_hash(self) -> str:
         return sha256(self.canonical_bytes())

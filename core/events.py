@@ -9,7 +9,7 @@ import json
 import sqlite3
 import time
 from pathlib import Path
-from workerkit.core.schema import uid, sha256, WorkerEvent
+from core.schema import uid, sha256, WorkerEvent
 
 
 class EventLedger:

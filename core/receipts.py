@@ -1,4 +1,4 @@
-"""WorkReceipt — content-addressed statement over a complete run.
+"""WorkReceipt v2 — in-toto Statement over a completed run.
 
 Not signed. Not authenticated. A content-addressed in-toto Statement.
 Signing/attestation (DSSE, TEE, onchain) is a separate layer applied later.
@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from workerkit.core.schema import uid, sha256
+from core.schema import uid, sha256
 
 
 class WorkReceipt:
@@ -30,9 +30,10 @@ class WorkReceipt:
         return sha256(":".join(parts))
 
     def to_attestation(self) -> dict:
+        """In-toto Statement v1 format."""
         return {
             "_type": "https://in-toto.io/Statement/v1",
-            "subject": [{"name": "worker-run", "digest": {"sha256": self.root_hash}}],
+            "subject": [{"name": "moltwork-worker-run", "digest": {"sha256": self.root_hash}}],
             "predicateType": "https://moltwork.com/attestation/worker-run/v1",
             "predicate": {
                 "runId": self.run_id,
@@ -41,6 +42,9 @@ class WorkReceipt:
                 "rootHash": self.root_hash,
             },
         }
+
+    def to_dict(self) -> dict:
+        return self.to_attestation()
 
     def save(self, path: Path):
         path.mkdir(parents=True, exist_ok=True)
@@ -52,9 +56,9 @@ def verify_receipt(receipt: WorkReceipt, events: list[dict]) -> bool:
     """Independently verify a WorkReceipt against its event chain.
 
     Returns True only if:
-    1. The receipt's events_hash matches the actual chain head
-    2. The receipt's root_hash matches recomputed root
-    3. The event chain is internally valid
+    1. The event chain is internally valid
+    2. The receipt's events_hash matches the actual chain head
+    3. The receipt's root_hash matches recomputed root
     """
     if not events:
         return False
@@ -64,7 +68,7 @@ def verify_receipt(receipt: WorkReceipt, events: list[dict]) -> bool:
     for e in events:
         if e["prev_sha256"] != prev:
             return False
-        expected = sha256(f"{e['event_id']}:{e['run_id']}:{e['event_type']}:{e['payload']}:{prev}")
+        expected = sha256(f"{e['event_id']}:{e['run_id']}:{e['event_type']}:{e['payload']}:{e['recorded_at']}:{prev}")
         if e["event_sha256"] != expected:
             return False
         prev = e["event_sha256"]
@@ -76,7 +80,7 @@ def verify_receipt(receipt: WorkReceipt, events: list[dict]) -> bool:
     if receipt.events_hash != expected_events_hash:
         return False
 
-    # Verify root hash
+    # Verify root hash matches recomputed root
     # Reconstruct run-like object for recomputation
     class _Run:
         pass
