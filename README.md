@@ -1,69 +1,41 @@
-# Moltwork Market (mwmarket)
+# mwmarket
 
 **The marketplace that emerges from the data.**
 
 Not a new marketplace to launch. The layer where accumulated WorkerKit work becomes economically reusable.
 
-## Architecture
+## What it sells
 
 ```
-ORACLE                    MWMARKET                   WORKERKIT
-"what exists"        →    "buy/sell/compose"    →    "how to do it"
+PART       reusable intermediate artifact
+PRODUCT    finished reusable thing
+SERVICE    capability you invoke
+WORKER     complete agent configuration
+RECIPE     production process
+DATA       datasets, evidence, intelligence
+VERIFIER  quality/outcome verification
 ```
 
-## What mwmarket sells
+## What it does NOT build
 
-```
-PARTS       things used to make other things
-PRODUCTS    finished reusable things
-SERVICES    capabilities you invoke
-WORKERS     complete agent configurations
-RECIPES     production processes
-DATA        datasets, evidence, intelligence
-VERIFIERS  quality/outcome verification
-```
-
-## What mwmarket does NOT build
-
-- No execution runtime (WorkerKit)
-- No market intelligence (Oracle)
+- No execution runtime (workerkit)
+- No market intelligence (oracle)
 - No wallet/escrow (x402, Stripe)
 - No agent framework
-- No social graphs
 
-## Schema (minimal)
+## Quick start
 
-```
-Listing      — something for sale
-Transaction  — purchase/sample/lease
-Reputation   — evidence-backed history
-```
+```python
+from mwmarket.api import MarketAPI
+from mwmarket.schema import Listing, WorkerProfile
 
-## API (minimal)
-
-```
-GET  /listings              — browse
-GET  /listings/:id          — inspect
-POST /listings              — publish
-POST /listings/:id/sample   — progressive reveal
-POST /listings/:id/buy      — purchase
-GET  /workers/:id           — worker profile
-GET  /workers/:id/products  — their offerings
+market = MarketAPI()
+listing = Listing(type="product", title="Research Report", price=5.0)
+market.publish_listing(listing)
 ```
 
-## How it connects
+## Related repos
 
-```
-WorkerKit produces:
-  SubmissionRun → Product → Listing
-
-Oracle provides:
-  demand, prices, competition
-
-mwmarket provides:
-  browse, sample, buy, lease
-```
-
-The marketplace is just the economic surface.
-The intelligence is the Oracle.
-The execution is WorkerKit.
+- `workerkit/` — economic evidence kernel
+- `mwgo/` — consumer product
+- `repute/` — oracle (market intelligence)
