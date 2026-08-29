@@ -115,26 +115,46 @@ class LettaAdapter:
                 pass
         return WorkerInspect(worker_id="", runtime="letta", state_hash="")
 
-    async def execute(self, work_order: Any, context: RunContext) -> ExecutionResult:
+    async def execute(self, work_order: Any, context: RunContext, force_stub: bool = False) -> ExecutionResult:
         t0 = time.time()
         # If we have a Letta server, delegate there
         if self.has_server:
             try:
                 return await self._execute_via_server(work_order, context)
             except Exception as e:
-                return ExecutionResult(ok=False, error=f"letta server error: {e}", duration_seconds=time.time() - t0)
+                return ExecutionResult(ok=False, error=f"letta server error: {e}",
+                                       error_code="FAIL", duration_seconds=time.time() - t0)
 
-        # No server — return stub that still produces evidence-shaped output
-        # This lets WorkerKit + evidence pipeline run without a live Letta
+        # No server — this is a failure, not a success
         title = getattr(work_order, "title", "") or (work_order.get("title", "") if isinstance(work_order, dict) else str(work_order)[:80])
+
+        if force_stub:
+            # Only for testing: explicitly request stub execution
+            return ExecutionResult(
+                ok=True,
+                output_content=f"[letta-stub] would execute: {title}",
+                output_hash=wk_sha256(f"stub:{title}"),
+                cost_usd=0.0,
+                duration_seconds=time.time() - t0,
+                metadata={"mode": "stub", "af_path": self.af_path, "has_af": self.has_af},
+                trace_events=[{"type": "stub", "detail": "no Letta server — stub execution"}],
+            )
+
+        if self.has_af:
+            return ExecutionResult(
+                ok=False,
+                error=f"af file found at {self.af_path} but no Letta server to execute against",
+                error_code="NOT_EXECUTED",
+                duration_seconds=time.time() - t0,
+                metadata={"mode": "no-server", "af_path": self.af_path},
+            )
+
         return ExecutionResult(
-            ok=True,
-            output_content=f"[letta-stub] would execute: {title}",
-            output_hash=wk_sha256(f"stub:{title}"),
-            cost_usd=0.0,
+            ok=False,
+            error="no LETTA_SERVER_URL and no LETTA_AF_PATH — cannot execute",
+            error_code="NO_RUNTIME",
             duration_seconds=time.time() - t0,
-            metadata={"mode": "stub", "af_path": self.af_path, "has_af": self.has_af},
-            trace_events=[{"type": "stub", "detail": "no Letta server — stub execution"}],
+            metadata={"mode": "no-runtime"},
         )
 
     async def _execute_via_server(self, work_order: Any, context: RunContext) -> ExecutionResult:

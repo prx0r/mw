@@ -1,9 +1,14 @@
-"""Hydra — Lab intelligence graph.
+"""LabProjection — SQLite-backed lab intelligence.
 
 Immutable truth: Agent → Run → Opportunity/Model/Tools/Skills/Cost/Duration/Artifact/Evaluation/Outcome + MemoryRevision
 
-This is the authoritative store. Letta memory is derived, not primary.
+This is a disposable projection over the WorkerKit event ledger.
+The event ledger (core/events.py) is canonical. This can be rebuilt.
 Lab queries: which skills correlate with wins? which model is most profitable?
+
+Naming: 'LabProjection' because this is SQLite, not HydraDB.
+HydraDB is a graph database — this is not that.
+When HydraDB integration arrives, add HydraLabProjection alongside SQLiteLabProjection.
 """
 from __future__ import annotations
 
@@ -18,7 +23,7 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS lab_agents (
     agent_id TEXT PRIMARY KEY,
     template TEXT,
-    lineage TEXT,  -- JSON array of parent version hashes
+    lineage TEXT,
     lab_id TEXT,
     data TEXT,
     created_at REAL
@@ -27,23 +32,25 @@ CREATE TABLE IF NOT EXISTS lab_runs (
     run_id TEXT PRIMARY KEY,
     agent_id TEXT,
     opportunity_id TEXT,
+    task_family TEXT,
     model TEXT,
-    tools TEXT,  -- JSON array
-    skills TEXT, -- JSON array
+    tools TEXT,
+    skills TEXT,
     cost_usd REAL,
     duration_s REAL,
     artifact_hash TEXT,
     evaluation_score REAL,
-    outcome TEXT,  -- won/lost/pending
+    outcome TEXT,
     reward_usd REAL,
     worker_version TEXT,
+    failure_reason TEXT,
     created_at REAL
 );
 CREATE TABLE IF NOT EXISTS lab_memory_revisions (
     revision_id TEXT PRIMARY KEY,
     agent_id TEXT,
     commit_hash TEXT,
-    change_type TEXT,  -- memory/skill/mod
+    change_type TEXT,
     content TEXT,
     created_at REAL
 );
@@ -89,7 +96,7 @@ CREATE TABLE IF NOT EXISTS lab_evaluations (
     run_id TEXT,
     submission_id TEXT,
     score REAL,
-    gates_passed TEXT,  -- JSON
+    gates_passed TEXT,
     reviewer TEXT,
     created_at REAL
 );
@@ -97,19 +104,39 @@ CREATE TABLE IF NOT EXISTS lab_experiments (
     experiment_id TEXT PRIMARY KEY,
     hypothesis TEXT,
     worker_version TEXT,
-    status TEXT,  -- running/completed/regressed/improved
+    status TEXT,
     data TEXT,
     created_at REAL
 );
+CREATE TABLE IF NOT EXISTS lab_run_dependencies (
+    run_id TEXT PRIMARY KEY,
+    worker_version_id TEXT,
+    skill_version_ids TEXT,
+    briefing_id TEXT,
+    process_version_id TEXT,
+    memory_revision_id TEXT,
+    reviewer_id TEXT,
+    context_pack_ids TEXT,
+    created_at REAL
+);
+CREATE INDEX IF NOT EXISTS idx_runs_task_family ON lab_runs(task_family);
+CREATE INDEX IF NOT EXISTS idx_runs_agent ON lab_runs(agent_id);
+CREATE INDEX IF NOT EXISTS idx_runs_outcome ON lab_runs(outcome);
+CREATE INDEX IF NOT EXISTS idx_runs_worker_version ON lab_runs(worker_version);
 """
 
 
-class HydraStore:
-    """SQLite-backed lab intelligence. One instance per lab."""
+class LabProjection:
+    """SQLite-backed lab intelligence. One instance per lab.
 
-    def __init__(self, db_path: str = "data/hydra.db"):
+    This is a disposable projection over the WorkerKit event ledger.
+    The event ledger is canonical. This can be rebuilt from events.
+    """
+
+    def __init__(self, db_path: str = "data/hydra.db", append_only: bool = True):
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
+        self.append_only = append_only
         self._init()
 
     def _init(self):
@@ -142,16 +169,27 @@ class HydraStore:
 
     # ─── Runs — the core immutable record ─────────────────────────────
 
+    def _check_append(self, conn, table: str, pk: str, pk_value: str) -> None:
+        """If append_only, raise if record already exists."""
+        if not self.append_only:
+            return
+        existing = conn.execute(f"SELECT 1 FROM {table} WHERE {pk}=?", (pk_value,)).fetchone()
+        if existing:
+            raise ValueError(f"Append-only violation: {table}.{pk}={pk_value} already exists")
+
     def record_run(self, run_id: str, agent_id: str, opportunity_id: str = "", model: str = "",
                    tools: list[str] | None = None, skills: list[str] | None = None,
                    cost_usd: float = 0, duration_s: float = 0,
                    artifact_hash: str = "", evaluation_score: float = 0,
-                   outcome: str = "pending", reward_usd: float = 0, worker_version: str = ""):
+                   outcome: str = "pending", reward_usd: float = 0, worker_version: str = "",
+                   task_family: str = "", failure_reason: str = ""):
         conn = self._conn()
+        if self.append_only:
+            self._check_append(conn, "lab_runs", "run_id", run_id)
         conn.execute(
-            "INSERT OR REPLACE INTO lab_runs (run_id, agent_id, opportunity_id, model, tools, skills, cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, worker_version, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-            (run_id, agent_id, opportunity_id, model, json.dumps(tools or []), json.dumps(skills or []),
-             cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, worker_version, time.time()),
+            "INSERT OR REPLACE INTO lab_runs (run_id, agent_id, opportunity_id, task_family, model, tools, skills, cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, worker_version, failure_reason, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            (run_id, agent_id, opportunity_id, task_family, model, json.dumps(tools or []), json.dumps(skills or []),
+             cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, worker_version, failure_reason, time.time()),
         )
         conn.commit()
         conn.close()
@@ -234,10 +272,44 @@ class HydraStore:
 
     def record_experiment(self, experiment_id: str, hypothesis: str, worker_version: str = "", status: str = "running", data: dict | None = None):
         conn = self._conn()
+        if self.append_only:
+            self._check_append(conn, "lab_experiments", "experiment_id", experiment_id)
         conn.execute("INSERT OR REPLACE INTO lab_experiments VALUES (?,?,?,?,?,?)",
                      (experiment_id, hypothesis, worker_version, status, json.dumps(data or {}), time.time()))
         conn.commit()
         conn.close()
+
+    # ─── Run Dependencies — provenance tracking ────────────────────────
+
+    def record_run_dependency(self, run_id: str, worker_version_id: str,
+                              skill_version_ids: list[str] | None = None,
+                              briefing_id: str = "", process_version_id: str = "",
+                              memory_revision_id: str = "", reviewer_id: str = "",
+                              context_pack_ids: list[str] | None = None):
+        """Record the exact versions of all inputs used by a run."""
+        conn = self._conn()
+        if self.append_only:
+            self._check_append(conn, "lab_run_dependencies", "run_id", run_id)
+        conn.execute(
+            "INSERT OR REPLACE INTO lab_run_dependencies VALUES (?,?,?,?,?,?,?,?,?)",
+            (run_id, worker_version_id, json.dumps(skill_version_ids or []),
+             briefing_id, process_version_id, memory_revision_id, reviewer_id,
+             json.dumps(context_pack_ids or []), time.time()),
+        )
+        conn.commit()
+        conn.close()
+
+    def get_run_dependencies(self, run_id: str) -> dict | None:
+        """Get the full provenance chain for a run."""
+        conn = self._conn()
+        row = conn.execute("SELECT * FROM lab_run_dependencies WHERE run_id=?", (run_id,)).fetchone()
+        conn.close()
+        if not row:
+            return None
+        d = dict(row)
+        d["skill_version_ids"] = json.loads(d["skill_version_ids"]) if d["skill_version_ids"] else []
+        d["context_pack_ids"] = json.loads(d["context_pack_ids"]) if d["context_pack_ids"] else []
+        return d
 
     # ─── Lab intelligence queries ─────────────────────────────────────
 
@@ -307,3 +379,58 @@ class HydraStore:
 
     def stats(self) -> dict:
         return self.lab_summary()
+
+    # ─── Interface methods (for future HydraDB implementation) ────────
+
+    def project_event(self, event: dict) -> None:
+        """Project a canonical WorkerEvent into this store."""
+        event_type = event.get("event_type", "")
+        run_id = event.get("run_id", "")
+        payload = event.get("payload", {})
+        if event_type == "run.started":
+            self.record_run(run_id=run_id, agent_id=payload.get("agent_id", ""),
+                          opportunity_id=payload.get("opportunity_id", ""),
+                          model=payload.get("model", ""),
+                          tools=payload.get("tools"),
+                          skills=payload.get("skills"),
+                          worker_version=payload.get("worker_version", ""))
+        elif event_type == "run.cost":
+            self.record_run(run_id=run_id, agent_id=payload.get("agent_id", ""),
+                          cost_usd=payload.get("cost_usd", 0))
+        elif event_type == "run.completed":
+            self.record_run(run_id=run_id, agent_id=payload.get("agent_id", ""),
+                          outcome=payload.get("outcome", "pending"),
+                          reward_usd=payload.get("reward_usd", 0),
+                          evaluation_score=payload.get("evaluation_score", 0))
+
+    def rebuild(self) -> None:
+        """Drop and recreate all tables from event ledger."""
+        conn = self._conn()
+        for table in ["lab_agents", "lab_runs", "lab_memory_revisions",
+                       "lab_insights", "lab_worker_versions", "lab_opportunities",
+                       "lab_submissions", "lab_evaluations", "lab_experiments"]:
+            conn.execute(f"DROP TABLE IF EXISTS {table}")
+        conn.commit()
+        conn.close()
+        self._init()
+
+    def query(self, table: str, filters: dict | None = None, limit: int = 100) -> list[dict]:
+        """Generic query interface."""
+        conn = self._conn()
+        q = f"SELECT * FROM {table}"
+        args: list = []
+        if filters:
+            conditions = []
+            for k, v in filters.items():
+                conditions.append(f"{k}=?")
+                args.append(v)
+            q += " WHERE " + " AND ".join(conditions)
+        q += f" ORDER BY rowid DESC LIMIT ?"
+        args.append(limit)
+        rows = conn.execute(q, args).fetchall()
+        conn.close()
+        return [dict(r) for r in rows]
+
+
+# Deprecated alias — use LabProjection
+HydraStore = LabProjection

@@ -37,11 +37,18 @@ async def run():
 
     ctx = RunContext(budget_remaining=2.0)
     r = await a.execute({"title": "research", "description": "find data"}, ctx)
-    test("stub execute ok", r.ok)
-    test("stub has trace", len(r.trace_events) > 0)
+    test("execute returns NOT_EXECUTED (no server)", not r.ok and r.error_code == "NOT_EXECUTED")
+    test("execute has error detail", "no Letta server" in r.error)
 
-    # No af, no server → not ok
+    # force_stub=True for testing only
+    r_stub = await a.execute({"title": "research", "description": "find data"}, ctx, force_stub=True)
+    test("force_stub returns ok", r_stub.ok)
+    test("force_stub has trace", len(r_stub.trace_events) > 0)
+
+    # No af, no server → NO_RUNTIME
     b = LettaAdapter()
+    r_no = await b.execute({"title": "test"}, ctx)
+    test("no runtime returns NO_RUNTIME", not r_no.ok and r_no.error_code == "NO_RUNTIME")
     h2 = await b.health()
     test("health fails without af/server", not h2.ok)
 
@@ -50,7 +57,6 @@ async def run():
     test("manifest worker", m.worker == "researcher-v12")
     test("manifest agent hash", len(m.agent.sha256) == 64)
     test("manifest hash", len(m.manifest_hash()) == 64)
-    test("manifest save/load", True)
     with tempfile.NamedTemporaryFile(suffix='.json', delete=False) as mf:
         m.save(mf.name)
         m2 = WorkerManifest.load(mf.name)

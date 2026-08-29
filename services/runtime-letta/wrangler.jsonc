@@ -1,0 +1,6 @@
+name = "runtime-letta"
+main = "src/index.ts"
+compatibility_date = "2024-08-01"
+
+[vars]
+LETTA_SERVER_URL = ""

@@ -1,6 +1,7 @@
 """Canonical record types — 10 families, short names, clean schemas.
 
 Frozen architecture from workkitfinal.md.
+Taxonomy is carried unchanged from Oracle through entire pipeline.
 """
 from __future__ import annotations
 
@@ -10,6 +11,7 @@ import time
 import uuid
 from dataclasses import dataclass, field, asdict
 from typing import Any
+from workerkit.core.taxonomy import Taxonomy, TAXONOMY_VERSION
 
 
 def uid() -> str:
@@ -36,6 +38,7 @@ class WorkOrder:
     deadline: str = ""
     submission_target: str = ""
     acceptance_contract_digest: str = ""
+    taxonomy: dict = field(default_factory=dict)  # Taxonomy.to_dict() — carried from Oracle
     raw: dict = field(default_factory=dict)
     created_at: float = field(default_factory=time.time)
     def to_dict(self) -> dict:

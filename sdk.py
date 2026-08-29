@@ -8,6 +8,7 @@ Usage:
     artifact = run.artifact(name="report.md", content=b"...", media_type="text/markdown")
     run.event("model.call", {"model": "mimo", "tokens": 8000})
     run.cost("llm", 0.08)
+    run.set_dependencies(worker_version_id="v1", skill_version_ids=["sk-1"])
     vr = await wk.verify(run, contract, artifact)
     cd = wk.gate(run, "SUBMIT", vr, budget_remaining=5.0)
     receipt = wk.close(run)
@@ -40,6 +41,7 @@ class Run:
         self._run_cap = Decimal(str(order.raw.get("max_cost", "999999")))
         self._spent = Decimal("0")
         self._artifacts: list[ArtifactRef] = []
+        self._dependencies: dict = {}
 
     def artifact(self, name: str, content: bytes | str, media_type: str = "") -> ArtifactRef:
         """Register an artifact. WorkerKit computes the digest — never trust caller-provided hash."""
@@ -63,6 +65,29 @@ class Run:
         self._spent += cost
         self.meter.record(category, float(cost), **kwargs)
         self.event("cost.recorded", {"category": category, "amount": str(cost), **kwargs})
+
+    def set_dependencies(self, worker_version_id: str = "",
+                         skill_version_ids: list[str] | None = None,
+                         briefing_id: str = "", process_version_id: str = "",
+                         memory_revision_id: str = "", reviewer_id: str = "",
+                         context_pack_ids: list[str] | None = None):
+        """Set the exact versions of all inputs used by this run.
+
+        Must be called before close(). Records provenance chain.
+        """
+        self._dependencies = {
+            "worker_version_id": worker_version_id,
+            "skill_version_ids": skill_version_ids or [],
+            "briefing_id": briefing_id,
+            "process_version_id": process_version_id,
+            "memory_revision_id": memory_revision_id,
+            "reviewer_id": reviewer_id,
+            "context_pack_ids": context_pack_ids or [],
+        }
+        self.event("dependencies.set", {
+            "worker_version_id": worker_version_id,
+            "skill_version_ids": skill_version_ids or [],
+        })
 
     def snapshot(self) -> dict:
         return {"spent": str(self._spent), "events": self._seq}
@@ -162,8 +187,11 @@ class WorkerKit:
         run.event("gate.decided", {"action": action, "decision": result.decision})
         return cd
 
-    def close(self, run: Run) -> WorkReceipt:
-        """Close run, validate chain, generate receipt."""
+    def close(self, run: Run, projection=None) -> WorkReceipt:
+        """Close run, validate chain, generate receipt.
+
+        If projection is provided, records RunDependency for provenance.
+        """
         run.run.status = "COMPLETED"
         run.run.finished_at = run._seq
         run.run.known_cost_usd = str(run.meter.total_cost)
@@ -184,4 +212,21 @@ class WorkerKit:
 
         run_dir = Path(f"data/receipts/{run.run.id}")
         receipt.save(run_dir)
+
+        # Record RunDependency in projection if provided
+        if projection and run._dependencies:
+            try:
+                projection.record_run_dependency(
+                    run_id=run.run.id,
+                    worker_version_id=run._dependencies.get("worker_version_id", ""),
+                    skill_version_ids=run._dependencies.get("skill_version_ids"),
+                    briefing_id=run._dependencies.get("briefing_id", ""),
+                    process_version_id=run._dependencies.get("process_version_id", ""),
+                    memory_revision_id=run._dependencies.get("memory_revision_id", ""),
+                    reviewer_id=run._dependencies.get("reviewer_id", ""),
+                    context_pack_ids=run._dependencies.get("context_pack_ids"),
+                )
+            except Exception:
+                pass  # projection is disposable — don't fail receipt on projection error
+
         return receipt

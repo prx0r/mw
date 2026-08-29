@@ -57,6 +57,7 @@ class ExecutionResult:
     tokens_input: int = 0
     tokens_output: int = 0
     error: str = ""
+    error_code: str = ""  # NO_RUNTIME, NOT_EXECUTED, FAIL, TIMEOUT
     metadata: dict = field(default_factory=dict)
     trace_events: list[dict] = field(default_factory=list)
 
