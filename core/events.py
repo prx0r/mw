@@ -81,8 +81,10 @@ class EventLedger:
         return n
 
     def verify_chain(self, run_id: str) -> bool:
-        """Verify event chain integrity."""
+        """Verify event chain integrity. Returns False for empty chains."""
         events = self.get_events(run_id)
+        if not events:
+            return False  # Empty chain is not valid
         prev = ""
         for e in events:
             if e["prev_sha256"] != prev:
