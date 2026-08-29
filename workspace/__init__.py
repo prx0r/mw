@@ -1,0 +1,1 @@
+"""Workspace — git workspace management."""

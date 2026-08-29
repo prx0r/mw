@@ -1,0 +1,1 @@
+"""Packs — venue-specific intelligence."""
