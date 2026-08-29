@@ -1,0 +1,165 @@
+"""Work feed — bounties/tasks/jobs."""
+from __future__ import annotations
+
+import json
+import time
+import urllib.request
+from typing import Any
+
+
+def _get(url: str) -> Any:
+    try:
+        req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read())
+    except:
+        return None
+
+
+def bountybook() -> list[dict]:
+    data = _get("https://api.bountybook.ai/jobs?limit=100")
+    if not data: return []
+    return [_norm_bountybook(j) for j in data.get("jobs", [])]
+
+
+def github(token: str = "") -> list[dict]:
+    h = {"Accept": "application/vnd.github.v3+json"}
+    if token: h["Authorization"] = f"token {token}"
+    try:
+        req = urllib.request.Request(
+            "https://api.github.com/search/issues?q=label:bounty+is:open+is:issue&per_page=100",
+            headers=h)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+            return [_norm_github(i) for i in data.get("items", [])]
+    except: return []
+
+
+def superteam() -> list[dict]:
+    data = _get("https://superteam.fun/api/listings?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("listings", [])
+    return [_norm_superteam(b) for b in items]
+
+
+def agenthansa() -> list[dict]:
+    data = _get("https://www.agenthansa.com/api/collective/bounties/public?limit=100")
+    if not data: return []
+    return [_norm_agenthansa(b) for b in data.get("bounties", [])]
+
+
+def rentahuman() -> list[dict]:
+    data = _get("https://rentahuman.ai/api/bounties?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("bounties", [])
+    return [_norm_rentahuman(b) for b in items]
+
+
+def daydreams() -> list[dict]:
+    data = _get("https://taskmarket.dev/api/tasks?limit=100")
+    if not data: return []
+    return [_norm_daydreams(t) for t in data.get("tasks", [])]
+
+
+def openserv() -> list[dict]:
+    data = _get("https://api.launch.openserv.ai/ideas?limit=100")
+    if not data: return []
+    return [_norm_openserv(i) for i in data.get("ideas", [])]
+
+
+def _norm_bountybook(j: dict) -> dict:
+    b = j.get("budget_usdc", 0)
+    if isinstance(b, str):
+        try: b = float(b.replace("$",""))
+        except: b = 0
+    return {"id": f"bb:{j.get('id','')}", "src": "bountybook", "source_id": str(j.get("id","")),
+            "title": j.get("title",""), "desc": (j.get("description") or "")[:500],
+            "cat": j.get("job_type","general"), "skills": j.get("tags",[]),
+            "reward": float(b), "currency": "USDC", "status": j.get("status","open"),
+            "posted": j.get("created_at",""), "url": f"https://bountybook.ai/job/{j.get('id','')}",
+            "extra": {"difficulty": j.get("difficulty",""), "network": "base"}}
+
+
+def _norm_github(i: dict) -> dict:
+    amt = 0
+    text = f"{i.get('title','')} {i.get('body','')[:500]}"
+    for p in [r'\$(\d+(?:,\d{3})*)\b', r'Bounty:\s*\$(\d+)']:
+        m = re.search(p, text)
+        if m:
+            try: amt = float(m.group(1).replace(",",""))
+            except: pass
+            break
+    return {"id": f"gh:{i.get('html_url','').split('/')[-1]}", "src": "github",
+            "source_id": str(i.get("number","")), "title": i.get("title",""),
+            "desc": (i.get("body") or "")[:500], "cat": "development", "skills": [],
+            "reward": amt, "currency": "USD", "status": "open" if i.get("state")=="open" else "closed",
+            "posted": i.get("created_at",""), "url": i.get("html_url",""),
+            "extra": {"repo": i.get("repository_url","").split("/")[-2:]}}
+
+
+def _norm_superteam(b: dict) -> dict:
+    r = b.get("rewardAmount", 0) or 0
+    return {"id": f"st:{b.get('id','')}", "src": "superteam", "source_id": str(b.get("id","")),
+            "title": b.get("title",""), "desc": (b.get("description") or "")[:500],
+            "cat": b.get("type","bounty"), "skills": [], "reward": float(r),
+            "currency": b.get("token","USDG"), "status": b.get("status","OPEN"),
+            "posted": b.get("createdAt",""), "url": f"https://superteam.fun/earn/{b.get('slug','')}",
+            "extra": {"agent_access": b.get("agentAccess",""), "deadline": b.get("deadline","")}}
+
+
+def _norm_agenthansa(b: dict) -> dict:
+    r = b.get("reward_amount", 0) or 0
+    return {"id": f"ah:{b.get('id','')}", "src": "agenthansa", "source_id": str(b.get("id","")),
+            "title": b.get("title",""), "desc": (b.get("description") or "")[:500],
+            "cat": b.get("category","general"), "skills": b.get("tags",[]),
+            "reward": float(r), "currency": b.get("currency","points"),
+            "status": b.get("status","open"), "posted": b.get("created_at",""),
+            "url": f"https://agenthansa.com/bounty/{b.get('id','')}",
+            "extra": {"deadline": b.get("deadline","")}}
+
+
+def _norm_rentahuman(b: dict) -> dict:
+    p = b.get("price", 0)
+    if isinstance(p, str):
+        try: p = float(p.replace("$",""))
+        except: p = 0
+    return {"id": f"rh:{b.get('id','')}", "src": "rentahuman", "source_id": str(b.get("id","")),
+            "title": b.get("title",""), "desc": (b.get("description") or "")[:500],
+            "cat": b.get("category","general"), "skills": b.get("skillsNeeded",[]),
+            "reward": float(p), "currency": b.get("currency","USD"),
+            "status": b.get("status","open"), "posted": b.get("createdAt",""),
+            "url": f"https://rentahuman.ai/bounty/{b.get('id','')}",
+            "extra": {"location": b.get("location","")}}
+
+
+def _norm_daydreams(t: dict) -> dict:
+    r = t.get("reward", 0) or 0
+    if isinstance(r, str):
+        try: r = float(r)
+        except: r = 0
+    r_usd = r / 1_000_000 if r > 1000 else r
+    return {"id": f"dd:{str(t.get('id',''))[:20]}", "src": "daydreams",
+            "source_id": str(t.get("id",""))[:20],
+            "title": (t.get("description") or "")[:100],
+            "desc": (t.get("description") or "")[:500],
+            "cat": t.get("tags",["general"])[0] if t.get("tags") else "general",
+            "skills": t.get("tags",[]), "reward": round(r_usd,6),
+            "currency": "USDC", "status": t.get("status","open"),
+            "posted": t.get("createdAt",""), "url": f"https://taskmarket.dev/task/{t.get('id','')}",
+            "extra": {"network": "base"}}
+
+
+def _norm_openserv(i: dict) -> dict:
+    ups = len(i.get("upvotes",[]))
+    picks = len(i.get("pickups",[]))
+    ships = len(i.get("shipments",[]))
+    return {"id": f"os:{i.get('id','')}", "src": "openserv", "source_id": str(i.get("id","")),
+            "title": i.get("title",""), "desc": (i.get("description") or "")[:500],
+            "cat": i.get("tags",["general"])[0] if i.get("tags") else "general",
+            "skills": i.get("tags",[]), "reward": 0, "currency": "x402",
+            "status": "open", "posted": i.get("createdAt",""),
+            "url": f"https://openserv.ai/idea/{i.get('id','')}",
+            "extra": {"upvotes": ups, "pickups": picks, "shipments": ships}}
+
+
+import re
