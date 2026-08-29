@@ -69,7 +69,7 @@ async def run_test():
     from workerkit.bundle import WorkerBundle
 
     manifest = build_manifest("researcher-03", af_path=af_path, runtime_adapter="letta")
-    test("manifest created", manifest.worker == "researcher-03")
+    test("manifest created", manifest.worker_id == "researcher-03")
     test("manifest has agent hash", len(manifest.agent.sha256) == 64)
     test("manifest has manifest_hash", len(manifest.manifest_hash()) == 64)
 
