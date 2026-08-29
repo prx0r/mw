@@ -17,9 +17,10 @@ def uid() -> str:
 
 
 def sha256(data: str | bytes) -> str:
+    """Full SHA-256 — 64 hex characters."""
     if isinstance(data, str):
         data = data.encode()
-    return hashlib.sha256(data).hexdigest()[:16]
+    return hashlib.sha256(data).hexdigest()
 
 
 # ─── 1. WorkOrder ──────────────────────────────────────────────────────
