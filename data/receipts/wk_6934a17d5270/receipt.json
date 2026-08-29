@@ -1,0 +1,18 @@
+{
+  "_type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "worker-run",
+      "digest": {
+        "sha256": "a9c87be05b81150f"
+      }
+    }
+  ],
+  "predicateType": "https://moltwork.com/attestation/worker-run/v1",
+  "predicate": {
+    "runId": "wk_6934a17d5270",
+    "workerId": "wk_36a41968fcd8",
+    "eventsHash": "ok",
+    "rootHash": "a9c87be05b81150f"
+  }
+}
