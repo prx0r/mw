@@ -1,20 +1,12 @@
-"""LettaAdapter — reference stateful worker via Letta + .af.
+"""LettaAdapter — DEPRECATED. Use services/runtime-letta/ instead.
 
-Letta is the reference stateful runtime. .af is the preferred portable state.
+This adapter talks to old /v1/agents REST APIs and has stub fallback.
+The canonical implementation is services/runtime-letta/ using Letta Agent SDK.
 
-Modes:
-  1. Connected — LETTA_SERVER_URL set, talks to Letta API (real execution)
-  2. Local — .af file on disk, no server (inspect + export work, execute is stub)
-  3. Missing — neither available, health() reports not ready
+For new code, use:
+  from services.runtime-letta.client import LettaServiceAdapter
 
-.af handling:
-  - .af is JSON with keys: agents, blocks, tools, metadata, files, etc.
-  - Secrets are nulled on export (Letta behavior)
-  - We hash .af for state_hash / evidence binding
-
-Memory learning:
-  job → Letta worker (memories + skills) → run → evaluator → validated lesson → memory/skill
-  Never blindly rewrite after every run — promote only validated lessons.
+This file is kept for backward compatibility only.
 """
 from __future__ import annotations
 
