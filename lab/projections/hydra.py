@@ -1,6 +1,7 @@
-"""HydraLabProjection — stub for real HydraDB integration.
+"""HydraLabProjection — SQLite fallback for HydraDB.
 
-Requires hydradb to be installed. Falls back to SQLite.
+When HydraDB is available, would use Cypher queries.
+Currently delegates to SQLiteLabProjection.
 """
 from __future__ import annotations
 
@@ -10,9 +11,14 @@ from lab.projections.sqlite import SQLiteLabProjection
 
 
 class HydraLabProjection:
-    """HydraDB-backed lab projection. Serious production use.
+    """Lab projection with SQLite fallback.
 
-    Falls back to SQLite if HydraDB is not available.
+    In production with HydraDB:
+    - Uses OpenCypher queries over graph
+    - Supports complex traversal (Worker → Version → Run → Artifact)
+    - Rebuildable from canonical event ledger
+
+    Currently: delegates to SQLite.
     """
 
     def __init__(self, db_path: str = "data/hydra.db", hydra_url: str = ""):
@@ -22,7 +28,6 @@ class HydraLabProjection:
 
         if hydra_url:
             try:
-                # Try connecting to HydraDB
                 import httpx
                 resp = httpx.get(f"{hydra_url}/health", timeout=5)
                 self._available = resp.status_code == 200
@@ -30,19 +35,12 @@ class HydraLabProjection:
                 self._available = False
 
     def record_worker(self, worker_id: str, data: dict) -> None:
-        if self._available:
-            # TODO: implement real HydraDB Cypher projection
-            pass
         self._fallback.record_worker(worker_id, data)
 
     def record_version(self, version_id: str, worker_id: str, data: dict) -> None:
-        if self._available:
-            pass
         self._fallback.record_version(version_id, worker_id, data)
 
     def record_run(self, run_id: str, worker_id: str, data: dict) -> None:
-        if self._available:
-            pass
         self._fallback.record_run(run_id, worker_id, data)
 
     def record_artifact(self, artifact_id: str, data: dict) -> None:

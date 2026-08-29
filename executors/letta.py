@@ -40,7 +40,7 @@ class LettaSDKExecutor:
                 if msg.type == "result":
                     break
             return ExecutionResult(ok=bool(output), output_content=output,
-                                   duration_seconds=(time.time() - t0) / 1000,
+                                   duration_seconds=(time.time() - t0),
                                    metadata={"agent_id": self.agent_id, "mode": "letta-sdk"})
         except Exception as e:
             return ExecutionResult(ok=False, error=str(e), error_code="FAIL",
