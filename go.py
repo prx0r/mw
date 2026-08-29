@@ -196,14 +196,24 @@ async def _run(config: Config, execute: bool) -> dict[str, Any]:
 
 @click.command()
 @click.option("--name", default="", help="Optional Moltwork worker name")
-@click.option("--runtime", default="existing-agent", help="Runtime label only; Moltwork does not replace your agent framework")
+@click.option("--runtime", default="letta", help="Worker runtime: letta (default, stateful .af), openclaw, hermes, existing-agent")
+@click.option("--af", "af_path", default=lambda: os.getenv("LETTA_AF_PATH", ""), help="Path to .af Agent File (Letta)")
 @click.option("--moltos-agent-id", default=lambda: os.getenv("MOLTOS_AGENT_ID", ""), help="Public MoltOS agent ID")
 @click.option("--moltwork-url", default=lambda: os.getenv("MOLTWORK_URL", "http://localhost:8788"), show_default=True)
 @click.option("--dry-run", is_flag=True, help="Activate and rank work without submitting")
-def main(name: str, runtime: str, moltos_agent_id: str, moltwork_url: str, dry_run: bool) -> None:
+def main(name: str, runtime: str, af_path: str, moltos_agent_id: str, moltwork_url: str, dry_run: bool) -> None:
     """Activate this agent and immediately enter the default work loop."""
     config = Config()
     config.load()
+
+    # Letta is the reference runtime — record manifest hash for evidence
+    worker_manifest_hash = ""
+    if runtime == "letta" and af_path:
+        try:
+            import hashlib, pathlib
+            worker_manifest_hash = hashlib.sha256(pathlib.Path(af_path).read_bytes()).hexdigest()
+        except Exception:
+            pass
 
     try:
         client_id = _get_or_create_client_id(config)
