@@ -1,90 +1,47 @@
-# WorkerKit
+# workerkit
 
-**Economic runtime for autonomous agents.**
+**The economic evidence kernel for autonomous agents.**
 
-WorkerKit wraps any agent execution in a canonical, measurable, replayable, evaluable and attestable work process.
+WorkerKit proves what happened during work. It's the thin layer between "agent did something" and "here's the receipt."
 
-## Install
+## What it does
 
-```bash
-pip install workerkit
+```
+WorkOrder → Run → events → costs → verify → gate → receipt
 ```
 
-## Usage
+11 record families. 55/55 tests. ~1,200 lines.
+
+## Quick start
 
 ```python
 from workerkit.sdk import WorkerKit, WorkOrder
 
 wk = WorkerKit()
-
-# Start a run
-run = wk.start(WorkOrder(
-    objective="Research competitor pricing",
-    reward_value="25.00",
-    reward_currency="USD",
-))
-
-# Record what happens
-run.event("model.call", {"model": "mimo", "tokens": 1000})
-run.cost("llm", 0.05)
-run.cost("api", 0.02)
-
-# Verify
-contract = {"required_outputs": ["SUBMISSION.md"], "minimum_quality": 0.6}
-vr = await wk.verify(run, contract, artifact_sha256="abc123")
-
-# Gate
-cd = wk.gate(run, "SUBMIT", vr, budget_remaining=5.0)
-if cd.decision == "ALLOW":
-    # Submit externally
-    run.event("submission.made", {"venue": "taskmarket"})
-
-# Close and get receipt
+run = wk.start(WorkOrder(objective="Research", reward_value="25.00"))
+run.event("model.call", {"model": "mimo", "tokens": 8000})
+run.cost("llm", 0.08)
+vr = await wk.verify(run, contract, "abc")
+cd = wk.gate(run, "SUBMIT", vr, 5.0)
 receipt = wk.close(run)
-print(f"Receipt: {receipt.root_hash}")
 ```
 
-## What WorkerKit owns
+## What WorkerKit IS
 
-```
-WorkOrder freezing
-Worker identity/version binding
-canonical events
-artifact commitments
-actual economic ledger
-acceptance contracts
-independent verification
-irreversible-action gates
-submission evidence
-external outcomes
-settlement evidence
-WorkReceipt generation
-learning signals
-```
+Economic runtime for autonomous agents. Thin wrapper around arbitrary frameworks.
 
-## What WorkerKit does NOT own
+## What WorkerKit is NOT
 
-Agent reasoning, planning, memory, skills, browser, MCP, coding, workflow durability.
-
-WorkerKit wraps the agent. It doesn't replace it.
-
-## Architecture
-
-```
-WORKERKIT
-├── core/        schema, events, artifacts, receipts
-├── economics/   costs, budgets, decisions
-├── verify/      contracts, gates, verifier adapters
-├── adapters/    execution, telemetry, marketplaces, payments
-└── server/      ingest, postgres, object_store
-```
+Agent framework, memory, skills, orchestration, marketplace.
 
 ## Tests
 
 ```bash
-python tests/test_invariants.py  # 15 tests, all passing
+python tests/test_invariants.py  # 55 tests, all passing
 ```
 
-## License
+## Related repos
 
-MIT
+- `mwmarket/` — marketplace layer (listings, transactions)
+- `mwgo/` — consumer product (connect agent, start earning)
+- `repute/` — oracle (market intelligence)
