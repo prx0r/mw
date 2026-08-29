@@ -1,4 +1,8 @@
-"""Append-only event ledger — events are truth, projections are derived."""
+"""Append-only event ledger — events are truth, projections are derived.
+
+Canonical event: WorkerEvent is the single serialization.
+recorded_at is part of the hash to bind timestamps cryptographically.
+"""
 from __future__ import annotations
 
 import json
@@ -26,9 +30,9 @@ class EventLedger:
                 event_type TEXT,
                 payload TEXT,
                 payload_sha256 TEXT,
+                recorded_at TEXT,
                 prev_sha256 TEXT,
-                event_sha256 TEXT,
-                recorded_at TEXT
+                event_sha256 TEXT
             )
         """)
         conn.commit()
@@ -49,14 +53,14 @@ class EventLedger:
         row = conn.execute("SELECT event_sha256 FROM events WHERE run_id=? ORDER BY seq DESC LIMIT 1", (run_id,)).fetchone()
         prev_hash = row[0] if row else ""
 
-        # Compute event hash
-        event_data = f"{event_id}:{run_id}:{event_type}:{payload_json}:{prev_hash}"
+        # Compute event hash — recorded_at is part of the canonical serialization
+        event_data = f"{event_id}:{run_id}:{event_type}:{payload_json}:{now}:{prev_hash}"
         event_hash = sha256(event_data)
 
         conn.execute("""
-            INSERT INTO events (event_id, run_id, event_type, payload, payload_sha256, prev_sha256, event_sha256, recorded_at)
+            INSERT INTO events (event_id, run_id, event_type, payload, payload_sha256, recorded_at, prev_sha256, event_sha256)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (event_id, run_id, event_type, payload_json, payload_hash, prev_hash, event_hash, now))
+        """, (event_id, run_id, event_type, payload_json, payload_hash, now, prev_hash, event_hash))
         conn.commit()
         conn.close()
         return event_id
@@ -84,12 +88,13 @@ class EventLedger:
         """Verify event chain integrity. Returns False for empty chains."""
         events = self.get_events(run_id)
         if not events:
-            return False  # Empty chain is not valid
+            return False
         prev = ""
         for e in events:
             if e["prev_sha256"] != prev:
                 return False
-            expected = sha256(f"{e['event_id']}:{e['run_id']}:{e['event_type']}:{e['payload']}:{prev}")
+            # recorded_at is now part of the canonical hash
+            expected = sha256(f"{e['event_id']}:{e['run_id']}:{e['event_type']}:{e['payload']}:{e['recorded_at']}:{prev}")
             if e["event_sha256"] != expected:
                 return False
             prev = e["event_sha256"]

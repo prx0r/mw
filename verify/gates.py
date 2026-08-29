@@ -1,8 +1,12 @@
-"""CommitGate — controls irreversible actions."""
+"""CommitGate — controls irreversible actions.
+
+Requires VerificationResult as mandatory input.
+A developer cannot accidentally bypass verification by importing CommitGate directly.
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from workerkit.core.schema import uid
+from workerkit.core.schema import uid, VerificationResult
 
 
 @dataclass
@@ -23,12 +27,24 @@ class GateResult:
 
 
 class CommitGate:
-    """Every irreversible action passes through here."""
+    """Every irreversible action passes through here.
 
-    def check(self, action: str, subject_sha256: str = "",
+    VerificationResult is mandatory — cannot be bypassed.
+    """
+
+    def check(self, action: str, vr: VerificationResult,
+              subject_sha256: str = "",
               contract: dict = None, budget_remaining: float = 0,
               max_cost: float = 5.0) -> GateResult:
         checks = []
+
+        # Verification must PASS — no exceptions
+        if vr.status == "PASS":
+            checks.append(GateCheck("verification", True, f"status={vr.status}"))
+        else:
+            checks.append(GateCheck("verification", False, f"status={vr.status}"))
+            # Fail immediately — don't check other conditions
+            return GateResult(decision="DENY", checks=checks)
 
         # Budget check
         if budget_remaining < max_cost:

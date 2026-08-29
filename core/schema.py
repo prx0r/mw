@@ -79,14 +79,21 @@ class WorkerEvent:
     payload: dict = field(default_factory=dict)
     previous_event_hash: str = ""
     self_hash: str = ""
-    def compute_hash(self) -> str:
+
+    def canonical_bytes(self) -> bytes:
+        """One canonical serialization for hashing/attestation."""
         data = {
             "id": self.id, "run_id": self.run_id, "sequence": self.sequence,
             "event_type": self.event_type, "occurred_at": self.occurred_at,
+            "recorded_at": self.recorded_at, "witness_source": self.witness_source,
             "actor_type": self.actor_type, "payload": self.payload,
             "previous_event_hash": self.previous_event_hash,
         }
-        return sha256(json.dumps(data, sort_keys=True))
+        return json.dumps(data, sort_keys=True).encode()
+
+    def compute_hash(self) -> str:
+        return sha256(self.canonical_bytes())
+
     def to_dict(self) -> dict:
         return asdict(self)
 
