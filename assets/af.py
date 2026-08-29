@@ -117,4 +117,4 @@ class AssetVersion:
         d["parent_digest"] = self.content_digest()
         d["version"] = f"v{int(self.version.lstrip('v')) + 1}"
         d["created_at"] = time.time()
-        return cls.from_dict(d)
+        return AssetVersion.from_dict(d)
