@@ -1,17 +1,50 @@
-# TEE deployment — run WorkerKit inside dstack TDX
+# TEE deployment — WorkerKit + Letta inside dstack TDX
 # Usage: docker compose -f docker-compose.tee.yml up
+# All images pinned by digest — never :latest
 services:
+  # Letta server — stateful agent brain, git-backed memory
+  letta:
+    image: ghcr.io/letta-ai/letta@sha256:REPLACE_WITH_DIGEST
+    environment:
+      - LETTA_PG_URI=${LETTA_PG_URI:-postgresql://letta:letta@postgres:5432/letta}
+    volumes:
+      - letta-data:/data
+      - ./agents:/agents  # .af files
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16@sha256:REPLACE_WITH_DIGEST
+    environment:
+      - POSTGRES_USER=letta
+      - POSTGRES_PASSWORD=letta
+      - POSTGRES_DB=letta
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U letta"]
+      interval: 5s
+
   workerkit:
-    image: moltwork/workerkit@sha256:REPLACE_WITH_DIGEST  # never :latest
+    image: moltwork/workerkit@sha256:REPLACE_WITH_DIGEST
     environment:
       - WORKERKIT_MODE=tee
+      - LETTA_SERVER_URL=http://letta:8283
+      - LETTA_AF_PATH=/agents/researcher-v12.af
       - BASE_SEPOLIA_RPC=${BASE_SEPOLIA_RPC:-https://sepolia.base.org}
       - ERC8183_CONTRACT=${ERC8183_CONTRACT:-}
     volumes:
-      - /var/run/dstack.sock:/var/run/dstack.sock  # Guest API
+      - /var/run/dstack.sock:/var/run/dstack.sock
+      - ./agents:/agents:ro
+      - ./worker-manifest.json:/app/worker-manifest.json:ro
     ports:
       - "8001:8001"  # WorkerKit API
       - "8002:8002"  # Attestation endpoint
+    depends_on:
+      letta:
+        condition: service_started
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
@@ -22,3 +55,7 @@ services:
   #   image: dstack/private-ai-gateway@sha256:REPLACE
   #   environment:
   #     - UPSTREAM=tinfoil
+
+volumes:
+  letta-data:
+  pgdata:
