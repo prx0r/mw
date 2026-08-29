@@ -23,20 +23,66 @@ def _record_obs(eid, src, metric, prev, curr):
     c.commit(); c.close()
 
 
+def _record_opp_obs(opp):
+    """Record an observation for an opportunity (append-only)."""
+    from oracle.store import conn
+    c = conn()
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ")
+    c.execute("""INSERT INTO opp_obs (opp_id, observed_at, status, reward,
+        applicant_count, submission_count, deadline, raw_digest, raw_blob_uri)
+        VALUES (?,?,?,?,?,?,?,?,?)""",
+        (opp.get("id",""), now, opp.get("status",""), opp.get("reward",0) or 0,
+         0, 0, opp.get("deadline",""), "", ""))
+    c.commit(); c.close()
+
+
+def _record_opp_event(opp, event_type, data=None):
+    """Record an event for an opportunity (append-only)."""
+    from oracle.store import conn
+    c = conn()
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ")
+    c.execute("""INSERT INTO opp_events (opp_id, event_type, event_at, data, confidence)
+        VALUES (?,?,?,?,?)""",
+        (opp.get("id",""), event_type, now, json.dumps(data or {}), "observed"))
+    c.commit(); c.close()
+
+
+def _check_opp_changed(opp):
+    """Check if opportunity has changed since last observation."""
+    from oracle.store import conn
+    c = conn()
+    row = c.execute(
+        "SELECT status, reward FROM opp_obs WHERE opp_id=? ORDER BY observed_at DESC LIMIT 1",
+        (opp.get("id",""),)).fetchone()
+    c.close()
+    if not row:
+        return True  # New opportunity
+    prev_status, prev_reward = row
+    return (opp.get("status","") != prev_status or
+            (opp.get("reward",0) or 0) != (prev_reward or 0))
+
+
 def run_once():
     print(f"[{time.strftime('%H:%M:%S')}] Ingesting...")
 
     # Work feed
     work_fns = [bountybook, github, superteam, agenthansa, rentahuman, daydreams, openserv]
     work_n = 0
+    new_obs = 0
     for fn in work_fns:
         try:
             items = fn()
             for item in items:
+                changed = _check_opp_changed(item)
                 upsert_opp(item)
                 work_n += 1
+                if changed:
+                    _record_opp_obs(item)
+                    new_obs += 1
+                    if new_obs <= 3:  # Log first few
+                        _record_opp_event(item, "observed", {"reward": item.get("reward",0), "status": item.get("status","")})
         except: pass
-    print(f"  Work: {work_n}")
+    print(f"  Work: {work_n} ({new_obs} new observations)")
 
     # Service feed
     svc_fns = [x402engine, x402list, the402, payapi, apify, smithery, openrouter, bittensor]
@@ -62,6 +108,7 @@ def run_once():
 
     s = stats()
     print(f"  Total: {s['opp']} work + {s['svc']} svc + {s['obs']} obs")
+    print(f"  Observations: {s.get('opp_obs',0)} opp_obs, {s.get('opp_events',0)} events")
 
 
 import argparse

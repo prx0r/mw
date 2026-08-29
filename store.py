@@ -87,6 +87,39 @@ def init():
             p_accept REAL, est_cost REAL, est_payout REAL, est_net REAL,
             conf_low REAL, conf_high REAL, features TEXT
         );
+
+        -- Oracle-specific tables (append-only where history matters)
+        CREATE TABLE IF NOT EXISTS opp_obs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            opp_id TEXT NOT NULL,
+            observed_at TEXT NOT NULL,
+            status TEXT,
+            reward REAL,
+            applicant_count INT,
+            submission_count INT,
+            deadline TEXT,
+            raw_digest TEXT,
+            raw_blob_uri TEXT
+        );
+        CREATE TABLE IF NOT EXISTS opp_events (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            opp_id TEXT NOT NULL,
+            event_type TEXT NOT NULL,
+            event_at TEXT NOT NULL,
+            data TEXT,
+            confidence TEXT DEFAULT 'observed'
+        );
+        CREATE TABLE IF NOT EXISTS market_snap (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            src TEXT NOT NULL,
+            snapshot_at TEXT NOT NULL,
+            metrics TEXT
+        );
+        CREATE TABLE IF NOT EXISTS sources (
+            id TEXT PRIMARY KEY, name TEXT, type TEXT,
+            url TEXT, auth TEXT, agent_native INT, last_polled TEXT, extra TEXT
+        );
+
         -- Indexes
         CREATE INDEX IF NOT EXISTS i_opp_src ON opp(src);
         CREATE INDEX IF NOT EXISTS i_opp_status ON opp(status);
@@ -94,6 +127,10 @@ def init():
         CREATE INDEX IF NOT EXISTS i_obs_entity ON obs(entity_id);
         CREATE INDEX IF NOT EXISTS i_sub_agent ON sub_run(agent_id);
         CREATE INDEX IF NOT EXISTS i_outcome_sub ON outcome(sub_id);
+        CREATE INDEX IF NOT EXISTS i_opp_obs_opp ON opp_obs(opp_id);
+        CREATE INDEX IF NOT EXISTS i_opp_obs_time ON opp_obs(observed_at);
+        CREATE INDEX IF NOT EXISTS i_opp_events_opp ON opp_events(opp_id);
+        CREATE INDEX IF NOT EXISTS i_market_snap_src ON market_snap(src);
     """)
     c.commit()
 
@@ -177,8 +214,11 @@ def q(sql: str, params: tuple = ()) -> list[dict]:
 def stats() -> dict:
     c = conn()
     s = {}
-    for t in ["opp", "svc", "sub", "obs", "sig"]:
-        s[t] = c.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
+    for t in ["opp", "svc", "sub", "obs", "sig", "opp_obs", "opp_events"]:
+        try:
+            s[t] = c.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
+        except:
+            s[t] = 0
     s["opp_usd"] = c.execute("SELECT SUM(reward) FROM opp WHERE reward>0").fetchone()[0] or 0
     s["svc_calls"] = c.execute("SELECT SUM(calls) FROM svc").fetchone()[0] or 0
     

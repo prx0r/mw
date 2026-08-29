@@ -335,3 +335,34 @@ def work_receipts(limit: int = 20):
     """WorkReceipts — what WorkerKit observed."""
     rows = q("SELECT * FROM obs WHERE metric='status' AND curr_val IN ('completed','paid') ORDER BY observed DESC LIMIT ?", (limit,))
     return {"receipts": rows, "count": len(rows)}
+
+
+@app.get("/history")
+def history(opp_id: str = "", source: str = "", limit: int = 50):
+    """Longitudinal observation history for opportunities."""
+    if opp_id:
+        rows = q("SELECT * FROM opp_obs WHERE opp_id=? ORDER BY observed_at DESC LIMIT ?", (opp_id, limit))
+        events = q("SELECT * FROM opp_events WHERE opp_id=? ORDER BY event_at DESC LIMIT ?", (opp_id, limit))
+        return {"opp_id": opp_id, "observations": rows, "events": events}
+    elif source:
+        rows = q("""SELECT o.* FROM opp_obs o 
+            JOIN opp ON o.opp_id = opp.id 
+            WHERE opp.src=? ORDER BY o.observed_at DESC LIMIT ?""", (source, limit))
+        return {"source": source, "observations": rows}
+    else:
+        rows = q("SELECT * FROM opp_obs ORDER BY observed_at DESC LIMIT ?", (limit,))
+        return {"observations": rows}
+
+
+@app.get("/market-history")
+def market_history(source: str = "", limit: int = 50):
+    """Market-level observations over time."""
+    if source:
+        rows = q("""SELECT o.opp_id, o.observed_at, o.status, o.reward, opp.src, opp.title 
+            FROM opp_obs o JOIN opp ON o.opp_id = opp.id 
+            WHERE opp.src=? ORDER BY o.observed_at DESC LIMIT ?""", (source, limit))
+    else:
+        rows = q("""SELECT o.opp_id, o.observed_at, o.status, o.reward, opp.src, opp.title 
+            FROM opp_obs o JOIN opp ON o.opp_id = opp.id 
+            ORDER BY o.observed_at DESC LIMIT ?""", (limit,))
+    return {"history": rows}
