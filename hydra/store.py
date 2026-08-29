@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS lab_runs (
     evaluation_score REAL,
     outcome TEXT,  -- won/lost/pending
     reward_usd REAL,
+    worker_version TEXT,
     created_at REAL
 );
 CREATE TABLE IF NOT EXISTS lab_memory_revisions (
@@ -52,6 +53,52 @@ CREATE TABLE IF NOT EXISTS lab_insights (
     body TEXT,
     evidence_runs INTEGER,
     confidence REAL,
+    created_at REAL
+);
+CREATE TABLE IF NOT EXISTS lab_worker_versions (
+    version_id TEXT PRIMARY KEY,
+    agent_id TEXT,
+    af_hash TEXT,
+    memfs_commit TEXT,
+    skills_root TEXT,
+    mods_root TEXT,
+    runtime_version TEXT,
+    parent_version TEXT,
+    created_at REAL
+);
+CREATE TABLE IF NOT EXISTS lab_opportunities (
+    opportunity_id TEXT PRIMARY KEY,
+    title TEXT,
+    reward_usd REAL,
+    task_family TEXT,
+    source TEXT,
+    data TEXT,
+    created_at REAL
+);
+CREATE TABLE IF NOT EXISTS lab_submissions (
+    submission_id TEXT PRIMARY KEY,
+    run_id TEXT,
+    agent_id TEXT,
+    content_hash TEXT,
+    evaluation_score REAL,
+    outcome TEXT,
+    created_at REAL
+);
+CREATE TABLE IF NOT EXISTS lab_evaluations (
+    evaluation_id TEXT PRIMARY KEY,
+    run_id TEXT,
+    submission_id TEXT,
+    score REAL,
+    gates_passed TEXT,  -- JSON
+    reviewer TEXT,
+    created_at REAL
+);
+CREATE TABLE IF NOT EXISTS lab_experiments (
+    experiment_id TEXT PRIMARY KEY,
+    hypothesis TEXT,
+    worker_version TEXT,
+    status TEXT,  -- running/completed/regressed/improved
+    data TEXT,
     created_at REAL
 );
 """
@@ -99,12 +146,12 @@ class HydraStore:
                    tools: list[str] | None = None, skills: list[str] | None = None,
                    cost_usd: float = 0, duration_s: float = 0,
                    artifact_hash: str = "", evaluation_score: float = 0,
-                   outcome: str = "pending", reward_usd: float = 0):
+                   outcome: str = "pending", reward_usd: float = 0, worker_version: str = ""):
         conn = self._conn()
         conn.execute(
-            "INSERT OR REPLACE INTO lab_runs (run_id, agent_id, opportunity_id, model, tools, skills, cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO lab_runs (run_id, agent_id, opportunity_id, model, tools, skills, cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, worker_version, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (run_id, agent_id, opportunity_id, model, json.dumps(tools or []), json.dumps(skills or []),
-             cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, time.time()),
+             cost_usd, duration_s, artifact_hash, evaluation_score, outcome, reward_usd, worker_version, time.time()),
         )
         conn.commit()
         conn.close()
@@ -137,6 +184,58 @@ class HydraStore:
         conn = self._conn()
         conn.execute("INSERT OR REPLACE INTO lab_insights VALUES (?,?,?,?,?,?)",
                      (insight_id, title, body, evidence_runs, confidence, time.time()))
+        conn.commit()
+        conn.close()
+
+    # ─── Worker versions — .af lineage ──────────────────────────────────
+
+    def record_worker_version(self, version_id: str, agent_id: str, af_hash: str = "", memfs_commit: str = "",
+                              skills_root: str = "", mods_root: str = "", runtime_version: str = "", parent_version: str = ""):
+        conn = self._conn()
+        conn.execute("INSERT OR REPLACE INTO lab_worker_versions VALUES (?,?,?,?,?,?,?,?,?)",
+                     (version_id, agent_id, af_hash, memfs_commit, skills_root, mods_root, runtime_version, parent_version, time.time()))
+        conn.commit()
+        conn.close()
+
+    def get_worker_versions(self, agent_id: str) -> list[dict]:
+        conn = self._conn()
+        rows = conn.execute("SELECT * FROM lab_worker_versions WHERE agent_id=? ORDER BY created_at", (agent_id,)).fetchall()
+        conn.close()
+        return [dict(r) for r in rows]
+
+    # ─── Opportunities ──────────────────────────────────────────────────
+
+    def record_opportunity(self, opportunity_id: str, title: str, reward_usd: float = 0, task_family: str = "", source: str = "", data: dict | None = None):
+        conn = self._conn()
+        conn.execute("INSERT OR REPLACE INTO lab_opportunities VALUES (?,?,?,?,?,?,?)",
+                     (opportunity_id, title, reward_usd, task_family, source, json.dumps(data or {}), time.time()))
+        conn.commit()
+        conn.close()
+
+    # ─── Submissions ────────────────────────────────────────────────────
+
+    def record_submission(self, submission_id: str, run_id: str, agent_id: str, content_hash: str = "", evaluation_score: float = 0, outcome: str = "pending"):
+        conn = self._conn()
+        conn.execute("INSERT OR REPLACE INTO lab_submissions VALUES (?,?,?,?,?,?,?)",
+                     (submission_id, run_id, agent_id, content_hash, evaluation_score, outcome, time.time()))
+        conn.commit()
+        conn.close()
+
+    # ─── Evaluations ────────────────────────────────────────────────────
+
+    def record_evaluation(self, evaluation_id: str, run_id: str, submission_id: str = "", score: float = 0, gates_passed: list | None = None, reviewer: str = ""):
+        conn = self._conn()
+        conn.execute("INSERT OR REPLACE INTO lab_evaluations VALUES (?,?,?,?,?,?,?)",
+                     (evaluation_id, run_id, submission_id, score, json.dumps(gates_passed or []), reviewer, time.time()))
+        conn.commit()
+        conn.close()
+
+    # ─── Experiments ────────────────────────────────────────────────────
+
+    def record_experiment(self, experiment_id: str, hypothesis: str, worker_version: str = "", status: str = "running", data: dict | None = None):
+        conn = self._conn()
+        conn.execute("INSERT OR REPLACE INTO lab_experiments VALUES (?,?,?,?,?,?)",
+                     (experiment_id, hypothesis, worker_version, status, json.dumps(data or {}), time.time()))
         conn.commit()
         conn.close()
 
