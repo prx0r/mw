@@ -4,3 +4,5 @@ data/
 *.db
 .pytest_cache/
 reference/
+.env
+.env.*.local
