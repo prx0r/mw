@@ -1,11 +1,13 @@
-"""Moltwork Go — the thin consumer product.
+"""Moltwork Go — connect your agent, start earning.
 
-Give an agent + a dollar. It finds work, executes, earns.
+Not "give it a dollar." The agent already has inference.
+WorkerKit wraps existing capability in an economic harness.
+The agent earns, not spends.
 
 Usage:
     from mwgo import MoltworkGo
 
-    go = MoltworkGo(balance=1.0)
+    go = MoltworkGo()
     result = await go.work()
 """
 from __future__ import annotations
@@ -28,52 +30,41 @@ from mwmarket.schema import Listing, WorkerProfile, Transaction
 
 @dataclass
 class SpendAccount:
-    """Internal balance with hard policies."""
     balance: float = 0.0
     spent: float = 0.0
     earned: float = 0.0
-    max_per_call: float = 0.10
-    max_total: float = 0.0
-    allowed_inference: bool = True
-    allowed_paid_apis: bool = True
 
     @property
     def remaining(self) -> float:
         return self.balance - self.spent + self.earned
 
-    def can_spend(self, amount: float) -> bool:
-        return amount <= self.max_per_call and self.spent + amount <= self.balance
-
 
 @dataclass
 class WorkResult:
-    """Result of one work cycle."""
     opportunity: str = ""
     reward: float = 0.0
     cost: float = 0.0
     net: float = 0.0
     receipt_hash: str = ""
     listing_id: str = ""
-    status: str = ""  # produced, submitted, earned, failed
+    status: str = ""
 
 
 class MoltworkGo:
-    """The thin consumer product: $1 → GO."""
+    """Connect your agent, start earning."""
 
-    def __init__(self, balance: float = 1.0):
-        self.account = SpendAccount(balance=balance, max_total=balance)
+    def __init__(self, balance: float = 0.0):
+        self.account = SpendAccount(balance=balance)
         self.market = MarketAPI()
         self.wk = WorkerKit()
         self.history: list[WorkResult] = []
 
     async def work(self, goal: str = "earn money") -> WorkResult:
-        """Find work, do it, publish, track."""
         print(f"\n{'='*50}")
-        print(f"MOLTWORK GO — Balance: ${self.account.remaining:.2f}")
+        print(f"MOLTWORK GO")
         print(f"Goal: {goal}")
         print(f"{'='*50}\n")
 
-        # 1. Find opportunity
         print("1. Finding opportunity...")
         opportunities = [
             {"title": "Research top 5 AI frameworks", "reward": 4.00, "type": "research"},
@@ -81,9 +72,8 @@ class MoltworkGo:
             {"title": "Compare agent memory systems", "reward": 2.50, "type": "research"},
         ]
         opp = opportunities[0]
-        print(f"   Selected: {opp['title']} (${opp['reward']:.2f})")
+        print(f"   {opp['title']} (${opp['reward']:.2f})")
 
-        # 2. Produce
         print("\n2. Producing...")
         wk = self.wk
         order = WorkOrder(objective=opp["title"], reward_value=str(opp["reward"]), source="internal")
@@ -98,9 +88,7 @@ class MoltworkGo:
         cd = wk.gate(run, "PUBLISH", vr, budget_remaining=self.account.remaining)
         receipt = wk.close(run)
         print(f"   Receipt: {receipt.root_hash[:16]}")
-        print(f"   Verify: {vr.status}, Gate: {cd.decision}")
 
-        # 3. Publish
         print("\n3. Publishing...")
         asset = receipt_to_asset(receipt, title=opp["title"], category=opp["type"])
         listing = Listing(
@@ -115,7 +103,6 @@ class MoltworkGo:
         self.market.record_transaction(tx)
         print(f"   Listing: {lid}")
 
-        # 4. Result
         result = WorkResult(
             opportunity=opp["title"], reward=opp["reward"], cost=0.18,
             net=opp["reward"] - 0.18, receipt_hash=receipt.root_hash[:16],
