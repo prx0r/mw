@@ -6,9 +6,9 @@ Verification must happen externally.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from protocol.canonical import sha256
-from protocol.attested_receipt import AttestedWorkReceiptV1
-from protocol.commitments import ReceiptCommitment
+from evidence.canonical import sha256
+from evidence.attested_receipt import AttestedWorkReceiptV1
+from evidence.commitments import ReceiptCommitment
 
 
 @dataclass

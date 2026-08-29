@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import time
 from dataclasses import dataclass, field
-from protocol.canonical import keccak256, canonical_json
+from evidence.canonical import keccak256, canonical_json
 
 
 @dataclass

@@ -34,7 +34,7 @@ class TEESigner:
         In production: actual secp256k1 signing inside TEE.
         Here: deterministic simulation.
         """
-        from protocol.canonical import sha256
+        from evidence.canonical import sha256
         return sha256(f"{self.public_key}:{message.hex()}")
 
     def to_dict(self) -> dict:

@@ -14,7 +14,7 @@ import hashlib
 import json
 import time
 from dataclasses import dataclass, field
-from protocol.canonical import sha256, keccak256
+from evidence.canonical import sha256, keccak256
 
 
 @dataclass

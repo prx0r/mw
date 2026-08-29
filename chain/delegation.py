@@ -10,7 +10,7 @@ MetaMask Delegation Framework (Base Sepolia):
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from protocol.policy import ExecutionPolicy
+from evidence.policy import ExecutionPolicy
 
 
 @dataclass

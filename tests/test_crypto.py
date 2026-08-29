@@ -19,7 +19,7 @@ print("=== CRYPTOGRAPHIC PROTOCOL TESTS ===\n")
 
 # ─── 1. Canonical hashing ───
 print("1. Canonical hashing")
-from protocol.canonical import sha256, keccak256, canonical_json, artifacts_root
+from evidence.canonical import sha256, keccak256, canonical_json, artifacts_root
 h = sha256("test")
 test("sha256 is 64 chars", len(h) == 64)
 k = keccak256("test")
@@ -32,7 +32,7 @@ test("artifacts_root is 64 chars", len(ar) == 64)
 
 # ─── 2. Run commitment ───
 print("\n2. Run commitment")
-from protocol.commitments import RunCommitment
+from evidence.commitments import RunCommitment
 rc = RunCommitment(run_id="run-1", work_order_id="wo-1", event_chain_head="abc123", event_count=5)
 d = rc.digest()
 test("commitment digest is 64 chars", len(d) == 64)
@@ -43,14 +43,14 @@ test("different inputs → different digest", rc.digest() != rc3.digest())
 
 # ─── 3. Receipt commitment report_data ───
 print("\n3. Receipt commitment")
-from protocol.commitments import ReceiptCommitment
+from evidence.commitments import ReceiptCommitment
 rcc = ReceiptCommitment(receipt_digest="a" * 64, challenge_hash="b" * 64)
 rd = rcc.report_data()
 test("report_data is 64 bytes", len(rd) == 64)
 
 # ─── 4. AttestedWorkReceiptV1 ───
 print("\n4. AttestedWorkReceiptV1")
-from protocol.attested_receipt import AttestedWorkReceiptV1, AgentIdentity, TEEInfo
+from evidence.attested_receipt import AttestedWorkReceiptV1, AgentIdentity, TEEInfo
 att = AttestedWorkReceiptV1()
 att.run_id = "run-1"
 att.work_order_id = "wo-1"
@@ -86,7 +86,7 @@ test("different artifact → different digest", d1 != att3.compute_receipt_diges
 
 # ─── 5. Execution policy ───
 print("\n5. Execution policy")
-from protocol.policy import ExecutionPolicy
+from evidence.policy import ExecutionPolicy
 p = ExecutionPolicy(
     allowed_tools=["web-search", "code-exec"],
     forbidden_tools=["file-delete"],
@@ -111,7 +111,7 @@ test("different policy → different digest", pd != p3.digest())
 
 # ─── 6. Evidence tiers ───
 print("\n6. Evidence tiers")
-from protocol.evidence import EvidenceTier
+from evidence.evidence import EvidenceTier
 test("SELF_REPORTED < TEE_VERIFIED", EvidenceTier.SELF_REPORTED < EvidenceTier.TEE_VERIFIED)
 test("OBSERVED < PAYMENT_VERIFIED", EvidenceTier.OBSERVED < EvidenceTier.PAYMENT_VERIFIED)
 test("TEE_VERIFIED < REEXECUTED", EvidenceTier.TEE_VERIFIED < EvidenceTier.REEXECUTED)
@@ -165,7 +165,7 @@ test("different message → different sig", sig != sig3)
 # ─── 10. TEE verifier ───
 print("\n10. TEE verifier")
 from tee.verifier import TEEVerifier
-from protocol.attested_receipt import AttestedWorkReceiptV1, TEEInfo
+from evidence.attested_receipt import AttestedWorkReceiptV1, TEEInfo
 v = TEEVerifier()
 att = AttestedWorkReceiptV1()
 att.run_id = "run-1"
@@ -190,7 +190,7 @@ print("\n11. Chain adapters")
 from chain.erc8004 import IdentityAdapter, ValidationAdapter
 from chain.erc8183 import JobAdapter, JobState
 from chain.delegation import DelegationAdapter
-from protocol.policy import ExecutionPolicy
+from evidence.policy import ExecutionPolicy
 
 ia = IdentityAdapter()
 meta = ia.registration_metadata("agent-1", "Moltwork Worker 001", "abc123")
@@ -219,7 +219,7 @@ test("delegation has policy digest", len(delegation["policyDigest"]) == 64)
 
 # ─── 12. Full chain: WorkerKit → AttestedReceipt → Verify ───
 print("\n12. Full chain integration")
-from protocol.attested_receipt import AttestedWorkReceiptV1, AgentIdentity, TEEInfo, JobRef
+from evidence.attested_receipt import AttestedWorkReceiptV1, AgentIdentity, TEEInfo, JobRef
 from tee.dstack import DstackSimulator
 from tee.keys import TEESigner
 from tee.verifier import TEEVerifier

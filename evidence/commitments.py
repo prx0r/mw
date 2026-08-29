@@ -5,7 +5,7 @@ Commitments use Keccak-256 for Ethereum compatibility.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from protocol.canonical import keccak256, canonical_json
+from evidence.canonical import keccak256, canonical_json
 
 
 @dataclass

@@ -9,8 +9,8 @@ from __future__ import annotations
 import json
 import time
 from dataclasses import dataclass, field
-from protocol.canonical import sha256, keccak256, canonical_json
-from protocol.commitments import RunCommitment
+from evidence.canonical import sha256, keccak256, canonical_json
+from evidence.commitments import RunCommitment
 
 
 @dataclass
