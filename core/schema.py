@@ -219,23 +219,4 @@ class WorkerRun:
         return asdict(self)
 
 
-# ─── 10. WorkReceipt ───────────────────────────────────────────────────
-
-@dataclass
-class WorkReceipt:
-    id: str = field(default_factory=uid)
-    run_id: str = ""
-    root_hash: str = ""
-    events_hash: str = ""
-    created_at: float = field(default_factory=time.time)
-    def to_attestation(self) -> dict:
-        return {
-            "_type": "https://in-toto.io/Statement/v1",
-            "subject": [{"name": "worker-run", "digest": {"sha256": self.root_hash}}],
-            "predicateType": "https://moltwork.com/attestation/worker-run/v1",
-            "predicate": {"runId": self.run_id, "eventsHash": self.events_hash, "rootHash": self.root_hash},
-        }
-    def save(self, path: Path):
-        path.mkdir(parents=True, exist_ok=True)
-        (path / "receipt.json").write_text(json.dumps(self.to_attestation(), indent=2))
-        (path / "root_hash.txt").write_text(self.root_hash)
+# WorkReceipt is defined in receipts.py (canonical, with logic)

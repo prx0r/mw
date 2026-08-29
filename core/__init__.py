@@ -2,6 +2,7 @@
 from workerkit.core.schema import (
     WorkOrder, WorkerManifest, WorkerEvent, ArtifactRef, CostEvent,
     VerificationResult, CommitDecision, SubmissionReceipt, OutcomeReceipt,
-    SettlementReceipt, WorkReceipt, uid, sha256,
+    SettlementReceipt, uid, sha256,
 )
+from workerkit.core.receipts import WorkReceipt
 from workerkit.core.events import EventLedger
