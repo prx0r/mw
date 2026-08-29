@@ -169,3 +169,43 @@ class Lease:
             spend_used=d.get("spend_used", 0),
             revoked=d.get("revoked", False),
         )
+
+
+class LeaseManager:
+    """Manage CapabilityLeases."""
+
+    def __init__(self):
+        self.leases: dict[str, Lease] = {}
+        self.invocations: dict[str, dict] = {}
+
+    def create_lease(self, worker_id: str, owner_id: str, lessee_id: str,
+                     max_calls: int = 3, max_spend: float = 1.0,
+                     duration_hours: float = 1.0) -> Lease:
+        lease = Lease(
+            lease_id=f"lease-{len(self.leases)}",
+            asset_version_digest=worker_id,
+            lessor=owner_id,
+            lessee=lessee_id,
+            valid_until=time.time() + duration_hours * 3600,
+        )
+        lease.limits.max_invocations = max_calls
+        lease.limits.max_spend_usd = max_spend
+        self.leases[lease.lease_id] = lease
+        return lease
+
+    def invoke(self, lease_id: str, lessee_id: str,
+               artifact_hash: str = "", cost_usd: float = 0.0) -> dict | None:
+        lease = self.leases.get(lease_id)
+        if not lease or not lease.can_invoke():
+            return None
+        if lease.lessee != lessee_id:
+            return None
+        if not lease.record_invocation(cost_usd):
+            return None
+        inv = {"lease_id": lease_id, "lessee_id": lessee_id,
+               "artifact_hash": artifact_hash, "cost_usd": cost_usd}
+        self.invocations[f"inv-{len(self.invocations)}"] = inv
+        return inv
+
+    def get_lease(self, lease_id: str) -> Lease | None:
+        return self.leases.get(lease_id)

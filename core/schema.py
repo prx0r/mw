@@ -11,10 +11,7 @@ import time
 import uuid
 from dataclasses import dataclass, field, asdict
 from typing import Any
-try:
-    from core.taxonomy import Taxonomy, TAXONOMY_VERSION
-except ImportError:
-    from core.taxonomy import Taxonomy, TAXONOMY_VERSION
+from core.taxonomy import Taxonomy, TAXONOMY_VERSION
 
 
 def uid() -> str:

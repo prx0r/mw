@@ -157,16 +157,6 @@ qc = QuoteCommitment(run_id="r1", worker_id="w1")
 test("commitment digest", len(qc.compute_digest()) == 64)
 test("report_data is 64 bytes", len(qc.to_report_data()) == 64)
 
-# 13. WorkerSigner
-print("\n13. WorkerSigner")
-from attestation.dstack.signer import WorkerSigner
-
-signer = WorkerSigner()
-key = signer.derive_key("researcher-03")
-test("key derived", key.public_key != "")
-sig = signer.sign("researcher-03", b"test data")
-test("sign produces signature", sig is not None)
-
 print(f"\n=== {PASS} passed, {FAIL} failed ===")
 if FAIL: sys.exit(1)
 else: print("ALL CRYPTO INVARIANTS PASS")

@@ -5,16 +5,12 @@ Hashes: agent_file_hash, memfs_commit, skills_root, mods_root, runtime_version
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
-
-def sha256(data: str | bytes) -> str:
-    if isinstance(data, str): data = data.encode()
-    return hashlib.sha256(data).hexdigest()
+from core.hashing import sha256
 
 
 def dir_hash(path: Path) -> str:

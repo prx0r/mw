@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import json
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 
 
 @dataclass
@@ -68,4 +68,3 @@ class AssetGraph:
             self.nodes = data.get("nodes", {})
             self.edges = [Dependency(**e) for e in data.get("edges", [])]
 
-from dataclasses import asdict

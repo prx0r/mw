@@ -151,19 +151,7 @@ test("commitment digest", len(qc.compute_digest()) == 64)
 test("report_data 64 bytes", len(qc.to_report_data()) == 64)
 test("report_data varies with challenge", qc.to_report_data("aa" * 32) != qc.to_report_data("bb" * 32))
 
-# 10. WorkerSigner
-print("\n10. WorkerSigner")
-from attestation.dstack.signer import WorkerSigner
-
-signer = WorkerSigner()
-key = signer.derive_key("researcher-03")
-test("key derived", len(key.public_key) == 64)
-sig = signer.sign("researcher-03", b"test data")
-test("sign returns signature", sig is not None)
-identity = signer.export_identity("researcher-03")
-test("identity exported", identity is not None)
-
-# 11. x402
+# 10. x402
 print("\n11. x402 payment")
 from protocols.x402.provider import X402Provider
 

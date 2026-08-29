@@ -172,7 +172,7 @@ async def run_test():
 
     # ─── P6: Bounded lease ────────────────────────────────────────────
     print("\nP6: Bounded lease")
-    from workerkit.marketplace.lease import LeaseManager
+    from workerkit.leasing.lease import LeaseManager
 
     lease_mgr = LeaseManager()
     lease = lease_mgr.create_lease(
@@ -189,9 +189,9 @@ async def run_test():
 
     inv = lease_mgr.invoke(lease.lease_id, "bob", artifact_hash="abc", cost_usd=0.15)
     test("invocation recorded", inv is not None)
-    test("lease decremented", lease.calls_used == 1)
-    test("bob got artifact, not private state", inv.artifact_hash == "abc")
-    print(f"    Lease: {lease.lease_id}, calls: {lease.calls_used}/{lease.max_calls}")
+    test("lease decremented", lease.invocations_used == 1)
+    test("bob got artifact, not private state", inv["artifact_hash"] == "abc")
+    print(f"    Lease: {lease.lease_id}, calls: {lease.invocations_used}/{lease.limits.max_invocations}")
 
     # ─── P7: Portable identity ────────────────────────────────────────
     print("\nP7: Portable identity")
