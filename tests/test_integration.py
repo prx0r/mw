@@ -135,7 +135,7 @@ async def run_test():
         print("\n7. Evaluate worker on validation fixtures")
         from workerkit.cg.evolve import DeterministicMockEvaluator, WorldPack
 
-        pack = WorldPack.from_dir("/root/workerkit/data/packs/api-research", name="api-research")
+        pack = WorldPack.from_dir("/root/workerkit/data/packs/competitive-ideation", name="api-research")
         evaluator = DeterministicMockEvaluator(pack.evaluator_src)
 
         worker_v1 = {"id": "researcher-v1", "objective": "api-research", "model": "mimo-v2.5"}
