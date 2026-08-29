@@ -18,15 +18,26 @@ from __future__ import annotations
 import asyncio
 from decimal import Decimal
 from pathlib import Path
-from workerkit.core.schema import (
-    WorkOrder, WorkerRun, WorkerEvent,
-    ArtifactRef, CostEvent, VerificationResult, CommitDecision, uid, sha256,
-)
-from workerkit.core.events import EventLedger
-from workerkit.core.receipts import WorkReceipt
-from workerkit.verify.contracts import AcceptanceContract
-from workerkit.verify.gates import CommitGate
-from workerkit.economics.costs import CostModel, RunMeter
+try:
+    from workerkit.core.schema import (
+        WorkOrder, WorkerRun, WorkerEvent,
+        ArtifactRef, CostEvent, VerificationResult, CommitDecision, uid, sha256,
+    )
+    from workerkit.core.events import EventLedger
+    from workerkit.core.receipts import WorkReceipt
+    from workerkit.verify.contracts import AcceptanceContract
+    from workerkit.verify.gates import CommitGate
+    from workerkit.economics.costs import CostModel, RunMeter
+except ImportError:
+    from core.schema import (
+        WorkOrder, WorkerRun, WorkerEvent,
+        ArtifactRef, CostEvent, VerificationResult, CommitDecision, uid, sha256,
+    )
+    from core.events import EventLedger
+    from core.receipts import WorkReceipt
+    from verify.contracts import AcceptanceContract
+    from verify.gates import CommitGate
+    from economics.costs import CostModel, RunMeter
 
 
 class Run:
