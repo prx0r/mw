@@ -17,7 +17,6 @@ class WorkReceipt:
     def _compute_root(self, run, events_hash: str) -> str:
         parts = [
             run.work_order_id,
-            run.worker_id,
             events_hash,
             run.known_cost_usd,
             str(run.status),

@@ -45,8 +45,8 @@ class EventLedger:
         payload_json = json.dumps(payload, sort_keys=True)
         payload_hash = sha256(payload_json)
 
-        # Get previous hash for chaining
-        row = conn.execute("SELECT event_sha256 FROM events ORDER BY seq DESC LIMIT 1").fetchone()
+        # Get previous hash for this run only
+        row = conn.execute("SELECT event_sha256 FROM events WHERE run_id=? ORDER BY seq DESC LIMIT 1", (run_id,)).fetchone()
         prev_hash = row[0] if row else ""
 
         # Compute event hash

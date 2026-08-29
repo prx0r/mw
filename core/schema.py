@@ -197,6 +197,27 @@ class SettlementReceipt:
         return asdict(self)
 
 
+# ─── 11. WorkerRun (projection over events) ─────────────────────────────
+
+@dataclass
+class WorkerRun:
+    """Execution record — projection over events. Not canonical truth."""
+    id: str = field(default_factory=uid)
+    work_order_id: str = ""
+    status: str = "RUNNING"
+    started_at: float = field(default_factory=time.time)
+    finished_at: float = 0.0
+    known_cost_usd: str = "0"
+    unpriced_events: int = 0
+    outputs: list[str] = field(default_factory=list)
+    verification_refs: list[str] = field(default_factory=list)
+    submission_ref: str = ""
+    outcome_ref: str = ""
+    settlement_ref: str = ""
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
 # ─── 10. WorkReceipt ───────────────────────────────────────────────────
 
 @dataclass

@@ -16,8 +16,8 @@ from __future__ import annotations
 import asyncio
 from pathlib import Path
 from workerkit.core.schema import (
-    WorkOrder, AcceptanceContract, WorkerRun, WorkerEvent,
-    CostEvent, VerificationResult, CommitDecision, uid,
+    WorkOrder, WorkerRun, WorkerEvent,
+    ArtifactRef, CostEvent, VerificationResult, CommitDecision, uid,
 )
 from workerkit.core.events import EventLedger
 from workerkit.core.receipts import WorkReceipt
