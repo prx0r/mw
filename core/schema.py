@@ -25,7 +25,74 @@ def sha256(data: str | bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-# ─── 1. WorkOrder ──────────────────────────────────────────────────────
+# ─── 0. Opportunity (Oracle finds this) ────────────────────────────────
+
+@dataclass
+class Opportunity:
+    id: str = field(default_factory=uid)
+    source: str = ""           # oracle, manual, api
+    title: str = ""
+    description: str = ""
+    reward_value: float = 0.0
+    reward_currency: str = "USD"
+    deadline: str = ""
+    url: str = ""
+    sponsor: str = ""
+    requirements: list[str] = field(default_factory=list)
+    taxonomy: dict = field(default_factory=dict)
+    raw: dict = field(default_factory=dict)
+    status: str = "open"       # open, closed, expired
+    created_at: float = field(default_factory=time.time)
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+# ─── 0b. Campaign (multi-session work around an opportunity) ───────────
+
+@dataclass
+class Campaign:
+    id: str = field(default_factory=uid)
+    opportunity_id: str = ""
+    worker_id: str = ""
+    status: str = "created"    # created → researching → building → grading → submitted → outcome
+    world_version: str = ""
+    assessor_version: str = ""
+    git_commit: str = ""
+    artifact_digest: str = ""
+    cost_usd: float = 0.0
+    runs: list = field(default_factory=list)
+    evaluations: list = field(default_factory=list)
+    outcome: dict = field(default_factory=dict)
+    created_at: float = field(default_factory=time.time)
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+# ─── 0c. OpportunityReview (worker's judgment on an opportunity) ──────
+
+@dataclass
+class OpportunityReview:
+    id: str = field(default_factory=uid)
+    opportunity_id: str = ""
+    worker_id: str = ""
+    worker_version: str = ""
+    disposition: str = ""      # DO | INVESTIGATE | WATCH | SKIP
+    fit_score: float = 0.0
+    estimated_success: float = 0.0
+    estimated_cost_usd: float = 0.0
+    estimated_value_usd: float = 0.0
+    reasons: list[str] = field(default_factory=list)
+    risks: list[str] = field(default_factory=list)
+    missing_capabilities: list[str] = field(default_factory=list)
+    revisit_after: str = ""
+    invalidation_triggers: list[str] = field(default_factory=list)
+    scratch_ref: str = ""
+    created_at: float = field(default_factory=time.time)
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+# ─── 1. WorkOrder (single atomic task) ────────────────────────────────
 
 @dataclass
 class WorkOrder:
