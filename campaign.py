@@ -67,6 +67,9 @@ class Campaign:
         data.setdefault("runs", [])
         data.setdefault("evaluations", [])
         data.setdefault("outcome", None)
+        # ignore unknown fields
+        known = {f.name for f in cls.__dataclass_fields__.values()}
+        data = {k: v for k, v in data.items() if k in known}
         return cls(**data)
 
 
