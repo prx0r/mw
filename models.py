@@ -82,7 +82,7 @@ class Capability:
 
 @dataclass
 class Opportunity:
-    """A work opportunity."""
+    """A work opportunity — canonical from Oracle through entire pipeline."""
     id: str = ""
     source_id: str = ""
     market_id: str = ""
@@ -98,7 +98,25 @@ class Opportunity:
     deadline_at: str = ""
     closed_at: str = ""
     competition_count: int = 0
-    human_level: str = "H0"
+
+    # Taxonomy (carried from Oracle through entire pipeline)
+    task_family: str = ""           # e.g. "competition.technical_submission"
+    capabilities: list[str] = field(default_factory=list)
+    economic_surface: str = ""      # bounty, service, api, subnet
+    evaluation_modes: list[str] = field(default_factory=list)
+    human_level: str = "H0"         # H0-H4 autonomy axis
+
+    # Execution analysis (from Pack research)
+    execution_steps: list[dict] = field(default_factory=list)
+    human_dependencies: list[dict] = field(default_factory=list)
+    eligibility: dict = field(default_factory=dict)
+    venue_policy: dict = field(default_factory=dict)
+
+    # Evidence
+    source_evidence: list[dict] = field(default_factory=list)
+    market_signals: dict = field(default_factory=dict)
+    requirements: list[str] = field(default_factory=list)
+
     capital_required_usd: float = 0
     raw_latest: dict = field(default_factory=dict)
     first_seen_at: str = ""
@@ -108,7 +126,6 @@ class Opportunity:
     def to_dict(self): return asdict(self)
 
 
-@dataclass
 class Service:
     """A tool/API/capability for sale."""
     id: str = ""
@@ -254,3 +271,76 @@ HUMAN_LEVELS = {
     "H3": "Human contributes materially to deliverable",
     "H4": "Fundamentally human-only",
 }
+
+
+# === Execution Step (from Pack research) ===
+
+@dataclass
+class ExecutionStep:
+    """One step in an opportunity's execution plan."""
+    stage: str = ""         # discover, qualify, enter, work, submit, evaluate, settle, outcome
+    action: str = ""
+    actor: str = ""         # agent, human, hybrid
+    interface: str = ""     # api, mcp, webmcp, browser, human_queue, cli
+    credential_ref: str = ""
+    human_dependency: str = None
+    recurrence: str = ""    # once, per_run, per_account
+    estimated_seconds: float = 0
+    estimated_cost_usd: float = 0
+
+    def to_dict(self): return asdict(self)
+
+
+# === Human Dependency (structured, normalized IDs) ===
+
+@dataclass
+class HumanDependency:
+    """A specific human-required step, with resolution options."""
+    id: str = ""            # human.account_create, human.oauth_consent, etc.
+    stage: str = ""
+    recurrence: str = ""    # once, per_account, per_run
+    mandatory: bool = True
+    delegatable: bool = False
+    estimated_minutes: float = 0
+    resolution_options: list[dict] = field(default_factory=list)
+
+    def to_dict(self): return asdict(self)
+
+
+# === Credential Reference (never store secrets, only refs) ===
+
+@dataclass
+class CredentialRef:
+    """Reference to a credential managed by Arcade/Composio/Infisical."""
+    provider: str = ""      # arcade, composio, infisical, manual
+    ref: str = ""           # stable name like "roblox-main"
+    scopes: list[str] = field(default_factory=list)
+    auth_type: str = ""     # oauth, api_key, bearer
+    human_initial_auth: bool = False
+
+    def to_dict(self): return asdict(self)
+
+
+# === Canonical shared types (Oracle ↔ WorkerKit bridge) ===
+
+# These are the ONLY types that cross the Oracle/WorkerKit boundary.
+# WorkerKit owns execution records; Oracle owns market intelligence.
+
+# Oracle -> WorkerKit:
+#   Opportunity (with taxonomy, execution_steps, requirements)
+#   CredentialRef
+#
+# WorkerKit -> Oracle:
+#   WorkReceiptRef (receipt digest, cost, outcome)
+#   CapabilityEvidence (what the worker can do)
+
+# Human dependency resolution ladder:
+# 1. Official API
+# 2. Official OpenAPI
+# 3. Official MCP
+# 4. Official WebMCP
+# 5. Existing approved integration
+# 6. Zapier MCP
+# 7. Community MCP
+# 8. Compliant browser automation
+# 9. Human Queue (RentAHuman)
