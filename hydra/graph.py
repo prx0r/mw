@@ -37,13 +37,11 @@ class GraphStore:
         conn.execute("""
             CREATE TABLE IF NOT EXISTS hydra_edges (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                src TEXT NOT NULL,
-                dst TEXT NOT NULL,
-                label TEXT NOT NULL,
+                source_id TEXT NOT NULL,
+                target_id TEXT NOT NULL,
+                type TEXT NOT NULL,
                 properties TEXT DEFAULT '{}',
-                created_at REAL DEFAULT (strftime('%s','now')),
-                FOREIGN KEY (src) REFERENCES hydra_nodes(id),
-                FOREIGN KEY (dst) REFERENCES hydra_nodes(id)
+                created_at REAL DEFAULT (strftime('%s','now'))
             )
         """)
         conn.commit()
@@ -64,7 +62,7 @@ class GraphStore:
         props = properties or {}
         conn = sqlite3.connect(self.db_path)
         conn.execute(
-            "INSERT INTO hydra_edges(src, dst, label, properties) VALUES(?,?,?,?)",
+            "INSERT INTO hydra_edges(source_id, target_id, type, properties) VALUES(?,?,?,?)",
             (src, dst, label, json.dumps(props, default=str)),
         )
         conn.commit()
@@ -96,10 +94,10 @@ class GraphStore:
         conn.row_factory = sqlite3.Row
         if edge_label:
             rows = conn.execute(
-                "SELECT * FROM hydra_edges WHERE src=? AND label=?", (node_id, edge_label)
+                "SELECT * FROM hydra_edges WHERE source_id=? AND type=?", (node_id, edge_label)
             ).fetchall()
         else:
-            rows = conn.execute("SELECT * FROM hydra_edges WHERE src=?", (node_id,)).fetchall()
+            rows = conn.execute("SELECT * FROM hydra_edges WHERE source_id=?", (node_id,)).fetchall()
         conn.close()
         return [dict(r) for r in rows]
 
@@ -108,10 +106,10 @@ class GraphStore:
         conn.row_factory = sqlite3.Row
         if edge_label:
             rows = conn.execute(
-                "SELECT * FROM hydra_edges WHERE dst=? AND label=?", (node_id, edge_label)
+                "SELECT * FROM hydra_edges WHERE target_id=? AND type=?", (node_id, edge_label)
             ).fetchall()
         else:
-            rows = conn.execute("SELECT * FROM hydra_edges WHERE dst=?", (node_id,)).fetchall()
+            rows = conn.execute("SELECT * FROM hydra_edges WHERE target_id=?", (node_id,)).fetchall()
         conn.close()
         return [dict(r) for r in rows]
 
