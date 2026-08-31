@@ -129,6 +129,7 @@ app.post("/workers", async (c) => {
       memory,
       memfs: true,
       name: body.worker_id,
+      reasoningEffort: "none",  // disable reasoning overhead
     });
 
     const mapping: WorkerMapping = {
@@ -188,12 +189,15 @@ app.post("/workers/:id/run", async (c) => {
 
   try {
     // Create a NEW session for this run
+    // stateless: true skips MemFS sync, skills, mods, transcript writes
     session = await client.createSession(mapping.letta_agent_id, {
       cwd,
       allowedTools: body.allowedTools || [
         "Read", "Write", "Edit", "LS", "Glob", "Grep", "Bash",
       ],
       permissionMode: "unrestricted",
+      stateless: true,  // skip memory for single-shot tasks
+      maxSteps: 2,      // force minimal steps
     });
 
     console.log(`[${workerId}] SESSION session=${(session as any).sessionId} cwd=${cwd}`);
