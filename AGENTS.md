@@ -115,11 +115,14 @@ kill PID
 
 1. **Fail fast** — if something doesn't work in 3 attempts, stop and report
 2. **Background tasks** — always `setsid nohup CMD > /tmp/log 2>&1 &`
-3. **Kill by PID** — find PID first, then `kill PID`. NEVER `pkill`.
+3. **Kill by PID** — `ps -eo pid,etime,cmd | grep <name>` then `kill <PID>`. NEVER `pkill`.
 4. **No long timeouts** — max 30s for any single command unless explicitly told otherwise
 5. **Log everything** — write to `/root/workerkit/data/logs/`
 6. **Test before claiming** — run the code, don't assume it works
 7. **mimo-v2.5 only** — NEVER use kimi, gpt-5.x, or expensive models. Groq gpt-oss for fallback testing only.
+8. **Monitor RAM** — run `free -h | head -2` before heavy jobs. If available < 400MiB, STOP heavy work. Kill by PID to free RAM.
+9. **Checkpoints before complexity** — wire foundations first, test, then add features. Never build complex systems on unwired foundations.
+10. **Testing runs in background** — always `setsid nohup python3 tests/... > /tmp/test.log 2>&1 &` while building.
 
 ## Module Cleanup
 

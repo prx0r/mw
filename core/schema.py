@@ -39,6 +39,17 @@ class Opportunity:
     url: str = ""
     sponsor: str = ""
     requirements: list[str] = field(default_factory=list)
+    task_family: str = ""
+    capabilities: list[str] = field(default_factory=list)
+    economic_surface: str = ""
+    evaluation_modes: list[str] = field(default_factory=list)
+    human_level: str = "H0"
+    execution_steps: list[dict] = field(default_factory=list)
+    human_dependencies: list[dict] = field(default_factory=list)
+    eligibility: dict = field(default_factory=dict)
+    venue_policy: dict = field(default_factory=dict)
+    source_evidence: list[dict] = field(default_factory=list)
+    market_signals: dict = field(default_factory=dict)
     taxonomy: dict = field(default_factory=dict)
     raw: dict = field(default_factory=dict)
     status: str = "open"       # open, closed, expired
