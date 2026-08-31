@@ -1,23 +1,20 @@
-"""Oracle data models — 12 core entities + relationships.
+"""Oracle data models — canonical types for market intelligence.
 
-From backendbuild.md:
-1. Source
-2. Market
-3. Actor
-4. Capability
-5. Opportunity
-6. Service
-7. IncentiveMarket
-8. Observation
-9. Submission
-10. Outcome
-11. Payment
-12. Prediction
+Oracle owns: opportunities, packs, venues, market intelligence
+WorkerKit owns: execution records, receipts, capabilities, costs
+
+Shared types imported from workerkit.ontology (the ONLY bridge).
 """
 from __future__ import annotations
 
 from dataclasses import dataclass, field, asdict
 from typing import Any
+
+# Import shared ontology from WorkerKit
+import sys
+sys.path.insert(0, "/root")
+sys.path.insert(0, "/root/workerkit")
+from ontology import ExecutionStep, HumanDependency, CredentialRef, HUMAN_LEVELS, STAGES, RESOLUTION_LADDER
 
 
 # === 12 Core Entities ===
@@ -273,68 +270,10 @@ HUMAN_LEVELS = {
 }
 
 
-# === Execution Step (from Pack research) ===
+# ExecutionStep, HumanDependency, CredentialRef are imported from ontology.py
+# Use: from oracle.models import ExecutionStep, HumanDependency, CredentialRef
 
-@dataclass
-class ExecutionStep:
-    """One step in an opportunity's execution plan."""
-    stage: str = ""         # discover, qualify, enter, work, submit, evaluate, settle, outcome
-    action: str = ""
-    actor: str = ""         # agent, human, hybrid
-    interface: str = ""     # api, mcp, webmcp, browser, human_queue, cli
-    credential_ref: str = ""
-    human_dependency: str = None
-    recurrence: str = ""    # once, per_run, per_account
-    estimated_seconds: float = 0
-    estimated_cost_usd: float = 0
-
-    def to_dict(self): return asdict(self)
-
-
-# === Human Dependency (structured, normalized IDs) ===
-
-@dataclass
-class HumanDependency:
-    """A specific human-required step, with resolution options."""
-    id: str = ""            # human.account_create, human.oauth_consent, etc.
-    stage: str = ""
-    recurrence: str = ""    # once, per_account, per_run
-    mandatory: bool = True
-    delegatable: bool = False
-    estimated_minutes: float = 0
-    resolution_options: list[dict] = field(default_factory=list)
-
-    def to_dict(self): return asdict(self)
-
-
-# === Credential Reference (never store secrets, only refs) ===
-
-@dataclass
-class CredentialRef:
-    """Reference to a credential managed by Arcade/Composio/Infisical."""
-    provider: str = ""      # arcade, composio, infisical, manual
-    ref: str = ""           # stable name like "roblox-main"
-    scopes: list[str] = field(default_factory=list)
-    auth_type: str = ""     # oauth, api_key, bearer
-    human_initial_auth: bool = False
-
-    def to_dict(self): return asdict(self)
-
-
-# === Canonical shared types (Oracle ↔ WorkerKit bridge) ===
-
-# These are the ONLY types that cross the Oracle/WorkerKit boundary.
-# WorkerKit owns execution records; Oracle owns market intelligence.
-
-# Oracle -> WorkerKit:
-#   Opportunity (with taxonomy, execution_steps, requirements)
-#   CredentialRef
-#
-# WorkerKit -> Oracle:
-#   WorkReceiptRef (receipt digest, cost, outcome)
-#   CapabilityEvidence (what the worker can do)
-
-# Human dependency resolution ladder:
+# Human dependency resolution ladder (canonical):
 # 1. Official API
 # 2. Official OpenAPI
 # 3. Official MCP
