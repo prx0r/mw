@@ -1,119 +1,139 @@
-"""ComputeBroker — route tasks to cheapest capable model.
+"""InferenceBroker — route tasks to cheapest capable model.
 
-Escalation ladder:
-  FREE → evaluator pass? → done
-                       → CHEAP → evaluator pass? → done
-                                              → STRONG → done
+Three policies:
+  strong_only: always use best model
+  free_first: try free, escalate on failure
+  bats: budget-aware routing
 """
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass
 from typing import Any
 
-from .registry import ProviderRegistry
-from .treasury import InferenceTreasury
-from .bats import BATS, BudgetState
+from .wallet import ComputeWallet
+from .bats import BudgetState
 
 
 @dataclass
 class RouteDecision:
     model: str = ""
     provider: str = ""
+    policy: str = ""
     reason: str = ""
     estimated_cost_usd: float = 0.0
+    shadow_cost_usd: float = 0.0
     estimated_quality: float = 0.0
-    escalation_level: str = ""  # free, cheap, strong
+    escalation_level: str = ""
 
 
-class ComputeBroker:
+class InferenceBroker:
     """Route tasks to cheapest capable model."""
 
-    def __init__(self, registry: ProviderRegistry, treasury: InferenceTreasury):
-        self.registry = registry
-        self.treasury = treasury
-        self.bats = BATS(registry)
+    def __init__(self, wallet: ComputeWallet):
+        self.wallet = wallet
+        self._free_models = [
+            {"model": "opencode-go/mimo-v2.5", "provider": "opencode-go", "quality": 0.7},
+        ]
+        self._cheap_models = [
+            {"model": "groq/llama-3.1-8b-instant", "provider": "groq", "quality": 0.8},
+            {"model": "groq/llama-3.3-70b-versatile", "provider": "groq", "quality": 0.85},
+        ]
+        self._strong_models = [
+            {"model": "anthropic/claude-3.5-sonnet", "provider": "anthropic", "quality": 0.95},
+        ]
 
-    def route(self, task_type: str, quality_floor: float, budget: BudgetState,
-              uncertainty: float = 0.5) -> RouteDecision:
-        """Route a task to the appropriate model."""
+    def route(self, task_type: str, quality_floor: float,
+              policy: str = "free_first", budget: BudgetState = None) -> RouteDecision:
+        """Route based on policy."""
 
-        # Try free first
-        free_model = self.registry.cheapest_model(task_type)
-        free_pricing = self.registry.get_pricing(free_model)
+        if policy == "strong_only":
+            return self._route_strong(quality_floor)
+        elif policy == "free_first":
+            return self._route_free_first(task_type, quality_floor)
+        elif policy == "bats":
+            return self._route_bats(task_type, quality_floor, budget)
+        else:
+            return self._route_free_first(task_type, quality_floor)
 
-        if free_pricing.get("free", False):
+    def _route_strong(self, quality_floor: float) -> RouteDecision:
+        for m in self._strong_models:
+            if m["quality"] >= quality_floor:
+                cost = 0.04  # approximate
+                return RouteDecision(
+                    model=m["model"], provider=m["provider"],
+                    policy="strong_only", reason="always_strong",
+                    estimated_cost_usd=cost, estimated_quality=m["quality"],
+                    escalation_level="strong",
+                )
+        return RouteDecision(model="opencode-go/mimo-v2.5", policy="strong_only",
+                           reason="fallback", escalation_level="free")
+
+    def _route_free_first(self, task_type: str, quality_floor: float) -> RouteDecision:
+        # Check if free model meets quality floor
+        for m in self._free_models:
+            if m["quality"] >= quality_floor:
+                # Check quota
+                q = self.wallet.quotas.get(m["provider"])
+                if q and q.remaining > 0:
+                    shadow = self.wallet.consume_quota(m["provider"], 1)
+                    return RouteDecision(
+                        model=m["model"], provider=m["provider"],
+                        policy="free_first", reason="free_meets_quality",
+                        shadow_cost_usd=shadow, estimated_quality=m["quality"],
+                        escalation_level="free",
+                    )
+
+        # Escalate to cheap
+        for m in self._cheap_models:
+            if m["quality"] >= quality_floor:
+                return RouteDecision(
+                    model=m["model"], provider=m["provider"],
+                    policy="free_first", reason="escalated_cheap",
+                    estimated_cost_usd=0.001, estimated_quality=m["quality"],
+                    escalation_level="cheap",
+                )
+
+        # Escalate to strong
+        for m in self._strong_models:
             return RouteDecision(
-                model=free_model,
-                provider=free_pricing.get("provider", ""),
-                reason="free_available",
-                estimated_cost_usd=0.0,
-                estimated_quality=0.7,  # assume reasonable quality
+                model=m["model"], provider=m["provider"],
+                policy="free_first", reason="escalated_strong",
+                estimated_cost_usd=0.04, estimated_quality=m["quality"],
+                escalation_level="strong",
+            )
+
+        return RouteDecision(model="opencode-go/mimo-v2.5", policy="free_first",
+                           reason="fallback", escalation_level="free")
+
+    def _route_bats(self, task_type: str, quality_floor: float,
+                    budget: BudgetState = None) -> RouteDecision:
+        """BATS routing: consider uncertainty + budget + quotas."""
+        if budget and not budget.can_afford(0.001):
+            # Budget tight — use free
+            m = self._free_models[0]
+            shadow = self.wallet.consume_quota(m["provider"], 1)
+            return RouteDecision(
+                model=m["model"], provider=m["provider"],
+                policy="bats", reason="budget_tight_free",
+                shadow_cost_usd=shadow, estimated_quality=m["quality"],
                 escalation_level="free",
             )
 
-        # Try cheap
-        cheap_decision = self.bats.select_model(task_type, budget, uncertainty)
-        cheap_cost = cheap_decision.get("estimated_cost", 0.0)
+        # Default: free first
+        return self._route_free_first(task_type, quality_floor)
 
-        if cheap_cost < 0.005 and budget.can_afford(cheap_cost):
-            return RouteDecision(
-                model=cheap_decision["model"],
-                provider=cheap_decision["model"].split("/")[0],
-                reason=cheap_decision["reason"],
-                estimated_cost_usd=cheap_cost,
-                estimated_quality=0.8,
-                escalation_level="cheap",
-            )
-
-        # Use strong model
-        strong_models = ["anthropic/claude-3.5-sonnet", "openai/gpt-4o-mini"]
-        for model in strong_models:
-            cost = self.registry.estimate_cost(model, 1000, 500)
-            if budget.can_afford(cost):
-                return RouteDecision(
-                    model=model,
-                    provider=model.split("/")[0],
-                    reason="strong_model_needed",
-                    estimated_cost_usd=cost,
-                    estimated_quality=0.95,
-                    escalation_level="strong",
-                )
-
-        # Fallback to free
-        return RouteDecision(
-            model=free_model,
-            provider="opencode-go",
-            reason="budget_exhausted_use_free",
-            estimated_cost_usd=0.0,
-            estimated_quality=0.7,
-            escalation_level="free",
-        )
-
-    def execute_with_escalation(self, task: str, quality_floor: float,
-                                 budget: BudgetState, evaluator: Any = None) -> dict:
-        """Execute task with escalation ladder."""
-        levels = ["free", "cheap", "strong"]
-        results = []
-
-        for level in levels:
-            decision = self.route(task, quality_floor, budget, uncertainty=0.5)
-            if decision.escalation_level != level:
-                continue
-
-            # Execute (placeholder — would call actual model)
-            result = {
-                "model": decision.model,
-                "level": level,
-                "cost": decision.estimated_cost_usd,
-                "quality": decision.estimated_quality,
-            }
-            results.append(result)
-
-            # Check quality
-            if evaluator and decision.estimated_quality >= quality_floor:
-                return {"success": True, "results": results, "final_level": level}
-
-            # Budget check
-            budget.record_spend(decision.estimated_cost_usd)
-
-        return {"success": False, "results": results, "final_level": levels[-1]}
+    def record_outcome(self, decision: RouteDecision, success: bool,
+                       actual_cost: float = 0.0, tokens: int = 0):
+        """Record routing outcome for Hydra."""
+        return {
+            "model": decision.model,
+            "policy": decision.policy,
+            "reason": decision.reason,
+            "level": decision.escalation_level,
+            "success": success,
+            "cost_usd": actual_cost,
+            "shadow_cost_usd": decision.shadow_cost_usd,
+            "tokens": tokens,
+            "timestamp": time.time(),
+        }
