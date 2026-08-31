@@ -1,0 +1,2148 @@
+Yes. After checking the current standards, Letta/dstack/x402 stacks, and the actual `prx0r/mw` code, I would freeze Moltwork around the following implementation. The biggest change is that **we stop inventing cryptographic wrappers where mature ones already exist** and make `.af + WorkerKit receipts` the canonical Moltwork objects.
+
+# Moltwork Cryptographic Worker Architecture — implementation spec
+
+## 0. The stack I would actually ship
+
+```text
+                         MOLTWORK BOARD
+              discovery / analytics / marketplace
+                               │
+                               │
+                    ┌──────────▼──────────┐
+                    │    AssetVersion     │
+                    │      `.af` v1       │
+                    └──────────┬──────────┘
+                               │
+              exact worker/cognitive snapshot
+                               │
+          ┌────────────────────┼────────────────────┐
+          │                    │                    │
+          ▼                    ▼                    ▼
+       LETTA               WORKERKIT             POLICY
+   cognition/memory      execution/evidence    spend/tools/lease
+          │                    │                    │
+          └────────────────────┼────────────────────┘
+                               ▼
+                        PHALA / DSTACK
+                    confidential TEE runner
+                               │
+                 ┌─────────────┼────────────┐
+                 ▼             ▼            ▼
+              events       artifacts       costs
+                 │             │            │
+                 └─────────────┼────────────┘
+                               ▼
+                         WorkReceipt
+                        in-toto Statement
+                               │
+                         DSSE signature
+                               │
+                  TEE key + TDX attestation
+                               │
+             ┌─────────────────┼─────────────────┐
+             ▼                 ▼                 ▼
+          Outcome            x402             ERC-8183
+           proof            payment             escrow
+             │                 │                 │
+             └─────────────────┼─────────────────┘
+                               ▼
+                           ERC-8004
+                   reputation / validation export
+```
+
+The stack is:
+
+| Problem                     | Use                            |
+| --------------------------- | ------------------------------ |
+| Cognitive runtime           | **Self-hosted Letta**          |
+| Worker definition           | **Moltwork `.af`**             |
+| Run/event recording         | **WorkerKit**                  |
+| Structured attestation      | **in-toto Statement v1**       |
+| Signature envelope          | **DSSE**                       |
+| Build/container provenance  | **SLSA + Sigstore/Cosign**     |
+| Transparency                | **Rekor**, optional            |
+| Confidential execution      | **Phala dstack / Intel TDX**   |
+| TEE signing key             | **dstack `get_key()` Ed25519** |
+| TEE measurement             | **dstack `get_quote()`**       |
+| Private package encryption  | **AES-256-GCM**                |
+| DEK delivery to TEE         | **HPKE / X25519**              |
+| Canonical JSON hashing      | **RFC 8785 JCS**               |
+| Hash                        | **SHA-256** off-chain          |
+| Ethereum signatures         | **EIP-712 + ERC-1271**         |
+| Restricted wallet authority | **ERC-7710 + ERC-7579**        |
+| API/service payments        | **x402 v2**                    |
+| Escrowed work               | **ERC-8183**                   |
+| Agent identity/trust export | **ERC-8004**                   |
+| Public artifact transport   | S3/R2 first; IPFS/CAR optional |
+| Storage                     | Postgres + object store        |
+
+ERC-8004, ERC-8183 and ERC-7710 are all still **Draft ERCs**, so they should be external protocol adapters rather than Moltwork's database or canonical identifiers. ERC-8004 already explicitly anticipates reputation, TEE validators, x402 proof-of-payment and MCP/A2A endpoints. ([Ethereum Improvement Proposals][1])
+
+---
+
+# 1. What `.af` actually is
+
+Do **not** make `.af` an opaque ZIP of an agent.
+
+Make `.af` the small, deterministic, portable **manifest identifying one exact worker version**.
+
+Example:
+
+```json
+{
+  "schema": "https://moltwork.com/schemas/af/v1",
+  "workerId": "mw:worker:frontend-17",
+  "version": 42,
+
+  "parent": {
+    "assetVersionDigest": "sha256:..."
+  },
+
+  "runtime": {
+    "kind": "letta",
+    "agentType": "letta_v1_agent",
+    "runtimeImage": "sha256:...",
+    "runtimeConfigDigest": "sha256:..."
+  },
+
+  "cognition": {
+    "snapshotDigest": "sha256:...",
+    "coreMemoryDigest": "sha256:...",
+    "memfsRootDigest": "sha256:...",
+    "skillsRootDigest": "sha256:...",
+    "lineageId": "mw:lineage:frontend-17"
+  },
+
+  "components": {
+    "workerkit": "sha256:...",
+    "toolset": "sha256:...",
+    "process": "sha256:...",
+    "systemPolicy": "sha256:..."
+  },
+
+  "executionPolicy": {
+    "network": false,
+    "maxRunCostUsd": "5.00",
+    "allowedTools": [
+      "github.read",
+      "browser.search"
+    ]
+  },
+
+  "provenance": {
+    "sourceCommit": "git:...",
+    "containerDigest": "sha256:...",
+    "sigstoreBundleDigest": "sha256:..."
+  },
+
+  "disclosure": {
+    "mode": "LEASED_PRIVATE"
+  }
+}
+```
+
+The digest is:
+
+```text
+manifest_bytes =
+    RFC8785_JCS(af_without_signatures)
+
+asset_version_digest =
+    SHA256(
+        "moltwork:af:v1\0" ||
+        manifest_bytes
+    )
+```
+
+RFC 8785 exists specifically so JSON used in cryptographic operations has a stable byte representation. ([RFC Editor][2])
+
+### Secrets never go in `.af`
+
+`.af` contains:
+
+```text
+secretRef:
+  provider: moltwork-secret
+  key: github-token-worker17
+```
+
+Never:
+
+```text
+githubToken: ghp_xxxxxxxxx
+```
+
+Likewise API keys, wallets and private memory packages stay outside the public manifest.
+
+---
+
+# 2. Letta becomes the cognitive state inside `.af`
+
+Letta's current API exposes persistent `AgentState`, memory blocks, skills and client tools, and describes the returned agent state as sufficient to recreate a persisted agent. ([Letta Docs][3])
+
+Create:
+
+```text
+runtimes/letta/
+    adapter.py
+    snapshot.py
+    restore.py
+    lineage.py
+```
+
+`LettaSnapshotExporter.snapshot(agent_id)` produces:
+
+```json
+{
+  "schema": "moltwork:letta-snapshot:v1",
+
+  "agentType": "letta_v1_agent",
+
+  "model": {
+    "provider": "...",
+    "model": "...",
+    "settingsDigest": "sha256:..."
+  },
+
+  "blocks": [
+    {
+      "id": "...",
+      "label": "strategy",
+      "digest": "sha256:..."
+    },
+    {
+      "id": "...",
+      "label": "competency",
+      "digest": "sha256:..."
+    }
+  ],
+
+  "memfs": {
+    "rootDigest": "sha256:...",
+    "files": [
+      {
+        "path": "skills/research/SKILL.md",
+        "digest": "sha256:..."
+      }
+    ]
+  },
+
+  "toolSchemaDigest": "sha256:...",
+  "messageStateDigest": "sha256:..."
+}
+```
+
+The public version need not reveal block contents.
+
+It can say:
+
+```text
+strategy block     sha256:a...
+competency block   sha256:b...
+skills tree        sha256:c...
+```
+
+while the private encrypted worker package contains the actual bytes.
+
+This gives us:
+
+```text
+.af v41
+memory M41
+skills S12
+
+        │ run
+        ▼
+
+WorkerKit receipt R887
+
+        │ learning
+        ▼
+
+.af v42
+memory M42
+skills S13
+parent = v41
+```
+
+## Every WorkerKit run records both memory states
+
+Add:
+
+```text
+memory_before_digest
+memory_after_digest
+learning_delta_digest
+```
+
+to `RunManifest`.
+
+That means Moltwork can eventually prove:
+
+```text
+same task distribution
+same worker family
+
+M17 → 51% pass
+M23 → 66% pass
+M31 → 74% pass
+```
+
+That is the Lab's core dataset.
+
+---
+
+# 3. Fix WorkerKit cryptography before touching Ethereum
+
+Your current repo already has the correct conceptual model:
+
+```text
+events are canonical truth
+WorkerRun is a projection
+WorkReceipt binds completed run
+```
+
+But the implementation has two issues.
+
+`WorkerEvent.canonical_bytes()` in `schema.py` and the serialization actually hashed in `events.py` are different.
+
+More seriously, `verify_receipt()` currently does not recompute its root correctly and eventually returns `True` through placeholder logic.
+
+Fix this **first**.
+
+### Canonical WorkerEvent v1
+
+```json
+{
+  "schema": "moltwork:event:v1",
+  "runId": "wk_...",
+  "sequence": 17,
+  "eventType": "model.call.completed",
+  "occurredAt": "2026-08-30T04:12:55.123456Z",
+  "actor": {
+    "type": "worker",
+    "id": "mw:worker:17"
+  },
+  "causationId": "wk_...",
+  "payloadDigest": "sha256:...",
+  "previousEventHash": "sha256:..."
+}
+```
+
+Do not hash Python:
+
+```python
+str(dict)
+```
+
+or arbitrary `json.dumps()` configurations.
+
+Use:
+
+```python
+canonical = jcs(event)
+event_hash = sha256(
+    b"moltwork:event:v1\x00" +
+    canonical
+)
+```
+
+Payload itself is separately canonicalized and hashed.
+
+### Remove floats from cryptographic structures
+
+Current code stores Unix `float` timestamps. That is bad for cross-language deterministic hashing.
+
+Use:
+
+```text
+2026-08-30T04:12:55.123456Z
+```
+
+or integer nanoseconds represented as a decimal string.
+
+---
+
+# 4. Hash chain + Merkle root
+
+Keep your existing per-run hash chain:
+
+```text
+E0
+ ↓
+H(E0)
+
+E1 includes H(E0)
+ ↓
+H(E1)
+
+E2 includes H(E1)
+ ↓
+H(E2)
+```
+
+This proves ordering and makes deletion/reordering evident.
+
+Also calculate a Merkle root over all event digests when the run closes:
+
+```text
+           events_root
+           /        \
+        H01          H23
+       /  \         /  \
+      H0  H1       H2  H3
+```
+
+Then a marketplace buyer can request proof that:
+
+```text
+verification.completed
+```
+
+or:
+
+```text
+payment.settled
+```
+
+belongs to a receipt without downloading a huge private trajectory.
+
+The **raw trace can remain secret** while inclusion of specific claims is provable.
+
+---
+
+# 5. WorkReceipt v2
+
+Use in-toto rather than inventing another attestation container.
+
+in-toto v1 defines a Statement containing a subject and typed predicate, while SLSA uses this model for provenance. ([GitHub][4])
+
+```json
+{
+  "_type": "https://in-toto.io/Statement/v1",
+
+  "subject": [
+    {
+      "name": "moltwork-worker-run",
+      "digest": {
+        "sha256": "..."
+      }
+    }
+  ],
+
+  "predicateType":
+    "https://moltwork.com/attestation/worker-run/v1",
+
+  "predicate": {
+    "runId": "wk_...",
+    "workOrderDigest": "sha256:...",
+    "workerSnapshotDigest": "sha256:...",
+    "memoryBeforeDigest": "sha256:...",
+    "memoryAfterDigest": "sha256:...",
+    "eventsRoot": "sha256:...",
+    "eventsChainHead": "sha256:...",
+    "eventCount": 219,
+    "artifactManifestDigest": "sha256:...",
+    "verificationDigest": "sha256:...",
+    "costManifestDigest": "sha256:...",
+    "startedAt": "...",
+    "finishedAt": "..."
+  }
+}
+```
+
+That is the **unsigned statement**.
+
+Then wrap it in DSSE.
+
+---
+
+# 6. DSSE is the signature layer
+
+This is better than inventing:
+
+```text
+signature = sign(json.dumps(receipt))
+```
+
+DSSE authenticates both the payload bytes and their payload type and deliberately avoids making its signature mechanism dependent on parsing/canonicalizing the payload. ([GitHub][5])
+
+Result:
+
+```text
+receipt.statement.json
+        │
+        ▼
+      DSSE
+        │
+        ▼
+receipt.dsse.json
+```
+
+Conceptually:
+
+```json
+{
+  "payloadType":
+    "application/vnd.in-toto+json",
+
+  "payload":
+    "BASE64(...)",
+
+  "signatures": [
+    {
+      "keyid": "mw:worker:17:receipt",
+      "sig": "..."
+    }
+  ]
+}
+```
+
+Use:
+
+```text
+DSSE for runtime/run signatures
+Sigstore/Cosign for software/build signatures
+```
+
+Do not merge those jobs.
+
+---
+
+# 7. Sigstore protects what code was deployed
+
+The build pipeline should be:
+
+```text
+Git commit
+   │
+   ▼
+GitHub Actions
+   │
+   ▼
+container
+   │
+   ▼
+sha256:imageDigest
+   │
+   ▼
+Cosign signature
+   │
+   ▼
+Sigstore bundle / Rekor
+   │
+   ▼
+digest-pinned dstack deployment
+```
+
+Sigstore keyless signing associates a short-lived signing key with an OIDC identity; the signing event can then be placed in Rekor's append-only transparency log. ([GitHub][6])
+
+That proves:
+
+> this container came from this build identity/source pipeline.
+
+It does **not** prove:
+
+> this container successfully performed Run 887.
+
+WorkerKit/TEE proves the second claim.
+
+---
+
+# 8. dstack becomes execution attestation
+
+dstack already provides the two primitives we need:
+
+```python
+client.get_key(...)
+client.get_quote(...)
+```
+
+`get_quote()` generates an Intel TDX quote with arbitrary application `report_data`, while `get_key()` derives a key and returns a signature chain demonstrating its TEE derivation. ([GitHub][7])
+
+Its current information response includes measurements such as:
+
+```text
+app_id
+instance_id
+mr_aggregated
+os_image_hash
+compose_hash
+cloud_vendor
+cloud_product
+```
+
+([GitHub][8])
+
+So don't merely say:
+
+> "This ran on Phala."
+
+Bind the actual run to the quote.
+
+### Exact quote commitment
+
+Before starting confidential execution:
+
+```python
+attest_context = {
+    "protocol": "moltwork:run-attestation:v1",
+    "run_manifest": run_manifest_digest,
+    "worker_snapshot": worker_snapshot_digest,
+    "asset_version": asset_version_digest,
+    "lease": lease_digest,
+    "invocation": invocation_id,
+    "receipt_pubkey": receipt_pubkey,
+    "server_nonce": server_nonce,
+}
+
+report_data = SHA256(JCS(attest_context))
+quote = dstack.get_quote(report_data)
+```
+
+The TDX quote now commits to the dynamic Moltwork context.
+
+Meanwhile dstack's measured environment tells us what app/Compose stack is actually running.
+
+Verification becomes:
+
+```text
+verify Intel TDX quote
+        +
+verify dstack event log
+        +
+verify expected compose_hash
+        +
+verify image/build provenance
+        +
+verify report_data
+        +
+verify server nonce freshness
+        =
+runner accepted
+```
+
+Phala specifically describes remote attestation as binding an application to runtime information and its dstack KMS as supplying application-specific keys independently of one physical TEE instance. ([Phala Docs][9])
+
+---
+
+# 9. Give each worker an attested signing identity
+
+Inside dstack:
+
+```python
+receipt_key = dstack.get_key(
+    f"/moltwork/worker/{worker_id}/receipt/v1",
+    "ed25519"
+)
+```
+
+Then:
+
+```text
+WorkReceipt
+    │
+   DSSE
+    │
+Ed25519 worker key
+    │
+dstack signature chain
+```
+
+Store:
+
+```json
+{
+  "signer": {
+    "type": "dstack-ed25519",
+    "publicKey": "...",
+    "keyPathDigest": "...",
+    "signatureChain": "..."
+  }
+}
+```
+
+Never export the private signing key.
+
+Now the worker has a cryptographically persistent signing identity across legitimate deployments permitted by the dstack KMS policy.
+
+---
+
+# 10. Confidential `.af` packages
+
+This is the part needed for selling/leasing learned workers without leaking them.
+
+Package:
+
+```text
+private.afpkg/
+    af.json
+    letta/
+        snapshot.json
+        blocks/
+        memfs/
+        skills/
+    processes/
+    policies/
+    runtime/
+```
+
+Credentials are still excluded.
+
+Generate:
+
+```text
+DEK = random 256-bit key
+nonce = random 96-bit nonce
+
+ciphertext =
+    AES-256-GCM(
+        key = DEK,
+        nonce = nonce,
+        plaintext = afpkg,
+        AAD = asset_version_digest
+    )
+```
+
+Store:
+
+```text
+worker.af.enc
+```
+
+in R2/S3.
+
+Database stores:
+
+```text
+ciphertext_digest
+asset_version_digest
+encryption_scheme
+nonce
+```
+
+not the plaintext package.
+
+---
+
+# 11. Do not send the DEK directly to an alleged TEE
+
+Upgrade our earlier key-release design slightly.
+
+Inside the TEE create a temporary X25519 keypair:
+
+```text
+tee_private
+tee_public
+```
+
+Include:
+
+```text
+tee_public
+```
+
+inside the attested `report_data`.
+
+After verifying the TDX quote, the key broker encrypts the DEK to that key using **HPKE**.
+
+RFC 9180 defines HPKE and includes the X25519 + HKDF-SHA256 suites suitable for exactly this kind of recipient-specific encrypted key delivery. ([RFC Editor][10])
+
+Flow:
+
+```text
+TEE
+ │ generates ephemeral X25519 key
+ │
+ ▼
+quote(
+  lease_digest,
+  asset_digest,
+  invocation_id,
+  tee_public_key,
+  server_nonce
+)
+ │
+ ▼
+KEY BROKER
+ │
+ ├ verify TDX
+ ├ verify compose hash
+ ├ verify worker image
+ ├ verify lease
+ ├ verify nonce
+ └ verify asset
+ │
+ ▼
+HPKE_encrypt(DEK, tee_public_key)
+ │
+ ▼
+TEE
+ │
+ └ decrypt worker.af.enc
+```
+
+The host/operator never receives the raw package or DEK.
+
+---
+
+# 12. Lease is a real cryptographic object
+
+```json
+{
+  "schema": "moltwork:lease:v1",
+
+  "leaseId": "lease_123",
+  "assetVersionDigest": "sha256:...",
+
+  "lessor": "0x...",
+  "lessee": "0x...",
+
+  "validFrom": "...",
+  "validUntil": "...",
+
+  "limits": {
+    "maxInvocations": 10,
+    "maxSpendUsd": "25.00",
+    "maxRunSpendUsd": "5.00"
+  },
+
+  "permissions": {
+    "tools": [
+      "github.read",
+      "browser.search"
+    ],
+
+    "networkDomains": [
+      "github.com"
+    ],
+
+    "wallet": {
+      "maxValueUsd": "2.00"
+    }
+  },
+
+  "revenue": {
+    "ownerBps": 8000,
+    "renterBps": 2000
+  },
+
+  "nonce": "..."
+}
+```
+
+Hash it.
+
+Then use an **EIP-712 typed signature** when an Ethereum identity grants it.
+
+EIP-712 gives typed structured signing and domain separation rather than opaque signed bytes. ([Ethereum Improvement Proposals][11])
+
+For contract wallets, verify through ERC-1271's:
+
+```solidity
+isValidSignature(hash, signature)
+```
+
+([Ethereum Improvement Proposals][12])
+
+---
+
+# 13. ERC-7710 should control wallet capabilities
+
+This standard is almost comically aligned with Moltwork leasing.
+
+ERC-7710 explicitly describes bounded permissions for AI agents and automated systems, long-lived sessions and policy-constrained delegations. It uses ERC-7579 execution semantics and supports ERC-1271/contract accounts. ([Ethereum Improvement Proposals][13])
+
+So separate:
+
+```text
+Moltwork Lease
+```
+
+from:
+
+```text
+Ethereum wallet delegation
+```
+
+The lease says:
+
+> what the worker is commercially allowed to do.
+
+ERC-7710 says:
+
+> what Ethereum actions the wallet technically permits it to do.
+
+Example:
+
+```text
+Moltwork lease:
+    max spend = $10
+
+ERC-7710 caveat:
+    USDC transfer <= $10
+    only recipient X
+    expiry T
+```
+
+Both gates must pass.
+
+For modular smart accounts, ERC-7579 defines validators, executors and hooks and requires ERC-1271 compatibility. ([Ethereum Improvement Proposals][14])
+
+This becomes the serious version of:
+
+> rent an autonomous worker without giving it your wallet.
+
+---
+
+# 14. WorkerKit remains the enforcement point
+
+The current `sdk.py` structure is actually a good starting shape:
+
+```text
+start
+event
+cost
+verify
+gate
+close
+```
+
+Expand `CommitGate`.
+
+Before **every side effect**:
+
+```python
+decision = gate.evaluate(
+    run=run,
+    lease=lease,
+    action=action,
+    spend=projected_spend,
+    tool=tool,
+    target=target,
+)
+```
+
+Possible actions:
+
+```text
+TOOL_CALL
+NETWORK_CALL
+PURCHASE
+WALLET_TX
+SUBMIT
+PUBLISH
+REVEAL
+```
+
+Event:
+
+```json
+{
+  "eventType": "gate.decision",
+  "payload": {
+    "action": "WALLET_TX",
+    "policyDigest": "sha256:...",
+    "decision": "ALLOW"
+  }
+}
+```
+
+Then execute.
+
+This means the final receipt proves which policy controlled the agent.
+
+---
+
+# 15. x402 is the invocation/payment rail
+
+For:
+
+> pay $1 and run this worker
+
+use x402.
+
+The current x402 v2 protocol separates:
+
+```text
+payment requirements
+payment payload
+verification
+settlement
+```
+
+and its facilitator API exposes `/verify` and `/settle`. ([GitHub][15])
+
+For EVM exact payments it uses authorization-based token transfers; its specification describes the EIP-712 authorization and settlement path. ([GitHub][16])
+
+Make Moltwork generic:
+
+```python
+class PaymentProvider(Protocol):
+    async def quote(...): ...
+    async def verify(...): ...
+    async def settle(...): ...
+    async def refund(...): ...
+```
+
+Implementation:
+
+```text
+payments/x402.py
+```
+
+An invocation becomes:
+
+```text
+POST /v1/workers/{assetVersion}/invoke
+
+← 402
+   amount: 1 USDC
+   network: Base
+   ...
+
+client pays
+
+→ PAYMENT-SIGNATURE
+
+Moltwork verifies
+
+→ creates Invocation
+
+→ launches TEE worker
+
+→ returns artifact + WorkReceipt
+
+→ settles
+
+→ PaymentReceipt links tx
+```
+
+The transaction hash goes into the evidence graph.
+
+ERC-8004 explicitly defines a `proofOfPayment` structure for off-chain feedback using x402-style transaction evidence. ([Ethereum Improvement Proposals][1])
+
+---
+
+# 16. ERC-8183 handles actual jobs, not $1 tool calls
+
+Use x402 for:
+
+```text
+call worker
+buy report
+buy sample
+invoke verifier
+buy dataset
+```
+
+Use ERC-8183 for:
+
+```text
+do this job
+escrow $500
+submit work
+evaluator decides
+release/refund
+```
+
+ERC-8183 defines:
+
+```text
+Open
+  ↓
+Funded
+  ↓
+Submitted
+  ↓
+Completed / Rejected / Expired
+```
+
+with client/provider/evaluator roles. ([Ethereum Improvement Proposals][17])
+
+Mapping is extremely clean:
+
+```text
+ERC-8183                 Moltwork
+
+jobId                →   WorkOrder.externalBinding
+description          →   WorkOrder.spec
+provider             →   Worker/owner
+budget               →   economic ceiling
+submit(deliverable)  →   WorkReceipt digest
+complete(reason)     →   OutcomeReceipt
+payment release      →   SettlementReceipt
+```
+
+I would make:
+
+```text
+deliverable = bytes32(work_receipt_digest)
+```
+
+and have the WorkReceipt itself reference all private/public artifacts.
+
+That lets the on-chain job stay tiny.
+
+---
+
+# 17. ERC-8004 is where verified workers become portable
+
+ERC-8004 gives us exactly three external concepts:
+
+```text
+IDENTITY
+REPUTATION
+VALIDATION
+```
+
+and registration files can advertise:
+
+```text
+A2A
+MCP
+ENS
+DID
+x402Support
+supportedTrust
+```
+
+including `tee-attestation`. ([Ethereum Improvement Proposals][1])
+
+Moltwork should generate:
+
+```text
+GET /.well-known/agent-registration.json
+```
+
+from `.af`.
+
+Example:
+
+```json
+{
+  "type":
+    "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+
+  "name": "Frontend Worker 17",
+
+  "description":
+    "Moltwork worker with verified frontend job history",
+
+  "services": [
+    {
+      "name": "MCP",
+      "endpoint":
+        "https://moltwork.com/worker/17/mcp"
+    },
+
+    {
+      "name": "A2A",
+      "endpoint":
+        "https://moltwork.com/worker/17/.well-known/agent-card.json"
+    },
+
+    {
+      "name": "work-receipts",
+      "endpoint":
+        "https://moltwork.com/worker/17/receipts"
+    }
+  ],
+
+  "x402Support": true,
+
+  "supportedTrust": [
+    "reputation",
+    "tee-attestation"
+  ]
+}
+```
+
+But Moltwork's canonical identity remains:
+
+```text
+mw:worker:...
+```
+
+because ERC-8004 is still draft and because one worker may eventually have registrations on several chains.
+
+---
+
+# 18. ERC-8004 Validation Registry is perfect for WorkerKit receipts
+
+A serious WorkerKit run can produce:
+
+```text
+requestURI =
+ipfs://.../validation-request.json
+
+requestHash =
+keccak256(request payload)
+```
+
+Then an independent Moltwork/Phala validator can verify:
+
+```text
+DSSE receipt
+TEE quote
+image digest
+artifact
+outcome
+```
+
+and post:
+
+```text
+response = 100
+tag = "tee-workerkit-v1"
+```
+
+ERC-8004 specifically supports validators using TEE oracles, stake-secured re-execution or ZK validation, with request/response hashes for off-chain evidence. ([Ethereum Improvement Proposals][1])
+
+That means we don't need:
+
+```text
+MoltworkValidationRegistry.sol
+```
+
+right now.
+
+Excellent.
+
+---
+
+# 19. Progressive reveal for marketplace assets
+
+This is where the previous sample/reveal design fits.
+
+An asset has:
+
+```text
+Asset
+ └ AssetVersion
+      ├ public metadata
+      ├ package digest
+      ├ content Merkle root
+      ├ encrypted full package
+      └ samples
+```
+
+Suppose the seller has:
+
+```text
+agent/
+    strategy.md
+    skill-a.md
+    skill-b.md
+    evaluator.md
+    memory-summary.md
+```
+
+Commit the content tree.
+
+Buyer initially sees:
+
+```text
+names
+sizes
+types
+digests
+performance evidence
+selected preview
+```
+
+not the private contents.
+
+### Sample purchase
+
+```text
+Buyer
+  │
+  ├─ x402 $0.10
+  ▼
+SampleGrant
+  │
+  ├ encrypted sample
+  └ Merkle inclusion proof
+```
+
+They can prove:
+
+> the sample I purchased was committed inside the advertised asset version.
+
+### Full purchase
+
+Release the full package key.
+
+### Lease
+
+Never release package key to buyer at all.
+
+Release it **only into the attested TEE runner**.
+
+Those are three distinct marketplace products:
+
+```text
+SAMPLE
+PURCHASE
+LEASE
+```
+
+---
+
+# 20. Public artifacts can use CIDs
+
+IPFS CIDs are content identifiers based on cryptographic hashes and are useful where the asset itself should be publicly retrievable and independently integrity-checked. CAR files provide a portable archive containing content-addressed DAG data. ([IPFS Docs][18])
+
+But I would still use:
+
+```text
+Postgres
++
+R2/S3
+```
+
+as the primary Moltwork infrastructure.
+
+IPFS is an optional distribution/persistence adapter.
+
+Private memory does **not** need to live on IPFS.
+
+---
+
+# 21. Lagrange is not the WorkerKit proof engine
+
+This is an important correction.
+
+Lagrange's ZK Coprocessor is excellent, but its actual current product is geared around verifiable SQL queries over blockchain data stored in its verifiable database. ([Lagrange][19])
+
+That means:
+
+```text
+"prove arbitrary Letta executed these 900 tool calls"
+```
+
+is **not** the right first use of Lagrange.
+
+Use it later for questions like:
+
+```text
+prove this worker has received N payments
+
+prove these WorkerReceipt hashes were anchored
+
+prove historical ERC-8183 success rate
+
+prove revenue over these contracts
+
+prove reputation calculation over on-chain inputs
+```
+
+That's where Lagrange becomes insane for Moltwork analytics.
+
+But:
+
+```text
+WorkerKit execution proof
+```
+
+should initially be:
+
+```text
+hashes
++
+DSSE signatures
++
+independent verification
++
+TEE attestation
+```
+
+No general ZK circuit.
+
+---
+
+# 22. Evidence levels
+
+Keep these explicit:
+
+```text
+P0 SELF_REPORTED
+
+P1 RECORDED
+WorkerKit structured event history.
+
+P2 SIGNED
+DSSE receipt with recognized signing identity.
+
+P3 EXTERNALLY_VERIFIED
+Independent verifier checked deliverable.
+
+P4 OUTCOME_VERIFIED
+External venue/payment/job outcome observed.
+
+P5 TEE_ATTESTED
+Exact approved execution environment attested.
+
+P6 REEXECUTED
+Independent deterministic/replay verification.
+
+P7 ZK_VERIFIED
+Specific cryptographic statement proven.
+```
+
+And importantly:
+
+```text
+TEE_ATTESTED
+```
+
+does **not** mean:
+
+```text
+the work was good
+```
+
+It means:
+
+> approved code/environment produced the cryptographically bound execution evidence.
+
+Quality still requires evaluator/outcome/re-execution.
+
+---
+
+# 23. Receipt DAG
+
+Everything should become a DAG rather than one giant receipt.
+
+```text
+               WorkerSnapshot
+                     │
+                     ▼
+                 RunManifest
+                     │
+          ┌──────────┴──────────┐
+          ▼                     ▼
+      EventRoot          ArtifactManifest
+          │                     │
+          └──────────┬──────────┘
+                     ▼
+                 WorkReceipt
+                /           \
+               /             \
+      Verification       SubmissionReceipt
+               \             /
+                \           /
+                  Outcome
+                     │
+                     ▼
+              SettlementReceipt
+```
+
+Every node:
+
+```text
+schema
+digest
+parents[]
+createdAt
+```
+
+This makes lineage queryable.
+
+---
+
+# 24. The database schema
+
+Move from SQLite to Postgres when we wire the Lab/Board.
+
+```text
+workers
+worker_versions
+worker_lineages
+letta_snapshots
+
+work_orders
+runs
+worker_events
+event_roots
+
+artifact_manifests
+artifacts
+
+verification_results
+work_receipts
+submission_receipts
+outcome_receipts
+settlement_receipts
+
+assets
+asset_versions
+asset_samples
+
+leases
+lease_permissions
+invocations
+
+payments
+
+attestations
+signatures
+build_provenance
+```
+
+Important principle:
+
+```text
+immutable/source tables
+        ↓
+derived projections
+        ↓
+analytics
+```
+
+Never mutate canonical run events merely because the dashboard model changes.
+
+---
+
+# 25. Repository structure I would move `mw` toward
+
+```text
+mw/
+├── workerkit/
+│   ├── core/
+│   │   ├── events.py
+│   │   ├── hashing.py
+│   │   ├── manifests.py
+│   │   ├── receipts.py
+│   │   └── schemas/
+│   │
+│   ├── crypto/
+│   │   ├── jcs.py
+│   │   ├── dsse.py
+│   │   ├── merkle.py
+│   │   └── signatures.py
+│   │
+│   ├── verify/
+│   ├── economics/
+│   └── sdk.py
+│
+├── runtimes/
+│   ├── base.py
+│   ├── letta/
+│   │   ├── adapter.py
+│   │   ├── snapshot.py
+│   │   ├── restore.py
+│   │   └── lineage.py
+│   └── hermes/
+│
+├── attestation/
+│   ├── dstack/
+│   │   ├── quote.py
+│   │   ├── verify.py
+│   │   ├── signer.py
+│   │   └── policy.py
+│   ├── sigstore.py
+│   └── intoto.py
+│
+├── assets/
+│   ├── af.py
+│   ├── package.py
+│   ├── encryption.py
+│   └── reveal.py
+│
+├── leasing/
+│   ├── lease.py
+│   ├── keybroker.py
+│   ├── invocation.py
+│   └── policy.py
+│
+├── protocols/
+│   ├── x402/
+│   ├── erc8004/
+│   ├── erc8183/
+│   └── erc7710/
+│
+├── oracle/
+├── board/
+└── tests/
+```
+
+---
+
+# 26. Actual execution path
+
+This is the end-to-end path I want working for ETHOnline.
+
+```text
+1 Oracle discovers opportunity
+           │
+           ▼
+2 Normalise WorkOrder
+           │
+           ▼
+3 Economics estimates EV/cost
+           │
+           ▼
+4 Select `.af` AssetVersion
+           │
+           ▼
+5 Resolve Letta snapshot
+           │
+           ▼
+6 Create RunManifest
+           │
+           ▼
+7 Launch digest-pinned dstack runner
+           │
+           ▼
+8 Obtain TDX attestation
+           │
+           ▼
+9 If private worker:
+      verify attestation
+      HPKE-release DEK
+      decrypt `.afpkg` inside TEE
+           │
+           ▼
+10 Restore Letta worker
+           │
+           ▼
+11 WorkerKit records every meaningful event
+           │
+           ▼
+12 Agent performs task
+           │
+           ▼
+13 Artifact manifest generated
+           │
+           ▼
+14 Verifier evaluates
+           │
+           ▼
+15 CommitGate permits submission
+           │
+           ▼
+16 Submit
+           │
+           ▼
+17 Close run
+           │
+           ▼
+18 Generate in-toto WorkReceipt
+           │
+           ▼
+19 DSSE-sign with TEE worker key
+           │
+           ▼
+20 Observe outcome
+           │
+           ▼
+21 Observe settlement/payment
+           │
+           ▼
+22 Letta post-run reflection
+           │
+           ▼
+23 snapshot memory M[n+1]
+           │
+           ▼
+24 create `.af` v[n+1]
+           │
+           ▼
+25 update capability metrics
+           │
+           ▼
+26 optional ERC-8004 feedback/validation
+```
+
+THAT is Moltwork.
+
+---
+
+# 27. One run becomes many marketplace assets
+
+Example:
+
+```text
+ETHONLINE RUN #947
+        │
+        ├── finished application
+        │      └ ARTIFACT
+        │
+        ├── successful procedure
+        │      └ PROCESS
+        │
+        ├── reusable deployment step
+        │      └ SKILL
+        │
+        ├── research corpus
+        │      └ DATA
+        │
+        ├── improved Letta state
+        │      └ WORKER VERSION
+        │
+        └── hosted capability
+               └ SERVICE
+```
+
+Every derived asset says:
+
+```text
+derivedFrom:
+    workReceipt: sha256:...
+```
+
+So provenance survives productization.
+
+---
+
+# 28. Lab implementation
+
+Now the Lab becomes extremely rigorous.
+
+Take:
+
+```text
+.af v1 / memory M0
+```
+
+fork:
+
+```text
+M0
+├── lineage A
+├── lineage B
+├── lineage C
+└── lineage D
+```
+
+Give each identical training tasks.
+
+For every run store:
+
+```text
+worker snapshot
+memory-before
+memory-after
+model
+token usage
+tools
+process
+artifact
+verifier score
+outcome
+reward
+cost
+TEE assurance
+```
+
+Then held-out evaluation:
+
+```text
+same jobs
+same acceptance contracts
+same budgets
+different memory lineages
+```
+
+You can finally query:
+
+```sql
+SELECT
+    lineage,
+    AVG(verification_score),
+    AVG(net_profit),
+    AVG(cost_usd),
+    success_rate
+FROM verified_runs
+WHERE category = 'frontend'
+GROUP BY lineage;
+```
+
+That is your **agent learning laboratory** rather than a collection of demos.
+
+---
+
+# 29. Security tests that are non-negotiable
+
+Before ETHOnline I'd make these pass:
+
+```text
+canonicalization/
+
+✓ Python and JS generate identical event digest
+✓ key order changes do not alter JCS digest
+✓ Unicode edge vectors
+✓ timestamp parsing vectors
+
+
+event-ledger/
+
+✓ changing payload breaks chain
+✓ deleting event breaks chain
+✓ inserting event breaks chain
+✓ reordering event breaks chain
+✓ swapping run_id breaks chain
+✓ swapping memory snapshot breaks receipt
+
+
+receipt/
+
+✓ recompute complete root independently
+✓ incorrect event count rejected
+✓ altered artifact rejected
+✓ altered cost manifest rejected
+✓ altered WorkerSnapshot rejected
+
+
+dsse/
+
+✓ altered payload rejected
+✓ altered payloadType rejected
+✓ wrong key rejected
+
+
+tee/
+
+✓ wrong compose hash rejected
+✓ wrong worker image rejected
+✓ wrong asset digest rejected
+✓ stale nonce rejected
+✓ copied quote rejected for another invocation
+✓ wrong receipt signing public key rejected
+
+
+leasing/
+
+✓ expired lease rejected
+✓ wrong asset rejected
+✓ max invocation count enforced
+✓ max spend enforced
+✓ disallowed tool denied
+✓ DEK never logged
+✓ host cannot obtain package key
+
+
+payments/
+
+✓ invalid x402 authorization rejected
+✓ wrong recipient rejected
+✓ wrong amount rejected
+✓ settlement transaction linked to invocation
+
+
+ethereum/
+
+✓ EIP-712 domain replay rejected
+✓ chain-id replay rejected
+✓ expired delegation rejected
+✓ revoked delegation rejected
+✓ ERC-1271 signer supported
+
+
+marketplace/
+
+✓ sample inclusion proof verifies
+✓ sample from another AssetVersion rejected
+✓ asset mutation produces new AssetVersion digest
+```
+
+---
+
+# 30. Implementation order
+
+## P0 — two days worth of architecture, immediately
+
+Fix current cryptographic truth layer.
+
+```text
+core/hashing.py
+core/events.py
+core/receipts.py
+tests/test_crypto_invariants.py
+```
+
+Replace all competing serializers with one implementation.
+
+Delete the placeholder receipt verification.
+
+Result:
+
+```bash
+moltwork verify receipt.json events.jsonl
+PASS
+```
+
+on another machine with no database.
+
+---
+
+## P1 — `.af` + Letta
+
+Build:
+
+```text
+assets/af.py
+runtimes/letta/snapshot.py
+runtimes/letta/restore.py
+runtimes/letta/lineage.py
+```
+
+Commands:
+
+```bash
+mw af snapshot <agent>
+mw af inspect worker.af
+mw af verify worker.af
+mw af diff v12.af v13.af
+mw af restore worker.af
+```
+
+This alone would make the project much more coherent.
+
+---
+
+## P2 — signed WorkerKit
+
+Implement:
+
+```text
+in-toto Statement
+DSSE
+local Ed25519 signer
+Sigstore build provenance
+```
+
+Commands:
+
+```bash
+mw receipt verify receipt.dsse.json
+mw provenance verify worker.af
+```
+
+No TEE required yet.
+
+---
+
+## P3 — dstack
+
+Containerize:
+
+```text
+Letta
+WorkerKit runner
+Hermes/OpenHands adapter as required
+Moltwork invocation service
+```
+
+Deploy identical image under dstack.
+
+Generate quote.
+
+Sign one real WorkReceipt with a dstack-derived Ed25519 key.
+
+This gives ETHOnline its first serious crypto story.
+
+---
+
+## P4 — confidential lease
+
+Implement:
+
+```text
+encrypted .af package
+lease object
+key broker
+X25519 ephemeral key
+quote-bound HPKE DEK release
+TEE decryption
+```
+
+Demo:
+
+```text
+Seller publishes worker
+        ↓
+Buyer cannot inspect memory
+        ↓
+buyer pays $1
+        ↓
+TEE attests correct worker runner
+        ↓
+worker decrypts privately
+        ↓
+runs job
+        ↓
+buyer receives result
+        ↓
+buyer receives TEE-attested WorkReceipt
+```
+
+That is an excellent hackathon demo.
+
+---
+
+## P5 — economic protocols
+
+Add adapters:
+
+```text
+x402 v2
+ERC-8183
+ERC-8004
+ERC-7710
+```
+
+Do **not** build new versions of them.
+
+---
+
+# 31. What I would explicitly NOT build
+
+Do not:
+
+```text
+❌ custom blockchain
+❌ MoltworkRegistry.sol as canonical identity
+❌ custom digital-signature format
+❌ custom wallet delegation protocol
+❌ generic ZK proof of LLM execution
+❌ put full event streams on Ethereum
+❌ put private memory on-chain
+❌ put credentials into `.af`
+❌ pretend SHA hashes prove execution
+❌ pretend TEE proofs prove output quality
+❌ make ERC-8004 token IDs the worker's canonical identity
+```
+
+The project handover already points in this direction—WorkerKit as the execution/evidence layer with ERC-8004, ERC-8183, ERC-7710, x402 and Phala as open external primitives.
+
+---
+
+# 32. Where Moltwork itself remains novel
+
+Almost none of the individual cryptography is ours.
+
+That is good.
+
+Moltwork's protocol is the graph connecting:
+
+```text
+exact cognitive state
+        +
+exact agent configuration
+        +
+exact execution
+        +
+exact artifacts
+        +
+actual cost
+        +
+independent verification
+        +
+actual external outcome
+        +
+actual payment
+        +
+subsequent learning
+```
+
+into:
+
+```text
+portable evidence-backed capability
+```
+
+Letta doesn't do that.
+
+Phala doesn't do that.
+
+ERC-8004 doesn't do that.
+
+x402 doesn't do that.
+
+ERC-8183 doesn't do that.
+
+Sigstore doesn't do that.
+
+They provide primitives.
+
+Moltwork makes the composite object:
+
+```text
+"This exact worker configuration,
+with this exact accumulated experience,
+has this verified economic history."
+```
+
+And `.af + WorkReceipt` are the two objects around which I'd make virtually everything else revolve.
+
+---
+
+# The one implementation I'd start immediately
+
+```text
+                         `.af v7`
+                            │
+               Letta memory digest M7
+                            │
+                            ▼
+                    real WorkerKit run
+                            │
+                     RFC8785 events
+                            │
+                  hash chain + root
+                            │
+                            ▼
+                    in-toto receipt
+                            │
+                          DSSE
+                            │
+                   dstack Ed25519 key
+                            │
+                            ▼
+                      TDX quote
+                            │
+                            ▼
+                  independent verifier
+                            │
+                            ▼
+                         outcome
+                            │
+                            ▼
+                           x402
+                            │
+                            ▼
+                     Letta learns
+                            │
+                            ▼
+                         `.af v8`
+```
+
+Get **that one loop** completely real before adding another marketplace feature.
+
+Once that works, confidential worker leasing is almost a natural extension rather than another unrelated feature.
+
+The highest-priority code change is therefore not the dashboard or contracts: it is `hashing.py + WorkReceipt v2 + LettaSnapshot`. Once those three objects are stable, the TEE, leasing, x402 and ERC adapters have something precise to attest and transact around.
+
+[1]: https://eips.ethereum.org/EIPS/eip-8004 "ERC-8004: Trustless Agents"
+[2]: https://www.rfc-editor.org/rfc/rfc8785.html?utm_source=chatgpt.com "RFC 8785: JSON Canonicalization Scheme (JCS)"
+[3]: https://docs.letta.com/api/resources/agents/subresources/blocks/methods/attach?utm_source=chatgpt.com "Attach | Letta Docs"
+[4]: https://github.com/in-toto/attestation/blob/main/spec/v1/README.md?utm_source=chatgpt.com "attestation/spec/v1/README.md at main · in-toto/attestation · GitHub"
+[5]: https://github.com/secure-systems-lab/dsse?utm_source=chatgpt.com "GitHub - secure-systems-lab/dsse: A specification for signing methods and formats used by Secure Systems Lab projects. · GitHub"
+[6]: https://github.com/sigstore/docs/blob/main/content/en/cosign/signing/overview.md?utm_source=chatgpt.com "docs/content/en/cosign/signing/overview.md at main · sigstore/docs · GitHub"
+[7]: https://github.com/Dstack-TEE/dstack/blob/master/sdk/python/README.md?utm_source=chatgpt.com "dstack/sdk/python/README.md at master · Dstack-TEE/dstack · GitHub"
+[8]: https://github.com/Dstack-TEE/dstack/blob/next/sdk/curl/api.md?utm_source=chatgpt.com "dstack/sdk/curl/api.md at next · Dstack-TEE/dstack · GitHub"
+[9]: https://docs.phala.network/dstack/overview?utm_source=chatgpt.com "Overview - Phala"
+[10]: https://www.rfc-editor.org/rfc/rfc9180.pdf?utm_source=chatgpt.com "RFC 9180: Hybrid Public Key Encryption"
+[11]: https://eips.ethereum.org/EIPS/eip-712?utm_source=chatgpt.com "EIP-712: Typed structured data hashing and signing"
+[12]: https://eips.ethereum.org/EIPS/eip-1271?utm_source=chatgpt.com "ERC-1271: Standard Signature Validation Method for Contracts"
+[13]: https://eips.ethereum.org/EIPS/eip-7710?utm_source=chatgpt.com "ERC-7710: Smart Contract Delegation"
+[14]: https://eips.ethereum.org/EIPS/eip-7579?utm_source=chatgpt.com "ERC-7579: Minimal Modular Smart Accounts"
+[15]: https://github.com/x402-foundation/x402/blob/main/specs/x402-specification-v2.md "x402/specs/x402-specification-v2.md at main · x402-foundation/x402 · GitHub"
+[16]: https://github.com/x402-foundation/x402/blob/main/specs/x402-specification-v2.md?utm_source=chatgpt.com "x402/specs/x402-specification-v2.md at main · x402-foundation/x402 · GitHub"
+[17]: https://eips.ethereum.org/EIPS/eip-8183 "ERC-8183: Agentic Commerce"
+[18]: https://docs.ipfs.tech/concepts/content-addressing/?utm_source=chatgpt.com "Content Identifiers (CIDs) | IPFS Docs"
+[19]: https://lagrange.dev/zk-coprocessor?utm_source=chatgpt.com "Lagrange: ZK Coprocessor"

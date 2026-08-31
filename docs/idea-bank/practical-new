@@ -1,0 +1,1157 @@
+Yes. At this point the right move is to **stop inventing agent-evolution machinery** and turn Moltwork into a very thin integration/science layer around things that already exist.
+
+The current `ethonline-2026` branch has already crossed the architectural threshold: Campaign/SuccessModel, Git primitives, Harbor sketch, Letta runtime, molting, Hydra schema/projectors, and the frozen decisions are all there.  What it needs now is a production simplification pass.
+
+## The production stack I would actually run
+
+```text
+                    ORACLE
+          "what live work exists?"
+                    │
+                    ▼
+                 MOLTWORK
+       Campaign + budget + experiment policy
+                    │
+         ┌──────────┴───────────┐
+         ▼                      ▼
+       LETTA                  HARBOR
+ persistent worker       world + execution
+         │                      │
+         │                Reward Kit
+         │                      │
+         └──────────┬───────────┘
+                    ▼
+               WorkerRun
+                    │
+         ┌──────────┼──────────────┐
+         ▼          ▼              ▼
+      Git state   ATIF/results   WorkerKit
+                                receipt
+         │          │              │
+         └──────────┼──────────────┘
+                    ▼
+                 HYDRADB
+           derived evidence graph
+                    │
+                    ▼
+                   CGE
+        "what should we try next?"
+                    │
+                    ▼
+              candidate Git fork
+```
+
+And in v0:
+
+**no OpenEvolve orchestration, no Agent Lightning, no A-MEM, no custom memory algorithms, no custom benchmark runtime.**
+
+They are available later as treatments.
+
+---
+
+# 1. The biggest change: delete the fake integrations
+
+Right now `harbor_adapter.py` is not actually integrating Harbor. It implements its own `HarborTask` and pseudo-RewardKit verifier generator, then shells out to `harbor run`. It also contains a literal bug where a float `reward` gets `.update(...)` called on it.
+
+Replace essentially all of that with:
+
+```text
+Moltwork
+  generates actual Harbor files
+        ↓
+harbor CLI / Python API
+        ↓
+Harbor owns execution
+        ↓
+read actual:
+  lock.json
+  result.json
+  artifacts/
+  trajectory
+```
+
+Similarly, archive `flywheel/evaluator.py`.
+
+Its current definitions of novelty and feasibility are things like “does the output contain `novel`, `unique`, `API`, `Docker`, version numbers?”
+
+Those heuristics are actively dangerous once the Lab starts learning from them because the worker will learn to optimize textual artifacts of the grader.
+
+Use real Reward Kit:
+
+```text
+deterministic criterion
+LLM judge
+agent judge
+filesystem checks
+command execution
+HTTP checks
+trajectory checks
+```
+
+Reward Kit already has 20+ built-in checks and supports custom criteria plus reusable LLM/agent judges. ([Harbor][1])
+
+---
+
+# 2. `full_loop.py` should become documentation, not production orchestration
+
+This file is currently pretending the whole vision exists.
+
+For example, it has:
+
+```python
+return [{
+    "query": "what is weak",
+    "result": "novelty and specificity often fail",
+}]
+```
+
+and considers an experiment improved if:
+
+```python
+best_score >= 0.7
+```
+
+then manufactures a promoted WorkerVersion. It also advances a campaign to `submitted` while explicitly saying real work/outcome is deferred.
+
+That is exactly the sort of prototype we should now stop running.
+
+I'd move:
+
+```text
+full_loop.py
+```
+
+to:
+
+```text
+docs/reference/full_loop.py
+```
+
+and replace it operationally with **boring explicit commands**.
+
+Something like:
+
+```text
+mw campaign create
+mw campaign research
+mw world compile
+mw run
+mw grade
+mw regrade
+mw submit
+mw outcome record
+mw molt
+```
+
+No magical 17-step function.
+
+The workflow can become automated *after we've done it manually 10 times and know which transitions are real*.
+
+---
+
+# 3. Keep the Letta runtime — this part is close to the right boundary
+
+`services/runtime-letta` is fundamentally shaped correctly:
+
+* explicit worker ID → Letta agent ID mapping;
+* persistent agent identity;
+* MemFS enabled;
+* fresh session per run;
+* model/tool configuration;
+* trajectory access;
+* memory access.
+
+That is the piece I would work hardest on first.
+
+The production invariant should be:
+
+```text
+Worker = persistent Letta identity
+
+Campaign WorkerRun
+    =
+fresh session
++
+frozen WorkerVersion
+```
+
+And this is crucial:
+
+> **Do not mutate persistent worker cognition during the active Campaign.**
+
+Currently the runtime exposes:
+
+```text
+POST /workers/:id/learning
+```
+
+which can directly update memory/Skills.
+
+Keep the endpoint, but only use it in:
+
+```text
+POST-RUN
+```
+
+after a candidate change has been approved.
+
+During live work:
+
+```text
+artifact changes freely
+
+worker state frozen
+assessor frozen
+world frozen
+```
+
+Afterward:
+
+```text
+candidate memory
+candidate skill
+candidate process
+```
+
+can evolve.
+
+This preserves causality.
+
+---
+
+# 4. Don't make Letta's memory “the Lab”
+
+Letta should receive three increasingly durable levels of knowledge.
+
+### Campaign-only
+
+Generated from Hydra at the beginning:
+
+```text
+lab-brief.md
+```
+
+Example:
+
+```text
+For this opportunity:
+
+Relevant prior campaigns:
+C14, C21
+
+Strong evidence:
+- requirement matrix improves sponsor-track performance
+
+Weak evidence:
+- 3-concept ideation process may improve novelty
+
+Known failures:
+- building before verifying sponsor API
+```
+
+This dies with the Campaign.
+
+### Task-family context
+
+Retrieved when useful:
+
+```text
+competition.technical_submission
+```
+
+Still not necessarily permanent worker memory.
+
+### Durable Letta memory/Skill
+
+Only after post-run evidence:
+
+```text
+Skill:
+requirements-first-hackathon-research
+```
+
+gets promoted.
+
+That gives:
+
+```text
+Hydra = everything we've observed
+
+Letta = what this worker should actually remember
+```
+
+---
+
+# 5. Harbor should own the complete physical run
+
+This is where I would heavily simplify WorkerKit.
+
+A Harbor trial already gives you an exact trial directory and can preserve:
+
+```text
+agent execution
+artifacts
+verifier artifacts
+result
+lock
+trajectory
+cost/model metadata
+```
+
+Its regrade mechanism specifically holds the recorded agent execution fixed and runs a new verifier over the recorded artifacts. Source trials are never modified. ([Harbor][2])
+
+So define:
+
+```text
+WorkerRun
+=
+Harbor Trial
++
+Letta WorkerVersion
++
+Campaign ID
++
+WorkerKit Receipt
+```
+
+WorkerKit does **not** need to duplicate everything Harbor records.
+
+WorkerKit should witness the important binding:
+
+```json
+{
+  "campaign": "C001",
+  "worker_version": "researcher/v1",
+  "letta_agent_id": "...",
+  "letta_conversation_id": "...",
+
+  "harbor_lock_digest": "sha256:...",
+  "harbor_result_digest": "sha256:...",
+  "artifact_manifest_digest": "sha256:...",
+
+  "campaign_git_commit": "...",
+  "worker_memory_commit": "...",
+  "world_commit": "...",
+
+  "cost_usd": "...",
+  "event_chain_head": "..."
+}
+```
+
+That's enough.
+
+---
+
+# 6. The first Harbor World should be ugly but real
+
+Don't build a general World generator yet.
+
+Build:
+
+```text
+private-worlds/
+  technical-submission-v0/
+```
+
+Specifically for the thing you're actually doing now.
+
+Structure:
+
+```text
+technical-submission-v0/
+├── instruction.md
+├── task.toml
+├── environment/
+│   └── Dockerfile
+│
+└── tests/
+    ├── hard_gates.py
+    ├── requirements.py
+    ├── technical.toml
+    ├── novelty.toml
+    ├── sponsor_fit.toml
+    ├── evidence.py
+    └── test.sh
+```
+
+Use:
+
+```toml
+[verifier]
+environment_mode = "separate"
+```
+
+from day one.
+
+Harbor regrade requires recorded artifacts and a separate-mode verifier, and separate mode is already the recommended direction. ([Harbor][2])
+
+---
+
+# 7. Don't try to make the first evaluator “correct”
+
+This is fundamental.
+
+Your first AssessorVersion can be:
+
+```text
+assessor/submission/v0
+```
+
+with:
+
+```text
+G0 eligibility/hard requirements
+G1 actual integration evidence
+G2 technical execution
+G3 opportunity fit
+G4 novelty
+G5 completeness
+G6 pitch/demo quality
+```
+
+But tag each signal:
+
+```text
+truth_type:
+  deterministic
+  environment
+  external
+  model_judge
+```
+
+For example:
+
+```yaml
+required_api_called:
+  kind: deterministic
+  weight: hard_gate
+
+tests_pass:
+  kind: deterministic
+
+technical_quality:
+  kind: model_judge
+
+novelty:
+  kind: model_judge
+
+actual_rank:
+  kind: external
+```
+
+That prevents:
+
+```text
+LLM score = truth
+```
+
+from entering the Lab.
+
+---
+
+# 8. Regrade should become a first-class Moltwork command immediately
+
+I'd make this one of the first real CGE features:
+
+```bash
+mw regrade C001 \
+  --assessor assessor/submission/v2
+```
+
+Underneath it should mostly call:
+
+```bash
+harbor job regrade ...
+```
+
+Harbor already does the difficult part: it preserves the original agent configuration, artifacts, recorded costs and provenance while rerunning only the verifier. ([Harbor][2])
+
+Then Hydra gets:
+
+```text
+Run R1
+ ├── Evaluation E1 / Assessor v1
+ ├── Evaluation E2 / Assessor v2
+ ├── Evaluation E3 / Assessor v3
+ └── ExternalOutcome O1
+```
+
+This alone could produce hugely valuable experiments before you touch worker evolution.
+
+---
+
+# 9. Replace “Hydra-looking SQLite” with actual HydraDB
+
+You actually have **two** faux-Hydra layers currently.
+
+`hydra/store.py` explicitly says it is SQLite and not HydraDB.
+
+But `hydra_projectors.py` also creates:
+
+```text
+hydra_nodes
+hydra_edges
+```
+
+inside another SQLite file and calls it Hydra.
+
+That is unnecessary now that the real repository is cloned.
+
+Keep SQLite only if you want:
+
+```text
+local cache / dev projection
+```
+
+but rename it:
+
+```text
+SQLiteLabProjection
+```
+
+Then implement:
+
+```text
+HydraLabProjection
+```
+
+using the actual Hydra Bolt or HTTP interface.
+
+Hydra's production interface is already Neo4j-driver-compatible Bolt plus HTTP/NDJSON and OpenCypher. ([GitHub][3])
+
+The abstraction can be tiny:
+
+```python
+class GraphStore:
+    query(cypher, params)
+    upsert_node(...)
+    upsert_edge(...)
+```
+
+No fancy Hydra client framework.
+
+---
+
+# 10. Start with maybe 12 Hydra node types, not 30
+
+The current frozen commit defines ~30 node types.
+
+That's too much before live data exists.
+
+First real schema:
+
+```text
+Opportunity
+Campaign
+
+Worker
+WorkerVersion
+
+WorldVersion
+AssessorVersion
+SkillVersion
+ProcessVersion
+
+Run
+Artifact
+Evaluation
+Outcome
+```
+
+And perhaps:
+
+```text
+LearningProposal
+```
+
+Edges:
+
+```text
+Campaign -TARGETS-> Opportunity
+
+Run -EXECUTED_BY-> WorkerVersion
+Run -PART_OF-> Campaign
+Run -IN_WORLD-> WorldVersion
+Run -USED_SKILL-> SkillVersion
+Run -USED_PROCESS-> ProcessVersion
+Run -PRODUCED-> Artifact
+
+Evaluation -ASSESSED-> Run
+Evaluation -USED-> AssessorVersion
+
+Outcome -RESULT_OF-> Campaign
+
+LearningProposal -SUPPORTED_BY-> Run
+```
+
+That's enough to learn a huge amount.
+
+Add ontology complexity only when actual queries require it.
+
+---
+
+# 11. CGE v0 should be almost embarrassingly small
+
+Don't build an evolver yet.
+
+CGE v0 should expose three operations.
+
+### Compare
+
+```text
+cge compare
+```
+
+```text
+same World
+same Assessor
+same model/budget
+
+Worker A
+vs
+Worker B
+```
+
+### Regrade
+
+```text
+cge regrade
+```
+
+```text
+same WorkerRun corpus
+
+Assessor A
+vs
+Assessor B
+```
+
+### World compare
+
+```text
+cge compare-world
+```
+
+```text
+same known worker population
+same assessor
+
+World A
+vs
+World B
+```
+
+Then the small CGE statistics we already liked:
+
+```text
+mean/std
+paired delta
+bootstrap CI
+Wilson interval
+non-inferiority
+```
+
+That's it.
+
+**CGE should not generate mutations itself in the first live Lab.**
+
+Let the coding/research worker propose them.
+
+---
+
+# 12. The private repo topology
+
+I'd actually separate state now.
+
+```text
+~/lab/
+```
+
+### `mw`
+
+Code/infrastructure.
+
+```text
+prx0r/mw
+```
+
+No personal campaign data committed here.
+
+### `lab-campaigns` private
+
+```text
+campaigns/
+  C001/
+  C002/
+  C003/
+```
+
+Every real opportunity gets a directory.
+
+### `lab-worlds` private initially
+
+```text
+worlds/
+  technical-submission/
+  idea-generation/
+```
+
+Eventually upstream good generic ones to Harbor.
+
+### Letta MemFS repo
+
+Owned by Letta.
+
+Don't manually use it as campaign storage.
+
+### `lab-assets`
+
+Optional later:
+
+```text
+skills/
+processes/
+assessors/
+schools/
+```
+
+But don't create this until assets actually start emerging.
+
+---
+
+# 13. Your first live Campaign
+
+I would do this before any generalized experiment suite.
+
+Suppose Oracle produces:
+
+```text
+Opportunity O1
+```
+
+### A. Freeze opportunity
+
+Create:
+
+```text
+campaigns/C001/opportunity/
+```
+
+Store:
+
+```text
+original Oracle payload
+official URLs
+rules
+sponsor criteria
+API docs snapshots/references
+deadline
+reward
+ontology classification
+```
+
+Commit:
+
+```text
+campaign/C001/opportunity
+```
+
+---
+
+### B. Research “what would win?”
+
+Use a **separate Letta research session**.
+
+It reads:
+
+```text
+opportunity
+official docs
+similar public submissions
+Hydra prior evidence
+```
+
+Produces:
+
+```text
+strategy/success-model.yaml
+```
+
+Don't auto-assign equal weights like the current `generate_success_model()` does when judging criteria exist. The current implementation simply divides `1.0 / len(criteria)` or falls back to hard-coded dimensions.
+
+For production, record uncertainty:
+
+```yaml
+dimensions:
+  technical:
+    expected_weight: .25
+    confidence: .8
+
+  novelty:
+    expected_weight: .20
+    confidence: .4
+```
+
+That is much more honest.
+
+---
+
+### C. Build Assessor v0
+
+Compile the research into actual Reward Kit files.
+
+Use deterministic checks wherever possible.
+
+Use model/agent judges only for subjective dimensions.
+
+Store as:
+
+```text
+worlds/C001-assessor/
+```
+
+Commit it.
+
+Freeze:
+
+```text
+AssessorVersion A0
+```
+
+---
+
+### D. Search the solution space
+
+For the first campaign, do this simply.
+
+Have the Letta worker generate:
+
+```text
+10 ideas
+```
+
+as independent candidate artifacts.
+
+Harbor grades all 10.
+
+Keep:
+
+```text
+top 3
+```
+
+Ask Letta to research those 3.
+
+Harbor grades again.
+
+Pick:
+
+```text
+top 1
+```
+
+No GEPA yet.
+
+You need a baseline for whether GEPA later improves anything.
+
+---
+
+### E. Build
+
+Persistent Letta worker.
+
+Fresh session:
+
+```text
+C001-build-1
+```
+
+It builds in a Git workspace.
+
+Commit frequently.
+
+At checkpoints:
+
+```text
+Harbor evaluate
+```
+
+Do:
+
+```text
+build → grade → review diagnostics → repair
+```
+
+while **worker memory remains frozen**.
+
+---
+
+### F. Finish WorkerRun
+
+Freeze:
+
+```text
+WorkerVersion
+WorldVersion
+AssessorVersion
+ProcessVersion
+campaign commit
+artifact commit
+Harbor lock/result
+ATIF
+Letta conversation/trajectory
+WorkerKit receipt
+cost
+```
+
+Now you finally have your first *real datum*.
+
+---
+
+# 14. Post-run is where experimentation begins
+
+Do not immediately “teach” Letta.
+
+Instead ask:
+
+```text
+What candidates emerged?
+```
+
+Possible output:
+
+```text
+MemoryCandidate
+SkillCandidate
+ProcessCandidate
+WorldCandidate
+AssessorCandidate
+CodeAssetCandidate
+```
+
+Example:
+
+```text
+ProcessCandidate:
+"Generate multiple architectures before committing."
+
+supported_by:
+C001 idea-search results
+```
+
+Keep that as:
+
+```text
+candidate/process/multi-architecture-v1
+```
+
+Not production.
+
+---
+
+# 15. External outcome closes the first loop
+
+Once the real result arrives:
+
+```text
+won
+lost
+rank
+judge feedback
+accepted
+paid
+```
+
+record:
+
+```text
+Outcome O1
+```
+
+in Git + Hydra.
+
+Now ask:
+
+### Did Assessor v0 predict reality?
+
+If badly:
+
+```text
+Assessor v1
+```
+
+Then **regrade C001 without rerunning the worker**.
+
+This is where Harbor becomes exceptional.
+
+---
+
+# 16. The second Campaign is the actual test of Moltwork
+
+C002 should not be impressive because the UI improved.
+
+It should be impressive because before the worker begins, Hydra can say:
+
+```text
+Relevant evidence:
+
+C001:
+- process P1 produced better ideas
+- technical judge predicted final outcome well
+- novelty judge overestimated candidate quality
+- requirement extraction caught two blockers
+- Skill candidate S1 is unvalidated
+```
+
+So C002 begins with:
+
+```text
+P1
+```
+
+but not necessarily S1.
+
+That is the beginning of compounding.
+
+---
+
+# 17. Only after 3–5 real Campaigns, introduce GEPA
+
+Then conduct:
+
+```text
+baseline:
+manual Letta refinement
+
+treatment:
+GEPA
+```
+
+Same ideation World.
+
+Ask:
+
+```text
+Does GEPA actually produce
+better final candidates per dollar?
+```
+
+GEPA already optimizes textual artifacts using full diagnostic feedback and Pareto selection, so it is an ideal treatment once you have a stable evaluator. But it should not be assumed to be the default.
+
+Same for:
+
+```text
+OpenEvolve
+Trace2Skill
+Letta dreaming
+ACE
+```
+
+They become experimental arms.
+
+Not architecture.
+
+---
+
+# 18. Your production-learning hierarchy
+
+I would enforce this ruthlessly:
+
+```text
+Level 0
+NO learning
+just finish real work
+
+Level 1
+artifact optimization
+within a Campaign
+
+Level 2
+process reuse
+between Campaigns
+
+Level 3
+Letta memory/Skill evolution
+only after evidence
+
+Level 4
+World/assessor evolution
+via regrade + outcomes
+
+Level 5
+optimizer experimentation
+GEPA/OpenEvolve/etc.
+
+Level 6
+actual policy/model training
+Agent Lightning etc.
+```
+
+You currently need Levels **0–2**.
+
+Everything above that can wait.
+
+---
+
+# 19. The first production milestone
+
+Not:
+
+> “Agent improves autonomously.”
+
+Not:
+
+> “Hydra learns.”
+
+Not:
+
+> “CGE evolves agents.”
+
+Make the milestone:
+
+> **Complete three real submission campaigns with one persistent Letta worker, where every run is reproducible through Harbor/Git, every evaluation can be regraded later, and Campaign 3 can query structured evidence from Campaigns 1–2.**
+
+If you achieve that, you will have real material to answer:
+
+```text
+Does Letta persistence help?
+
+Does the Lab brief help?
+
+Are our evaluators predictive?
+
+Which parts of the process transfer?
+
+Do multiple idea candidates beat one-shot ideation?
+
+How much does review improve final quality?
+
+How expensive is each stage?
+
+What should actually be promoted into memory?
+
+Is Hydra useful or just architecture cosplay?
+```
+
+Those are the questions worth answering now.
+
+## Immediate coding order
+
+1. **Archive `full_loop.py` as non-production reference.** It currently contains placeholder scientific conclusions and fake promotion logic.
+2. **Delete/replace the custom RewardKit imitation and regex evaluator.** Use real Harbor + Reward Kit directly.  ([Harbor][1])
+3. **Get `runtime-letta` running reliably as one persistent real worker.** Keep fresh session per Campaign run and freeze cognition during active Campaigns.
+4. **Create private `lab-campaigns` and `lab-worlds` Git repos.**
+5. **Make `mw campaign create/run/grade/regrade/outcome` work explicitly.**
+6. **Use Harbor trial directories as execution records rather than duplicating them.**
+7. **Wire actual HydraDB over Bolt/HTTP; demote both SQLite “Hydra” implementations to optional local projections.**   ([GitHub][3])
+8. **Build one real `technical-submission-v0` Harbor World.**
+9. **Run one actual live Campaign end-to-end.**
+10. **Regrade it with Assessor v1.**
+11. **Record the external outcome.**
+12. **Only then create the first memory/process/Skill candidate.**
+
+That is where I'd stop planning and start accumulating real WorkerRuns. The frontier systems are now good enough that Moltwork's job is primarily **integration, experimental discipline, economics, and keeping receipts**.
+
+[1]: https://www.harborframework.com/docs/rewardkit "https://www.harborframework.com/docs/rewardkit"
+[2]: https://www.harborframework.com/docs/run-jobs/regrade "https://www.harborframework.com/docs/run-jobs/regrade"
+[3]: https://github.com/hydra-db/hydradb/blob/main/architecture.md "https://github.com/hydra-db/hydradb/blob/main/architecture.md"

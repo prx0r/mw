@@ -1,0 +1,1267 @@
+Yes. This is the right checkpoint now: **stop treating Oracle and WorkerKit as two products and make one worker repeatedly use the Oracle, remember what it has already learned about the opportunity landscape, choose work, execute it, and feed the outcome back into its own decision model.**
+
+The latest `/mw` is already capable of being the evidence spine. WorkerKit has WorkOrders, append-only events, costs, verification, submission/outcome/settlement receipts, capability evidence and versioned processes; your own handover explicitly identifies the next milestone as one real Oracle opportunity completing that lifecycle.
+
+The Oracle is also further along conceptually than its runtime implementation. Its spec already has the correct raw-first structure—sources → immutable observations → canonical opportunities → observations/events → skills/categories → metrics—and explicitly treats Oracle opportunities as future labor demand and WorkerKit workers/capabilities as future supply.
+
+The main work now is **joining them without corrupting the clean layers**.
+
+# 1. Peer review: the Oracle ontology is directionally excellent, but currently split into three incompatible ontologies
+
+You effectively have:
+
+```text
+ORACLE-SPEC.md
+    ↓
+carefully normalized labor-market ontology
+
+models.py
+    ↓
+12 generic Python entities
+
+store.py / metrics.py
+    ↓
+legacy tables + newer canonical tables
+```
+
+That needs resolving before the feedback loop.
+
+Your `models.py` currently defines:
+
+```text
+Source
+Market
+Actor
+Capability
+Opportunity
+Service
+IncentiveMarket
+Observation
+Submission
+Outcome
+Payment
+Prediction
+```
+
+But the actual spec already defines the better model:
+
+```text
+Source
+IngestRun
+RawObservation
+
+Market
+
+Opportunity
+OpportunitySource
+OpportunityObservation
+OpportunityEvent
+
+Skill
+Category
+
+MetricDefinition
+MetricPoint
+```
+
+I would make the spec ontology canonical and demote several `models.py` entities.
+
+## `Submission`, `Outcome`, `Payment` should leave the Oracle domain
+
+You already built superior canonical versions in WorkerKit:
+
+```text
+WorkerRun
+SubmissionReceipt
+OutcomeReceipt
+SettlementReceipt
+CostEvent
+```
+
+Don't maintain:
+
+```text
+Oracle.Submission
+WorkerKit.WorkerRun
+```
+
+as parallel truths.
+
+Instead:
+
+```text
+ORACLE
+Opportunity
+     │
+     ▼
+WORKERKIT
+WorkOrder
+WorkerRun
+SubmissionReceipt
+OutcomeReceipt
+SettlementReceipt
+     │
+     ▼
+ORACLE
+OutcomeObservation / market statistics
+```
+
+The Oracle may **index** WorkerKit outcomes, but WorkerKit owns the execution record.
+
+---
+
+# 2. `Actor` should not become your worker ontology
+
+Current Oracle `Actor` contains things like wallet, capabilities and reputation.
+
+That's dangerous because you're now developing a much richer persistent worker.
+
+Use:
+
+```text
+Oracle Actor
+=
+external market participant identity
+```
+
+while:
+
+```text
+Moltwork Worker
+=
+persistent Lab entity
+```
+
+An Oracle actor could be:
+
+```text
+github:user
+virtuals:agent
+company
+buyer
+seller
+validator
+```
+
+and optionally resolve to:
+
+```text
+worker_id
+```
+
+But don't make them identical.
+
+---
+
+# 3. `Prediction` should move out of canonical Oracle
+
+This matters a lot.
+
+Current:
+
+```python
+Prediction(
+    opportunity_id,
+    worker_id,
+    p_entry,
+    p_award,
+    p_accept,
+    estimated_cost_usd,
+    expected_net_usd...
+)
+```
+
+That's not market truth.
+
+It is **worker-specific judgment**.
+
+So I'd move it conceptually to:
+
+```text
+lab.opportunity_assessment
+```
+
+Oracle says:
+
+```text
+reward = $500
+deadline = Sept 7
+requires TypeScript
+23 submissions
+```
+
+Lab says:
+
+```text
+for worker research-01:
+
+fit                 0.82
+P(complete)         0.91
+P(accepted)         0.37
+estimated cost      $4.80
+expected value      $180
+recommendation      INVESTIGATE
+```
+
+This separation is fundamental.
+
+Otherwise the supposedly canonical Oracle starts getting polluted by subjective worker beliefs.
+
+---
+
+# 4. Your shared ontology is missing the most important bridge: `TaskClass`
+
+Right now the Oracle has:
+
+```text
+category
+skills
+```
+
+and WorkerKit has:
+
+```text
+capabilities
+processes
+```
+
+But you need a stable common object describing **what kind of work is being done**.
+
+Add:
+
+```text
+TaskClass
+```
+
+Example:
+
+```text
+software.repo_analysis
+software.bug_fix
+research.web_research
+research.company_analysis
+research.source_verification
+security.dependency_audit
+content.localization
+support.ticket_resolution
+```
+
+Then:
+
+```text
+Opportunity
+    REQUIRES
+TaskClass + CapabilityRequirements
+
+WorkerRun
+    PERFORMS
+TaskClass
+
+CapabilityEvidence
+    EVIDENCE_FOR
+TaskClass
+
+ProcessVersion
+    OPTIMIZED_FOR
+TaskClass
+```
+
+That's your shared ontology.
+
+Skills alone aren't enough.
+
+`python` is a skill.
+
+`debug a failing Python service` is a task class.
+
+---
+
+# 5. Add `CapabilityRequirement`
+
+Right now the Oracle skill taxonomy is good—the spec already gives stable skills, parents, aliases and versioning.
+
+But requirements should be more expressive than:
+
+```text
+skills = ["python", "research"]
+```
+
+Add:
+
+```python
+CapabilityRequirement
+{
+    capability_id
+    relation
+    threshold
+    evidence_requirement
+    required
+}
+```
+
+So an opportunity can eventually state:
+
+```text
+python                     required
+github                     required
+repo-analysis              >= 0.80 evidence
+solidity                   preferred
+human_intervention         <= H2
+voice                      not_required
+```
+
+Now matching becomes meaningful.
+
+---
+
+# 6. Your current metrics layer should be considered temporary
+
+There are several concrete problems in `metrics.py`.
+
+It computes “open opportunities” using:
+
+```sql
+WHERE first_seen >= ?
+```
+
+without requiring `status='open'`. It calls records with `reward > 0` “transactions,” even though an advertised bounty is not a transaction. It derives “outcomes” from opportunity status rather than actual WorkerKit outcomes, and its “supply” is service listings rather than worker supply.
+
+That's precisely the kind of semantic drift your spec was designed to prevent.
+
+I'd delete or rename these misleading metrics rather than polish them.
+
+For now expose only things you truly know:
+
+```text
+active_opportunities
+new_opportunities
+advertised_open_reward_usd
+median_advertised_reward_usd
+
+demand_by_task_class
+demand_by_capability
+
+observed_applicants
+observed_submissions
+
+source_freshness
+source_coverage
+```
+
+Then once WorkerKit feeds real outcomes:
+
+```text
+attempts
+verified_completions
+accepted_outputs
+verified_payout
+realized_cost
+realized_margin
+```
+
+Your spec already explicitly warns to distinguish advertised reward from money actually paid.
+
+Good instinct. Enforce it everywhere.
+
+---
+
+# 7. Also fix the storage/code split now
+
+`store.py` already has the newer canonical tables, including raw observations, canonical opportunities, multiple-source resolution, opportunity observations/events, canonical skills and metric definitions.
+
+Yet `metrics.py` still reads legacy:
+
+```text
+opp
+svc
+```
+
+That's technical debt you should remove before attaching learning.
+
+The immediate Oracle P0 is:
+
+```text
+feeds
+  ↓
+raw_observations
+  ↓
+normalizer
+  ↓
+oracle_opps
+  ↓
+oracle_opp_skills
+oracle_opp_categories
+oracle_opp_events
+  ↓
+API
+```
+
+No important consumer should use `opp.skills JSON` anymore.
+
+---
+
+# 8. Now the interesting part: Oracle ↔ Personal Lab
+
+The first real loop should be:
+
+```text
+                    ORACLE
+               current opportunities
+                       │
+                       ▼
+              candidate retrieval
+                       │
+                       ▼
+          ┌─────────────────────┐
+          │     WORKER LAB      │
+          │                     │
+          │ capabilities        │
+          │ previous outcomes   │
+          │ processes           │
+          │ current budget      │
+          │ scratch memory      │
+          │ opportunity notes   │
+          └─────────┬───────────┘
+                    │
+                    ▼
+             OpportunityAssessment
+                    │
+           ┌────────┼─────────┐
+           ▼        ▼         ▼
+          DO      WATCH      SKIP
+           │
+           ▼
+        WorkOrder
+           │
+           ▼
+       WorkerKit
+           │
+           ▼
+         outcome
+           │
+           ▼
+         Lab learns
+           │
+           ├── capability evidence
+           ├── process evidence
+           ├── economic calibration
+           └── opportunity priors
+```
+
+That's checkpoint one.
+
+Not marketplace.
+
+Not TEE.
+
+Not leasing.
+
+This.
+
+---
+
+# 9. And yes: scratch memory is absolutely a real distinct primitive
+
+The recent memory literature strongly supports separating **temporary working state** from long-term memory.
+
+A 2026 survey of long-horizon agents explicitly distinguishes long context, long-horizon execution and cross-task long-term memory—they are different system properties. ([arXiv][1])
+
+Older cognitive architectures make a similar functional split: working memory is temporary task-related state, while long-term memory includes semantic facts, procedural rules and episodic experiences. ([arXiv][2])
+
+For Moltwork I would use **five memory classes**.
+
+```text
+SCRATCH
+"What am I currently thinking about?"
+
+EPISODIC
+"What happened before?"
+
+SEMANTIC
+"What do I believe to be true?"
+
+PROCEDURAL
+"How do I do this?"
+
+GRAPH / RELATIONAL
+"How do these things relate?"
+```
+
+And then Git separately handles:
+
+```text
+VERSION HISTORY
+"How has my productive machinery changed?"
+```
+
+---
+
+# 10. Scratch memory should be stupid-simple first
+
+Your timestamped Markdown idea is excellent.
+
+Do not put it into Hydra immediately.
+
+Do:
+
+```text
+.lab/
+  workers/
+    research-01/
+      scratch/
+        2026-08-30T08-31Z-opportunity-review.md
+        2026-08-30T11-05Z-hackathons.md
+        2026-08-31T04-20Z-followups.md
+```
+
+Example:
+
+```markdown
+---
+type: opportunity_review
+worker_id: research-01
+worker_version: 17
+created_at: 2026-08-30T08:31:00+07:00
+oracle_snapshot: oracle_snapshot_812
+expires_at: 2026-08-30T14:31:00+07:00
+capability_snapshot: cap_712
+---
+
+# Current opportunity review
+
+Reviewed 37 current candidates.
+
+## Strong
+
+### opp_381
+ETH developer bounty
+
+Why:
+- exact repo-analysis fit
+- deadline manageable
+- existing Solidity process useful
+
+Current view:
+WATCH → investigate requirements before committing.
+
+Risks:
+- competition unclear
+- submission may require deployment
+
+Next check:
+Only reconsider if competition or deadline changes.
+
+## Rejected
+
+### opp_219
+
+Skip because:
+- requires design assets
+- weak current capability
+- estimated setup > expected reward
+
+Do not reconsider unless reward > $300.
+```
+
+This is not “long-term memory.”
+
+It's the worker's **working notebook**.
+
+---
+
+# 11. Why this matters economically
+
+Without scratch memory, every invocation does:
+
+```text
+retrieve 441 opportunities
+↓
+read them
+↓
+reason from zero
+↓
+reach basically same conclusions
+```
+
+Wasteful.
+
+With scratch:
+
+```text
+retrieve changed/new opportunities
++
+read last review
+↓
+update previous beliefs
+```
+
+Much cheaper.
+
+So the Oracle API should eventually support:
+
+```text
+GET /opportunities/changes?since=<snapshot>
+```
+
+rather than always:
+
+```text
+GET /opportunities
+```
+
+Then:
+
+```text
+previous scratch
++
+delta
+=
+new review
+```
+
+This is essentially event sourcing applied to the agent's attention.
+
+---
+
+# 12. Recent memory research gives you an even better implementation pattern
+
+RecMem is especially relevant.
+
+Instead of running expensive LLM-based memory extraction on every interaction, it first puts incoming material into a lightweight “subconscious” memory layer. Only when similar information **recurs** does it invoke consolidation into episodic/semantic memory. The paper reports substantial memory-construction cost savings. ([arXiv][3])
+
+That's almost exactly what you want.
+
+Moltwork version:
+
+```text
+SCRATCH
+cheap, messy, frequent
+
+        ↓ recurrence / importance / outcome
+
+CONSOLIDATION
+        ↓
+
+EPISODIC
+"three security bounties failed because deployments took longer than estimated"
+
+SEMANTIC
+"deployment-heavy bounties have systematically higher execution cost"
+
+PROCEDURAL
+"before accepting deployment bounty, run deployment-readiness check"
+```
+
+That is excellent.
+
+---
+
+# 13. Never automatically promote scratch to truth
+
+TRUSTMEM is useful here.
+
+The paper points out that long-term memory writes themselves can omit facts, corrupt old information or hallucinate unsupported claims; it introduces explicit checks for coverage, preservation and faithfulness before memory updates. ([arXiv][4])
+
+So:
+
+```text
+ScratchNote
+   ↓
+candidate consolidation
+   ↓
+MemoryTransitionVerifier
+   ↓
+PROMOTE / REJECT
+```
+
+For Moltwork you already have provenance.
+
+A promoted memory should carry:
+
+```json
+{
+  "claim": "deployment-heavy bounties cost us more than estimated",
+  "derived_from": [
+    "run_81",
+    "run_97",
+    "run_113"
+  ],
+  "confidence": 0.84,
+  "created_at": "...",
+  "valid_until": null
+}
+```
+
+No memory without evidence refs where evidence exists.
+
+That is very Moltwork.
+
+---
+
+# 14. Working memory should be compact and mutable
+
+UMA is another very relevant 2026 result: it uses a compact core summary plus a structured memory bank with explicit create/update/delete/reorganize operations instead of endlessly appending history. ([arXiv][5])
+
+MEM1 similarly learns to maintain a compact shared state, dropping irrelevant/redundant information rather than letting context grow forever. ([arXiv][6])
+
+So perhaps each worker has:
+
+```text
+scratch/
+    timestamped immutable notes
+
+WORKING.md
+    mutable compact current state
+```
+
+Example:
+
+```markdown
+# research-01 working state
+
+Last Oracle review: 08:31
+Next full review: 14:30
+
+Current focus:
+1. ETH integration opportunities
+2. API/cloud hackathons
+3. GitHub bounty work
+
+Top active candidates:
+- opp_381 — investigate
+- opp_419 — waiting for rules
+- opp_328 — likely skip
+
+Avoid:
+- design-heavy competitions
+- opportunities under $20 requiring new deployment infra
+
+Open questions:
+- Can worker currently deploy Solidity reliably?
+- Is process `hackathon-review@v4` calibrated?
+```
+
+The timestamped notes give provenance.
+
+`WORKING.md` gives constant-size state.
+
+That distinction is strong.
+
+---
+
+# 15. Hydra belongs after consolidation, not before it
+
+The graph-memory survey describes graph memory as useful for relational dependencies, hierarchy and evolving memory, but also frames memory around the lifecycle of extraction → storage → retrieval → evolution. ([arXiv][7])
+
+That's exactly how I'd use Hydra.
+
+Don't dump raw scratch into Hydra.
+
+Instead:
+
+```text
+scratch note
+↓
+verified consolidation
+↓
+structured memory
+↓
+Hydra graph
+```
+
+Example:
+
+```text
+worker/research-01
+    FAILED_ON → deployment-heavy-task
+    USED_PROCESS → hackathon-review@v3
+    IMPROVED_BY → process@v4
+
+task/deployment-heavy
+    REQUIRES → solidity-deployment
+
+capability/solidity-deployment
+    EVIDENCED_BY → run_193
+```
+
+Canonical evidence stays WorkerKit/Git.
+
+Hydra is the derived relationship layer.
+
+---
+
+# 16. Implement an `OpportunityReview` object
+
+This is the missing bridge.
+
+```python
+@dataclass
+class OpportunityReview:
+    id: str
+    worker_id: str
+    worker_version: str
+
+    oracle_snapshot_id: str
+    opportunity_id: str
+
+    reviewed_at: str
+
+    disposition: str
+    # DO | INVESTIGATE | WATCH | SKIP
+
+    fit_score: Decimal
+    estimated_success: Decimal | None
+    estimated_cost_usd: Decimal | None
+    estimated_value_usd: Decimal | None
+
+    reasons: list[str]
+    risks: list[str]
+
+    missing_capabilities: list[str]
+
+    revisit_after: str | None
+    invalidation_triggers: list[str]
+
+    scratch_ref: str
+```
+
+Notice:
+
+```text
+Oracle Opportunity
+≠
+OpportunityReview
+```
+
+That's critical.
+
+---
+
+# 17. Use invalidation rather than repeatedly rereading
+
+This is the cool primitive I'd add.
+
+Suppose worker says:
+
+```text
+SKIP opp_19
+because:
+reward $10
+estimated work $17
+```
+
+Don't reconsider it every hour.
+
+Store:
+
+```text
+invalidation_triggers:
+- reward_changed
+- requirements_changed
+```
+
+Oracle already has an `opportunity_events` concept for reward/deadline/status/competition changes.
+
+Then:
+
+```text
+reward_changed
+$10 → $100
+```
+
+automatically invalidates the worker's old review.
+
+This is **far better than semantic memory retrieval** for this type of state.
+
+It's deterministic.
+
+---
+
+# 18. The Oracle should send deltas to workers
+
+Create:
+
+```text
+GET /v1/opportunities/feed
+```
+
+parameters:
+
+```text
+worker capability filters
+since
+task_classes
+min_reward
+deadline_window
+changed_only
+```
+
+Return:
+
+```json
+{
+  "snapshot_id": "snap_819",
+  "since": "snap_802",
+
+  "new": [...],
+  "changed": [
+    {
+      "opportunity": "...",
+      "events": [
+        "reward_changed"
+      ]
+    }
+  ],
+  "closed": [...]
+}
+```
+
+Then worker logic:
+
+```text
+load WORKING.md
+load unresolved reviews
+request Oracle delta
+review only material changes
+write timestamped scratch
+update WORKING.md
+```
+
+That's an actual durable agent.
+
+---
+
+# 19. Capability matching should happen in two stages
+
+Don't let an LLM scan 441 opportunities every time.
+
+### Stage 1: cheap deterministic retrieval
+
+Oracle:
+
+```text
+status open
+deadline viable
+agent_allowed
+task-class match
+capability overlap
+reward floor
+human_level allowed
+```
+
+Maybe returns 30.
+
+### Stage 2: worker reasoning
+
+The worker looks at:
+
+```text
+30 candidates
++
+own evidence
++
+previous scratch
++
+LiveLLM budget
+```
+
+and deeply reviews perhaps 5.
+
+Eventually measure whether this hierarchy beats asking a model to inspect everything.
+
+---
+
+# 20. Feed actual outcomes back into *personal* ranking first
+
+After:
+
+```text
+opp_381
+↓
+worker chose DO
+↓
+spent $2.82
+↓
+submission rejected
+```
+
+Do not immediately alter global Oracle ranking.
+
+Update:
+
+```text
+worker/research-01
+```
+
+with:
+
+```text
+task class prior
+process prior
+cost calibration
+success calibration
+market prior
+```
+
+Example:
+
+```text
+Predicted:
+cost $1.20
+P(accept) .70
+
+Actual:
+cost $2.82
+rejected
+
+Calibration:
+deployment tasks underestimated
+```
+
+Next similar opportunity:
+
+```text
+estimated cost
+$1.20
+→
+$2.41
+```
+
+That's actual economic learning.
+
+---
+
+# 21. Eventually separate three ranking scores
+
+Oracle:
+
+```text
+MARKET ATTRACTIVENESS
+```
+
+Objective-ish:
+
+```text
+reward
+deadline
+competition
+duration
+payment reliability
+```
+
+Lab:
+
+```text
+WORKER FIT
+```
+
+Personal:
+
+```text
+capabilities
+processes
+historical success
+cost
+```
+
+DecisionEngine:
+
+```text
+ECONOMIC ACTION
+```
+
+Combines both:
+
+```text
+market attractiveness
+×
+worker fit
+×
+P(outcome)
+-
+predicted marginal cost
+```
+
+This separation will save you huge confusion.
+
+---
+
+# 22. First actual Lab checkpoint
+
+I would now define **CP-LAB-1**:
+
+> A persistent worker reviews a live Oracle twice without redundantly reconsidering unchanged work, chooses one real opportunity using its own capability/economic history, executes it through WorkerKit, and updates its future opportunity judgment from the result.
+
+Concrete:
+
+```text
+T0
+
+Oracle: 441 opportunities
+        ↓
+deterministic filter: 31
+        ↓
+worker reviews: 8
+        ↓
+writes:
+scratch/2026-...-opportunity-review.md
+        ↓
+WORKING.md updated
+        ↓
+chooses:
+WATCH 3
+SKIP 4
+DO 1
+
+
+T1
+
+Oracle has:
+7 new
+4 materially changed
+430 unchanged
+
+worker loads prior scratch
+        ↓
+does NOT review 430 again
+        ↓
+reviews only:
+7 new
+4 changed
+3 unresolved watches
+        ↓
+one previous SKIP invalidated by reward increase
+        ↓
+chooses work
+
+
+EXECUTION
+
+Opportunity
+→ WorkOrder
+→ real worker
+→ CostEvents
+→ artifact
+→ verification
+→ submission
+→ outcome
+
+
+LEARNING
+
+outcome
+→ capability evidence
+→ cost calibration
+→ episodic memory candidate
+→ process candidate
+→ new ranking prior
+```
+
+That is a genuinely interesting demo.
+
+---
+
+# 23. Experiments fall naturally out of this
+
+Once it runs, **don't immediately optimize it.**
+
+Run ablations.
+
+Same opportunity stream:
+
+```text
+A
+No persistent scratch
+
+B
+Timestamped scratch only
+
+C
+Scratch + mutable WORKING.md
+
+D
+Scratch + recurrence consolidation
+
+E
+Scratch + Letta episodic memory
+
+F
+Scratch + Letta + Hydra
+```
+
+Metrics:
+
+```text
+tokens spent reviewing
+opportunities reread unnecessarily
+ranking stability
+missed opportunity rate
+choice quality
+forecast error
+realized $ / compute $
+human interventions
+```
+
+Now you can legitimately discover whether advanced memory works.
+
+Perhaps:
+
+```text
+Hydra adds 0%
+but simple scratch saves 65% tokens
+```
+
+That would be hugely valuable.
+
+Or perhaps graph memory improves finding capability relationships.
+
+Either way you learn.
+
+---
+
+# My immediate dev order
+
+1. **Freeze canonical Oracle ontology.** Use the spec tables; stop building around legacy `opp`/`svc`.
+2. Add `TaskClass` and `CapabilityRequirement` as the main WorkerKit↔Oracle bridge.
+3. Move worker-specific `Prediction` → `LabOpportunityAssessment`.
+4. Make WorkerKit execution receipts the only canonical Submission/Outcome/Settlement objects.
+5. Add Oracle delta/snapshot API based on `opportunity_events`.
+6. Add `WorkerProfileProjection` from real capability/process/outcome evidence.
+7. Implement timestamped scratch `.md`.
+8. Implement compact mutable `WORKING.md`.
+9. Implement `OpportunityReview` + invalidation triggers.
+10. Run **CP-LAB-1** with one persistent worker.
+11. Then add RecMem-style consolidation into episodic/semantic/procedural memory rather than stuffing every note into Letta/Hydra. ([arXiv][3])
+12. Finally run memory ablations and let the evidence tell you whether Letta/Hydra/graph memory materially improves the worker.
+
+The key conceptual move is that **scratch memory isn't a worse version of long-term memory**. It's the worker's cheap, local, temporary model of its current world. Some scratch expires. Some gets invalidated by Oracle events. Some recurrent observations become episodic or semantic memory. Some successful repeated behavior becomes a `ProcessVersion`. Some processes eventually compile into executable skills.
+
+That gives you a complete path from the current memory frontier to something you can actually measure:
+
+```text
+OBSERVE
+↓
+SCRATCH
+↓
+ACT
+↓
+OUTCOME
+↓
+CONSOLIDATE
+↓
+MEMORY / PROCESS / CAPABILITY
+↓
+NEXT ORACLE DECISION
+↓
+better or not?
+```
+
+If that loop produces increasing realized productivity over the next 20–100 real opportunities, you've found the core of Moltwork.
+
+[1]: https://arxiv.org/abs/2608.06663?utm_source=chatgpt.com "The Horizon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents"
+[2]: https://arxiv.org/pdf/1610.08602?utm_source=chatgpt.com "A Review of 40 Years in Cognitive Architecture Research"
+[3]: https://arxiv.org/abs/2605.16045?utm_source=chatgpt.com "RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents"
+[4]: https://arxiv.org/abs/2606.25161?utm_source=chatgpt.com "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory"
+[5]: https://arxiv.org/abs/2602.18493?utm_source=chatgpt.com "Learning to Remember: End-to-End Training of Memory Agents for Long-Context Reasoning"
+[6]: https://arxiv.org/abs/2506.15841?utm_source=chatgpt.com "MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents"
+[7]: https://arxiv.org/abs/2602.05665?utm_source=chatgpt.com "Graph-based Agent Memory: Taxonomy, Techniques, and Applications"
