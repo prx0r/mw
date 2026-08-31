@@ -129,7 +129,7 @@ app.post("/workers", async (c) => {
       memory,
       memfs: true,
       name: body.worker_id,
-      reasoningEffort: "none",  // disable reasoning overhead
+      reasoningEffort: body.reasoning_effort || "medium",  // from WorkerGenome
     });
 
     const mapping: WorkerMapping = {
@@ -187,6 +187,12 @@ app.post("/workers/:id/run", async (c) => {
   let timeoutHandle: NodeJS.Timeout | undefined;
   let hardCloseHandle: NodeJS.Timeout | undefined;
 
+  // Per spec: stateless/stateful/reasoningEffort come from WorkerGenome, not hardcoded
+  const genomeConfig = body.genome || {};
+  const stateless = genomeConfig.memory_mode === "off";
+  const maxSteps = genomeConfig.max_steps || 4;
+  const reasoningEffort = genomeConfig.reasoning_effort || "medium";
+
   try {
     // Create a NEW session for this run
     // stateless: true skips MemFS sync, skills, mods, transcript writes
@@ -196,8 +202,8 @@ app.post("/workers/:id/run", async (c) => {
         "Read", "Write", "Edit", "LS", "Glob", "Grep", "Bash",
       ],
       permissionMode: "unrestricted",
-      stateless: true,  // skip memory for single-shot tasks
-      maxSteps: 2,      // force minimal steps
+      stateless: stateless,
+      maxSteps: maxSteps,
     });
 
     console.log(`[${workerId}] SESSION session=${(session as any).sessionId} cwd=${cwd}`);

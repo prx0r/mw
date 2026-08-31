@@ -37,6 +37,24 @@ DEFAULT_PRICING = {
         "free": False,
         "provider": "groq",
     },
+    "qwen/qwen3.8-27b": {
+        "input_per_m": 0.05,
+        "output_per_m": 0.08,
+        "free": False,
+        "provider": "groq",
+    },
+    "openai/gpt-oss-20b": {
+        "input_per_m": 0.05,
+        "output_per_m": 0.08,
+        "free": False,
+        "provider": "groq",
+    },
+    "openai/gpt-oss-120b": {
+        "input_per_m": 0.50,
+        "output_per_m": 0.80,
+        "free": False,
+        "provider": "groq",
+    },
     "anthropic/claude-3.5-sonnet": {
         "input_per_m": 3.0,
         "output_per_m": 15.0,
@@ -48,6 +66,12 @@ DEFAULT_PRICING = {
         "output_per_m": 0.60,
         "free": False,
         "provider": "openai",
+    },
+    "openrouter/auto": {
+        "input_per_m": 0.0,
+        "output_per_m": 0.0,
+        "free": False,
+        "provider": "openrouter",
     },
 }
 
@@ -81,6 +105,7 @@ class ProviderRegistry:
             "anthropic": "ANTHROPIC_API_KEY",
             "openai": "OPENAI_API_KEY",
             "cloudflare": "CF_API_TOKEN",
+            "openrouter": "OPENROUTER_API_KEY",
         }
         env_var = key_map.get(provider, "")
         return os.environ.get(env_var, "")
@@ -125,7 +150,12 @@ class ProviderRegistry:
     def list_providers(self) -> list[dict]:
         """List all configured providers."""
         providers = []
-        for provider, env_var in [("opencode-go", "OPENCODE_API_KEY"), ("groq", "GROQ_API_KEY")]:
+        for provider, env_var in [
+            ("opencode-go", "OPENCODE_API_KEY"),
+            ("groq", "GROQ_API_KEY"),
+            ("openrouter", "OPENROUTER_API_KEY"),
+            ("cloudflare", "CF_API_TOKEN"),
+        ]:
             key = os.environ.get(env_var, "")
             providers.append({
                 "provider": provider,
