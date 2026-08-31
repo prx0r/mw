@@ -206,13 +206,56 @@ class AttestedWorkReceiptV1:
             json.dump(self.to_dict(), f, indent=2)
 
 
-def from_workerkit_receipt(receipt, run, artifacts: list = None) -> AttestedWorkReceiptV1:
-    """Convert a WorkerKit WorkReceipt into AttestedWorkReceiptV1."""
+def from_workerkit_receipt(receipt, run, artifacts: list = None,
+                           manifest_digest: str = "", policy_digest: str = "",
+                           agent_id: str = "", chain_id: int = 84532,
+                           identity_registry: str = "",
+                           job_contract: str = "", job_id: str = "",
+                           delegation_hash: str = "", delegation_expires: str = "",
+                           tee_info: TEEInfo | None = None,
+                           signing_key: str = "", payments: list | None = None) -> AttestedWorkReceiptV1:
+    """Convert a WorkerKit WorkReceipt into AttestedWorkReceiptV1.
+
+    Fills all subsystem fields when provided. Missing fields stay empty.
+    """
     att = AttestedWorkReceiptV1()
     att.run_id = receipt.run_id
     att.work_order_id = receipt.work_order_id
     att.event_chain_head = receipt.events_hash.split(":")[0] if ":" in receipt.events_hash else ""
     att.event_count = int(receipt.events_hash.split(":")[1]) if ":" in receipt.events_hash else 0
     att.known_cost = run.known_cost_usd if hasattr(run, "known_cost_usd") else "0"
+
+    # Artifacts
     att.artifacts = [{"sha256": a.get("sha256", ""), "mediaType": a.get("media_type", "")} for a in (artifacts or [])]
+
+    # Worker manifest
+    att.worker_manifest_digest = manifest_digest
+    att.policy_digest = policy_digest
+
+    # Agent identity (ERC-8004)
+    att.agent.chain_id = chain_id
+    att.agent.identity_registry = identity_registry
+    att.agent.agent_id = agent_id
+
+    # Job (ERC-8183)
+    att.job.chain_id = chain_id
+    att.job.contract = job_contract
+    att.job.job_id = job_id
+
+    # Delegation (ERC-7710)
+    att.delegation.delegation_hash = delegation_hash
+    att.delegation.policy_digest = policy_digest
+    att.delegation.expires_at = delegation_expires
+
+    # TEE
+    if tee_info:
+        att.tee = tee_info
+    att.tee.signing_public_key = signing_key
+
+    # Payments
+    att.payments = payments or []
+
+    # Compute receipt digest
+    att.receipt_digest = att.compute_receipt_digest()
+
     return att

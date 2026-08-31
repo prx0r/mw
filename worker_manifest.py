@@ -96,11 +96,14 @@ class WorkerManifest:
     created_at: float = field(default_factory=time.time)
 
     def manifest_hash(self) -> str:
-        """Content-addressed hash of this manifest."""
+        """Content-addressed hash of this manifest.
+
+        Excludes versionId and manifestHash (self-referential).
+        Includes ALL security-relevant fields.
+        """
         d = {
             "schemaVersion": self.schema_version,
             "workerId": self.worker_id,
-            "versionId": self.version_id,
             "parentVersion": self.parent_version,
             "runtime": self.runtime.to_dict(),
             "agent": self.agent.to_dict(),
@@ -111,6 +114,11 @@ class WorkerManifest:
             "skillsTreeDigest": self.skills_tree_digest,
             "modelId": self.model_id,
             "modelProvider": self.model_provider,
+            "modelSettingsDigest": self.model_settings_digest,
+            "toolPolicyDigest": self.tool_policy_digest,
+            "toolSchemaDigest": self.tool_schema_digest,
+            "workerkitVersion": self.workerkit_version,
+            "evidenceSchema": self.evidence_schema,
             "learningProposal": self.learning_proposal,
             "experimentReceipt": self.experiment_receipt,
         }
@@ -166,6 +174,8 @@ class WorkerManifest:
         if "runtime" in d:
             m.runtime = RuntimeRef(**{k: v for k, v in d["runtime"].items() if k in RuntimeRef.__dataclass_fields__})
         m.agent_id = d.get("agentId", "")
+        if "agent" in d:
+            m.agent = AgentRef(**{k: v for k, v in d["agent"].items() if k in AgentRef.__dataclass_fields__})
         mem = d.get("memory", {})
         m.memory_commit = mem.get("commit", "")
         m.memory_tree_digest = mem.get("treeDigest", "")
@@ -175,6 +185,13 @@ class WorkerManifest:
         model = d.get("model", {})
         m.model_id = model.get("id", "")
         m.model_provider = model.get("provider", "")
+        m.model_settings_digest = model.get("settingsDigest", "")
+        tools = d.get("tools", {})
+        m.tool_policy_digest = tools.get("policyDigest", "")
+        m.tool_schema_digest = tools.get("schemaDigest", "")
+        wk = d.get("workerkit", {})
+        m.workerkit_version = wk.get("version", "0.1.0")
+        m.evidence_schema = wk.get("evidenceSchema", "moltwork:event:v1")
         promo = d.get("promotion", {})
         m.learning_proposal = promo.get("learningProposal", "")
         m.experiment_receipt = promo.get("experimentReceipt", "")

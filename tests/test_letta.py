@@ -53,14 +53,14 @@ async def run():
     test("health fails without af/server", not h2.ok)
 
     # WorkerManifest
-    m = build_manifest("researcher-v12", af_path=af_path, runtime_adapter="letta", runtime_image="ghcr.io/letta@sha256:abc")
-    test("manifest worker", m.worker == "researcher-v12")
+    m = build_manifest("researcher-v12", af_path=af_path, runtime_adapter="letta")
+    test("manifest worker", m.worker_id == "researcher-v12")
     test("manifest agent hash", len(m.agent.sha256) == 64)
     test("manifest hash", len(m.manifest_hash()) == 64)
     with tempfile.NamedTemporaryFile(suffix='.json', delete=False) as mf:
         m.save(mf.name)
         m2 = WorkerManifest.load(mf.name)
-        test("manifest round-trip", m2.worker == "researcher-v12" and m2.agent.sha256 == m.agent.sha256)
+        test("manifest round-trip", m2.worker_id == "researcher-v12" and m2.agent.sha256 == m.agent.sha256)
 
     # Sanitize
     af_secret = {"agents": [{"name": "x", "api_key": "sk-123", "secret_token": "s"}], "blocks": []}

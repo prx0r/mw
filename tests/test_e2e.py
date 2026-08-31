@@ -115,7 +115,7 @@ async def run_e2e():
 
     # ═══ PHASE 4: AGENT LEASE ═══
     print("\n▸ PHASE 4: Agent lease → ERC-7710")
-    from evidence.lease import compile_permission_language
+    from tests.support.lease import compile_permission_language
 
     lease = compile_permission_language({"agent": "413", "expires": "2026-09-05T00:00:00Z", "permissions": {"x402": {"max_total_usd": 5}, "contracts": {"allow": [{"target": "0xERC8183", "methods": ["submit(...)"]}]}}, "require": {"tee_workload": workload_id}})
     test("4.1 Lease compiled", lease.agent_id == "413")

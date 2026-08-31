@@ -41,9 +41,9 @@ async def run_test():
         proj = LabProjection(proj_db, append_only=False)
         projector = LabProjector(EventLedger(ledger_db), proj)
 
-        test("WorkerKit created", wk is not None)
-        test("LabProjection created", proj is not None)
-        test("Projector created", projector is not None)
+        test("WorkerKit created", wk.ledger is not None)
+        test("LabProjection created", proj.get_agent("__nonexistent__") is None)
+        test("Projector created", projector.projection is proj)
 
         # ─── 2. Run 5 training fixtures ───────────────────────────────────
         print("\n2. Run training fixtures through WorkerKit")
@@ -207,7 +207,7 @@ async def run_test():
             hidden_mean_after=v2_mean,
         )
         promoted = pipe.promote(cands[0].lesson_id, exp)
-        test("promotion decision made", promoted in (True, False))
+        test("promotion decision made", isinstance(promoted, bool))
         print(f"    lesson: {cands[0].content}")
         print(f"    status: {cands[0].status}")
         print(f"    promoted: {promoted}")

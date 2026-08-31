@@ -1,0 +1,128 @@
+name: CI
+
+on:
+  push:
+    branches: [main, ethonline-2026]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Run all tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          failed=0
+          for t in tests/test_*.py; do
+            echo "--- $t ---"
+            python "$t" || failed=1
+          done
+          exit $failed
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install mypy
+      - name: Type check
+        run: mypy --ignore-missing-imports workerkit/ || true
+
+  node-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/runtime-letta
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm ci
+      - name: Type check
+        run: npx tsc --noEmit
+      - name: Run tests
+        run: npm test
+
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Manifest mutation tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python -c "
+          import sys, os, tempfile, hashlib
+          sys.path.insert(0, '.')
+          from workerkit.worker_manifest import WorkerManifest, build_manifest
+          from pathlib import Path
+
+          # Create baseline manifest
+          with tempfile.NamedTemporaryFile(mode='w', suffix='.af', delete=False) as f:
+              import json
+              json.dump({'agents': [{'name': 'test-worker', 'id': 't1'}], 'blocks': [], 'tools': [], 'mcp_servers': []}, f)
+              af_path = f.name
+
+          m = build_manifest('test-worker', af_path=af_path, runtime_adapter='letta')
+          baseline_hash = m.manifest_hash()
+
+          # Test: save → load → digest unchanged
+          with tempfile.NamedTemporaryFile(suffix='.json', delete=False) as mf:
+              m.save(mf.name)
+              m2 = WorkerManifest.load(mf.name)
+              assert m2.manifest_hash() == baseline_hash, f'Hash changed after save/load: {m2.manifest_hash()} != {baseline_hash}'
+
+          # Test: each field mutation changes hash
+          mutations = [
+              ('worker_id', 'different-worker'),
+              ('parent_version', 'abc123'),
+              ('model_id', 'gpt-4'),
+              ('model_provider', 'openai'),
+              ('model_settings_digest', 'new_digest'),
+              ('tool_policy_digest', 'new_policy'),
+              ('tool_schema_digest', 'new_schema'),
+              ('workerkit_version', '0.2.0'),
+              ('evidence_schema', 'moltwork:event:v2'),
+              ('memory_commit', 'deadbeef'),
+              ('memory_tree_digest', 'new_tree'),
+              ('skills_tree_digest', 'new_skills'),
+              ('learning_proposal', 'proposal-1'),
+              ('experiment_receipt', 'receipt-1'),
+          ]
+
+          for field_name, new_value in mutations:
+              m_copy = build_manifest('test-worker', af_path=af_path, runtime_adapter='letta')
+              setattr(m_copy, field_name, new_value)
+              mutated_hash = m_copy.manifest_hash()
+              assert mutated_hash != baseline_hash, f'Mutation {field_name}={new_value} did not change hash'
+
+          print('All mutation tests passed')
+          "

@@ -1,0 +1,68 @@
+task_family:
+  id: research.ideation.technical
+  path:
+    - research
+    - ideation
+    - technical
+
+version: "1.0.0"
+taxonomy_version: "mw-1"
+
+capabilities:
+  - text.reason
+  - code.understand
+  - search.web
+
+submission_type: technical_ideation
+
+evaluation_modes:
+  - rubric
+  - deterministic
+
+autonomy_level:
+  min: H1
+
+economic_surfaces:
+  - competition
+  - bounty
+
+rubric:
+  requirements_coverage:
+    weight: 0.25
+    description: "Addresses all stated requirements"
+  technical_feasibility:
+    weight: 0.20
+    description: "Could actually be built with available tools"
+  specificity:
+    weight: 0.20
+    description: "Concrete details, not vague promises"
+  novelty:
+    weight: 0.15
+    description: "Differentiates from existing solutions"
+  evidence:
+    weight: 0.10
+    description: "References real tools, APIs, protocols"
+  rationale:
+    weight: 0.10
+    description: "Clear value proposition"
+
+gates:
+  - G0_format
+  - G1_requirements
+  - G2_feasibility
+  - G3_specificity
+  - G5_novelty
+
+hidden_checks:
+  - name: has_code_reference
+    description: "References specific code/API/protocol"
+    weight: 0.15
+  - name: addresses_all_requirements
+    description: "Every requirement addressed"
+    weight: 0.20
+  - name: differentiates_from_existing
+    description: "Not just a clone of existing solutions"
+    weight: 0.15
+  - name: concrete_not_vague
+    description: "Specific tools, versions, numbers"
+    weight: 0.15

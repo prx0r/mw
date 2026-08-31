@@ -55,8 +55,8 @@ class GitWorkspaceManager:
         self.repo_path = Path(repo_path).resolve()
         self._worktrees: dict[str, WorktreeInfo] = {}
 
-    def _git(self, *args: str) -> tuple[int, str, str]:
-        return _run(["git"] + list(args), cwd=str(self.repo_path))
+    def _git(self, *args: str, cwd: str = "") -> tuple[int, str, str]:
+        return _run(["git"] + list(args), cwd=cwd or str(self.repo_path))
 
     def ensure_repo(self) -> bool:
         """Check if this is a Git repo."""

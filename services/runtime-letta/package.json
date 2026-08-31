@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@hono/node-server": "^2.1.1",
-    "@letta-ai/letta-agent-sdk": "latest",
-    "@letta-ai/trajectory": "latest",
+    "@letta-ai/letta-agent-sdk": "0.8.0",
+    "@letta-ai/trajectory": "0.3.0",
     "hono": "^4.4.0"
   },
   "devDependencies": {

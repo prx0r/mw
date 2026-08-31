@@ -1,102 +1,212 @@
-"""Live Event Bridge — stream Letta events into WorkerKit EventLedger.
+"""Moltwork Lab Bridge — HTTP service connecting Letta mod tools to WorkerKit pipeline.
 
-Converts Letta SDK stream events into WorkerKit canonical events.
+The Letta mod registers tools that call this service.
+This service bridges to: Oracle, WorkerKit Orchestrator, Hydra, Assessor.
+
+Run with: python -m lab.bridge --port 8789
 """
 from __future__ import annotations
 
 import json
+import sys
 import time
-from typing import Any, Callable
+from pathlib import Path
 
-from core.hashing import sha256, jcs, SCHEMA_EVENT
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+try:
+    from http.server import HTTPServer, BaseHTTPRequestHandler
+except ImportError:
+    print("http.server not available")
+    sys.exit(1)
 
 
-class EventBridge:
-    """Bridge between Letta SDK stream and WorkerKit EventLedger.
+# ─── Load state from the mod's state file ─────────────────────────────
 
-    Translates:
-      Letta assistant message → WorkerKit model.call event
-      Letta tool_call → WorkerKit tool.invoked event
-      Letta tool_result → WorkerKit tool.result event
-      Letta usage → WorkerKit cost.recorded event
-    """
+MOD_STATE_PATH = Path.home() / ".letta" / "mods" / "moltwork-lab.state.json"
 
-    def __init__(self, ledger: Any = None):
-        self.ledger = ledger
-        self._event_count = 0
+def read_mod_state() -> dict:
+    try:
+        if MOD_STATE_PATH.exists():
+            return json.loads(MOD_STATE_PATH.read_text())
+    except Exception:
+        pass
+    return {"worker_id": "default", "worker_version": "v1", "runs": [], "capabilities": []}
 
-    def bridge_event(self, run_id: str, letta_event: dict) -> str | None:
-        """Convert a Letta event to a WorkerKit event and record it."""
-        if not self.ledger:
-            return None
 
-        event_type = letta_event.get("type", "")
-        payload = {}
+# ─── HTTP handler ──────────────────────────────────────────────────────
 
-        if event_type == "assistant":
-            content = letta_event.get("content", "")
-            payload = {
-                "model": letta_event.get("model", ""),
-                "content_length": len(content),
-                "content_hash": sha256(content) if content else "",
-            }
-            wk_event_type = "model.call.completed"
+class LabHandler(BaseHTTPRequestHandler):
+    """Handle requests from the Letta mod tools."""
 
-        elif event_type == "tool_call":
-            payload = {
-                "tool_name": letta_event.get("toolName", ""),
-                "tool_args": letta_event.get("toolInput", {}),
-                "tool_call_id": letta_event.get("toolCallId", ""),
-            }
-            wk_event_type = "tool.invoked"
+    def do_POST(self):
+        length = int(self.headers.get("Content-Length", 0))
+        body = json.loads(self.rfile.read(length)) if length > 0 else {}
+        path = self.path.rstrip("/")
 
-        elif event_type == "tool_result":
-            content = letta_event.get("content", "")
-            payload = {
-                "tool_name": letta_event.get("toolName", ""),
-                "result_length": len(content) if isinstance(content, str) else 0,
-                "is_error": letta_event.get("isError", False),
-            }
-            wk_event_type = "tool.result"
+        handlers = {
+            "/oracle/search": self._oracle_search,
+            "/oracle/opportunity": self._oracle_get_opportunity,
+            "/lab/brief": self._lab_brief,
+            "/lab/capability": self._lab_capability,
+            "/budget/check": self._budget_check,
+            "/budget/record": self._budget_record,
+            "/assessor/preflight": self._assessor_preflight,
+            "/assessor/review": self._assessor_review,
+            "/outcome/record": self._outcome_record,
+        }
 
-        elif event_type == "result":
-            payload = {
-                "success": letta_event.get("success", False),
-                "duration_ms": letta_event.get("durationMs", 0),
-                "stop_reason": letta_event.get("stopReason", ""),
-                "conversation_id": letta_event.get("conversationId", ""),
-            }
-            wk_event_type = "run.completed"
-
-        elif event_type == "error":
-            payload = {
-                "error_code": letta_event.get("errorCode", ""),
-                "message": letta_event.get("message", "")[:200],
-                "recoverable": letta_event.get("recoverable", False),
-            }
-            wk_event_type = "run.error"
-
+        handler = handlers.get(path)
+        if handler:
+            try:
+                result = handler(body)
+                self._respond(200, result)
+            except Exception as e:
+                self._respond(500, {"error": str(e)})
         else:
-            return None
+            self._respond(404, {"error": f"unknown endpoint: {path}"})
 
-        self._event_count += 1
-        return self.ledger.append(run_id, wk_event_type, payload)
+    def do_GET(self):
+        path = self.path.rstrip("/")
+        if path == "/health":
+            self._respond(200, {"ok": True, "service": "moltwork-lab-bridge"})
+        elif path == "/state":
+            self._respond(200, read_mod_state())
+        else:
+            self._respond(404, {"error": f"unknown endpoint: {path}"})
 
-    def bridge_stream(self, run_id: str, stream: Any) -> dict:
-        """Bridge an entire Letta stream into WorkerKit events."""
-        stats = {"events": 0, "assistant": 0, "tool_calls": 0, "errors": 0}
+    def _respond(self, status: int, data: dict):
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.end_headers()
+        self.wfile.write(json.dumps(data, indent=2).encode())
 
-        for event in stream:
-            event_type = event.get("type", "")
-            if event_type == "assistant":
-                stats["assistant"] += 1
-            elif event_type in ("tool_call", "tool_result"):
-                stats["tool_calls"] += 1
-            elif event_type == "error":
-                stats["errors"] += 1
+    # ─── Oracle ────────────────────────────────────────────────────────
 
-            result = self.bridge_event(run_id, event)
-            if result:
-                stats["events"] += 1
+    def _oracle_search(self, body: dict) -> dict:
+        """Search Oracle for opportunities."""
+        oracle_url = body.get("oracle_url", "http://localhost:8788")
+        import urllib.request
+        try:
+            params = f"q={body.get('query', '')}&limit={body.get('limit', 10)}"
+            req = urllib.request.Request(f"{oracle_url}/v1/opportunities?{params}")
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                data = json.loads(resp.read())
+                return {"count": len(data.get("opportunities", [])), "opportunities": data.get("opportunities", [])}
+        except Exception as e:
+            return {"count": 0, "opportunities": [], "error": str(e)}
 
-        return stats
+    def _oracle_get_opportunity(self, body: dict) -> dict:
+        """Get specific opportunity details."""
+        return {"opportunity_id": body.get("opportunity_id"), "status": "not_implemented"}
+
+    # ─── Lab ───────────────────────────────────────────────────────────
+
+    def _lab_brief(self, body: dict) -> dict:
+        """Generate a Lab brief for a task family."""
+        state = read_mod_state()
+        task_family = body.get("task_family", "unknown")
+        runs = [r for r in state.get("runs", []) if r.get("task_family") == task_family]
+        wins = [r for r in runs if r.get("outcome") == "won"]
+
+        return {
+            "task_family": task_family,
+            "total_runs": len(runs),
+            "win_rate": len(wins) / len(runs) if runs else 0,
+            "avg_cost": sum(r.get("cost_usd", 0) for r in runs) / len(runs) if runs else 0,
+            "avg_reward": sum(r.get("reward_usd", 0) for r in wins) / len(wins) if wins else 0,
+            "capabilities": [c for c in state.get("capabilities", []) if c.get("task_class") == task_family],
+            "recent_runs": runs[-5:],
+            "worker_version": state.get("worker_version", "v1"),
+        }
+
+    def _lab_capability(self, body: dict) -> dict:
+        """Get capability evidence for a task class."""
+        state = read_mod_state()
+        task_class = body.get("task_class", "unknown")
+        caps = [c for c in state.get("capabilities", []) if c.get("task_class") == task_class]
+        return caps[0] if caps else {"task_class": task_class, "sample_size": 0, "acceptance_rate": 0}
+
+    # ─── Budget ────────────────────────────────────────────────────────
+
+    def _budget_check(self, body: dict) -> dict:
+        state = read_mod_state()
+        spent = sum(r.get("cost_usd", 0) for r in state.get("runs", []))
+        cap = state.get("budget_cap_usd", 10.0)
+        return {"cap": cap, "spent": spent, "remaining": cap - spent}
+
+    def _budget_record(self, body: dict) -> dict:
+        return {"recorded": True, "cost_usd": body.get("cost_usd", 0)}
+
+    # ─── Assessor ──────────────────────────────────────────────────────
+
+    def _assessor_preflight(self, body: dict) -> dict:
+        """G0 deterministic checks."""
+        content = body.get("content", "")
+        checks = [
+            {"name": "has_content", "passed": bool(content and len(content) > 50)},
+            {"name": "has_structure", "passed": any(m in content for m in ["#", "1.", "- "])},
+            {"name": "not_error", "passed": "error" not in content.lower()[:200]},
+        ]
+        return {"gate": "G0", "passed": all(c["passed"] for c in checks), "checks": checks}
+
+    def _assessor_review(self, body: dict) -> dict:
+        """Full assessment request."""
+        return {
+            "assessment_id": f"assess-{int(time.time())}",
+            "status": "submitted",
+            "gates": ["G0", "G1", "G2"],
+            "note": "Full evaluation via letta-evals pending",
+        }
+
+    # ─── Outcomes ──────────────────────────────────────────────────────
+
+    def _outcome_record(self, body: dict) -> dict:
+        """Record outcome and update capability evidence."""
+        state = read_mod_state()
+        run = {
+            "run_id": f"run-{int(time.time())}",
+            "opportunity_id": body.get("opportunity_id", ""),
+            "task_family": body.get("task_family", "unknown"),
+            "artifact_hash": body.get("artifact_hash", ""),
+            "outcome": body.get("outcome", "unknown"),
+            "cost_usd": body.get("cost_usd", 0),
+            "reward_usd": body.get("reward_usd", 0),
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        }
+        state.setdefault("runs", []).append(run)
+
+        # Update capabilities
+        tf = run["task_family"]
+        caps = state.setdefault("capabilities", [])
+        cap = next((c for c in caps if c.get("task_class") == tf), None)
+        if not cap:
+            cap = {"task_class": tf, "sample_size": 0, "acceptance_rate": 0, "median_cost": 0, "total_revenue": 0}
+            caps.append(cap)
+        cap["sample_size"] += 1
+        tf_runs = [r for r in state["runs"] if r.get("task_family") == tf]
+        tf_wins = [r for r in tf_runs if r.get("outcome") == "won"]
+        cap["acceptance_rate"] = len(tf_wins) / len(tf_runs) if tf_runs else 0
+        cap["total_revenue"] = sum(r.get("reward_usd", 0) for r in tf_wins)
+
+        # Write back
+        MOD_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        MOD_STATE_PATH.write_text(json.dumps(state, indent=2))
+
+        return {"recorded": True, "run_id": run["run_id"], "capability": cap}
+
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Moltwork Lab Bridge")
+    parser.add_argument("--port", type=int, default=8789)
+    parser.add_argument("--host", default="127.0.0.1")
+    args = parser.parse_args()
+
+    server = HTTPServer((args.host, args.port), LabHandler)
+    print(f"Moltwork Lab Bridge running on http://{args.host}:{args.port}")
+    server.serve_forever()
+
+
+if __name__ == "__main__":
+    main()

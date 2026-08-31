@@ -1,7 +1,9 @@
-"""Full loop test — .af → WorkerKit → receipt → Letta learn → .af v+1.
+"""Full provenance test — .af → WorkerKit → receipt → provenance chain.
 
-This is the core Moltwork proof: a persistent worker accumulates experience,
-produces verifiable receipts, and creates new versions from learning.
+This tests the provenance MODEL: content-addressed snapshots, event chains,
+receipts, Merkle trees, DSSE, and lineage tracking. NOT actual Letta learning.
+
+For real Letta learning, see test_real_letta_e2e.py (requires runtime).
 """
 import sys, os, tempfile, time, json, shutil, asyncio
 from pathlib import Path
@@ -127,7 +129,7 @@ async def run_test():
 
         pipe = ReflectionPipeline()
         pipe.observe(run.run.id, 0.85, "accepted")
-        test("learning observation recorded", True)
+        test("learning observation recorded", pipe._total_runs == 1)
 
         snap_v2 = exporter.snapshot_from_agent(
             agent_id="researcher-03",

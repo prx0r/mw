@@ -140,7 +140,7 @@ async def run_test():
 
         # ─── P5: Receipt ↔ TEE binding ────────────────────────────────
         print("\nP5: Receipt ↔ TEE binding")
-        from workerkit.tee.commitment import RunCommitment
+        from tests.support.commitment import RunCommitment
 
         commitment = RunCommitment(
             worker_version_digest=manifest.manifest_hash(),
@@ -253,17 +253,17 @@ async def run_test():
     print(f"ETHOnline 2026 Demo — P0-P9 Proof Matrix")
     print(f"{'='*60}")
     proofs = [
-        ("P0", "Shared Taxonomy", True),
-        ("P1", "Persistent Worker", True),
-        ("P2", "WorkerVersion", True),
-        ("P3", "WorkReceipt", True),
-        ("P4", "Real TEE (simulator)", True),
-        ("P5", "Receipt ↔ TEE binding", True),
-        ("P6", "Bounded lease", True),
-        ("P7", "Portable identity", True),
-        ("P8", "Validation", True),
-        ("P9", "Experience reuse", True),
-        ("P10", "Demonstrable learning", True),
+        ("P0", "Shared Taxonomy", tax.task_family_id == "research.ideation.technical"),
+        ("P1", "Persistent Worker", insp.worker_id == "researcher-03"),
+        ("P2", "WorkerVersion", len(manifest.manifest_hash()) == 64),
+        ("P3", "WorkReceipt", receipt is not None and len(receipt.root_hash) == 64),
+        ("P4", "Real TEE", not att.is_simulated),
+        ("P5", "Receipt ↔ TEE binding", len(commitment_digest) == 64),
+        ("P6", "Bounded lease", lease.is_valid()),
+        ("P7", "Portable identity", len(identity["erc8004_id"]) == 42),
+        ("P8", "Validation", valid),
+        ("P9", "Experience reuse", len(brief) > 0),
+        ("P10", "Demonstrable learning (NOT PROVEN — mock evaluator)", False),
     ]
     for code, name, passed in proofs:
         status = "✓ PASS" if passed else "✗ FAIL"

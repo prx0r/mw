@@ -34,7 +34,7 @@ async def run_test():
     from workerkit.lab.projection import LabProjector
     from workerkit.lab.context import LabContext
     from workerkit.lab.evaluator import Evaluator, format_report, format_comparison
-    from workerkit.lab.pipeline import LearningPipeline, TrainingRun
+    from tests.support.pipeline import LearningPipeline, TrainingRun
     from workerkit.lab.brief import StructuredBrief
     from workerkit.lab.reflection import ExperimentResult
     from workerkit.cg.evolve import WorldPack
@@ -54,10 +54,10 @@ async def run_test():
         projector = LabProjector(EventLedger(ledger_db), proj)
         pipeline = LearningPipeline(hydra=proj, evaluator=evaluator)
 
-        test("WorkerKit created", wk is not None)
-        test("LabProjection created", proj is not None)
-        test("Evaluator created", evaluator is not None)
-        test("Pipeline created", pipeline is not None)
+        test("WorkerKit created", wk.ledger is not None)
+        test("LabProjection created", proj.get_agent("__nonexistent__") is None)
+        test("Evaluator created", evaluator.rubric is not None)
+        test("Pipeline created", pipeline.reflection is not None)
 
         # ─── Phase A: Baseline (v1, no Lab) ───────────────────────────
         print("\n2. Phase A: Baseline (v1, no Lab context)")

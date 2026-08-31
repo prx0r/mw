@@ -109,7 +109,6 @@ with tempfile.TemporaryDirectory() as td:
     promoted = pipe.promote(cands[0].lesson_id, exp)
     # Note: promotion depends on whether evaluator shows improvement
     test("experiment has real scores (not hardcoded)", 0 <= exp.hidden_mean_before <= 1 and 0 <= exp.hidden_mean_after <= 1)
-    test("experiment has real scores (not hardcoded)", 0 <= exp.hidden_mean_before <= 1 and 0 <= exp.hidden_mean_after <= 1)
 
 # 5. Fleet seeding — LAB GENOME
 print("\n5. Fleet seeding")

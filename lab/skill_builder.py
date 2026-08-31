@@ -1,7 +1,9 @@
-"""Skill Synthesis — Trace2Skill-style parallel trajectory analysis.
+"""Skill Builder — extract reusable skill candidates from trajectories.
 
-Analyzes a pool of related trajectories, produces local lessons,
-then consolidates into a unified SKILL.md candidate.
+MVP implementation: loops trajectories, extracts failure/review/decision strings,
+dedupes, formats Markdown. NOT a full Trace2Skill synthesizer.
+
+For the full algorithm, see upstream Trace2Skill paper.
 """
 from __future__ import annotations
 

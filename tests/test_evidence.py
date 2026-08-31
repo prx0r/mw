@@ -193,7 +193,7 @@ test("re-quote outside tolerance fails step", s1.status == "failed")
 
 # ─── 6. AgentLease ───
 print("\n6. AgentLease")
-from evidence.lease import AgentLeaseV1, LeasePermissions, compile_permission_language
+from tests.support.lease import AgentLeaseV1, LeasePermissions, compile_permission_language
 lease = AgentLeaseV1(
     lease_id="lease-1",
     agent_id="agent-1",
@@ -296,7 +296,7 @@ from evidence.workload import WorkloadManifestV1
 from evidence.receipt import RunReceiptV1
 from evidence.trace import TraceEvent, TraceMerkleTree
 from evidence.log import EvidenceLog
-from evidence.lease import AgentLeaseV1, LeasePermissions
+from tests.support.lease import AgentLeaseV1, LeasePermissions
 from evidence.kms import KMSAuthorizer, KMSAuthPolicy, KeyReleaseRequest
 from tee.dstack import DstackSimulator
 from tee.keys import TEESigner

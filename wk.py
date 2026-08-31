@@ -67,10 +67,15 @@ def cmd_run(args):
 
 
 def cmd_status(args):
-    """Show status."""
-    db_path = args[0] if args else "data/wk-events.db"
-    ledger = EventLedger(db_path)
-    print(f"Events: {ledger.count()}")
+    """Show worker status — rebuilds from ledger, shows profile."""
+    from workerkit.orchestrator import Orchestrator
+
+    data_dir = args[0] if args else "data"
+    worker_id = args[1] if len(args) > 1 else "default"
+
+    orch = Orchestrator(data_dir=data_dir, worker_id=worker_id)
+    stats = orch.rebuild_lab()
+    print(orch.get_lab_profile())
 
 
 def cmd_lab_rebuild(args):
@@ -214,7 +219,7 @@ def main():
     if len(sys.argv) < 2:
         print("wk — WorkerKit CLI")
         print("  wk run <order.json>                    Run a work order")
-        print("  wk status [db]                         Show status")
+        print("  wk status [data_dir] [worker_id]       Show worker profile (rebuilds from ledger)")
         print("  wk lab rebuild [ledger] [projection]   Rebuild projection from events")
         print("  wk lab sync [ledger] [projection]      Incremental sync")
         print("  wk lab summary [db]                    Lab summary stats")
@@ -229,6 +234,7 @@ def main():
     commands = {
         "run": cmd_run,
         "status": cmd_status,
+        "profile": cmd_status,  # alias
         "eval": cmd_eval,
         "replay": cmd_replay,
     }

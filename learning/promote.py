@@ -93,8 +93,25 @@ class LearningPromoter:
                 experiment_result: dict | None = None) -> PromotionResult:
         """Promote a validated proposal to production.
 
+        Requires experiment_result proving improvement on held-out fixtures.
         Creates a new MemFS commit with the validated patch.
         """
+        # Require experiment result
+        if experiment_result is None:
+            return PromotionResult(
+                success=False,
+                proposal_id=proposal.proposal_id,
+                error="promotion requires experiment_result",
+            )
+
+        # Must show improvement
+        if not experiment_result.get("promoted", False):
+            return PromotionResult(
+                success=False,
+                proposal_id=proposal.proposal_id,
+                error="experiment did not promote (no improvement or regressions)",
+            )
+
         # Validate
         if not self.validate_candidate(candidate_path, proposal):
             return PromotionResult(

@@ -55,7 +55,7 @@ with tempfile.TemporaryDirectory() as td:
     test("WorldPack manifest_hash", len(wp.manifest_hash) == 16)
     test("cg is deterministic (same hash → same)", wp.manifest_hash == WorldPack.from_dir(str(p), name="api-research-school").manifest_hash)
     # LabProjection is derived — events are canonical, LabProjection can be rebuilt
-    test("LabProjection is derived (events are canonical)", h.append_only == False or True)  # append_only=False means projection is disposable
+    test("LabProjection is derived (events are canonical)", h.append_only == False)
     # Mock evaluator is for tests only
     mock_eval = DeterministicMockEvaluator(wp.evaluator_src)
     test("mock evaluator available for tests", mock_eval is not None)

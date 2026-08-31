@@ -256,6 +256,107 @@ test("different runs → different root", r1.root_hash != r2.root_hash)
 r3 = WorkReceipt(type("Run", (), {"id": "a", "work_order_id": "a", "known_cost_usd": "1.0", "status": "ok", "outputs": []})())
 test("same runs → same root", r1.root_hash == r3.root_hash)
 
+# ─── INVARIANT 16: WorkerManifest mutation — every field changes hash ───
+print("\n16. WorkerManifest mutation — every field changes hash")
+import tempfile as _tf
+from workerkit.worker_manifest import WorkerManifest, build_manifest
+
+with _tf.NamedTemporaryFile(mode='w', suffix='.af', delete=False) as _f:
+    json.dump({"agents": [{"name": "test", "id": "t"}], "blocks": [], "tools": [], "mcp_servers": []}, _f)
+    _af = _f.name
+
+_m = build_manifest("test-worker", af_path=_af, runtime_adapter="letta")
+_baseline = _m.manifest_hash()
+test("manifest hash is 64 hex", len(_baseline) == 64)
+
+# save → load → digest unchanged
+with _tf.NamedTemporaryFile(suffix='.json', delete=False) as _mf:
+    _m.save(_mf.name)
+    _m2 = WorkerManifest.load(_mf.name)
+    test("save→load preserves hash", _m2.manifest_hash() == _baseline)
+
+# Each mutation must change hash
+_mutations = [
+    ("worker_id", "different"),
+    ("parent_version", "abc123"),
+    ("model_id", "gpt-4"),
+    ("model_provider", "openai"),
+    ("model_settings_digest", "new"),
+    ("tool_policy_digest", "new"),
+    ("tool_schema_digest", "new"),
+    ("workerkit_version", "9.9.9"),
+    ("evidence_schema", "new:v2"),
+    ("memory_commit", "deadbeef"),
+    ("memory_tree_digest", "newtree"),
+    ("skills_tree_digest", "newskills"),
+    ("learning_proposal", "prop-1"),
+    ("experiment_receipt", "rec-1"),
+]
+for _field, _val in _mutations:
+    _mc = build_manifest("test-worker", af_path=_af, runtime_adapter="letta")
+    setattr(_mc, _field, _val)
+    test(f"mutate {_field} → hash changes", _mc.manifest_hash() != _baseline)
+
+# ─── INVARIANT 17: Lease mutation — every field changes hash ───
+print("\n17. Lease mutation — every field changes hash")
+from workerkit.leasing.lease import Lease, LeaseLimits, LeasePermissions, LeaseRevenue
+
+_l = Lease(
+    lease_id="lease-1",
+    asset_version_digest="v1",
+    lessor="alice",
+    lessee="bob",
+    valid_from=1000,
+    valid_until=2000,
+    limits=LeaseLimits(max_invocations=3, max_spend_usd=1.0, max_run_spend_usd=0.5, max_duration_hours=1.0),
+    permissions=LeasePermissions(tools=["web_search"], network_domains=["api.example.com"], wallet_max_value_usd=10.0),
+    revenue=LeaseRevenue(owner_bps=8000, renter_bps=2000),
+    nonce="n1",
+)
+_lb = _l.lease_hash()
+test("lease hash is 64 hex", len(_lb) == 64)
+
+_lease_mutations = [
+    ("lease_id", "lease-2"),
+    ("asset_version_digest", "v2"),
+    ("lessor", "carol"),
+    ("lessee", "dave"),
+    ("valid_from", 9999),
+    ("valid_until", 9999),
+    ("nonce", "n2"),
+]
+for _field, _val in _lease_mutations:
+    _lc = Lease()
+    for k, v in _l.__dict__.items():
+        if hasattr(_lc, k):
+            setattr(_lc, k, v)
+    setattr(_lc, _field, _val)
+    test(f"lease mutate {_field} → hash changes", _lc.lease_hash() != _lb)
+
+# Mutate limits
+for _lim_field, _lim_val in [("max_invocations", 99), ("max_spend_usd", 99.0), ("max_run_spend_usd", 99.0), ("max_duration_hours", 99.0)]:
+    _lc = Lease()
+    for k, v in _l.__dict__.items():
+        if hasattr(_lc, k): setattr(_lc, k, v)
+    setattr(_lc.limits, _lim_field, _lim_val)
+    test(f"lease mutate limits.{_lim_field} → hash changes", _lc.lease_hash() != _lb)
+
+# Mutate permissions
+for _perm_field, _perm_val in [("wallet_max_value_usd", 99.0), ("tools", ["new_tool"]), ("network_domains", ["new.domain"])]:
+    _lc = Lease()
+    for k, v in _l.__dict__.items():
+        if hasattr(_lc, k): setattr(_lc, k, v)
+    setattr(_lc.permissions, _perm_field, _perm_val)
+    test(f"lease mutate permissions.{_perm_field} → hash changes", _lc.lease_hash() != _lb)
+
+# Mutate revenue
+for _rev_field, _rev_val in [("owner_bps", 5000), ("renter_bps", 5000)]:
+    _lc = Lease()
+    for k, v in _l.__dict__.items():
+        if hasattr(_lc, k): setattr(_lc, k, v)
+    setattr(_lc.revenue, _rev_field, _rev_val)
+    test(f"lease mutate revenue.{_rev_field} → hash changes", _lc.lease_hash() != _lb)
+
 print(f"\n=== RESULTS: {PASS} passed, {FAIL} failed ===")
 if FAIL > 0:
     print("SOME INVARIANTS BROKEN — FIX BEFORE DEPLOYING")

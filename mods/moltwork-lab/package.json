@@ -1,0 +1,32 @@
+{
+  "name": "@moltwork/letta-lab",
+  "version": "0.1.0",
+  "description": "Moltwork experimental lab mod for Letta Code",
+  "type": "module",
+  "letta": {
+    "tools": [
+      "oracle_search",
+      "oracle_get_opportunity",
+      "lab_brief",
+      "lab_recall_experiment",
+      "lab_get_capability_claim",
+      "lab_list_worker_versions",
+      "budget_check",
+      "budget_record",
+      "assessor_preflight",
+      "assessor_request_review",
+      "moltwork_record_outcome"
+    ],
+    "commands": [
+      "moltwork-status",
+      "moltwork-brief",
+      "moltwork-review"
+    ],
+    "lifecycle": [
+      "session.started",
+      "tool.called",
+      "artifact.created",
+      "session.completed"
+    ]
+  }
+}

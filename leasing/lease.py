@@ -65,7 +65,7 @@ class Lease:
     revoked: bool = False
 
     def lease_hash(self) -> str:
-        """Content-addressed hash of the lease terms."""
+        """Content-addressed hash of the lease terms. Includes ALL economic/security fields."""
         d = {
             "schema": self.schema,
             "lease_id": self.lease_id,
@@ -78,10 +78,16 @@ class Lease:
                 "max_invocations": self.limits.max_invocations,
                 "max_spend_usd": self.limits.max_spend_usd,
                 "max_run_spend_usd": self.limits.max_run_spend_usd,
+                "max_duration_hours": self.limits.max_duration_hours,
             },
             "permissions": {
                 "tools": self.permissions.tools,
                 "network_domains": self.permissions.network_domains,
+                "wallet_max_value_usd": self.permissions.wallet_max_value_usd,
+            },
+            "revenue": {
+                "owner_bps": self.revenue.owner_bps,
+                "renter_bps": self.revenue.renter_bps,
             },
             "nonce": self.nonce,
         }
@@ -109,6 +115,8 @@ class Lease:
     def record_invocation(self, cost_usd: float = 0.0) -> bool:
         """Record a lease invocation. Returns True if valid."""
         if not self.can_invoke():
+            return False
+        if cost_usd > self.limits.max_run_spend_usd:
             return False
         self.invocations_used += 1
         self.spend_used += cost_usd
