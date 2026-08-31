@@ -1,0 +1,1920 @@
+This is not one bug. There are **four separate failure layers stacked on top of each other**, and the first two almost perfectly explain the behavior you’re seeing.
+
+The encouraging part is that none of them challenge the Letta/Harbor architecture. They’re integration bugs around lifecycle, permissions, workspace binding, and synchronous orchestration.
+
+## What is actually going wrong
+
+### 1. The worker is literally not allowed to write files
+
+This is the immediate task-level bug.
+
+Your current runtime creates sessions with:
+
+```ts
+allowedTools: [
+  "Read", "LS", "Glob", "Grep",
+  "moltwork_lab_context",
+  ...
+]
+```
+
+There is **no `Write`, `Edit`, or `Bash`**.
+
+But the task says:
+
+```text
+Write your ideas to .../submission.md
+```
+
+So the agent is being told:
+
+```text
+WRITE THIS FILE
+```
+
+while its runtime says:
+
+```text
+YOU MAY ONLY READ FILES
+```
+
+That absolutely can produce the apparent “read loop”: inspect workspace → think about task → attempt to find a path forward → inspect again → never create the artifact.
+
+Current Letta docs explicitly show `allowedTools` as the final visibility boundary, and their normal writable-agent examples include `Bash`, `Read`, `Edit`, `Write`, etc. ([GitHub][1])
+
+**Fix this first.**
+
+---
+
+# 2. Your stream timeout does not actually timeout the stream
+
+This is the most important runtime bug.
+
+Current code:
+
+```ts
+const deadline = Date.now() + streamTimeout;
+
+for await (const message of session.stream()) {
+  if (Date.now() > deadline) break;
+  ...
+}
+```
+
+That looks like a timeout, but it isn't.
+
+If this:
+
+```ts
+await iterator.next()
+```
+
+inside `for await`
+blocks indefinitely waiting for another stream event, your code **never gets a chance to evaluate**:
+
+```ts
+Date.now() > deadline
+```
+
+So:
+
+```text
+timeout = 45 seconds
+```
+
+actually means:
+
+```text
+check whether 45 seconds elapsed
+only after Letta gives me another message
+```
+
+If Letta doesn't give another message:
+
+```text
+HTTP request
+       ↓
+session.stream()
+       ↓
+waiting
+       ↓
+waiting
+       ↓
+Python urllib reaches 60 seconds
+       ↓
+socket TimeoutError
+```
+
+Exactly what your traceback shows.
+
+This limitation is currently known upstream. Letta has an open Agent SDK issue specifically because turn timeout/cancellation is not yet first-class; their recommended workaround is essentially external cancellation plus `abort()`/session cleanup.
+
+---
+
+# 3. You never terminate on Letta's terminal `result` event
+
+The current runtime handles:
+
+```ts
+assistant
+tool_call
+tool_result
+```
+
+but not:
+
+```ts
+result
+```
+
+That matters enormously.
+
+Current SDK guidance treats `result` as the terminal event for a turn:
+
+```ts
+for await (const message of session.stream()) {
+    ...
+    if (message.type === "result") break;
+}
+```
+
+([GitHub][2])
+
+So the agent may already have finished.
+
+But Moltwork potentially keeps listening to the longer-lived session stream.
+
+That would produce this particularly confusing state:
+
+```text
+Agent:
+DONE
+
+Letta:
+result event emitted
+
+runtime-letta:
+ignores result
+keeps listening
+
+Python:
+waiting for HTTP response
+
+60 sec later:
+TimeoutError
+```
+
+This may explain why even the trivial second task timed out.
+
+---
+
+# 4. Sessions are never closed
+
+Every call does:
+
+```ts
+const session = await client.createSession(...)
+```
+
+but there is no:
+
+```ts
+session.close()
+```
+
+in a `finally`.
+
+The official SDK explicitly recommends either:
+
+```ts
+await using session = ...
+```
+
+or:
+
+```ts
+try {
+   ...
+} finally {
+   session.close();
+}
+```
+
+because sessions own resources, including MCP connections. ([GitHub][3])
+
+And the same leak exists in:
+
+```text
+/run
+/snapshot
+/memfs
+/learning
+/trajectory
+/recall
+```
+
+because they all create/resume sessions without deterministic cleanup.
+
+So even after fixing `/run`, patch every endpoint.
+
+---
+
+# 5. `new LettaAgentClient({backend:"local"})` is spawning your process forest
+
+This is the really nasty one.
+
+Current runtime defines:
+
+```ts
+function getClient(): LettaAgentClient {
+  return new LettaAgentClient({ backend: "local" });
+}
+```
+
+and then calls `getClient()` all over the service.
+
+But **local Agent SDK means SDK-managed App Server subprocess**.
+
+That is explicitly how Letta documents local mode. ([GitHub][4])
+
+And there is currently an open upstream bug:
+
+> **“Local management calls keep SDK-owned App Server alive without client disposal.”**
+
+The issue reproduces precisely:
+
+```ts
+new LettaAgentClient({ backend: "local" })
+client.models.list()
+```
+
+and observes the child:
+
+```text
+letta ... app-server
+```
+
+remaining alive. There currently isn't a public client-level cleanup operation.
+
+Your `ps` output:
+
+```text
+3162474 letta.js ... app-server
+3162877 letta.js ... app-server
+3163394 letta.js ... app-server
+3163971 ...
+...
+```
+
+is therefore almost textbook reproduction of upstream issue #245.
+
+And your machine was at:
+
+```text
+7.6 GiB total
+6.6 GiB used
+~994 MiB available
+```
+
+So after enough attempts you're testing Letta under severe memory pressure too.
+
+---
+
+# The runtime architecture should change slightly
+
+For development, the minimum fix is:
+
+```text
+ONE runtime-letta process
+       │
+       ▼
+ONE LettaAgentClient
+       │
+       ▼
+many short-lived sessions
+       │
+       ├── session 1 → close
+       ├── session 2 → close
+       └── session 3 → close
+```
+
+Not:
+
+```text
+HTTP request
+    ↓
+new client
+    ↓
+new App Server
+
+HTTP request
+    ↓
+new client
+    ↓
+new App Server
+
+HTTP request
+    ↓
+new client
+    ↓
+new App Server
+```
+
+---
+
+# Even better: use one explicitly managed Letta App Server
+
+For Moltwork production, I would actually stop using SDK-owned `local` mode in this HTTP service.
+
+Run one Letta server:
+
+```bash
+letta server --backend local --listen ws://127.0.0.1:4500
+```
+
+That is the official self-hosted pattern. ([GitHub][5])
+
+Then runtime-letta uses:
+
+```ts
+const client = new LettaAgentClient({
+  backend: "remote",
+  url: "http://127.0.0.1:4500",
+});
+```
+
+Now:
+
+```text
+systemd/supervisor
+      │
+      ├── Letta App Server
+      │      one process
+      │
+      └── Moltwork runtime-letta
+             one process
+```
+
+No hidden subprocess lifecycle.
+
+And because the App Server runs on the same host, its built-in `Read`/`Write`/`Bash` tools operate on that machine's campaign worktrees. Letta explicitly documents that remote built-in tools operate where the harness/App Server runs. ([GitHub][6])
+
+This is probably the right permanent deployment.
+
+---
+
+# Patch `runtime-letta` first
+
+Conceptually, I would rewrite the client initialization to this.
+
+```ts
+const BACKEND = process.env.LETTA_BACKEND ?? "local";
+
+const client =
+  BACKEND === "remote"
+    ? new LettaAgentClient({
+        backend: "remote",
+        url: process.env.LETTA_APP_SERVER_URL ?? "http://127.0.0.1:4500",
+        authToken: process.env.LETTA_APP_SERVER_TOKEN,
+      })
+    : new LettaAgentClient({
+        backend: "local",
+      });
+
+function getClient(): LettaAgentClient {
+  return client;
+}
+```
+
+The crucial part is:
+
+```text
+singleton
+```
+
+not the exact environment variables.
+
+---
+
+# Then replace `/run` with a genuinely bounded turn
+
+The skeleton should be closer to:
+
+```ts
+app.post("/workers/:id/run", async (c) => {
+  const workerId = c.req.param("id");
+  const mapping = loadWorker(workerId);
+
+  if (!mapping) {
+    return c.json({ error: "worker not found" }, 404);
+  }
+
+  const body = await c.req.json<{
+    task: string;
+    workspace?: string;
+    timeout?: number;
+    allowedTools?: string[];
+  }>();
+
+  const cwd = body.workspace ?? "/tmp/moltwork-run";
+  fs.mkdirSync(cwd, { recursive: true });
+
+  const timeoutMs = (body.timeout ?? 120) * 1000;
+
+  const allowedTools = body.allowedTools ?? [
+    "Read",
+    "LS",
+    "Glob",
+    "Grep",
+    "Write",
+    "Edit",
+    "Bash",
+  ];
+
+  let session: any;
+  let timeoutHandle: NodeJS.Timeout | undefined;
+  let hardCloseHandle: NodeJS.Timeout | undefined;
+
+  const t0 = Date.now();
+
+  try {
+    session = await client.createSession(mapping.letta_agent_id, {
+      cwd,
+
+      toolset: {
+        base: "none",
+        include: allowedTools,
+      },
+
+      allowedTools,
+
+      permissionMode: "unrestricted",
+    });
+
+    let timedOut = false;
+
+    timeoutHandle = setTimeout(() => {
+      timedOut = true;
+
+      console.warn(
+        `[${workerId}] turn timeout after ${timeoutMs}ms; aborting`
+      );
+
+      void session.abort();
+
+      // Safety net in case abort does not produce a terminal event.
+      hardCloseHandle = setTimeout(() => {
+        try {
+          session.close();
+        } catch {}
+      }, 5000);
+    }, timeoutMs);
+
+    await session.send(body.task);
+
+    let output = "";
+    const toolCalls: any[] = [];
+    const toolResults: any[] = [];
+
+    let terminal: any = null;
+
+    for await (const message of session.stream()) {
+      console.log(
+        `[${workerId}] event=${message.type}`
+      );
+
+      if (message.type === "assistant") {
+        output += message.content ?? "";
+      }
+
+      if (message.type === "tool_call") {
+        toolCalls.push({
+          name: message.toolName,
+          args: message.toolInput,
+        });
+      }
+
+      if (message.type === "tool_result") {
+        toolResults.push({
+          name: message.toolName,
+          result: message.content,
+        });
+      }
+
+      if (message.type === "result") {
+        terminal = message;
+        break;
+      }
+    }
+
+    return c.json({
+      ok: !timedOut && (terminal?.success ?? true),
+
+      timed_out: timedOut,
+
+      output_content: output,
+
+      duration_ms: Date.now() - t0,
+
+      agent_id: mapping.letta_agent_id,
+      conversation_id: session.conversationId ?? "",
+
+      tool_calls: toolCalls,
+      tool_results: toolResults,
+
+      terminal_result: terminal,
+    });
+
+  } catch (e) {
+    return c.json({
+      ok: false,
+      error: String(e),
+      error_code: "FAIL",
+      duration_ms: Date.now() - t0,
+    }, 500);
+
+  } finally {
+    if (timeoutHandle) clearTimeout(timeoutHandle);
+    if (hardCloseHandle) clearTimeout(hardCloseHandle);
+
+    if (session) {
+      try {
+        session.close();
+      } catch {}
+    }
+  }
+});
+```
+
+The exact SDK types may need minor adjustment, but those are the lifecycle semantics you want.
+
+---
+
+# `permissionMode: "approve-all"` also needs changing
+
+Your code currently says:
+
+```ts
+permissionMode: "approve-all"
+```
+
+Current Agent SDK permission modes are documented as:
+
+```text
+standard
+acceptEdits
+unrestricted
+strict
+```
+
+not `approve-all`. ([GitHub][5])
+
+For a private, disposable campaign worktree I'd start with:
+
+```ts
+permissionMode: "unrestricted"
+```
+
+**but retain a tight `allowedTools` list.**
+
+Meaning:
+
+```text
+unrestricted permission decisions
+
+≠
+
+unrestricted tool universe
+```
+
+The latter is still constrained by:
+
+```ts
+allowedTools
+```
+
+For less-trusted work later:
+
+```ts
+permissionMode: "standard"
+canUseTool: ...
+```
+
+and Moltwork can turn approval requests into HumanQueue events.
+
+But right now you're trying to prove execution works.
+
+---
+
+# Don't include Moltwork tools until they're actually registered
+
+Current default includes:
+
+```text
+moltwork_lab_context
+moltwork_run_budget
+moltwork_get_artifact_requirements
+moltwork_request_review
+moltwork_record_candidate
+```
+
+An `allowedTools` entry does not itself create a tool.
+
+For the first smoke test, simplify brutally:
+
+```ts
+[
+ "Read",
+ "Write",
+ "Edit",
+ "LS",
+ "Glob",
+ "Grep"
+]
+```
+
+Nothing else.
+
+Once file execution is proven:
+
+```text
+add Bash
+```
+
+Then:
+
+```text
+add one Moltwork tool
+```
+
+Then the rest.
+
+Don't debug:
+
+```text
+Letta
++ Mods
++ Lab bridge
++ Harbor
++ Hydra
++ campaign lifecycle
+```
+
+simultaneously.
+
+---
+
+# Test Letta independently of Moltwork
+
+Before another full Campaign, run this exact conceptual test.
+
+Create:
+
+```text
+/tmp/letta-smoke/
+```
+
+Then ask the agent only:
+
+```text
+Create file result.txt in the current workspace.
+Its exact contents must be:
+
+MOLTWOK_SMOKE_OK
+```
+
+No research.
+
+No memory.
+
+No x402.
+
+No Oracle.
+
+No Hydra.
+
+Success condition:
+
+```bash
+cat /tmp/letta-smoke/result.txt
+```
+
+must equal the expected text.
+
+You want to establish this chain first:
+
+```text
+Python/HTTP
+     ↓
+runtime-letta
+     ↓
+Agent SDK
+     ↓
+Letta App Server
+     ↓
+model
+     ↓
+Write tool
+     ↓
+filesystem
+     ↓
+result event
+     ↓
+session.close()
+     ↓
+HTTP 200
+```
+
+Nothing else matters until that passes.
+
+---
+
+# Instrument the runtime
+
+Right now your runtime log says only:
+
+```text
+starting
+backend OK
+running
+```
+
+That tells you almost nothing.
+
+For every run log:
+
+```text
+RUN START worker=...
+agent=...
+workspace=...
+timeout=...
+tools=...
+
+SESSION CREATED
+conversation=...
+
+SEND COMPLETE
+
+EVENT reasoning
+EVENT tool_call name=Write
+EVENT tool_result
+EVENT assistant
+EVENT result success=true
+
+RUN FINISHED
+duration=...
+
+SESSION CLOSED
+```
+
+Then when this happens:
+
+```text
+Python socket timeout
+```
+
+you immediately know whether the stall is:
+
+```text
+createSession
+send
+model inference
+tool approval
+tool execution
+stream terminal
+session cleanup
+```
+
+Right now they're indistinguishable.
+
+---
+
+# Add process instrumentation too
+
+Before and after each run:
+
+```bash
+ps -eo pid,ppid,rss,etime,cmd \
+  | grep 'letta.js.*app-server' \
+  | grep -v grep
+```
+
+Expected once fixed:
+
+```text
+remote architecture:
+1 app-server forever
+```
+
+or if using singleton local client:
+
+```text
+1 SDK-owned app-server
+```
+
+It should **not increment after each request**.
+
+That is a critical integration test.
+
+---
+
+# Your current campaign filesystem is also wired incorrectly
+
+This would be the next failure after fixing Letta.
+
+`create_campaign()` stores the canonical Campaign at:
+
+```text
+/root/lab-campaigns/LIVE-001
+```
+
+But your worker operates at:
+
+```text
+/tmp/campaign-live/LIVE-001
+```
+
+Then `grade_campaign()` looks for:
+
+```text
+/root/lab-campaigns/LIVE-001/submission/
+```
+
+So even if Letta successfully creates:
+
+```text
+/tmp/campaign-live/LIVE-001/submission.md
+```
+
+your grader says:
+
+```text
+submission_exists = false
+score = 0
+```
+
+That's guaranteed.
+
+---
+
+# There should only be one canonical campaign workspace
+
+Make:
+
+```text
+/root/lab-campaigns/LIVE-001
+```
+
+the actual Letta cwd.
+
+So:
+
+```python
+c = create_campaign(...)
+
+ws = str(c.dir())
+```
+
+Then prompt:
+
+```text
+Write final artifact to:
+
+submission/submission.md
+```
+
+And ensure:
+
+```python
+Path(ws, "submission").mkdir(...)
+```
+
+before execution.
+
+Now:
+
+```text
+Campaign Git state
+=
+worker workspace
+=
+Harbor artifact source
+=
+grader source
+```
+
+One filesystem.
+
+Huge simplification.
+
+---
+
+# The final layout should be
+
+```text
+/root/lab-campaigns/LIVE-001/
+
+campaign.json
+
+opportunity/
+  opportunity.json
+
+strategy/
+  success-model.yaml
+
+submission/
+  submission.md
+
+runs/
+  run-001/
+    execution.json
+    trajectory-ref.json
+    workerkit-receipt.json
+
+evaluations/
+  v0/
+  v1/
+
+outcome/
+  outcome.json
+```
+
+Letta gets:
+
+```text
+cwd=/root/lab-campaigns/LIVE-001
+```
+
+and never needs an unrelated `/tmp/campaign-live`.
+
+---
+
+# Your workspace digest is also currently broken
+
+You have:
+
+```python
+Path(ws).read_bytes()
+```
+
+where:
+
+```python
+ws
+```
+
+is a directory.
+
+That will raise:
+
+```text
+IsADirectoryError
+```
+
+when execution eventually gets past Letta.
+
+Don't hash the directory path string either.
+
+Hash the tree.
+
+For example:
+
+```python
+from pathlib import Path
+import hashlib
+
+def tree_digest(root: str) -> str:
+    root = Path(root)
+
+    h = hashlib.sha256()
+
+    for p in sorted(
+        x for x in root.rglob("*")
+        if x.is_file()
+    ):
+        rel = p.relative_to(root).as_posix()
+
+        h.update(rel.encode())
+        h.update(b"\0")
+        h.update(hashlib.sha256(p.read_bytes()).digest())
+        h.update(b"\0")
+
+    return h.hexdigest()
+```
+
+Better still:
+
+> eventually use the Harbor artifact manifest / WorkerKit artifact manifest as the canonical source rather than independently inventing another tree hash.
+
+---
+
+# There is schema drift in the test script too
+
+Your script uses:
+
+```python
+from core.schema import Opportunity
+```
+
+and constructs:
+
+```python
+Opportunity(
+    title=...,
+    task_family=...,
+    requirements=...,
+    reward_value=100.0,
+)
+```
+
+But on the GitHub branch I inspected, canonical economic Opportunity lives in:
+
+```text
+opportunities/schema.py
+```
+
+and its fields include things like:
+
+```text
+kind
+domain
+work_shapes
+reward_usd
+acceptance_model
+human_dependencies
+```
+
+rather than exactly that constructor.
+
+`core/schema.py` on that branch defines the WorkerKit record families, not that Opportunity object.
+
+That tells me your `/root/workerkit` checkout has likely moved ahead of what's pushed to GitHub, or there are duplicate compatibility exports locally.
+
+Before debugging further, run:
+
+```bash
+cd /root/workerkit
+
+PYTHONPATH=/root:/root/workerkit python3 - <<'PY'
+import inspect
+
+from core.schema import Opportunity as A
+
+print("core.schema Opportunity:")
+print(A)
+print(inspect.signature(A))
+
+try:
+    from opportunities.schema import Opportunity as B
+    print("\nopportunities.schema Opportunity:")
+    print(B)
+    print(inspect.signature(B))
+    print("\nsame class:", A is B)
+except Exception as e:
+    print(e)
+PY
+```
+
+If they're different:
+
+**stop immediately and remove the duplicate.**
+
+Oracle → Campaign → WorkerKit should carry one canonical Opportunity shape.
+
+---
+
+# `grade_campaign()` is not Harbor yet
+
+Another key point.
+
+Current GitHub `grade_campaign()` says:
+
+```python
+"""Grade a campaign using the Harbor World evaluator."""
+```
+
+but actually does:
+
+```python
+submission_dir = c.dir() / "submission"
+
+has_submission =
+    submission_dir.exists()
+    and any(submission_dir.iterdir())
+
+score = 1.0 if has_submission else 0.0
+```
+
+It even calculates:
+
+```python
+gates_script = ...
+```
+
+and then never invokes it.
+
+So don't interpret:
+
+```text
+Grade v0=...
+```
+
+as Harbor evidence yet.
+
+At this checkpoint the correct sequence is:
+
+```text
+Letta writes artifact
+        ↓
+freeze artifact
+        ↓
+Harbor artifact trial / nop agent
+        ↓
+real Reward Kit verifier
+        ↓
+Harbor result
+        ↓
+Campaign evaluation record
+```
+
+Your existence gate is okay as:
+
+```text
+preflight smoke test
+```
+
+but rename it accordingly.
+
+---
+
+# Another runtime correctness bug: you return `ok: true` too easily
+
+Current handler ends with:
+
+```ts
+return c.json({
+  ok: true,
+  ...
+});
+```
+
+as long as the JS code doesn't throw.
+
+But the actual terminal Letta result can carry failure.
+
+So `ok` needs to derive from:
+
+```text
+terminal result
++
+timeout
++
+required artifact existence
+```
+
+not:
+
+```text
+session.stream didn't throw
+```
+
+For a file-producing task, you can distinguish:
+
+```text
+runtime_ok
+artifact_ok
+```
+
+Example response:
+
+```json
+{
+  "runtime_ok": true,
+  "artifact_ok": false,
+  "timed_out": false,
+  "terminal": {
+    "success": true
+  }
+}
+```
+
+That is much more useful than one overloaded boolean.
+
+---
+
+# Don't force the worker to put final text in the assistant response
+
+For Moltwork, the response isn't the product.
+
+The filesystem is.
+
+So your runtime success object should prioritize:
+
+```text
+conversation_id
+artifact manifest
+terminal status
+duration
+tool calls
+```
+
+The `output_content` is secondary.
+
+A perfect WorkerRun can have:
+
+```text
+output_content = ""
+```
+
+if:
+
+```text
+submission/submission.md
+```
+
+is correct.
+
+This will matter when workers build entire repos rather than write one Markdown file.
+
+---
+
+# Check the actual model too
+
+Your service startup says:
+
+```text
+2 mimo models available
+```
+
+but that does **not** guarantee:
+
+```text
+researcher-v1
+```
+
+is using MiMo.
+
+The runtime worker mapping stores:
+
+```text
+model
+```
+
+but `createSession()` currently does not pass an explicit model override.
+
+Check:
+
+```bash
+cat /root/workerkit/data/letta-workers/researcher-v1.json
+```
+
+You want to know:
+
+```text
+letta_agent_id
+model
+run_count
+```
+
+If the worker was originally created with:
+
+```text
+letta/letta-free
+```
+
+then discovering MiMo models at startup does nothing.
+
+For initial experiments, explicitly bind the frozen WorkerVersion's model:
+
+```ts
+client.createSession(mapping.letta_agent_id, {
+    model: mapping.model,
+    ...
+})
+```
+
+The current Agent SDK documents session model overrides and notes that they update the agent's model state. ([GitHub][5])
+
+Eventually the WorkerVersion should pin that properly.
+
+---
+
+# Check Node version before anything else
+
+Local Agent SDK currently requires:
+
+```text
+Node >= 22.19
+```
+
+([GitHub][3])
+
+Your process is actually running:
+
+```text
+/root/.hermes/node/bin/node
+```
+
+so check **that binary**, not merely whatever `node` your interactive shell resolves.
+
+```bash
+/root/.hermes/node/bin/node --version
+node --version
+which node
+```
+
+If `/root/.hermes/node/bin/node` is below 22.19, fix that first.
+
+---
+
+# Your Python HTTP architecture is making this feel worse than it is
+
+This line:
+
+```python
+urllib.request.urlopen(req, timeout=90)
+```
+
+is completely synchronous.
+
+You get:
+
+```text
+nothing
+nothing
+nothing
+nothing
+complete JSON response
+```
+
+There is no progress channel.
+
+So the shell looks hung even when the worker might be doing useful work.
+
+That is bad for long-running WorkerRuns.
+
+## Short term
+
+Log server-side events.
+
+Then:
+
+```bash
+tail -f /tmp/runtime-letta.log
+```
+
+shows activity.
+
+## Proper design
+
+Make runs asynchronous:
+
+```text
+POST /workers/researcher-v1/runs
+      ↓
+HTTP 202
+{
+  "run_id": "..."
+}
+```
+
+immediately.
+
+Then:
+
+```text
+GET /runs/:id
+```
+
+returns:
+
+```json
+{
+  "status": "running",
+  "last_event": "tool_call",
+  "elapsed_ms": 34000
+}
+```
+
+And optionally:
+
+```text
+GET /runs/:id/events
+```
+
+via SSE.
+
+Then a 20-minute Letta job no longer requires a 20-minute HTTP connection.
+
+That is the correct WorkerKit runtime architecture anyway.
+
+---
+
+# I would eventually make this state machine explicit
+
+```text
+QUEUED
+  ↓
+STARTING_SESSION
+  ↓
+RUNNING
+  ↓
+ARTIFACTS_COLLECTING
+  ↓
+COMPLETED
+
+or
+
+TIMED_OUT
+FAILED
+ABORTED
+```
+
+Persist:
+
+```text
+data/runtime-runs/<run-id>.json
+```
+
+initially.
+
+No need for Redis yet.
+
+---
+
+# Why the process cleanup helped but didn't solve it
+
+You killed old Letta App Servers and memory availability improved.
+
+That addressed:
+
+```text
+resource leak
+```
+
+but not:
+
+```text
+read-only tools
+stream terminal handling
+real timeout
+session cleanup
+```
+
+So a freshly restarted system can still hang.
+
+And then each retry creates the process problem again.
+
+Hence the observed cycle:
+
+```text
+clean process tree
+      ↓
+attempt task
+      ↓
+hang
+      ↓
+retry
+      ↓
+more app servers
+      ↓
+memory pressure
+      ↓
+worse hangs
+```
+
+---
+
+# Don't use arbitrary “kill old Letta processes” as normal operation
+
+For the current mess, process cleanup is reasonable.
+
+But operationally Moltwork should own the PIDs.
+
+Example:
+
+```text
+/run/letta-app-server.pid
+/run/runtime-letta.pid
+```
+
+or preferably systemd units.
+
+Then:
+
+```text
+runtime-letta.service
+requires
+letta-app-server.service
+```
+
+If one crashes:
+
+```text
+systemd
+```
+
+restarts the known process.
+
+Don't make:
+
+```text
+ps | grep | sort | awk | xargs kill
+```
+
+part of the architecture.
+
+---
+
+# Debug in four layers
+
+I would now stop running the big Python script until each layer passes.
+
+## Layer 1 — Letta raw smoke
+
+Test just:
+
+```text
+SDK
+→ worker
+→ Write
+→ file
+→ result
+→ close
+```
+
+Expected:
+
+```text
+/tmp/letta-smoke/result.txt exists
+```
+
+and exactly one App Server remains.
+
+---
+
+## Layer 2 — runtime-letta HTTP
+
+Test:
+
+```bash
+curl POST /workers/researcher-v1/run
+```
+
+with:
+
+```text
+write result.txt
+```
+
+Expected:
+
+```json
+{
+  "ok": true,
+  "timed_out": false
+}
+```
+
+and file exists.
+
+Repeat five times.
+
+After five:
+
+```text
+number of app-server processes unchanged
+```
+
+That last assertion is important.
+
+---
+
+## Layer 3 — Campaign binding
+
+Use:
+
+```text
+/root/lab-campaigns/LIVE-001
+```
+
+as cwd.
+
+Expected:
+
+```text
+/root/lab-campaigns/LIVE-001/submission/submission.md
+```
+
+exists.
+
+Then create:
+
+```text
+RunBinding
+WorkerKit receipt
+Git commit
+```
+
+No Harbor yet.
+
+---
+
+## Layer 4 — Harbor
+
+Freeze the successful WorkerRun.
+
+Then:
+
+```text
+Harbor trial
+      ↓
+RewardKit v0
+      ↓
+result
+```
+
+Then immediately test:
+
+```text
+regrade v1
+```
+
+without Letta.
+
+That's your first real checkpoint.
+
+---
+
+# A much better first live test than “15 x402 ideas”
+
+Use deterministic output.
+
+### Test A
+
+```text
+Create submission/probe.txt containing exact text:
+
+MOLTWOK_OK_2026
+```
+
+Evaluator:
+
+```python
+assert file.read_text() == "MOLTWOK_OK_2026"
+```
+
+### Test B
+
+```text
+Read input/numbers.json.
+Write submission/result.json where total is their sum.
+```
+
+Evaluator deterministic.
+
+### Test C
+
+Only then:
+
+```text
+generate 3 x402 ideas
+```
+
+Now if C fails:
+
+```text
+you know execution plumbing works
+```
+
+and the failure is agent behavior.
+
+Currently those two classes of failure are mixed.
+
+---
+
+# Then test persistence separately
+
+Once raw execution works:
+
+Campaign 1:
+
+```text
+Tell worker:
+"Remember project codename MARMOSET."
+```
+
+Post-run approved memory mutation.
+
+Campaign 2, fresh conversation:
+
+```text
+"What was the codename?"
+```
+
+Expected:
+
+```text
+MARMOSET
+```
+
+This tests:
+
+```text
+persistent Letta Agent
++
+fresh session
++
+memory
+```
+
+without any Harbor complexity.
+
+---
+
+# Then test Lab brief independently
+
+Campaign 3:
+
+Hydra/fixture contains:
+
+```text
+Previous runs show requirement matrices prevent missed hard gates.
+```
+
+Fresh session gets LabBrief.
+
+Task:
+
+```text
+Create technical submission.
+```
+
+Inspect trajectory:
+
+```text
+did worker actually use requirement matrix?
+```
+
+Again, one thing at a time.
+
+---
+
+# Then regrade becomes the speed multiplier
+
+Once **one** Letta run succeeds:
+
+```text
+R001
+```
+
+stop rerunning it while debugging assessors.
+
+Run:
+
+```text
+R001
+  ↓
+Assessor v0
+  ↓
+Assessor v1
+  ↓
+Assessor v2
+  ↓
+Assessor v3
+```
+
+This is where we eliminate most of the expensive/slow agent iterations.
+
+Only rerun Letta when the independent variable is:
+
+```text
+worker
+memory
+skill
+process
+model
+```
+
+Not when you're changing:
+
+```text
+evaluator
+Hydra projection
+UI
+statistics
+receipt format
+World metadata
+```
+
+---
+
+# Changes I would give the coding agent now
+
+### P0 — runtime correctness
+
+1. Make `LettaAgentClient` a singleton.
+2. Prefer one separately managed App Server + `backend: remote`.
+3. Add `Write`, `Edit`, `Bash` as appropriate.
+4. Replace `permissionMode: "approve-all"` with current SDK semantics.
+5. Handle `message.type === "result"` explicitly and break.
+6. Capture the terminal result.
+7. Add real timeout using timer → `session.abort()`.
+8. Add secondary hard-close safety timer.
+9. `session.close()` in `finally` everywhere.
+10. Log every stream event type.
+11. Log session/conversation IDs.
+12. Check Node >=22.19.
+13. Pin WorkerVersion model on session creation.
+14. Test 5 sequential runs and assert process count stays constant.
+
+### P0 — campaign filesystem
+
+15. Remove `/tmp/campaign-live`.
+16. Use `Campaign.dir()` as the actual worktree/cwd.
+17. Standardize final artifacts under `submission/`.
+18. Have runtime return an artifact manifest.
+19. Replace directory `.read_bytes()` with tree/artifact digest.
+20. Make grading consume the artifact manifest, not guess paths.
+
+### P1 — schema cleanup
+
+21. One canonical `Opportunity`.
+22. No `core.schema.Opportunity` / `opportunities.schema.Opportunity` divergence.
+23. Use `reward_usd`, taxonomy, requirements consistently.
+24. Pin `opportunity_id` before RunBinding.
+
+### P1 — runtime API
+
+25. Replace synchronous `/run` with a durable job endpoint.
+26. `POST` returns `202 + run_id`.
+27. Poll status or stream events separately.
+28. Persist execution state so shell timeouts cannot destroy observability.
+
+### P1 — Harbor
+
+29. Rename current `grade_campaign()` to `preflight_campaign()`.
+30. Wire actual Harbor trial.
+31. Use separate verifier mode.
+32. Store Harbor lock/result/artifact manifest refs.
+33. Implement real `regrade()` on that trial.
+34. Project every regrade as a distinct Evaluation against the same Run.
+
+---
+
+# The target architecture after these fixes
+
+```text
+             Letta App Server
+            one managed process
+                    │
+                    ▼
+            runtime-letta
+          one singleton client
+                    │
+           fresh session/run
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+      Write/Edit            stream
+          │                   │
+          ▼                   ▼
+ Campaign Git dir        result terminal
+          │                   │
+          └─────────┬─────────┘
+                    ▼
+                session.close
+                    │
+                    ▼
+              WorkerExecution
+                    │
+                    ▼
+             WorkerKit receipt
+                    │
+                    ▼
+               freeze run
+                    │
+                    ▼
+                 Harbor
+                    │
+            ┌───────┴───────┐
+            ▼               ▼
+       Assessor v0      regrade v1/v2/v3
+            │               │
+            └───────┬───────┘
+                    ▼
+                  Hydra
+```
+
+That is the checkpoint we wanted.
+
+The most important thing is that **the timeout does not currently indicate that MiMo or Letta is intrinsically too slow**. The trace is dominated by integration defects: the worker has no mutation tools, your stream doesn't have a real timeout, terminal results aren't handled, sessions aren't closed, and each local client can leave another App Server behind. Letta itself has an open upstream issue confirming the client-owned local App Server lifecycle problem.
+
+Once those are fixed, I would expect the tiny deterministic file-write smoke test to tell us very quickly whether there is any deeper model/provider issue. And after the first successful real WorkerRun, **Harbor regrade means you should need dramatically fewer full Letta runs**, which is exactly the development-speed unlock we were looking for.
+
+[1]: https://github.com/letta-ai/lettabot/blob/main/docs/configuration.md "https://github.com/letta-ai/lettabot/blob/main/docs/configuration.md"
+[2]: https://github.com/letta-ai/letta-agent-sdk/issues/224 "https://github.com/letta-ai/letta-agent-sdk/issues/224"
+[3]: https://github.com/letta-ai/letta-agent-sdk/blob/main/README.md "https://github.com/letta-ai/letta-agent-sdk/blob/main/README.md"
+[4]: https://github.com/letta-ai/letta-agent-sdk "https://github.com/letta-ai/letta-agent-sdk"
+[5]: https://github.com/letta-ai/letta-docs-md/blob/main/agent-sdk/quickstart/index.md "https://github.com/letta-ai/letta-docs-md/blob/main/agent-sdk/quickstart/index.md"
+[6]: https://github.com/letta-ai/letta-acp "https://github.com/letta-ai/letta-acp"

@@ -1,0 +1,731 @@
+Yes — the resolution is **not “ditch Letta.”** It is to stop using the full Letta Code agentic harness for every Moltwork WorkOrder.
+
+There are two separate issues here.
+
+First, your `24+ model calls` measurement is almost certainly overstated. Current Letta streaming emits append-only `reasoning` and `assistant` fragments; those event counts are not inference-call counts. Letta defines one **agent step** as one LLM request plus tool execution, and its underlying usage accounting increments `step_count` once per LLM invocation. ([github.com][1])
+
+Second, even if the true number is only 4–8 model calls, **65–120 seconds for a tiny WorkOrder is still architecturally wrong for Moltwork.**
+
+## The crucial Letta distinction
+
+Current Letta Agent SDK has:
+
+```text
+Agent
+  = persistent identity + memory
+
+Conversation
+  = thread on that agent
+
+Session
+  = active Letta Code harness execution
+```
+
+`createSession(agentId)` creates a fresh conversation on the persistent agent. There is also `prompt(message, agentId)`, but Letta describes that merely as a **one-shot convenience in a fresh short-lived conversation**. It does **not** mean “exactly one LLM invocation”; an SDK issue explicitly warns that `prompt()` just hides the internal event stream. ([GitHub][2])
+
+So replacing:
+
+```ts
+createSession → send → stream
+```
+
+with:
+
+```ts
+client.prompt()
+```
+
+will not solve this.
+
+---
+
+# What I would change in Moltwork
+
+Freeze this distinction:
+
+```text
+                  LETTA AGENT
+              persistent cognition
+                       │
+         ┌─────────────┼──────────────┐
+         ▼             ▼              ▼
+      FAST          BOUNDED        AGENTIC
+    WORKER RUN      WORKER RUN     WORKER RUN
+         │             │              │
+       1 LLM          1–3 LLM       Letta loop
+       call           calls          as needed
+         │             │              │
+         └─────────────┴──────────────┘
+                       │
+                 WorkerKit receipt
+                       │
+                     Hydra
+                       │
+                 offline molting
+```
+
+**Letta owns the worker. Letta Code does not necessarily own execution.**
+
+That distinction is the fix.
+
+## Mode 1 — FAST should be the Moltwork default
+
+For most WorkOrders:
+
+```text
+persistent Letta agent
+        ↓
+fresh session
+        ↓
+NO TOOLS
+        ↓
+one model generation
+        ↓
+structured ActionBundle
+        ↓
+Moltwork executes deterministically
+        ↓
+receipt
+```
+
+Current SDK lets you make a session with a request-scoped empty/minimal harness:
+
+```ts
+const session = client.createSession(agentId, {
+    cwd: workspace,
+
+    toolset: {
+        base: "none",
+        include: [],
+    },
+
+    allowedTools: [],
+
+    reasoningEffort: "low",
+});
+```
+
+The SDK explicitly documents `toolset.base: "none"` as the way to strip the normal harness and construct a request-scoped tool surface. ([GitHub][2])
+
+Then don't ask the model to edit a file via a tool.
+
+Ask it to **return the edit**.
+
+For example:
+
+```json
+{
+  "status": "complete",
+  "writes": [
+    {
+      "path": "result.txt",
+      "content": "FAST_OK"
+    }
+  ],
+  "notes": "Created requested artifact"
+}
+```
+
+Moltwork itself performs:
+
+```text
+validate path
+→ verify workspace boundary
+→ write file
+→ hash file
+→ git diff
+→ record WorkerKit event
+```
+
+Now file creation requires **one inference**, not:
+
+```text
+LLM decides Write
+→ Write tool
+→ tool result
+→ LLM reasons
+→ LLM checks
+→ LLM answers
+```
+
+### For coding work, make the output a patch
+
+Even better:
+
+```json
+{
+  "kind": "patch",
+  "patch": "diff --git a/foo.py b/foo.py\n..."
+}
+```
+
+Then:
+
+```bash
+git apply --check candidate.patch
+git apply candidate.patch
+```
+
+inside the campaign worktree.
+
+One model call can modify 15 files.
+
+This is dramatically more appropriate for Moltwork than giving an interactive coding agent `Write`, `Read`, `Bash`, `Glob`, etc. and waiting for it to wander around.
+
+---
+
+# But what about Letta memory?
+
+This is why I would **not** simply call Mimo directly everywhere.
+
+The fast session still belongs to:
+
+```text
+researcher-v1
+```
+
+and therefore still starts from that persistent Letta agent and its memory/state.
+
+You retain:
+
+```text
+agent identity
+persona
+durable memory
+MemFS
+skills
+conversation lineage
+agent versioning
+```
+
+but remove the expensive computer-use feedback loop from the WorkOrder.
+
+The important insight is:
+
+> **Memory does not require an autonomous tool loop.**
+
+Moltwork needs Letta's persistence much more than it needs Letta Code to decide whether to call `Read` three times.
+
+---
+
+# There is an even stronger Moltwork architecture here
+
+The worker shouldn't dynamically discover basic task context through expensive LLM calls either.
+
+Before the model runs:
+
+```text
+WorkOrder
+   │
+   ├── LabBrief from Hydra
+   ├── relevant Letta memories
+   ├── ProcessVersion
+   ├── SkillVersion
+   ├── repository map
+   ├── git diff
+   ├── selected source files
+   └── acceptance criteria
+          │
+          ▼
+      ContextPack
+          │
+          ▼
+       ONE CALL
+```
+
+In other words, **Moltwork does retrieval; the worker does cognition.**
+
+For example:
+
+```yaml
+context_pack:
+  task:
+    objective: fix failing receipt test
+
+  experience:
+    lab_brief: ...
+    similar_runs:
+      - run_193
+      - run_217
+
+  repo:
+    changed_files:
+      - sdk.py
+      - core/receipts.py
+
+    relevant_files:
+      - tests/test_receipt_v2.py
+      - core/receipts.py
+
+  constraints:
+    max_files_changed: 4
+    tests:
+      - tests/test_receipt_v2.py
+```
+
+The model doesn't need:
+
+```text
+think
+LS
+think
+Glob
+think
+Read
+think
+Grep
+think
+Read
+think
+Edit
+think
+test
+think
+```
+
+just to discover facts Moltwork can cheaply supply upfront.
+
+That is a huge architecture improvement.
+
+---
+
+# Mode 2 — BOUNDED for actual iterative jobs
+
+Some jobs genuinely need feedback.
+
+Example:
+
+```text
+generate implementation
+         ↓
+      run tests
+         ↓
+tests fail
+         ↓
+generate repair
+```
+
+Don't hand this to an unlimited Letta loop.
+
+Moltwork owns the loop:
+
+```text
+CALL 1
+Letta Fast Worker
+→ patch A
+
+DETERMINISTIC
+git apply
+pytest
+→ failure report
+
+CALL 2
+Letta Fast Worker
+input:
+  original task
+  patch A
+  exact test failure
+→ patch B
+
+DETERMINISTIC
+apply
+pytest
+
+optional CALL 3
+review/final repair
+```
+
+That gives you:
+
+```text
+max_model_calls = 3
+```
+
+as a **hard economic primitive**.
+
+And each invocation can still use the same persistent Letta worker.
+
+This is much better than asking Letta Code to self-determine whether it is finished.
+
+---
+
+# Mode 3 — full Letta Agent mode
+
+Keep the current execution mode, but only when it actually earns its cost.
+
+Examples:
+
+```text
+open-ended repo investigation
+web research where next query depends on result
+complex debugging with unknown environment
+long-running autonomous hackathon implementation
+novel tasks where we don't know the required process yet
+```
+
+Then:
+
+```yaml
+execution:
+  mode: agentic
+  max_wall_seconds: 300
+  max_cost_usd: 0.25
+```
+
+Use `session.abort()` when Moltwork's external budget/time watchdog trips; the current Agent SDK explicitly supports aborting an active turn. ([GitHub][3])
+
+So the economic decision becomes interesting:
+
+```text
+TaskFamily × WorkerVersion
+          ↓
+Hydra history
+          ↓
+Which execution mode works best?
+```
+
+Eventually Hydra learns:
+
+```text
+classification.*
+FAST wins
+
+hackathon.ideation
+FAST wins
+
+code.small_patch
+BOUNDED-2 wins
+
+code.unknown_debug
+AGENTIC wins
+
+research.web.deep
+AGENTIC wins
+```
+
+That's actually a more valuable Moltwork capability than simply wrapping Letta.
+
+---
+
+# Don't try to find a magic `singleTurn: true`
+
+There is a `max_steps` concept in Letta's agent API, and their Vercel provider explicitly says that `maxSteps` controls how many backend agent steps execute. ([GitHub][4])
+
+But there is an annoying split in the current product:
+
+* the REST/message API exposes `max_steps`;
+* current Agent SDK session documentation lists model, reasoning effort, cwd, permissions and dreaming, but **does not document `maxSteps` as a normal session option**. ([GitHub][3])
+* the old Python/REST server that exposes some useful low-level primitives is now explicitly maintenance/deprecated; Letta tells new integrations to use Letta Code + Agent SDK/App Server. ([GitHub][5])
+
+I would **not migrate Moltwork backward onto the legacy API just to get `max_steps=1`.**
+
+Even if `maxSteps=1` becomes exposed cleanly through Agent SDK tomorrow, the deterministic ActionBundle architecture is better.
+
+Why?
+
+Because one agent step with `Write` still has an awkward semantic:
+
+```text
+model emits tool call
+→ tool executes
+→ agent may not have an opportunity to interpret result
+```
+
+Whereas:
+
+```text
+model returns desired state
+→ Moltwork validates/applies it
+```
+
+has a clean boundary.
+
+---
+
+# Your current performance note contains two conclusions I would fix
+
+You wrote:
+
+> 16 reasoning + 7 assistant + 1 tool = 24 calls.
+
+Not established.
+
+Those are SDK stream events. In fact, Letta has an open documentation issue specifically because reasoning/assistant `content` in the SDK stream is emitted as append-only deltas. ([GitHub][1])
+
+You also wrote:
+
+> No compounding intelligence within a run (separate calls don't share context).
+
+That's the opposite of the Letta agent loop.
+
+Each successive agent step receives prior reasoning/tool results in context; that's why tool-result continuations exist and why their cost can grow. Letta's loop explicitly rebuilds context before subsequent LLM requests. ([GitHub][6])
+
+So change the performance document to:
+
+```text
+Cost:
+- N agent steps per WorkOrder
+- each step = one LLM invocation
+- later steps include accumulated context/tool results
+- therefore cost/latency can grow substantially with step count
+
+Streaming events != model invocations.
+Measure actual step count/provider requests.
+```
+
+---
+
+# Measure the real number right now
+
+Before changing anything, add this instrumentation.
+
+Your terminal result handler should record:
+
+```json
+{
+  "sdk_events": {
+    "reasoning": 16,
+    "assistant": 7,
+    "tool_call": 1,
+    "tool_result": 1
+  },
+
+  "llm_steps": 0,
+  "provider_requests": 0
+}
+```
+
+Don't infer `llm_steps`.
+
+Prefer, in order:
+
+```text
+1. provider request log
+2. raw Letta/App Server usage.step_count
+3. unique agent-step identifiers
+```
+
+There is currently an Agent SDK issue around some usage/cost data being dropped/mapped incorrectly in `SDKResultMessage`, so I would make the **provider-level request counter your ground truth** while benchmarking. ([GitHub][7])
+
+Wrap opencode-go or whatever HTTP transport you control and record:
+
+```text
+timestamp
+run_id
+request_id
+model
+input_tokens
+output_tokens
+duration
+```
+
+Then we can actually say:
+
+```text
+run A:
+5 LLM requests
+13,821 cumulative input tokens
+1,973 output
+67.2 seconds
+```
+
+rather than `24 events`.
+
+---
+
+# Also test Mimo against another model
+
+There is another reason I wouldn't assume all of this is fundamental Letta overhead.
+
+Letta Code has had recent problems specifically around **reasoning-producing models using OpenAI-compatible provider paths**, including loops where reasoning/tool-call handling causes repeated turns. ([GitHub][8])
+
+And there have been specific compatibility bugs in the `opencode-go` model catalog/tool transport. ([GitHub][9])
+
+So run this matrix:
+
+| Worker          | Tools      | Model                  | Measure         |
+| --------------- | ---------- | ---------------------- | --------------- |
+| Letta           | none       | Mimo                   | steps / latency |
+| Letta           | Write only | Mimo                   | steps / latency |
+| Letta           | none       | known-good cheap model | steps / latency |
+| Letta           | Write only | known-good cheap model | steps / latency |
+| Direct provider | none       | Mimo                   | latency         |
+
+For the tiny task:
+
+```text
+Return exactly FAST_OK
+```
+
+I expect:
+
+```text
+toolset none
+≈ one inference
+```
+
+If it isn't, **then** something is badly wrong in the local Letta/opencode-go path.
+
+For:
+
+```text
+Create result.txt containing FAST_OK
+```
+
+full harness will inevitably need tool interaction.
+
+The correct fast test is therefore:
+
+```text
+Return this ActionBundle:
+{"writes":[{"path":"result.txt","content":"FAST_OK"}]}
+```
+
+then let Moltwork write it.
+
+---
+
+# This actually improves the thesis
+
+I would change one frozen architectural sentence.
+
+Old:
+
+> Letta owns the worker.
+
+Keep that.
+
+But add:
+
+> **Moltwork owns the work loop.**
+
+So:
+
+```text
+Letta
+====
+Who is the worker?
+What does it remember?
+What skills does it have?
+
+
+Moltwork
+========
+What job should it do?
+What context should it receive?
+How many model calls is it allowed?
+When should tools execute?
+When should it stop?
+Was the attempt economically worthwhile?
+
+
+WorkerKit
+=========
+What actually happened?
+
+
+Hydra
+=====
+What have we empirically learned?
+```
+
+That's much stronger.
+
+Letta is a fantastic **persistent cognition substrate**.
+
+It doesn't have to be your economic orchestration substrate.
+
+---
+
+## The implementation I would do next
+
+Make `ExecutionPolicy` first-class:
+
+```python
+class ExecutionMode(str, Enum):
+    FAST = "fast"
+    BOUNDED = "bounded"
+    AGENTIC = "agentic"
+
+@dataclass
+class ExecutionPolicy:
+    mode: ExecutionMode
+
+    max_model_calls: int
+    max_wall_seconds: float
+    max_cost_usd: float
+
+    context_strategy: str
+    output_schema: str
+
+    allow_tools: bool = False
+```
+
+And defaults:
+
+```yaml
+fast:
+  max_model_calls: 1
+  max_wall_seconds: 20
+  allow_tools: false
+
+bounded:
+  max_model_calls: 3
+  max_wall_seconds: 90
+  allow_tools: false
+
+agentic:
+  max_model_calls: null
+  max_wall_seconds: 300
+  allow_tools: true
+```
+
+Then implement:
+
+```text
+FastLettaExecutor
+BoundedLettaExecutor
+AgenticLettaExecutor
+```
+
+**not**
+
+```text
+DirectExecutor vs LettaExecutor
+```
+
+because that frames persistence and execution as mutually exclusive when they aren't.
+
+And the first experiment should be exactly your smoke test:
+
+```text
+researcher-v1
+Mimo v2.5
+
+A: full Letta Code Write tool
+B: Letta no-tool ActionBundle
+C: direct Mimo baseline
+```
+
+Compare:
+
+```text
+real provider calls
+wall time
+input tokens
+output tokens
+artifact correctness
+receipt size
+```
+
+If B gives us roughly direct-model latency while retaining the same persistent Letta agent identity and memory, we've solved the main WorkerRun architecture problem.
+
+[1]: https://github.com/letta-ai/letta-agent-sdk/issues/233?utm_source=chatgpt.com "Docs: content's append-only delta semantics are undocumented after #227 · Issue #233 · letta-ai/letta-agent-sdk · GitHub"
+[2]: https://github.com/letta-ai/letta-agent-sdk/blob/main/README.md?utm_source=chatgpt.com "letta-agent-sdk/README.md at main · letta-ai/letta-agent-sdk · GitHub"
+[3]: https://github.com/letta-ai/letta-docs-md/blob/main/agent-sdk/quickstart/index.md?utm_source=chatgpt.com "letta-docs-md/agent-sdk/quickstart/index.md at main · letta-ai/letta-docs-md · GitHub"
+[4]: https://github.com/letta-ai/vercel-ai-sdk-provider/blob/main/README.md?utm_source=chatgpt.com "vercel-ai-sdk-provider/README.md at main · letta-ai/vercel-ai-sdk-provider · GitHub"
+[5]: https://github.com/letta-ai/letta/blob/main/AGENTS.md?utm_source=chatgpt.com "letta/AGENTS.md at main · letta-ai/letta · GitHub"
+[6]: https://github.com/letta-ai/letta/blob/main/letta/agents/letta_agent.py?utm_source=chatgpt.com "letta/letta/agents/letta_agent.py at main · letta-ai/letta · GitHub"
+[7]: https://github.com/letta-ai/letta-agent-sdk/issues?utm_source=chatgpt.com "Issues · letta-ai/letta-agent-sdk · GitHub"
+[8]: https://github.com/letta-ai/letta-code/issues/2973?utm_source=chatgpt.com "Regression: Tool calls stored but never dispatched after first 1-2 rounds on v0.27.10+ — all models via OpenAI BYOK providers · Issue #2973 · letta-ai/letta-code · GitHub"
+[9]: https://github.com/letta-ai/letta-code/issues/3118?utm_source=chatgpt.com "opencode-go: minimax-m3 model definition uses anthropic-messages format that the proxy doesn't support · Issue #3118 · letta-ai/letta-code · GitHub"

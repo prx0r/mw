@@ -1,0 +1,998 @@
+Yes. **WebMCP is another major axis in the Moltwork ontology**, because it changes what counts as possible agent work.
+
+The web is moving from:
+
+```text
+human website
+    ↓
+agent visually guesses clicks
+```
+
+toward:
+
+```text
+website
+   ├── human UI
+   └── structured agent tools
+```
+
+WebMCP's current draft explicitly lets a page expose JavaScript functions with natural-language descriptions and structured schemas to browser agents; Chrome describes it as progressive enhancement for more reliable agent actuation. The current Community Group report is dated **August 26, 2026**, so this is extremely fresh infrastructure, not an old standard we've somehow missed for years. ([Web Machine Learning][1])
+
+And the bigger pattern surrounding it is highly favorable to Moltwork.
+
+# The emerging agentic stack
+
+I think the ecosystem is converging toward something like:
+
+```text
+────────────────────────────────────────────
+COGNITION
+────────────────────────────────────────────
+Letta
+persistent identity / memory / skills
+
+────────────────────────────────────────────
+TOOL ACCESS
+────────────────────────────────────────────
+MCP
+remote tools and data
+
+WebMCP
+tools exposed by the website you're using
+
+────────────────────────────────────────────
+AGENT INTERACTION
+────────────────────────────────────────────
+A2A
+agent ↔ agent
+
+────────────────────────────────────────────
+HUMAN/AGENT UI
+────────────────────────────────────────────
+MCP Apps
+interactive interfaces delivered by tools
+
+────────────────────────────────────────────
+COMMERCE
+────────────────────────────────────────────
+UCP / ACP / payment protocols
+agent ↔ merchant ↔ payments
+
+────────────────────────────────────────────
+ENVIRONMENT / TRAINING
+────────────────────────────────────────────
+Harbor
+Prime Verifiers
+OpenEnv
+BrowserGym
+Agent World Model
+
+────────────────────────────────────────────
+EXPERIMENTATION
+────────────────────────────────────────────
+CGE
+worker/world/evaluator evolution
+
+────────────────────────────────────────────
+LONGITUDINAL KNOWLEDGE
+────────────────────────────────────────────
+HydraDB
+
+────────────────────────────────────────────
+ECONOMIC SELECTION
+────────────────────────────────────────────
+Oracle / Moltwork
+```
+
+Moltwork should own almost none of those lower-level standards.
+
+It should understand all of them.
+
+---
+
+# WebMCP is a new **work surface**
+
+I'd add this explicitly to the shared ontology.
+
+Instead of only:
+
+```yaml
+task_family: support.customer_service
+```
+
+have independent axes:
+
+```yaml
+task_family:
+  support.customer_service
+
+action_surface:
+  - browser_ui
+  - webmcp
+  - mcp
+  - rest_api
+  - a2a
+  - human_escalation
+
+economic_surface:
+  - contract
+  - bounty
+  - commerce
+  - paid_api
+
+environment:
+  - production
+  - harbor
+  - openenv
+```
+
+This is important because the same job can be available through completely different interfaces.
+
+Example:
+
+```text
+TASK:
+refund customer
+
+VERSION A:
+agent visually navigates support dashboard
+
+VERSION B:
+agent uses Browser-Use
+
+VERSION C:
+site exposes WebMCP:
+refund_order(...)
+find_customer(...)
+get_policy(...)
+
+VERSION D:
+backend exposes remote MCP
+
+VERSION E:
+agent delegates to merchant support agent over A2A
+```
+
+It's the same underlying economic capability.
+
+But reliability and cost can vary enormously.
+
+---
+
+# That creates a brilliant CGE experiment
+
+Take one website/workflow.
+
+Hold constant:
+
+```text
+worker
+model
+task
+budget
+evaluator
+```
+
+Change:
+
+```text
+action interface
+```
+
+Then compare:
+
+```text
+                 SAME TASK
+
+                  ┌───────┐
+                  │ Letta │
+                  └───┬───┘
+                      │
+       ┌──────────────┼──────────────┐
+       ▼              ▼              ▼
+
+   raw browser      WebMCP          MCP
+
+      ↓              ↓              ↓
+
+    success        success        success
+    tokens         tokens         tokens
+    latency        latency        latency
+    mistakes       mistakes       mistakes
+    cost           cost           cost
+```
+
+This produces an actual empirical measure of:
+
+> **How agent-ready is this interface?**
+
+That itself could become a World.
+
+---
+
+# “Agent readiness” becomes a real benchmark category
+
+Something like:
+
+```text
+web.agent_readiness
+```
+
+Subdimensions:
+
+```text
+tool discoverability
+schema clarity
+task coverage
+state observability
+error recovery
+confirmation semantics
+permission safety
+latency
+round trips
+token cost
+task success
+```
+
+Then a site owner can run:
+
+```text
+Agent Readiness World v4
+```
+
+and get:
+
+```text
+browser baseline       61%
+WebMCP                 89%
+
+tool calls/task        -47%
+tokens/task            -39%
+median latency         -33%
+
+weakness:
+checkout error recovery
+```
+
+This is much stronger than an SEO-style checklist.
+
+It's executable evidence.
+
+---
+
+# And CGE can evolve the WebMCP interface itself
+
+This is one of the coolest implications.
+
+A WebMCP implementation isn't just:
+
+> on / off.
+
+It has design parameters:
+
+```text
+tool names
+descriptions
+input schemas
+output structures
+tool granularity
+workflow decomposition
+annotations
+batching
+error messages
+state exposure
+```
+
+The WebMCP community is already discussing persistent tools surviving page navigation, reactive state updates instead of polling, and bulk/code-mode execution to reduce round trips. ([GitHub][2])
+
+So CGE can literally evolve:
+
+```text
+WebMCPInterfaceVersion v1
+          ↓
+Harbor evaluation
+          ↓
+tool confusion observed
+          ↓
+GEPA modifies:
+names / descriptions / schemas
+          ↓
+v2
+          ↓
+same workers
+same tasks
+          ↓
++14% completion
+-22% tokens
+```
+
+Now the **tool interface itself is a Git-native asset**.
+
+That's new inventory.
+
+---
+
+# Hydra becomes fascinating here
+
+Add:
+
+```text
+(:WebsiteVersion)
+(:ToolSurfaceVersion)
+(:WebMCPTool)
+(:ProtocolVersion)
+```
+
+Then:
+
+```text
+Run
+ -[:USED_SURFACE]->
+WebMCPInterfaceVersion
+
+WebMCPInterfaceVersion
+ -[:EXPOSES]->
+Tool
+
+Tool
+ -[:IMPLEMENTS]->
+Capability
+```
+
+Hydra can eventually answer:
+
+> Which tool decomposition works best for booking workflows?
+
+> Are 20 narrow tools better than 5 composite tools?
+
+> Which descriptions cause weaker models to fail?
+
+> Which schemas transfer between commerce sites?
+
+> Does WebMCP actually improve customer-support agents compared with BrowserGym interaction?
+
+> Which worker learned fastest when a structured interface existed?
+
+That's extremely useful information.
+
+---
+
+# WebMCP makes ground truth easier too
+
+One of our hardest issues has been:
+
+> How do you know the evaluator is right?
+
+Browser interaction is often nasty because:
+
+```text
+click happened
+```
+
+doesn't necessarily mean:
+
+```text
+business action succeeded.
+```
+
+Structured tools give you cleaner observable transitions:
+
+```text
+reserve_table(...)
+→ reservation_id
+
+refund_order(...)
+→ refund transaction
+
+save_document(...)
+→ document revision
+```
+
+Therefore a Harbor World around WebMCP can often inspect actual state.
+
+```text
+BEFORE:
+order.status = paid
+
+ACTION:
+refundOrder(...)
+
+AFTER:
+order.status = refunded
+payment.refund_id exists
+```
+
+That's T0/T1-quality ground truth rather than an LLM judging a screenshot.
+
+That will matter a lot for robust Schools.
+
+---
+
+# Browser automation doesn't disappear
+
+WebMCP will not instantly make the entire web structured.
+
+So you get a capability ladder:
+
+```text
+preferred:
+
+native structured API
+      ↓
+remote MCP
+      ↓
+WebMCP
+      ↓
+semantic DOM
+      ↓
+browser automation
+      ↓
+vision/computer use
+```
+
+Browser Use remains important as the fallback layer for arbitrary sites. It currently supports both browser automation and MCP connectivity, while BrowserGym gives reproducible browser-agent benchmarks across WebArena, WebArenaVerified, VisualWebArena, WorkArena, AssistantBench and others. ([GitHub][3])
+
+This becomes a Lab decision:
+
+```text
+Can structured interface solve it?
+YES → use it.
+
+NO → browser automation.
+
+Can we economically create a reusable
+structured integration?
+
+YES → molt it into an asset.
+```
+
+---
+
+# That creates new opportunity classes for Oracle
+
+This is exactly what you mean by standards creating new markets without us owning them.
+
+Oracle should recognize emerging task families such as:
+
+```text
+webmcp.integration
+webmcp.audit
+webmcp.tool_design
+webmcp.regression_testing
+
+mcp.integration
+mcp.tool_optimization
+
+agent_readiness.audit
+
+browser_workflow.automation
+
+a2a.integration
+
+agentic_commerce.integration
+
+agent_evaluator.design
+
+agent_environment.design
+```
+
+A company can need:
+
+> Make this existing app usable reliably by agents.
+
+That did not really exist as a normal software work category a few years ago.
+
+Now it does.
+
+---
+
+# WebMCP specifically could create a nice Lab specialization
+
+Imagine:
+
+```text
+LAB:
+agent-native-web
+```
+
+Persistent researcher agents track:
+
+```text
+WebMCP
+MCP
+MCP Apps
+Chrome
+browser agents
+BrowserGym
+WebArena
+OpenEnv
+agentic commerce
+```
+
+World builders continually create:
+
+```text
+tool-schema benchmarks
+browser-vs-WebMCP benchmarks
+long-workflow benchmarks
+permission tests
+error recovery tests
+```
+
+Campaign agents do:
+
+```text
+website audits
+WebMCP implementations
+agent workflows
+```
+
+Post-run molting produces:
+
+```text
+tool patterns
+WebMCP skills
+evaluator criteria
+reusable adapters
+Worlds
+```
+
+After 100 projects, this Lab becomes meaningfully specialized.
+
+---
+
+# MCP itself has just expanded substantially too
+
+The July 28, 2026 MCP release is another important frontier event.
+
+The protocol moved to a stateless core and added/solidified an extensions framework, Tasks for long-running work, MCP Apps, stronger authorization and better HTTP routing/caching. ([Model Context Protocol Blog][4])
+
+This matters for our ontology because MCP is no longer just:
+
+```text
+call tool → receive response
+```
+
+It increasingly includes:
+
+```text
+long-running tasks
+interactive applications
+enterprise authorization
+distributed services
+```
+
+So new AgentWork surfaces appear.
+
+---
+
+# MCP Apps adds another axis
+
+MCP Apps lets tools return interactive UI directly into supporting agent clients, including dashboards, forms and multi-step interfaces. ([Model Context Protocol Blog][5])
+
+So we're getting bidirectional convergence:
+
+```text
+WEB APP
+   ↓
+WebMCP
+gives tools to agent
+```
+
+while:
+
+```text
+AGENT TOOL
+   ↓
+MCP Apps
+gives UI to human
+```
+
+That's fascinating.
+
+The boundary between:
+
+```text
+website
+application
+agent
+tool
+UI
+```
+
+is becoming much softer.
+
+---
+
+# Then A2A adds an entirely new economic surface
+
+A2A 1.0 is now the released standard for independent agents to discover capabilities, communicate and manage collaborative tasks without exposing their internal memory/tools. It had backing from more than 150 organizations by April 2026. ([Linux Foundation][6])
+
+This could matter enormously to Moltwork later.
+
+Today a WorkerRun might select:
+
+```text
+tool
+```
+
+Tomorrow:
+
+```text
+specialist agent
+```
+
+Example:
+
+```text
+campaign researcher
+      │
+      ├── use internal Letta skill
+      │
+      ├── call paid evaluator
+      │
+      ├── use WebMCP site
+      │
+      └── subcontract specialist agent over A2A
+```
+
+Now the resource-selection problem becomes:
+
+```text
+DO IT MYSELF
+vs
+USE A TOOL
+vs
+HIRE AN AGENT
+vs
+BUY AN ASSET
+```
+
+That's almost exactly the economic router Moltwork has been circling around.
+
+---
+
+# UCP/ACP mean commerce itself is becoming agent-addressable
+
+Google launched **Universal Commerce Protocol** in January 2026 with Shopify, Etsy, Target, Walmart, Wayfair and others. It's intended to cover discovery through checkout and post-purchase support and can integrate over APIs, MCP or A2A. ([Google Blog][7])
+
+OpenAI and Stripe's **Agentic Commerce Protocol** similarly exposes seller checkout flows to compatible applications and can be implemented via REST or MCP. ([OpenAI][8])
+
+So we should add another ontology axis:
+
+```text
+transaction_surface:
+  manual
+  HTTP
+  x402-like micropayment
+  ACP
+  UCP
+```
+
+Moltwork doesn't need to win protocol wars.
+
+It just needs to know:
+
+> **This opportunity is machine-executable now.**
+
+---
+
+# This changes Oracle profoundly
+
+Oracle shouldn't only discover:
+
+```text
+jobs
+hackathons
+bounties
+```
+
+Long-term it should discover **capability surfaces**.
+
+For example:
+
+```text
+NEW STANDARD:
+WebMCP support lands
+
+        ↓
+
+Oracle inference:
+
+web applications can expose
+new structured capabilities
+
+        ↓
+
+possible opportunity families:
+
+integration
+testing
+optimization
+benchmark creation
+agent-readiness audits
+workflow automation
+
+        ↓
+
+Lab checks capability inventory
+
+        ↓
+
+we have:
+browser expertise
+MCP expertise
+WebMCP Worlds
+
+        ↓
+
+candidate campaign
+```
+
+This turns standards research into opportunity discovery.
+
+---
+
+# OpenEnv shows where this heads next
+
+OpenEnv's MCP design is particularly relevant because it deliberately separates:
+
+```text
+TRAINER CONTROL PLANE
+reset()
+step()
+state()
+```
+
+from:
+
+```text
+AGENT ACTION PLANE
+MCP tools
+```
+
+and aims for the exact same tool interface to work during training, offline evaluation, inference and external serving. ([GitHub][9])
+
+That is potentially the end-state abstraction.
+
+Imagine a company workflow exposed as:
+
+```text
+MCP/WebMCP in production
+```
+
+and also recreated as:
+
+```text
+OpenEnv/Harbor School
+```
+
+Then the agent learns against the same semantic tools it will use in production.
+
+Very little train/production mismatch.
+
+---
+
+# Agent World Model pushes it further
+
+Snowflake's Agent World Model generated **1,000 executable database-backed environments** with about 35 tools per environment on average, all intended for multi-turn agent training, and the infrastructure has been merged into OpenEnv. ([arXiv][10])
+
+That's really important for the future.
+
+You can imagine:
+
+```text
+real WebMCP workflow
+        ↓
+infer underlying world model
+        ↓
+generate many synthetic variants
+        ↓
+OpenEnv/Harbor
+        ↓
+train/test Letta worker
+        ↓
+return to production
+```
+
+So an encountered real-world workflow can eventually generate its own synthetic School.
+
+---
+
+# The giant convergence
+
+I think what is happening is:
+
+### 2024-ish
+
+```text
+agent
+looks at things
+```
+
+### 2025
+
+```text
+agent
+calls tools
+```
+
+### 2026
+
+```text
+agent
+inhabits structured environments
+```
+
+And those environments increasingly expose:
+
+```text
+websites        → WebMCP
+tools/services  → MCP
+agents          → A2A
+commerce        → UCP / ACP
+training worlds → OpenEnv / Harbor / Prime
+```
+
+while Letta answers:
+
+```text
+How does the same worker
+accumulate experience across them?
+```
+
+And Hydra answers:
+
+```text
+What actually worked across them?
+```
+
+That's the important intersection.
+
+---
+
+# The ontology I'd freeze now
+
+Add these independent dimensions:
+
+```yaml
+Task:
+  family:
+    competition.idea_generation
+
+  action_surface:
+    browser_ui | webmcp | mcp | api | a2a
+
+  environment_surface:
+    production | harbor | openenv | prime
+
+  interaction_mode:
+    single_turn | multi_turn | long_running
+
+  counterparty:
+    website | service | human | agent | merchant
+
+  transaction_surface:
+    none | contract | api_payment | commerce_protocol
+
+  capabilities:
+    [...]
+
+  autonomy:
+    H0-H4
+```
+
+Now the Oracle ontology doesn't become obsolete every time a new standard appears.
+
+New standards simply create new values on existing dimensions.
+
+---
+
+# And CGE becomes much more interesting
+
+CGE is not just:
+
+> evolve the agent.
+
+It can evolve any dimension while freezing the others:
+
+```text
+Experiment A:
+vary worker
+
+Experiment B:
+vary memory
+
+Experiment C:
+vary skill
+
+Experiment D:
+vary process
+
+Experiment E:
+vary WebMCP interface
+
+Experiment F:
+vary evaluator
+
+Experiment G:
+vary curriculum
+
+Experiment H:
+vary model
+
+Experiment I:
+vary agent/tool delegation strategy
+```
+
+Hydra learns the interactions.
+
+That's where things become huge.
+
+For instance:
+
+```text
+Letta v17
++
+WebMCP interface v4
++
+Process P8
++
+Assessor A2
+```
+
+may be much better than any component independently.
+
+The Lab's job becomes discovering these **working combinations**.
+
+---
+
+# The WebMCP-specific flywheel could be excellent
+
+```text
+real web workflow
+      ↓
+agent attempts it
+      ↓
+Harbor captures baseline
+      ↓
+failure analysis
+      ↓
+create/modify WebMCP tools
+      ↓
+CGE experiment
+      ↓
+task success increases
+      ↓
+Git commit:
+webmcp-interface-v3
+      ↓
+Hydra records improvement
+      ↓
+reuse interface pattern elsewhere
+      ↓
+new Skill / World / evaluator
+```
+
+That's literally:
+
+> **turn brittle web work into increasingly structured executable work.**
+
+And yes, that can create whole new markets without us ever needing to invent WebMCP ourselves.
+
+The larger Moltwork thesis is therefore becoming less “agent jobs marketplace” and more:
+
+> **Track the expanding frontier of machine-executable work, build reproducible environments around it, learn which workers/assets/interfaces succeed, and continuously convert real work into validated reusable capability.**
+
+WebMCP is a very good example of why that abstraction is the right one.
+
+[1]: https://webmachinelearning.github.io/webmcp/ "https://webmachinelearning.github.io/webmcp/"
+[2]: https://github.com/webmachinelearning/webmcp/issues/212 "https://github.com/webmachinelearning/webmcp/issues/212"
+[3]: https://github.com/browser-use/browser-use "https://github.com/browser-use/browser-use"
+[4]: https://blog.modelcontextprotocol.io/posts/2026-07-28/ "https://blog.modelcontextprotocol.io/posts/2026-07-28/"
+[5]: https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/ "https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/"
+[6]: https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year "https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year"
+[7]: https://blog.google/company-news/inside-google/message-ceo/nrf-2026-remarks/ "https://blog.google/company-news/inside-google/message-ceo/nrf-2026-remarks/"
+[8]: https://openai.com/index/buy-it-in-chatgpt/ "https://openai.com/index/buy-it-in-chatgpt/"
+[9]: https://github.com/huggingface/openenv/blob/main/docs/source/tutorials/mcp-environment.md "https://github.com/huggingface/openenv/blob/main/docs/source/tutorials/mcp-environment.md"
+[10]: https://arxiv.org/abs/2602.10090 "https://arxiv.org/abs/2602.10090"

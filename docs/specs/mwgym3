@@ -1,0 +1,1746 @@
+Yes: **eventually the harness itself becomes part of the WorkerGenome**. But I would not make Moltwork dynamically choose among ten frameworks yet. First establish a small Pareto frontier of 3–4 execution profiles, prove the measurements are correct, and only then let BATS/Hydra route between them.
+
+The current stack should stay centered on Letta. Your existing design explicitly defined the narrow proof as persistent Letta worker → training trajectories → Hydra context → validated memory/skill mutation → held-out improvement.  And Letta's new Agents SDK is specifically positioning itself around persistent identity, long-term experience, memory and cross-machine state. ([Letta][1])
+
+PydanticAI is the one challenger I would integrate immediately, because it now overlaps with a surprising amount of what we need: persistent Memory, Skills, planning, subagents, step persistence, durable execution, provider-adaptive thinking, spend limits, per-response/model costs, OpenTelemetry instrumentation, and Code Mode for collapsing many tool operations into one model round-trip. ([Pydantic][2])
+
+### The initial stack
+
+| Layer                  | Use                                              |
+| ---------------------- | ------------------------------------------------ |
+| **WorkerKit**          | canonical work/economic contract                 |
+| **Harbor**             | environments, trials, verifiers, reproducibility |
+| **Letta**              | primary persistent-learning harness              |
+| **PydanticAI Harness** | composable/budget-observable challenger          |
+| **Direct**             | cheapest one-shot baseline                       |
+| **Hermes**             | off-the-shelf external learning baseline         |
+| **HydraDB**            | empirical organizational memory                  |
+| **BATS**               | runtime compute/resource allocator               |
+| **GEPA**               | offline WorkerGenome evolution                   |
+| **Trace2Skill**        | batch trajectory → skill evolution               |
+| **Letta Evals**        | Letta-specific memory/state regression tests     |
+
+That is enough. **Do not integrate GBrain now.** GBrain is essentially an agent-readable knowledge/memory system exposed through CLI/MCP; that overlaps heavily with the Hydra organizational-memory role rather than giving us a meaningfully different execution harness. ([GitHub][3])
+
+Hermes is easier: Harbor already lists `hermes` among its built-in installed agents. We can benchmark it without making Hermes foundational to Moltwork. ([GitHub][4])
+
+## Upstreams the coding agent should pin
+
+These are the repos worth having locally as reference implementations. Don't casually copy them wholesale; pin exact commits in `upstreams.lock.json`.
+
+* [Harbor](https://github.com/harbor-framework/harbor?utm_source=chatgpt.com) — cross-harness trials/worlds/evaluation. Harbor supports arbitrary external/custom agents and produces reproducible trials. ([GitHub][5])
+* [Harbor Cookbook](https://github.com/harbor-framework/harbor-cookbook?utm_source=chatgpt.com) — runnable patterns.
+* [Pydantic AI](https://github.com/pydantic/pydantic-ai?utm_source=chatgpt.com) — typed core agent loop. ([GitHub][6])
+* [Pydantic AI Harness](https://github.com/pydantic/pydantic-ai-harness?utm_source=chatgpt.com) — Coder, Memory, planning, context controls, budgets, etc. ([GitHub][7])
+* [Letta Agent SDK](https://github.com/letta-ai/letta-agent-sdk?utm_source=chatgpt.com) — current stateful-agent interface.
+* [Letta Evals](https://github.com/letta-ai/letta-evals?utm_source=chatgpt.com) — stateful-agent evaluation framework. ([GitHub][8])
+* [Letta Trajectory](https://github.com/letta-ai/trajectory?utm_source=chatgpt.com) — portable trajectory handling.
+* [Hermes Agent](https://github.com/NousResearch/hermes-agent?utm_source=chatgpt.com) — self-improving/skill-learning baseline. ([GitHub][9])
+* [Google Budget-Aware Agent / BATS](https://github.com/google-research/budget-aware-agent?utm_source=chatgpt.com) — budget tracker + budget-aware test-time scaling. ([GitHub][10])
+* [GEPA](https://github.com/gepa-ai/gepa?utm_source=chatgpt.com) — evolve prompts/config/code/agent architecture from evaluated traces. ([GitHub][11])
+* [Trace2Skill](https://github.com/Qwen-Applications/Trace2Skill?utm_source=chatgpt.com) — batch trajectory analysis and skill consolidation. ([GitHub][12])
+* [HydraDB](https://github.com/hydra-db/hydradb?utm_source=chatgpt.com) — empirical graph/store. ([GitHub][13])
+
+Your `/mw` tree already vendors Harbor, Harbor Cookbook, HydraDB, Letta Evals, GEPA, Trace2Skill and OpenEvolve, so `mwgym` should reuse the pinned versions where sensible rather than creating another random collection of HEAD checkouts.
+
+The more serious issue is that the existing `/mw/experiment.py` still literally returns synthetic experiment structure instead of executing experiments.  That is the first thing `mwgym` should eliminate.
+
+Here is the development brief I would give the coding agent.
+
+# MWGym — Implementation Directive
+
+## Objective
+
+Build `mwgym` as Moltwork's real experimental laboratory.
+
+Do NOT build another generic agent framework.
+
+MWGym exists to answer empirically:
+
+1. Which worker configuration performs best for a given class of work?
+2. When is persistent memory worth its cost?
+3. When is extra reasoning worth its cost?
+4. When should the worker retrieve prior experience?
+5. When should it branch, verify, escalate, delegate, or stop?
+6. Do learned memories/skills improve genuinely unseen work?
+7. Do policies learned in controlled Worlds transfer to real Moltwork opportunities?
+8. Eventually: which execution harness/runtime is optimal under a particular task state and budget?
+
+The unit under optimization is a `WorkerGenome`.
+
+The unit of evidence is a `WorkerRun`.
+
+The unit of economic choice is a `DecisionPoint`.
+
+Harbor executes/evaluates Worlds.
+
+WorkerKit owns canonical work/economic evidence.
+
+Letta and PydanticAI are competing worker harnesses.
+
+Hydra stores empirical experience.
+
+BATS allocates resources.
+
+GEPA evolves text/configuration components offline.
+
+Trace2Skill distills validated trajectory pools into reusable skills.
+
+Do not replace any of those upstream systems with local approximations.
+
+---
+
+# 0. Repository layout
+
+Create a separate repository:
+
+```text
+mwgym/
+├── pyproject.toml
+├── README.md
+├── upstreams.lock.json
+│
+├── mwgym/
+│   ├── __init__.py
+│   │
+│   ├── schema/
+│   │   ├── genome.py
+│   │   ├── decision.py
+│   │   ├── model_call.py
+│   │   ├── tool_call.py
+│   │   ├── run.py
+│   │   ├── outcome.py
+│   │   └── experiment.py
+│   │
+│   ├── harnesses/
+│   │   ├── base.py
+│   │   ├── direct.py
+│   │   ├── letta.py
+│   │   ├── pydantic_ai.py
+│   │   └── harbor_external.py
+│   │
+│   ├── telemetry/
+│   │   ├── collector.py
+│   │   ├── pricing.py
+│   │   ├── usage.py
+│   │   ├── otel.py
+│   │   └── validation.py
+│   │
+│   ├── budgets/
+│   │   ├── ledger.py
+│   │   ├── bats.py
+│   │   └── policy.py
+│   │
+│   ├── memory/
+│   │   ├── hydra.py
+│   │   ├── letta.py
+│   │   └── retrieval.py
+│   │
+│   ├── evolution/
+│   │   ├── gepa.py
+│   │   ├── trace2skill.py
+│   │   └── promotion.py
+│   │
+│   ├── harbor/
+│   │   ├── adapter.py
+│   │   ├── parser.py
+│   │   └── agent.py
+│   │
+│   ├── worlds/
+│   │   ├── filesystem/
+│   │   ├── coding/
+│   │   ├── memory/
+│   │   └── yugioh/
+│   │
+│   ├── experiments/
+│   │   ├── runner.py
+│   │   ├── paired.py
+│   │   ├── statistics.py
+│   │   └── report.py
+│   │
+│   └── cli.py
+│
+├── genomes/
+│   ├── direct-fast.yaml
+│   ├── letta-stateless.yaml
+│   ├── letta-stateful.yaml
+│   ├── pydantic-coder.yaml
+│   └── pydantic-code-mode.yaml
+│
+├── datasets/
+│   ├── filesystem-v1/
+│   ├── coding-v1/
+│   ├── memory-v1/
+│   └── ygo-v1/
+│
+├── experiments/
+│   ├── 001-harness-crossover.yaml
+│   ├── 002-memory-value.yaml
+│   ├── 003-bats.yaml
+│   └── 004-skill-learning.yaml
+│
+├── scripts/
+│   ├── bootstrap.sh
+│   ├── pin_upstreams.py
+│   ├── smoke.sh
+│   └── run_matrix.py
+│
+└── tests/
+    ├── unit/
+    ├── integration/
+    ├── contract/
+    └── e2e/
+```
+
+Do not migrate Oracle, marketplace, chain, Phala, ERC-8004 or x402 code into this repo.
+
+MWGym depends on WorkerKit.
+
+WorkerKit remains the production economic/work contract.
+
+---
+
+# 1. Upstream checkout
+
+Create `vendor/` only for source inspection/reproducibility.
+
+Use the linked upstream repositories supplied with this directive.
+
+The clone procedure should conceptually be:
+
+```bash
+git clone <HARBOR_GITHUB_URL> vendor/harbor
+git clone <PYDANTIC_AI_GITHUB_URL> vendor/pydantic-ai
+git clone <PYDANTIC_AI_HARNESS_GITHUB_URL> vendor/pydantic-ai-harness
+git clone <LETTA_AGENT_SDK_GITHUB_URL> vendor/letta-agent-sdk
+git clone <LETTA_EVALS_GITHUB_URL> vendor/letta-evals
+git clone <HERMES_GITHUB_URL> vendor/hermes-agent
+git clone <BATS_GITHUB_URL> vendor/budget-aware-agent
+git clone <GEPA_GITHUB_URL> vendor/gepa
+git clone <TRACE2SKILL_GITHUB_URL> vendor/Trace2Skill
+git clone <HYDRADB_GITHUB_URL> vendor/hydradb
+```
+
+Immediately record:
+
+```json
+{
+  "harbor": {"url": "...", "commit": "..."},
+  "pydantic_ai": {"url": "...", "commit": "..."},
+  "pydantic_ai_harness": {"url": "...", "commit": "..."},
+  "letta_agent_sdk": {"url": "...", "commit": "..."},
+  "letta_evals": {"url": "...", "commit": "..."},
+  "hermes": {"url": "...", "commit": "..."},
+  "bats": {"url": "...", "commit": "..."},
+  "gepa": {"url": "...", "commit": "..."},
+  "trace2skill": {"url": "...", "commit": "..."},
+  "hydradb": {"url": "...", "commit": "..."}
+}
+```
+
+Never silently run experiments against moving `main`.
+
+---
+
+# 2. Reuse WorkerKit rather than copy it
+
+The existing `/mw` package is WorkerKit.
+
+Consume its public interfaces.
+
+Do not duplicate:
+
+* WorkOrder
+* RunContext
+* WorkReceipt
+* budget ledger
+* artifact hashing
+* evidence chaining
+* workspace/worktree management
+* WorkerVersion identity
+* Hydra projection semantics
+
+Where the current WorkerKit interface is insufficient, modify WorkerKit deliberately and add a compatibility test.
+
+MWGym must be able to run against an exact WorkerKit Git commit:
+
+```yaml
+workerkit:
+  repo: prx0r/mw
+  commit: <sha>
+```
+
+Every experiment stores this SHA.
+
+---
+
+# 3. Canonical Harness interface
+
+Implement:
+
+```python
+class HarnessAdapter(Protocol):
+
+    async def provision(
+        self,
+        genome: WorkerGenome,
+        worker: WorkerVersionRef,
+    ) -> HarnessInstance:
+        ...
+
+    async def run(
+        self,
+        instance: HarnessInstance,
+        task: WorkOrder,
+        context: RunContext,
+    ) -> HarnessRun:
+        ...
+
+    async def snapshot(
+        self,
+        instance: HarnessInstance,
+    ) -> StateSnapshot:
+        ...
+
+    async def restore(
+        self,
+        snapshot: StateSnapshot,
+    ) -> HarnessInstance:
+        ...
+
+    async def export_trajectory(
+        self,
+        run: HarnessRun,
+    ) -> TrajectoryRef:
+        ...
+
+    async def close(
+        self,
+        instance: HarnessInstance,
+    ) -> None:
+        ...
+```
+
+No harness-specific fields are allowed in generic experiment orchestration.
+
+Put harness-specific data inside:
+
+```python
+metadata: dict[str, Any]
+```
+
+The normalized result must contain real measured values.
+
+No fake `cost_usd=0` unless the actual economic cost is genuinely zero.
+
+---
+
+# 4. WorkerGenome
+
+Implement immutable/versioned WorkerGenomes.
+
+Example:
+
+```yaml
+schema: mwgym.worker-genome.v1
+
+id: letta-stateful-mimo-v1
+
+harness:
+  kind: letta
+  version: pinned
+
+model:
+  provider: opencode-go
+  id: mimo-v2.5
+  thinking: disabled
+  temperature: 0.0
+  max_output_tokens: 4096
+
+memory:
+  enabled: true
+  mode: stateful
+  retrieval_top_k: 4
+  max_context_tokens: 6000
+
+skills:
+  enabled: true
+  source_commit: ""
+
+planning:
+  enabled: false
+
+reasoning:
+  policy: fixed
+
+tools:
+  profile: filesystem-minimal
+
+budget:
+  max_usd: 0.05
+  max_model_requests: 6
+  max_tool_calls: 20
+  max_wall_seconds: 120
+
+reflection:
+  policy: checkpoint
+  every_runs: 50
+```
+
+The same schema must support:
+
+```yaml
+harness.kind: direct
+```
+
+and:
+
+```yaml
+harness.kind: pydantic-ai
+```
+
+Do not allow Python class names or arbitrary code inside genomes.
+
+A genome is data.
+
+Hash canonicalized genome JSON.
+
+Store:
+
+```text
+genome_id
+genome_digest
+parent_genome
+created_by
+source_experiment
+```
+
+---
+
+# 5. Telemetry comes before optimization
+
+This is M0.
+
+Before comparing any harnesses, establish trustworthy telemetry.
+
+Create:
+
+```python
+@dataclass(frozen=True)
+class ModelCallRecord:
+    call_id: str
+    run_id: str
+    decision_id: str
+
+    harness: str
+    provider: str
+    model: str
+
+    started_at_ms: int
+    duration_ms: int
+    ttft_ms: int | None
+
+    prompt_tokens: int
+    completion_tokens: int
+    reasoning_tokens: int
+    cache_read_tokens: int
+    cache_write_tokens: int
+
+    input_cost_usd: float
+    output_cost_usd: float
+    total_cost_usd: float
+
+    provider_request_id: str
+    finish_reason: str
+```
+
+Also:
+
+```python
+ToolCallRecord
+RetrievalRecord
+DecisionPoint
+HarnessRun
+OutcomeRecord
+```
+
+A stream event is NOT automatically a model request.
+
+Never calculate model-request count by counting:
+
+```text
+reasoning
+assistant
+loop_status
+```
+
+Instead count actual model-request records.
+
+Add a telemetry validator:
+
+```python
+validate_run_telemetry(run)
+```
+
+It fails the run if:
+
+* negative token counts
+* end before start
+* unknown model
+* aggregate call tokens disagree with run totals beyond tolerance
+* declared model requests differ from recorded calls
+* cost exceeds budget without a budget violation event
+* tool result exists without tool call
+* duplicate call ID
+* terminal run lacks outcome
+
+---
+
+# 6. Fix current Letta integration
+
+Do this before benchmarking.
+
+Current runtime problems to fix:
+
+### 6.1 Request schema
+
+`POST /workers` must accept and persist:
+
+```text
+reasoning mode
+memory mode
+model
+tool profile
+system prompt version
+skills version
+```
+
+Do not silently ignore experimental fields.
+
+### 6.2 No hard-coded experiment settings
+
+Remove experiment-global hard-coding such as:
+
+```text
+reasoningEffort = none
+stateless = true
+```
+
+These values come from WorkerGenome.
+
+### 6.3 MiMo thinking
+
+Test whether:
+
+```text
+reasoningEffort=none
+```
+
+actually causes native MiMo thinking to be disabled.
+
+Do not infer this from text output.
+
+Capture the effective model configuration.
+
+If the provider path requires native:
+
+```text
+thinking.type = disabled
+```
+
+implement the provider adapter properly.
+
+Create an integration test:
+
+```text
+test_mimo_thinking_disabled_effective
+```
+
+The test must compare actual reasoning-token/provider configuration evidence, not simply latency.
+
+### 6.4 Stateful mode
+
+Stateful Letta workers need:
+
+```text
+persistent agent identity
+fresh session/conversation per WorkOrder
+persistent memory
+persistent skills
+explicit memory snapshot/version
+```
+
+A new WorkOrder must NOT reuse one giant conversational thread.
+
+### 6.5 Stateless mode
+
+Keep stateless Letta as a separate genome.
+
+Never make it the universal production mode.
+
+---
+
+# 7. PydanticAI adapter
+
+Implement a real adapter using PydanticAI + PydanticAI Harness.
+
+First profiles:
+
+```text
+pydantic-core
+pydantic-coder
+pydantic-coder-memory
+pydantic-code-mode
+```
+
+For parity, expose equivalent WorkerGenome controls:
+
+```text
+model
+thinking
+memory
+skills
+planning
+subagents
+tool profile
+spend limit
+context policy
+```
+
+Use its native instrumentation rather than regex parsing logs.
+
+Capture OTel/model/tool spans into MWGym records.
+
+Do not require Logfire SaaS.
+
+An in-process/local OTel exporter is sufficient.
+
+Implement cost ceilings through its native Spend Limits as well as WorkerKit's outer budget.
+
+This intentionally creates two independent enforcement layers:
+
+```text
+WorkerKit budget
+        +
+harness-local budget
+```
+
+Test that exceeding either terminates correctly.
+
+### Code Mode
+
+Implement a dedicated profile with Code Mode enabled.
+
+The question being tested is:
+
+> Does allowing one generated sandbox program to perform multiple low-level operations reduce model round-trips enough to improve cost/latency without reducing task success?
+
+Do not enable it in all Pydantic runs.
+
+It is a treatment.
+
+---
+
+# 8. Direct baseline
+
+Do not remove the current DirectAdapter concept.
+
+Make it better.
+
+It is essential as the floor.
+
+Profiles:
+
+```text
+direct-no-tools
+direct-single-tool
+```
+
+For the first experiment, direct execution should be deliberately simple.
+
+No memory.
+
+No subagents.
+
+No hidden reflection.
+
+One model request unless the task contract explicitly permits another.
+
+Record actual MiMo thinking configuration.
+
+The purpose is to determine how much overhead an agent harness needs to earn back.
+
+---
+
+# 9. Hermes baseline
+
+Do NOT build Hermes deeply into WorkerKit yet.
+
+Harbor already knows how to run Hermes.
+
+Use Harbor's installed Hermes integration for comparative coding/terminal evaluations.
+
+Treat Hermes as an external black-box baseline:
+
+```text
+task
+reward
+latency
+usage
+trajectory where available
+```
+
+Do not import Hermes memory into Hydra or let Hermes modify Moltwork skills during M1.
+
+That would confound the experiment.
+
+Later experiment:
+
+```text
+Hermes native learning
+vs
+Letta + Moltwork validated learning
+```
+
+---
+
+# 10. Do not integrate GBrain in M0–M3
+
+Document it as:
+
+```text
+candidate memory substrate
+```
+
+not:
+
+```text
+candidate execution harness
+```
+
+Hydra + Letta already give us enough memory systems to test.
+
+Only add GBrain if a future experiment asks:
+
+> Does hybrid semantic/company-memory retrieval outperform deterministic Hydra retrieval for fuzzy knowledge?
+
+That is a memory experiment, not a harness experiment.
+
+---
+
+# 11. Harbor becomes the common judge
+
+Do not use:
+
+```text
+Pydantic Evals vs Letta Evals vs custom evaluator
+```
+
+to compare harnesses.
+
+That creates incompatible judges.
+
+Use Harbor as the cross-harness evaluation substrate.
+
+A trial:
+
+```text
+World
++
+Task
++
+Harness/Genome
++
+Model
++
+Seed
++
+Budget
+=
+Harbor Trial
+```
+
+WorkerKit binds the resulting Harbor evidence to:
+
+```text
+WorkerVersion
+Genome
+Decision records
+Model calls
+Cost
+Artifacts
+Trajectory
+Outcome
+```
+
+Reuse the existing `mw_labkit/harbor.py` parser concepts.
+
+Replace MockHarbor in actual experiment paths.
+
+MockHarbor remains unit-test-only.
+
+No production experiment is allowed to report `complete` if Harbor did not actually execute.
+
+---
+
+# 12. Experiment 001 — Harness crossover
+
+Purpose:
+
+Find where heavyweight agent machinery starts paying for itself.
+
+Dataset groups:
+
+```text
+A: trivial filesystem
+B: simple structured transformations
+C: multi-tool filesystem
+D: small coding bugs
+E: medium coding/debugging
+```
+
+Start with approximately:
+
+```text
+A 40 tasks
+B 30
+C 30
+D 30
+E 20
+```
+
+Harness treatments:
+
+```text
+DIRECT
+
+LETTA_STATELESS
+
+LETTA_STATEFUL_NO_HISTORY
+
+PYDANTIC_CODER
+
+PYDANTIC_CODE_MODE
+```
+
+Optional after those work:
+
+```text
+HERMES
+```
+
+Hold fixed where possible:
+
+```text
+model
+provider
+temperature
+max output
+task
+container
+seed
+overall monetary ceiling
+verifier
+```
+
+Randomize execution order.
+
+Do not run all Direct jobs first and all Letta jobs later.
+
+Provider variance would contaminate results.
+
+Use interleaved blocks:
+
+```text
+task-01 direct
+task-01 letta
+task-01 pydantic
+task-02 pydantic
+task-02 direct
+task-02 letta
+...
+```
+
+Metrics:
+
+```text
+reward
+pass rate
+model requests
+prompt tokens
+completion tokens
+reasoning tokens
+tool calls
+wall time
+cost
+cost/success
+requests/success
+```
+
+Main plot concept:
+
+```text
+reward
+  ↑
+  |       • stateful
+  |    • pydantic
+  |  • direct
+  +----------------→ cost
+```
+
+Find the Pareto frontier.
+
+Do not collapse to a single score initially.
+
+---
+
+# 13. Experiment 002 — Value of memory
+
+This is the experiment that protects the Letta thesis.
+
+Construct paired/sequential tasks where experience genuinely helps.
+
+Example class:
+
+```text
+training task exposes convention X
+held-out task requires applying convention X
+```
+
+Do not make held-out tasks textually identical.
+
+Groups:
+
+```text
+A direct/no memory
+B Letta stateful
+C Pydantic persistent memory
+D Hydra retrieval + otherwise stateless worker
+E Letta + Hydra
+```
+
+Measure separately:
+
+```text
+value of individual worker memory
+value of organizational retrieval
+interaction effect
+```
+
+Do NOT permit memory mutation from evaluation/held-out tasks.
+
+Train:
+
+```text
+T1..T20
+```
+
+Freeze state.
+
+Evaluate:
+
+```text
+H1..H30
+```
+
+Export exact memory Git commit/state digest before held-out evaluation.
+
+This experiment answers:
+
+> Is Letta's expensive statefulness actually buying transferable competence?
+
+If no, we must be willing to change architecture.
+
+---
+
+# 14. Experiment 003 — BATS
+
+Port only the useful BATS mechanics.
+
+Do not fork its entire research agent into Moltwork.
+
+Implement:
+
+```text
+remaining request budget
+remaining token budget
+remaining tool budget
+remaining monetary budget
+remaining wall-time budget
+```
+
+At each high-level DecisionPoint expose the remaining budget.
+
+Available meta-actions initially:
+
+```text
+ACT
+RETRIEVE
+VERIFY
+CONTINUE
+BRANCH
+ESCALATE
+STOP
+```
+
+Do not add x402 purchases yet.
+
+Experiment arms:
+
+```text
+fixed budget policy
+budget-aware prompt only
+BATS-style controller
+BATS + Hydra priors
+```
+
+Evaluate cost/reward frontier.
+
+Test that larger budgets do NOT merely cause monotonically more calls.
+
+The desired behavior is selective expenditure.
+
+---
+
+# 15. DecisionPoint
+
+Implement now.
+
+```python
+@dataclass
+class DecisionPoint:
+    decision_id: str
+    run_id: str
+    index: int
+
+    task_family: str
+    state_features: dict
+
+    budget_before: BudgetState
+
+    candidate_actions: list[ActionCandidate]
+    selected_action: str
+
+    predicted_value: float | None
+    predicted_cost: float | None
+    uncertainty: float | None
+
+    evidence_refs: list[str]
+
+    model_call_ids: list[str]
+    tool_call_ids: list[str]
+    retrieval_ids: list[str]
+
+    budget_after: BudgetState | None
+
+    eventual_reward: float | None
+```
+
+Do not attempt to capture hidden chain-of-thought.
+
+DecisionPoint records observable economic/control decisions.
+
+---
+
+# 16. Hydra projection
+
+Hydra is NOT the canonical event log.
+
+WorkerKit evidence remains canonical.
+
+Hydra is a projection optimized for empirical queries.
+
+Project:
+
+```text
+Worker
+WorkerVersion
+Genome
+Harness
+Model
+TaskFamily
+World
+Task
+Run
+Decision
+Tool
+Skill
+MemoryVersion
+Artifact
+Evaluation
+Outcome
+```
+
+Edges:
+
+```text
+WORKER_USED_GENOME
+GENOME_USED_HARNESS
+RUN_EXECUTED_TASK
+RUN_USED_GENOME
+RUN_USED_MODEL
+RUN_CONTAINS_DECISION
+DECISION_SELECTED_ACTION
+DECISION_RETRIEVED_RUN
+RUN_USED_SKILL
+RUN_PRODUCED_ARTIFACT
+RUN_RECEIVED_EVALUATION
+RUN_PRODUCED_OUTCOME
+GENOME_PARENT_OF
+SKILL_DERIVED_FROM
+```
+
+Numerical outcomes must be written deterministically.
+
+Do not ask an LLM to infer:
+
+```text
+cost
+reward
+tokens
+duration
+success
+```
+
+from prose.
+
+---
+
+# 17. Experiment 004 — Trace2Skill
+
+Do not evolve skills after every run.
+
+Collect trajectory batches.
+
+Example:
+
+```text
+50 training runs
+↓
+successful + failed trajectory pool
+↓
+Trace2Skill analysis
+↓
+candidate skill patch
+↓
+validation branch
+↓
+held-out suite
+```
+
+A skill patch is never automatically promoted.
+
+Promotion contract:
+
+```text
+candidate improves primary reward
+AND
+does not materially regress safety/reliability
+AND
+cost increase is below allowed threshold
+AND
+result reproduces across >= N seeds/tasks
+```
+
+Persist source trajectories for every promoted skill.
+
+Git commit skills.
+
+---
+
+# 18. Experiment 005 — GEPA WorkerGenome evolution
+
+Do not initially let GEPA rewrite WorkerKit source code.
+
+Evolution boundary v1:
+
+```text
+system instructions
+memory retrieval policy text
+skill-selection instructions
+reflection prompt
+verification prompt
+BATS policy prompt
+```
+
+Later:
+
+```text
+configuration
+control flow
+small bounded policy code
+```
+
+Never initially:
+
+```text
+WorkerKit evidence code
+budget enforcement
+cryptographic code
+Harbor verifier
+experiment evaluator
+```
+
+The optimizer is not allowed to mutate the measurement apparatus.
+
+Use train/validation/held-out partitions.
+
+Every GEPA candidate gets:
+
+```text
+candidate id
+parent
+diff
+evaluation set
+scores
+cost
+Pareto status
+```
+
+---
+
+# 19. Yugioh is World 001 for repeated decisions
+
+Do not call Letta once per card action.
+
+Architecture:
+
+```text
+YGO engine
+  ↓
+state
+  ↓
+legal actions
+  ↓
+cheap policy
+  ↓
+DecisionPoint
+  ↓
+uncertainty / stakes
+  ├── low → act
+  └── high
+       ├── Hydra retrieval
+       ├── rollout
+       ├── stronger model
+       └── Letta stateful reasoning
+```
+
+YGO evaluation metrics:
+
+```text
+win rate
+games-to-competence
+cost/game
+cost/win
+model calls/game
+escalations/game
+allocation regret
+illegal-action rate
+combo completion rate
+resource efficiency
+```
+
+Deck identity becomes:
+
+```text
+task_family
+```
+
+but do not assume one fixed optimal sequence.
+
+Evaluation must include:
+
+```text
+known deck / known opponent
+known deck / unseen opponent
+variant deck
+new deck within same archetype
+entirely unseen archetype
+```
+
+Primary research question:
+
+> How quickly can the lab become competent on a new decision family under a fixed cumulative intelligence budget?
+
+---
+
+# 20. Cross-world transfer
+
+Only after YGO produces a real learning curve.
+
+Do not claim YGO results transfer to work merely because win rate improves.
+
+Test transfer.
+
+World sequence:
+
+```text
+Filesystem
+Coding
+Memory-dependent coding
+YGO
+later Roblox/artifact work
+```
+
+Evaluate whether the learned meta-policy transfers:
+
+```text
+when to retrieve
+when to verify
+when to escalate
+when to branch
+when to stop
+```
+
+NOT whether Yu-Gi-Oh card knowledge transfers.
+
+The transferable object is resource-allocation policy.
+
+---
+
+# 21. Harness routing comes later
+
+Initially harness is assigned by experiment.
+
+Do NOT allow BATS to change harness in the middle of Experiment 001.
+
+That destroys clean attribution.
+
+After enough evidence exists, introduce:
+
+```python
+HarnessRouter.select(
+    task_features,
+    worker_features,
+    budget,
+    hydra_priors,
+) -> HarnessProfile
+```
+
+Possible output:
+
+```text
+direct-fast
+pydantic-code-mode
+letta-stateful
+```
+
+Hermes remains an external baseline until there is evidence that dynamic production routing to Hermes is useful.
+
+Eventually:
+
+```text
+task arrives
+    ↓
+features
+    ↓
+Hydra historical outcomes
+    ↓
+router posterior
+    ↓
+choose harness
+    ↓
+execute
+    ↓
+outcome updates posterior
+```
+
+This is the point where Moltwork actually learns which harness is best.
+
+---
+
+# 22. Tests
+
+## Unit
+
+```text
+test_genome_canonical_hash
+test_genome_immutable
+test_budget_never_negative
+test_model_call_aggregation
+test_decision_budget_delta
+test_harbor_parser
+test_hydra_projection_idempotent
+test_skill_promotion_requires_evidence
+test_upstream_lock_complete
+```
+
+## Contract
+
+```text
+test_workerkit_contract
+test_harbor_real_contract
+test_letta_adapter_contract
+test_pydantic_adapter_contract
+test_direct_adapter_contract
+```
+
+Every harness adapter must pass the same contract suite.
+
+## Telemetry
+
+```text
+test_one_direct_call_equals_one_model_call_record
+test_stream_events_not_counted_as_model_calls
+test_tool_calls_have_results
+test_token_totals_reconcile
+test_cost_totals_reconcile
+test_reasoning_tokens_recorded_when_available
+test_budget_violation_is_terminal
+```
+
+## Letta
+
+Reuse and port the existing intended tests:
+
+```text
+letta_create_worker
+letta_new_session_same_worker
+letta_memory_persists
+letta_model_swap
+workerkit_letta_real
+run_trajectory_export
+restart_persistence
+```
+
+Add:
+
+```text
+letta_stateless_does_not_mutate_memory
+letta_stateful_does_mutate_only_when_allowed
+letta_reasoning_config_effective
+letta_worker_genome_roundtrip
+```
+
+## PydanticAI
+
+```text
+pydantic_coder_real_file_edit
+pydantic_memory_persists
+pydantic_spend_limit_enforced
+pydantic_otel_model_span_count
+pydantic_code_mode_reduces_roundtrips
+pydantic_step_resume
+```
+
+## Harbor
+
+```text
+harbor_oracle_world_passes
+harbor_nop_world_fails
+harbor_direct_executes
+harbor_letta_executes
+harbor_pydantic_executes
+harbor_artifacts_captured
+harbor_reward_parsed
+harbor_lock_pinned
+```
+
+## Experiment integrity
+
+```text
+test_same_task_digest_across_treatments
+test_same_verifier_across_treatments
+test_same_model_when_required
+test_randomized_execution_order
+test_eval_tasks_cannot_write_memory
+test_training_and_holdout_disjoint
+test_no_mock_harbor_in_real_experiment
+```
+
+---
+
+# 23. CI gates
+
+Pull request cannot merge unless:
+
+```text
+unit tests pass
+type checks pass
+ruff passes
+upstream lock valid
+no secret scan findings
+mock code cannot be selected in production mode
+```
+
+Nightly/live optional suite:
+
+```text
+direct provider smoke
+Letta smoke
+Pydantic smoke
+Harbor Docker oracle
+Harbor WorkerKit integration
+```
+
+Do not spend paid inference on every normal PR.
+
+---
+
+# 24. CLI
+
+Implement:
+
+```bash
+mwgym doctor
+
+mwgym genome validate genomes/letta-stateful.yaml
+mwgym genome inspect <id>
+
+mwgym world validate datasets/filesystem-v1
+
+mwgym run \
+  --world filesystem-v1 \
+  --genome direct-fast
+
+mwgym experiment validate experiments/001-harness-crossover.yaml
+
+mwgym experiment run experiments/001-harness-crossover.yaml
+
+mwgym experiment status <id>
+
+mwgym experiment report <id>
+
+mwgym hydra project <run-id>
+
+mwgym trajectory export <run-id>
+
+mwgym skill propose --runs <selector>
+
+mwgym skill evaluate <candidate>
+
+mwgym genome evolve <experiment>
+```
+
+`mwgym doctor` must actually test:
+
+```text
+WorkerKit import
+Harbor CLI
+Docker
+Letta runtime
+Pydantic install
+Hydra connection
+upstream pins
+model credentials presence
+```
+
+Do not print raw credentials.
+
+---
+
+# 25. Experiment artifact layout
+
+Every experiment:
+
+```text
+runs/<experiment-id>/
+├── experiment.lock.json
+├── tasks/
+├── genomes/
+├── trials/
+│   └── <run-id>/
+│       ├── run.json
+│       ├── genome.json
+│       ├── workerkit-receipt.json
+│       ├── harbor-lock.json
+│       ├── harbor-result.json
+│       ├── trajectory.json
+│       ├── model-calls.jsonl
+│       ├── tool-calls.jsonl
+│       ├── decisions.jsonl
+│       ├── artifacts/
+│       └── state/
+├── summary.json
+└── report.md
+```
+
+Everything needed to reproduce a comparison must survive after services stop.
+
+---
+
+# 26. Definition of done for M0
+
+M0 is complete only when this works:
+
+```text
+same filesystem task
+        │
+ ┌──────┼───────────┐
+ ▼      ▼           ▼
+Direct Letta     Pydantic
+ │      │           │
+ └──────┼───────────┘
+        ▼
+       Harbor
+        ▼
+real verifier
+        ▼
+WorkerKit receipts
+        ▼
+normalized telemetry
+        ▼
+Hydra projection
+        ▼
+paired report
+```
+
+The report must show real:
+
+```text
+pass/fail
+reward
+wall time
+model requests
+prompt tokens
+completion tokens
+reasoning tokens where available
+tool calls
+cost
+genome digest
+WorkerKit commit
+upstream commits
+Harbor lock digest
+```
+
+No synthetic result.
+
+No mock runtime.
+
+No fake Harbor.
+
+No manually entered score.
+
+---
+
+# 27. Definition of done for M1
+
+Run Harness Crossover on at least 100 real trials.
+
+Produce a Pareto report answering:
+
+```text
+Which harness wins trivial tasks?
+
+At what task complexity does a multi-step harness begin to pay off?
+
+Does Pydantic Code Mode reduce model requests?
+
+What is Letta's actual per-run inference overhead?
+
+What is the marginal value of stateful memory when no previous experience exists?
+```
+
+Do not optimize anything yet.
+
+Measure first.
+
+---
+
+# 28. Definition of done for M2
+
+Run Memory Value experiment.
+
+Show:
+
+```text
+No memory
+vs
+Letta memory
+vs
+Pydantic memory
+vs
+Hydra retrieval
+vs
+Letta + Hydra
+```
+
+on unseen held-out tasks.
+
+This is the first serious test of the Moltwork thesis.
+
+---
+
+# 29. Definition of done for M3
+
+Add BATS.
+
+Demonstrate that a dynamic budget-aware policy achieves a better reward/cost frontier than:
+
+```text
+always cheap
+always expensive
+fixed number of reasoning steps
+```
+
+Only after this milestone should WorkerKit begin dynamically selecting runtime profiles.
+
+---
+
+# 30. Do not do yet
+
+Do NOT:
+
+* implement GBrain
+* integrate ten harnesses
+* add x402 purchases
+* build marketplace UI
+* add Roblox
+* let GEPA mutate core evidence code
+* run uncontrolled Letta dreaming
+* auto-promote skills
+* allow evaluation tasks to modify worker memory
+* call Letta for every YGO move
+* optimize based on one scalar with no cost frontier
+* infer API calls from stream-event count
+* claim learning without held-out evaluation
+* create new local substitutes for Harbor, BATS, GEPA or Trace2Skill
+
+---
+
+# Immediate execution order
+
+1. Create `mwgym`.
+2. Lock WorkerKit and upstream commits.
+3. Port existing MWLab schema/Harbor parser pieces.
+4. Implement canonical WorkerGenome.
+5. Implement ModelCall/ToolCall/Decision telemetry.
+6. Fix Letta config/telemetry.
+7. Wire Direct adapter.
+8. Wire PydanticAI adapter.
+9. Wire all three into Harbor.
+10. Build deterministic filesystem benchmark.
+11. Execute Experiment 001.
+12. Debug measurements until reconciled.
+13. Run full crossover suite.
+14. Build memory-dependent dataset.
+15. Execute Experiment 002.
+16. Add BATS.
+17. Execute Experiment 003.
+18. Add Trace2Skill checkpoint learning.
+19. Add GEPA genome evolution.
+20. Only then implement YGO World 001.
+
+The project is not ready for YGO until we can trust every number emitted by a simple filesystem experiment.
+
+The key architectural decision is therefore **not** “Pydantic or Letta?”. It is:
+
+> **Letta is our primary hypothesis for durable learning; Pydantic is the strongest lighter/composable control; Direct is the economic floor; Hermes is an off-the-shelf external baseline. Harbor makes them comparable.**
+
+That preserves everything useful from the Letta plan instead of throwing it away. Your existing `LEARNING_LAB.md` had already converged on “Letta = worker, Hydra = lab brain, cg = scientist.”  Harbor then gives us the neutral execution/evaluation substrate that lets us challenge the **Letta = worker** assumption scientifically rather than ideologically. Your Harbor design already anticipated precisely this persistent-worker/ephemeral-world split.
+
+And Pydantic is especially worth testing because it may reveal something quite useful: **you might end up with Letta for workers that genuinely need accumulated identity/experience, Pydantic Code Mode for high-throughput coding/action runs, and Direct for obvious cheap actions**. MWGym then learns the crossover boundaries instead of us guessing them.
+
+[1]: https://letta.one/blog/introducing-the-letta-agent-sdk/?utm_source=chatgpt.com "Letta Agents SDK: An SDK for stateful agents | Letta"
+[2]: https://pydantic.dev/docs/ai/harness/?utm_source=chatgpt.com "Pydantic AI Harness | Pydantic Docs"
+[3]: https://github.com/garrytan/gbrain?utm_source=chatgpt.com "GitHub - garrytan/gbrain: Garry's Opinionated OpenClaw/Hermes Agent Brain · GitHub"
+[4]: https://github.com/harbor-framework/harbor/blob/main/AGENTS.md?utm_source=chatgpt.com "harbor/AGENTS.md at main · harbor-framework/harbor · GitHub"
+[5]: https://github.com/harbor-framework/harbor?utm_source=chatgpt.com "GitHub - harbor-framework/harbor: Harbor is a framework for running agent evaluations and creating and using RL environments. · GitHub"
+[6]: https://github.com/pydantic/pydantic-ai/?utm_source=chatgpt.com "GitHub - pydantic/pydantic-ai: How Python does AI: agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end. · GitHub"
+[7]: https://github.com/pydantic/pydantic-ai-harness/blob/main/AGENTS.md?utm_source=chatgpt.com "pydantic-ai-harness/AGENTS.md at main · pydantic/pydantic-ai-harness · GitHub"
+[8]: https://github.com/letta-ai/letta-evals?utm_source=chatgpt.com "GitHub - letta-ai/letta-evals: Evaluation kit for testing stateful agents · GitHub"
+[9]: https://github.com/NousResearch/hermes-agent?utm_source=chatgpt.com "GitHub - NousResearch/hermes-agent: The agent that grows with you · GitHub"
+[10]: https://github.com/google-research/budget-aware-agent?utm_source=chatgpt.com "GitHub - google-research/budget-aware-agent: Budget-Aware Tool-Use Enables Effective Agent Scaling @ COLM 2026 · GitHub"
+[11]: https://github.com/gepa-ai/gepa?utm_source=chatgpt.com "GitHub - gepa-ai/gepa: Optimize prompts, code, and more with AI-powered Reflective Text Evolution · GitHub"
+[12]: https://github.com/Qwen-Applications/Trace2Skill?utm_source=chatgpt.com "GitHub - Qwen-Applications/Trace2Skill: Official codebase of the paper -- Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills · GitHub"
+[13]: https://github.com/hydra-db/hydradb/blob/main/README.md?utm_source=chatgpt.com "hydradb/README.md at main · hydra-db/hydradb · GitHub"

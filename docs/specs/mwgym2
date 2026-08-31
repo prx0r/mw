@@ -1,0 +1,955 @@
+The **35-second observation is real, but the current diagnosis is partly wrong**. After reviewing the actual `ethonline-2026` code, Letta's current SDK/core, MiMo's current API docs, and the lab scaffolding already inside `/mw`, I would change the architecture before building `mwgym`.
+
+The central correction is:
+
+> **A Letta run can legitimately contain multiple model calls, but a `reasoning` stream event is not a model call. And MWGym should explicitly learn when those extra calls are worth paying for rather than making Letta the inner loop of everything.**
+
+## What's actually happening
+
+Your current path is roughly:
+
+```text
+WorkerKit
+   │
+   POST /workers/:id/run
+   ▼
+runtime-letta
+   │
+   createSession()
+   │
+   send(task)
+   ▼
+Letta Code harness
+   │
+   ┌──────────────────────────────────────┐
+   │ AGENT STEP 1                         │
+   │ assemble context/memory/tools        │
+   │ → MODEL REQUEST                      │
+   │ → reasoning                          │
+   │ → tool_call                          │
+   └──────────────────────────────────────┘
+                     │
+                     ▼
+                  Bash/Write
+                     │
+                  tool result
+                     │
+   ┌─────────────────▼────────────────────┐
+   │ AGENT STEP 2                         │
+   │ context now includes tool result     │
+   │ → MODEL REQUEST                      │
+   │ → maybe another action / final reply │
+   └──────────────────────────────────────┘
+                     │
+                    ...
+                     ▼
+                  result
+```
+
+This is normal agent behavior.
+
+Letta's actual core explicitly defines an agent step as rebuilding memory/context, generating an LLM request, fetching one response, and processing it, and loops this up to `max_steps`. So **one real agent task can absolutely use multiple inference requests**. ([GitHub][1])
+
+But your log:
+
+```text
+EVENT type=reasoning
+EVENT type=reasoning
+EVENT type=reasoning
+EVENT type=reasoning
+EVENT type=reasoning
+EVENT type=assistant
+...
+```
+
+does **not** prove five model requests.
+
+Letta's SDK deliberately streams semantic events—reasoning, tool calls, tool results, assistant output, result—and even its own documentation shows a single turn rendered as a sequence of those event types. ([letta.com][2])
+
+So this statement currently in your repo:
+
+```text
+16 reasoning events
++ 7 assistant events
++ 1 tool call
++ 13 loop_status
+= 24+ API calls
+```
+
+is invalid instrumentation. Your `PERFORMANCE-NOTE.md` currently makes exactly that mistake. It also claims separate calls don't share context, whereas later agent steps specifically receive previous messages/tool results.
+
+That note should be rewritten once we have proper traces.
+
+---
+
+# There's also a concrete bug in your smoke test
+
+You sent:
+
+```json
+{
+  "worker_id": "smoke-fast",
+  "model": "opencode-go/mimo-v2.5",
+  "persona": "...",
+  "reasoning_effort": "none"
+}
+```
+
+But `/workers` currently parses:
+
+```ts
+{
+  worker_id: string;
+  model?: string;
+  persona?: string;
+  skills?: string[];
+}
+```
+
+There is **no `reasoning_effort` field**.
+
+Then you hard-code:
+
+```ts
+reasoningEffort: "none"
+```
+
+inside `createAgent()`.
+
+So the supplied setting from your experiment was ignored. The saved worker mapping also doesn't record it.
+
+That is exactly the kind of thing MWGym must prevent: every treatment variable needs to be explicitly recorded in the WorkerGenome and receipt.
+
+---
+
+# More importantly: MiMo actually can turn thinking off
+
+The claim:
+
+> “MiMo-v2.5 is a reasoning model; it always thinks and cannot disable reasoning.”
+
+is false according to Xiaomi's current API.
+
+MiMo-V2.5 defaults to thinking enabled, but Xiaomi exposes:
+
+```json
+{
+  "thinking": {
+    "type": "disabled"
+  }
+}
+```
+
+and explicitly documents both `enabled` and `disabled`. ([MiMo][3])
+
+The complication is **your routing path**:
+
+```text
+Letta
+→ opencode-go/mimo-v2.5
+→ gateway/provider
+→ MiMo
+```
+
+You're setting the generic Letta:
+
+```ts
+reasoningEffort: "none"
+```
+
+whereas native MiMo expects:
+
+```text
+thinking.type = disabled
+```
+
+Xiaomi separately documents `reasoning.effort`, but says custom reasoning-effort tuning is currently unsupported. ([MiMo][4])
+
+So there is a very plausible translation failure here:
+
+```text
+reasoningEffort = "none"
+
+       DOES NOT NECESSARILY BECOME
+
+thinking = {"type":"disabled"}
+```
+
+We need to verify the actual outbound provider request.
+
+This is especially interesting because OpenClaw's current MiMo adapter explicitly maps its `none` mode into Xiaomi's `thinking.type="disabled"` and strips stale `reasoning_content` when doing so. ([GitHub][5])
+
+That gives us an upstream implementation pattern to copy if Letta/OpenCode doesn't already do it.
+
+---
+
+# `maxSteps: 2` is also suspect
+
+You're using:
+
+```ts
+createSession(..., {
+    ...
+    stateless: true,
+    maxSteps: 2,
+})
+```
+
+Your project has `@letta-ai/letta-agent-sdk` 0.8.0 installed.
+
+I checked the v0.8.0 public TypeScript definitions.
+
+`stateless` exists.
+
+`reasoningEffort` exists.
+
+I cannot find **`maxSteps` in the public session options at all**.
+
+And because you're starting this using:
+
+```text
+npx tsx src/index.ts
+```
+
+you're transpiling/running rather than necessarily doing a complete TypeScript type-check first.
+
+So I would currently treat:
+
+```ts
+maxSteps: 2
+```
+
+as **unproven / probably ignored**, until an actual run reports its agent-step count dropping to ≤2.
+
+Don't rely on that patch as a control mechanism yet.
+
+---
+
+# `stateless: true` is doing something real — but it's the opposite of our lab goal
+
+Letta introduced stateless sessions specifically for one-off work. Its own current product docs describe them as sessions that **do not load or change the agent's memory**. ([GitHub][6])
+
+That is excellent for:
+
+```text
+write this file
+rename this variable
+format this JSON
+```
+
+But terrible as the universal WorkerKit default if we're trying to test:
+
+```text
+Does this worker learn?
+Does its prior experience help?
+Does MemFS improve its next attempt?
+```
+
+You've effectively done:
+
+```text
+LETTA
+memory system enabled
+     │
+     ▼
+
+create every work session with
+
+stateless=true
+     │
+     ▼
+
+don't use memory
+```
+
+So this shouldn't be “the fix.”
+
+It should be **one experimental arm**.
+
+---
+
+# This actually clarifies what MWGym is for
+
+We should stop thinking:
+
+> How do we make every WorkerKit run use Letta efficiently?
+
+and instead formulate:
+
+> **When does using Letta produce enough marginal value to justify its additional inference, latency and memory overhead?**
+
+That is BATS/CLEAR/MWGym territory.
+
+For a trivial file write:
+
+```text
+expected value of memory = ~0
+expected value of deep reasoning = ~0
+
+→ DIRECT
+```
+
+For:
+
+```text
+"We've attempted this Roblox rigging problem
+three times and previous run #78 discovered an
+important Blender export issue"
+```
+
+then:
+
+```text
+expected value of memory = high
+
+→ LETTA STATEFUL
+→ HYDRA RETRIEVE
+```
+
+For:
+
+```text
+"$1,000 bounty, two plausible architectures,
+irreversible submission decision"
+```
+
+then:
+
+```text
+expected value of deeper reasoning = high
+
+→ STRONG MODEL
+→ SEARCH / BRANCH
+→ VERIFY
+```
+
+So runtime selection itself becomes an economic decision.
+
+---
+
+# WorkerKit should therefore expose runtimes as actions
+
+Something like:
+
+```text
+                 DecisionPoint
+                       │
+              estimated difficulty
+              novelty / uncertainty
+              precedent availability
+              stakes / remaining budget
+                       │
+                       ▼
+                   ALLOCATOR
+                       │
+       ┌───────────────┼────────────────┐
+       ▼               ▼                ▼
+    DIRECT       LETTA-STATEFUL     ESCALATED
+   one-shot         memory             reason
+   cheap             tools             search
+       │               │                │
+       └───────────────┼────────────────┘
+                       ▼
+                     ACT
+```
+
+The 35-second path isn't necessarily bad.
+
+**Choosing it for `echo FAST_OK > file` is bad.**
+
+That distinction is fundamental.
+
+---
+
+# And absolutely do not put Letta inside every YGO move
+
+This is probably the biggest architectural point for `mwgym`.
+
+If you did:
+
+```text
+100,000 games
+× maybe 100 decision points/game
+× 20-35 seconds/Letta decision
+```
+
+the benchmark would be useless.
+
+Instead:
+
+```text
+              ygoenv / ygopro-core
+                 FAST INNER LOOP
+                        │
+                        ▼
+                    game state
+                        │
+                  legal actions
+                        │
+                        ▼
+                routine policy
+                        │
+                   uncertainty?
+                    /        \
+                  no          yes
+                  │            │
+                  ▼            ▼
+                 ACT       MW ALLOCATOR
+                               │
+           ┌───────────────────┼───────────────────┐
+           ▼                   ▼                   ▼
+       Hydra lookup        rollouts          Letta/MiMo
+       ~cheap/local        local CPU          expensive
+           │                   │                   │
+           └───────────────────┼───────────────────┘
+                               ▼
+                              ACT
+```
+
+This is much more representative of real autonomous work anyway.
+
+Most actions in real jobs should **not** invoke maximum intelligence.
+
+---
+
+# Letta becomes a meta-level resource
+
+For YGO, I would use Letta for things such as:
+
+```text
+"I've lost 8 of 12 games with this deck.
+Review the trajectory cluster and identify
+a recurring decision mistake."
+
+"Consolidate these 100 episodes."
+
+"Given this unusual state and the retrieved
+three precedents, choose between these two
+high-value plans."
+
+"Update the deck skill after validation."
+```
+
+Not:
+
+```text
+Should I activate obvious card X?
+```
+
+This is very close to how we want Moltwork eventually to behave on jobs.
+
+---
+
+# Hydra should be even cheaper
+
+Your current `/mw` already understands that there are different memory substrates. `LabContextRouter` distinguishes inventory/Git, episode history, decisions, economic ledger and skills rather than throwing everything into a single context blob. That's the right design direction, although the current retrieval methods are still placeholders returning empty results.
+
+For MWGym, querying Hydra should **not itself mean calling an LLM**.
+
+It should be:
+
+```text
+state features
+      ↓
+direct Hydra query
+      ↓
+3 similar decisions
+      ↓
+posterior/outcomes
+```
+
+milliseconds rather than another expensive reasoning turn.
+
+Then the allocator can choose whether those records need model synthesis.
+
+This is critical:
+
+```text
+RETRIEVE
+≠
+REASON
+```
+
+They're separate economic actions.
+
+---
+
+# Same with learning
+
+Your existing runtime has operations where you ask the Letta agent to reflect/update its memory.
+
+That is useful, but don't do it after every episode.
+
+For MWGym:
+
+```text
+game 1
+game 2
+game 3
+...
+game 100
+   │
+   ▼
+trajectory batch
+   │
+   ▼
+Trace2Skill / reflection
+   │
+candidate lessons
+   │
+validate
+   │
+   ▼
+promote into Git/MemFS
+```
+
+Then:
+
+```text
+game 101 → 200
+```
+
+tests whether those changes actually improved the worker.
+
+Otherwise we'd be spending more compute **learning from YGO than playing YGO**, while simultaneously making attribution impossible.
+
+---
+
+# Your existing lab is already surprisingly close
+
+I would **not start `mwgym` from a blank repo**.
+
+The `ethonline-2026` branch already contains:
+
+```text
+mw_labkit/
+lab/
+hydra/
+harbor_adapter.py
+economics/
+learning/
+flywheel/
+```
+
+plus vendored:
+
+```text
+Harbor
+HydraDB
+GEPA
+Trace2Skill
+Letta Evals
+OpenEvolve
+```
+
+and explicit Harbor/learning-lab documentation.
+
+More importantly, `mw_labkit/runtime.py` already contains the right abstraction:
+
+```python
+class WorkerRuntime(Protocol):
+    ensure_worker(...)
+    execute(...)
+```
+
+with both:
+
+```text
+FakeWorkerRuntime
+LettaRuntimeClient
+```
+
+The fake runtime exists specifically so orchestration can run without spending inference. That's excellent design.
+
+So `mwgym` should primarily be an **extraction and hardening** of what you've already built.
+
+Not another greenfield rewrite.
+
+---
+
+# What is currently missing is telemetry
+
+This is the most urgent engineering problem.
+
+Your `LettaRuntimeClient.execute()` currently records:
+
+```text
+ok
+worker
+conversation
+session
+output
+duration
+cost_usd
+tool calls/results
+```
+
+but `cost_usd` defaults to zero unless the service returns something useful.
+
+And the Letta SDK itself currently has an open issue where its public result can omit underlying token usage even though Letta's run API can report prompt, completion, cache and reasoning tokens.
+
+For a **budgeting research lab**, this is fatal.
+
+Before YGO, GEPA, BATS, anything else, MWGym needs a canonical `ModelCall` record:
+
+```text
+ModelCall
+
+call_id
+run_id
+decision_id
+
+provider
+model
+reasoning_mode
+
+started_at
+ttft_ms
+duration_ms
+
+prompt_tokens
+cache_read_tokens
+cache_write_tokens
+reasoning_tokens
+completion_tokens
+total_tokens
+
+input_cost_usd
+output_cost_usd
+total_cost_usd
+
+agent_step
+stop_reason
+provider_request_id
+```
+
+Then:
+
+```text
+ToolCall
+
+tool
+latency
+external_cost
+x402_cost
+result_hash
+```
+
+Then:
+
+```text
+DecisionPoint
+
+budget_before
+candidate_actions
+selected_action
+
+retrievals
+rollouts
+model_calls
+
+budget_after
+
+predicted_value
+eventual_outcome
+```
+
+Only after that can we legitimately say:
+
+> Letta used five model requests.
+
+---
+
+# This also exposes a nice measurement hierarchy
+
+Don't measure:
+
+```text
+reasoning events
+```
+
+Measure:
+
+```text
+model calls / decision
+model calls / game
+reasoning tokens / game
+strong-model calls / game
+
+time / decision
+time / game
+
+$ / game
+$ / win
+
+reward / $
+marginal reward / extra call
+```
+
+And later:
+
+```text
+revenue / inference dollar
+```
+
+for real Moltwork jobs.
+
+That's our actual research target.
+
+---
+
+# Your existing trajectory implementation needs upgrading too
+
+`lab/trajectory.py` currently converts:
+
+```text
+model.call
+artifact.registered
+cost.recorded
+verification.completed
+...
+```
+
+into a simplified trajectory. But its current model-call representation effectively boils down to:
+
+```text
+model + tokens
+```
+
+which is nowhere near enough for the experiments we're planning.
+
+I would move to:
+
+```text
+ATIF canonical raw trace
+        │
+        ├── WorkReceipt
+        ├── Hydra projection
+        └── human-readable trajectory
+```
+
+rather than maintaining our own increasingly elaborate trajectory schema.
+
+---
+
+# What I'd do to WorkerKit before extracting MWGym
+
+There should no longer be hard-coded:
+
+```ts
+reasoningEffort: "none"
+stateless: true
+maxSteps: 2
+```
+
+Instead a run carries a `RuntimeProfile`:
+
+```yaml
+runtime: letta
+
+model:
+  id: opencode-go/mimo-v2.5
+  thinking: disabled
+
+memory:
+  mode: stateful
+
+agent:
+  max_steps: 4
+
+tools:
+  profile: coding-minimal
+
+budget:
+  max_model_calls: 4
+  max_tokens: 12000
+  max_wall_ms: 60000
+  max_usd: 0.05
+```
+
+And another genome can say:
+
+```yaml
+runtime: direct
+model:
+  id: fast-model
+
+memory:
+  mode: none
+
+budget:
+  max_model_calls: 1
+```
+
+Now these become **MWGym genes**.
+
+---
+
+# First MWGym experiment should actually be about this exact problem
+
+Before Yu-Gi-Oh learning, I'd make an extremely boring calibration experiment.
+
+Same 100 simple filesystem tasks.
+
+Run four architectures:
+
+| Arm | Runtime                     |
+| --- | --------------------------- |
+| A   | direct model, one shot      |
+| B   | Letta stateless             |
+| C   | Letta stateful              |
+| D   | dynamic router choosing A/C |
+
+Measure:
+
+```text
+success
+model calls
+tokens
+latency
+cost
+```
+
+We should expect A to dominate trivial tasks.
+
+If D doesn't learn to choose A there, the economic allocator is already broken.
+
+Then give increasingly complicated tasks where persistent context matters.
+
+Eventually C should start winning.
+
+The crossover point is interesting:
+
+$$
+V(memory) > Cost(memory)
+$$
+
+That's basically the first MWGym result.
+
+---
+
+# Then YGO adds repeated learning
+
+Once instrumentation is trustworthy:
+
+```text
+STATIC
+cheap policy only
+
+LE TTA-EVERYTHING
+expensive negative/control arm
+
+MEMORY
+routine policy + stateful Letta reflection
+
+BATS
+dynamic compute escalation
+
+BATS+HYDRA
+dynamic compute + empirical precedent
+
+FULL
+Letta + Hydra + Git skills + BATS
+```
+
+Same deck.
+
+Same opponent.
+
+Same seeds.
+
+Then the key graph is:
+
+```text
+holdout win rate
+       ↑
+       │                     full
+       │                _____/
+       │           ____/
+       │      ____/       bats
+       │ ____/
+       │/
+       └────────────────────────→
+               cumulative cost
+```
+
+Not just win rate versus games.
+
+Now you get a **Pareto frontier of intelligence**.
+
+---
+
+# And it maps perfectly to real jobs
+
+Eventually an identical WorkerGenome sees:
+
+```text
+Decision:
+need Roblox mesh
+```
+
+instead of:
+
+```text
+Decision:
+which YGO action?
+```
+
+And its meta-actions remain:
+
+```text
+ACT_CHEAP
+RETRIEVE
+SIMULATE
+THINK
+VERIFY
+ESCALATE
+BUY
+DELEGATE
+BRANCH
+STOP
+```
+
+That's why this benchmark can actually matter.
+
+---
+
+## What I would change next
+
+In order:
+
+1. **Fix observability before performance.** Record actual agent-step count, actual provider requests, usage and timing. Stop inferring API calls from stream events.
+2. **Test native MiMo thinking control.** Determine whether `opencode-go/mimo-v2.5 + reasoningEffort:none` actually produces Xiaomi `thinking.type=disabled`. If not, add the proper adapter or use a separate non-thinking/fast route.
+3. **Remove the hard-coded runtime treatment.** `stateless`, reasoning mode, model, tool profile and step budget become explicit `WorkerGenome` settings.
+4. **Do not rely on `maxSteps:2`.** It is absent from the public v0.8.0 session option type; control actual inference through supported harness/runtime mechanisms and verify from traces.
+5. **Extract existing lab code into `mwgym`.** Take `mw_labkit`, the useful `lab/` pieces and Harbor integration; don't duplicate WorkerKit/Hydra interfaces.
+6. **Implement the fast-vs-Letta crossover benchmark first.** Then plug in YGO as World 001.
+7. **In YGO, keep the simulator/policy inner loop local.** Let BATS decide when memory, rollouts, Letta or stronger reasoning warrant expenditure.
+8. **Make Hydra retrieval directly callable and cheap.** Calling an LLM to “recall” defeats the whole resource-budget experiment.
+9. **Batch reflection/skill learning.** Trace2Skill/Letta consolidation at checkpoints, with validation before Git/MemFS promotion.
+10. **Then let GEPA optimize the WorkerGenome.**
+
+The main conclusion is that **Letta being multi-step is not a flaw**. That's what makes it an agent harness. What would be a flaw is forcing that expensive harness onto every decision.
+
+So I would not optimize Letta until it behaves like Hermes.
+
+I would make MWGym learn:
+
+$$
+\boxed{\text{When is Letta worth invoking at all?}}
+$$
+
+and then, conditional on choosing Letta:
+
+$$
+\boxed{\text{How much reasoning, memory, retrieval and tool use is worth buying?}}
+$$
+
+Your 35-second `FAST_OK` test is therefore already a useful first result: **the current WorkerKit policy massively over-allocates cognition to a trivial task.** MWGym should be the system that learns not to do that.
+
+[1]: https://github.com/letta-ai/letta/blob/main/letta/agents/letta_agent.py?utm_source=chatgpt.com "letta/letta/agents/letta_agent.py at main · letta-ai/letta · GitHub"
+[2]: https://www.letta.com/agent-sdk/?utm_source=chatgpt.com "Letta Agent SDK — the SDK for stateful agents"
+[3]: https://mimo.mi.com/docs/usage-guide/passing-back-reasoning_content?utm_source=chatgpt.com "Xiaomi MiMo Home"
+[4]: https://mimo.mi.com/docs/en-US/api/chat/responses?utm_source=chatgpt.com "Xiaomi MiMo Home"
+[5]: https://github.com/openclaw/openclaw/blob/main/extensions/xiaomi/index.test.ts?utm_source=chatgpt.com "openclaw/extensions/xiaomi/index.test.ts at main · openclaw/openclaw · GitHub"
+[6]: https://github.com/letta-ai/letta-agent-sdk/releases?utm_source=chatgpt.com "Releases · letta-ai/letta-agent-sdk · GitHub"

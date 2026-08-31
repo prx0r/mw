@@ -1,0 +1,332 @@
+Yes. That is probably the right product strategy now.
+
+The strongest path is:
+
+> **Use Moltwork as your own private agent lab first. Build workers that actually make or save money. Observe what “learning,” “school,” “briefing,” “process improvement,” and “capability” mean in practice. Only then standardize and expose the useful parts.**
+
+That gives you direct evidence instead of designing an economy around abstractions.
+
+A good internal loop would be:
+
+```text
+Opportunity
+→ assign worker
+→ briefing
+→ execute
+→ verify
+→ measure cost/outcome
+→ postmortem
+→ update memory/process/tooling
+→ retest
+→ repeat
+```
+
+The important thing is to treat every term operationally.
+
+A **briefing** should be a compact, task-specific context package given before a run. It should contain the objective, constraints, useful prior experience, relevant tools, known failure modes, budget and acceptance criteria. Then you can A/B test:
+
+```text
+same task class
+worker A: no briefing
+worker B: generic briefing
+worker C: dynamically generated briefing from prior runs
+```
+
+Measure success rate, cost, time, human intervention, and verification score. If the dynamic briefing does not improve outcomes, it is not valuable.
+
+A **school** should not be “documents the agent reads.” It should be a reproducible improvement program:
+
+```text
+baseline benchmark
+→ targeted lessons/examples
+→ practice tasks
+→ feedback
+→ revised process
+→ held-out evaluation
+→ production trial
+```
+
+A school only counts as working if:
+
+```text
+held-out performance improves
+AND
+production performance improves
+AND/OR
+cost per accepted outcome falls
+```
+
+That distinction is crucial. Otherwise you just have prompt accumulation.
+
+Your first useful schema could be:
+
+```text
+SchoolRun
+{
+  worker_version_before
+  target_capability
+  baseline_evaluation
+  curriculum_version
+  practice_runs[]
+  process_changes[]
+  worker_version_after
+  heldout_evaluation
+  production_followup[]
+  cost
+  measured_delta
+}
+```
+
+Then you can answer:
+
+> Did this school actually improve this worker?
+
+A **capability** should likewise be empirical rather than descriptive.
+
+Bad:
+
+```text
+capability: web_research = expert
+```
+
+Better:
+
+```text
+capability:
+  task_class: research.source_verification
+  sample_size: 83
+  acceptance_rate: 0.91
+  median_cost: $0.37
+  p95_duration: 14m
+  evaluator_version: research-eval-v4
+```
+
+This is where WorkerKit already fits.
+
+The biggest thing I would build next is the **experiment framework**, not the marketplace.
+
+You want Moltwork Lab to support:
+
+```text
+worker/main
+worker/briefing-v2
+worker/new-process
+worker/trained-security
+```
+
+Run comparable tasks across versions and calculate:
+
+```text
+Δ success
+Δ cost
+Δ latency
+Δ human intervention
+Δ reward
+```
+
+Git is perfect for this because every improvement should correspond to a versioned change.
+
+So the learning loop becomes:
+
+```text
+Run fails
+↓
+postmortem identifies cause
+↓
+change process/memory/tool
+↓
+commit worker version
+↓
+re-run benchmark
+↓
+compare against previous version
+↓
+promote or revert
+```
+
+That is a much more rigorous definition of “agent learns.”
+
+You should also distinguish four forms of learning:
+
+```text
+Memory learning
+remember a useful fact/context
+→ Letta
+
+Process learning
+change how the task is performed
+→ Git/process version
+
+Capability learning
+measurable improvement on task class
+→ WorkerKit/evals
+
+Economic learning
+learn what resources/models/actions are worth spending on
+→ LiveLLM
+```
+
+That decomposition will stop the Lab becoming vague.
+
+For your own use, I would start with 3–4 workers whose outcomes are measurable and where there is real external demand:
+
+```text
+research-worker
+coding/bounty-worker
+hackathon-worker
+opportunity-discovery-worker
+```
+
+Then perhaps later:
+
+```text
+SEO worker
+customer-support worker
+```
+
+Do not start with 30 workers.
+
+Each should have a clear ledger:
+
+```text
+LIFETIME
+
+jobs attempted
+jobs completed
+jobs paid
+revenue
+LLM spend
+tool/API spend
+net
+acceptance rate
+human intervention
+process versions
+training cost
+```
+
+Then you can actually see whether “superagent” means anything.
+
+The most interesting metric may be:
+
+> **Return on worker improvement spend.**
+
+Example:
+
+```text
+research-worker v8
+
+School cost:
+$4.20
+
+Before:
+72% success
+$0.48 / accepted result
+
+After:
+88% success
+$0.31 / accepted result
+
+Subsequent production:
+141 jobs
+
+Value of improvement:
+clearly positive
+```
+
+Now a “school” is economically real.
+
+Likewise briefings:
+
+```text
+Dynamic briefing experiment
+N=60
+
+No briefing
+success 68%
+cost/outcome $0.81
+
+Static briefing
+success 74%
+cost/outcome $0.73
+
+History-derived briefing
+success 86%
+cost/outcome $0.49
+```
+
+Now you've discovered an actual product primitive.
+
+And if the result is:
+
+```text
+all three ≈ same
+```
+
+you kill the feature.
+
+That's exactly why using it yourself first is valuable.
+
+The product roadmap I would use now is:
+
+1. **Personal Lab**
+2. Real workers
+3. Real jobs
+4. Versioned experiments
+5. Real cost/revenue tracking
+6. Learning/evaluation loops
+7. Identify which internal artifacts repeatedly create value
+8. Only then package those as:
+
+   * schools
+   * processes
+   * briefings
+   * evaluators
+   * workers
+   * leases
+   * marketplace assets
+
+That means the marketplace isn't speculative anymore.
+
+It becomes:
+
+> **things your own agents repeatedly proved were useful.**
+
+There is also a strong startup advantage here: you become the first demanding user of your own infrastructure.
+
+You will discover annoying realities like:
+
+```text
+briefings get stale
+memory hurts performance
+training overfits benchmark
+model upgrades invalidate process
+workers learn nonsense
+cost accounting is wrong
+retries destroy margins
+Git history becomes noisy
+capability scores drift
+```
+
+Those problems are exactly where the valuable product will emerge.
+
+I would therefore narrow Moltwork's immediate mission to:
+
+> **Build a private lab that can demonstrably turn generic agents into increasingly productive workers.**
+
+Success criterion:
+
+```text
+Month 1 worker
+vs
+Month 3 worker
+
+same task classes
+
+higher success
+lower cost
+less supervision
+more reusable capital
+more revenue
+```
+
+If you can prove that on your own workers, the broader Moltwork market story becomes much stronger because you are no longer selling “agent careers” as a theory. You have actual workers with developmental histories and measured economic improvement.

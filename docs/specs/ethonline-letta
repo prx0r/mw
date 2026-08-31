@@ -1,0 +1,1833 @@
+Yes. The repo is now at the point where **another architecture pass would hurt more than help**. The current `ethonline-2026` branch has most of the correct objects, but the real ETHOnline submission depends on replacing the remaining simulations with a small number of hard, externally demonstrable proofs.
+
+The latest branch head is `1fa364282673a4dc55d799db549c7a23c71c8e02`. It added taxonomy, structured Lab briefs, evaluator/pipeline work, RunCommitment, leasing, and the new Agent SDK service.
+
+## Overall assessment
+
+| Area                            |   Design |       Reality today | ETHOnline priority |
+| ------------------------------- | -------: | ------------------: | -----------------: |
+| WorkerKit event/evidence kernel |     9/10 |                8/10 |           **Keep** |
+| Taxonomy/data spine             |     9/10 |                7/10 |           **Keep** |
+| Letta architecture              |     9/10 |                3/10 |             **P0** |
+| Lab context                     |     8/10 |                4/10 |                 P1 |
+| Learning experiment             |     9/10 |                2/10 |           Bonus/P1 |
+| TEE commitment design           |     9/10 |                4/10 |             **P0** |
+| Real dstack execution           |     8/10 |         0/10 proven |             **P0** |
+| Leasing                         |     9/10 |                2/10 |             **P0** |
+| ERC-8004                        | 9/10 fit | 2/10 implementation |              P0/P1 |
+| ENS identity                    | 9/10 fit |                0/10 |  ETHOnline sponsor |
+| Actual HydraDB                  |     8/10 |               ~0/10 |              Defer |
+| Oracle                          |     9/10 |      already useful |           Parallel |
+
+The core ETHOnline project should be:
+
+> **Moltwork Verified Worker — a persistent Letta worker with a portable economic identity that can be leased without exposing its private state, executes inside an attested dstack environment, and emits independently verifiable WorkReceipts that accumulate into category-specific experience.**
+
+Learning is the killer bonus. It should not block the cryptographic proof.
+
+---
+
+# 1. First: ETHOnline rules materially affect the repo strategy
+
+ETHOnline starts **September 4, 2026**. Your existing `mw` code predates that.
+
+ETHGlobal's rules say Classic/From Scratch projects cannot use pre-existing project-specific code. Existing projects belong in a **Continuity** track, with the pre-existing code disclosed and substantive new work built during the hackathon clearly identified. ([EthGlobal][1])
+
+So I would immediately establish:
+
+```text
+PRE-ETHONLINE BASELINE
+1fa364282673a4dc55d799db549c7a23c71c8e02
+```
+
+Tag it something like:
+
+```bash
+git tag pre-ethonline-2026 1fa364282673a4dc55d799db549c7a23c71c8e02
+```
+
+Your submission then says exactly:
+
+```text
+Pre-existing:
+WorkerKit
+Oracle
+initial Letta/Lab/TEE scaffolding
+
+Built during ETHOnline:
+REAL persistent Letta runtime
+REAL leased worker invocation
+REAL dstack execution + verification
+REAL ERC-8004 identity/validation
+ENSv2 worker namespace
+real learning experiment [if completed]
+```
+
+That transparency is important.
+
+For currently published sponsor requirements, **ENSv2 is a very clean Continuity fit**: ETHOnline explicitly has an existing-project ENSv2 integration track and specifically suggests agent namespaces/delegated permissions. ([EthGlobal][2])
+
+World also has a $3,500 AgentKit Continuity track, which could map naturally onto “a leased worker is authorized by a unique human principal,” but I would only add it after the main rails work. ([EthGlobal][2])
+
+The Graph's $15k ETHOnline details are still unpublished, so don't contort the project for it yet. ([EthGlobal][2])
+
+---
+
+# 2. WorkerKit is the good part. Stop changing it.
+
+The WorkerKit kernel has already had the right kind of hardening:
+
+```text
+artifact content hashing
+event-chain verification
+verification gate
+Decimal economics
+budget enforcement
+receipt binding
+tamper tests
+```
+
+The master branch hardening explicitly addressed artifact-hash trust, unsupported verification checks, mandatory verification at commit gates, event-chain validation, sunk-cost economics, and receipt semantics.
+
+Keep WorkerKit's conceptual boundary:
+
+```text
+WorkerKit does NOT reason.
+WorkerKit does NOT remember.
+WorkerKit does NOT decide what the agent learns.
+
+WorkerKit records:
+what was requested
+what executed
+what was used
+what it cost
+what was produced
+what was verified
+what happened
+```
+
+That's excellent.
+
+---
+
+# 3. The current Letta service is your biggest blocker
+
+The architecture is correct:
+
+```text
+Moltwork Worker ID
+      ↕
+Letta Agent ID
+
+WorkOrder
+      ↓
+fresh Letta Conversation
+      ↓
+persistent Agent / MemFS
+```
+
+But `services/runtime-letta/src/index.ts` isn't actually production-runnable yet.
+
+### Problem A: it isn't a Node HTTP server
+
+`package.json` runs:
+
+```text
+tsx src/index.ts
+```
+
+but `index.ts` only exports a Hono app. There is no Node `serve()` call and no `@hono/node-server` dependency.
+
+So make it an actual Node service:
+
+```text
+@hono/node-server
+```
+
+and:
+
+```ts
+import { serve } from "@hono/node-server";
+
+serve({
+  fetch: app.fetch,
+  port: Number(process.env.PORT ?? 3000),
+});
+```
+
+Delete the Cloudflare deployment idea for this component.
+
+The runtime uses:
+
+```text
+Node fs
+local Letta App Server
+local tools
+local MemFS
+```
+
+It is **not a Cloudflare Worker**.
+
+`wrangler.jsonc` should go. It's also currently TOML-like text despite the `.jsonc` extension.
+
+---
+
+# 4. The current Letta SDK calls need updating to the actual API
+
+Current Letta Agent SDK says:
+
+```text
+Agent = persistent identity + memory
+createSession(agentId) = new conversation
+resumeSession(agentId) = default conversation
+resumeSession(conv-id) = specific conversation
+```
+
+and supports local, remote and cloud backends.
+
+That's precisely what Moltwork wants.
+
+But there are concrete API mismatches in your service.
+
+### `permissionMode`
+
+Current code uses:
+
+```ts
+permissionMode: "approve-all"
+```
+
+Current SDK only permits:
+
+```text
+standard
+acceptEdits
+unrestricted
+strict
+```
+
+Use `strict` for evaluations and carefully configured `standard`/`acceptEdits` for real work.
+
+### Tool event fields
+
+Your current code reads:
+
+```ts
+message.tool_call?.name
+message.tool_call?.arguments
+```
+
+Current SDK's typed tool event is:
+
+```ts
+message.toolName
+message.toolInput
+message.toolCallId
+```
+
+Tool results have:
+
+```ts
+toolCallId
+content
+isError
+```
+
+not `message.tool_call.name`.
+
+Fix that before anything else.
+
+---
+
+# 5. Your Moltwork tools currently don't actually exist
+
+You allow:
+
+```text
+moltwork_lab_context
+moltwork_run_budget
+moltwork_get_artifact_requirements
+moltwork_request_review
+moltwork_record_candidate
+```
+
+but I don't see these being registered as actual SDK `tools`.
+
+An `allowedTools` entry is an **allowlist**, not tool creation.
+
+Current Letta SDK explicitly supports custom tools through:
+
+```ts
+tools?: AnyAgentTool[]
+```
+
+and defines each tool with:
+
+```text
+name
+description
+parameters
+execute()
+```
+
+For MVP register only three:
+
+```text
+moltwork_lab_context
+moltwork_run_budget
+moltwork_submit_artifact
+```
+
+Maybe reviewer later.
+
+That is enough to demonstrate integration.
+
+---
+
+# 6. Use a singleton Letta client
+
+Current:
+
+```ts
+function getClient() {
+  return new LettaAgentClient({ backend: "local" });
+}
+```
+
+is called repeatedly.
+
+The SDK's local backend manages/spawns a local App Server.
+
+Don't recreate that client every HTTP request.
+
+Use:
+
+```ts
+const letta = new LettaAgentClient({
+  backend: "local"
+});
+```
+
+once for the process.
+
+Later inside dstack:
+
+```ts
+new LettaAgentClient({
+  backend: "remote",
+  url: process.env.LETTA_APP_SERVER_WS!,
+  authToken: ...
+});
+```
+
+if you split the App Server into its own container.
+
+---
+
+# 7. Health must actually test Letta
+
+Current `/health` creates the client and immediately returns `ok:true`.
+
+That doesn't prove the local App Server starts.
+
+Make health perform a real management operation:
+
+```ts
+const models = await letta.models.list();
+```
+
+or another cheap SDK request.
+
+Return:
+
+```json
+{
+  "ok": true,
+  "backend": "local",
+  "models_seen": 12
+}
+```
+
+If the harness cannot initialize, health fails.
+
+---
+
+# 8. Don't seed the baseline with the lesson you're trying to prove
+
+This is currently a serious experimental contamination.
+
+Worker creation includes:
+
+> “Before competitive submissions, construct a requirement matrix.”
+
+But your whole learning experiment repeatedly uses **“construct a requirement matrix”** as the example learned improvement.
+
+So v1 already knows the answer.
+
+Remove that.
+
+Baseline system prompt should be minimal:
+
+```text
+You are a Moltwork research worker.
+
+Follow task requirements.
+Use available evidence.
+Distinguish evidence from inference.
+Respect WorkOrder constraints.
+```
+
+No special ideation methodology.
+
+Let experience create the methodology.
+
+---
+
+# 9. Use MemFS, not legacy memory blocks, as the main state
+
+Letta's current `CreateAgentOptions` explicitly calls memory blocks legacy and says new agents should prefer git-backed MemFS.
+
+So instead of filling:
+
+```ts
+memory: [...]
+```
+
+make:
+
+```ts
+createAgent({
+  model,
+  systemPrompt,
+  memfs: true,
+  name: workerId,
+  tags: [
+    "moltwork",
+    `worker:${workerId}`
+  ]
+});
+```
+
+Use:
+
+```text
+system/
+  identity.md
+  moltwork.md
+
+lessons/
+skills/
+```
+
+for learned state.
+
+That makes Git commit attribution clean.
+
+---
+
+# 10. Version Workers using real MemFS commits
+
+This is where Letta becomes particularly useful.
+
+Current SDK exposes the active memory checkout through device status:
+
+```text
+SessionDeviceStatus.memoryDirectory
+```
+
+So after:
+
+```ts
+await session.ready()
+```
+
+call:
+
+```ts
+const status = await session.getDeviceStatus()
+```
+
+and capture:
+
+```text
+memoryDirectory
+```
+
+Then:
+
+```bash
+git -C "$MEMORY_DIR" rev-parse HEAD
+```
+
+That becomes the real:
+
+```text
+memfs_commit
+```
+
+in `WorkerVersion`.
+
+Not a simulated `.git/HEAD` file.
+
+---
+
+# 11. The best Letta-native A/B method is Git worktrees
+
+You need to compare:
+
+```text
+v1
+vs
+v2
+```
+
+without v2 seeing v1's held-out evaluation or destroying v1's state.
+
+Letta's local SDK conveniently allows session-specific environment overrides for:
+
+```text
+MEMORY_DIR
+LETTA_MEMORY_DIR
+```
+
+and explicitly documents this as memory scoping for local sessions.
+
+So:
+
+```text
+MemFS commit C
+      │
+      ├── worktree/v1
+      │
+      └── worktree/v2
+              ↓
+          apply candidate lesson
+```
+
+Run both with:
+
+```ts
+client.createSession(agentId, {
+  env: {
+    MEMORY_DIR: candidateMemoryPath
+  }
+})
+```
+
+Now you've got an actual controlled Worker-version experiment.
+
+That's much cleaner than sending `/remember` to the production agent and hoping you can reconstruct the old version.
+
+---
+
+# 12. `apply_learning()` should not be “tell the agent to remember this”
+
+Current implementation sends:
+
+```text
+/remember Update ...
+```
+
+or:
+
+```text
+Create or update skills/X/SKILL.md ...
+```
+
+to the agent.
+
+That's useful conversationally but poor for controlled experiments.
+
+Instead:
+
+```text
+LearningProposal
+    ↓
+create MemFS candidate worktree
+    ↓
+apply exact file patch
+    ↓
+git commit
+    ↓
+candidate WorkerVersion
+```
+
+Then you know exactly:
+
+```text
+v1 commit = abc
+v2 commit = def
+
+diff:
++ requirements-audit.md
+```
+
+Much stronger demo.
+
+Letta generates the proposed text.
+
+Moltwork applies/version-controls it.
+
+---
+
+# 13. Your new `cg` abstraction is much better—but dangerous defaults remain
+
+`cg/evolve.py` now has the right architecture:
+
+```text
+Evaluator protocol
+DeterministicMockEvaluator
+LiveEvaluator
+EvolutionLab
+```
+
+Keep that.
+
+But `EvolutionLab` still defaults to:
+
+```python
+DeterministicMockEvaluator
+```
+
+if no evaluator is supplied.
+
+That's too dangerous.
+
+Change:
+
+```python
+if self.evaluator is None:
+    raise ValueError("real evaluator required")
+```
+
+Production should fail closed.
+
+Tests explicitly instantiate:
+
+```python
+DeterministicMockEvaluator(...)
+```
+
+when desired.
+
+---
+
+# 14. The learning pipeline is still fake today
+
+Despite the latest commit message claiming the anti-cheat audit removed fake learning scores, `lab/pipeline.py` still explicitly says:
+
+```python
+# v1 score (simulated — in production, use real execution)
+v1_score = rng.uniform(0.4, 0.7)
+
+# v2 score (simulated improvement)
+improvement = rng.uniform(0.05, 0.25)
+```
+
+This should be deleted, not improved.
+
+`validate_proposal()` must accept:
+
+```python
+LiveEvaluator
+```
+
+and actually run:
+
+```text
+v1 MemFS worktree
+        ↓
+Letta
+        ↓
+artifact
+
+v2 MemFS worktree
+        ↓
+Letta
+        ↓
+artifact
+
+        ↓
+same evaluator
+```
+
+No random numbers anywhere in the evidence path.
+
+---
+
+# 15. `test_mvp.py` is not an actual MVP test yet
+
+Its A/B outputs are manually authored strings.
+
+For example v2 is given:
+
+```text
+[Requirement matrix checked]
+Specific product name with detailed technical implementation...
+Unlike existing tools like Google Analytics and Slack...
+AWS...
+LLM...
+```
+
+Those exact terms are then rewarded by your evaluator.
+
+That's evaluator gaming by construction.
+
+The file is useful as a **test of evaluator arithmetic**.
+
+Rename it accordingly:
+
+```text
+test_evaluator_ablation_math.py
+```
+
+It does not prove worker learning.
+
+---
+
+# 16. Same problem with `test_integration.py`
+
+It says:
+
+> “actual execution”
+
+but its training artifacts are manually created:
+
+```python
+content="# ... Detailed research report with findings."
+```
+
+and later it explicitly uses:
+
+```python
+DeterministicMockEvaluator
+```
+
+for validation/hidden testing.
+
+So rename:
+
+```text
+test_integration.py
+```
+
+to:
+
+```text
+test_workerkit_projection_integration.py
+```
+
+because that's what it actually tests.
+
+Don't delete it. Just stop calling it a learning proof.
+
+---
+
+# 17. `test_ethonline.py` needs the most ruthless rewrite
+
+Current problems:
+
+### P1 isn't persistent Letta
+
+It reads a fake `.af`.
+
+### P4 isn't Real TEE
+
+It explicitly constructs:
+
+```python
+DstackSimulator(...)
+```
+
+and then marks P4 passed.
+
+### P6 doesn't lease an agent
+
+It passes:
+
+```text
+artifact_hash="abc"
+```
+
+into an in-memory lease manager.
+
+No Letta invocation happens.
+
+### P7 isn't an onchain identity
+
+It generates an address-like string with SHA-256.
+
+### P10 uses `DeterministicMockEvaluator`.
+
+And finally:
+
+```python
+proofs = [
+  ("P0", ..., True),
+  ...
+]
+```
+
+hard-codes the entire proof matrix to green.
+
+Delete those booleans.
+
+---
+
+# 18. One more data correctness bug: ALLOW ≠ WON
+
+`LabProjector` currently does:
+
+```text
+gate ALLOW
+→ if no external outcome
+→ outcome = won
+```
+
+That will poison the Lab dataset.
+
+A WorkerKit gate means:
+
+> allowed to submit / allowed to perform irreversible action.
+
+It does **not** mean:
+
+> external bounty won.
+
+You need distinct states:
+
+```text
+execution_status:
+COMPLETED | FAILED
+
+verification_status:
+PASS | FAIL | UNKNOWN
+
+commit_status:
+ALLOWED | DENIED
+
+submission_status:
+SUBMITTED | NOT_SUBMITTED
+
+external_outcome:
+WON | LOST | PAID | REJECTED | UNKNOWN
+```
+
+Until an external outcome exists:
+
+```text
+external_outcome = UNKNOWN
+```
+
+Never infer it from a commit gate.
+
+This matters enormously for your future analytics moat.
+
+---
+
+# 19. Your evaluator needs a v2 before making learning claims
+
+The multidimensional structure is good:
+
+```text
+requirement coverage
+diversity
+technical validity
+specificity
+novelty
+rationale
+```
+
+But the scoring heuristics are extremely gameable.
+
+For example novelty gets rewarded for mentioning existing products and words like:
+
+```text
+unlike
+different from
+```
+
+and technical validity gets rewarded for mentioning:
+
+```text
+API
+AWS
+Docker
+LLM
+database
+```
+
+That means an agent can score better by keyword stuffing.
+
+For the MVP evaluator use three independent channels:
+
+```text
+A. deterministic checks
+   count, required sections, constraints, URLs, schema
+
+B. pairwise judge
+   v1 vs v2 blind comparison on rubric dimensions
+
+C. adversarial reviewer
+   identify concrete failure modes
+```
+
+Don't show the judge which output is v1/v2.
+
+Shuffle ordering.
+
+Run at least two judge passes with order reversed.
+
+Store disagreement.
+
+For the hackathon, that's enough.
+
+---
+
+# 20. The actual test suite I would build
+
+Make four test tiers.
+
+## Tier 1 — fast unit tests
+
+Runs every commit.
+
+```text
+tests/unit/
+  test_taxonomy.py
+  test_events.py
+  test_receipts.py
+  test_budget.py
+  test_run_commitment.py
+  test_lease_limits.py
+  test_evaluator_deterministic.py
+  test_projection_semantics.py
+```
+
+Key new invariant:
+
+```python
+assert gate_allow_does_not_imply_external_win
+```
+
+And:
+
+```python
+assert simulated_tee_can_never_emit_verified_trust_level
+```
+
+And:
+
+```python
+assert mock_evaluator_cannot_issue_capability_claim(mode="production")
+```
+
+---
+
+## Tier 2 — real Letta integration tests
+
+These are the tests you desperately need now.
+
+Use Vitest directly against the TypeScript runtime.
+
+```text
+services/runtime-letta/test/
+  boot.test.ts
+  worker.test.ts
+  persistence.test.ts
+  memfs.test.ts
+  tools.test.ts
+  conversations.test.ts
+  restart.test.ts
+  model-swap.test.ts
+```
+
+### `boot.test.ts`
+
+Must prove:
+
+```text
+service actually listens
+Letta local backend actually initializes
+health performs real request
+at least one available model discovered
+```
+
+### `worker.test.ts`
+
+```text
+POST /workers
+→ real agent-local-* ID returned
+→ same Moltwork worker ID returns same Letta ID
+→ duplicate create is idempotent
+```
+
+### `conversations.test.ts`
+
+Run two jobs.
+
+Assert:
+
+```text
+same agent_id
+different conversation_id
+different session_id
+```
+
+### `persistence.test.ts`
+
+Run 1:
+
+```text
+Remember marker:
+MOLTW_TEST_92817
+```
+
+Run 2, fresh conversation:
+
+```text
+What marker did you learn?
+```
+
+Must recover marker without putting it in Run 2 prompt.
+
+### `memfs.test.ts`
+
+After `ready()`:
+
+```text
+getDeviceStatus().memoryDirectory != null
+
+git rev-parse HEAD
+```
+
+Then change persistent memory.
+
+Assert Git HEAD changed.
+
+### `tools.test.ts`
+
+Register an actual:
+
+```text
+moltwork_lab_context
+```
+
+SDK tool.
+
+Have task explicitly require calling it.
+
+Assert stream contains:
+
+```text
+tool_call.toolName == moltwork_lab_context
+```
+
+and canonical WorkerEvent stores the exact call/result.
+
+### `model-swap.test.ts`
+
+Same agent:
+
+```text
+model A
+→ remember marker
+→ updateModel(model B)
+→ fresh conversation
+→ marker still retrievable
+```
+
+This is an excellent demonstration that:
+
+> Worker identity > model identity.
+
+### `restart.test.ts`
+
+Create Worker.
+
+Kill runtime-letta process.
+
+Restart.
+
+Assert:
+
+```text
+same Moltwork worker_id
+same Letta agent_id
+same MemFS HEAD
+memory still retrievable
+```
+
+That is a crucial persistence test.
+
+---
+
+# 21. Tier 3 — real WorkerKit × Letta tests
+
+```text
+tests/live/
+  test_real_worker_run.py
+  test_real_run_receipt.py
+  test_lab_reuse.py
+  test_learning_candidate.py
+```
+
+### `test_real_worker_run`
+
+No stubs permitted.
+
+Require:
+
+```text
+LETTA_LIVE_TEST=1
+```
+
+Then:
+
+```text
+WorkOrder
+→ WorkerKit
+→ LettaServiceAdapter
+→ real model output
+→ ArtifactRef
+→ WorkReceipt
+```
+
+Assert:
+
+```text
+metadata.mode == "letta-service"
+output non-empty
+conversation_id non-empty
+no "stub"
+event chain valid
+```
+
+### Capture real Letta cost
+
+Current Python service adapter sets:
+
+```python
+cost_usd=0.0
+```
+
+But current Letta SDK's final result message exposes:
+
+```text
+totalCostUsd
+durationMs
+conversationId
+```
+
+Capture the `result` event from the SDK stream and propagate:
+
+```text
+cost
+duration
+run IDs
+stop reason
+success
+```
+
+into WorkerKit.
+
+Don't fake economics if Letta gives them to you.
+
+---
+
+# 22. `test_lab_reuse` is the first real flywheel proof
+
+Run A:
+
+```text
+task_family:
+research.ideation.technical
+
+produces useful artifact
+```
+
+Project it.
+
+Then Run B of the same category.
+
+The Worker must actually call:
+
+```text
+moltwork_lab_context
+```
+
+and receive Run A-derived context.
+
+Then record:
+
+```text
+Run B
+  USED_LAB_CONTEXT
+    source_run_ids=[Run A]
+```
+
+Pass means:
+
+```text
+Run A genuinely affected Run B's input.
+```
+
+Current P9 only generates a brief and checks its text; it does not prove a later agent used it.
+
+---
+
+# 23. Tier 4 — the real learning experiment
+
+Call this:
+
+```text
+experiments/learning_v1/
+```
+
+Not a unit test.
+
+Use perhaps:
+
+```text
+training:   6 tasks
+validation: 4
+hidden:     8
+```
+
+All from the same category:
+
+```text
+research.ideation.technical
+```
+
+### Step 1: create uncontaminated v1
+
+No requirements-matrix trick.
+
+Capture:
+
+```text
+memfs_commit C0
+```
+
+### Step 2: training
+
+Actually execute six Letta runs.
+
+Each receives:
+
+```text
+fixture
+structured evaluation
+review feedback
+```
+
+Store complete trajectories.
+
+### Step 3: Letta proposes learning
+
+Give Letta:
+
+```text
+summaries
+evaluations
+review failures
+selected trajectories
+```
+
+Ask for structured JSON:
+
+```json
+{
+  "kind": "skill",
+  "hypothesis": "...",
+  "files": {
+    "skills/requirements-audit/SKILL.md": "..."
+  },
+  "source_runs": [...]
+}
+```
+
+No hard-coded `_generate_patch()`.
+
+Your current pipeline is still doing hard-coded pattern → patch mapping.
+
+Let Letta genuinely generate it.
+
+### Step 4: branch memory
+
+```text
+C0
+├── v1 worktree
+└── v2 worktree + candidate patch
+```
+
+### Step 5: hidden A/B
+
+For each hidden task:
+
+```text
+randomize execution order
+
+v1 → artifact
+v2 → artifact
+```
+
+Use identical:
+
+```text
+model
+temperature/settings
+tools
+Lab policy
+budget
+```
+
+Only Worker memory differs.
+
+### Step 6: blind evaluation
+
+Evaluator doesn't know version.
+
+Measure:
+
+```text
+requirements
+diversity
+technical validity
+specificity
+novelty
+rationale
+cost
+latency
+```
+
+### Step 7: promotion
+
+Pass only if:
+
+```text
+mean quality delta > threshold
+AND
+no hard gate regression
+AND
+cost delta within threshold
+```
+
+Not merely:
+
+```text
+v2 > v1 once
+```
+
+---
+
+# 24. Then do the four-way ablation
+
+Only after basic A/B works:
+
+```text
+A = v1 / no Lab
+B = v1 / Lab
+C = v2 / no Lab
+D = v2 / Lab
+```
+
+This gives you the extraordinarily useful decomposition:
+
+```text
+B-A = organizational intelligence uplift
+
+C-A = individual learning uplift
+
+D-C = Lab uplift on trained worker
+
+D-B = worker-learning uplift with Lab
+```
+
+**This** is the compelling research/demo output.
+
+Not the current manually authored `test_mvp.py`.
+
+---
+
+# 25. TEE test suite
+
+Keep simulator tests—but label them correctly.
+
+```text
+tests/tee/unit/
+  test_commitment.py
+  test_simulator.py
+```
+
+Then separate:
+
+```text
+tests/tee/live/
+  test_real_dstack_info.py
+  test_real_dstack_key.py
+  test_real_attestation.py
+  test_external_verification.py
+```
+
+The real test must contain:
+
+```python
+assert info.is_simulated is False
+assert attestation.is_simulated is False
+```
+
+Current dstack wrapper makes that distinction explicitly, which is good.
+
+The existing P4 test does the opposite and still reports PASS.
+
+---
+
+# 26. Improve `RunCommitment`
+
+The current conceptual shape is good:
+
+```text
+WorkerVersion
+WorkOrder
+ProcessVersion
+Dependencies
+Event chain
+Artifact root
+```
+
+But I would make the committed payload canonical JSON:
+
+```json
+{
+  "schema": "moltwork.run-commitment.v1",
+  "run_id": "...",
+  "worker_id": "...",
+  "worker_version": "...",
+  "work_order": "...",
+  "process_version": "...",
+  "dependencies": "...",
+  "event_chain_head": "...",
+  "artifact_root": "...",
+  "task_family_id": "...",
+  "taxonomy_hash": "...",
+  "lease_hash": "..."
+}
+```
+
+Then:
+
+```text
+SHA256(JCS(canonical_payload))
+```
+
+rather than:
+
+```text
+SHA256(a || b || c...)
+```
+
+This avoids ambiguity and also ensures `run_id`, `worker_id`, taxonomy, and lease are actually committed rather than merely metadata beside the commitment.
+
+For leased invocations, **lease hash must be inside the attested commitment**.
+
+---
+
+# 27. Leasing needs one real integration test
+
+Current `LeaseManager` is a good state-machine prototype, but `invoke()` receives already-created artifact/receipt hashes; it doesn't actually invoke anything.
+
+Real test:
+
+```text
+Alice owns Worker W
+
+Alice grants Bob:
+3 calls
+$1 max total spend
+expires in 1h
+
+Bob calls:
+POST /leases/L/invoke
+```
+
+Server:
+
+```text
+validate lease
+      ↓
+invoke Letta Worker W
+      ↓
+WorkerKit records Run
+      ↓
+dstack attests RunCommitment
+      ↓
+return:
+artifact
+receipt
+attestation
+```
+
+Then:
+
+```text
+Bob attempts call 4
+→ HTTP 403
+
+Bob attempts after expiry
+→ HTTP 403
+
+Charlie attempts to use Bob's lease
+→ HTTP 403
+```
+
+And critically:
+
+```text
+lease API has NO endpoint exposing:
+MemFS
+.af
+skills source
+secrets
+```
+
+That is a real leasing proof.
+
+---
+
+# 28. ERC-8004 is the right Ethereum-native identity primitive
+
+ERC-8004 is explicitly designed for discovering/trusting agents across organizational boundaries and supports:
+
+```text
+Identity Registry
+Reputation Registry
+Validation Registry
+TEE attestations
+A2A
+MCP
+ENS
+x402
+```
+
+([Ethereum Improvement Proposals][3])
+
+That is almost absurdly aligned with Moltwork.
+
+But update your adapter before ETHOnline. Your current repo uses an older simplified Reputation interface; the current ERC specifies richer feedback fields and its Validation Registry deserves first-class implementation. ([Ethereum Improvement Proposals][3])
+
+For the MVP:
+
+```text
+ERC8004Identity
+   ↓
+registration JSON
+
+services:
+A2A
+MCP
+ENS
+Moltwork WorkReceipt
+Moltwork attestation
+
+supportedTrust:
+tee-attestation
+reputation
+```
+
+Then use the Validation Registry to point at your exact TEE-bound WorkReceipt.
+
+That's far stronger than an arbitrary Moltwork reputation NFT.
+
+---
+
+# 29. ENSv2 is the sponsor integration I'd prioritize
+
+The current ETHOnline ENS track explicitly mentions AI-agent names, hierarchical registries, wildcard resolution and agent namespaces. The Continuity prize specifically says to extend an existing project with ENSv2 on Sepolia and suggests agent namespaces/delegated permissions. ([EthGlobal][4])
+
+Ideal Moltwork hierarchy:
+
+```text
+moltwork.eth
+
+lab-a.moltwork.eth
+
+researcher-03.lab-a.moltwork.eth
+reviewer-02.lab-a.moltwork.eth
+```
+
+Records could expose:
+
+```text
+erc8004.agent
+worker.version
+a2a
+mcp
+attestation
+capabilities
+lab
+```
+
+Now a leased worker has:
+
+```text
+human-readable identity
+portable service discovery
+onchain ownership/delegation
+ERC-8004 trust
+TEE execution evidence
+```
+
+That's a coherent Ethereum-native story.
+
+---
+
+# 30. CI is currently missing
+
+I couldn't find a `.github/workflows` directory on the ETHOnline branch.
+
+Add one.
+
+But keep expensive live tests separate.
+
+```text
+PR CI:
+Python unit tests
+TS typecheck
+Vitest unit tests
+mock integration
+receipt invariants
+
+Nightly/manual:
+live Letta
+live model
+real Hydra
+real dstack
+Sepolia
+```
+
+Critical:
+
+```text
+npm run typecheck
+```
+
+would already catch several current Agent SDK mismatches.
+
+Add:
+
+```json
+"scripts": {
+  "typecheck": "tsc --noEmit",
+  "test": "vitest run"
+}
+```
+
+---
+
+# 31. The canonical ETHOnline proof suite
+
+I would replace P0–P10 with this stricter definition:
+
+| Proof                    | PASS only when                                                                           |
+| ------------------------ | ---------------------------------------------------------------------------------------- |
+| **P0 Taxonomy**          | Same taxonomy hash appears in Oracle fixture → WorkOrder → RunCommitment → Lab           |
+| **P1 Persistent Letta**  | Real `agent-*`/`agent-local-*`; 2+ fresh conversations; memory survives                  |
+| **P2 WorkerVersion**     | Real MemFS Git commit + config/tool/skill digests generate WorkerVersion                 |
+| **P3 WorkReceipt**       | Real Letta execution produced content-addressed artifact and valid WorkerKit event chain |
+| **P4 Real TEE**          | `is_simulated == false`, real quote obtained                                             |
+| **P5 TEE binding**       | External verifier confirms quote contains exact RunCommitment                            |
+| **P6 Lease**             | Bob invokes real Worker under bounded lease; fourth/unauthorized call rejected           |
+| **P7 Ethereum identity** | Real ERC-8004 identity exists on testnet with real registration metadata                 |
+| **P8 Validation**        | Real validation links exact Worker + WorkReceipt/attestation                             |
+| **P9 Experience reuse**  | Run B actually calls Lab context derived from Run A and records dependency               |
+| **P10 Learning**         | Real v2 MemFS diff beats real v1 on blinded held-out A/B                                 |
+| **P11 Reusable capital** | Real asset from prior Run is acquired and used by subsequent Run                         |
+| **P12 ENSv2**            | Real worker subname resolves on Sepolia to current Worker/agent metadata                 |
+
+**No simulator can satisfy P4.**
+
+**No generated fake address can satisfy P7.**
+
+**No manually-created artifact can satisfy P6.**
+
+**No `DeterministicMockEvaluator` can satisfy P10.**
+
+That's the rule.
+
+---
+
+# 32. The development order I would use
+
+### Before touching learning again
+
+1. Make `runtime-letta` actually boot.
+2. Make TypeScript compile against current Agent SDK.
+3. Register real Moltwork custom tools.
+4. Create one real persistent Worker.
+5. Complete two real sessions.
+6. Prove MemFS persistence.
+7. Capture real cost/conversation/run metadata.
+8. Feed output through WorkerKit.
+
+At that point:
+
+```text
+P1 + P3
+```
+
+are real.
+
+### Then crypto
+
+9. Deploy same runtime inside dstack.
+10. Obtain real `is_simulated=false` quote.
+11. Bind `RunCommitment`.
+12. Verify quote externally.
+13. Make a real lease call invoke the TEE worker.
+
+Now:
+
+```text
+P4 + P5 + P6
+```
+
+are real.
+
+### Then Ethereum
+
+14. ERC-8004 registration.
+15. ERC-8004 validation.
+16. ENSv2 Worker namespace.
+
+Now you have a genuine ETHOnline submission.
+
+### Then learning
+
+17. Build one uncontaminated School pack.
+18. 5–10 real training runs.
+19. Letta generates one LearningProposal.
+20. Git-worktree v1/v2.
+21. Blind held-out evaluation.
+22. Promote or reject based on actual result.
+
+If it fails to improve, **show the rejection**.
+
+That is actually credible:
+
+> “The Lab tested a proposed lesson and rejected it because it didn't generalize.”
+
+That's more impressive than fake `v2 > v1`.
+
+---
+
+# 33. What the final demo should prove
+
+The strongest demo is not a giant dashboard.
+
+Three minutes:
+
+```text
+1. Oracle opportunity
+   research.ideation.technical
+
+2. researcher-03.moltwork.eth
+   persistent Letta Worker
+   ERC-8004 identity
+
+3. Bob purchases/receives 3-call lease
+
+4. Bob sends task
+
+5. Worker retrieves previous Lab experience
+
+6. Letta executes inside dstack
+
+7. WorkerKit records:
+   exact category
+   dependencies
+   cost
+   artifact
+   event chain
+
+8. TEE emits attestation
+
+9. external verifier:
+   VERIFIED
+
+10. ERC-8004 validation points to receipt
+
+11. Lab:
+   category experience n → n+1
+```
+
+Then as the kicker:
+
+```text
+WorkerVersion v3
+
+Learned skill:
+requirements-audit
+
+Held-out improvement:
++8.4%
+
+MemFS:
+abc → def
+```
+
+If learning isn't ready, leave the kicker out.
+
+The verified-worker demo still stands.
+
+---
+
+## Immediate repo verdict
+
+**Do not merge `ethonline-2026` into master yet.**
+
+The branch has moved in the correct direction, but its current test labels overstate what is proven. The most important cleanup is to make each test name match its actual evidence level.
+
+The next commit should be something like:
+
+```text
+fix: make Letta runtime real and evidence tests honest
+
+- run runtime-letta as real Node service
+- pin/fix Agent SDK API usage
+- add real custom Moltwork tools
+- remove learned behavior from baseline worker
+- make LettaServiceAdapter canonical runtime
+- remove legacy Letta adapter from default registry
+- add live Letta test marker
+- remove random learning validation
+- stop treating gate ALLOW as external WON
+- split simulated TEE from real TEE proof
+- remove hardcoded ETHOnline proof matrix
+```
+
+Once that lands, run exactly one target:
+
+```text
+REAL LETTA
+→ REAL WORKERKIT RUN
+→ REAL LAB REUSE
+```
+
+Then:
+
+```text
+REAL DSTACK
+→ REAL LEASE
+→ REAL ERC-8004 / ENS
+```
+
+That is the shortest path from the current repo to a credible ETHOnline project.
+
+The underlying architecture is already sufficiently good. What matters now is that **every green checkmark means a judge could independently observe the claimed thing actually happening.**
+
+[1]: https://ethglobal.com/rules?utm_source=chatgpt.com "ETHGlobal | Code of Conduct"
+[2]: https://ethglobal.com/events/ethonline2026/prizes?utm_source=chatgpt.com "ETHGlobal"
+[3]: https://eips.ethereum.org/EIPS/eip-8004?utm_source=chatgpt.com "ERC-8004: Trustless Agents"
+[4]: https://ethglobal.com/events/ethonline2026/prizes/ens?utm_source=chatgpt.com "ETHGlobal"

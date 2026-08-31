@@ -1,0 +1,809 @@
+This is where the pieces start reinforcing each other rather than looking like separate projects.
+
+/livellm becomes much more valuable inside Moltwork than as merely a model-price website. Its existing /v1/market direction already exposes pricing, capabilities, promotions and free tiers in a machine-readable payload specifically suitable for an agent to consume before routing.
+
+And I would sharpen the thesis slightly:
+
+    Moltwork should treat inference as a portfolio of perishable compute resources, not as “pick one model and use it.”
+
+Cloudflare is a perfect example. As of August 28, 2026, Workers AI gives 10,000 free Neurons every day, resetting at 00:00 UTC. Several useful models remain on the free plan, although some frontier/resource-intensive models now require paid billing.
+
+Those 10,000 neurons are effectively an expiring asset:
+
+23:59 UTC
+unused free neurons
+      ↓
+worth $0 tomorrow
+
+That is exactly the sort of economic resource Moltwork ought to manage.
+The architecture I would freeze
+
+                         ORACLE
+                  what work is valuable?
+                          │
+                          ▼
+                      MOLTWORK
+                    WorkOrder / Lab
+                          │
+                          ▼
+                  ┌──────────────┐
+                  │ COMPUTE      │
+                  │ BROKER       │
+                  └──────┬───────┘
+                         │
+        ┌────────────────┼─────────────────┐
+        ▼                ▼                 ▼
+     LiveLLM           QDW              HYDRA
+ market/pricing    resource/router    empirical truth
+ free tiers        capabilities      about our runs
+ promotions        availability      quality/cost
+        │                │                 │
+        └────────────────┼─────────────────┘
+                         ▼
+                   Route Decision
+                         │
+             ┌───────────┼────────────┐
+             ▼           ▼            ▼
+          FREE        CHEAP        STRONG
+        Cloudflare     MiMo       frontier
+        credits        etc.        models
+             │           │            │
+             └───────────┼────────────┘
+                         ▼
+                   WorkerKit events
+                         │
+                         ▼
+                      HYDRA
+              learns what actually worked
+
+The important separation is:
+
+LiveLLM:
+"What compute is available right now,
+and what does it nominally cost?"
+
+QDW:
+"What resources/capabilities can I route to?"
+
+RouteLLM:
+"Does this prompt appear to need the
+strong model rather than the weak model?"
+
+Hydra:
+"What has ACTUALLY worked for this worker
+on this type of task?"
+
+Moltwork:
+"Given all of those facts, what should I buy/use?"
+
+That last question is genuinely your IP.
+RouteLLM is useful, but it is not the economic router
+
+I checked current RouteLLM.
+
+Its core abstraction is beautifully simple: a router estimates a strong_win_rate between 0 and 1, and if that exceeds a threshold it sends the prompt to the strong model; otherwise it chooses the weak one. It supports learned/router strategies including matrix factorization, causal LLM classifiers, BERT and similarity-weighted ranking.
+
+That's useful as one signal:
+
+prompt
+  ↓
+RouteLLM
+  ↓
+P(strong beats weak) = 0.17
+
+But RouteLLM doesn't know:
+
+Cloudflare credits expire tonight
+
+MiMo has $3 free credit left
+
+provider A is currently 429ing
+
+researcher-v17 gets 92% on this TaskFamily
+with GLM-4.7-flash
+
+strong model only improves expected score by 2%
+
+job itself is worth $0.20
+
+Moltwork does.
+
+So don't use:
+
+Moltwork → RouteLLM → model
+
+Use:
+
+             RouteLLM difficulty
+                    │
+LiveLLM ────────────┼─────── Hydra evidence
+                    │
+QDW resources ──────┼─────── credit inventory
+                    │
+                    ▼
+              ComputeBroker
+                    │
+                    ▼
+                  model
+
+QDW fits this surprisingly well
+
+Your qdw-forge already defines a CapabilityAsset as a routable machine-readable capability provider and maintains an empirical AssetProfile with success and cost history from certified invocations.
+
+That's nearly the right representation for an inference provider:
+
+CapabilityAsset:
+  id: cloudflare/glm-4.7-flash
+  kind: llm
+
+  capabilities:
+    - extraction
+    - summarization
+    - coding
+    - classification
+
+  cost:
+    source: livellm
+
+  inventory:
+    quota_bucket: cloudflare-daily
+
+  profile:
+    source: hydra
+
+And qdw-sandbox already describes its StackOracle as allocating resources across LLM, tool, human and data providers.
+
+That is exactly where this generalizes beautifully:
+
+Need something done
+        │
+        ▼
+Is cheapest capable resource:
+
+LLM?
+tool?
+existing asset?
+human?
+cached result?
+API?
+local CPU?
+free cloud compute?
+
+Eventually the economic optimizer isn't a “model router.”
+
+It's a resource router.
+
+Also, QDW's own operating rules already insist that missing economic data must not silently become zero and that work is only proven through recorded verification. That is extremely compatible with WorkerKit.
+
+I didn't find a literal indexed HotRouter symbol in the current qdw tree during this pass, so I wouldn't anchor an API contract to that exact name yet. But the QDW/Forge/Sandbox resource abstractions are clearly the right layer to reuse.
+The subtle point: don't simply “use free compute first”
+
+Instead:
+
+    Maximize useful value extracted from expiring free compute.
+
+Free compute still has an opportunity cost.
+
+Suppose you have:
+
+10,000 Cloudflare neurons left
+
+Task A:
+classification
+almost any model works
+
+Task B:
+medium-quality code review
+free GLM happens to be quite good
+
+Task C:
+difficult architectural reasoning
+strong model vastly better
+
+If you burn the whole free quota on A at noon, you may have to pay for B at night.
+
+So assign every quota bucket a shadow price.
+
+Conceptually:
+
+effective_cost(model, task)
+ =
+money_cost
++
+quota_shadow_cost
++
+latency_cost
++
+expected_retry_cost
++
+failure_risk
+
+For a free model:
+
+money_cost = 0
+
+but:
+
+quota_shadow_cost != 0
+
+while that quota is scarce.
+
+Then something interesting happens near reset:
+
+10 hours until reset
+quota remaining: 90%
+      ↓
+shadow price falls
+
+30 minutes until reset
+quota remaining: 70%
+      ↓
+shadow price ≈ 0
+
+At that point the Lab should become aggressive:
+
+unused free compute?
+        ↓
+pull useful jobs from backlog
+        ↓
+run evaluations
+re-grade trajectories
+generate candidates
+test weak-model routing
+summarize research
+build indexes
+generate synthetic exercises
+mine failure patterns
+
+Not because “we need to use the quota,” but because the marginal cost has effectively gone to zero.
+
+That is a really interesting scheduler.
+This also solves the Letta-loop problem beautifully
+
+This is where your previous discovery gets much more important.
+
+Don't do this:
+
+Letta strong model
+  ↓
+think
+  ↓
+call free-model tool
+  ↓
+strong Letta model wakes up again
+  ↓
+call another free model
+  ↓
+strong Letta wakes up again
+  ↓
+...
+
+You've just reintroduced 20 expensive orchestration calls.
+
+Instead:
+
+              LETTA WORKER
+          persistent researcher-v7
+                    │
+                    │
+             ONE STRONG CALL
+                    ▼
+               TaskGraph
+                    │
+        ┌───────────┼────────────┐
+        ▼           ▼            ▼
+     extract      classify     brainstorm
+      docs          rules       20 ideas
+        │           │            │
+     FREE CF     FREE CF      FREE CF × 8
+        │           │            │
+        └───────────┼────────────┘
+                    ▼
+              deterministic
+              evaluation
+                    │
+              only if needed
+                    ▼
+              STRONG CALL #2
+              synthesize /
+                decide
+
+Now you might have:
+
+2 × expensive intelligent calls
+12 × free grunt calls
+
+instead of:
+
+20 × expensive Letta steps
+
+That is the worker architecture I would pursue.
+
+Letta is the persistent foreman.
+
+Moltwork is the factory.
+
+The cheap/free models are workers inside the factory.
+Strong planner + cheap executors is probably the default
+
+Imagine an ETHOnline Campaign.
+
+Strong persistent Letta worker
+        │
+        ▼
+"What is the actual plan?"
+        │
+        ▼
+TaskGraph
+
+Then:
+
+Sponsor docs → free extraction model
+Rules → free extraction model
+Requirement matrix → free model
+Repo inventory → deterministic Python
+20 architecture candidates → 10 parallel free calls
+Novelty clustering → embeddings / cheap model
+Basic feasibility → free/cheap judges
+Tests → cheap coding model
+Boilerplate → cheap/free coding model
+
+                   ↓
+
+hard architectural tradeoff
+                   ↓
+               strong model
+
+                   ↓
+
+implementation workers
+cheap/free until tests fail repeatedly
+
+                   ↓
+
+final submission review
+                   ↓
+               strong model
+
+This is much closer to how an economically rational organization would operate.
+
+You don't pay your best expert to copy text into spreadsheets.
+Add ComputePlan to the WorkOrder
+
+I wouldn't let the agent make every routing decision dynamically.
+
+Have the first planner call produce something like:
+
+compute_plan:
+
+  planner:
+    quality_class: strong
+    max_calls: 1
+
+  nodes:
+
+    - id: extract_requirements
+      task_family: research.extract
+      quality_floor: 0.75
+      preferred_cost_class: free
+      parallelism: 1
+
+    - id: generate_candidates
+      task_family: research.ideation
+      quality_floor: 0.70
+      preferred_cost_class: free
+      parallelism: 8
+
+    - id: rank_candidates
+      task_family: evaluation.ranking
+      quality_floor: 0.85
+      preferred_cost_class: cheap
+
+    - id: architecture_decision
+      task_family: reasoning.architecture
+      quality_floor: 0.95
+      preferred_cost_class: strong
+
+  final_review:
+    quality_floor: 0.95
+    escalation:
+      - free
+      - cheap
+      - strong
+
+Then the ComputeBroker resolves those symbolic requirements against today's market.
+
+The plan says:
+
+"free-quality coding model"
+
+not:
+
+"Cloudflare GLM 4.7 Flash"
+
+because that second fact may be obsolete tomorrow.
+
+LiveLLM resolves it live.
+LiveLLM shouldn't actually be called by the LLM
+
+One important optimization to your $0.01 at the start idea:
+
+Don't make:
+
+LLM
+ ↓
+tool call to LiveLLM
+ ↓
+LLM interprets response
+
+That itself costs inference.
+
+Moltwork should fetch it deterministically:
+
+Campaign starts
+       ↓
+GET /v1/market
+       ↓
+MarketSnapshot
+       ↓
+cache for 5–30 min
+       ↓
+hash snapshot
+       ↓
+all routing decisions reference hash
+
+Something like:
+
+{
+  "snapshot_id": "market_20260831_072300",
+  "hash": "sha256:...",
+  "valid_until": "...",
+
+  "providers": {...},
+  "free_tiers": {...},
+  "promotions": {...}
+}
+
+Then every receipt can say:
+
+model routing decision based on:
+LiveLLM snapshot sha256:91fd...
+
+That gives you reproducibility.
+
+If /v1/market costs $0.01, you amortize that across an entire run or Lab interval rather than spending another cent before every 0.001-cent model call.
+You need a second object LiveLLM cannot provide
+
+LiveLLM knows the global market.
+
+It cannot know your wallet.
+
+Add:
+
+ComputeInventory:
+
+  cloudflare-main:
+    provider: cloudflare
+
+    quota:
+      unit: neurons
+      daily_limit: 10000
+      remaining: 7312
+      reset_at: 2026-09-01T00:00:00Z
+
+    billing:
+      paid_enabled: false
+
+  opencode-go:
+    provider: opencode-go
+
+    credits:
+      remaining_usd: 4.72
+
+  some-promo:
+    provider: ...
+    credits:
+      remaining_usd: 18.21
+      expires_at: ...
+
+Cloudflare currently resets that 10,000-neuron free allocation daily at 00:00 UTC.
+
+Now the Lab actually has a treasury.
+
+I'd almost call this:
+
+InferenceTreasury
+
+rather than BudgetManager.
+
+Because you're managing:
+
+cash
+credits
+daily quotas
+promotional credits
+rate limits
+local compute
+prepaid balances
+
+Hydra then creates the real moat
+
+Public benchmarks tell you:
+
+Model X is generally good at coding.
+
+Moltwork eventually knows:
+
+researcher-v12
++
+process-hackathon-v7
++
+technical.ideation
++
+GLM-4.7-flash
++
+LabBrief enabled
+
+n = 83
+quality = .84
+cost = $0
+median latency = 1.3s
+escalation rate = 12%
+
+versus:
+
+researcher-v12
++
+same exact task family
++
+MiMo-v2.5
+
+n = 107
+quality = .89
+cost = .0027/task
+latency = 4.1s
+
+versus:
+
+strong-model
+
+quality = .93
+cost = .041/task
+
+Now the decision isn't ideological.
+
+The system can calculate something like:
+
+Task value = $0.15
+
+free:
+P(success) .84
+EV ≈ .126
+
+cheap:
+P(success) .89
+EV ≈ .131
+
+strong:
+P(success) .93
+EV ≈ .099
+
+Cheap wins.
+
+For a $10,000 hackathon architecture decision, strong wins immediately.
+
+That is why tying the Oracle's economic value of work to LiveLLM's economic cost of cognition is powerful.
+WorkerKit should witness every routing decision
+
+This gives you incredibly useful experimental data.
+
+I would add events roughly like:
+
+compute.market.snapshot
+
+compute.inventory.snapshot
+
+compute.route.requested
+
+compute.route.selected
+  task_family
+  candidates
+  selected_provider
+  selected_model
+  reason
+  predicted_success
+  estimated_money_cost
+  quota_shadow_cost
+  route_llm_score
+
+compute.call.started
+
+compute.call.completed
+  input_tokens
+  output_tokens
+  latency
+  actual_cost
+  free_quota_consumed
+  result_hash
+
+compute.evaluated
+  score
+  evaluator
+
+compute.escalated
+  from_model
+  to_model
+  reason
+
+Hydra projects those.
+
+Then you can ask genuinely valuable questions:
+
+What percentage of paid calls could have been free?
+
+Which task families waste strong-model tokens?
+
+Which free providers actually save money after retries?
+
+When should RouteLLM's threshold be 0.3 vs 0.8?
+
+Which workers get more benefit from stronger models?
+
+Does a strong planner + weak executor beat medium-everywhere?
+
+How much economic value did our free-credit scheduler generate this month?
+
+That's excellent Lab analytics.
+Route using an escalation ladder
+
+I think this should be one of the core primitives.
+
+             task
+              │
+              ▼
+       cheapest capable
+              │
+           FREE
+              │
+        evaluator pass?
+         /          \
+       yes           no
+        │             ▼
+       done         CHEAP
+                      │
+                evaluator pass?
+                 /          \
+               yes           no
+                │             ▼
+               done         STRONG
+                              │
+                            result
+
+That gives the router a simple invariant:
+
+    Use the cheapest resource likely to clear the required quality threshold, then escalate based on evidence.
+
+Not:
+
+    Always choose the best model.
+
+This can slash costs.
+And free compute becomes useful even when there is no paid work
+
+This is perhaps the coolest part for the Lab.
+
+Every day you have a queue:
+
+ECONOMIC QUEUE
+real opportunities
+
+RESEARCH QUEUE
+router experiments
+
+EVAL QUEUE
+held-out worker tests
+
+MOLTING QUEUE
+memory/skill candidates
+
+MAINTENANCE QUEUE
+re-grade trajectories
+cluster failures
+refresh benchmarks
+build indexes
+
+The scheduler asks:
+
+free credits near expiry?
+
+If yes:
+
+drain highest-EV eligible background queue
+
+So free inference isn't wasted generating nonsense.
+
+It is constantly converting expiring provider subsidies into permanent Lab capital:
+
+free compute
+    ↓
+evaluations
+    ↓
+empirical data
+    ↓
+better routing
+    ↓
+skills
+    ↓
+better workers
+    ↓
+future money
+
+That is a very Moltwork idea.
+I think the eventual stack is this
+
+                   MOLTWORK LAB
+                        │
+                Economic Scheduler
+                        │
+           ┌────────────┴─────────────┐
+           │                          │
+      Work allocator             Compute allocator
+           │                          │
+        ORACLE                     LiveLLM
+   what is worth doing?        what does compute cost?
+           │                          │
+           │                       QDW
+           │                 what resources exist?
+           │                          │
+           │                     RouteLLM
+           │                how hard is this prompt?
+           │                          │
+           └────────────┬─────────────┘
+                        │
+                      HYDRA
+              what worked historically?
+                        │
+                        ▼
+                 ComputeBroker
+                        │
+             ┌──────────┼──────────┐
+             ▼          ▼          ▼
+            free       cheap      strong
+             │          │          │
+             └──────────┼──────────┘
+                        ▼
+                    WorkerKit
+                        │
+                        ▼
+                       Lab
+
+And the equation I would actually design around is:
+
+choose resource r maximizing:
+
+P(success | task, worker, process, r)
+× value(task)
+
+− money_cost(r)
+
+− shadow_cost(free_quota_r)
+
+− latency_penalty(r)
+
+− expected_retry_cost(r)
+
+subject to:
+
+context capacity
+tool support
+privacy requirements
+deadline
+quality floor
+remaining quota
+rate limits
+
+That becomes the economic brain of Moltwork.
+
+The most important implementation decision from here is: do not put this routing logic inside the Letta prompt. Letta should learn strategies and create plans, but the ComputeBroker should be deterministic, inspectable and recorded by WorkerKit. That lets Hydra learn whether the decisions were correct and lets you replace RouteLLM/QDW routing algorithms experimentally without changing the worker itself.
+
+This also makes /livellm a surprisingly central primitive: Oracle tells the agent what its work is worth, LiveLLM tells it what its thinking costs, Hydra tells it how good different kinds of thinking have historically been, and the Lab learns how to maximize the difference.
