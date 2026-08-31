@@ -135,3 +135,102 @@ Model: mimo-v2.5 (ALWAYS)
 Backend: local
 Fallback: Groq openai/gpt-oss-120b (testing only)
 API keys: in `.env` file
+
+## Fast Iteration Rules (CRITICAL — VIOLATION = WASTED TIME)
+
+1. **NEVER sleep or wait** — `sleep` is FORBIDDEN. If something takes time, do other work while it runs. Check logs with `tail`, not `sleep`.
+2. **Always use nohup** — `setsid nohup CMD > /tmp/log 2>&1 &` then move on immediately
+3. **Run tests while building** — start test in background, continue coding in same message
+4. **Simultaneous processes** — build + test + integrate in parallel, never sequential
+5. **Fail fast** — if something fails 3 times, stop and try a different approach
+6. **Check results by reading logs** — `tail /tmp/log` not `sleep N && tail`
+7. **Push to git early and often** — commit working state before risky changes
+8. **Import first, build second** — use existing frameworks (Harbor, GEPA, OpenEvolve, Trace2Skill) before writing custom code
+
+### The ritual (before EVERY long job):
+```
+1. Background it:  setsid nohup CMD > /tmp/log 2>&1 &
+2. Note the PID:   echo "PID $!"
+3. Move on:        do real work in same response
+4. Check later:    tail /tmp/log   (NOT sleep + tail)
+```
+
+### What NOT to do:
+```
+BAD:  sleep 5 && tail /tmp/log
+BAD:  sleep 300  (waiting for background job)
+BAD:  python3 script.py  (foreground blocking)
+GOOD: setsid nohup python3 script.py > /tmp/out.log 2>&1 & PID=$!; echo "PID $PID"; # now do other work
+```
+
+## Harbor Integration
+
+- API key: HARBOR_API_KEY in env
+- Agent: opencode with OPENCODE_API_KEY
+- Binary: /root/.opencode/bin/opencode
+- Run: `harbor exec -p TASK -a opencode -m opencode-go/mimo-v2.5 --disable-verification`
+
+## Production Milestone (the only thing that matters)
+
+> **Complete three real submission campaigns with one persistent Letta worker, where every run is reproducible through Harbor/Git, every evaluation can be regraded later, and Campaign 3 can query structured evidence from Campaigns 1-2.**
+
+### Immediate coding order (DO THIS NOW)
+
+1. ~~Archive `full_loop.py` as non-production reference~~ DONE
+2. ~~Delete/replace the custom RewardKit imitation and regex evaluator~~ DONE (archived flywheel evaluator)
+3. Get `runtime-letta` running reliably as one persistent real worker. Fresh session per Campaign. Freeze cognition during active Campaigns.
+4. Create private `lab-campaigns` and `lab-worlds` Git repos.
+5. Make `mw campaign create/run/grade/regrade/outcome` work explicitly.
+6. Use Harbor trial directories as execution records rather than duplicating them.
+7. Wire actual HydraDB over Bolt/HTTP; demote SQLite "Hydra" to optional local projection.
+8. Build one real `technical-submission-v0` Harbor World.
+9. Run one actual live Campaign end-to-end.
+10. Regrade it with Assessor v1.
+11. Record the external outcome.
+12. Only then create the first memory/process/Skill candidate.
+
+### What NOT to build yet
+
+- OpenEvolve orchestration
+- Agent Lightning
+- A-MEM
+- Custom memory algorithms
+- Custom benchmark runtime
+- GEPA (wait for 3-5 real campaigns first)
+- Marketplace UI
+- Tokenomics
+- TEE (use Harbor separate verifier first)
+
+### The production stack
+
+```
+ORACLE → economic demand
+    ↓
+MOLTWORK → Campaign + budget + experiment policy
+    ↓
+┌───────────┬───────────┐
+│ LETTA     │ HARBOR    │
+│ persistent│ world +   │
+│ worker    │ execution │
+└───────────┴───────────┘
+    ↓
+WorkerRun = Harbor Trial + Letta WorkerVersion + Campaign ID + WorkerKit Receipt
+    ↓
+HYDRADB → derived evidence graph
+    ↓
+CGE → "what should we try next?"
+```
+
+### Learning hierarchy (enforce ruthlessly)
+
+```
+Level 0: NO learning — just finish real work
+Level 1: artifact optimization within a Campaign
+Level 2: process reuse between Campaigns
+Level 3: Letta memory/Skill evolution (only after evidence)
+Level 4: World/assessor evolution via regrade + outcomes
+Level 5: optimizer experimentation (GEPA/OpenEvolve)
+Level 6: actual policy/model training
+```
+
+**We need Levels 0-2 right now. Everything above waits.**

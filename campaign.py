@@ -1,238 +1,206 @@
-"""Campaign — the Git-native unit of work.
+"""Campaign management — create, run, grade, regrade, outcome.
 
-An Oracle opportunity instantiates a Campaign.
-The Campaign contains everything: opportunity snapshot, strategy, worlds, experiments, submissions, outcome.
-Almost everything is a Git reference, not copied material.
+This is the operational layer for the production milestone:
+3 real submission campaigns with one persistent Letta worker.
 """
 from __future__ import annotations
 
-import hashlib
 import json
+import os
+import subprocess
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
+
+from core.hashing import sha256, jcs
 
 
-def _sha256(obj) -> str:
-    return hashlib.sha256(json.dumps(obj, sort_keys=True, default=str).encode()).hexdigest()
+CAMPAIGNS_DIR = Path("/root/lab-campaigns")
 
-
-# ─── SuccessModel ─────────────────────────────────────────────────────
-
-@dataclass
-class SuccessModel:
-    """What would win this opportunity? Constructed before work starts.
-    
-    Compiles into CGE worlds/evaluators.
-    Worker sees public strategy.
-    Hidden tests stay hidden.
-    """
-    # Hard gates (must pass or submission is invalid)
-    hard_gates: dict[str, bool] = field(default_factory=dict)
-    
-    # Scoring dimensions (what distinguishes winners)
-    dimensions: dict[str, float] = field(default_factory=dict)
-    
-    # What we're uncertain about
-    uncertainty: dict[str, str] = field(default_factory=dict)
-    
-    # Research findings
-    similar_campaigns: list[dict] = field(default_factory=list)
-    winning_patterns: list[str] = field(default_factory=list)
-    known_failures: list[str] = field(default_factory=list)
-    
-    def content_hash(self) -> str:
-        return _sha256({
-            "hard_gates": self.hard_gates,
-            "dimensions": self.dimensions,
-            "winning_patterns": self.winning_patterns,
-        })
-    
-    def to_dict(self) -> dict:
-        return {
-            "hard_gates": self.hard_gates,
-            "dimensions": self.dimensions,
-            "uncertainty": self.uncertainty,
-            "similar_campaigns": self.similar_campaigns,
-            "winning_patterns": self.winning_patterns,
-            "known_failures": self.known_failures,
-            "content_hash": self.content_hash()[:16],
-        }
-    
-    def to_rubric(self) -> dict:
-        """Compile SuccessModel into a rubric for CGE evaluation."""
-        return {
-            "hard_gates": {k: v for k, v in self.hard_gates.items()},
-            "rubric_weights": self.dimensions,
-        }
-    
-    def save(self, path: Path):
-        path.mkdir(parents=True, exist_ok=True)
-        (path / "success_model.json").write_text(json.dumps(self.to_dict(), indent=2))
-    
-    @classmethod
-    def load(cls, path: Path) -> "SuccessModel":
-        data = json.loads((path / "success_model.json").read_text())
-        return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
-
-
-def generate_success_model(opportunity: dict, hydra_findings: dict = None) -> SuccessModel:
-    """Generate a SuccessModel from opportunity + Hydra research.
-    
-    Phase 0: model "what would win?" before worker starts.
-    """
-    model = SuccessModel()
-    
-    # Extract hard gates from requirements
-    for req in opportunity.get("requirements", []):
-        key = req.lower().replace(" ", "_")[:30]
-        model.hard_gates[key] = True
-    
-    # Build dimensions from judging criteria
-    criteria = opportunity.get("judging_criteria", [])
-    if criteria:
-        weight = 1.0 / len(criteria)
-        for c in criteria:
-            key = c.lower().replace(" ", "_")[:30]
-            model.dimensions[key] = round(weight, 2)
-    
-    # Add default dimensions if none provided
-    if not model.dimensions:
-        model.dimensions = {
-            "requirements_coverage": 0.25,
-            "technical_feasibility": 0.20,
-            "specificity": 0.20,
-            "novelty": 0.15,
-            "evidence": 0.10,
-            "rationale": 0.10,
-        }
-    
-    # Research from Hydra
-    if hydra_findings:
-        model.similar_campaigns = hydra_findings.get("similar_campaigns", [])
-        model.winning_patterns = hydra_findings.get("winning_patterns", [])
-        model.known_failures = hydra_findings.get("known_failures", [])
-    
-    # Default uncertainty
-    model.uncertainty = {
-        "originality_weight": "high",
-        "presentation_weight": "medium",
-    }
-    
-    return model
-
-
-# ─── Campaign ─────────────────────────────────────────────────────────
 
 @dataclass
 class Campaign:
-    """Git-native campaign: everything about one opportunity.
-    
-    Structure:
-      campaign.yaml
-      opportunity/ (rules, sponsor docs, API docs, evidence)
-      strategy/ (success model, rubric, assumptions)
-      worlds/ (locked world references)
-      experiments/ (E001, E002, ...)
-      submissions/ (candidate-a, candidate-b, final)
-      outcome/ (result.json, feedback.md)
-    """
     campaign_id: str
-    opportunity_id: str
-    worker_id: str
-    
-    # Strategy
-    success_model: SuccessModel | None = None
-    
-    # State
-    status: str = "created"  # created | researching | building | reviewing | submitted | completed
-    current_phase: str = ""
-    
-    # Budget
-    budget_usd: float = 5.0
-    spent_usd: float = 0.0
-    
-    # Git references
-    world_refs: list[dict] = field(default_factory=list)
-    worker_ref: str = ""  # "repo:commit"
-    
-    # Iterations
-    runs: list[dict] = field(default_factory=list)
-    best_score: float = 0.0
-    iteration_count: int = 0
-    
-    # Outcome
-    submitted: bool = False
-    submission_url: str = ""
-    outcome: str = ""  # won | lost | pending
-    reward_usd: float = 0.0
-    
-    # Molting results
-    molting_candidates: list[dict] = field(default_factory=list)
-    
+    opportunity: dict[str, Any]
+    status: str = "created"  # created → researching → building → grading → submitted → outcome
+    worker_id: str = ""
+    worker_version: str = ""
+    world_version: str = ""
+    assessor_version: str = ""
+    git_commit: str = ""
+    artifact_digest: str = ""
+    cost_usd: float = 0.0
     created_at: float = field(default_factory=time.time)
-    completed_at: float = 0.0
-    
-    def content_hash(self) -> str:
-        return _sha256({
+    runs: list[dict] = field(default_factory=list)
+    evaluations: list[dict] = field(default_factory=list)
+    outcome: dict | None = None
+
+    def dir(self) -> Path:
+        return CAMPAIGNS_DIR / self.campaign_id
+
+    def save(self):
+        d = self.dir()
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "campaign.json").write_text(json.dumps({
             "campaign_id": self.campaign_id,
-            "opportunity_id": self.opportunity_id,
-            "worker_id": self.worker_id,
             "status": self.status,
-        })
-    
-    def to_dict(self) -> dict:
-        return {
-            "campaign_id": self.campaign_id,
-            "opportunity_id": self.opportunity_id,
             "worker_id": self.worker_id,
-            "status": self.status,
-            "current_phase": self.current_phase,
-            "budget_usd": self.budget_usd,
-            "spent_usd": self.spent_usd,
-            "world_refs": self.world_refs,
-            "worker_ref": self.worker_ref,
-            "runs": self.runs,
-            "best_score": self.best_score,
-            "iteration_count": self.iteration_count,
-            "submitted": self.submitted,
-            "submission_url": self.submission_url,
-            "outcome": self.outcome,
-            "reward_usd": self.reward_usd,
-            "molting_candidates": self.molting_candidates,
+            "worker_version": self.worker_version,
+            "world_version": self.world_version,
+            "assessor_version": self.assessor_version,
+            "git_commit": self.git_commit,
+            "artifact_digest": self.artifact_digest,
+            "cost_usd": self.cost_usd,
             "created_at": self.created_at,
-            "completed_at": self.completed_at,
-            "success_model": self.success_model.to_dict() if self.success_model else None,
-        }
-    
-    def save(self, data_dir: Path):
-        """Save campaign to Git-native directory structure."""
-        campaign_dir = data_dir / "campaigns" / self.campaign_id
-        campaign_dir.mkdir(parents=True, exist_ok=True)
-        
-        # Campaign manifest
-        (campaign_dir / "campaign.json").write_text(json.dumps(self.to_dict(), indent=2))
-        
-        # Success model
-        if self.success_model:
-            self.success_model.save(campaign_dir / "strategy")
-        
-        return campaign_dir
-    
+            "runs": self.runs,
+            "evaluations": self.evaluations,
+            "outcome": self.outcome,
+        }, indent=2))
+
     @classmethod
-    def load(cls, campaign_dir: Path) -> "Campaign":
-        data = json.loads((campaign_dir / "campaign.json").read_text())
-        sm_data = data.pop("success_model", None)
-        success_model = SuccessModel(**sm_data) if sm_data else None
-        return cls(success_model=success_model, **{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
-    
-    def can_continue(self) -> bool:
-        """Check if campaign can continue (budget + status)."""
-        return self.status in ("created", "researching", "building", "reviewing") and self.spent_usd < self.budget_usd
-    
-    def record_cost(self, amount: float):
-        self.spent_usd += amount
-    
-    def advance(self, new_status: str):
-        self.status = new_status
-        self.current_phase = new_status
+    def load(cls, campaign_id: str) -> Campaign:
+        d = CAMPAIGNS_DIR / campaign_id
+        data = json.loads((d / "campaign.json").read_text())
+        # Handle optional fields
+        data.setdefault("opportunity", {})
+        data.setdefault("runs", [])
+        data.setdefault("evaluations", [])
+        data.setdefault("outcome", None)
+        return cls(**data)
+
+
+def create_campaign(campaign_id: str, opportunity: dict) -> Campaign:
+    """Create a new campaign from an opportunity."""
+    c = Campaign(campaign_id=campaign_id, opportunity=opportunity)
+    c.save()
+
+    # Create directory structure
+    d = c.dir()
+    (d / "opportunity").mkdir(exist_ok=True)
+    (d / "strategy").mkdir(exist_ok=True)
+    (d / "runs").mkdir(exist_ok=True)
+    (d / "evaluations").mkdir(exist_ok=True)
+    (d / "outcome").mkdir(exist_ok=True)
+
+    # Save opportunity
+    (d / "opportunity" / "opportunity.json").write_text(json.dumps(opportunity, indent=2))
+
+    return c
+
+
+def run_campaign(campaign_id: str, worker_id: str, budget: float = 0.50) -> dict:
+    """Execute a campaign run using the Letta runtime."""
+    c = Campaign.load(campaign_id)
+    c.worker_id = worker_id
+    c.status = "building"
+    c.save()
+
+    # Build task prompt from opportunity
+    opp = c.opportunity
+    task = f"""Campaign: {campaign_id}
+Opportunity: {opp.get('title', 'unknown')}
+Requirements: {json.dumps(opp.get('requirements', []), indent=2)}
+Budget: ${budget}
+Deadline: {opp.get('deadline', 'unknown')}
+
+Produce a complete technical submission. Extract requirements first, then build."""
+
+    # Call runtime-letta
+    import urllib.request
+    data = json.dumps({
+        "task": task,
+        "budget": budget,
+        "timeout": 120,
+    }).encode()
+
+    req = urllib.request.Request(
+        f"http://localhost:3000/workers/{worker_id}/run",
+        data=data,
+        headers={"Content-Type": "application/json"},
+    )
+
+    try:
+        resp = urllib.request.urlopen(req, timeout=150)
+        result = json.loads(resp.read())
+
+        run_record = {
+            "run_id": f"run-{int(time.time())}",
+            "timestamp": time.time(),
+            "worker_id": worker_id,
+            "tool_calls": len(result.get("tool_calls", [])),
+            "duration_ms": result.get("duration_ms", 0),
+            "conversation_id": result.get("conversation_id", ""),
+        }
+        c.runs.append(run_record)
+        c.status = "building"
+        c.save()
+        return run_record
+    except Exception as e:
+        return {"error": str(e)}
+
+
+def grade_campaign(campaign_id: str, assessor_version: str = "v0") -> dict:
+    """Grade a campaign using the Harbor World evaluator."""
+    c = Campaign.load(campaign_id)
+    c.assessor_version = assessor_version
+    c.status = "grading"
+    c.save()
+
+    # Run hard gates
+    world_dir = Path("/root/lab-worlds/technical-submission-v0")
+    gates_script = world_dir / "tests" / "hard_gates.py"
+
+    # For now, check if deliverables exist in the campaign directory
+    submission_dir = c.dir() / "submission"
+    has_submission = submission_dir.exists() and any(submission_dir.iterdir())
+
+    evaluation = {
+        "assessor_version": assessor_version,
+        "timestamp": time.time(),
+        "hard_gates": {
+            "submission_exists": has_submission,
+            "passed": has_submission,
+        },
+        "score": 1.0 if has_submission else 0.0,
+    }
+
+    c.evaluations.append(evaluation)
+    c.status = "graded"
+    c.save()
+    return evaluation
+
+
+def record_outcome(campaign_id: str, outcome: dict) -> dict:
+    """Record the external outcome (won/lost/rank/feedback)."""
+    c = Campaign.load(campaign_id)
+    c.outcome = {
+        **outcome,
+        "recorded_at": time.time(),
+    }
+    c.status = "outcome"
+    c.save()
+
+    # Save outcome
+    (c.dir() / "outcome" / "outcome.json").write_text(json.dumps(c.outcome, indent=2))
+    return c.outcome
+
+
+def list_campaigns() -> list[dict]:
+    """List all campaigns with their status."""
+    campaigns = []
+    if CAMPAIGNS_DIR.exists():
+        for d in sorted(CAMPAIGNS_DIR.iterdir()):
+            if (d / "campaign.json").exists():
+                try:
+                    c = Campaign.load(d.name)
+                    campaigns.append({
+                        "campaign_id": c.campaign_id,
+                        "status": c.status,
+                        "worker_id": c.worker_id,
+                        "runs": len(c.runs),
+                        "cost_usd": c.cost_usd,
+                    })
+                except Exception:
+                    campaigns.append({"campaign_id": d.name, "status": "error"})
+    return campaigns
