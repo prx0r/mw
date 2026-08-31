@@ -54,9 +54,9 @@ function saveWorker(mapping: WorkerMapping): void {
   fs.writeFileSync(getWorkerPath(mapping.worker_id), JSON.stringify(mapping, null, 2));
 }
 
-function getClient(): LettaAgentClient {
-  return new LettaAgentClient({ backend: "local" });
-}
+// Singleton client — one App Server, not a new one per request
+const CLIENT = new LettaAgentClient({ backend: "local" });
+function getClient(): LettaAgentClient { return CLIENT; }
 
 // ─── Health ───────────────────────────────────────────────────────────
 
@@ -179,38 +179,59 @@ app.post("/workers/:id/run", async (c) => {
 
   const client = getClient();
   const t0 = Date.now();
+  const cwd = body.workspace || "/tmp/moltwork-run";
+  fs.mkdirSync(cwd, { recursive: true });
+
+  let session: any;
+  let timeoutHandle: NodeJS.Timeout | undefined;
+  let hardCloseHandle: NodeJS.Timeout | undefined;
 
   try {
-    // Create a NEW session for this run (don't reuse conversations)
-    const session = await client.createSession(mapping.letta_agent_id, {
-      cwd: body.workspace || "/tmp/moltwork-run",
+    // Create a NEW session for this run
+    session = await client.createSession(mapping.letta_agent_id, {
+      cwd,
       allowedTools: body.allowedTools || [
-        "Read", "LS", "Glob", "Grep",
-        "moltwork_lab_context", "moltwork_run_budget",
-        "moltwork_get_artifact_requirements",
-        "moltwork_request_review", "moltwork_record_candidate",
+        "Read", "Write", "Edit", "LS", "Glob", "Grep", "Bash",
       ],
-      permissionMode: "approve-all",
+      permissionMode: "unrestricted",
     });
 
-    // Send the task
-    await session.send(body.task);
+    console.log(`[${workerId}] SESSION session=${(session as any).sessionId} cwd=${cwd}`);
 
-    // Collect response with timeout
+    let timedOut = false;
+    const timeoutMs = (body.timeout || 120) * 1000;
+
+    // Real timeout: abort the session
+    timeoutHandle = setTimeout(() => {
+      timedOut = true;
+      console.warn(`[${workerId}] TURN TIMEOUT after ${timeoutMs}ms; aborting`);
+      void session.abort().catch(() => {});
+      hardCloseHandle = setTimeout(() => {
+        try { session.close(); } catch {}
+      }, 5000);
+    }, timeoutMs);
+
+    await session.send(body.task);
+    console.log(`[${workerId}] SEND COMPLETE`);
+
     let output = "";
     const toolCalls: Array<{ name: string; args: any }> = [];
     const toolResults: Array<{ name: string; result: any }> = [];
-    const streamTimeout = (body.timeout || 60) * 1000;
-    const deadline = Date.now() + streamTimeout;
+    let terminal: any = null;
 
     for await (const message of session.stream()) {
-      if (Date.now() > deadline) break;
+      console.log(`[${workerId}] EVENT type=${message.type}`);
+
       if (message.type === "assistant") {
         output += message.content || "";
       } else if (message.type === "tool_call") {
         toolCalls.push({ name: message.toolName || "", args: message.toolInput });
       } else if (message.type === "tool_result") {
         toolResults.push({ name: message.toolName || "", result: message.content });
+      } else if (message.type === "result") {
+        terminal = message;
+        console.log(`[${workerId}] RESULT success=${message.success}`);
+        break;
       }
     }
 
@@ -221,11 +242,13 @@ app.post("/workers/:id/run", async (c) => {
     mapping.run_count += 1;
     saveWorker(mapping);
 
-    // Get conversation ID for trajectory export
     const conversationId = (session as any).conversationId || "";
 
+    console.log(`[${workerId}] RUN OK duration=${duration}ms tools=${toolCalls.length} conversation=${conversationId}`);
+
     return c.json({
-      ok: true,
+      ok: !timedOut && (terminal?.success ?? true),
+      timed_out: timedOut,
       output_content: output,
       duration_ms: duration,
       agent_id: mapping.letta_agent_id,
@@ -233,12 +256,21 @@ app.post("/workers/:id/run", async (c) => {
       tool_calls: toolCalls,
       tool_results: toolResults,
       session_id: (session as any).sessionId || "",
+      terminal_result: terminal,
     });
   } catch (e) {
+    console.error(`[${workerId}] RUN ERROR: ${e}`);
     return c.json(
-      { ok: false, error: `execution error: ${e}`, error_code: "FAIL" },
+      { ok: false, error: `execution error: ${e}`, error_code: "FAIL", duration_ms: Date.now() - t0 },
       500
     );
+  } finally {
+    if (timeoutHandle) clearTimeout(timeoutHandle);
+    if (hardCloseHandle) clearTimeout(hardCloseHandle);
+    if (session) {
+      try { session.close(); } catch {}
+      console.log(`[${workerId}] SESSION CLOSED`);
+    }
   }
 });
 
