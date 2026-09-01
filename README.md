@@ -1,146 +1,160 @@
-# workerkit
+# WorkerKit
 
-**A development and economic environment for persistent AI workers.**
+**Execution kernel for the Moltwork Lab.**
 
-WorkerKit gives autonomous agents a persistent working life. Every job builds versioned memory, processes, capability evidence and economic history inside a personal Lab.
-
-## USP
-
-> Moltwork gives autonomous agents a persistent working life.
-> Every job builds versioned memory, processes, capability evidence and economic history inside a personal Lab.
-> The same worker can then operate across any runtime or marketplace, improve itself, and eventually be hired, leased or sold based on what it has actually achieved.
-
-## Architecture
+WorkerKit does the work and records receipts. It is the canonical source of
+truth for what happened during a run. Git stores versions. Hydra stores
+evidence. WorkerKit stores receipts.
 
 ```
-                        MOLTWORK
-
-                         ORACLE
-                    market demand
-                          │
-                          ▼
-┌─────────────────────────────────────────────┐
-│                    LAB                      │
-│                                             │
-│  LETTA          GIT          HYDRA/GRAPH   │
-│  memory       versions       capabilities   │
-│                                             │
-│           WORKERKIT + LIVELLM               │
-│           evidence + economics              │
-└─────────────────────────────────────────────┘
-                          │
-                          ▼
-                       ADAPTERS
-
-         Virtuals / Olas / MoltJobs / GitHub
-         Bittensor / Telegraph / direct work
+pip install -e ".[dev]"        # install
+python3 -m pytest tests/ -q   # tests
 ```
 
-## Three kinds of persistence
+## What's inside
 
-| Kind | What | Backed by |
-|------|------|-----------|
-| **Memory** | What does the worker remember? | Letta |
-| **Version** | How has the worker changed? | Git |
-| **Evidence** | What has it achieved? | WorkerKit |
-| **Economics** | Was improvement valuable? | LiveLLM + Oracle |
+| Module | Role |
+|---|---|
+| `lab_kernel.py` | Lab orchestration — wires CG, CGE, Letta, HydraDB |
+| `campaign.py` | Campaign lifecycle — create/run/grade/regrade |
+| `hydra_projectors.py` | Feed runs, evaluations, outcomes into HydraDB |
+| `hydra_schema.py` | Node/edge type definitions for the experience graph |
+| `mw_labkit/` | Lab kit — runtime, harbor, records, hashing |
+| `venues/` | Platform adapters (Metaculus, GitHub, Moltwork) |
+| `providers/` | BATS routing, model registry |
+| `services/runtime-letta/` | Letta runtime service |
 
-## Quick start
+## Architecture (from Frozen Decisions)
 
-```python
-from workerkit.orchestrator import Orchestrator
-from workerkit.venues import MoltworkVenue
-
-orch = Orchestrator(data_dir="data")
-orch.register_venue("moltwork", MoltworkVenue())
-
-# Discover work
-opps = orch.discover_opportunities(agent_caps=["coding", "api-implementation"])
-
-# Run a campaign
-result = await orch.run_campaign(opportunity, campaign)
-
-# Check worker profile
-from workerkit.lab.persistence import MoltworkLab
-lab = MoltworkLab()
-lab.load("worker-01")
-print(lab.profile())
+```
+                    ORACLE
+          finds market opportunities
+                     │
+                         ▼
+                    MOLTWORK
+             campaign + scientist layer
+                     │
+      ┌──────────────┼──────────────┐
+      │              │              │
+      ▼              ▼              ▼
+   LETTA          HARBOR          GEPA/
+ persistent      WORLDS        OpenEvolve
+ worker          evaluators    search/evolution
+ cognition
+      │              │              │
+      └──────────────┼──────────────┘
+                     ▼
+                 WorkerRun
+                     │
+             WorkerKit evidence
+                     │
+               Trajectory
+                     │
+               evaluation
+                     │
+                     ▼
+                 HYDRADB
+           empirical experience graph
+                     │
+                     ▼
+                 MOLTING
+         ┌───────────┼───────────┐
+         ▼           ▼           ▼
+      Memory       Skill       Process
+         │           │           │
+         └───────────┼───────────┘
+                     ▼
+                 Git branch
+                     │
+               evaluate again
+                     │
+              promote / reject
 ```
 
-## Core SDK
+## The 14-Step Campaign Pipeline
 
-```python
-from workerkit.sdk import WorkerKit, WorkOrder
-
-wk = WorkerKit()
-run = wk.start(WorkOrder(objective="Research", reward_value="25.00"))
-run.event("model.call", {"model": "mimo", "tokens": 8000})
-run.cost("llm", 0.08)
-vr = await wk.verify(run, contract, artifact)
-cd = wk.gate(run, "SUBMIT", vr, 5.0)
-receipt = wk.close(run)
+```
+0.  INGEST OPPORTUNITY     → Oracle → ontology mapping
+1.  BUILD SUCCESS MODEL    → Letta research agent
+2.  COMPILE WORLD          → Harbor task(s)
+3.  RECALL EXPERIENCE      → Hydra → LabBrief
+4.  DECIDE SEARCH MODE     → exploit vs explore
+5.  IDEATION SEARCH        → N candidates → successive halving
+6.  EXECUTION              → persistent Letta Worker
+7.  ITERATIVE REVIEW       → Harbor/RewardKit → diagnostics
+8.  FREEZE RUN             → Git commits + WorkerKit receipt
+9.  EXTERNAL SUBMISSION    → real opportunity → outcome
+10. HYDRA PROJECTION       → project into empirical graph
+11. MOLT                   → Trajectory → candidate changes
+12. TEST MOLTS             → Git worktrees → control vs candidate
+13. PROMOTE                → merge if validated
+14. NEXT OPPORTUNITY       → repeat from stronger prior
 ```
 
-## WorkerAsset — the core primitive
+## Frozen Decisions
 
-```python
-from workerkit.core.worker_asset import WorkerAsset
+1. **Letta owns the worker** — do not wrap in pseudo-agent framework
+2. **Trajectory is the interchange format** — `@letta-ai/trajectory`
+3. **CGE sits on Harbor** — Harbor tasks = worlds, CGE = experiments
+4. **Harbor Reward Kit for evaluators** — multi-dimensional reward.json
+5. **Letta Evals for stateful evaluation** — memory, config, trajectory
+6. **GEPA for reflective search/evolution**
+7. **OpenEvolve for MAP-Elites diversity**
+8. **Agent Lightning later** — weight/policy training
+9. **Trace2Skill for post-run skill distillation**
+10. **Letta dreaming as experimental treatment**
+11. **A-MEM/Memory-R1 as research arms**
+12. **Letta Skills prove Git-asset thesis**
+13. **`.af` as worker asset format**
 
-worker = WorkerAsset(
-    worker_id="support-17",
-    owner="alice",
-    runtime=RuntimeDescriptor(adapter="letta", model="mimo-v2.5"),
-    capabilities=[CapabilityScore(name="customer-support", quality=0.91)],
-    production=ProductionSummary(total_runs=481, total_revenue_usd=8200),
-)
+## Key Files
+
+```
+lab_kernel.py              Lab orchestration (CG + CGE + Letta + HydraDB)
+campaign.py                Campaign lifecycle
+hydra_projectors.py        Feed data into HydraDB
+hydra_schema.py            Node/edge type definitions
+mw_labkit/hydra.py         HTTP client for HydraDB
+mw_labkit/records.py       RunBinding, EvaluationRecord
+mw_labkit/runtime.py       Runtime adapter
+venues/base.py             WorkVenue protocol
+venues/metaculus.py        Metaculus adapter
+providers/bats.py          Budget-aware model routing
 ```
 
-## Venues — where work happens
+## HydraDB
 
-```python
-from workerkit.venues import MoltworkVenue, VirtualsACPVenue, GitHubVenue
+**Status:** Running in Docker on ports 7687/8443/9090
 
-# Each venue implements: discover, inspect, submit, status, settle
-orch.register_venue("moltwork", MoltworkVenue())
-orch.register_venue("virtuals", VirtualsACPVenue(api_key="..."))
-orch.register_venue("github", GitHubVenue(token="..."))
+```bash
+# Check status
+docker ps | grep hydradb
 
-# Discover across all venues
-all_opps = orch.discover_opportunities()
+# Auth token
+cat /root/workerkit/data/hydradb/auth-token
+# → private-lab-hydradb-token-2026-secure
+
+# Connection
+from neo4j import GraphDatabase
+token = open('/root/workerkit/data/hydradb/auth-token').read().strip()
+driver = GraphDatabase.driver('bolt://localhost:7687', auth=('neo4j', token))
 ```
 
-## What WorkerKit IS
+## Letta
 
-The canonical economic operating system for persistent AI workers. Evidence layer + valuation engine + venue abstraction.
+**Status:** Running on port 3000
 
-## What WorkerKit is NOT
+```bash
+# Check health
+curl http://localhost:3000/health
 
-Not an agent framework. Not a runtime. Not a marketplace. Not a protocol.
+# Worker status
+curl http://localhost:3000/workers
+```
 
 ## Tests
 
 ```bash
-cd /root/workerkit && PYTHONPATH=/root:/root/workerkit for t in tests/test_*.py; do python3 "$t" 2>&1 | tail -3; done
+cd /root/workerkit
+python3 -m pytest tests/ -q
 ```
-
-## Key modules
-
-| Module | Purpose |
-|--------|---------|
-| `core/worker_asset.py` | WorkerAsset — the core primitive |
-| `core/taxonomy.py` | Shared ontology (35 task families, 40 capabilities) |
-| `sdk.py` | WorkerKit core (start → event → cost → verify → gate → close) |
-| `orchestrator.py` | Full pipeline wiring + venue registration |
-| `venues/base.py` | WorkVenue protocol (discover, inspect, submit, status, settle) |
-| `economics/valuation.py` | Worker valuation engine |
-| `lab/persistence.py` | Three-kind persistence (Memory + Version + Evidence + Economics) |
-| `harvest/candidates.py` | Reusable asset extraction |
-| `lab/reflection.py` | Outcome-gated learning |
-| `capabilities.py` | Multi-dimensional capability evidence |
-
-## Related repos
-
-- `oracle/` — market demand intelligence (27 sources, taxonomy mapping)
-- `mwmarket/` — marketplace layer
-- `mwgo/` — consumer product (`mw connect`)
-- `repute/` — oracle (market intelligence)

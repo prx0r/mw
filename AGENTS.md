@@ -6,6 +6,44 @@
 
 WorkerKit is the execution kernel. It does the work and records receipts.
 
+## Architecture (from Frozen Architecture)
+
+The frozen architecture defines 13 decisions:
+
+1. **Letta owns the worker** — do not wrap in pseudo-agent framework
+2. **Trajectory is the interchange format** — `@letta-ai/trajectory`
+3. **CGE sits on Harbor** — Harbor tasks = worlds, CGE = experiments
+4. **Harbor Reward Kit for evaluators** — multi-dimensional reward.json
+5. **Letta Evals for stateful evaluation** — memory, config, trajectory
+6. **GEPA for reflective search/evolution**
+7. **OpenEvolve for MAP-Elites diversity**
+8. **Agent Lightning later** — weight/policy training
+9. **Trace2Skill for post-run skill distillation**
+10. **Letta dreaming as experimental treatment**
+11. **A-MEM/Memory-R1 as research arms**
+12. **Letta Skills prove Git-asset thesis**
+13. **`.af` as worker asset format**
+
+### The 14-Step Campaign Pipeline
+
+```
+0.  INGEST OPPORTUNITY     → Oracle → ontology mapping
+1.  BUILD SUCCESS MODEL    → Letta research agent
+2.  COMPILE WORLD          → Harbor task(s)
+3.  RECALL EXPERIENCE      → Hydra → LabBrief
+4.  DECIDE SEARCH MODE     → exploit vs explore
+5.  IDEATION SEARCH        → N candidates → successive halving
+6.  EXECUTION              → persistent Letta Worker
+7.  ITERATIVE REVIEW       → Harbor/RewardKit → diagnostics
+8.  FREEZE RUN             → Git commits + WorkerKit receipt
+9.  EXTERNAL SUBMISSION    → real opportunity → outcome
+10. HYDRA PROJECTION       → project into empirical graph
+11. MOLT                   → Trajectory → candidate changes
+12. TEST MOLTS             → Git worktrees → control vs candidate
+13. PROMOTE                → merge if validated
+14. NEXT OPPORTUNITY       → repeat from stronger prior
+```
+
 ## HydraDB — The Graph Database
 
 **HydraDB is live.** Rust graph database on SlateDB, running in Docker.

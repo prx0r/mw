@@ -20,11 +20,22 @@ def _sha256(obj) -> str:
 
 
 class HydraProjector:
-    """Base projector — writes to SQLite-backed Hydra store."""
+    """Base projector — writes to HydraDB via HTTP or SQLite fallback."""
     
-    def __init__(self, db_path: str = "data/graph_store.db"):
+    def __init__(self, db_path: str = "data/graph_store.db", use_hydradb: bool = False):
         self.db_path = db_path
-        self._init_db()
+        self._use_hydradb = use_hydradb
+        self._http_client = None
+        
+        if use_hydradb:
+            try:
+                from mw_labkit.hydra import HydraHTTPClient
+                self._http_client = HydraHTTPClient()
+            except Exception:
+                self._use_hydradb = False
+        
+        if not self._use_hydradb:
+            self._init_db()
     
     def _init_db(self):
         conn = sqlite3.connect(self.db_path)
@@ -54,30 +65,50 @@ class HydraProjector:
         conn.close()
     
     def upsert_node(self, node_id: str, label: str, properties: dict):
-        conn = sqlite3.connect(self.db_path)
-        conn.execute(
-            "INSERT OR REPLACE INTO hydra_nodes (id, label, properties) VALUES (?, ?, ?)",
-            (node_id, label, json.dumps(properties))
-        )
-        conn.commit()
-        conn.close()
+        if self._use_hydradb and self._http_client:
+            # Use HydraDB HTTP API
+            props_str = ", ".join(f"{k}: '{v}'" for k, v in properties.items() if isinstance(v, str))
+            self._http_client.query(f"MERGE (n:{label} {{id: '{node_id}', {props_str}}})")
+        else:
+            # SQLite fallback
+            conn = sqlite3.connect(self.db_path)
+            conn.execute(
+                "INSERT OR REPLACE INTO hydra_nodes (id, label, properties) VALUES (?, ?, ?)",
+                (node_id, label, json.dumps(properties))
+            )
+            conn.commit()
+            conn.close()
     
     def upsert_edge(self, source_id: str, target_id: str, edge_type: str, properties: dict = None):
-        edge_id = f"{source_id}:{edge_type}:{target_id}"
-        conn = sqlite3.connect(self.db_path)
-        conn.execute(
-            "INSERT OR REPLACE INTO hydra_edges (id, source_id, target_id, type, properties) VALUES (?, ?, ?, ?, ?)",
-            (edge_id, source_id, target_id, edge_type, json.dumps(properties or {}))
-        )
-        conn.commit()
-        conn.close()
+        if self._use_hydradb and self._http_client:
+            # Use HydraDB HTTP API
+            self._http_client.query(f"""
+                MATCH (a {{id: '{source_id}'}}), (b {{id: '{target_id}'}})
+                CREATE (a)-[:{edge_type}]->(b)
+            """)
+        else:
+            # SQLite fallback
+            edge_id = f"{source_id}:{edge_type}:{target_id}"
+            conn = sqlite3.connect(self.db_path)
+            conn.execute(
+                "INSERT OR REPLACE INTO hydra_edges (id, source_id, target_id, type, properties) VALUES (?, ?, ?, ?, ?)",
+                (edge_id, source_id, target_id, edge_type, json.dumps(properties or {}))
+            )
+            conn.commit()
+            conn.close()
     
     def query(self, sql: str, params: tuple = ()) -> list[dict]:
-        conn = sqlite3.connect(self.db_path)
-        conn.row_factory = sqlite3.Row
-        rows = conn.execute(sql, params).fetchall()
-        conn.close()
-        return [dict(r) for r in rows]
+        if self._use_hydradb and self._http_client:
+            # Use HydraDB HTTP API (Cypher queries)
+            result = self._http_client.query(sql)
+            return result.get("rows", [])
+        else:
+            # SQLite fallback
+            conn = sqlite3.connect(self.db_path)
+            conn.row_factory = sqlite3.Row
+            rows = conn.execute(sql, params).fetchall()
+            conn.close()
+            return [dict(r) for r in rows]
 
 
 class GitProjector(HydraProjector):
