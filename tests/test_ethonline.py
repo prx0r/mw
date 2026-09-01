@@ -82,11 +82,9 @@ async def run_test():
     # ─── P3: Real WorkReceipt ─────────────────────────────────────────
     print("\nP3: Real WorkReceipt")
     from workerkit.sdk import WorkerKit
-    from workerkit.hydra.store import LabProjection
 
     with tempfile.TemporaryDirectory() as td:
         wk = WorkerKit(db_path=f"{td}/events.db")
-        proj = LabProjection(f"{td}/lab.db", append_only=False)
 
         order = WorkOrder(
             objective="Generate 15 x402 product ideas",
@@ -216,7 +214,7 @@ async def run_test():
     from workerkit.lab.reflection import ReflectionPipeline, ExperimentResult
     from workerkit.cg.evolve import WorldPack
 
-    proj2 = LabProjection(f"{td}/lab2.db", append_only=False)
+    proj2 = None  # TODO: Wire HydraDB
     pipe = ReflectionPipeline(hydra=proj2)
     for _ in range(3):
         pipe.observe("run-fail", 0.3, "lost", failure_reason="missing requirements")

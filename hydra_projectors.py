@@ -22,7 +22,7 @@ def _sha256(obj) -> str:
 class HydraProjector:
     """Base projector — writes to SQLite-backed Hydra store."""
     
-    def __init__(self, db_path: str = "data/hydradb.db"):
+    def __init__(self, db_path: str = "data/graph_store.db"):
         self.db_path = db_path
         self._init_db()
     

@@ -58,24 +58,9 @@ class Campaign:
             "outcome": self.outcome,
         }, indent=2))
 
-        # Also project into Hydra graph
-        try:
-            from hydra.graph import GraphStore
-            g = GraphStore()
-            g.upsert_node(f"campaign:{self.campaign_id}", "Campaign", {
-                "status": self.status,
-                "worker_id": self.worker_id,
-            })
-            if self.worker_id:
-                g.upsert_node(f"worker:{self.worker_id}", "Worker", {})
-                g.upsert_edge(f"campaign:{self.campaign_id}", f"worker:{self.worker_id}", "EXECUTED_BY")
-            for run in self.runs:
-                run_id = run.get("run_id", "")
-                if run_id:
-                    g.upsert_node(f"run:{run_id}", "Run", run)
-                    g.upsert_edge(f"campaign:{self.campaign_id}", f"run:{run_id}", "CONTAINS")
-        except Exception:
-            pass  # graph is optional projection
+        # Also project into HydraDB graph
+        # TODO: Wire real HydraDB client here
+        pass
 
     @classmethod
     def load(cls, campaign_id: str) -> Campaign:

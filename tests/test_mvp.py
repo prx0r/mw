@@ -29,7 +29,6 @@ print("=== 4-way ablation: v1-no-lab, v1-lab, v2-no-lab, v2-lab ===\n")
 
 async def run_test():
     from workerkit.sdk import WorkerKit, WorkOrder
-    from workerkit.hydra.store import LabProjection
     from workerkit.core.events import EventLedger
     from workerkit.lab.projection import LabProjector
     from workerkit.lab.context import LabContext
@@ -47,15 +46,14 @@ async def run_test():
         # ─── Setup infrastructure ──────────────────────────────────────
         print("1. Setup infrastructure")
         ledger_db = f"{td}/events.db"
-        proj_db = f"{td}/lab.db"
 
         wk = WorkerKit(db_path=ledger_db)
-        proj = LabProjection(proj_db, append_only=False)
+        # TODO: Wire real HydraDB client here
+        proj = None
         projector = LabProjector(EventLedger(ledger_db), proj)
         pipeline = LearningPipeline(hydra=proj, evaluator=evaluator)
 
         test("WorkerKit created", wk.ledger is not None)
-        test("LabProjection created", proj.get_agent("__nonexistent__") is None)
         test("Evaluator created", evaluator.rubric is not None)
         test("Pipeline created", pipeline.reflection is not None)
 

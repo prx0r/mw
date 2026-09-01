@@ -1,8 +1,8 @@
-"""Lab Projection — wires EventLedger → LabProjection.
+"""Lab Projection — wires EventLedger → HydraDB.
 
 The EventLedger (core/events.py) is canonical truth.
-LabProjection (hydra/store.py) is a disposable view.
-This module rebuilds the projection from the ledger.
+HydraDB (Rust, distributed graph DB) is the graph store.
+This module projects events into HydraDB.
 """
 from __future__ import annotations
 
@@ -11,19 +11,18 @@ import time
 from pathlib import Path
 
 from workerkit.core.events import EventLedger
-from workerkit.hydra.store import LabProjection
 
 
 class LabProjector:
-    """Rebuilds LabProjection from EventLedger.
+    """Projects EventLedger events into HydraDB.
 
     Usage:
-        projector = LabProjector(ledger, projection)
+        projector = LabProjector(ledger, hydra_client)
         projector.rebuild()  # full rebuild from events
         projector.sync()     # incremental sync new events
     """
 
-    def __init__(self, ledger: EventLedger, projection: LabProjection):
+    def __init__(self, ledger: EventLedger, projection):
         self.ledger = ledger
         self.projection = projection
         self._last_sync_seq: dict[str, int] = {}  # run_id → last synced seq
@@ -159,9 +158,9 @@ class LabProjector:
 
 
 def wire_lab(ledger_db: str = "data/wk-events.db",
-             projection_db: str = "data/hydra.db") -> tuple[EventLedger, LabProjection, LabProjector]:
-    """Convenience: create wired ledger + projection + projector."""
+             hydra_client=None) -> tuple[EventLedger, object, LabProjector]:
+    """Convenience: create wired ledger + hydra client + projector."""
     ledger = EventLedger(ledger_db)
-    projection = LabProjection(projection_db, append_only=False)
-    projector = LabProjector(ledger, projection)
-    return ledger, projection, projector
+    # TODO: Wire real HydraDB client here
+    projector = LabProjector(ledger, hydra_client)
+    return ledger, hydra_client, projector

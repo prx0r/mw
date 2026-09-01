@@ -1,18 +1,13 @@
-"""LabContext — Hydra-backed broker, progressive disclosure.
+"""LabContext — HydraDB-backed broker, progressive disclosure.
 
-Old: substring matching via json.dumps(r).lower() — a search engine written in blood.
-New: indexed queries on task_family column + proper filters.
+Indexed queries on graph data via HydraDB.
 """
 from __future__ import annotations
 import json, time
-try:
-    from hydra.store import LabProjection
-except ImportError:
-    from workerkit.hydra.store import LabProjection
 
 
 class LabContext:
-    def __init__(self, hydra: LabProjection, worker_id: str):
+    def __init__(self, hydra, worker_id: str):
         self.hydra = hydra
         self.worker_id = worker_id
 

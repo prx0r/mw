@@ -14,10 +14,6 @@ import hashlib, json, math, random, time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Protocol, Any
-try:
-    from hydra.store import LabProjection
-except ImportError:
-    from workerkit.hydra.store import LabProjection
 
 
 def _h(obj) -> str:
@@ -201,7 +197,7 @@ Replay = DeterministicMockEvaluator
 
 @dataclass
 class EvolutionLab:
-    pack: WorldPack; hydra: LabProjection|None=None; seed: int=0
+    pack: WorldPack; hydra=None; seed: int=0
     evaluator: Evaluator|None=None
 
     def __post_init__(self):

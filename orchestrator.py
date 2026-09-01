@@ -24,7 +24,6 @@ try:
     from workerkit.core.events import EventLedger
     from workerkit.core.receipts import WorkReceipt
     from workerkit.verify.contracts import AcceptanceContract
-    from workerkit.hydra.store import LabProjection
     from workerkit.lab.projection import LabProjector
     from workerkit.lab.reflection import ReflectionPipeline
     from workerkit.harvest.candidates import Harvester
@@ -37,7 +36,6 @@ except ImportError:
     from core.events import EventLedger
     from core.receipts import WorkReceipt
     from verify.contracts import AcceptanceContract
-    from hydra.store import LabProjection
     from lab.projection import LabProjector
     from lab.reflection import ReflectionPipeline
     from harvest.candidates import Harvester
@@ -98,10 +96,10 @@ class Orchestrator:
 
         # Core infrastructure
         ledger_path = ledger_db or str(self.data_dir / "wk-events.db")
-        proj_path = projection_db or str(self.data_dir / "hydra.db")
 
         self.ledger = EventLedger(ledger_path)
-        self.projection = LabProjection(proj_path, append_only=False)
+        # TODO: Wire real HydraDB client here (Bolt/HTTP)
+        self.projection = None  # Was LabProjection — needs HydraDB
         self.projector = LabProjector(self.ledger, self.projection)
         self.wk = WorkerKit(db_path=ledger_path)
 

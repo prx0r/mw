@@ -1,4 +1,4 @@
-"""Fleet manager — 5 persistent Letta workers, one Hydra.
+"""Fleet manager — 5 persistent Letta workers, one HydraDB.
 
 One Letta server, five agents:
   researcher, coder, it, sales, reviewer
@@ -13,11 +13,6 @@ import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
-
-try:
-    from hydra.store import HydraStore
-except ImportError:
-    from workerkit.hydra.store import HydraStore
 
 
 TEMPLATES = {
@@ -56,8 +51,8 @@ class FleetManager:
 
     ROLES = ["researcher", "coder", "it", "sales", "reviewer"]
 
-    def __init__(self, hydra: HydraStore | None = None, letta_url: str = ""):
-        self.hydra = hydra or HydraStore()
+    def __init__(self, hydra=None, letta_url: str = ""):
+        self.hydra = hydra  # TODO: Wire real HydraDB client
         self.letta_url = letta_url
         self.workers: dict[str, FleetWorker] = {}  # agent_id → FleetWorker
 

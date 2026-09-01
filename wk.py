@@ -79,64 +79,24 @@ def cmd_status(args):
 
 
 def cmd_lab_rebuild(args):
-    """Rebuild LabProjection from EventLedger."""
-    from workerkit.lab.projection import wire_lab
-
-    ledger_db = args[0] if len(args) > 0 else "data/wk-events.db"
-    projection_db = args[1] if len(args) > 1 else "data/hydra.db"
-
-    ledger, projection, projector = wire_lab(ledger_db, projection_db)
-    stats = projector.rebuild()
-    print(f"Rebuilt projection from {stats['events']} events")
-    print(f"  Runs projected: {stats['runs']}")
-    print(f"  Errors: {stats['errors']}")
+    """Rebuild projection from EventLedger. TODO: Wire HydraDB."""
+    print("ERROR: HydraDB not wired yet. Need real HydraDB client.")
+    print("See orchestrator.py for wiring pattern.")
 
 
 def cmd_lab_sync(args):
-    """Incremental sync new events."""
-    from workerkit.lab.projection import wire_lab
-
-    ledger_db = args[0] if len(args) > 0 else "data/wk-events.db"
-    projection_db = args[1] if len(args) > 1 else "data/hydra.db"
-
-    ledger, projection, projector = wire_lab(ledger_db, projection_db)
-    stats = projector.sync()
-    print(f"Synced: {stats['new_events']} new events from {stats['new_runs']} runs")
-    if stats["errors"]:
-        print(f"  Errors: {stats['errors']}")
+    """Incremental sync new events. TODO: Wire HydraDB."""
+    print("ERROR: HydraDB not wired yet. Need real HydraDB client.")
 
 
 def cmd_lab_summary(args):
-    """Show lab summary."""
-    from workerkit.hydra.store import LabProjection
-
-    db_path = args[0] if args else "data/hydra.db"
-    proj = LabProjection(db_path, append_only=False)
-    summary = proj.lab_summary()
-    print(f"Runs: {summary['total_runs']}")
-    print(f"Won: {summary['won']} ({summary['win_rate']:.0%})")
-    print(f"Revenue: ${summary['revenue']:.2f}")
-    print(f"Cost: ${summary['cost']:.2f}")
-    print(f"Net: ${summary['net']:.2f}")
-    print(f"Insights: {summary['insights']}")
-    print(f"Agents: {summary['agents']}")
+    """Show lab summary. TODO: Wire HydraDB."""
+    print("ERROR: HydraDB not wired yet. Need real HydraDB client.")
 
 
 def cmd_lab_brief(args):
-    """Generate lab brief for a task family."""
-    from workerkit.hydra.store import LabProjection
-    from workerkit.lab.context import LabContext
-
-    if len(args) < 1:
-        print("Usage: wk lab brief <task_family>")
-        return
-
-    task_family = args[0]
-    db_path = args[1] if len(args) > 1 else "data/hydra.db"
-
-    proj = LabProjection(db_path, append_only=False)
-    ctx = LabContext(proj, worker_id="cli")
-    print(ctx.brief(task_family))
+    """Generate lab brief for a task family. TODO: Wire HydraDB."""
+    print("ERROR: HydraDB not wired yet. Need real HydraDB client.")
 
 
 def cmd_eval(args):
