@@ -165,28 +165,23 @@ def _norm_openserv(i: dict) -> dict:
 # ─── Additional work sources ─────────────────────────────────────────
 
 def nearai() -> list[dict]:
-    """NEAR AI Agent Market — agent tasks and bounties."""
-    data = _get("https://market.near.ai/api/v1/tasks?limit=100")
+    """NEAR AI agent.market — agent services and tasks."""
+    data = _get("https://market.near.ai/v1/agents?limit=100")
     if not data: return []
-    items = data if isinstance(data, list) else data.get("tasks", data.get("items", []))
-    return [_norm_nearai(t) for t in items]
+    items = data.get("agents", []) if isinstance(data, dict) else data
+    return [_norm_nearai(a) for a in items]
 
 
-def _norm_nearai(t: dict) -> dict:
-    reward = 0
-    r = t.get("reward", t.get("reward_amount", 0))
-    if isinstance(r, (int, float)): reward = float(r)
-    elif isinstance(r, str):
-        try: reward = float(r.replace("$","").replace(",",""))
-        except: pass
-    tags = t.get("tags", t.get("skills", []))
-    return {"id": f"near:{t.get('id','')}", "src": "nearai", "source_id": str(t.get("id","")),
-            "title": t.get("title", t.get("name","")), "desc": (t.get("description","") or "")[:500],
-            "cat": t.get("category","general"), "skills": tags if isinstance(tags, list) else [],
-            "reward": reward, "currency": t.get("token","NEAR"), "status": t.get("status","open"),
-            "posted": t.get("created_at", t.get("createdAt","")),
-            "url": f"https://market.near.ai/task/{t.get('id','')}",
-            "extra": {"network": "near"}}
+def _norm_nearai(a: dict) -> dict:
+    jobs = a.get("delivered_jobs", 0)
+    rate = a.get("success_rate", 0)
+    return {"id": f"near:{a.get('agent_id','')}", "src": "nearai", "source_id": str(a.get("agent_id","")),
+            "title": a.get("name", a.get("handle","")), "desc": (a.get("description","") or "")[:500],
+            "cat": a.get("category","general"), "skills": a.get("tags",[]),
+            "reward": 0, "currency": "NEAR", "status": a.get("listing_status","live"),
+            "posted": a.get("created_at",""), "url": f"https://market.near.ai/agent/{a.get('handle','')}",
+            "extra": {"network": "near", "delivered_jobs": jobs, "success_rate": rate,
+                      "runtime": a.get("runtime",""), "handle": a.get("handle","")}}
 
 
 def agentlux() -> list[dict]:
@@ -355,6 +350,113 @@ def _norm_moltjobs(j: dict) -> dict:
             "status": j.get("status","open"), "posted": j.get("created_at",""),
             "url": f"https://moltjobs.io/job/{j.get('id','')}",
             "extra": {"escrow": j.get("escrow_type", "base")}}
+
+
+def metaculus(token: str = "") -> list[dict]:
+    """Metaculus — forecasting tournament questions.
+
+    Fetches open binary questions as opportunities.
+    Each question is a forecasting task with community prediction,
+    tournament affiliation, and eventual resolution.
+    """
+    if not token:
+        import os
+        token = os.environ.get("METACULUS_API_KEY", "")
+    if not token:
+        return []
+
+    import urllib.request
+    base = "https://www.metaculus.com/api2"
+    headers = {
+        "Authorization": f"Token {token}",
+        "Accept": "application/json",
+        "User-Agent": "MoltworkOracle/1.0",
+    }
+
+    items = []
+    for status in ["open", "closed"]:
+        url = f"{base}/questions/?limit=50&type=binary&status={status}"
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                data = json.loads(resp.read())
+                for q in data.get("results", []):
+                    items.append(_norm_metaculus(q))
+        except:
+            pass
+
+    return items
+
+
+def _norm_metaculus(q: dict) -> dict:
+    """Normalize a Metaculus question to Oracle opportunity schema."""
+    qtype = q.get("question", {}).get("type", "binary")
+    status = q.get("status", "open")
+    resolved = q.get("resolved", False)
+    resolution = q.get("question", {}).get("resolution")
+
+    # Map status
+    if resolved and resolution is not None:
+        opp_status = "resolved"
+    elif status == "closed":
+        opp_status = "closed"
+    elif status in ("open", "approved"):
+        opp_status = "open"
+    else:
+        opp_status = status
+
+    # Extract tournament info
+    projects = q.get("projects", {})
+    tournaments = []
+    for ptype in ("leaderboard_tag", "site_main"):
+        for p in projects.get(ptype, []):
+            tournaments.append(p.get("name", ""))
+
+    # Community prediction
+    cp = q.get("question", {}).get("aggregations", {}).get("unweighted", {}).get("latest")
+    if cp and isinstance(cp, dict):
+        cp = cp.get("probability", cp.get("expected_value"))
+
+    # Skills from question type + content
+    skills = ["forecasting", f"forecasting.{qtype}"]
+    if any("AI" in (q.get("title","") or "") for _ in [1]):
+        skills.append("forecasting.ai")
+    if any("economy" in (q.get("title","") or "").lower() for _ in [1]):
+        skills.append("forecasting.economics")
+
+    # Reward: not directly monetary, but tournament prize pool share
+    reward = 0  # Metaculus rewards are indirect (tournament prizes)
+
+    # Description from question body
+    desc = q.get("description", "") or ""
+    if not desc:
+        desc = q.get("title", "")
+
+    return {
+        "id": f"mc:{q.get('id','')}",
+        "src": "metaculus",
+        "source_id": str(q.get("id", "")),
+        "title": q.get("title", ""),
+        "desc": desc[:500],
+        "cat": f"forecasting.{qtype}",
+        "skills": skills,
+        "reward": reward,
+        "currency": "USD",
+        "status": opp_status,
+        "posted": q.get("published_at", ""),
+        "url": f"https://www.metaculus.com/questions/{q.get('id','')}/",
+        "extra": {
+            "question_type": qtype,
+            "community_prediction": cp,
+            "nr_forecasters": q.get("nr_forecasters", 0),
+            "forecasts_count": q.get("forecasts_count", 0),
+            "tournaments": tournaments,
+            "close_time": q.get("actual_close_time") or q.get("scheduled_close_time"),
+            "resolve_time": q.get("actual_resolve_time") or q.get("scheduled_resolve_time"),
+            "resolution": resolution,
+            "resolved": resolved,
+        },
+    }
 
 
 import re

@@ -848,3 +848,126 @@ def v1_training_opportunities(caps: str = ""):
     """
     worker_caps = [c.strip() for c in caps.split(",") if c.strip()] if caps else []
     return {"opportunities": get_training_opportunities(worker_caps)}
+
+
+# === Crypto / Bittensor Opportunities ===
+
+@app.get("/v1/crypto")
+def v1_crypto():
+    """All crypto opportunities with EV math."""
+    conn = __import__("oracle.store", fromlist=["conn"]).conn()
+
+    # Bittensor subnets
+    bt_rows = conn.execute(
+        "SELECT name, price, extra FROM svc WHERE src='bittensor' ORDER BY price DESC"
+    ).fetchall()
+    subnets = []
+    for r in bt_rows:
+        extra = json.loads(r["extra"] or "{}")
+        subnets.append({
+            "name": r["name"],
+            "daily_usd": r["price"],
+            "emission_pct": extra.get("emission_pct", 0),
+            "miners": extra.get("miners", 0),
+            "validators": extra.get("validators", 0),
+        })
+
+    # Work opportunities with rewards
+    work = conn.execute(
+        "SELECT src, cat, COUNT(*) as n, SUM(reward) as total_usd, AVG(reward) as avg_usd "
+        "FROM opp WHERE reward>0 GROUP BY src, cat ORDER BY total_usd DESC"
+    ).fetchall()
+
+    # NEAR AI agents
+    near_rows = conn.execute(
+        "SELECT title, extra FROM opp WHERE src='nearai' LIMIT 10"
+    ).fetchall()
+    near_agents = []
+    for r in near_rows:
+        extra = json.loads(r["extra"] or "{}")
+        near_agents.append({
+            "name": r["title"],
+            "jobs": extra.get("delivered_jobs", 0),
+            "success_rate": extra.get("success_rate", 0),
+        })
+
+    conn.close()
+
+    bt_total = sum(s["daily_usd"] for s in subnets)
+    work_total = sum(r["total_usd"] or 0 for r in work)
+
+    return {
+        "bittensor": {
+            "subnets": subnets[:20],
+            "total_subnets": len(subnets),
+            "total_daily_usd": round(bt_total, 2),
+        },
+        "work": [{"src": r["src"], "cat": r["cat"], "n": r["n"],
+                  "total_usd": round(r["total_usd"] or 0, 2),
+                  "avg_usd": round(r["avg_usd"] or 0, 2)} for r in work],
+        "near_ai": near_agents,
+        "totals": {
+            "bittensor_daily": round(bt_total, 2),
+            "work_usd": round(work_total, 2),
+            "combined_daily": round(bt_total + work_total / 30, 2),
+        }
+    }
+
+
+@app.get("/v1/crypto/ev")
+def v1_crypto_ev():
+    """Expected value calculations for crypto opportunities."""
+    return {
+        "metaculus": {
+            "name": "Metaculus Forecasting",
+            "type": "tournament",
+            "cost_usd": 0,
+            "prize_pool": 50000,
+            "questions": 328,
+            "prize_per_question": round(50000 / 328, 2),
+            "edge_assumption": 0.05,
+            "expected_earnings": round(50000 / 328 * 0.05 * 328, 2),
+            "risk": "diversified",
+            "autonomy": "H0",
+            "deadline": "2026-09-06",
+        },
+        "ditto_sn118": {
+            "name": "Ditto (Bittensor SN118)",
+            "type": "mining",
+            "cost_usd": 8,
+            "network_daily": 140000,
+            "top5_positions": 5,
+            "avg_top5_daily": round(140000 * 0.05 / 5, 2),
+            "payout_split": "65/14/10/7/4",
+            "risk": "winner-take-all-top5",
+            "autonomy": "H0",
+            "submissions": 65,
+            "top_score": 0.955,
+            "edge": "memory architecture",
+        },
+        "superteam": {
+            "name": "Superteam Earn",
+            "type": "bounties",
+            "cost_usd": 0,
+            "available_usd": 52895,
+            "bounties": 25,
+            "avg_bounty": round(52895 / 25, 2),
+            "risk": "per-bounty",
+            "autonomy": "H1",
+        },
+        "near_ai": {
+            "name": "NEAR AI agent.market",
+            "type": "services",
+            "cost_usd": 0,
+            "agents": 41,
+            "delivered_jobs": 730,
+            "risk": "service-competition",
+            "autonomy": "H0",
+        },
+        "combined_strategy": {
+            "week1": "Metaculus ($0 cost, $2,493 EV)",
+            "week1_2": "Ditto practice free, submit once ($8)",
+            "month1": "Metaculus + Ditto + Superteam bounties",
+            "monthly_potential": "$3,000-8,000",
+        }
+    }
