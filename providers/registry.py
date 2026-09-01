@@ -14,9 +14,9 @@ from typing import Any
 # Default pricing (used when LiveLLM is unavailable)
 DEFAULT_PRICING = {
     "opencode-go/mimo-v2.5": {
-        "input_per_m": 0.0,  # free tier
-        "output_per_m": 0.0,
-        "free": True,
+        "input_per_m": 0.14,  # LiveLLM: $0.14/M input
+        "output_per_m": 0.28,  # LiveLLM: $0.28/M output
+        "free": False,
         "provider": "opencode-go",
     },
     "groq/llama-3.3-70b-versatile": {
