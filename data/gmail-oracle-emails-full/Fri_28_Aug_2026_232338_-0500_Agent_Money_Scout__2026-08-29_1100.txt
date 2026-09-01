@@ -1,0 +1,193 @@
+Subject: Agent Money Scout — 2026-08-29 11:00
+Date: Fri, 28 Aug 2026 23:23:38 -0500
+Message ID: 1a04bc244927ac13
+================================================================================
+
+# Agent Money Scout — 2026-08-29 11:00
+
+This run prioritized live funded inventory, current payout evidence, and new distribution rails. The standout is Taskmarket: its primary page currently shows 19 funded open tasks, 2,380.71 USDC posted volume, and public agent earnings. I filtered out platforms whose apparent inventory is only demo/testnet/credits or whose payout path is not currently usable.
+
+## NEW THIS RUN
+
+### 1) Taskmarket — strongest fresh live-work source
+URL: https://taskmarket.dev/
+
+What the agent does: research, coding, data, visualization, benchmarking, or other digital work under one of five modes: bounty, claim, pitch, benchmark, auction.
+Who pays: requesters who escrow USDC on Base before work starts.
+Current verified economics: 19 open tasks, 2,380.714419 USDC posted volume. One visible open task, “BRYAN'S HARD DATA,” pays 24.2 USDC and showed 0 bids, 0 pitches, 32 submissions when crawled; another pays 0.324 USDC. The site says every accepted result settles on-chain in USDC within seconds. Public leaderboard earnings include 119.775968 USDC, 78.624908 USDC, 42.104335 USDC and 13.737361 USDC for top agents.
+Required: compatible agent + Taskmarket skill/CLI/API, Base-compatible wallet, task-specific skills.
+Autonomy: 10/10.
+Exact first action: install/read the Taskmarket skill, fetch currently funded tasks, and rank by reward × probability of winning minus execution cost; prioritize claim/pitch modes or low-competition bounty work.
+Constraints: comply with all wallet/payment, account, legal and age requirements; do not bypass restrictions.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 2) Lobster Jobs — tiny market, but one real open slot today
+URL: https://lobsterjobs.work/
+
+What the agent does: deliver text, code, PDF/DOCX, JSON/CSV/XLSX, images or mixed deliverables.
+Who pays: job posters who fund jobs by card into escrow.
+Current economics: primary page shows 1 open job, 0 completed jobs and 1 active agent. Operators receive 80% of completed-job value in USDC on Base; platform fee is 20%.
+Required: account/API key plus supported payout setup and relevant production tools.
+Autonomy: 8/10.
+Exact first action: inspect the single open job before registering; only integrate if its deliverable and reward are worthwhile.
+Constraints: applicable payment/account/age rules must be satisfied legitimately.
+Ease: 4/10. Repeatability: 5/10 until liquidity grows.
+
+### 3) AgentChain Labs — new B2B agent-work rail, but still beta
+URL: https://www.agentchainlabs.com/
+
+What the agent does: browse jobs through API, send proposals, deliver work and withdraw earnings. Categories include programming, data/analytics, marketing, content, AI services and business tasks.
+Who pays: clients funding jobs through escrow.
+Advertised economics: job budgets start at $0.50; agent fee falls from 15% for unverified workers to 5% at the highest trust tier. USDC plus Ethereum/Solana/Polygon/Sui rails are supported; card funding and bank withdrawal are described.
+Required: account/API key, job-relevant capability, supported payout setup.
+Autonomy: 9/10 after account setup.
+Exact first action: query open jobs through its Agent API and demand a funded/escrowed job before doing any integration work.
+Important caveat: primary page says Beta and currently shows no agents on the leaderboard and no testimonials, so there is not yet strong proof of worker liquidity.
+Ease: 4/10. Repeatability: 7/10 if buyers materialize.
+
+### 4) AIMX — sell agents, skills, or MCP servers as downloadable products
+URL: https://aimx.com/
+
+What the agent does: no bidding; package a reusable agent/skill/MCP server and sell licenses/downloads.
+Who pays: users buying the listed product.
+Advertised economics: creator keeps 85% of each sale; creator chooses one-time or update-subscription pricing.
+Required: original/licensable artifact, documentation, supportable package.
+Autonomy: 9/10 after publication.
+Exact first action: package one already-proven workflow such as PR verification, evidence extraction, API audit, or structured-data normalization.
+Constraints: only sell software/content you own or are permitted to distribute; applicable seller/payment eligibility rules apply.
+Ease: 5/10. Repeatability: 10/10.
+
+### 5) PayHumans — useful as a fulfillment multiplier rather than direct agent income
+URL: https://payhumans.co/
+
+What it does: lets an AI agent hire expert humans for research, due diligence, calls, proprietary information or judgment it cannot perform autonomously.
+Who pays: the AI agent/company commissioning the human task.
+Advertised pricing: $50–$500 per human task, roughly 24-hour average turnaround.
+Why it matters for earning: a larger paid agent job that is 90–95% automatable can remain profitable if the blocked judgment/research step is subcontracted legitimately.
+Required: MCP integration and sufficient job margin.
+Autonomy: 8/10 overall with human fallback.
+Exact first action: treat human fallback as a cost in the worker EV model; invoke it only when a profitable customer job would otherwise fail.
+Constraints: not a direct earning source for the agent, and any age/account/payment rules must be satisfied.
+Ease-to-first-$5 direct: 1/10; as a fulfillment multiplier: 7/10. Repeatability: 9/10.
+
+### 6) Agent402 / x402 settlement mining — build only where outside buyers exist
+URL: https://agent402.tools/marketplace
+
+What the agent does: analyze paid endpoints by capability, price, health and actual settlements; launch a better narrow API where real buyers already exist.
+Who pays: autonomous agents/software consuming the eventual endpoint.
+Current primary-source scale: 2,746 distinct payees, 3,412 endpoints and 84,843 advertised tools. The index exposes settled transaction counts rather than just listings; examples include providers with hundreds of thousands of transactions.
+Required: useful deterministic endpoint, allowed data source, x402 payment support.
+Autonomy: 10/10 after deployment.
+Exact first action: rank categories by distinct buyers + recent settled transactions + competitor count + uptime, not raw tool listings.
+Constraints: avoid restricted/unsafe categories; follow wallet/payment requirements.
+Ease: 6/10. Repeatability: 10/10.
+
+### 7) PayAPI Market — settlement-verified distribution for factual APIs
+URL: https://payapi.market/
+
+What the agent does: sell deterministic structured data or verification endpoints such as public-record lookup, address data, email verification, screenshot/PDF capture, domain/DNS intelligence or similar permitted utilities.
+Who pays: agents/applications paying per request.
+Current economics: primary page reports 91 live APIs, 588 endpoints, 74 settlement-verified listings; providers keep 100% of settlements. Example prices are commonly $0.001–$0.01/request.
+Required: reliable API, permitted source data, Base USDC/x402-compatible settlement.
+Autonomy: 10/10.
+Exact first action: inspect settlement-verified categories and find one narrow authoritative-data gap rather than cloning a saturated generic search endpoint.
+Ease: 6/10. Repeatability: 10/10.
+
+### 8) MCP Marketplace — sell reusable tooling
+URL: https://mcp-marketplace.io/
+
+What the agent does: package an MCP tool/server with one-time, subscription or free/pro licensing.
+Who pays: developers and teams installing the tool.
+Verified economics: creator receives 85%; platform keeps 15%; payouts use Stripe Connect Express.
+Required: MCP server/tool, original/licensable code, supported Stripe Connect account.
+Autonomy: 9/10 after listing.
+Exact first action: expose one highly reliable specialist with 1–3 tools, not a broad assistant.
+Constraints: Stripe/account/age/geography eligibility applies and cannot be bypassed.
+Ease: 5/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 9) OpenJobs
+URL: https://openjobs.bot/
+Still active on Solana mainnet. Current primary page reports 212 registered AI agents, 152 total jobs posted, 146 completed and 10,726 total volume. Agents can register, discover, apply, checkpoint, submit and inspect payout status via SDK/MCP/API. USDC path advertises no platform fee and no minimum. Exact action: query currently open funded USDC jobs before spending integration time. Ease 6/10; repeatability 9/10.
+
+### 10) MoltJobs
+URL: https://moltjobs.io/
+Still active with REST/CLI/MCP workflow for discovering, bidding, delivering and settling USDC jobs. Protected jobs can require capability evals. Exact action: normalize its open jobs into the same router as Taskmarket/OpenJobs rather than creating marketplace-specific logic. Ease 6/10; repeatability 9/10.
+
+### 11) SporeAgent
+URL: https://www.sporeagent.com/
+Still reports 1,247 agents and $48,210 paid out, but the visible $45 scraping, $80 FastAPI testing and $120 translation examples are hundreds of days old. Treat these as historical proof of task shape, not current work. Ease 4/10 today; repeatability 8/10 if fresh tasks appear.
+
+### 12) AgentGigs
+URL: https://www.agentgigs.io/
+Still supports the end-to-end API loop after required human setup: browse, apply, upload deliverables, webhooks, Stripe Connect payout. Exact action: poll available jobs and score only tasks compatible with the worker's proven skills. Eligibility/payment-provider rules apply. Ease 5/10; repeatability 9/10.
+
+### 13) PayanAgent
+URL: https://payanagent.com/
+Still useful as a unified agent-commerce layer: 24,000+ x402 offers, direct buys, bespoke requests, bids, escrow and signed receipts. Exact action: use it as both a demand feed and a distribution adapter; prioritize offers/requests with verifiable settlement receipts. Ease 5/10; repeatability 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14) Professional-services automation: the same five boring tasks keep repeating
+Thread: https://www.reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/
+A 245-vote post from someone who says they automated workflows for 30+ professional-services firms reports the same recurring categories across law, accounting, recruiting, consulting and marketing: intake, handoffs, reminders/status updates, document/data movement and similar repetitive coordination. The first example is lead form → CRM → calendar → confirmation → spreadsheet, with multiple humans touching a process a small script can collapse.
+Commercial play: sell a completed operation, not “AI automation.” MVP: form/inbox → validated record → CRM → scheduling/notification → exception queue. Customer acquisition: local/professional-service businesses already using CRMs/forms. Charge fixed implementation + maintenance. Ease 8/10; repeatability 10/10.
+
+### 15) Current SMB pain: repeated support, copy-paste, lead follow-up, spreadsheet updates
+Thread: https://www.reddit.com/r/AiAutomations/comments/1vdm8sg/what_repetitive_business_task_did_you_automate/
+An August 2 discussion lists repeated customer replies, copy-pasting between apps, manual lead follow-up, daily spreadsheet updates and missed inquiries as recurring SMB time sinks. A reply specifically names document parsing for a construction contractor.
+Commercial play: authorized inbox/docs → classify/extract → update system of record → deterministic follow-up/reminder → human exception queue. Charge by workflow setup or monthly managed automation. Ease 8/10; repeatability 10/10.
+
+### 16) Real-estate document normalization + initial inquiry handling
+Thread: https://www.reddit.com/r/SaaS/comments/1vdisya/needs_suggestion/
+A current builder targeting real estate describes hours lost to PDFs/contracts/listing-spec extraction and repetitive initial buyer inquiries. This is useful evidence even though the poster is building a solution rather than buying one.
+Commercial play: property PDF/spec → normalized listing record + provenance → initial lead qualification draft/approved response. Acquire customers through agencies/brokers where document volume is high. MVP can be sold as “100 property documents normalized into your schema” before building SaaS. Ease 6/10; repeatability 9/10.
+
+### 17) The reliable opportunity is partial workflow ownership, not replacing an entire role
+Thread: https://www.reddit.com/r/AIDiscussion/comments/1ve1a8m/are_ai_agents_actually_replacing_workflows_or_are/
+An August 3 discussion converges on agents changing/handling portions of workflows rather than autonomously replacing whole jobs; one participant describes roughly 30% of annoying steps as already realistic while complete autonomous job replacement remains hype.
+Commercial implication: aggressively prefer bounded operations with objective success conditions. Product shape: one input, one finished outcome, explicit exception state. Ease 9/10 to scope; repeatability 10/10.
+
+### 18) Existing automation sellers publicly advertise $150+ fixed projects
+Thread: https://www.reddit.com/r/freelance_forhire/comments/1sv7lf8/for_hire_i_build_aipowered_automation_systems/
+A current public offer advertises automation work from $150/project with concrete examples: booking workflow, onboarding automation and inventory monitoring. This is direct evidence that narrow automation is being packaged as fixed-price freelance work rather than only as SaaS.
+Commercial play: create a sharply scoped fixed-price offer such as “inventory sheet + movement log → reorder alert” or “new client form → CRM + onboarding sequence.” Use permitted marketplaces/communities where your account is eligible; no unsolicited spam. Ease 7/10; repeatability 9/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1) Integrate Taskmarket first
+It has the strongest new combination of live funded tasks, meaningful posted volume and public worker earnings. Pull the live task feed into the opportunity router immediately. Prioritize tasks with low visible competition, clear verification and reward > expected execution cost.
+
+Use:
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) − inference − APIs − network/payment costs − expected review cost.
+
+### 2) Build one sellable specialist from the recurring demand cluster
+The repeated external signal is still “boring operation + verification,” not generic autonomous assistants. Strong candidates:
+- /verify-pr
+- /normalize-document
+- /extract-evidence
+- /audit-api
+- /sync-record
+
+Sell the same capability in two ways: bespoke job completion on Taskmarket/OpenJobs/MoltJobs, then recurring per-call/tool distribution on Agent402/PayAPI/MCP Marketplace.
+
+### 3) Make settlement + buyer diversity the core intelligence moat
+Do not rank markets by number of listings. Track:
+- funded_open_jobs
+- reward
+- bids/submissions
+- time_to_assignment
+- accepted/settled status
+- distinct buyers 7d/30d
+- settled transaction count 7d/30d
+- provider revenue where public
+- payout rail
+- withdrawal success
+- task category
+- worker capability used
+
+The strongest long-term loop remains:
+PAID JOB → successful procedure → saved skill/tests/failure cases → specialist tool/API → repeat sales → more execution data → better specialist.
+
+Onl

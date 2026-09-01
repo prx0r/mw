@@ -1,0 +1,212 @@
+Subject: Agent Money Scout — 2026-08-31 07:00
+Date: Sun, 30 Aug 2026 19:23:07 -0500
+Message ID: 1a05532cc52b1328
+================================================================================
+
+Agent Money Scout — 2026-08-31 07:00
+
+NEW THIS RUN
+
+1) AuraGate — https://auragate.app/
+What it is: Permissionless x402 marketplace where AI agents pay per API/data request in USDC. Current primary page reports 1,228 paid requests, $2.58 total revenue, 42 unique buyers, and 31 listed services. One seller, JokeBot, accounts for 1,221 calls, so demand is real but highly concentrated.
+Agent work: expose a useful deterministic API/data endpoint.
+Who pays: machine callers.
+Payout/pricing: seller sets price; USDC settles immediately to wallet. No KYC advertised on the seller flow.
+Tools: x402 endpoint, wallet, hosted API.
+Autonomy: 10/10.
+First action: cross-list one already-proven endpoint such as API sanity checking, CSV validation, or document normalization and measure unique external buyers rather than raw calls.
+Constraints: follow wallet/provider and local legal requirements; do not bypass any age or account restrictions.
+Ease to first $5: 4/10. Repeatability: 10/10 if external demand develops.
+
+2) Hober — https://www.hober.dev/
+What it is: Base-mainnet USDC job marketplace plus x402 inference. Jobs are escrow funded; an evaluator scores delivery and payment follows the scored verdict. Current platform fee is 5%, hard-capped at 10% on-chain.
+Agent work: list an agent, browse open jobs, bid, deliver, get scored, get paid.
+Who pays: job posters funding Base escrow.
+Payout: job-specific; no reliable current open-job payout distribution verified this run.
+Tools: MCP or TypeScript SDK; agent code does not need to sign settlement transactions.
+Autonomy: 10/10.
+First action: query the open-jobs feed and only engage with funded jobs with explicit acceptance criteria.
+Constraints: Base/USDC and account eligibility apply.
+Ease: 5/10. Repeatability: 9/10.
+
+3) Riner — https://riner.io/
+What it is: new Base-USDC task network. Posters set rewards, funds lock in a smart contract, agents apply through API, and accepted results release payment.
+Agent work: bounded code, research, data, writing or automation tasks.
+Who pays: task creators.
+Payout: task-specific; no trustworthy live payout totals surfaced.
+Tools: API/SDK + Base wallet.
+Autonomy: 9/10.
+First action: browse the live task API and require non-zero funded rewards before doing any integration work.
+Constraints: beta platform; verify account/payment/age rules before registering.
+Ease: 3/10. Repeatability: 8/10 potential.
+
+4) AgentJob — https://agent-job.ai/
+What it is: Base/x402 marketplace where agents can earn per message and respond to tasks via REST API or MCP. The site advertises 10,000+ agents already earning USDC, but this is self-reported and the primary page was temporarily unavailable during one direct fetch, so treat the scale claim cautiously.
+Agent work: sell per-message expert assistance or respond to task-square requests.
+Who pays: humans or other agents.
+Payout: per-message/task price set on platform; instant on-chain settlement advertised.
+Tools: REST/MCP and Base smart wallet.
+Autonomy: 10/10.
+First action: verify the live Task Square before onboarding; only list a narrow service if genuine external requests are visible.
+Constraints: verify current Terms and age/payment eligibility first.
+Ease: 3/10. Repeatability: 9/10 if liquidity is genuine.
+
+5) Sigrix — https://sigrix.io/
+What it is: marketplace for AI prompts, skills, personas, agents, assistants and MCP servers. Current listings include paid $1 digital products and a newly listed OSS bounty-scout skill.
+Agent work: package reusable agent workflows/skills as digital products.
+Who pays: marketplace buyers.
+Payout: listing-specific; I did not verify aggregate seller earnings.
+Tools: reusable prompt/skill/agent package.
+Autonomy: 8/10 after product creation.
+First action: package one proven procedure into a small, clearly scoped artifact rather than a generic prompt.
+Constraints: verify seller payout and age/account requirements before listing.
+Ease: 4/10. Repeatability: 9/10 for genuinely reusable products.
+
+6) ClawFreelance — https://www.clawfreelance.com/en
+What it is: agentic freelance aggregator spanning open-source issues, paid bounties, Gitcoin, Algora and direct postings. The site reports 2,847 active agents, $1.2M total earned, 12,453 tasks completed and 847 open bounties, but these are self-reported figures and the homepage task examples appear illustrative.
+Agent work: claim coding/project bounties and submit verified results.
+Who pays: underlying bounty/project sponsor.
+Tools: autonomous coding/research agent + wallet.
+Autonomy: 9/10.
+First action: use it as a discovery layer, then verify each underlying bounty on the primary source before coding.
+Constraints: underlying platform rules control eligibility and payout.
+Ease: 5/10. Repeatability: 8/10.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7) AgentPact — https://agentpact.xyz/needs
+Still the strongest first-dollar queue from recent runs. Recent live inventory repeatedly showed 5–25 USDC Python/API/security/data jobs among substantial sub-dollar testing noise.
+Agent work: API automation, Python/code review, security review, data analysis, validation and technical summaries.
+Who pays: Need/deal buyer.
+Tools: AgentPact API/MCP plus coding/data worker.
+Autonomy: 10/10.
+First action: hard-filter reward >= 5 USDC, freshness, explicit acceptance criteria and settleable payment; prioritize API automation and code/data QA.
+Constraints: verify platform/account/payment eligibility.
+Ease: 9/10. Repeatability: 9/10.
+
+8) dealwork.ai — https://dealwork.ai/
+Fresh primary figures: 2.5K workers, 156 open tasks, 264 completed. The site documents an $80 production API delivered by an AI agent and a $5 AI-to-AI task. Funds are escrow protected. Standard contracts cost 10%; AI-to-AI is 3%.
+Agent work: APIs, coding, research, data transformation and documentation.
+Who pays: humans or agents.
+Autonomy: 9/10.
+First action: ingest all open tasks and bid only when acceptance tests can be reproduced independently.
+Constraints: normal account/payment rules.
+Ease: 9/10. Repeatability: 9/10.
+
+9) OpenAnt — https://openant.ai/
+Fresh primary metrics: 12.8K total tasks, 1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out, $128K posted. Remote example: SKU sales analysis producing five insights and a chart. Beta fee is 0%.
+Agent work: remote digital analysis, data and production tasks.
+Who pays: task poster via USDC escrow.
+Tools: skill/API/MCP + wallet.
+Autonomy: 10/10.
+First action: filter remote + digital + explicit reward + objective proof; exclude physical/GPS/photo tasks.
+Constraints: task-specific geography can apply; payment/account eligibility must be followed.
+Ease: 8/10. Repeatability: 9/10.
+
+10) MoltJobs — https://moltjobs.io/open-jobs
+Current concrete listing: 5 USDC to convert three live job postings into ready-to-fund MoltJobs specs and contact the buyers, with about five days remaining. Jobs are funded in on-chain Base-USDC escrow. Agents get 10 free bids/month; fee is 5%.
+Agent work: research/specification plus legitimate individual outreach.
+Who pays: job poster.
+Tools: REST/MCP/CLI; some jobs may require machine-graded certification.
+Autonomy: 8/10.
+First action: inspect that specific listing; any buyer contact must be relevant, individual and permitted, not bulk outreach.
+Constraints: account/payment eligibility and job-specific rules.
+Ease: 7/10. Repeatability: 8/10.
+
+11) Taskmarket — https://taskmarket.dev/
+Fresh primary state: 17 open tasks, 26.9K registered agents, 2,382.95 USDC funded volume. Current low-value tasks already have 155–163 submissions; a 2-USDC resin-code bounty is still marked open but its due date is expired and it has 72 submissions, illustrating why deadline validation matters. Public agent profiles verify real earnings, e.g. 4.1625 USDC from a completed task.
+Agent work: research, data, code, benchmark or creative tasks.
+Who pays: task funder.
+Autonomy: 10/10.
+First action: require status=open AND due_at>now AND funded, then calculate EV = reward × P(win) − execution cost.
+Constraints: platform and wallet eligibility.
+Ease: 5/10. Repeatability: 9/10.
+
+12) t2000 — https://t2000.ai/
+Real settlement remains visible: public sellers show $57.75, $140.66 and $150 settled. Services charge 5% on settlement; API calls advertise 0% marketplace fee. Current open inventory has often been dominated by tiny ecosystem loops.
+Agent work: jobs, fixed services, paid APIs.
+Who pays: job posters/service callers.
+Autonomy: 10/10.
+First action: reject referral/bootstrap/payment loops unless they generate genuinely reusable reputation; use the path paid job -> proven procedure -> fixed service -> API.
+Constraints: Terms and Sui/USDC wallet/account eligibility apply.
+Ease: 5/10. Repeatability: 10/10 structurally.
+
+13) AuraGate vs APIHub/x402 distribution
+AuraGate is now the most interesting new x402 signal because it exposes unique-buyer and paid-request counts. APIHub remains technically easier distribution with provider pricing from $0.001 to $10+ per call and 90% provider share, but direct-work validation should come first.
+First action: expose only an endpoint that has already solved paid work elsewhere.
+Ease: 3-4/10. Repeatability: 10/10 if the endpoint earns organic calls.
+
+REDDIT DEMAND SIGNALS
+
+14) SEO incident evidence pack
+Reddit thread: https://www.reddit.com/r/SEO/comments/1vrv11e/breaking_google_august_2026_spam_update_is/
+Fresh complaint: a site owner reports roughly 99% organic-traffic loss on important pages since around Aug 17 while pages remain indexed and no obvious technical issue/manual action is visible.
+Recurring problem: operators have data but cannot separate algorithm/update effects from technical/indexing/content causes.
+Customer: publishers, ecommerce sites, SEO agencies.
+Agent workflow: GSC/GA4/indexing/backlinks/deploy timeline -> change-point detection -> affected-page/query clusters -> evidence-ranked hypotheses -> human review.
+How to charge: fixed incident diagnostic; recurring monitoring later.
+MVP: two GSC exports + crawl/index snapshot -> prioritized evidence report.
+Ease: 8/10. Repeatability: 9/10.
+
+15) AI-readiness / machine-readable site audit
+Reddit thread: https://www.reddit.com/r/WebsiteSEO/comments/1w219cg/audited_2475_sites_the_most_common_defect_isnt_in/
+Fresh evidence: an operator reports auditing 2,475 sites / 281,000 data points; 89% lacked machine-readable review data and 88% had never made an explicit AI-crawler decision in robots.txt, with other local-data inconsistencies.
+Customer: SEO agencies, local businesses, ecommerce operators.
+Agent workflow: crawl -> robots/AI crawler policy -> schema/review exposure -> NAP/GBP consistency -> structured findings -> human-approved fixes.
+Acquisition: agencies and service communities that explicitly permit offers.
+Charge: fixed audit + monitoring.
+MVP: one-site AI-readiness evidence pack.
+Ease: 9/10. Repeatability: 10/10.
+
+16) Support deflection with grounded evidence
+Reddit thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/
+Evidence: a hardware operator reports 70–80% of repetitive support emails automated after connecting an assistant to a knowledge base and allowing image uploads.
+Customer: hardware, ecommerce and SaaS support teams.
+Agent workflow: question/photo + approved KB -> evidence retrieval -> grounded response -> unsupported-claim check -> human escalation.
+Charge: setup + recurring support/monitoring.
+MVP: top 20 FAQs + escalation queue.
+Ease: 8/10. Repeatability: 10/10.
+
+17) Weekly business-ops worker
+Reddit thread: https://www.reddit.com/r/n8n/comments/1u879s4/i_mapped_every_repetitive_task_in_my_business_for/
+Evidence: one operator mapped 23 recurring tasks; automation handled lead routing, inbox triage, content reformatting and weekly reporting. They quantified about 4 minutes saved per lead across 15–20 leads/week for lead routing.
+Customer: small businesses/startups.
+Agent workflow: choose one repetitive process -> connect authorized apps -> deterministic execution -> logs/exceptions -> weekly result.
+Charge: fixed pilot, then maintenance.
+MVP: one Monday report, lead-routing flow or inbox action queue.
+Ease: 9/10. Repeatability: 10/10.
+
+18) Multi-site SEO monitoring
+Reddit thread: https://www.reddit.com/r/Agentic_SEO/comments/1v1jbfs/after_1_year_of_building_we_finally_automated/
+Evidence: an operator managing multiple sites says keyword tracking, backlink monitoring, technical audits, local SEO, competitor tracking and reporting automation saves many hours monthly while strategy remains human.
+Customer: SEO agencies and multi-site operators.
+Agent workflow: authorized Search Console/crawl/backlink data -> recurring collection -> change/anomaly detection -> client report -> human strategy.
+Charge: per-site recurring monitoring.
+MVP: weekly winners/losers + technical-change report for one site.
+Ease: 8/10. Repeatability: 10/10.
+
+19) GSC sudden-drop triage
+Reddit thread: https://www.reddit.com/r/TechSEO/comments/1vrl8bq/sudden_google_search_console_impressions_drop/
+Evidence: one current site reports impressions falling from about 12,000/day to almost zero while all pages remain indexed.
+Customer/problem: site owners need structured first-pass diagnosis without random site changes.
+Agent workflow: GSC -> indexing/manual-action sanity -> crawl/server/status changes -> query/page clusters -> evidence-ranked next checks.
+Charge: fixed triage report.
+MVP: 60-minute-equivalent diagnostic generated from exports.
+Ease: 8/10. Repeatability: 9/10.
+
+20) Small reusable agent product / OSS bounty scout
+Sigrix currently contains a new free OSS Bounty Scout skill, which is useful market evidence that reusable agent-operating procedures themselves are becoming sellable artifacts. Rather than sell generic prompts, package a narrow proven workflow such as bounty verification, API QA or data-quality checks.
+Customer: agent builders and solo developers.
+Agent workflow/product: input -> deterministic search/checks -> evidence -> ranked output.
+Where to sell: Sigrix and similar skill/agent marketplaces after verifying seller eligibility.
+Charge: low one-time price or free lead-in with paid advanced version.
+MVP: one skill with clear input/output contract and evidence links.
+Ease: 5/10. Repeatability: 9/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) Attack AgentPact and dealwork first. They remain the highest-confidence combination of explicit budgets, bounded software/data tasks, and low integration friction. Hard-filter to >=$5, fresh, funded/settleable, and objectively testable work.
+
+2) Add AuraGate and Hober as low-cost probes, not full projects. AuraGate is the first fresh x402 surface this run with explicit paid-request and unique-buyer counts; Hober has a clean scored-escrow job mechanism. Only invest further after an external buyer/job appears.
+
+3) Standardize one worker around /verify-pr + /api-sanity + /data-quality. This maps directly onto current paid marketplace categories and can later be exp

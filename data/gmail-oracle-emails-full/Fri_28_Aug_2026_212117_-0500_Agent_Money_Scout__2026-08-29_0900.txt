@@ -1,0 +1,185 @@
+Subject: Agent Money Scout — 2026-08-29 09:00
+Date: Fri, 28 Aug 2026 21:21:17 -0500
+Message ID: 1a04b5243ddea5dd
+================================================================================
+
+# Agent Money Scout — 2026-08-29 09:00
+
+This run deliberately prioritized current inventory, funded work, and settlement evidence over adding more empty agent marketplaces.
+
+## NEW THIS RUN
+
+### 1. BTNOMB Bounty Board — useful inventory, but settlement risk is HIGH
+URL: https://bounty.btnomb.com/
+
+What the agent does: builds bounded software products from posted briefs: Postgres MCP tooling, contract redlining, agent-wallet tooling, meeting-to-CRM automation, etc.
+Who pays: bounty posters.
+Economics: board currently shows 11 open bounties and $3,000 total advertised bounty value; hunters pay $0.10 USDC to unlock a full brief and BTNOMB takes 5% on payout. One visible Postgres MCP bounty has 1 bid with lowest bid $200.
+Important verification: the primary source explicitly says no payout has yet been executed on this board, and some attractive listings are unfunded/demo listings. Therefore advertised value is NOT equal to proven liquidity.
+Required: Base wallet, USDC for brief unlocks, coding/MCP/backend skills depending on task.
+Autonomy: 9/10.
+Exact first action: call the free GET /api/bounties or batch-preview endpoint and filter only listings that explicitly show funded escrow; do not pay to unlock unfunded/demo briefs.
+Constraints: use only where wallet/account/legal eligibility is satisfied; do not bypass age/KYC/payment restrictions.
+Ease to first $5: 4/10. Repeatability: 7/10 if real funded inventory grows.
+
+### 2. ClawFreelance — large claimed inventory, but metrics are self-reported
+URL: https://www.clawfreelance.com/en
+
+What the agent does: claims coding/project bounties, completes work, submits deliverables, gets verified.
+Who pays: bounty/job posters.
+Economics: platform currently claims 847 open bounties, 12,453 completed tasks, $1.2M total earned, and 2,847 active agents. Example terminal cards show $500 auth bug and $250 DB optimization work, but those visible cards may be illustrative rather than live inventory.
+Required: coding agent, GitHub/work artifact support, crypto-compatible payout setup.
+Autonomy: 9/10.
+Exact first action: inspect the actual task feed and verify a specific funded bounty before integrating or claiming.
+Constraints: platform/account/wallet eligibility applies.
+Ease: 5/10 pending live-bounty verification. Repeatability: 8/10 if claimed liquidity is real.
+
+### 3. Augmi Agent Marketplace — Base USDC + ERC-8004 reputation
+URL: https://augmi.world/marketplace/bounties
+Guide: https://augmi.world/blog/augmi-marketplace-tutorial
+
+What the agent does: registers an on-chain identity, browses/claims open bounties, submits deliverables and builds reputation.
+Who pays: bounty posters funding rewards in USDC on Base.
+Payout: task-specific. Primary docs give a $50 token-price-tracker example but this is an example, not verified current inventory.
+Required: Augmi agent, Base wallet, marketplace skill/API.
+Autonomy: 10/10 after setup.
+Exact first action: query https://augmi.world/api/marketplace/bounties?status=OPEN and reject anything without a clearly funded reward.
+Constraints: wallet/account/legal eligibility must be met legitimately.
+Ease: 4/10 until current funded inventory is measured. Repeatability: 8/10.
+
+### 4. Agent Hansa — real historical payouts, zero active quests right now
+URL: https://www.agenthansa.com/explore
+
+What the agent does: enters competitive quests and task pools, submits work and earns a share if it wins.
+Who pays: quest sponsors.
+Economics: primary page currently reports 154,605 registered agents, $50,669 total earned by agents, but 0 active quests at crawl time. Settled examples include $500 social/video quests.
+Required: Agent Hansa registration/API or MCP integration.
+Autonomy: 9/10.
+Exact first action: poll the feed for the next funded quest; do not spend time preparing while active quests = 0.
+Constraints: competitive payout means many submissions earn zero; platform/account eligibility applies.
+Ease today: 1/10. Repeatability when quests return: 6/10.
+
+### 5. HumanPing — not a revenue source itself, but a powerful job-completion primitive
+URL: https://humanping.io/
+
+What the agent does: programmatically hires a human to perform a real-world verification, photo check, phone call, reservation, local task, or judgment step that the agent cannot do itself.
+Who pays: the agent/operator; revenue comes indirectly from completing a larger customer job.
+Economics: task budgets are requester-set and escrowed; workers can be paid by Stripe, PayPal, or USDC. No agent revenue is guaranteed.
+Required: HumanPing API/MCP plus customer job with enough margin to cover human cost.
+Autonomy: 8/10 with approval controls.
+Exact first action: only add it as a fallback tool for profitable jobs where a small human step turns an otherwise impossible task into a deliverable.
+Constraints: no deceptive impersonation, credential collection, or prohibited physical tasks; normal account/payment restrictions apply.
+Ease: 3/10 direct, 7/10 as a margin-expanding fulfillment tool. Repeatability: 9/10.
+
+### 6. human-mcp.io — another hybrid fulfillment rail
+URL: https://human-mcp.io/
+
+What the agent does: posts writing, design, research, data-labeling, code-review, translation or judgment subtasks to humans through MCP/REST and receives results by webhook.
+Who pays: the agent organization; the economic play is subcontracting a small ambiguous step inside a larger paid job.
+Economics: 15% platform fee on completed human tasks; escrow-based.
+Required: funded organization wallet/account + REST/MCP integration.
+Autonomy: 8/10.
+Exact first action: use sandbox mode to test the lifecycle, then deploy only when expected customer revenue materially exceeds subtask cost.
+Constraints: follow platform/account/payment eligibility and only post legitimate tasks.
+Ease: 3/10 direct. Repeatability: 9/10 as a fulfillment primitive.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7. MoltJobs
+URL: https://moltjobs.io/
+
+Machine-native job flow remains clean: structured jobs, certified bids, Base USDC escrow, 10 free bids/month, 5% success fee, API/MCP/CLI/webhooks.
+What to do: poll OPEN jobs, bid only when acceptance criteria are deterministic and expected profit is positive.
+Autonomy: 10/10. Ease: 6/10. Repeatability: 9/10.
+
+### 8. SporeAgent
+URL: https://www.sporeagent.com/
+
+Still reports 1,247 agents and $48,210 paid out. Visible $45 scraping, $80 FastAPI testing and $120 translation cards are hundreds of days old, so they are evidence of historical task shape, not current inventory.
+Autonomy: 9/10. Ease: 5/10. Repeatability: 8/10.
+
+### 9. GitProduct
+URL: https://gitproduct.com/agents
+
+Official agent page says there are hundreds of bounties in research, content, testing and analysis, generally $5–$50. Human founders review submissions.
+Exact first action: query current agent-eligible bounties and filter out anything requiring human-only interaction.
+Autonomy: 7/10. Ease: 7/10 where eligible. Repeatability: 8/10.
+
+### 10. Agoragentic
+URL: https://agoragentic.com/earn.html
+
+Still reports 756 agents, 68 public services and 801 invocations. Providers set per-call USDC pricing and receive 97% when paid settlement is enabled.
+Best use: cross-list one proven deterministic endpoint instead of building an Agoragentic-specific agent.
+Autonomy: 10/10. Ease: 4/10. Repeatability: 10/10.
+
+### 11. Claw Earn
+URL: https://aiagentstore.ai/
+
+Still advertises Base-USDC escrowed jobs with a 9 USDC minimum task amount. Agent owners can onboard by reading the published machine skill and polling the live marketplace.
+Exact first action: inspect current funded tasks before installing anything.
+Autonomy: 9/10. Ease: 5/10. Repeatability: 8/10.
+
+### 12. gigs.sh
+URL: https://gigs.sh/
+
+Still a useful discovery index with 46 verified agent-compatible platforms, but its broad verification date is May 18, 2026. Treat it as a source finder, not proof of current liquidity.
+
+## REDDIT DEMAND SIGNALS
+
+### QA is now visibly becoming the bottleneck after AI coding
+Thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+
+A thread from August 27 has 1,100+ votes and describes an entire dev team becoming idle because Claude-assisted development is producing changes faster than QA can process them. Another August 18 AI_Agents thread says a team can ship a feature in a day but still gets low first-pass QA and reopened bugs even after Codex-based verification.
+
+Recurring product pattern: PR/Jira acceptance criteria -> changed-surface analysis -> targeted tests -> regression/performance checks -> evidence -> PASS/FAIL/HUMAN REVIEW.
+
+Concrete MVP: POST /verify-pr returning tests_run, tests_added, failures, regression_risks, reproduction_steps, evidence, and confidence.
+
+### Invoice reconciliation and custom pricing are still painful
+Thread: https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/
+
+A business using QBO + Stripe says it still relies on substantial manual data entry because customers have tiered usage and custom discounts. The desired outcome is automatically staged invoice drafts while keeping QBO and Stripe synchronized.
+
+Offer: usage data + contract pricing + discounts -> deterministic invoice calculation -> draft -> QBO/Stripe sync -> exception queue.
+
+### Invoice capture itself is a simple sellable operation
+Thread: https://www.reddit.com/r/SmallBusiness_US/comments/1vnbosd/invoice_capture_logging/
+
+A client was spending hours each week manually entering invoices; a simple inbox-to-spreadsheet extraction workflow eliminated the repeated copying.
+
+Offer: authorized inbox -> invoice parser -> validation/deduplication -> spreadsheet/accounting record -> review exceptions.
+
+### Mundane RPA work remains abundant
+Thread: https://www.reddit.com/r/rpa/comments/1vzcu7e/rpa_is_boring_unpopular_opinion/
+
+A 10-year RPA developer describes the core job as removing repetitive mundane work from clients. That is exactly the class of job an agent can increasingly own end-to-end.
+
+The opportunity is not 'AI transformation'; it is replacing one boring operation with a reliable monitored workflow.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Make funded-vs-unfunded detection a hard rule in the opportunity oracle. BTNOMB is the clearest example: 11 open bounties and $3,000 advertised value looks excellent until the primary source reveals no payout has yet executed and some listings are explicitly unfunded/demo. Track escrow_funded, payout_history, and settlement_verified separately from headline_reward.
+
+2. Build the PR-verification specialist first. The August 27 Reddit signal is unusually strong: AI coding is creating a literal downstream QA capacity bottleneck. This capability can earn from coding/test bounties and also be sold directly through MCP/x402 markets.
+
+3. Add human fallback as a margin tool, not as the core worker. HumanPing/human-mcp can let an autonomous agent complete higher-value jobs that contain one small physical/judgment step. The router should subcontract only when: customer_reward × P(acceptance) - model/API costs - human subtask cost - payment fees > required margin.
+
+Recommended router fields this hour:
+
+marketplace
+job_id
+headline_reward
+escrow_funded
+payout_history_verified
+current_competitors
+acceptance_criteria_quality
+estimated_compute_cost
+estimated_external_tool_cost
+estimated_human_subtask_cost
+P(still_open)
+P(solve)
+P(accepted)
+P(settled)
+expected_realized_profit
+
+Only SETTLED/WITHDRAWN value should count as earnings. Never treat demo tokens, internal credits, advertised bounty value, or unfunded listings as revenue.

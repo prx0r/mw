@@ -1,0 +1,191 @@
+Subject: Agent Money Scout — 2026-08-29 10:00
+Date: Fri, 28 Aug 2026 22:22:13 -0500
+Message ID: 1a04b8a0db276929
+================================================================================
+
+# Agent Money Scout — 2026-08-29 10:00
+
+This run prioritized fresh monetization surfaces with observable usage or settlement evidence. The most useful new discovery is that several x402 indexes now expose actual transaction and buyer counts, which makes it possible to distinguish real machine demand from directories full of unused endpoints.
+
+## NEW THIS RUN
+
+### 1. Agent402 settlement-index arbitrage — strongest fresh signal
+https://agent402.tools/marketplace
+
+Agent402's live marketplace index currently shows 2,786 distinct payees, 3,441 endpoints, and 90,349 advertised tools across 12 chains. More importantly, it exposes settled transaction counts. Its own host reports 3,342 outside-buyer settlements in the last 30 days and 10 distinct outside buyers; individual third-party sellers include BlockRun with 179,346 settled transactions, x402.twit.sh with 31,063, stableenrich.dev with 16,168, and other sellers with thousands of transactions.
+
+What the agent would do: crawl the index, cluster capabilities, identify categories with real settlements but weak/redundant supply, then launch a narrower or more reliable paid endpoint.
+Who pays: autonomous software agents calling the resulting x402 service.
+Payout/pricing: provider-set; settlement is direct per-call USDC. Do not assume headline revenue from transaction count alone.
+Required: HTTP API, x402-compatible payment wrapper, reliable underlying data/function.
+Autonomy: 10/10 after deployment.
+Exact first action: export seller/tool/settlement data and rank by distinct buyers + settlement velocity, not listing count.
+Constraints: any wallet/payment or jurisdiction restrictions must be followed; do not bypass age or identity requirements.
+Ease-to-first-$5: 6/10. Repeatability: 10/10.
+
+### 2. PayAPI Market — unusually strong verification model
+https://payapi.market/
+
+PayAPI Market currently reports 92 live APIs, 598 endpoints, and 75 settlement-verified listings. It says verification requires the marketplace itself to make a real x402 payment and receive a valid response, and providers keep 100% of each settlement. Listing is free.
+
+Visible non-sensitive categories include UK public data, Companies House, postcode/address lookup, email verification, screenshot/PDF capture, DNS/domain intelligence, web extraction, IP geolocation, public-company evidence, charity/grant evidence, and merchant-risk domain evidence. Prices shown range from roughly $0.001 to $0.060 per request for many utilities.
+
+What the agent would do: expose a narrow deterministic information service that agents repeatedly need.
+Who pays: other agents/API consumers.
+Payout: direct USDC per request; PayAPI says providers keep 100%.
+Required: dependable endpoint + permitted data source + x402 integration.
+Autonomy: 10/10.
+Exact first action: compare the 75 verified listings and build something adjacent to categories with proven verification but poor coverage.
+Ease: 6/10. Repeatability: 10/10.
+
+### 3. true402 — free-to-list protocol-level marketplace
+https://true402.dev/
+
+true402 is a new machine-native x402 marketplace. It says listing a service is free, agents pay per call in USDC on Base, and services are ranked by settlement history rather than paid placement. The protocol is accountless: request -> 402 quote -> signed USDC payment -> result.
+
+What the agent would do: serve a paid API or verified data feed.
+Who pays: software agents.
+Payout: provider-set per-call pricing; the site demonstrates $0.005 calls for one service.
+Required: HTTP service and compatible x402 payment flow.
+Autonomy: 10/10.
+Exact first action: list an existing useful endpoint rather than building a true402-specific product.
+Ease: 5/10. Repeatability: 10/10.
+
+### 4. Agora402 — machine-discoverable registry with live traffic
+https://agora402.io/
+
+Agora402 currently shows 51 live agents, about 919K API discoveries, and 13.5K agent-page views. Providers can publish native x402 services or use Agora's managed payment path. Current non-sensitive paid examples include threat-intelligence feeds, registry statistics, quality/script checking, and other data-enrichment services at roughly $0.001-$0.10 per call.
+
+What the agent would do: expose a specialist API and become discoverable through AgentCard-compatible metadata.
+Who pays: agents discovering and invoking it.
+Payout: direct USDC per call where native x402 is used.
+Required: endpoint + AgentCard/x402 compatibility.
+Autonomy: 10/10.
+Exact first action: publish one narrow service and monitor discovery-to-paid-call conversion.
+Ease: 5/10. Repeatability: 10/10.
+
+### 5. Agent Bazaar — interesting but currently weak paid-use evidence
+https://www.agent-bazaar.com/marketplace
+
+Agent Bazaar lists 34+ pay-per-use skills and advertises developer earnings per call. Its dashboard displays 12,459 total calls and $2,847 revenue earned platform-wide, but many prominently listed individual skills currently show 0 uses, so treat marketplace-level figures cautiously.
+
+Safe examples include web search, code review, web scraping, research summarization, CI/CD generation, SEO analysis, image background removal, and sentiment analysis, commonly priced around $0.005-$0.18 per call.
+
+What the agent would do: sell one callable skill.
+Who pays: humans or agents invoking it.
+Required: callable API/skill and x402 wrapper.
+Autonomy: 10/10.
+Exact first action: only list something with external demand evidence; do not pay for Featured/Spotlight placement before organic calls appear.
+Ease: 4/10. Repeatability: 9/10.
+
+### 6. 402.rest — potentially useful demand map, but metrics need independent confirmation
+https://www.402.rest/
+
+402.rest currently reports 1,146 listed APIs, 147 publishers, 8.7M monthly requests, and 99.94% average uptime. Visible utility pricing includes $0.002/call for x402 billing infrastructure, $0.004 per prompt for model routing, $0.015 per business-enrichment lookup, and fixed-price webhook utilities.
+
+What the agent would do: study high-frequency utility categories and compete with a more reliable/specialized endpoint.
+Who pays: API/agent consumers.
+Payout: service-specific.
+Required: HTTP API + paid-access integration.
+Autonomy: 10/10.
+Exact first action: verify whether request metrics are third-party auditable before treating them as demand.
+Ease: 4/10. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7. dealwork.ai
+https://dealwork.ai/
+Still one of the strongest direct-work acquisition pools observed in prior live scans, with materially more visible task inventory and completed-task history than most new agent markets. Best use: continuously poll and bid only where expected realized profit is positive.
+Ease: 9/10. Repeatability: 9/10.
+
+### 8. TaskBounty
+https://www.task-bounty.com/for-agents
+Still a strong shape for coding agents: GitHub issue -> reproduce -> patch -> tests -> PR -> verification. Prior verified ranges were $10 to a few hundred dollars with an 80% solver share.
+Ease: 7/10. Repeatability: 9/10.
+
+### 9. MoltJobs
+https://moltjobs.io/
+Still a clean machine-native job loop using Base-USDC escrow, programmatic bidding/delivery, and explicit acceptance criteria. Keep as a polling source rather than building a marketplace-specific worker.
+Ease: 6/10. Repeatability: 9/10.
+
+### 10. DeskCrew Arena
+https://deskcrew.io/arena
+Still useful because it exposes reward, entrant count, attempt cost, and public settlement history. The agent can calculate expected value before entering support-ticket competitions.
+Ease: 5/10. Repeatability: 9/10.
+
+### 11. AgentCab
+https://agentcab.ai/
+Still one of the better pay-per-call distribution surfaces because previous checks found actual served-call counts and visible provider revenue. Cross-list a proven specialist rather than creating a separate AgentCab-specific product.
+Ease: 5/10. Repeatability: 10/10.
+
+### 12. gigs.sh
+https://gigs.sh/
+Still useful as an upstream directory of agent-compatible earning platforms, but its broad verification snapshot dates to May 18, 2026. It should feed discovery, not replace fresh inventory and settlement checks.
+
+## REDDIT DEMAND SIGNALS
+
+### 13. QA is still the clearest repeated bottleneck
+https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+
+An August 27 thread now has 1,100+ votes from a developer reporting that AI-assisted development moved so quickly that QA became the limiting stage and developers were left waiting for testing capacity. Separate August discussions describe the same pattern: code output increases, but regression testing and verification do not scale with it.
+
+Recurring problem: AI makes code generation cheap; trustworthy validation remains scarce.
+
+MVP offer:
+PR + requirements -> changed-surface analysis -> targeted tests -> regression/API/browser checks -> reproducible evidence -> PASS / FAIL / HUMAN REVIEW.
+
+Charge: per verified PR or recurring CI plan.
+Ease: 7/10. Repeatability: 10/10.
+
+### 14. Small-business automation buyers care about ROI, not novelty
+https://www.reddit.com/r/smallbusiness/comments/1w0rc17/a_small_business_doesnt_always_need_to_automate_a/
+
+A fresh August 28 discussion makes the demand filter explicit: automating a ten-minute task once per week may not be worth maintaining, while a ten-minute task repeated several times every day can be. The recurring issue is not merely build cost but checking correctness, handling exceptions, and maintenance.
+
+Product implication: target repetitive processes with measurable frequency and exception cost.
+
+Offer examples: inventory/reorder alerts, invoice reconciliation, document normalization, client follow-up state tracking, recurring report generation.
+
+### 15. Freelancers report clients expecting AI-compressed delivery
+https://www.reddit.com/r/freelance/comments/1vy1khu/ai_has_completely_changed_freelance_work_and/
+
+A current 169-vote thread describes clients increasingly expecting one freelancer to deliver what previously took several people, faster and cheaper because AI is assumed to handle much of the production. This is bad for generic labor but good for operators selling a finished measurable outcome.
+
+Recurring pattern: clients are increasingly buying throughput/outcome rather than hours.
+
+Offer: tested endpoint, verified data extract, completed migration, validated report, or automated workflow — not 'AI assistance'.
+
+### 16. Automation sellers themselves are converging on narrow niches
+https://www.reddit.com/r/automation/comments/1vk3aig/anyone_here_actually_make_money_doing_ai/
+
+A current discussion about making money with AI automation converges on narrowing the niche and selling an outcome rather than generic automation. Common target operations include lead follow-up, scheduling, CRM updates, reminders, and administration.
+
+MVP: choose one recurring operation for one customer type and price by completed result or monthly throughput.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Build the settlement-aware x402 opportunity oracle
+The biggest new edge is no longer discovering x402 directories — there are plenty. It is measuring actual economic activity. Combine Agent402's settlement counts with PayAPI's verification badges and marketplace metadata.
+
+Track:
+capability, provider, price, uptime, paid_tx_7d, paid_tx_30d, distinct_buyers_30d, last_settlement, competitors, source_quality.
+
+Rank by distinct buyers and recent settlement velocity, not raw request counts or listing totals.
+
+### 2. Ship one verification utility across multiple rails
+The strongest recurring demand signal remains QA/verification. Build one canonical service such as `/verify-pr`, `/verify-api`, `/extract-evidence`, `/normalize-data`, or `/check-release`, then list the same underlying service on true402, PayAPI Market, Agora402, AgentCab, MCP surfaces, and other compatible directories.
+
+Do not create a separate product per marketplace.
+
+### 3. Keep bespoke paid jobs as training data for reusable services
+Use dealwork.ai, TaskBounty, MoltJobs and similar task sources to acquire paid work. Record which tools, tests, edge cases, and evaluator feedback actually produced accepted results. Turn successful procedures into reusable paid endpoints.
+
+Economic loop:
+PAID JOB -> successful procedure -> benchmark/tests -> specialist capability -> per-call API/MCP -> more usage/feedback -> better specialist.
+
+The router should optimize:
+expected realized profit = reward × P(funded) × P(still open) × P(solve) × P(accepted) × P(settled) - inference - APIs - payment/network costs - expected review cost.
+
+Only SETTLED/WITHDRAWN money should count as earnings; demo credits, advertised GMV, unfunded bounty values and platform self-reported volume should remain separate telemetry.
+
+Important eligibility note: where a platform, wallet, payment provider, or marketplace imposes age, identity, geography, KYC, or other eligibility requirements, those must be followed and should not be bypassed.

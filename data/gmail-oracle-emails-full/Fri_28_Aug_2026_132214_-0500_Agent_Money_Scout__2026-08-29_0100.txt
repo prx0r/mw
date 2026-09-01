@@ -1,0 +1,215 @@
+Subject: Agent Money Scout — 2026-08-29 01:00
+Date: Fri, 28 Aug 2026 13:22:14 -0500
+Message ID: 1a0499badc16d04c
+================================================================================
+
+# Agent Money Scout — 2026-08-29 01:00
+
+This run found three genuinely useful new money surfaces: **MikroTask**, **FlowRuns**, and **req402**. MikroTask is the strongest first-$5 candidate because it has a live seller/task marketplace with fixed-price work starting at £5. FlowRuns is more interesting for repeatable revenue because one Dockerized workflow can be sold repeatedly. req402 is the strongest pure machine-to-machine monetization surface because it exposes live per-request traffic and non-custodial USDC settlement.
+
+## NEW THIS RUN
+
+### 1. MikroTask — strongest new first-$5 surface
+URL: https://mikrotask.com/
+
+What the agent does: research, drafts, data cleanup, coding, transcription, product research and other bounded digital tasks. The live site explicitly supports AI-agent sellers and currently shows a £5 article task due tomorrow plus AI-agent listings including £10 transcription, £20 product research, £30 promotional video creation, £40 mobile-app work, £50 website work and £100 iOS work.
+
+Who pays: marketplace buyers.
+
+Verified economics: platform has fixed £5 / £10 / £25 / £50 task tiers and says payouts can be USD, USDT or USDC. Live seller listings can price above those tiers as well.
+
+Required: account, task-capable agent, and whatever payout/account verification the platform requires.
+
+Autonomy: 7/10. The work itself can be highly autonomous, but account/payout and buyer approval may require a human operator.
+
+Exact first action: read the seller eligibility/ToS; if legitimately eligible, apply as an AI-agent seller and start with a narrow research/data-cleanup/transcription offer whose output can be objectively checked.
+
+Constraints: do not bypass age, identity, geography, tax or payment-provider requirements.
+
+Ease-to-first-$5: 9/10. Repeatability: 8/10.
+
+### 2. FlowRuns — sell a reusable agent workflow per execution
+URL: https://www.flowruns.com/
+
+What the agent does: run a packaged workflow in an isolated Docker container; buyers pay for each execution and download the output.
+
+Who pays: buyers purchasing individual workflow runs.
+
+Verified economics: visible examples include Research Brief Agent at $2.50/run, Data Scraper Pro at $0.49/run, SEO Content Gen at $1.20/run and Customer Support AI at $0.85/run. Sellers keep 80% using platform AI or 85% using BYOK. Stripe Connect handles payouts.
+
+Required: Dockerized workflow, defined inputs/outputs, Stripe Connect eligibility for payouts; BYOK if using your own model/API account.
+
+Autonomy: 10/10 after publishing.
+
+Exact first action: package one already-proven workflow — e.g. research brief, PR verification, API audit, CSV cleanup — and publish it with a single clear input/output contract.
+
+Constraints: Stripe/account age, identity and geography rules apply.
+
+Ease-to-first-$5: 6/10. Repeatability: 10/10.
+
+### 3. req402 — pay-per-request APIs with live usage telemetry
+URL: https://www.req402.com/
+
+What the agent does: expose an existing API/agent endpoint, set a per-request USDC price, and serve autonomous callers.
+
+Who pays: other developers and autonomous agents.
+
+Verified economics: req402 currently shows example live services at $0.001–$0.020/request, including Crypto Prices at $0.001/request with 9,758 requests, Weather at $0.002/request with 8,424 requests, and AI Captioning at $0.020/request with 11,097 requests. It advertises a 5% facilitator fee, no setup/monthly fee, and direct wallet settlement.
+
+Required: HTTP API, x402-compatible middleware, supported Base USDC wallet/payment setup.
+
+Autonomy: 10/10.
+
+Exact first action: wrap one deterministic endpoint and list it; best candidates are /verify-pr, /api-health, /company-evidence, /extract-schema or /package-health.
+
+Constraints: crypto/payment use must comply with applicable age and jurisdiction rules; do not bypass them.
+
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+### 4. HireAIStaffs — watchlist, not yet an earning priority
+URL: https://www.hireaistaffs.com/
+
+The architecture is real: MCP task discovery, Stripe escrow, bids, delivery, and payouts. However its current public metrics show 0 active agents, 0 completed tasks and $0 earned, despite marketing copy elsewhere on the page referencing 19+ agents/services. That conflict makes it a low-priority integration until actual task liquidity appears.
+
+Ease-to-first-$5: 1/10 today. Repeatability: 7/10 if liquidity arrives.
+
+### 5. SeekClaw — interesting agent-native task board, but credits are not cash
+URL: https://www.seekclaw.com/
+
+SeekClaw currently reports 20 active agents, 14 open jobs and 3.5K jobs completed, with autonomous registration, skill challenges and bidding. But earnings are denominated in CLAW Credits. Until a verified cash-out path exists, credits should not be counted as real revenue.
+
+Ease-to-first-$5: 1/10 until withdrawal is verified. Repeatability: 7/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. dealwork.ai
+URL: https://dealwork.ai/
+Current status: 154 open tasks, 2.4K workers, 264 completed tasks, typical delivery around 1.1 days. AI-to-AI contracts advertise a 3% fee. This remains the strongest visible task inventory among the agent-native boards checked this run.
+
+Agent work: coding, research, data, writing, subcontracting.
+First action: poll current tasks and rank only escrow-funded, objectively testable jobs.
+Ease: 9/10. Repeat: 9/10.
+
+### 7. SporeAgent
+URL: https://www.sporeagent.com/
+Current status: 1,247 agents, $48,210 platform-reported paid out. Public examples still include $45 scraping, $80 FastAPI tests and $120 technical translation, though those example listings are old, so freshness must be checked before bidding.
+
+Ease: 7/10. Repeat: 8/10.
+
+### 8. AgentGigs
+URL: https://www.agentgigs.io/
+Current status: live; agents can browse, apply, deliver and earn through REST/webhooks after one-time email verification and Stripe Connect setup.
+
+Agent work: research, coding, structured deliverables.
+Ease: 6/10. Repeat: 9/10.
+
+### 9. Agrenting
+URL: https://agrenting.com/
+Current status: live, $0/month, platform advertises 95% of completed-task revenue to the agent and stablecoin payouts. Supports OpenClaw/Hermes/custom agents and REST/WebSocket integration.
+
+Ease: 5/10. Repeat: 9/10.
+
+### 10. AgentHire
+URL: https://www.agenthire.app/
+Current status: platform reports 500+ active agents, 10K+ completed jobs and $50K+ processed, with pay-per-task USDC on Solana and API-first discovery. Published service starting prices include $0.01 text/image generation, $0.02 translation, $0.03 scraping, $0.05 code review and $0.10 AI training.
+
+Ease: 5/10. Repeat: 9/10.
+
+### 11. x402 Arena
+URL: https://x402arena.gg/
+Current status: 322 agents, $109.32 total revenue, 10,790 paid queries and 72 buyers. Still more valuable as demand telemetry than as a conventional job board.
+
+Best use: observe paid categories, then publish a better/cheaper specialist endpoint.
+Ease: 4/10. Repeat: 10/10.
+
+### 12. BotWork
+URL: https://www.botwork.network/
+Current status: still advertises SDK/webhook-based paid tasks with Base escrow; 90% to agent, 5% relay, 5% platform.
+
+Ease: 5/10. Repeat: 8/10.
+
+### 13. ClawMolt
+URL: https://www.clawmolt.ai/
+Current status: still advertises coding/research/design/data bounties starting around $5, Stripe escrow, and USD/USDC payout for deployed agents. Use the free tier only until actual task liquidity is observed; paid subscription tiers create unnecessary upfront cost.
+
+Ease: 5/10. Repeat: 7/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. Internal endpoint/data-filter agent
+Relevant Reddit thread: https://www.reddit.com/r/ExperiencedDevs/comments/1vlkhje/removed/
+
+An Aug 11 ExperiencedDevs discussion includes a developer at a non-tech company saying product/sales bottlenecks are often simply “another endpoint or another data filter”; work that used to require 2–3 engineering days can now be attacked much faster with coding agents.
+
+Recurring problem: business teams need narrow internal operations, not generic chatbots.
+
+Agent workflow: request -> map source systems -> build/read endpoint or filter -> tests -> documented output -> human review for writes.
+
+Customer acquisition: small SaaS, agencies and operational teams with spreadsheet/API handoffs.
+
+Concrete MVP: “I turn one repetitive spreadsheet/API task into a reliable callable endpoint.” Charge per implementation or recurring maintenance.
+
+### 15. PR/QA verification agent
+Relevant Reddit thread: https://www.reddit.com/r/BuildAndScaleHQ/comments/1vueghj/is_qa_becoming_the_real_bottleneck_now_that/
+
+A fresh Aug 21 thread describes feature output rising with coding agents while the same two QA people cannot keep up; features wait in review because manual testing did not scale.
+
+Workflow: PR + issue/spec -> risk map -> targeted tests -> unit/integration/browser/API checks -> reproduce failures -> evidence bundle -> PASS/FAIL/HUMAN REVIEW.
+
+Where to sell: software teams directly, coding bounty markets, or as a pay-per-run API/workflow.
+
+MVP: POST /verify-pr returning tests run, failures, regression risks, evidence and confidence.
+
+### 16. AI-code trust/review service
+Relevant Reddit thread: https://www.reddit.com/r/ExperiencedDevs/comments/1s9pkif/experienced_teams_that_went_hard_on_ai_did_you/
+
+A 102-vote Apr 2026 ExperiencedDevs discussion centers on whether teams using AI heavily must lower their maintainability/reliability bar, or compensate with much stronger review/testing.
+
+Recurring problem: code generation is cheap; independent verification is scarce.
+
+Offer: architecture-aware diff review + dependency risk + untested-path detection + maintainability findings.
+
+### 17. Repetitive operational data normalization
+The same Reddit/operator evidence from earlier runs keeps recurring: finance, reporting and business ops spend disproportionate time cleaning semi-structured spreadsheets/documents before a useful action can happen.
+
+Offer: documents/spreadsheets -> normalize -> validate -> dedupe -> deterministic rule -> draft action -> exception queue.
+
+This is a strong cross-market specialist because the same core worker can perform paid data-cleaning jobs and sell the normalized operation as a repeatable workflow/API.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Test MikroTask for actual first-money liquidity
+It has the cleanest fresh evidence of real, fixed-price AI-agent work this run. Start with research/data cleanup/transcription rather than subjective design work. Only proceed if the account/payment rules permit it legitimately.
+
+### 2. Package one specialist as a FlowRuns workflow AND req402 endpoint
+Do not build two products. Use one core capability, e.g.:
+
+PR / API / company input
+-> gather evidence
+-> deterministic checks
+-> structured JSON/report
+-> confidence + exceptions
+
+Sell the exact same capability as a $1–$5 workflow run on FlowRuns and as a much cheaper machine-callable endpoint on req402/x402 surfaces. This tests human vs agent demand with the same backend.
+
+### 3. Make liquidity telemetry the deciding layer
+The scout is now finding many platforms with excellent architecture but almost no money. Track:
+
+open_jobs_now
+new_jobs_24h
+median_reward
+median_bids
+accepted_jobs
+settled_payouts
+withdrawn_payouts
+paid_api_calls
+unique_buyers
+provider_revenue_30d
+
+Then optimize expected realized profit, not marketplace marketing:
+
+EV = reward × P(still open) × P(solve) × P(accepted) × P(settled) - inference/API/payment/review costs.
+
+The strategic pattern remains: use job markets to generate paid experience and acceptance feedback; convert the resulting procedures into repeatable paid workflows/APIs; let execution history make each specialist increasingly distinct.
+
+Sources checked this run include MikroTask, FlowRuns, req402, HireAIStaffs, SeekClaw, dealwork.ai, SporeAgent, AgentGigs, Agrenting, AgentHire, x402 Arena, BotWork, ClawMolt, gigs.sh and fresh Reddit threads. Payouts above are only included where the site/source stated them; platform-reported volume/counts are treated as platform-reported rather than independently audited.

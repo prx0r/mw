@@ -1,0 +1,132 @@
+Subject: Agent Money Scout — 2026-09-01 01:00
+Date: Mon, 31 Aug 2026 18:24:20 +0000
+Message ID: 1a05910afd0ba8be
+================================================================================
+
+# Agent Money Scout — 2026-09-01 01:00
+
+Current execution order: MoltJobs → AgentPact → dealwork.ai → Complete Codes → Taskmarket $10 if competition-adjusted EV works → selective Opire. New discovery layer: BotGuild, AgentBazaar, Graph Hacks, AssemblyAI Voice Agent Hackathon.
+
+I count only settled or clearly withdrawable money. Internal credits, testnet balances, speculative tokens, marketplace GMV and unpaid submissions count as $0. Where public age/payment rules are unclear, do not create an account or connect a payment rail until the operator confirms eligibility; never bypass age, KYC, guardian-consent, wallet or jurisdiction rules.
+
+## NEW THIS RUN
+
+### 1. BotGuild — 89 live gigs, real Base escrow, but beta rewards are tiny
+URL: https://botguild.ai/app/gigs/
+What the agent does: code, QA, data, research, documentation and ops gigs. Who pays: gig poster via non-custodial Base escrow. Payout: current open-beta gigs are explicitly $0.10–$0.20; the live board shows 89 gigs, with examples around $0.10–$0.99. Handler fee: 5% on successful completion only. Tools: REST, MCP, webhooks or their TypeScript agent framework. Autonomy: 9/10, with human approval required on critical steps.
+First action: complete at most one cheap beta gig to verify the full claim→deliver→escrow-release path, then monitor for jobs ≥$5. Do not spend serious compute on the current sub-dollar queue.
+Eligibility: public account terms were not sufficiently clear in this run; verify before registration/payment.
+Ease first $5: 2/10. Repeatability: 9/10 if real budgets arrive.
+
+### 2. AgentBazaar — A2A/MCP-native agent services on Solana
+URL: https://www.agentbazaar.dev/
+What the agent does: sell callable specialist services such as code auditing, document generation or testing. Who pays: humans or agents. Settlement: USDC on Solana; agent receives 97%, platform 3%. Registration and browsing are free. The site supports dashboard, REST, A2A, MCP, TypeScript SDK and Telegram.
+First action: cross-list one capability that has already earned elsewhere at a small fixed quote. Measure unique external paying customers, not listings or calls.
+Eligibility: public age/account rules were not clear enough to assume eligibility; verify before creating an account or wallet flow.
+Autonomy: 10/10. Ease first $5: 3/10. Repeatability: 10/10 if demand develops.
+
+### 3. Graph Hacks — $10,000 online FalkorDB hackathon
+URL: https://www.wemakedevs.org/hackathons/falkordb
+Rules: https://www.wemakedevs.org/hackathons/falkordb/rules
+What to build: a graph-powered product in Investigation & Risk, Best Agentic AI Use Case, or Best GraphRAG SDK Use Case. FalkorDB must be central, not decorative. Prize pool: $10,000 across three tracks. Online worldwide; solo or teams up to 4; free.
+First action: register and choose the Agentic AI track. A strong agent-money angle would be a graph of jobs→skills→acceptance criteria→payout history that routes an agent to the highest expected-value task with evidence.
+Important rules: main coding/design work must begin after the hackathon starts; public repo, README, graph model/Cypher, demo video and deployment/local setup required; AI coding assistants are allowed but must be disclosed and meaningful participant verification/understanding is required. WeMakeDevs signup states users must be 18+ or have parent/guardian consent.
+Autonomy: 7/10. Ease first $5: 2/10. Repeatability: 4/10.
+
+### 4. AssemblyAI Voice Agent Hackathon — $10,000 prize pool
+URL: https://lablab.ai/ai-hackathons/assemblyai-voice-agent-hackathon/live
+Dates: September 1–30, 2026. Prize pool: $10,000 total ($5,000 cash + $5,000 AssemblyAI credits). Fully online, worldwide, and 835+ builders were already registered when checked. Build must use AssemblyAI.
+What the agent does: build an agentic voice product. First action: register before kickoff if the event page still accepts it and aim at a narrow operational product rather than a generic voice bot—for example voice support that gathers missing structured information and escalates exceptions.
+Eligibility: lablab pages describe events as open globally, but the current page did not expose a precise age clause in this run; verify eligibility before registration and prize acceptance.
+Autonomy: 6/10. Ease first $5: 2/10. Repeatability: 4/10.
+
+### 5. Molt4Hire — MCP/A2A hybrid marketplace worth adding to the scanner
+URL: https://molt4hire.com/
+What it does: agents can search/hire other agents or humans and register as service providers through API/MCP/A2A; USDC payments are advertised. It has job and agent directories.
+First action: query the live job board and only promote listings that are explicitly funded and ≥$5. I did not verify a worthwhile concrete payout in this run, so this is a discovery source, not an execution target.
+Eligibility: verify current account/payment terms before use.
+Autonomy: 10/10. Ease first $5: 2/10. Repeatability: 8/10 potential.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. MoltJobs — best small immediate target
+URL: https://moltjobs.io/open-jobs
+The recent board has funded $5–$6 documentation/research/starter-kit work and the official MCP supports browsing, bidding, running evals, submitting results and wallet operations. Payment is USDC in Base escrow.
+First action: take the newest funded ≥$5 documentation/research task before higher-cost coding work. Avoid bulk outreach even if a listing asks for buyer contact; any contact must be relevant and permitted.
+Autonomy: 9/10. Ease: 9/10. Repeatability: 8/10.
+
+### 7. AgentPact — best recurring small-job queue
+URL: https://agentpact.xyz/needs
+Recent checks continue to show around 200 Needs with useful $5–$25 Python/API/scraping/data work mixed with lots of sub-dollar noise.
+First action: filter reward >= $5 AND clear scope AND objective acceptance AND settleable. Security work only on explicitly authorized code/systems.
+Autonomy: 10/10. Ease: 9/10. Repeatability: 9/10.
+
+### 8. dealwork.ai — 157 open tasks right now
+URL: https://dealwork.ai/
+Current primary page: 2.5K workers, 157 open tasks, 264 completed. Funds are escrowed before work. The platform documents an $80 production API delivered by an AI worker and a $5 AI→AI contract. Fees are 10% normally, 3% AI→AI.
+First action: ingest the full task feed and reject jobs whose acceptance conditions cannot be reproduced independently.
+Autonomy: 9/10. Ease: 9/10. Repeatability: 9/10.
+
+### 9. Complete Codes — strongest merge→payment coding architecture
+URL: https://www.complete.codes/en/agents
+What the agent does: discover funded GitHub Sprints, solve issues, submit PRs; eligible merged code triggers Base-USDC earnings without a conventional proposal race.
+First action: scan funded repos with next payout ≥$5, then rank by repo activity, testability and maintainer merge velocity.
+Autonomy: 9/10. Ease: 7/10 when inventory fits. Repeatability: 10/10.
+
+### 10. Taskmarket — $10 Inference Chip Index still live, but heavily contested
+URL: https://taskmarket.dev/tasks/0x0f50fb11e2c983117a758986f8f6808f5959ec7abfca596cef74ca67f863dbdc
+Reward: 10 USDC. Current page: 57 submissions, roughly 9 days left. Task: build a Next.js/TypeScript MLPerf Inference v6.0 leaderboard plus Lucid Agents API and Cloudflare deployment.
+First action: inspect existing submissions and only execute if a cheap preflight shows a credible path to materially better correctness/UI/data provenance.
+Autonomy: 9/10. Ease: 4/10. Repeatability: 9/10.
+
+### 11. Opire — real payouts, highly noisy
+URL: https://app.opire.dev/home
+Primary page continues to expose paid OSS bounties and reports $4,975.87 historically paid, but headline open-value totals are polluted by anomalous listings.
+First action: verify upstream GitHub issue, funding, maintainer activity, competing PRs and local reproducibility before coding.
+Autonomy: 8/10. Ease: 5/10. Repeatability: 8/10.
+
+### 12. gigs.sh — discovery oracle only
+URL: https://gigs.sh/
+Use it to generate unfamiliar marketplace names, then verify actual inventory and payout from primary sources. Do not treat its directory state as proof a job is live.
+Ease direct earning: 1/10. Discovery repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 13. Accounting/document-chasing automation
+Thread: https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/
+Recurring pain: client messages, document chasing, compliance reminders, invoice follow-ups and lead qualification. Product: required-doc list → received/not-received → reminders → escalation → dashboard. Professional accounting/tax judgment remains human-controlled.
+Customer: bookkeeping/accounting firms. MVP: automate one client document-collection workflow. Charge as a fixed setup plus support/monitoring.
+Ease: 8/10. Repeatability: 10/10.
+
+### 14. Fixed-price automation work already clears real budgets
+Thread: https://www.reddit.com/r/buhaydigital/comments/1veph26/client_wants_fulltime_ea_custom_ai_automations/
+Demand evidence: a client wanted custom Claude API and Google Apps Script automations bundled into a $1,000/month role; the worker countered at $1,100/month. This is not proof of a completed deal, but it is direct evidence that operational automation is being budgeted alongside human admin work.
+Offer: isolate one measurable bottleneck, automate it, add validation/error handling, and price the automation as a deliverable rather than generic “AI help.”
+Ease: 7/10. Repeatability: 10/10.
+
+### 15. Freelance admin automation
+Thread: https://www.reddit.com/r/Entrepreneurs/comments/1sxdaki/i_used_to_spend_way_too_much_time_on_freelance/
+Reported pain: proposals, onboarding emails, follow-ups and invoice reminders. The poster reports roughly 80% reduction in admin workload after simple automations.
+MVP: client state → proposal/onboarding/follow-up/invoice reminder drafts → human approval → send/log.
+Ease: 9/10. Repeatability: 9/10.
+
+### 16. AI-generated workflow reliability gap
+Thread: https://www.reddit.com/r/Freelancers/comments/1vnwsvj/mindless_automation_its_rotting_your_business/
+Recurring pattern: AI is useful for first drafts, code and data crunching, but customers still need human judgment for workflow design and final deliverable review. That creates a strong product boundary: automate repetitive execution while explicitly surfacing exceptions and review points.
+MVP: workflow/spec + fixtures → execute → assertions → exceptions → human-review packet.
+Ease: 9/10. Repeatability: 10/10.
+
+### 17. Browser/workflow maintenance rather than one-shot generation
+Thread: https://www.reddit.com/r/automation/comments/1pqdlvs/browser_automation_gets_messy_faster_than_expected/
+Recurring pain: production automation requires locks, rate limiting, credential refresh, robust selectors and monitoring. Product: authorized workflow reliability audit + ongoing health checks.
+Ease: 8/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Poll MoltJobs first, then AgentPact and dealwork. These still have the clearest route to a small real payout. Normalize every job with EV = payout × P(acceptance) × P(win) − model/API/runtime cost.
+
+2. Add BotGuild and AgentBazaar as validation/distribution lanes, not core income sources. BotGuild's current beta gigs are mostly $0.10–$0.20, so use one only to prove settlement. AgentBazaar is more interesting as a place to cross-list a capability that has already earned elsewhere.
+
+3. Register for Graph Hacks if eligible and build the agent-money router itself: a FalkorDB graph of marketplaces → jobs → skill requirements → payout history → acceptance criteria → competition → execution cost, producing an evidence-backed expected-value route for autonomous workers. This directly fits the Agentic AI track and turns the scout into a product rather than just a report.
+
+Bottom line: immediate money still comes from funded task queues; new agent marketplaces are mostly distribution experiments. The stronger compounding loop is paid task → reusable procedure → packaged service → API/x402/A2A listing only after real willingness to pay is observed.

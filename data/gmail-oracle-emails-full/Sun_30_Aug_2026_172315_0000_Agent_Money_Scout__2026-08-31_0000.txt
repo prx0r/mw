@@ -1,0 +1,222 @@
+Subject: Agent Money Scout — 2026-08-31 00:00
+Date: Sun, 30 Aug 2026 17:23:15 +0000
+Message ID: 1a053b2667f823a0
+================================================================================
+
+Agent Money Scout — 2026-08-31 00:00
+
+EXECUTIVE SIGNAL
+Fresh verification keeps AgentPact and dealwork.ai at the top for immediate, bounded software/data work. AgentPact still exposes multiple 5–25 USDC Python/API/security/data needs, while dealwork.ai is at 158 open tasks and 264 completed. The strongest genuinely new surfaces this run are DeskCrew’s paid support-answer bounties, x402 Arena’s live paid-API competition, PayanAgent’s offer/request protocol, MoltMarket’s autonomous GitHub-PR workflow, and the402’s request-and-bid network. x402 Arena is especially useful as demand evidence because it exposes actual revenue/query/buyer counts rather than only catalog size.
+
+NEW THIS RUN
+
+1) DeskCrew bounty boards
+URL: https://deskcrew.io/bounties
+What the agent does: Reads public support/research/review bounties, buys the necessary ticket context/draft submission for a few cents, drafts a grounded answer, submits it, and gets paid if the business approves.
+Who pays: The business/board owner funding the bounty.
+Verified payout: Winner keeps 85% of reward in USDC. DeskCrew currently reports 1 open task. A recent accepted answer paid $0.85 on a $1 bounty; draft_reply costs $0.06. Rewards can start at $0.25.
+Requirements: HTTP-capable agent; dedicated Base/Polygon/Sei/Avalanche/Solana USDC wallet; optional x402-bounty-hunter CLI / Coinbase AgentKit / Solana Agent Kit / ElizaOS integration.
+Autonomy: 10/10.
+Exact first action: GET https://deskcrew.io/api/arena/contests and rank by reward, entrant count, payout network, and acceptance rule before spending any entry fee.
+Constraints: Human approval is normally required; rewards <=$5 may auto-resolve after 24h using the written acceptance rule. Use only a dedicated low-balance wallet and follow any wallet/provider eligibility requirements.
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+2) x402 Arena
+URL: https://x402arena.gg/
+What the agent does: Registers an x402 endpoint in a niche such as developer tools, work intelligence, web intelligence, data cleaning or utilities and earns USDC per paid query.
+Who pays: Agents/users querying the endpoint.
+Verified economics: 324 agents, $109.38 total revenue, 10,799 queries, 81 buyers. Several non-demo endpoints show actual paid calls; examples include a code-assets endpoint at $0.20 revenue/4 queries and a CSV-dedupe endpoint at $0.10/1 query.
+Requirements: Hosted x402 endpoint + Base-compatible wallet.
+Autonomy: 10/10.
+Exact first action: Register one existing deterministic endpoint and watch unique buyers, paid queries and revenue; do not build a large product before outside calls appear.
+Constraints: Wallet/network eligibility applies.
+Ease-to-first-$5: 4/10. Repeatability: 10/10 if a useful niche wins organic buyers.
+
+3) PayanAgent
+URL: https://payanagent.com/
+What the agent does: Either list a fixed API/service offer or bid on bespoke buyer requests, fulfill them, and receive USDC with a signed receipt.
+Who pays: Agent/human buyers.
+Pricing: Seller-defined. Official example lists a translation API at $0.25/call. No honest seller-income average is published.
+Requirements: Register provider + Base wallet + API endpoint or request-fulfillment agent. SDK/MCP available.
+Autonomy: 10/10.
+Exact first action: GET the public request/offer catalog and only bid where escrow/funding, scope and price are explicit; alternatively list one proven API capability.
+Constraints: Normal wallet/legal requirements apply.
+Ease-to-first-$5: 4/10. Repeatability: 10/10 potential.
+
+4) MoltMarket
+URL: https://www.moltbotmarket.com/
+What the agent does: Browses $5+ GitHub-style bounties, claims one for 24h, fixes bugs/adds features/tests, then submits a PR.
+Who pays: Bounty poster.
+Advertised payout: $5+ per bounty; agent receives 95% after approval via Stripe.
+Requirements: OpenClaw-style coding agent, API key, GitHub/PR capability, Stripe payout eligibility.
+Autonomy: 9/10.
+Exact first action: GET https://moltbotmarket.com/api/v1/jobs?status=open after registration and inspect actual funded inventory before claiming.
+Important caveat: Public leaderboard currently shows its top agent at 0 jobs / $0 earned, so platform traction is not yet proven.
+Ease-to-first-$5: 4/10. Repeatability: 8/10 potential.
+
+5) the402
+URL: https://the402.ai/agents/
+Requests: https://the402.ai/requests/
+What the agent does: List a provider service for pay-per-use calls or register a bidding agent to win custom requests and deliver through escrow.
+Who pays: Buyers posting requests or buying services.
+Verified pricing examples: PageSpeed $0.005, SSL check $0.002, DNS $0.001, screenshot $0.01, scrape $0.003; providers keep 95% according to the platform homepage.
+Requirements: MCP/REST/x402-compatible worker + Base wallet.
+Autonomy: 10/10.
+Exact first action: Watch the open-request feed; today the public board showed no matching open requests, so do not treat it as immediate job liquidity. Cross-list one proven API instead.
+Ease-to-first-$5 now: 2/10. Repeatability: 9/10 potential.
+
+6) Agent Earn on Stellar
+URL: https://stellar-agent-earn.vercel.app/
+What the agent does: Completes machine-verifiable Stellar/x402 tasks and submits on-chain proofs.
+Who pays: Platform/task sponsor.
+Platform-reported evidence: 27 agents, 190 tasks done, 893 XLM paid.
+Requirements: Stellar wallet/tooling and supported agent harness.
+Autonomy: 10/10 for Tier 1/2 tasks.
+Exact first action: Read active-task feed and verify that any reward has a real, legally usable payout path before executing.
+Constraints: Some onboarding/task mechanics involve on-chain tokens; do not bypass any age, wallet or jurisdiction rules.
+Ease-to-first-$5: 3/10. Repeatability: 7/10.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7) AgentPact
+URL: https://agentpact.xyz/needs
+Current board: 200 Needs. High-signal live asks include Python code review 5–10 USDC; API automation pipeline 10–25; Python security review 10–25; web-scraping/data automation 10–25; data analysis + visualization 10–25; OHLCV validation 5–15; YouTube transcription 7–14; BTC analysis 10–20; technical summaries 5–25; Python/data execution 5. There is also heavy sub-dollar test noise.
+Agent work: Python/API/code QA, data transformation, public-data research, transcription, SEO.
+Who pays: Need/deal poster.
+Requirements: AgentPact API/MCP/Python/npm integration + Base wallet for USDC settlement.
+Autonomy: 10/10.
+Exact first action: Filter reward >=5 USDC and target API automation/security/data first.
+Ease: 9/10. Repeatability: 9/10.
+
+8) dealwork.ai
+URL: https://dealwork.ai/
+Fresh primary figures: 2.5K workers, 264 tasks completed, 158 open tasks, ~1.1-day median delivery. Public verified examples include an $80 production API delivered by an AI agent with tests and a $5 AI-to-AI CSV-formatting contract. Funds are escrowed before work; AI-to-AI fee is 3%.
+Agent work: APIs, coding, research, data transformation, docs.
+Who pays: Human or AI task posters.
+Requirements: skill.md-compatible worker and payout account/wallet supported by platform.
+Autonomy: 9/10.
+Exact first action: Ingest all 158 tasks and bid only where acceptance criteria can be independently reproduced.
+Ease: 9/10. Repeatability: 9/10.
+
+9) Taskmarket
+URL: https://taskmarket.dev/
+Fresh state: 17 open tasks, 26.9K agents, 2,382.947764 USDC posted volume. Current 24.2-USDC bounty has 126 submissions; 1.297426-USDC research task has 163; 0.327-USDC board-discovery task has 174. Top-earner evidence includes 120.776268 and 78.624908 USDC.
+Agent work: research, code, datasets, benchmarks, visual artifacts.
+Who pays: Escrow-funded requester.
+Requirements: Taskmarket skill + Base wallet.
+Autonomy: 10/10.
+Exact first action: Calculate EV = reward × P(win) − execution cost. Prefer claim/pitch/benchmark modes over saturated open bounties.
+Ease: 6/10. Repeatability: 9/10.
+
+10) MoltJobs
+URL: https://moltjobs.io/open-jobs
+Current visible job: 5 USDC for turning 3 live job postings into fundable MoltJobs specs and contacting the buyer; funded in on-chain escrow.
+Agent work: research/specification drafting plus legitimate, specific buyer contact.
+Who pays: Job poster.
+Requirements: MoltJobs agent, sometimes certification; REST/MCP/CLI available.
+Autonomy: 8/10.
+Exact first action: Inspect this job and complete only non-spammy, permitted outreach.
+Constraints: Do not automate mass unsolicited messaging or evade platform/account rules.
+Ease: 7/10. Repeatability: 8/10.
+
+11) t2000
+URL: https://t2000.ai/jobs
+Fresh state: 81 jobs open, 82 in progress, 1,259 settled, $987.50 settled USDC. Visible inventory still includes many ecosystem bootstrap/referral/job-loop tasks, so raw count overstates useful external demand.
+Agent work: claim open jobs, deliver, get paid; successful procedures can be turned into fixed services/API calls.
+Who pays: Buyer funding locked budget.
+Requirements: t2000 Passport/Sui-compatible setup.
+Autonomy: 10/10.
+Exact first action: Reject referral/payment-loop work unless it creates real reusable reputation; select only external-usefulness jobs.
+Ease: 5/10. Repeatability: 10/10 architecture.
+
+12) AgentHire
+URL: https://www.agenthire.app/
+Platform reports 500+ agents, 10K+ jobs completed and $50K+ volume, with x402 USDC on Solana and prices from roughly $0.01–$0.10 for common machine tasks. These remain platform-reported; public funded-job transparency is weaker than AgentPact/dealwork.
+Agent work: code review, translation, permitted data work, generation.
+Exact first action: Probe actual funded job inventory before bespoke integration.
+Autonomy: 10/10.
+Ease: 5/10. Repeatability: 9/10 if claimed volume is genuine.
+
+13) MoltyBounty
+URL: https://www.moltybounty.com/
+Paid AI/human bounties up to $50 USDC. Current public leaderboard shows agents with 1–12 completed tasks.
+Agent work: bounded digital bounties.
+Who pays: bounty posters.
+Requirements: skill.md + wallet for paid cash-out.
+Autonomy: 9/10.
+Exact first action: Fetch paid-only bounties; ignore volunteer/free tasks.
+Ease: 5/10. Repeatability: 7/10.
+
+14) Opire
+Example live bounty: https://app.opire.dev/issues/01HWT26R3S59MS778MAE9786YG
+Current example: Storybook issue bounty up to $308, status Open, 8 rewards available.
+Agent work: reproduce GitHub issue, patch, tests, PR.
+Who pays: sponsor/maintainer through Opire.
+Requirements: GitHub + language/toolchain for issue + Stripe payout eligibility.
+Autonomy: 8/10.
+Exact first action: Inspect repository activity and competing PRs before coding.
+Ease: 6/10. Repeatability across OSS bounties: 7/10.
+
+REDDIT DEMAND SIGNALS
+
+15) Outcome-based workflow watchdog
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+Pattern: n8n can show a successful graph run even when the actual business event never happened. Operators specifically call out dead tokens, rejected templates and stopped webhooks.
+Customer: n8n/Make/Zapier agencies and SMB ops teams.
+Agent workflow: expected business event + deadline + downstream receipt + baseline -> HEALTHY / FAILED / SILENT.
+Acquisition: automation consultants/communities and existing clients; no mass unsolicited outreach.
+Charge: fixed setup/audit + recurring monitoring.
+Concrete MVP: One canary expectation store, one downstream receipt check and one daily exception report.
+Ease: 9/10. Repeatability: 10/10.
+
+16) Workflow cost/risk linter
+Thread: https://www.reddit.com/r/n8n/comments/1vgi240/i_built_a_free_tool_that_shows_the_real_monthly/
+Pattern: client workflows end up 3–4× more expensive because of retry storms, loops, premium-model subworkflows and paid API nodes.
+Customer: automation agencies.
+Agent workflow: workflow JSON -> loops/retries -> model/API map -> estimated cost/run/month -> risk-ranked fixes.
+Charge: fixed audit, then monitoring.
+MVP: n8n-lint workflow.json.
+Ease: 9/10. Repeatability: 10/10.
+
+17) Accounting document-chasing worker
+Thread: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+Pattern: manual client WhatsApp/email questions, document chasing, deadline reminders and invoice follow-ups remain repetitive and expensive.
+Customer: accounting/bookkeeping operations.
+Agent workflow: authorized client -> required document/status -> approved reminder -> receipt -> exception queue.
+Charge: setup + monthly service.
+Important boundary: Keep tax/accounting/compliance judgments and consequential outbound messages human-reviewed.
+Ease: 8/10. Repeatability: 10/10.
+
+18) Invoice extraction + validation
+Thread: https://www.reddit.com/r/nocode/comments/1vkg25z/invoice_automation_in_n8n_extract_data_from_many/
+Pattern: batch invoice extraction works only when schema is pinned, partial failures are isolated, rows are written after successful extraction, and exceptions are surfaced rather than hidden.
+Customer: SMB finance/admin teams and automation agencies.
+Agent workflow: invoice -> schema extract -> validation -> duplicate check -> VERIFIED / REVIEW.
+Charge: fixed implementation + support.
+Ease: 8/10. Repeatability: 10/10.
+
+19) Contract-renewal watchdog
+Thread: https://www.reddit.com/r/n8n/comments/1srsolz/mike_just_paid_2000_in_autorenewal_fees_he_forgot/
+Pattern: small businesses lose money because SaaS/lease/consultant/insurance contracts have scattered renewal dates and cancellation windows.
+Customer: SMB owners/ops.
+Agent workflow: authorized contract docs -> extract counterparty/renewal/notice window -> calendar/alert -> human decision.
+Charge: one-off contract inventory + monthly monitoring.
+MVP: monitored renewal register with evidence link back to each contract clause.
+Ease: 8/10. Repeatability: 10/10.
+
+20) Paid support-answer specialist
+Evidence: DeskCrew now exposes real support/research bounties, human approval, public rejection reasons and a recent verified $1 -> $0.85 payout.
+Customer/problem: SaaS/helpdesk operators paying for accurate, context-grounded answers.
+Agent workflow: public KB + ticket -> retrieve facts -> draft concise answer -> self-check unsupported claims -> submit -> learn from rejection reason.
+Where to acquire work: DeskCrew-compatible bounty boards first; later sell the same procedure directly to SaaS support teams.
+How to charge: per accepted answer or fixed monthly queue coverage.
+MVP: one support-domain agent with deterministic KB citations and a refusal path when evidence is missing.
+Ease: 7/10. Repeatability: 10/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) AgentPact first. Target the current 10–25 USDC API automation, Python/security-review and data-analysis cluster. The combination of explicit budgets, bounded digital output and agent-native settlement is still the best first-dollar profile.
+
+2) Add DeskCrew to the worker because it introduces a different economic loop: paid support/research answers with visible reward, entrant count, acceptance rule and rejection feedback. Put a strict expected-value gate before paying any attempt fee: EV = reward × P(accepted) − attempt/context/model costs.
+
+3) Productize /verify-pr + /api-sanity + /automation-health-cost as three rela

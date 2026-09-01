@@ -1,0 +1,161 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026
+Date: Mon, 31 Aug 2026 12:20:59 -0500
+Message ID: 1a058d6ae7fe07d5
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This pass treats novelty as a hard constraint. I cross-checked the previous Oracle reports in Gmail and excluded the large set already covered, including the latest Samsara / Microsoft Security Store / Siemens / AppFolio / Geotab / Motive / Boomi / athenahealth / Coupa / CrowdStrike / Rippling / Jamf / Cisco / RealPage / Terraform / XSOAR / Celigo / Buildium / Canvas / Brightspace batch, plus all earlier creator, SaaS, commerce and developer marketplaces.
+
+**H-level shorthand:** H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human subjective/compliance/partner approval; H3 = material recurring human production/customer sponsorship; H4 = fundamentally human/offline. Identity, legal, tax, payment, security and age checks are legitimate human gates, not targets to bypass.
+
+**Scoring:** O = opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (5 = less crowded); N = novelty. Total /25.
+
+| # | Market | O | A | F | C | N | Total | Post-setup H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | DigitalOcean Marketplace | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 2 | AppDirect Marketplace / AppDistribution | 5 | 5 | 5 | 4 | 5 | **24** | H1–H2 |
+| 3 | Vendasta Marketplace | 5 | 5 | 5 | 3 | 5 | **23** | H1–H2 |
+| 4 | Visma App Store | 4 | 5 | 5 | 4 | 5 | **23** | H1–H2 |
+| 5 | Travelport Marketplace | 5 | 5 | 4 | 3 | 5 | **22** | H2 |
+| 6 | SuiteCRM Store | 4 | 5 | 5 | 3 | 5 | **22** | H1 |
+| 7 | Plesk Extensions Catalog | 4 | 5 | 5 | 3 | 5 | **22** | H1 |
+| 8 | Personio Marketplace | 5 | 5 | 4 | 3 | 5 | **22** | H2 |
+| 9 | Creatio Marketplace | 4 | 5 | 4 | 4 | 5 | **22** | H1–H2 |
+| 10 | Keap Marketplace | 4 | 5 | 5 | 3 | 5 | **22** | H1–H2 |
+| 11 | Exact Online App Center | 5 | 5 | 4 | 2 | 5 | **21** | H2 |
+| 12 | Sabre Red App Centre | 4 | 5 | 4 | 3 | 5 | **21** | H2 |
+| 13 | SugarCRM Marketplace | 4 | 5 | 4 | 3 | 5 | **21** | H1–H2 |
+| 14 | Kintone / KDDI America Plug-in Marketplace | 4 | 5 | 4 | 3 | 5 | **21** | H1–H2 |
+| 15 | Greenhouse Partner Marketplace | 5 | 5 | 3 | 3 | 5 | **21** | H2 |
+| 16 | Lever Partner Marketplace | 4 | 5 | 4 | 3 | 5 | **21** | H2 |
+| 17 | BambooHR Marketplace | 5 | 5 | 3 | 2 | 5 | **20** | H2 |
+| 18 | Mailchimp Integration Directory | 4 | 5 | 4 | 2 | 5 | **20** | H1–H2 |
+| 19 | CloudBlue Connect / Marketplace distribution ecosystem | 5 | 5 | 4 | 1 | 5 | **20** | H2 |
+| 20 | Epic Showroom / Connection Hub | 5 | 5 | 2 | 2 | 5 | **19** | H3 |
+
+---
+
+## 1. DigitalOcean Marketplace — cloud add-ons with native billing
+
+**What an agent can sell.** SaaS Add-Ons and 1-Click infrastructure products: managed agent gateways, backup/restore utilities, monitoring adapters, narrow databases/search services, MCP gateways, webhook relays, security/configuration QA, cost analyzers, and vertical developer infrastructure.
+
+**Autonomous workflow.** Oracle mines DigitalOcean community issues, Marketplace gaps and cloud changelogs → specialist worker builds a small hosted service/container/Helm artifact → Harbor CloudWorld provisions disposable Droplets/Kubernetes/database fixtures → tests installation, upgrades, rollback, secrets, rate limits, resource usage and failure recovery → worker generates vendor/listing/security/runbook material → human vendor approval → Marketplace launch → DigitalOcean handles billing/tax path → worker ingests install, support and service telemetry → patches versions automatically.
+
+**Human dependency.** H1: vendor/business/payment approval remains human. Production and maintenance can become close to H0 once credentials and listing are live.
+
+**Infrastructure / frontier.** DigitalOcean explicitly supports SaaS Add-Ons and 1-Click products. Its vendor page says SaaS Add-On vendors take home around **75% of revenue**. DigitalOcean’s 2026 financials also show a rapidly expanding AI/agentic customer base: Q2 guidance was raised after AI customer ARR grew sharply, so this is an increasingly relevant buyer surface rather than a stagnant cloud catalog.
+
+**Demand / community.** Strong platform-level demand, but the right wedge is not another generic database image. Cloud communities repeatedly complain about painful migrations, monitoring/configuration drift and running production services safely. I found less clean 2026 Reddit evidence tied specifically to the Marketplace seller side than for Plesk/HRIS venues, so treat the public financial/vendor data as stronger than community anecdotes here.
+
+**Why agents fit.** Infra products are extraordinarily testable. A worker can provision, mutate and destroy its own worlds and measure latency, uptime, installation success and cost.
+
+**Moltwork assets.** `DigitalOceanPack`, `CloudWorld`, install/upgrade evaluator, cost/perf evaluator, MarketplaceSubmissionProcess, cloud-add-on specialist Worker.
+
+**Economics.** Attractive if one product is self-serve and recurring. Unattractive if every customer needs manual DevOps consulting.
+
+Official: https://marketplace.digitalocean.com/vendors
+
+---
+
+## 2. AppDirect Marketplace / AppDistribution — “integrate once, distribute to many marketplaces”
+
+**What agents can sell.** SaaS, downloadable/web products and recurring digital services distributed through AppDirect-powered marketplaces and reseller channels. Particularly compelling for tiny agent utilities, compliance micro-SaaS, vertical workflow products and APIs that can be provisioned automatically.
+
+**Autonomous workflow.** Oracle identifies a recurring B2B need → worker builds one self-service SaaS → integrates AppDirect provisioning/SSO/subscription callbacks → Harbor CommerceWorld simulates purchase, seat assignment, upgrade, cancellation and entitlement failure → product/profile/pricing generated → partner approval → publish once into AppDistribution → choose reseller/channel distribution → AppDirect handles transactions/reconciliation → usage/revenue data returns → worker improves the product and listing.
+
+**Human dependency.** H1–H2: vendor/channel acceptance and legal/commercial setup are real gates, but subscription lifecycle and provisioning are API-driven after setup.
+
+**Infrastructure / frontier.** AppDirect’s current docs expose REST, GraphQL, billing/subscription APIs and non-interactive API clients. AppDistribution explicitly says **integrate once, scale to many**, lets vendors choose where to distribute by clicking Publish, and handles transactions/payout reconciliation. Its catalog documentation says 600+ providers; the customer marketplace currently claims **16M subscribers** and thousands of products/services.
+
+**Community intelligence.** General marketplace operators continue to identify liquidity and onboarding—not software implementation—as the hardest marketplace problem. That is exactly why AppDirect is interesting: it externalizes much of the channel/billing/provisioning machinery. The residual risk is channel approval and actual sell-through.
+
+**Why agents fit.** A single specialist Worker can maintain one product while a `CrossVenueDistributionProcess` handles many AppDirect-powered sales channels.
+
+**Moltwork assets.** `AppDirectPack`, entitlement/subscription World, provisioning evaluator, reseller-channel selector, `CrossVenueDistributionProcess`.
+
+**Economics.** Very attractive if a proven product gains several channels with little incremental engineering. Poor if channel negotiation remains manual and no reseller has incentive to promote the product.
+
+Official: https://www.appdirect.com/platform/appdistribution
+API: https://developer.appdirect.com/
+
+---
+
+## 3. Vendasta Marketplace — white-label micro-SaaS sold through agencies
+
+**What agents can sell.** White-label local-business utilities: reputation monitoring, lead qualification, appointment workflows, local SEO/reporting, vertical content/analytics, review-request workflows, lightweight CRM services and integrations agencies can resell under their own brand.
+
+**Autonomous workflow.** Mine agency/reseller pain → build vendor product → implement Marketplace provisioning webhook and account/market branding → seed agency/client fixtures → Harbor AgencyWorld tests provisioning, cancellation, white-label rendering, partner segmentation and API failures → generate product page/SKU/price/support assets → vendor approval → resellers discover and activate → reseller/client usage and churn tracked → worker patches and generates variants for high-performing verticals.
+
+**Human dependency.** H1–H2 for vendor onboarding/commercial approval; day-to-day product delivery can be H0/H1.
+
+**Infrastructure.** Vendasta exposes Marketplace APIs, product APIs, signed JWT webhooks, Vendor Center testing and account/market branding. Its developer material describes a partner ecosystem of **66,000+ partners**; Marketplace material describes **250+ curated products**. White-labeling is explicitly encouraged because resellers are more likely to sell products they can brand as their own.
+
+**Demand / practical constraints.** This is an underappreciated distribution model: the buyer is often an agency reselling to many SMBs. Community signal is thinner on Reddit than on vendor docs, but that itself reduces the “indie hacker crowd” competition signal. Main risk is reseller attention—good software can still sit unused if agencies do not understand how to sell it.
+
+**Why agents fit.** Much local-business software is templated, API-driven and multi-tenant. Agents can manufacture vertical variants and maintain integrations cheaply.
+
+**Moltwork assets.** `VendastaPack`, white-label evaluator, AgencyWorld, reseller onboarding Skill, verticalization Process.
+
+**Economics.** Strong when one reseller activation fans out to many client accounts. Weak when support burden scales linearly with agencies.
+
+Official: https://developers.vendasta.com/
+
+---
+
+## 4. Visma App Store — LLM-readable European accounting/business ecosystem
+
+**What agents can sell.** Accounting, payroll/admin, invoice, reporting, reconciliation and vertical workflow integrations across Visma products; small cross-product connectors are the clearest wedge.
+
+**Autonomous workflow.** Oracle mines country/product-specific gaps → Worker reads Visma’s LLM-oriented docs/index → registers app in Developer Portal → composes APIs/Flows/webhooks → Harbor AccountingWorld seeds companies, invoices, contacts and permissions → evaluator checks totals, permissions, sync/idempotency and local formatting → app submitted per target country with localized listing/pricing → human review → customers purchase/grant org access → usage/errors/revenue tracked → agent ports successful product into adjacent Visma markets.
+
+**Human dependency.** H1–H2: app review and market-specific commercial/legal localization; implementation itself is highly structured.
+
+**Frontier infrastructure.** Visma Connect publishes an **`llms.txt` documentation index** and “Copy page as Markdown for LLMs.” Developer Portal was updated June 5, 2026 and is API-driven; App Store lets third-party developers publish apps and customers grant organization data access. Visma also has Flows and webhook infrastructure.
+
+**Demand/community.** Accounting/payroll integration demand is recurrent and country-specific, which creates many small niches. 2026 Reddit evidence is sparse relative to the platform’s European footprint; use Visma’s active App Store and product-specific community/support channels as primary demand signal rather than inventing sentiment.
+
+**Why agents fit.** Schemas, ledgers and sync invariants are deterministic; localization can be encoded as market Schools.
+
+**Moltwork assets.** `VismaPack`, AccountingWorld, localization School, permission evaluator, `VismaCountryPortingProcess`.
+
+**Economics.** Excellent if one core integration ports across several countries/products. Poor if each jurisdiction requires substantial human accounting/legal interpretation.
+
+Official: https://docs.connect.visma.com/docs/visma-app-store
+
+---
+
+## 5. Travelport Marketplace — travel-agency workflow products during an OAuth migration
+
+**What agents can sell.** Travel-agent productivity tools, itinerary QA, fare/rule comparison helpers, booking evidence, NDC compatibility tools, agency reporting, queue/workflow extensions and Smartpoint/desktop products.
+
+**Autonomous workflow.** Mine agency/Travelport developer pain → Worker selects a bounded agency workflow → build with Universal API / Smartpoint SDK / desktop SDK → synthetic itinerary/PNR/fare fixtures → Harbor TravelWorld checks booking state, cancellations, duplicate writes, fare/currency/date semantics and API errors → certification package → partner approval → Marketplace listing/purchase → usage/support telemetry → persistent worker tracks airline/NDC/API changes.
+
+**Human dependency.** H2: Travelport developer approval/certification and commercial travel rules remain significant.
+
+**Frontier unlock.** Travelport’s developer docs say its Marketplace is an **e-commerce platform** where agencies can browse/order partner products. More importantly, previous Trip Services auth endpoints were deprecated on **January 30, 2026**, with OAuth 2.0 becoming the current authentication flow. That standardization lowers one integration dependency while creating migration demand among older apps.
+
+**Demand/community.** Travel distribution is full of high-value repetitive exception work. Direct Reddit seller evidence is modest, but the Marketplace supports actual agency purchase and current developer migration creates obvious compatibility pressure.
+
+**Why agents fit.** Itinerary/fare/booking systems are structured state machines with large regression surfaces; a specialist can continuously replay them.
+
+**Moltwork assets.** TravelportPack, TravelWorld, PNR invariant evaluator, OAuth migration Skill, NDC compatibility School.
+
+**Economics.** Strong if a product saves an agent minutes on every booking or prevents costly booking errors. Weak for workflows requiring live human negotiation/service calls.
+
+Official: https://developer.travelport.com/
+Marketplace: https://marketplace.travelport.com/
+
+---
+
+## 6. SuiteCRM Store — unusually complete micro-plugin economics
+
+**What agents can sell.** Timesheets, reporting, data-cleanup, synchronization, admin automations, vertical CRM modules, document generation and missing connectors.
+
+**Autonomous workflow.** Mine SuiteCRM forum/store requests → build extension → disposable SuiteCRM matrix → Harbor CRMWorld tests install/uninstall, upgrades, permissions, record sync and DB migrations → seller packages screenshots/docs/version compatibility → Store submission → built-in licensing/trials/renewals → sales/support telemetry → worker updates product across SuiteCRM versions.
+
+**Human dependency.** H1: seller account/listing approval. Much of commerce is handled by the Store.
+
+**Infrastructure/economics.** SuiteCRM Store e

@@ -1,0 +1,201 @@
+Subject: Agent Money Scout — 2026-08-29 13:00
+Date: Fri, 28 Aug 2026 23:24:53 -0700
+Message ID: 1a04c314a7e89edc
+================================================================================
+
+# Agent Money Scout — 2026-08-29 13:00
+
+This run prioritized NEW surfaces with observable paid activity or unusually clean economics, while demoting waitlists, zero-liquidity markets, and marketing-only claims.
+
+## NEW THIS RUN
+
+### 1. Amnt — strongest fresh creator monetization surface
+URL: https://www.amnt.io/
+
+Amnt currently reports 40 live agents and 311 runs delivered and paid for. Publishing is free. Creators keep 70% of the amount left after the underlying AI/tool cost; the platform says the same paid agent can be invoked from the web, HTTP API, MCP, Discord, embeds, or x402. Prices are generally a few cents per run, and creators choose the price.
+
+What the agent does: one narrow repeatable job, e.g. receipt normalization, structured research, API checking, document extraction, release verification.
+Who pays: humans or machines invoking the agent.
+Required: Google sign-in; optional wallet for on-chain features; any APIs/models needed by the workflow.
+Autonomy: 10/10 after publication.
+First action: publish one already-proven narrow capability rather than a general assistant.
+Constraints: payment/withdrawal and account eligibility still need to be satisfied legitimately; do not bypass age or payment-provider restrictions.
+Ease-to-first-$5: 6/10. Repeatability: 10/10.
+
+### 2. BotGuild — real Base escrow beta, but micro-value today
+URL: https://botguild.ai/
+
+BotGuild’s open beta is live. Its current public page says every beta gig is only $0.10–$0.20 USDC, with on-chain Base escrow. Bots discover matching gigs, submit proposals, negotiate scope/price, deliver, and get paid after acceptance. Handlers pay 5% only on successful completion; bidding is free.
+
+What the agent does: code, data/analytics, content, research, testing/QA, DevOps, ops/automation and similar bounded digital work.
+Who pays: gig posters.
+Required: bot registration and Base-compatible settlement setup; human approval is wired into critical contractual steps.
+Autonomy: 7/10.
+First action: use it as an integration/reputation test, not as a primary $5 source while beta rewards remain $0.10–$0.20.
+Ease-to-first-$5: 2/10. Repeatability: 8/10 if real-value gigs launch.
+
+### 3. HireAIStaffs — competitive task market over MCP
+URL: https://www.hireaistaffs.com/
+
+HireAIStaffs lets agents list open tasks through MCP, compete on a deliverable, and the buyer selects the winning result. Payment is held in Stripe escrow and released through Stripe Connect when a result is accepted. The site explicitly lists writing, coding, data analysis, research, design and translation.
+
+What the agent does: submit finished outputs into competitive task pools.
+Who pays: human task buyers.
+Payout: buyer-defined; I could not verify a current public payout range or meaningful live inventory this run, so no number is being invented.
+Required: MCP-capable worker; Stripe Connect for payouts.
+Autonomy: 8/10.
+First action: query list_tasks(status=open) before doing any integration work.
+Constraints: Stripe Connect/account eligibility applies; do not bypass age/KYC requirements.
+Ease-to-first-$5: 4/10 pending live inventory. Repeatability: 8/10.
+
+### 4. Tollbooth — x402 distribution with extremely honest early liquidity
+URL: https://www.trytollbooth.com/
+
+Tollbooth is live on Base mainnet and verifies x402 endpoints through paid replay before marking them verified. Current primary-source telemetry: 103 services listed, 7 verified endpoints, 4 calls served, and $0.080 USDC settled.
+
+This is economically useful precisely because the numbers are tiny: it provides an honest baseline for how early many machine-payment markets remain.
+
+What the agent does: sell a paid API/tool call.
+Who pays: agents consuming x402 services.
+Required: HTTP endpoint + x402/Base settlement.
+Autonomy: 10/10.
+First action: cross-list a working capability only if integration is nearly free; do not build a Tollbooth-specific product yet.
+Ease-to-first-$5: 2/10 today. Repeatability: 9/10 if traffic grows.
+
+### 5. GetAgentic — interesting economics, but seller access is restricted
+URL: https://getagentic.io/
+
+GetAgentic advertises USDC agent work on Base: jobs under $100 use x402 with zero platform fee; jobs $100+ use escrow with a 2% release fee, leaving 98% to the seller. Its page reports 2,847 active agents, $1.2M total volume and 45.2K transactions, but the product is marked beta/invite-only and sellers must complete Sumsub KYC.
+
+What the agent does: sell research, analysis, creative, code or other agent services.
+Who pays: marketplace buyers/other agents.
+Autonomy: 9/10 after onboarding.
+First action: treat as watchlist unless legitimate seller eligibility/invite access is available.
+Constraints: seller KYC and any age/jurisdiction requirements are hard constraints and must not be bypassed.
+Ease-to-first-$5: 2/10 while invite/KYC constrained. Repeatability: 9/10 if accessible.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. TaskBounty
+URL: https://www.task-bounty.com/for-agents
+
+Still one of the clearest autonomous coding-money loops. Current primary docs say real GitHub bugs pay $10 to a few hundred dollars; solvers earn 80%, and verified PRs pay within one business day in USDC, ETH, BTC or USD bank transfer. The public example reports 14 open TypeScript bounties above $25. MCP exposes list, claim/access, submit and status tools.
+
+Agent work: reproduce bug -> patch -> tests -> PR -> sandbox verification.
+First action: fetch open bounties and choose only a task that can be reproduced locally before committing compute.
+Autonomy: 9/10. Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 7. dealwork.ai
+URL: https://dealwork.ai/
+
+Still active and structurally strong: workers browse tasks, bid/claim, deliver and receive escrowed payment. Its current site continues to show a completed $5 AI-to-AI task and a 3% AI-to-AI platform fee. Funds are guaranteed in escrow before work begins.
+
+Agent work: research, coding, data, translation, formatting and delegated subtasks.
+First action: poll funded open work and prioritize objective acceptance criteria.
+Autonomy: 9/10. Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 8. Taskmarket
+URL: https://taskmarket.dev/
+
+Still valuable because its task pages expose escrow transaction, reward, submission count and settlement payouts. A historical settled example shows a 2-USDC bounty paying 1.85 USDC net after a 7.5% fee. Its current Task Drops page says entry is free and winning work is paid directly in USDC to the agent wallet.
+
+Agent work: research, charts, data, structured deliverables and competitive task drops.
+First action: watch the live drop/task feed and enter only where visible competitor quality leaves room to win.
+Autonomy: 9/10. Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+### 9. AgentGigs
+URL: https://www.agentgigs.io/
+
+Still one of the cleanest API-first implementations. After the two required human setup steps (email confirmation and Stripe Connect bank/KYC), agents can programmatically browse, apply, deliver and receive webhooks/payouts. Independent proofer agents can verify work before funds release.
+
+Agent work: research, coding, data analysis, scraping where authorized, testing, automation, content and support.
+First action: query /api/agent/jobs/available and score jobs before applying.
+Constraints: payment/account eligibility must be satisfied legitimately.
+Autonomy: 9/10 after setup. Ease-to-first-$5: 5/10. Repeatability: 9/10.
+
+### 10. true402
+URL: https://true402.dev/
+
+Still live as a machine-native USDC/Base pay-per-call marketplace. The current implementation demonstrates $0.005 calls and no account/API-key requirement for buyers.
+
+Agent work: sell deterministic API answers.
+First action: only cross-list a capability that already has demand elsewhere.
+Autonomy: 10/10. Ease-to-first-$5: 4/10. Repeatability: 10/10.
+
+### 11. Agent402
+URL: https://marketplace.agent402.app/
+
+Still a useful distribution layer: its marketplace advertises 17K+ indexed services, 13 networks and three facilitators. Sellers list an API once and receive non-custodial per-call USDC payments.
+
+Agent work: paid API/MCP/A2A capability.
+First action: publish one working service and measure distinct external buyers, not impressions.
+Autonomy: 10/10. Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 12. QA remains the strongest recurring pain signal
+Reddit: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+
+The Aug 27 thread has 1,100+ votes and says AI-assisted development is producing changes faster than QA can validate them. A separate recent software-testing thread argues proper manual/automated testing remains essential, especially for data-sensitive systems.
+
+Recurring pattern: code-generation throughput increases faster than verification throughput.
+
+Concrete MVP: POST /verify-pr -> changed surface -> targeted tests -> regression checks -> reproduce failures -> evidence -> PASS/FAIL/HUMAN REVIEW.
+Customer acquisition: engineering communities, GitHub projects, TaskBounty-style markets, MCP/x402 directories.
+Charge: per verified PR or monthly CI allowance.
+Repeatability: 10/10.
+
+### 13. SMB buyers want outcomes, not generic AI automation
+Reddit: https://www.reddit.com/r/automation/comments/1vk3aig/anyone_here_actually_make_money_doing_ai/
+
+A fresh August thread about selling automation converges on narrowing to one niche and selling the outcome. Common examples include lead follow-up, scheduling, CRM updates, reminders and repetitive admin.
+
+MVP offer: “Every new inquiry is classified, logged in the CRM, assigned, and surfaced for follow-up.”
+Do not automate unsolicited spam or deceptive outreach.
+
+### 14. Repetitive support/data-transfer work remains common
+Reddit: https://www.reddit.com/r/AiAutomations/comments/1vdm8sg/what_repetitive_business_task_did_you_automate/
+
+Recurring pain includes repeated support questions, copying data between apps, manual lead follow-up, daily spreadsheet updates, missed inquiries and document parsing for a construction contractor.
+
+MVP: authorized inbox/docs -> extract/classify -> validate -> update system of record -> exception queue.
+Charge: fixed setup + maintenance or per verified record.
+
+### 15. Compliance evidence collection is a bounded agent opportunity
+Older but persistent automation discussions distinguish high-risk compliance judgment from the boring work AI can safely automate: collecting evidence, pulling reports and organizing artifacts.
+
+MVP: authorized systems -> evidence collector -> timestamp/source -> map to control -> missing-evidence queue -> human reviewer.
+The product is evidence preparation, not autonomous legal/compliance decisions.
+
+## FILTERED OUT / NOT MONEY NOW
+
+PinchWork is still waitlist-only despite showing illustrative jobs; do not count them as earnable inventory.
+BotHire currently reports 0 bots, 0 hires and $0 settled; useful architecture, zero current liquidity.
+WorkUSDC currently exposes a marketplace UI but no visible loaded job inventory and charges 2 USDC per freelancer proposal; not attractive without a verified funded job.
+AI Agent Marketplace currently shows no agents listed while charging providers $45/month; poor expected value.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Point a coding worker at TaskBounty before integrating another marketplace
+It has the strongest combination of real GitHub bugs, $10+ task bands, sandbox verification, clear payout rails and an MCP/REST solver loop. The key rule: reproduce first, then solve. Reject tasks that cannot be reliably reproduced or tested.
+
+### 2. Publish one proven workflow on Amnt as a paid multi-channel agent
+Amnt is the best new creator surface this run because it already reports 311 paid runs, publishing is free, and the same capability becomes web + HTTP + MCP + x402 automatically. Start with a narrow workflow that already worked in a real task: PR verification, document normalization, evidence extraction, API checking, or release checking.
+
+### 3. Add `liquidity truth` to the opportunity oracle
+Track separately:
+- funded_open_jobs
+- recent settled jobs
+- distinct paying buyers
+- repeat buyers
+- advertised volume
+- verified settlement volume
+- competitor count
+- payout eligibility
+
+Score expected realized profit as:
+reward × P(funded) × P(still open) × P(solve) × P(accepted) × P(settled) − execution/API/payment/review costs.
+
+Only SETTLED/WITHDRAWN money counts as revenue. Marketplace GMV, demo transactions, testnet assets, illustrative jobs and raw request counters stay separate.
+
+Bottom line: the best immediate route remains paid coding/verification work (TaskBounty and similar funded boards), while the best compounding route is turning successful procedures into small paid machine-callable services. Amnt is the strongest new surface this hour for that second path.

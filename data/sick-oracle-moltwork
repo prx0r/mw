@@ -1,0 +1,1814 @@
+I did a broad scan across current competition platforms, scientific-prize systems, creator economies, mod ecosystems, decentralized agent protocols, data markets, security programs, forecasting tournaments, ML leaderboards, template/asset markets, and platform developer funds.
+
+The main conclusion is stronger than the earlier one:
+
+> **Moltwork should search for economic objective functions, not merely jobs.**
+
+Your active probes already cover conventional jobs/bounties, hackathons, Reddit pain and newly agent-accessible markets well. The material blind spot is **monetized scoreboards + recurring creator subsidy programs + protocol-native machine work + scientific challenge economies + royalty-bearing digital assets + paid verification/data contributions**.
+
+These are especially valuable because the worker can build a Harbor World that approximates the real market, improve against a measurable metric, and retain the resulting skill even if it never wins the external prize.
+
+## The market map
+
+My current ranking is:
+
+| #  | Market                             | Money/economic signal                                                | Objective signal                            |              H0 potential | Moltwork value |
+| -- | ---------------------------------- | -------------------------------------------------------------------- | ------------------------------------------- | ------------------------: | -------------: |
+| 1  | **Metaculus FutureEval**           | ~$50k seasonal ×3/year + ~$1k biweekly MiniBench + ~$7k Market Pulse | Proper forecasting score                    |             **Excellent** |      **10/10** |
+| 2  | **Kaggle simulation competitions** | Kaggriculture $50k; new simulator contests recurring                 | simulator outcome                           |  **Excellent internally** |      **10/10** |
+| 3  | **Allora Forge**                   | continual prediction-topic rewards                                   | realized forecast quality                   |                    **H0** |      **10/10** |
+| 4  | **Reddit Devvit apps**             | $4k threshold + recurring up to $25k/mo under H2 terms               | qualified engagement                        |   **H0-ish after review** |      **10/10** |
+| 5  | **Roblox micro-studios**           | creator revenue + platform incentives                                | retention/revenue/play telemetry            |                **H0-ish** |      **10/10** |
+| 6  | **Google OSS Patch Rewards**       | $500–$15k, currently 2×/3× bonuses                                   | hidden tests / merged patch / security gain |                   work H0 |     **9.8/10** |
+| 7  | **Vesuvius Challenge**             | $2.14m open; $20k every month                                        | CV/geometry + real scroll progress          |                   work H0 |     **9.8/10** |
+| 8  | **ARC Prize / ARC-AGI**            | current Kaggle pools $850k/$700k/$450k                               | sealed reasoning benchmark                  |               **H0 eval** |     **9.7/10** |
+| 9  | **AIcrowd ARC White-Box**          | $150k+ challenge                                                     | deterministic grader                        |                    **H0** |     **9.5/10** |
+| 10 | **Fortnite UEFN micro-studio**     | 40% engagement pool + temporary 100% in-island V-Bucks value         | player economics                            |      build H0, publish H2 |     **9.5/10** |
+| 11 | **Telegram Mini App economy**      | Stars + subscriptions + fully API-visible affiliate programs         | purchases / revenue                         |                    **H0** |     **9.4/10** |
+| 12 | **DrivenData scientific ML**       | currently €25k Parkinson + $20k speech                               | hidden ML score                             |               **H0 eval** |     **9.2/10** |
+| 13 | **Kaggle TCG AI**                  | Pokémon Strategy $240k                                               | games/data/strategy evaluation              |               H0 training |     **9.2/10** |
+| 14 | **Kaggle AI-agent security**       | $50k                                                                 | deterministic replay/evaluation             |               H0 research |     **9.1/10** |
+| 15 | **CurseForge / game mods**         | 70% creator share + download rewards + premium mods                  | downloads/sales                             |                      high |       **9/10** |
+| 16 | **PUBG UGC × CurseForge**          | current $95k contest                                                 | actual game mode judging                    |          H1–H2 submission |       **9/10** |
+| 17 | **Mozilla Data Collective**        | compensated dataset market                                           | paid downloads                              | H0 after dataset creation |       **9/10** |
+| 18 | **Numerai**                        | ongoing NMR payouts for staked models                                | CORR/MMC                                    |                    **H0** |     **8.8/10** |
+| 19 | **InnoCentive**                    | current problems from $10k to $800k; one funding pool from $4.5m     | corporate technical evaluation              |                     H1–H4 |     **8.8/10** |
+| 20 | **Grand Challenge medical ML**     | many small $250–$3k prizes                                           | reproducible medical benchmark              |             H0 evaluation |     **8.7/10** |
+| 21 | **ResearchHub peer review**        | $150 per accepted expert review                                      | editorial review                            |                     H1/H2 |     **8.5/10** |
+| 22 | **Modrinth mods**                  | 75% of advertising revenue pool to creators                          | pageviews/downloads                         |                      high |     **8.5/10** |
+| 23 | **Canva Creator royalties**        | recurring royalty per template use                                   | usage                                       |             H1 publishing |     **8.4/10** |
+| 24 | **Webflow templates/apps**         | 95% template commission; app commission terms                        | sales                                       |                        H1 |     **8.3/10** |
+| 25 | **Framer Marketplace**             | 100% paid-product sales + referral economics                         | sales/referrals                             |                        H1 |     **7.8/10** |
+| 26 | **Olas Mech Marketplace**          | 14.4m+ A2A txns, ~$108k turnover                                     | purchases                                   |               **true H0** |     **7.8/10** |
+| 27 | **Cantina / Immunefi security**    | bounties into millions                                               | validated vulnerability                     |                     H1–H2 |     **7.8/10** |
+| 28 | **VRChat avatar marketplace**      | direct avatar sales                                                  | purchases                                   |                     H1/H2 |     **7.5/10** |
+| 29 | **mod.io premium UGC**             | creator/studio revenue splits + REST API                             | purchases                                   |                      high |     **7.5/10** |
+| 30 | **HeroX / moonshot science**       | Evolution 2.0 headline $10m                                          | experimental demonstration                  |             H4 eventually |     **6.5/10** |
+
+The interesting bit is that these are **not one category**. There are several entirely different economic systems hiding under the word “opportunity.”
+
+---
+
+# I. The strongest new category: monetized scoreboards
+
+These should get their own Oracle vertical.
+
+## 1. Metaculus is almost the canonical Moltwork venue
+
+The Summer 2026 FutureEval competition closes September 6 with **$50,000 across 328 questions**. The broader bot program runs roughly $50k seasonal tournaments three times per year, ~$1k automated MiniBench rounds every two weeks, and ~$7k bot-eligible Market Pulse competitions. Metaculus explicitly provides a bot template and says entrants can get a bot forecasting in about 30 minutes; inference costs for seasonal competitions are subsidized by OpenAI, Anthropic and Google. ([Metaculus][1])
+
+This means Moltwork gets:
+
+```text
+objective = forecasting score
+episodes = hundreds/year
+feedback = resolutions
+action_surface = API
+training_data = historical questions
+production = bot
+economic_result = prize
+```
+
+It is close to an ideal agent profession.
+
+The big hidden advantage is **repeatability**. A hackathon gives one noisy win/loss every month. FutureEval gives hundreds of scored decisions.
+
+### Oracle classification
+
+```yaml
+earning_program: metaculus.futureeval
+program_type: monetized_scoreboard
+
+objective:
+  type: proper_forecasting_score
+  replayable: true
+  feedback_latency: variable
+  verifier_strength: very_high
+
+action_surface:
+  discovery: API
+  execution: API
+  submission: API
+  outcome: API
+
+autonomy: H0_after_bootstrap
+worldability: 0.98
+skill_reuse: 0.98
+```
+
+This deserves a dedicated `ForecastingWorld`.
+
+---
+
+# 2. Kaggle has quietly become an agent-game economy
+
+Current Kaggle is much more interesting than ordinary supervised ML competitions.
+
+It presently lists:
+
+* **Kaggriculture — $50,000**, explicitly “create an agent to play in this farming simulation and compete with others to maximize your income.”
+* **ARC-AGI-3 — $850,000**
+* **ARC-AGI-2 — $700,000**
+* **ARC Prize Paper Track — $450,000**
+* **Pokémon TCG Strategy — $240,000**
+* **RSNA Knee Abnormality Detection — $77,000**
+* **Biohub Cell Tracking — $60,000**
+* **AI Agent Security — $50,000**. ([Kaggle][2])
+
+Kaggriculture is particularly important.
+
+It means:
+
+> **Someone has created a synthetic economic world and attached real money to the policy that earns the most synthetic money.**
+
+That's practically Moltwork's thesis compressed into a competition.
+
+Build:
+
+```text
+worlds/kaggriculture/
+    simulator adapter
+    historical opponents
+    frozen baselines
+    policy API
+    reward = game_income
+    compute penalty
+    robustness evaluation
+```
+
+Let CGE evolve:
+
+```text
+planning horizon
+memory
+opponent model
+search depth
+tool use
+strategy decomposition
+model choice
+```
+
+Then submit the best policy.
+
+This is much more scientifically valuable than arbitrary document-generation Harbor tasks.
+
+---
+
+# 3. ARC Prize is a research market, not merely a benchmark
+
+Kaggle currently lists **$850k for ARC-AGI-3, $700k for ARC-AGI-2 and $450k for its paper track**. ([Kaggle][3])
+
+Moltwork should represent ARC differently from an ordinary competition:
+
+```text
+program: arc_prize
+task_family: research.algorithm_discovery
+objective: sealed_generalization
+```
+
+The worker isn't the inference policy itself.
+
+The worker is an **autonomous research scientist**:
+
+```text
+Letta Scientist
+     ↓
+read existing results
+     ↓
+form hypothesis
+     ↓
+branch implementation
+     ↓
+run benchmark
+     ↓
+compare against baseline
+     ↓
+record result
+     ↓
+discard/promote
+     ↓
+next hypothesis
+```
+
+Harbor is perfect for this because exact benchmark/version/model/configuration provenance matters enormously.
+
+It also turns a failed experiment into a reusable research trajectory.
+
+---
+
+# 4. ARC White-Box is even cleaner experimentally
+
+AIcrowd currently advertises **$150,000+** for its 2026 White-Box Estimation Challenge. Phase 2 runs until **September 19, 2026**, with $50k/$20k/$10k for the best scores and $20k for best algorithmic contribution in Phase 2. ([AIcrowd][4])
+
+This is arguably an even better Moltwork World than ARC itself.
+
+The task is:
+
+> Given neural-network weights, estimate expected neuron activations more accurately/cheaply than brute-force evaluation.
+
+You get:
+
+```text
+clear metric
+clear compute budget
+repeatable offline environment
+huge search space
+algorithmic improvement matters
+technical write-up as secondary artifact
+```
+
+That is a perfect CGE scientist world.
+
+---
+
+# 5. DrivenData creates specialist ML workers
+
+DrivenData's current prize board includes **Lost in Transcription at $20,000** and the **DaT Parkinson's Challenge at €25,000**, while its historical platform reports more than $5m of total prize money across competitions. ([DrivenData Competitions][5])
+
+DaT Parkinson closes **September 16** with:
+
+```text
+1st €12,500
+2nd €7,500
+3rd €5,000
+```
+
+and uses multicenter French hospital data to classify dopamine-transporter scans. Winning solutions will be open-sourced. ([DrivenData Competitions][6])
+
+This is where the Moltwork asset inventory becomes interesting.
+
+One challenge could produce:
+
+```text
+medical-imaging-data-loader
+dicom-normalization
+cross-site-validation
+small-data-augmentation
+model-calibration
+uncertainty-analysis
+submission-packaging
+```
+
+Those assets then transfer to later medical challenges.
+
+The economic advantage compounds.
+
+---
+
+# 6. Grand Challenge is an entire obscure mini-economy
+
+Grand Challenge isn't as financially exciting per competition, but it has a huge stream of medical-imaging benchmarks.
+
+Surgical Visual Understanding 2026, for example, pays up to **$3,000 overall / $1,000 2026-specific** for surgical tool detection and VQA, plus methodology awards. The interesting part is that it explicitly rewards reproducibility and GitHub documentation in addition to leaderboard position. ([Grand Challenge][7])
+
+Small money individually.
+
+But very good **School material**.
+
+An agent could accumulate competency across:
+
+```text
+segmentation
+tracking
+surgical-video understanding
+VQA
+medical-volume processing
+radiotherapy
+aneurysm analysis
+```
+
+and eventually become a specialized medical-imaging competition worker.
+
+This is exactly the kind of weird “professional gamer but for scientific datasets” niche I think Oracle should detect.
+
+---
+
+# II. Protocol-native machine labor
+
+These are even stranger because **there isn't necessarily a human employer at all**.
+
+## 7. Allora may be one of the purest H0 markets
+
+Allora Forge currently describes itself as a set of prediction topics where workers can “join prediction topics to earn rewards.” Its current topic table shows crypto-price and return forecasting markets with dozens of workers and substantial ALLO reward/emission totals. ([Allora Forge][8])
+
+The fundamental loop is:
+
+```text
+epoch starts
+   ↓
+worker generates inference
+   ↓
+submit
+   ↓
+ground truth arrives
+   ↓
+performance measured
+   ↓
+network rewards useful predictions
+   ↓
+next epoch
+```
+
+That is **machine labor as a protocol**.
+
+No proposal writing.
+
+No client acquisition.
+
+No interview.
+
+No invoice.
+
+This deserves:
+
+```python
+venues/allora.py
+worlds/allora-forecast/
+```
+
+and a generic Oracle classification:
+
+```text
+PROTOCOL_NATIVE_MACHINE_WORK
+```
+
+This might eventually prove more important than all the freelance-agent sites combined.
+
+---
+
+# 8. Numerai is the mature version—with capital risk
+
+Numerai is extraordinary from a Moltwork perspective.
+
+It releases live financial data, accepts prediction vectors through an official API, scores models using CORR and Meta Model Contribution, and supports several automation methods. Numerai can even host a pickled model and automatically run and submit its predictions every day. ([Numerai Docs][9])
+
+So technically:
+
+```text
+discover round     API
+get observations   API
+predict            H0
+submit             API
+score              API
+repeat             H0
+```
+
+The problem is economics.
+
+You can participate and build a score history without staking, but earning requires staking NMR; bad performance can burn part of the stake. ([Numerai Docs][10])
+
+So Oracle needs another field:
+
+```yaml
+capital_at_risk:
+  required_for_earning: true
+  loss_possible: true
+```
+
+That's fundamentally different from a $50k Kaggle tournament.
+
+Still, Numerai is an **outstanding training venue** before committing capital.
+
+---
+
+# 9. Olas proves A2A commerce exists—but also exposes how tiny it is
+
+Olas' current Mech Marketplace reports roughly **14.48 million agent-to-agent transactions but only about $108,000 total marketplace turnover**. It advertises agent skill buying/selling with cryptographic signatures and no API keys. ([Olas][11])
+
+That data is fascinating.
+
+It tells us both:
+
+**Bull case**
+
+```text
+14.5m A2A transactions
+machine-native interaction works
+zero-human purchasing exists
+```
+
+and:
+
+**Bear case**
+
+```text
+$108k total turnover
+≈ fractions of a cent per transaction on average
+```
+
+So I would absolutely ingest Olas into Oracle—but not pretend it's currently a huge labor market.
+
+It's an **infrastructure signal**.
+
+This distinction is exactly why your Oracle is useful.
+
+---
+
+# III. Platform subsidy windows
+
+These may be the fastest way for a small agent lab to become economically viable.
+
+## 10. Reddit Devvit is a major new one
+
+This was the biggest thing your existing probes appear to have underweighted.
+
+Reddit changed Developer Funds on **August 1, 2026** from primarily one-time thresholds toward sustained engagement economics.
+
+Under the H2 terms:
+
+```text
+5,000 DQE → one-time $4,000
+
+recurring:
+10,000 avg DQE → $555.56/month
+25,000          → $2,222.22
+50,000          → $5,000
+100,000         → $6,052.63
+250,000         → $9,210.53
+500,000         → $14,473.68
+1,000,000       → $25,000/month
+```
+
+There are additional install milestones up to $3,500 cumulative. Up to three apps per developer can qualify. ([Reddit Help][12])
+
+This is exceptionally Moltwork-compatible.
+
+The objective is basically:
+
+```text
+maximize genuine sustained human engagement
+```
+
+not:
+
+```text
+impress one hackathon judge.
+```
+
+So build:
+
+```text
+RedditGameWorker
+      ↓
+generate game/mechanic hypothesis
+      ↓
+Devvit app
+      ↓
+offline tests
+      ↓
+small community deployment
+      ↓
+engagement telemetry
+      ↓
+CGE compares variants
+      ↓
+retain mechanics that work
+```
+
+Now imagine its memory after 50 experiments:
+
+```text
+daily puzzle mechanics
+leaderboard effects
+social sharing effects
+session length
+failure modes
+community differences
+return-loop patterns
+```
+
+That's a genuinely valuable specialized worker.
+
+### Important eligibility caveat
+
+Reddit currently requires earners to reside in one of its supported payout countries. Cambodia is not on the current published list. So if the payout residency were Cambodia, this is **not an immediately monetizable venue**, but it absolutely belongs in Oracle with an eligibility blocker and a `country_added` watch event. ([Reddit Help][13])
+
+This is exactly why Oracle needs to distinguish:
+
+```text
+economic_attractiveness = 0.96
+worker_fit = 0.92
+current_user_eligibility = false
+```
+
+instead of simply deleting the opportunity.
+
+---
+
+# 11. Roblox remains probably the best creator environment technically
+
+Roblox Open Cloud gives ordinary REST APIs for game administration, data stores, inventories, user restrictions and other operations. Roblox publishes an OpenAPI 3.0.4 definition specifically to make those APIs easier to automate. ([Creator Hub][14])
+
+Most importantly, the **Place Publishing API** can automatically push a new game version after integration tests—even directly from GitHub Actions. ([Creator Hub][15])
+
+So:
+
+```text
+create/edit    MCP/Studio
+test           programmatically
+CI             GitHub
+publish        API
+observe        APIs
+iterate        worker
+```
+
+That's extremely close to H0.
+
+The World shouldn't score “does the game exist?”
+
+It should simulate:
+
+```text
+join success
+onboarding latency
+round completion
+economy balance
+UI interaction
+crash rate
+multiplayer race conditions
+```
+
+and then production gives the real score:
+
+```text
+retention
+sessions
+conversion
+revenue
+```
+
+This is a whole autonomous game studio.
+
+---
+
+# 12. Fortnite now has an explicit agent-building interface and a temporary subsidy
+
+Epic's August 20 UEFN release embedded an **MCP server inside UEFN**, explicitly mentioning tools including Codex, Claude Code and Cursor. ([Epic Games Developers][16])
+
+Meanwhile Fortnite's creator economy currently allocates **40% of eligible net revenue** to engagement payouts. In-island transactions ordinarily earn developers 50% of V-Bucks value, but from January 9, 2026 through **January 31, 2027**, that rate is temporarily **100%**. ([Epic Games Developers][17])
+
+That is precisely the kind of event Oracle needs to detect:
+
+```text
+PLATFORM_SUBSIDY_STARTED
+rate: 50% → 100%
+expires_at: 2027-01-31
+```
+
+A fixed “Fortnite is an opportunity” record misses the important thing.
+
+**The market became more attractive for a bounded period.**
+
+---
+
+# 13. Telegram has an almost absurdly agent-native affiliate market
+
+Telegram Mini Apps can sell digital services via Stars, and bot owners can inspect their balances and withdraw earnings. ([Telegram][18])
+
+The more surprising feature is the affiliate API.
+
+Telegram exposes methods allowing programs to specify commissions and duration, and affiliates can join them. It even exposes:
+
+```text
+payments.getSuggestedStarRefBots
+```
+
+which returns Mini Apps with active affiliate programs and can sort them by **expected revenue/profitability**. ([Telegram][19])
+
+Think about that.
+
+A worker can literally:
+
+```text
+query available affiliate programs
+      ↓
+rank economic potential
+      ↓
+select offers
+      ↓
+produce appropriate distribution assets
+      ↓
+track referrals
+      ↓
+observe conversions
+      ↓
+update strategy
+```
+
+That is very close to an **API-readable market for attention allocation**.
+
+Obviously the worker must stay within platform rules and avoid spam.
+
+But structurally, this is extremely interesting.
+
+Oracle should ingest the suggested-affiliate feed.
+
+---
+
+# IV. Modding is becoming a proper creator labor market
+
+This one deserves much more attention.
+
+## 14. CurseForge
+
+CurseForge currently advertises:
+
+> **70% of revenue goes to creators.**
+
+It also has its traditional monthly-download Reward Program and is moving toward paid/premium mods. ([CurseForge][20])
+
+That suggests an agent business that is not:
+
+> “make random Minecraft mods.”
+
+It is:
+
+```text
+Oracle:
+    detect game/mod demand
+
+Worker:
+    build mod
+
+Harbor World:
+    game-specific integration tests
+    version compatibility
+    performance
+    install/uninstall
+    regression
+
+Publish
+
+Observe:
+    downloads
+    retention
+    reviews
+    support burden
+
+Worker:
+    maintain across game versions
+```
+
+Maintenance is where agents have a major advantage.
+
+A human mod author gets bored maintaining 30 mods.
+
+A specialized agent does not.
+
+That could make **long-tail mod portfolios** especially interesting.
+
+---
+
+# 15. PUBG currently has a $95k UGC window
+
+A current PUBG × CurseForge creator event has a **$95,000** prize pool tied to UGC/game modes.
+
+This isn't as durable as CurseForge itself, but it's an example of a recurring market signal Oracle should watch:
+
+```text
+popular game
++
+new UGC tooling
++
+creator competition
++
+cash
+```
+
+Those are analogous to penny stocks getting institutional coverage: suddenly an existing activity is worth optimizing professionally.
+
+---
+
+# 16. Modrinth has simple usage-based royalties
+
+Modrinth says it allocates **75% of its website/app advertising revenue to creators**, with distribution determined by pageviews and in-app downloads. ([Modrinth][21])
+
+That is beautifully measurable:
+
+```text
+revenue ∝ pageviews + downloads
+```
+
+So it can become a genuine Moltwork objective.
+
+A Minecraft worker could experiment across:
+
+```text
+mod category
+compatibility range
+feature scope
+update speed
+packaging
+SEO/metadata
+screenshots
+version support
+```
+
+while separating product quality from distribution effects.
+
+---
+
+# 17. mod.io is infrastructure for paid UGC across games
+
+mod.io has a white-label premium UGC marketplace with REST, C++, Unreal and Unity support, and allows studios to define creator revenue splits. ([mod.io Documentation][22])
+
+This is less a single market than a **market infrastructure layer**.
+
+Oracle should therefore discover:
+
+```text
+games_using_mod.io
+which enable paid UGC
+current revenue split
+submission rules
+API support
+mod categories
+competition
+```
+
+That could uncover obscure individual games with much better creator economics than Minecraft.
+
+---
+
+# V. Security and verification work
+
+A major advantage here is extraordinarily strong evaluation.
+
+## 18. Google OSS Patch Rewards
+
+This is probably the best practical security opportunity.
+
+Google's open-source patch program currently advertises:
+
+```text
+$500
+$2,000
+$7,500
+$15,000
+```
+
+depending on complexity/security impact.
+
+Until the end of 2026 it additionally applies:
+
+```text
+2× memory-safety improvement multiplier
+
+3× core-infrastructure-parser
+   memory-safety multiplier
+```
+
+for qualifying work. ([Google Bug Hunters][23])
+
+That's a **temporary economic repricing of one technical capability**.
+
+Oracle should absolutely record that as:
+
+```text
+skill:
+    security.memory_safety
+
+base_market_value:
+    X
+
+temporary_multiplier:
+    2x–3x
+
+expires:
+    2026-12-31
+```
+
+Then ask:
+
+> Is it economically rational to train a specialist worker in this capability before the multiplier expires?
+
+Now we're getting into genuinely intelligent labor allocation.
+
+---
+
+# 19. AI-agent safety bounties are becoming their own profession
+
+OpenAI launched a public **Safety Bug Bounty** in March 2026 covering meaningful abuse/safety risks that sit outside conventional software vulnerabilities. General trivial jailbreaks are explicitly not sufficient; findings need meaningful safety impact and actionable remediation. ([OpenAI][24])
+
+Separately, Kaggle currently has a $50k **AI Agent Security — Multi-Step Tool Attacks** benchmark. ([Kaggle][3])
+
+This indicates a new labor category:
+
+```text
+agent evaluator
+agent safety tester
+agent failure researcher
+tool-use verifier
+```
+
+For Moltwork, the safe and scalable school is an **offline benchmark world**:
+
+```text
+sandboxed agent
+known tool environment
+hidden evaluator
+worker produces test cases
+grader reproduces result
+```
+
+The important transferable skill is not “hack this particular agent.”
+
+It is:
+
+```text
+state-transition analysis
+tool-policy auditing
+reproducibility
+minimization
+failure classification
+evidence packaging
+```
+
+That's valuable across virtually every future agent platform.
+
+---
+
+# 20. Web3 security remains enormous—but is harder
+
+Cantina still describes the Uniswap v4 bug bounty as **$15.5 million**, and Immunefi says it has paid more than **$110 million** to researchers historically. ([Cantina][25])
+
+These should remain Oracle opportunities, but I would rank them below Google's patch program for an early Moltwork worker because:
+
+```text
+reward          enormous
+verification    excellent
+competition     elite
+risk            high
+time variance   high
+skill barrier   enormous
+```
+
+Useful School.
+
+Not necessarily the first economic target.
+
+---
+
+# VI. Scientific challenges: corporations buying intelligence from strangers
+
+This is a huge underexplored labor market.
+
+## 21. InnoCentive right now is wild
+
+Current listings include:
+
+```text
+Sep 6   ultra-high-accuracy signal timing
+        share of $4.5M funding
+
+Sep 7   detecting hidden objects in walls
+        assignment funding up to $65k
+
+Sep 8   controlled microparticle formation
+        $100k
+
+Sep 14  Starbucks cold cup innovation
+        $100k
+
+Sep 21  rapid proof-of-clean technology
+        $10k
+
+Sep 30  Global Prize for Innovation in Water
+        $800k
+```
+
+([Innocentive][26])
+
+This is basically:
+
+> **weird science Upwork with six-figure tasks.**
+
+But many challenges don't require you to construct the final product before submission.
+
+For example, the $800k water challenge initially asks for a written proposal, pitch and supporting material, although it explicitly says purely generative-AI submissions are not wanted. It accepts individuals, teams, researchers, startups and organizations. ([Innocentive][27])
+
+Likewise the Starbucks challenge uses a proposal stage but winning solvers need to participate in concept validation/prototyping and potentially assign IP. ([Innocentive][28])
+
+So classify this honestly:
+
+```text
+research:
+    H0 possible
+
+proposal development:
+    H0/H1
+
+external submission:
+    H2
+
+prototype:
+    H3/H4
+```
+
+Still, an agent can massively lower the search cost of **attempting strange R&D problems**.
+
+---
+
+# 22. Vesuvius is even better
+
+Vesuvius currently advertises **$2.14 million in open prizes**:
+
+```text
+$1,000,000  2027 Grand Prize
+$500,000    First Letters
+$50,000     title discovery
+$590,000/year progress prizes
+$20,000     best contribution every month
+```
+
+([Vesuvius Challenge][29])
+
+The last number is the one I care about most.
+
+**$20k monthly for best open-source contribution.**
+
+That makes:
+
+```text
+better segmentation tooling
+better geometry
+better meshing
+faster pipelines
+better visualization
+better ink detection
+data infrastructure
+```
+
+potential economic work.
+
+An autonomous research agent doesn't need to solve the whole scroll.
+
+It can look for useful incremental contributions.
+
+That is much more tractable.
+
+---
+
+# 23. HeroX contains moonshot markets
+
+HeroX currently has the Evolution 2.0 AI/Origin-of-Life challenge advertising **$10 million**. ([HeroX][30])
+
+This is not a practical H0 earning target because the full objective ultimately requires real experimental demonstration.
+
+But it matters to Oracle as a separate category:
+
+```text
+MOONSHOT_CHALLENGE
+```
+
+Some agent research may produce:
+
+```text
+literature maps
+simulation code
+candidate mechanisms
+experimental designs
+proof tooling
+```
+
+even when the final verification is physical.
+
+Those reusable assets could eventually have enormous value.
+
+---
+
+# VII. Data itself is becoming an earning asset
+
+This is a fascinating category.
+
+## 24. Mozilla Data Collective
+
+Mozilla Data Collective currently has more than **1,000 datasets**, including a dedicated **Compensated Datasets** section. The platform explicitly says contributors can retain ownership, set access conditions and set a price; compensated downloads send money back to the dataset makers. ([Mozilla Data Collective][31])
+
+Current compensated datasets include:
+
+```text
+low-resource speech
+regional TTS
+multimodal language data
+specialized financial speech
+health action video
+rights-cleared historical media
+```
+
+and many more. ([Mozilla Data Collective][32])
+
+This suggests another Moltwork economic primitive:
+
+> **Agent creates a valuable dataset while doing some other work, then packages the exhaust as an asset.**
+
+Examples:
+
+```text
+benchmark trajectories
+verified web observations
+game simulation traces
+software compatibility matrices
+multilingual data
+tool-call failure datasets
+public-domain document annotations
+```
+
+Obviously rights and consent have to be clean.
+
+But conceptually this is exactly your “no work goes to waste” thesis.
+
+A WorkerRun can create:
+
+```text
+primary outcome
++
+skill
++
+code asset
++
+dataset
++
+evaluation corpus
+```
+
+The dataset may itself become sellable.
+
+That's important.
+
+---
+
+# VIII. Paid scientific verification
+
+## 25. ResearchHub is paying for peer review
+
+ResearchHub currently pays **$150 equivalent in ResearchCoin for an approved high-quality peer review**. Reviews undergo a quality check, reviewers must verify identity/expertise, and payments are typically issued roughly ten days after approval. ([ResearchHub][33])
+
+Current scientific pages visibly carry these $150 review bounties. ([ResearchHub][34])
+
+This is not H0 because expert identity/accountability is part of the product.
+
+But it exposes a much bigger emerging market:
+
+```text
+scientific review
+statistical review
+reproducibility audit
+citation verification
+methods validation
+data-quality review
+```
+
+I would build a Harbor **PeerReviewSchool** anyway.
+
+An expert remains responsible for the final review.
+
+But the worker can do:
+
+```text
+claim extraction
+paper retrieval
+citation checking
+statistical sanity checks
+method comparison
+reproduction attempts
+review drafting
+```
+
+That makes H0–H1 preparation economically useful.
+
+---
+
+# IX. Digital asset portfolios
+
+This category is less glamorous but potentially very good for an autonomous lab.
+
+## 26. Canva templates
+
+Canva's Template Creator program pays royalties based on template usage. Canva explicitly encourages localized cultural/language templates and gives creators usage/export analytics. ([Canva][35])
+
+This is almost perfect for:
+
+```text
+Oracle detects underserved template searches
+        ↓
+agent researches local/business use case
+        ↓
+creates template family
+        ↓
+quality verifier
+        ↓
+human/Canva approval
+        ↓
+usage data
+        ↓
+agent learns what sells
+```
+
+Templates become inventory.
+
+No client work.
+
+No deadline.
+
+Infinite reuse.
+
+---
+
+# 27. Webflow
+
+Webflow now pays template creators **95% of each template sale**, retaining 5% for payment processing. Creators can also use fulfillment links to sell templates outside the Webflow Marketplace. ([Webflow][36])
+
+The marketplace agreement also lists:
+
+```text
+templates    95%
+libraries    80%
+applications 100% initially,
+             then 80% after year one
+```
+
+([Webflow][37])
+
+This is more interesting than generic “freelance web design.”
+
+An agent could maintain a portfolio of:
+
+```text
+dentist templates
+trade-business templates
+tiny hotels
+local restaurants
+SaaS launches
+law firms
+niche ecommerce
+```
+
+with actual conversion/sales data feeding back into the worker.
+
+---
+
+# 28. Framer
+
+Framer's August 7 documentation says creators can sell templates, plugins, components and vectors; **paid templates keep 100% of sales revenue**. Templates can also earn referral commissions. ([Framer][38])
+
+Framer separately advertises up to 50% referral commissions. ([Framer][39])
+
+However this one should be **downgraded by Oracle when community saturation rises**.
+
+Headline economics:
+
+```text
+excellent
+```
+
+does not imply:
+
+```text
+expected marginal creator economics excellent
+```
+
+This is where Reddit/community supply-side pain becomes useful as a second layer over the official program data.
+
+---
+
+# 29. VRChat avatars
+
+VRChat now runs a native Avatar Marketplace where creators sell directly inside VRChat, and says the **largest cut of revenue goes to the avatar creator**. ([VRChat][40])
+
+An agent-assisted avatar factory could specialize in:
+
+```text
+rigging
+performance optimization
+mobile compatibility
+expression setup
+variant generation
+testing
+listing assets
+```
+
+but artistic quality/review keeps this more H1/H2 than Roblox.
+
+Still worth tracking.
+
+---
+
+# 30. Steam Workshop economies
+
+Steam's Workshop infrastructure can allocate revenue from sold items to individual Workshop authors, and Steam handles author banking, tax and payouts on supported implementations. ([Steamworks][41])
+
+Crucially, this isn't one market.
+
+It's:
+
+```text
+game × workshop monetization model
+```
+
+So the Oracle adapter should discover individual games where:
+
+```text
+UGC accepted
+creator payout enabled
+current demand
+content technologically generatable
+```
+
+The weird niche might not be “Steam Workshop.”
+
+It might be:
+
+> one relatively obscure game whose paid item ecosystem is suddenly growing.
+
+That's exactly the Yu-Gi-Oh-style discovery problem.
+
+---
+
+# The most interesting meta-pattern
+
+These opportunities fall on two axes:
+
+|                            | **Weak verification** |                **Strong verification** |
+| -------------------------- | --------------------: | -------------------------------------: |
+| **Human-mediated money**   | freelance/design work |           InnoCentive, security review |
+| **Machine-mediated money** |     creator royalties | **Metaculus, Kaggle, Allora, Numerai** |
+
+The bottom-right quadrant is the gold mine.
+
+```text
+machine-actionable
++
+machine-verifiable
++
+economic reward
+```
+
+because it closes the learning loop automatically.
+
+I would explicitly call this:
+
+# **Machine-Evaluable Labor**
+
+Examples:
+
+```text
+forecast probabilities
+play simulated games
+produce prediction vectors
+optimize algorithms
+find regressions
+write patches
+build game policies
+optimize creator content from telemetry
+```
+
+This is a much more precise target for Moltwork than “agent jobs.”
+
+---
+
+# What your current probes are missing
+
+Your current scouts collectively cover a lot, but I would add these distinct discovery lenses to the Oracle research layer.
+
+### 1. `monetized_scoreboard_radar`
+
+Search continuously for:
+
+```text
+"prize competition"
+"simulation competition"
+"agent competition"
+"bot tournament"
+"leaderboard prize"
+"challenge prize"
+"benchmark prize"
+"forecasting tournament"
+"algorithm competition"
+```
+
+Sources:
+
+```text
+Kaggle
+AIcrowd
+DrivenData
+Grand Challenge
+Codabench
+EvalAI
+EvalAI competitions
+NeurIPS competition track
+ICLR challenges
+CVPR challenges
+MICCAI
+Metaculus
+Topcoder Marathon
+CodaLab/Codabench
+```
+
+What matters:
+
+```text
+objective function
+evaluation API
+local simulator
+submission frequency
+hidden/public split
+cash
+compute limits
+feedback latency
+```
+
+---
+
+### 2. `platform_subsidy_radar`
+
+Search for economic *changes*, not platforms:
+
+```text
+"creator payout increased"
+"new revenue share"
+"100% revenue"
+"developer fund"
+"creator fund"
+"new monetization"
+"paid apps"
+"UGC monetization"
+"creator rewards"
+"developer rewards"
+"engagement payouts"
+```
+
+Examples we just found:
+
+```text
+Fortnite 50% → temporary 100%
+Reddit one-time → recurring engagement
+Webflow → 95%
+new native game UGC payouts
+```
+
+This is where the real edge lies.
+
+Oracle should detect the **derivative**:
+
+```text
+economic attractiveness changed +82%
+```
+
+not just the static marketplace.
+
+---
+
+### 3. `protocol_machine_work_radar`
+
+Specifically search:
+
+```text
+worker
+miner
+inference rewards
+prediction rewards
+agent marketplace
+A2A market
+oracle rewards
+model tournament
+model staking
+proof of inference
+agent economy
+```
+
+Track:
+
+```text
+Allora
+Numerai
+Olas
+Bittensor subnets
+oracle networks
+DePIN inference
+prediction protocols
+model evaluation networks
+```
+
+And store both:
+
+```text
+gross activity
+actual USD economic volume
+```
+
+Olas demonstrates why. Millions of transactions can conceal a tiny money market.
+
+---
+
+### 4. `scientific_prize_radar`
+
+This should be separate from HackathonHelp.
+
+Sources:
+
+```text
+InnoCentive
+HeroX
+NASA prize/challenge sites
+NIH challenge programs
+DARPA challenge programs
+NSF prize programs
+DOE competitions
+ARPA-E
+XPRIZE
+ChallengeWorks
+Nesta Challenges
+Wazoku
+academic challenges
+foundation science prizes
+```
+
+Note a material discovery here:
+
+**Challenge.gov shut down on March 30, 2026**, so a probe that still treats it as the canonical U.S. federal prize index will decay. Federal prize discovery has moved back toward USA.gov and individual agency surfaces.
+
+That is exactly the kind of source-health event Oracle needs to detect.
+
+---
+
+### 5. `ugc_economy_radar`
+
+Not generic “game dev.”
+
+Track:
+
+```text
+game
+UGC infrastructure
+creator share
+cash competition
+submission interface
+mod API
+publishing API
+active players
+download volume
+creator saturation
+```
+
+Sources:
+
+```text
+CurseForge
+Modrinth
+mod.io
+Steam Workshop
+Roblox
+Fortnite
+Minecraft
+PUBG UGC
+Bethesda Creations
+VRChat
+Overwolf
+game-specific creator programs
+```
+
+Then the Oracle can surface:
+
+> **“Game X just introduced paid UGC and almost nobody is publishing yet.”**
+
+That is infinitely more valuable than discovering CurseForge itself.
+
+---
+
+### 6. `digital_asset_royalty_radar`
+
+Track:
+
+```text
+Canva
+Framer
+Webflow
+Fab
+Unity Asset Store
+Unreal/Fab
+Blender ecosystems
+Figma Community monetization
+Notion templates
+presentation/template stores
+3D marketplaces
+font/icon marketplaces
+audio libraries
+game assets
+```
+
+But rank by:
+
+```text
+ongoing sales
+automation surface
+asset reuse
+saturation
+search demand
+platform share
+approval friction
+```
+
+not headline creator commission.
+
+---
+
+### 7. `data_economy_radar`
+
+Mozilla Data Collective makes this newly important.
+
+Look for:
+
+```text
+paid dataset
+data licensing marketplace
+training data marketplace
+compensated data
+benchmark data bounty
+dataset challenge
+data acquisition bounty
+data cooperative
+```
+
+What Moltwork eventually owns is particularly valuable:
+
+> **datasets generated as exhaust from real WorkerRuns.**
+
+---
+
+### 8. `verification_economy_radar`
+
+Search:
+
+```text
+paid peer review
+paid code review
+reproducibility bounty
+replication bounty
+fact-check bounty
+security patch reward
+audit competition
+model safety bounty
+evaluation bounty
+```
+
+This could become a major independent vertical.
+
+---
+
+# The Oracle schema needs these fields
+
+I would add these to `EarningProgram` / opportunity normalization:
+
+```yaml
+program_type:
+  - job_market
+  - prize_market
+  - monetized_scoreboard
+  - creator_royalty
+  - platform_subsidy
+  - protocol_machine_work
+  - paid_verification
+  - data_market
+  - moonshot_challenge
+
+objective_type:
+  - deterministic
+  - simulator
+  - hidden_benchmark
+  - delayed_resolution
+  - human_judging
+  - production_telemetry
+  - sales
+  - engagement
+  - scientific_validation
+
+feedback_latency_seconds:
+
+simulator_available:
+replayable:
+submission_frequency:
+parallelizable:
+
+worldability_score:
+
+action_surfaces:
+  discover:
+  work:
+  submit:
+  status:
+  settle:
+
+autonomy_level:
+
+bootstrap_dependencies:
+
+capital_at_risk:
+legal_identity_required:
+expert_identity_required:
+physical_validation_required:
+
+reward:
+  type:
+  amount:
+  expected:
+  recurring:
+
+platform_share:
+creator_share:
+
+subsidy:
+  active:
+  multiplier:
+  expires_at:
+
+eligibility:
+  country:
+  age:
+  prior_entry_required:
+
+market:
+  participants:
+  submissions:
+  transactions:
+  actual_turnover:
+  saturation_signal:
+
+skill_reusability:
+asset_reusability:
+data_exhaust_value:
+```
+
+That would allow the Oracle to answer far more useful questions.
+
+---
+
+# And add change events
+
+The event stream might actually become the highest-value dataset:
+
+```text
+PRIZE_CREATED
+PRIZE_INCREASED
+PRIZE_DECREASED
+
+REVENUE_SHARE_INCREASED
+REVENUE_SHARE_DECREASED
+
+SUBSIDY_STARTED
+SUBSIDY_EXPIRING
+SUBSIDY_ENDED
+
+API_ADDED
+OPENAPI_ADDED
+MCP_ADDED
+WEBMCP_ADDED
+
+AUTOMATED_SUBMISSION_ADDED
+
+PAID_UGC_LAUNCHED
+
+COUNTRY_ELIGIBILITY_ADDED
+COUNTRY_ELIGIBILITY_REMOVED
+
+ENTRY_GATE_ADDED
+
+CAPITAL_REQUIREMENT_ADDED
+
+MARKETPLACE_OPENED
+MARKETPLACE_CLOSED
+
+REWARD_PROGRAM_PAUSED
+
+SATURATION_RISING
+
+COMPETITION_OPENED
+
+BENCHMARK_RELEASED
+
+SIMULATOR_RELEASED
+```
+
+Then rather than asking:
+
+> What markets exist?
+
+you ask:
+
+> **What market became economically easier for my workers in the last seven days?**
+
+That's the killer Oracle query.
+
+---
+
+# My shortlist for actual experiments
+
+I would not try thirty markets at once.
+
+The best **five Schools** to prove the architecture are:
+
+| School                               | Why                                                                 |
+| ------------------------------------ | ------------------------------------------------------------------- |
+| **Forecasting / Metaculus**          | real H0 submission, hundreds of episodes, clean scoring, real money |
+| **Simulation / Kaggriculture + YGO** | extremely cheap repeated policy learning                            |
+| **Roblox developer**                 | tests actual autonomous production and economic telemetry           |
+| **OSS security patching**            | hidden-verifier code work with real economic value                  |
+| **Scientific ML**                    | proves the same system transfers into DrivenData/AIcrowd/Vesuvius   |
+
+And I would use **Telegram + Allora** as the first two pure venue integrations that test machine-to-machine economics rather than human contest submission.
+
+That's enough to demonstrate:
+
+```text
+FORECASTER
+GAME POLICY SCIENTIST
+GAME DEVELOPER
+SECURITY ENGINEER
+ML RESEARCHER
+
+        ↓
+
+same Oracle
+same Letta identity
+same Harbor execution
+same CGE experiments
+same Hydra evidence
+same Skill promotion
+same economic accounting
+```
+
+At that point the claim that Moltwork is general starts becoming empirically credible.
+
+---
+
+# Immediate opportunities as of September 1, 2026
+
+The ones I would pay attention to **right now** are:
+
+1. **Metaculus Summer FutureEval — $50k, closes September 6.** ([Metaculus][1])
+2. **AIcrowd ARC White-Box Phase 2 — through September 19, $100k of Phase-2 awards / $150k+ overall.** ([AIcrowd][42])
+3. **DrivenData DaT Parkinson — €25k, closes September 16.** ([DrivenData Competitions][6])
+4. **DrivenData Lost in Transcription — $20k, closes mid-September.** ([DrivenData Competitions][5])
+5. **Kaggriculture — $50k and about a month remaining on the current Kaggle listing.** ([Kaggle][3])
+6. **ARC-AGI-2/3 — $700k/$850k.** ([Kaggle][3])
+7. **Pokémon Strategy — $240k current listing**, subject to its track-specific eligibility rules. ([Kaggle][3])
+8. **Vesuvius monthly open-source prize — $20k every month**, plus larger long-horizon prizes. ([Vesuvius Challenge][29])
+9. **Google OSS Patch Rewards — up to $15k base with current 2×/3× memory-safety bonuses.** ([Google Bug Hunters][23])
+10. **InnoCentive — multiple September opportunities including $100k technical challenges and an $800k water prize.** ([Innocentive][26])
+11. **Allora Forge — ongoing prediction topics/rewards.** ([Allora Forge][8])
+12. **Telegram Mini-App / affiliate economy — persistent rather than deadline-based and API-native.** ([Telegram][19])
+13. **CurseForge/Modrinth mod portfolios — persistent creator-income market.** ([CurseForge][20])
+14. **Mozilla compensated datasets — new persistent licensing surface.** ([Mozilla Data Collective][32])
+15. **Reddit Devvit — extremely attractive program economics, but payout-country eligibility needs to match.** ([Reddit Help][12])
+
+The more I search this space, the more I think the central Oracle object should be **`EarningProgram`**, not `Job`.
+
+A job disappears when it is done.
+
+An earning program—Metaculus, Roblox, CurseForge, Allora, Reddit Developer Funds, Google Patch Rewards, Vesuvius Progress Prizes—defines an **economic game your worker can learn to play repeatedly**.
+
+That is a much deeper source of durable agent value.
+
+[1]: https://www.metaculus.com/tournament/summer-futureeval-2026/?utm_source=chatgpt.com "Summer 2026 FutureEval Bot Tournament"
+[2]: https://www.kaggle.com/competitions?listOption=active&utm_source=chatgpt.com "Kaggle Competitions"
+[3]: https://www.kaggle.com/competitions?group=active&sortBy=prize&utm_source=chatgpt.com "Kaggle Competitions"
+[4]: https://www.aicrowd.com/challenges?utm_source=chatgpt.com "AIcrowd | Challenges"
+[5]: https://www.drivendata.org/competitions/?utm_source=chatgpt.com "Competitions"
+[6]: https://www.drivendata.org/competitions/311/dat-parkinsons-challenge/page/987/?utm_source=chatgpt.com "Competition: DaT Parkinson's Challenge"
+[7]: https://surgvu26.grand-challenge.org/prizes/?utm_source=chatgpt.com "Prizes - Surgical Visual Understanding 2026 - Grand Challenge"
+[8]: https://forge.allora.network/competitions?utm_source=chatgpt.com "Topics | Allora Forge"
+[9]: https://docs.numer.ai/numerai-tournament/submissions/model-uploads?utm_source=chatgpt.com "Model Uploads | Numerai Docs"
+[10]: https://docs.numer.ai/?utm_source=chatgpt.com "Getting Started | Numerai Docs"
+[11]: https://olas.network/mech-marketplace?utm_source=chatgpt.com "Mech Marketplace | Olas | Co-own AI"
+[12]: https://support.reddithelp.com/hc/en-us/articles/50860336905108-Reddit-Developer-Funds-H2-2026-Terms "Reddit Developer Funds H2 2026 Terms – Reddit Help"
+[13]: https://support.reddithelp.com/hc/en-us/articles/37760672112660-Earning-money-on-Reddit?utm_source=chatgpt.com "Earning money on Reddit – Reddit Help"
+[14]: https://create.roblox.com/docs/cloud?utm_source=chatgpt.com "Cloud API reference | Documentation - Roblox Creator Hub"
+[15]: https://create.roblox.com/docs/cloud/guides/usage-place-publishing?utm_source=chatgpt.com "Usage guide for place publishing | Documentation - Roblox Creator Hub"
+[16]: https://dev.epicgames.com/documentation/fortnite/42-00-fortnite-ecosystem-updates-and-release-notes?utm_source=chatgpt.com "42.00 Fortnite Ecosystem Updates and Release Notes | Fortnite Documentation | Epic Developer Community"
+[17]: https://dev.epicgames.com/documentation/fortnite/fortnite-developer-program-faqs-in-fortnite?utm_source=chatgpt.com "Fortnite Developer Program FAQs in Fortnite | Fortnite Documentation | Epic Developer Community"
+[18]: https://core.telegram.org/api/stars?utm_source=chatgpt.com "Telegram Stars"
+[19]: https://core.telegram.org/api/bots/referrals?utm_source=chatgpt.com "Affiliate programs"
+[20]: https://authors.curseforge.com/welcome/?utm_source=chatgpt.com "CurseForge for Mod Authors"
+[21]: https://modrinth.com/legal/cmp-info?utm_source=chatgpt.com "Rewards Program Information - Modrinth"
+[22]: https://docs.mod.io/monetization/marketplace?utm_source=chatgpt.com "Overview | mod.io Documentation"
+[23]: https://bughunters.google.com/open-source-security/patch-rewards?utm_source=chatgpt.com "Open Source Security Patch Rewards - Google Bug Hunters"
+[24]: https://openai.com/index/safety-bug-bounty/?utm_source=chatgpt.com "Introducing the OpenAI Safety Bug Bounty program | OpenAI"
+[25]: https://cantina.xyz/blog/cantina-x-uniswap-2025-onchain-security?utm_source=chatgpt.com "Cantina x Uniswap Labs 2025: A Historic Year For Liquidity, Institutions, And Security | Cantina Blog"
+[26]: https://www.innocentive.com/challenges/?utm_source=chatgpt.com "Challenges - Innocentive"
+[27]: https://www.innocentive.com/challenges/global-prize-for-innovation-in-water-gpiw-2026/?utm_source=chatgpt.com "Global Prize for Innovation in Water (GPIW) 2026 - Innocentive"
+[28]: https://www.innocentive.com/challenges/starbucks-global-cold-cup-innovation-challenge/?utm_source=chatgpt.com "Starbucks Global Cold Cup Innovation Challenge - Innocentive"
+[29]: https://vesuviuschallenge.org/?utm_source=chatgpt.com "Vesuvius Challenge — Reading the Herculaneum Scrolls with AI"
+[30]: https://www.herox.com/evolution2.0?utm_source=chatgpt.com "Evolution 2.0 AI & Origin of Life Challenge, $10M Prize | HeroX"
+[31]: https://mozilladatacollective.com/datasets?utm_source=chatgpt.com "Datasets | Mozilla Data Collective"
+[32]: https://mozilladatacollective.com/datasets?pricing=compensated&utm_source=chatgpt.com "Datasets | Mozilla Data Collective"
+[33]: https://www.researchhub.com/peer-review?utm_source=chatgpt.com "Earn ResearchCoin | ResearchHub"
+[34]: https://www.researchhub.com/grant/32296/reproductive-longevity?utm_source=chatgpt.com "Reproductive Longevity | ResearchHub"
+[35]: https://www.canva.com/creators/templates/?msockid=3eece78a50e06b8213c9f1d2519f6a7b&utm_source=chatgpt.com "Templates Creator"
+[36]: https://webflow.com/templates/applications?utm_source=chatgpt.com "Become a Template Designer | Webflow"
+[37]: https://webflow.com/legal/marketplace-agreement?utm_source=chatgpt.com "Marketplace Agreement | Webflow"
+[38]: https://www.framer.com/help/articles/how-the-creator-program-works/?utm_source=chatgpt.com "Framer Help: How the Creator Program works"
+[39]: https://www.framer.com/creators?via=victrays&utm_source=chatgpt.com "Framer: Get paid to create with Framer"
+[40]: https://hello.vrchat.com/avatar-marketplace?utm_source=chatgpt.com "Avatar Marketplace — VRChat"
+[41]: https://partner.steamgames.com/doc/features/workshop?language=english&utm_source=chatgpt.com "Steam Workshop (Steamworks Documentation)"
+[42]: https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026?utm_source=chatgpt.com "AIcrowd | ARC White-Box Estimation Challenge 2026 | Challenges"

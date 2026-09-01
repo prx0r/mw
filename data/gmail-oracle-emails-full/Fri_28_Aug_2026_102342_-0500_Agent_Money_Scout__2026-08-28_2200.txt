@@ -1,0 +1,166 @@
+Subject: Agent Money Scout — 2026-08-28 22:00
+Date: Fri, 28 Aug 2026 10:23:42 -0500
+Message ID: 1a048f83a0e6ee40
+================================================================================
+
+# Agent Money Scout — 28 Aug 2026, 22:00
+
+## NEW THIS RUN
+
+### 1. TaskBounty — strongest new direct-money source
+URL: https://www.task-bounty.com/for-agents
+
+What the agent does: browse funded GitHub bug/test-coverage bounties, obtain repo access, implement a fix, open a PR, submit it, and pass sandbox verification. First verified solution wins.
+Who pays: software teams/repository owners funding real issues.
+Verified payout: platform says bounties currently range from $10 to a few hundred dollars; contributor keeps 80%. Payout options: USDC, ETH, BTC, or eligible USD bank transfer. Pricing page says first verified payout is released immediately; later payouts batch monthly once balance reaches $50.
+Requirements: coding agent, GitHub, ability to run tests/CI; payout rail as supported.
+Autonomy: 9/10.
+Exact first action: register an agent, then use the open-bounty feed/MCP and filter for a language the worker already handles well.
+Constraints: bank-transfer support limited by geography; crypto/payment/account terms still apply. Do not bypass payment-provider age/identity requirements.
+Ease to first $5: 9/10. Repeatability: 9/10.
+Primary sources: https://www.task-bounty.com/for-agents and https://www.task-bounty.com/pricing
+
+### 2. Opire — unusually strong OSS bounty inventory
+URL: https://opire.dev/
+
+What the agent does: choose a rewarded open-source GitHub issue, implement it, submit a valid PR, and claim the reward if the bounty creator accepts/pays the solution.
+Who pays: maintainers, companies and users sponsoring OSS issues.
+Verified live examples today: $3,280 C#/.NET engine export support; $590 Wayland support; $590 TypeScript migration bug; $395 Rust Helix keymap; $308 Storybook controls issue; two $70 issues.
+Payment: Stripe; developers receive 100% of the bounty amount according to Opire, while the sponsor pays Opire/payment-processing fees.
+Autonomy: 7/10 because repo conventions/review are human-governed.
+First action: browse https://app.opire.dev/ rewards, select a small testable issue, read repo contribution rules, then produce a PR.
+Constraints: Stripe availability governs receiving payouts. Multiple developers may compete and the bounty creator decides which solution to reward. Do not bypass Stripe eligibility or identity requirements.
+Ease first $5: 7/10. Repeatability: 8/10.
+Primary source: https://opire.dev/
+
+### 3. Augmi Agent Marketplace
+URL: https://augmi.world/marketplace
+Guide: https://augmi.world/blog/augmi-marketplace-tutorial
+
+What the agent does: self-register, obtain ERC-8004 identity, browse skill-matched bounties, claim one, deliver, submit, and receive USDC on Base when approved.
+Who pays: bounty posters.
+Payout: bounty-specific; no median invented. Official example demonstrates a 50 USDC code/trading bounty. All marketplace bounty payments use Base USDC.
+Requirements: Augmi agent/account, Base-compatible wallet/identity; marketplace skill or API.
+Autonomy: 10/10 after setup.
+First action: register the worker and query `/api/marketplace/bounties?status=OPEN&skills=code,research&minReward=20`.
+Constraints: public docs say Base gas is minimal; payout remains poster-approved, so track actual release transaction, not merely completed status.
+Ease first $5: 6/10. Repeatability: 8/10.
+
+### 4. Agent Hansa
+URL: https://www.agenthansa.com/
+Agent instructions: https://www.agenthansa.com/llms-full.txt
+
+What: register via API, browse quests, submit work and compete for USDC prize pools.
+Who pays: quest sponsors/platform pools.
+Payout: USDC confirmed; no trustworthy public per-agent dollar median, so none assumed. Competitive pool means many submissions may earn zero.
+Requirements: API-capable agent.
+Autonomy: 10/10.
+First action: read llms-full.txt and register through the published agent endpoint.
+Constraints: tournament/alliance mechanics rather than guaranteed pay-per-task; verify current terms before participating.
+Ease first $5: 4/10. Repeatability: 6/10.
+
+### 5. Drips Waves
+URL: https://www.drips.network/
+
+What: solve GitHub issues in a Wave; merged PRs convert into on-chain rewards.
+Who pays: ecosystems/projects funding Wave programs.
+Verified economics: no current single bounty value assumed. Drips explicitly supports recurring Waves that convert merged pull requests into on-chain rewards; its homepage cites a $50,000 USDC ENS funding program as evidence of real on-chain funding infrastructure.
+Requirements: coding/GitHub and the relevant Wave's rules.
+Autonomy: 7/10.
+First action: inspect active Wave programs in the Drips app and choose a repo/task with objective merge criteria.
+Constraints: payouts depend on program/Wave rules; verify each live program individually.
+Ease first $5: 4/10. Repeatability: 8/10 if matched to a recurring Wave.
+
+### 6. HackenProof — authorized security-agent work
+URL: https://hackenproof.com/
+
+What: use an AI-assisted security agent only against explicitly in-scope programs, validate findings, and submit high-quality reports.
+Who pays: participating projects.
+Verified current platform stats: $26M+ paid historically, 400+ programs. Current published reward caps include Ethereum Foundation up to $250k, RISC Zero up to $150k, Flow up to $100k, and others.
+Autonomy: 5/10; human validation is essential.
+First action: read one program's exact scope and rules before running any tests.
+Constraints: testing must stay strictly within authorized scope and platform rules; payment/account eligibility also applies. Never probe systems outside explicit authorization.
+Ease first $5: 2/10. Repeatability: 6/10 for skilled security researchers.
+
+### 7. boss.dev
+URL: https://www.boss.dev/
+
+What: GitHub-linked software bounties, generally fix issue -> PR -> accepted result -> payout.
+Who pays: repository/project sponsors.
+Payout: current homepage is JS-rendered and did not expose reliable live reward values in this run, so no payout is invented.
+Requirements: GitHub/coding and supported payout jurisdiction.
+Autonomy: 7/10.
+First action: add to the developer-bounty source registry and poll only funded issues with machine-verifiable acceptance criteria.
+Constraints: verify live bounty and payout availability before committing compute.
+Ease first $5: 4/10. Repeatability: 7/10.
+
+### 8. Productized PR Verification / QA Agent
+This is a NEW specific business play backed by very fresh demand rather than a marketplace.
+
+Customer: teams using Claude/Codex/Cursor heavily.
+Problem evidence: an Aug 27 Reddit thread with 1,000+ votes describes an entire dev team finishing faster than QA can test, leaving developers idle; a PM reports the same QA bottleneck at their company. A fresh Aug 28 thread separately complains that AI-produced code volume has exceeded realistic human PR-review capacity.
+Agent workflow: ingest PR + issue/spec -> map changed components/risk -> generate targeted tests -> execute unit/integration/browser/API checks in sandbox -> reproduce failures -> produce evidence bundle -> PASS / FAIL / HUMAN REVIEW.
+Where to acquire customers: GitHub-heavy SaaS teams, AI coding-agent communities, dev agencies, authorized freelance marketplaces.
+How to charge: per verified PR, monthly PR allowance, or machine-paid API call. Do not invent a price until benchmarked; a concrete launch offer could be a free first verification followed by a simple per-PR paid tier.
+MVP: GitHub App + webhook + disposable test environment + evidence JSON/Markdown.
+Autonomy: 9/10 with human escalation for ambiguous product behavior.
+Ease first $5: 7/10. Repeatability: 10/10.
+Reddit evidence: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+9. Toku.agency — https://www.toku.agency/ — API-first agent work; previously verified 125+ open jobs and 85% worker share. Keep polling, but watch for duplicated/low-quality listings. First $5 8/10; repeat 9/10.
+
+10. SporeAgent — prior run's strongest visible task-shaped source, with public examples around $45 scraping, $80 FastAPI tests and $120 translation. Keep as top-tier task polling rather than rediscovering it as new.
+
+11. Clawlancer — machine-readable Base/USDC research/coding/writing/analysis bounties; strong fit for autonomous discovery/claim/delivery.
+
+12. MoltJobs — MCP/API-native research, scraping, fact-checking, code-review and data work. Keep in common router.
+
+13. TaskForce — programmatic proposals, milestones/evidence and USDC escrow. Good adapter; do not treat mere listings as realized revenue.
+
+14. Superteam Earn — https://earn.superteam.fun/ — higher-value bounties/grants and an explicit Agent API/agent-allowed listings. Slower than microtasks but much higher ceiling.
+
+15. x402 Arena — https://x402arena.gg/ — still one of the best telemetry sources for paid machine queries; use it both to sell endpoints and to learn what capabilities have real buyers.
+
+16. AgentPay / AgentBazaar / AgenticTrade / the402 distribution layer — continue cross-listing the same specialist capability rather than building separate agents for each marketplace.
+
+## REDDIT DEMAND SIGNALS
+
+### A. QA is becoming the bottleneck after AI coding
+Fresh Aug 27 thread: developers report AI coding accelerating delivery faster than QA capacity; commenters and a PM report the same pattern elsewhere. The recurring problem is not code generation — it is verification, regression testing, evidence, product-context review and approval.
+Thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+
+### B. PR-review overload / loss of code understanding
+Fresh Aug 28 discussion complains that AI makes it cheap to generate large amounts of code while maintainers cannot honestly review the volume; comments emphasize bugs, version incompatibilities, edge cases, accessibility and system-wide regressions.
+Commercial implication: sell risk-focused PR verification, not another coding agent.
+
+### C. Repetitive invoicing / billing remains a durable business need
+Earlier runs repeatedly found 2026 businesses manually moving invoice data, reconciling SaaS usage, chasing overdue invoices and preparing client reports. The recurring pattern is objective and agent-friendly: authorized data -> deterministic rules -> draft action -> execute only high-confidence cases -> exception queue.
+
+### D. The winning offer is a finished operation
+Across the recurring Reddit evidence, owners respond to outcomes such as “every valid invoice becomes a verified record,” “no lead is forgotten,” and “every PR gets an evidence-backed verification report,” rather than generic AI-automation pitches.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Add TaskBounty immediately
+It is the sharpest fresh route to an actual first payment because the unit of work is concrete, automatically testable and funded. The common coding worker should ingest its bounty feed, estimate success probability and only attempt issues it can reproduce locally.
+
+### 2. Add Opire as the high-upside OSS lane
+The currently visible $70-$3,280 bounty spread is materially better than tiny agent-market microtasks. Score issues by testability, repo size, PR competition, dependency familiarity and expected human-review time.
+
+### 3. Build QA/PR verification as the second specialist
+The most current demand signal is now clear: coding output is accelerating faster than verification. Build a worker that can both earn from developer bounties and sell `/verify-pr` as a reusable service.
+
+Suggested normalized economics model:
+
+`expected_profit = payout * P(still_open) * P(solution_correct) * P(accepted) - model/API/compute cost - expected human-review cost`
+
+And track every platform through:
+
+`DISCOVERED -> CLAIMED -> SUBMITTED -> ACCEPTED -> CREDITED -> SETTLED/WITHDRAWN`
+
+Only settled/withdrawn money should count as real earnings.
+
+## Sources checked this run
+Primary: TaskBounty, Opire, Augmi, Drips, HackenProof. Discovery/cross-checking: gigs.sh. Fresh Reddit: r/developersIndia Aug 27-28 discussions. I deliberately did not recycle previous platforms as NEW unless there was a materially new status or evidence change.

@@ -1,0 +1,133 @@
+Subject: Agent Money Scout — 2026-08-29 00:00
+Date: Fri, 28 Aug 2026 12:23:10 -0500
+Message ID: 1a04965990347fe0
+================================================================================
+
+# Agent Money Scout — 2026-08-29 00:00
+
+This run found four worthwhile new surfaces and one strong distribution extension. The strongest fresh direct-work source is Molted: it is live on Base mainnet, pays in real USDC peer-to-peer, charges no platform fee, and exposes CLI/API operations for job discovery, bidding, completion, and proof submission. I excluded openbounty because it explicitly remains mock-payments only, and I did not treat Agent Bounties as current earning inventory because its site says marketplace evidence is temporarily unavailable.
+
+## NEW THIS RUN
+
+### 1. Molted — https://molted.work/
+What the agent does: browse machine-readable jobs, bid, complete data/research/code-review/content/API tasks, submit proof, and receive payment directly from the job poster.
+Who pays: the agent or human posting the job.
+Payout: amount is job-specific; official site confirms real USDC on Base mainnet, direct to worker, with no platform fee. I could not verify a reliable current median payout, so none is invented here.
+Required: agent runtime able to call CLI/API, Base-compatible wallet, tiny network gas, relevant task skill.
+Autonomy: 10/10.
+First action: inspect the open-job feed and only bid on a task with deterministic acceptance criteria.
+Constraints: crypto/payment/account age and jurisdiction rules may apply; do not bypass age, identity, wallet-provider, or geographic restrictions.
+Ease to first $5: 6/10. Repeatability: 9/10.
+
+### 2. AgentPact — https://agentpact.xyz/
+What the agent does: register, publish an offer, browse 206 currently advertised open needs, propose a deal, deliver milestones, and settle in USDC escrow on Base.
+Who pays: other agents/requesters.
+Payout: negotiated per deal. Current homepage reports 153 active offers, 206 open needs, 19 live deals, and 638 agents; these are platform-reported figures, not independently audited.
+Required: REST/MCP/Python/npm integration; wallet only when moving into paid escrow work.
+Autonomy: 10/10.
+First action: register one specialist offer such as evidence-backed company/API research, then match only paid needs.
+Constraints: verify the exact paid-deal and wallet rules before treating credits/reputation as cash; comply with age/jurisdiction requirements.
+Ease to first $5: 5/10. Repeatability: 9/10.
+
+### 3. Hangar / Clustly operator hosting — https://hangar.clustly.ai/
+What the agent does: package a proven specialist agent, pass review, have it hosted/listed on Clustly, and earn USDC when buyers approve jobs.
+Who pays: Clustly marketplace buyers.
+Payout: site currently reports 147 agents live, $284k shipped through escrow, and 12,940 jobs completed. These are platform-published figures and should be treated as claims until independently verified.
+Required: agent bundle + manifest; security review; specialist workflow with reproducible output.
+Autonomy: 9/10 after deployment.
+First action: package an already-proven worker (PR verifier, API auditor, research/evidence worker) instead of creating a generic assistant.
+Constraints: platform/account/payment eligibility applies; do not bypass review or identity requirements.
+Ease to first $5: 5/10. Repeatability: 10/10.
+
+### 4. SoraJobs — https://sorajobs.com/
+What the agent does: search real tasks from live job boards, auto-match by capability, apply and submit deliverables through REST/MCP/CLI.
+Who pays: task posters/employers using the marketplace.
+Payout: task-specific; platform advertises 12% commission on completed agent tasks. I could not verify a sufficiently current task-price distribution, so no payout range is claimed.
+Required: REST/MCP/CLI integration; capability profile; escrow-compatible account.
+Autonomy: 9/10.
+First action: connect the search endpoint and use a minimum-budget filter rather than auto-applying indiscriminately.
+Constraints: respect the originating job board's rules, AI-use policy, age/identity/geography terms, and any required human review.
+Ease to first $5: 4/10. Repeatability: 8/10.
+
+### 5. Clustly marketplace + x402 distribution — https://clustly.ai/
+Clustly itself was seen previously, but the relevant new monetization angle is its August expansion into machine-payable services and hosted agents. Its marketplace is live on Solana USDC, with escrowed work released on buyer approval. Treat the published example settlement as illustrative, not proof of typical earnings.
+Agent play: sell a narrow service through the same worker used for gigs, rather than waiting idle between contracts.
+Autonomy: 9/10. Ease to first $5: 5/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. dealwork.ai — https://dealwork.ai/
+Current page now shows 155 open tasks, 2.5K workers, and 264 completed tasks. AI-to-AI contracts carry a 3% fee; other combinations carry 10%. The worker can browse, bid/claim, deliver and receive escrowed payment. Platform metrics are self-reported. Ease: 9/10. Repeat: 9/10.
+
+### 7. Toku — https://www.toku.agency/
+Still shows 125+ open jobs and 1,620+ agents. Visible $5 jobs have very high bid counts (roughly 88–140), so liquidity exists but competition is substantial. Builders receive 85% and withdraw real USD through Stripe Connect. Ease: 7/10. Repeat: 9/10.
+
+### 8. SporeAgent — https://www.sporeagent.com/
+Still advertises 1,247 agents and $48,210 paid out. Public task examples remain $45 scraping/data extraction, $80 FastAPI testing, and $120 technical translation, though the examples are old enough that availability must be checked before bidding. MCP-native. Ease: 7/10. Repeat: 8/10.
+
+### 9. MoltJobs — https://moltjobs.io/open-jobs
+Four jobs were posted only a few hours before this run, each paying 2 USDC for verifiable public-output tasks. MoltJobs explicitly describes itself as new and small with very few completed jobs, so do not infer large liquidity from the homepage. Ten free bids/month; 5% escrow fee; USDC on Base. Ease: 6/10. Repeat: 7/10.
+
+### 10. Clawlancer — https://clawlancer.ai/
+Still live, API/MCP-native and bounty-focused. Claims are pre-funded; workers mainly need tiny Base gas. Advertised marketplace fees are 1–2.5%. Research, coding, writing and analysis remain supported. Ease: 7/10. Repeat: 8/10.
+
+### 11. Superteam Earn Agent API — https://superteam.fun/earn/agents
+Official agent interface is live. Agents can discover AGENT_ALLOWED/AGENT_ONLY listings and submit directly; a human operator must later claim the winning payout. Higher ceiling than microtask boards, but slower and more competitive. Ease: 4/10. Repeat: 8/10.
+
+### 12. TaskForce — https://www.task-force.app/
+Still advertises milestone-based USDC escrow, zero platform fee, and an API for AI workers. Example task cards show $200–$500 budgets, but these are illustrative homepage examples rather than verified currently open jobs, so do not treat them as available. Ease: 5/10. Repeat: 8/10.
+
+### 13. Daydreams TaskMarket — https://market.daydreams.systems/
+Fresh August reporting says roughly 373 tasks produced 16,640 submissions, 399 settlements, and 177 worker agents receiving USDC. This is real traction but also heavy competition—over 40 submissions per posted task on average. Ease: 4/10. Repeat: 8/10.
+
+### 14. x402 Arena — https://x402arena.gg/
+Still reports 322 paid agents, $109.32 revenue, 10,790 queries and 72 buyers. Best used as demand telemetry plus endpoint distribution rather than as a job board. Developer/data/verification services are the safest high-signal categories to study. Ease: 4/10. Repeat: 10/10 if a service gains calls.
+
+## REDDIT DEMAND SIGNALS
+
+### 15. PR / QA verification agent
+Thread: https://www.reddit.com/r/softwaretesting/comments/1tiw9ct/ai_is_a_nightmare_for_qa/
+A 172-vote May 2026 QA thread says manual testing has become a bottleneck as developers ship AI-generated PRs faster than QA can validate them; the team is selectively skipping QA on some bug fixes because the queue is too large.
+Offer: `PR + issue/spec -> targeted tests -> reproduce failures -> evidence -> PASS/FAIL/HUMAN REVIEW`.
+Customer: software teams using coding agents.
+Acquire customers: GitHub/open-source bounty work, developer communities where self-promotion is permitted, and direct opt-in outreach to teams publicly seeking QA automation.
+Charge: per verified PR/run or monthly volume; no specific price is claimed without customer validation.
+MVP: GitHub app/API producing structured test evidence.
+Ease: 7/10. Repeat: 10/10.
+
+### 16. Invoice/document normalization worker
+Thread: https://www.reddit.com/r/automation/comments/1ug9h20/an_accounting_team_showed_me_their_monthend/
+A 168-vote June thread describes invoices arriving through email, receipt photos through Slack, statements in drives and bank exports, followed by humans manually copying fields into spreadsheets. A small automation replaced the copying with extraction, duplicate detection, missing-field flags and a review queue.
+Offer: `documents -> validated structured records -> exception queue`.
+Customer: small accounting teams, agencies and operations teams.
+MVP: one authorized inbox/folder plus CSV/accounting export.
+Ease: 8/10. Repeat: 10/10.
+
+### 17. Accounts-receivable follow-up worker
+Thread: https://www.reddit.com/r/smallbusiness/comments/1rxkexm/3_accounting_tasks_i_automated_this_year_that/
+A small-business operator reports that automated unpaid-invoice reminders materially reduced payment delay and that reconciliation/report generation together saved about eight hours per month. Self-reported, but the workflow is concrete.
+Offer: `invoice state -> permitted reminder -> dedupe -> escalation -> daily receivables report`.
+Customer acquisition: accounting/bookkeeping communities, existing client bases, opt-in SMB outreach.
+MVP: QuickBooks/Stripe/Gmail integration with strict approval and duplicate-message safeguards.
+Ease: 7/10. Repeat: 10/10.
+
+### 18. AI-code confidence / maintainability auditor
+Thread: https://www.reddit.com/r/developersIndia/comments/1v7cf7j/ai_didnt_eliminate_engineering_it_shifted_the/
+A July thread with 121 votes says the bottleneck has shifted from writing code to reviewing generated code, understanding interactions, finding edge cases and refactoring. This is the same signal as QA, but the product is broader than test execution.
+Offer: `repo/PR -> architecture/risk map -> untested paths -> dependency issues -> maintainability findings -> prioritized review plan`.
+MVP: a read-only repo analyzer that never merges or deploys changes autonomously.
+Ease: 6/10. Repeat: 10/10.
+
+## FILTERED OUT
+
+openbounty.ai is explicitly in mock-payment mode, so its displayed $4,250 of funded bounties is not real earning inventory. AgentBounties.app currently says live marketplace evidence is temporarily unavailable, so it is not ranked as active inventory. solveby.ai currently uses internal credits and has zero open requests, so credits are not counted as cash. Security/bug-bounty work is intentionally not included in the actionable ranking here.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. **Integrate Molted as a thin adapter.** It is the best genuinely new source this run: real USDC, Base mainnet, no platform fee, direct agent-to-agent payment, and CLI/API support. Do not overbuild—normalize its feed into the same opportunity schema as dealwork/Toku/MoltJobs.
+
+2. **Prioritize dealwork.ai for immediate task acquisition.** Its currently visible 155 open tasks is much stronger liquidity than most newly launched agent-only boards. Score opportunities on expected settled profit rather than headline reward: `reward × P(solve) × P(accept) × P(settle) - model/API/network/review costs`.
+
+3. **Turn PR verification into the first specialist capability that can earn in both directions.** Use it to solve paid QA/code-review jobs, then package the exact learned procedure as a reusable service on Clustly/Hangar/x402 directories. Store failure cases, accepted test patterns, repo-specific quirks and evaluator feedback so each completed job makes the worker better than a fresh generic agent.
+
+The architectural pattern is now clear: job markets provide paid training data and reputation; capability markets let the resulting specialist earn repeatedly. Track only settled/withdrawn revenue as money, and comply with every platform/payment rail's age, KYC, identity and geography rules rather than attempting to bypass them.

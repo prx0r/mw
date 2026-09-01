@@ -1,0 +1,348 @@
+Subject: Agent Money Scout — 2026-08-29 08:00
+Date: Fri, 28 Aug 2026 20:25:16 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a04b1ef9f2551e2
+================================================================================
+
+# Agent Money Scout — 2026-08-29 08:00
+
+This run deliberately prioritized fresh surfaces and real liquidity signals instead of recycling the same agent marketplaces. The most interesting new discovery is agent-tools.cloud: it currently indexes 2,242 A2A agents/services, including 838 agent-pays/x402 services. This is not a job board, but it is a live competitive map for machine-payable services and a useful source for deciding what kind of specialist API to build.
+
+## NEW THIS RUN
+
+### 1. agent-tools.cloud — x402/A2A demand-map play
+URL: https://agent-tools.cloud/a2a?q=depth
+What the agent would do: publish a narrow machine-callable service, then compete where existing x402 offerings are broad, unreliable, or expensive. The directory currently shows 2,242 A2A listings, 838 marked agent-pays/x402 and 1,214 open.
+Who pays: other agents/software invoking the paid endpoint.
+Payout/pricing: provider-set; no marketplace payout is guaranteed by agent-tools.cloud itself.
+Required: HTTP/A2A or MCP endpoint, x402-compatible payment handling, structured responses, reliable uptime.
+Autonomy: 10/10 after deployment.
+Exact first action: crawl the paid-service catalog, cluster by capability, and identify categories with multiple paid incumbents but obvious reliability/scope gaps; ship one deterministic endpoint rather than a general assistant.
+Constraints: use only legally/contractually permitted data sources and follow wallet/payment/account rules. Avoid regulated or age-restricted categories.
+Ease-to-first-$5: 4/10. Repeatability: 10/10.
+
+### 2. BountyBook — agent-native Base/USDC bounty market
+URL: https://bountybook.ai/
+Discovery reference: https://gigs.sh/c/agent-task-marketplace
+What the agent would do: claim escrowed research/code/data tasks, submit oracle-verifiable output, receive USDC if accepted.
+Who pays: bounty posters.
+Payout: task-specific USDC; gigs.sh verifies the platform as an agent-welcoming Base task marketplace, but I could not independently verify a fresh open-bounty count this hour.
+Required: REST/MCP-capable worker and eligible wallet/payment setup.
+Autonomy: 9/10.
+Exact first action: query current inventory; integrate only if there are funded tasks with objective success specs.
+Constraints: applicable age, wallet and jurisdiction requirements must be followed; do not bypass them.
+Ease-to-first-$5: 4/10 pending live inventory. Repeatability: 8/10.
+
+### 3. Claw Earn — Base USDC job protocol
+Discovery reference: https://gigs.sh/c/agent-task-marketplace
+What the agent would do: claim jobs, stake required collateral where applicable, deliver, and receive USDC after approval/auto-approval.
+Who pays: job posters.
+Verified economics: gigs.sh currently describes a 9 USDC minimum and 48-hour auto-approve path; current live task inventory was not independently verified this run.
+Required: API-capable agent and eligible Base wallet.
+Autonomy: 9/10.
+First action: check funded open inventory before wiring the worker.
+Constraints: wallet/account/jurisdiction rules apply; no bypassing eligibility.
+Ease-to-first-$5: 4/10 pending inventory. Repeatability: 8/10.
+
+### 4. NEAR AI Agent Market — established-looking agent task surface, but verify payout activity first
+Discovery reference: https://gigs.sh/c/agent-task-marketplace
+What the agent would do: bid on tasks and deliver digital work.
+Who pays: task creators through the marketplace.
+Verified directory stats: gigs.sh reports roughly 1.4K agents, 3.8K jobs and ~$24.9K historical volume, but I could not independently verify fresh current paid inventory in this run.
+Required: agent worker + market integration + eligible payout setup.
+Autonomy: 8/10.
+First action: query current paid jobs and completed settlements; do not treat historical job counts as present liquidity.
+Ease-to-first-$5: 4/10. Repeatability: 7/10.
+
+### 5. x402 official-data specialist — creative play based on current catalog evidence
+URL: https://agent-tools.cloud/a2a?q=depth
+Current paid listings are heavily represented by narrow real-data and verification services: company registries, VAT/company checks, security/risk checks, package/release checks, scraping, weather/public data and structured business intelligence.
+Customer/problem: agents need fresh structured facts without opening accounts or manually browsing websites.
+Workflow: request -> deterministic source selection -> official/public API fetch -> validation -> normalized JSON + provenance -> x402 settlement.
+Acquisition: x402/A2A directories and MCP registries rather than human outbound spam.
+Charging: tiny per-call price; only set pricing after comparing live incumbents.
+MVP: one endpoint such as company-registration verification, package-release health, API-status evidence or structured public-record lookup using data you are permitted to redistribute.
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. dealwork.ai
+URL: https://dealwork.ai/
+Still one of the stronger task-acquisition lanes observed in prior runs, with materially more visible open-task and completed-task activity than most newly launched agent boards.
+Agent work: coding, research, data transformation, writing and delegated subtasks.
+Who pays: humans or agents funding contracts.
+Economics from prior verified checks: AI-to-AI contracts advertised at 3%; examples included $5 agent-to-agent structured-data work and an $80 API job.
+Autonomy: 9/10.
+First action: poll current funded jobs and rank by expected realized profit.
+Ease: 9/10. Repeatability: 9/10.
+
+### 7. TaskBounty
+URL: https://www.task-bounty.com/for-agents
+Agent work: GitHub issue -> reproduce -> patch -> tests -> PR -> sandbox verification.
+Who pays: repository/bounty sponsors.
+Verified advertised range from prior checks: $10 to a few hundred dollars; worker receives 80%.
+Required: coding agent, Git/GitHub, test environment, eligible payout rail.
+Autonomy: 8/10.
+First action: query the smallest objectively testable bounty in a language the worker already knows.
+Ease: 7/10. Repeatability: 9/10.
+
+### 8. DeskCrew Arena
+URL: https://deskcrew.io/arena
+Agent work: resolve real support tickets using supplied context/KB; human reviewer chooses/approves a response.
+Who pays: support desks funding bounties.
+Prior verified economics: $1 bounties were visible, attempts cost about $0.06, winner received 85%, and public on-chain receipts showed $0.85 settlements.
+Autonomy: 9/10.
+First action: calculate expected value from bounty value, entrant count and historical approval rate before paying an entry cost.
+Ease-to-first-$5: 5/10. Repeatability: 9/10.
+
+### 9. AgentCab
+URL: https://agentcab.ai/
+Agent work: serve a narrow specialist function per invocation.
+Who pays: users/agents purchasing calls.
+Prior verified activity: 53 agents, 2,718 calls served and at least one visible agent with $8 revenue; creators receive 80% after platform share, subject to payout rules.
+Autonomy: 10/10.
+First action: cross-list a working deterministic capability rather than building a new generic bot.
+Ease: 5/10. Repeatability: 10/10.
+
+### 10. MCPize
+URL: https://mcpize.com/
+Agent work: sell MCP tools using subscriptions, one-off purchases or usage pricing.
+Who pays: MCP users/developers.
+Prior verified economics: creator keeps 80%; free hosting tier advertised up to 250K requests/month.
+Autonomy: 10/10 after deployment.
+First action: package an already-proven operation such as verification, structured extraction or API audit.
+Ease: 5/10. Repeatability: 10/10.
+
+### 11. gigs.sh
+URL: https://gigs.sh/
+Role: discovery feed rather than direct work. It currently lists 46 verified agent-compatible earning platforms and categorizes task markets, developer/security bounties and API monetization.
+First action: use it as an upstream registry, but independently re-check task inventory and payout activity before routing work.
+Ease: N/A as a direct earner. Repeatability: 10/10 as discovery infrastructure.
+
+## REDDIT DEMAND SIGNALS
+
+### 12. PR-aware QA / verification agent
+Thread: https://www.reddit.com/r/softwaretesting/comments/1tiw9ct/ai_is_a_nightmare_for_qa/
+A 172-vote QA discussion describes manual testing becoming the bottleneck as developers generate far more AI-assisted PRs. The discussion contains concrete examples of 2,500–4,500-line PRs, incomplete review, missed business logic and generic AI-generated test plans creating additional cleanup work. One recurring solution pattern is restricting automated test generation to the changed PR surface plus the existing test architecture.
+Offer: PR + issue/spec -> changed-surface map -> dependency-aware targeted tests -> reproduction -> evidence -> PASS/FAIL/HUMAN REVIEW.
+Customer acquisition: GitHub-heavy SaaS teams, QA/tooling communities, OSS maintainers and paid coding-bounty ecosystems—not spammed Reddit DMs.
+Charging: per verified PR or monthly team plan.
+MVP: POST /verify-pr returning tests_run, failures, regression_risks, evidence and confidence.
+Ease: 7/10. Repeatability: 10/10.
+
+### 13. AI-generated-code risk gate
+Demand evidence: current developer discussions indexed this week repeatedly complain that reviewers are spending their day reverse-engineering AI-generated PR intent, checking whether external services actually exist, finding accidental auth/security changes and validating mocked-away failures.
+Relevant discussion surface: r/ExperiencedDevs; current indexed thread title: “AI Slop PR's are burning me and my team out hard, anyone else experiencing this?”
+Offer: architecture-aware diff -> suspicious scope expansion -> hallucinated dependency/API checks -> auth/config changes -> untested paths -> prioritized human-review packet.
+Charging: per PR or CI subscription.
+Ease: 6/10. Repeatability: 10/10.
+
+### 14. Test-automation-without-per-seat pricing
+Current r/softwaretesting activity (synced Aug 26) shows multiple solution-request threads around switching from manual testing, choosing automation tooling and specifically wanting test automation without per-seat pricing.
+Community URL: https://www.reddit.com/r/softwaretesting/
+Offer: repository-native CI runner priced per verified run rather than per human seat.
+Workflow: repo/PR -> targeted Playwright/API tests -> evidence artifacts -> CI status.
+Where to acquire: OSS maintainers, small SaaS QA teams, testing communities and coding marketplaces.
+Ease: 6/10. Repeatability: 10/10.
+
+### 15. Small-business overdue-invoice / admin exceptions agent
+Current r/smallbusiness analysis continues to surface collection of overdue invoices as a frequent product-recommendation/problem category, alongside operational requests from businesses already paying for software.
+Community URL: https://www.reddit.com/r/smallbusiness/
+Offer: authorized invoice state -> rules/terms -> permitted reminder draft or scheduled reminder -> payment reconciliation -> exception queue. Keep sensitive outbound actions human-approved unless explicitly authorized.
+Charging: fixed setup + monthly maintenance or per processed invoice.
+Ease: 7/10. Repeatability: 10/10.
+
+### 16. Reddit complaint miner as a paid research service
+Current business-idea research guidance continues to identify r/SaaS, r/smallbusiness, r/freelance and professional niche subreddits as recurring sources of specific operational complaints and ugly spreadsheet/manual workarounds.
+Customer: founders/agencies deciding what automation to build.
+Agent workflow: daily compliant public search -> cluster repeated complaints -> verify across multiple threads -> attach evidence -> estimate willingness-to-pay based on existing tools/manual labor -> produce ranked opportunity brief.
+Acquisition: sell as a research deliverable through task markets or as a recurring report/MCP tool; do not auto-promote or spam communities.
+Charging: per report or subscription.
+Ease: 6/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Build the x402 category/liquidity mapper
+agent-tools.cloud now exposes enough paid A2A supply to make automated market analysis worthwhile. Crawl paid listings; classify capability, price, uptime/health, source quality and overlap; then look for categories with multiple paid providers but obvious reliability or specialization gaps. This should choose what endpoint to build instead of guessing.
+
+### 2. Keep dealwork.ai + TaskBounty as acquisition lanes; turn each accepted job into reusable procedure memory
+For every completed job store: task type, acceptance criteria, successful toolchain, failures, tests, evaluator feedback, time/cost and settlement result. The agent should get better at jobs it has actually done, not merely accumulate prompt text.
+
+### 3. Productize PR verification first
+The demand evidence remains unusually consistent: AI makes code generation cheaper, while proving the resulting change is correct remains expensive. Build one canonical verifier, use it to pursue QA/code-review work, and expose the same engine through MCP/x402/AgentCab/MCPize.
+
+Canonical economics:
+expected_realized_profit = reward × P(still_open) × P(solve) × P(accepted) × P(settled) - inference - APIs - payment/network costs - expected human review.
+
+Track every opportunity through DISCOVERED -> BID/CLAIMED -> DELIVERED -> ACCEPTED -> SETTLED -> WITHDRAWN. Only settled/withdrawn value counts as earnings.
+
+Important eligibility note: many marketplaces/payment providers require an adult account holder, identity verification, or jurisdiction eligibility. Those rules must be followed as written and should never be bypassed.
+Agent Money Scout — 2026-08-29 08:00
+<p>This run deliberately prioritized fresh surfaces and real liquidity signals instead of recycling the same agent marketplaces. The most interesting new discovery is agent-tools.cloud: it currently indexes 2,242 A2A agents/services, including 838 agent-pays/x402 services. This is not a job board, but it is a live competitive map for machine-payable services and a useful source for deciding what kind of specialist API to build.</p>
+
+NEW THIS RUN
+
+1. agent-tools.cloud — x402/A2A demand-map play
+<p>URL: https://agent-tools.cloud/a2a?q=depth<br>
+What the agent would do: publish a narrow machine-callable service, then compete where existing x402 offerings are broad, unreliable, or expensive. The directory currently shows 2,242 A2A listings, 838 marked agent-pays/x402 and 1,214 open.<br>
+Who pays: other agents/software invoking the paid endpoint.<br>
+Payout/pricing: provider-set; no marketplace payout is guaranteed by agent-tools.cloud itself.<br>
+Required: HTTP/A2A or MCP endpoint, x402-compatible payment handling, structured responses, reliable uptime.<br>
+Autonomy: 10/10 after deployment.<br>
+Exact first action: crawl the paid-service catalog, cluster by capability, and identify categories with multiple paid incumbents but obvious reliability/scope gaps; ship one deterministic endpoint rather than a general assistant.<br>
+Constraints: use only legally/contractually permitted data sources and follow wallet/payment/account rules. Avoid regulated or age-restricted categories.<br>
+Ease-to-first-$5: 4/10. Repeatability: 10/10.</p>
+
+2. BountyBook — agent-native Base/USDC bounty market
+<p>URL: https://bountybook.ai/<br>
+Discovery reference: https://gigs.sh/c/agent-task-marketplace<br>
+What the agent would do: claim escrowed research/code/data tasks, submit oracle-verifiable output, receive USDC if accepted.<br>
+Who pays: bounty posters.<br>
+Payout: task-specific USDC; gigs.sh verifies the platform as an agent-welcoming Base task marketplace, but I could not independently verify a fresh open-bounty count this hour.<br>
+Required: REST/MCP-capable worker and eligible wallet/payment setup.<br>
+Autonomy: 9/10.<br>
+Exact first action: query current inventory; integrate only if there are funded tasks with objective success specs.<br>
+Constraints: applicable age, wallet and jurisdiction requirements must be followed; do not bypass them.<br>
+Ease-to-first-$5: 4/10 pending live inventory. Repeatability: 8/10.</p>
+
+3. Claw Earn — Base USDC job protocol
+<p>Discovery reference: https://gigs.sh/c/agent-task-marketplace<br>
+What the agent would do: claim jobs, stake required collateral where applicable, deliver, and receive USDC after approval/auto-approval.<br>
+Who pays: job posters.<br>
+Verified economics: gigs.sh currently describes a 9 USDC minimum and 48-hour auto-approve path; current live task inventory was not independently verified this run.<br>
+Required: API-capable agent and eligible Base wallet.<br>
+Autonomy: 9/10.<br>
+First action: check funded open inventory before wiring the worker.<br>
+Constraints: wallet/account/jurisdiction rules apply; no bypassing eligibility.<br>
+Ease-to-first-$5: 4/10 pending inventory. Repeatability: 8/10.</p>
+
+4. NEAR AI Agent Market — established-looking agent task surface, but verify payout activity first
+<p>Discovery reference: https://gigs.sh/c/agent-task-marketplace<br>
+What the agent would do: bid on tasks and deliver digital work.<br>
+Who pays: task creators through the marketplace.<br>
+Verified directory stats: gigs.sh reports roughly 1.4K agents, 3.8K jobs and ~$24.9K historical volume, but I could not independently verify fresh current paid inventory in this run.<br>
+Required: agent worker + market integration + eligible payout setup.<br>
+Autonomy: 8/10.<br>
+First action: query current paid jobs and completed settlements; do not treat historical job counts as present liquidity.<br>
+Ease-to-first-$5: 4/10. Repeatability: 7/10.</p>
+
+5. x402 official-data specialist — creative play based on current catalog evidence
+<p>URL: https://agent-tools.cloud/a2a?q=depth<br>
+Current paid listings are heavily represented by narrow real-data and verification services: company registries, VAT/company checks, security/risk checks, package/release checks, scraping, weather/public data and structured business intelligence.<br>
+Customer/problem: agents need fresh structured facts without opening accounts or manually browsing websites.<br>
+Workflow: request -&gt; deterministic source selection -&gt; official/public API fetch -&gt; validation -&gt; normalized JSON + provenance -&gt; x402 settlement.<br>
+Acquisition: x402/A2A directories and MCP registries rather than human outbound spam.<br>
+Charging: tiny per-call price; only set pricing after comparing live incumbents.<br>
+MVP: one endpoint such as company-registration verification, package-release health, API-status evidence or structured public-record lookup using data you are permitted to redistribute.<br>
+Ease-to-first-$5: 5/10. Repeatability: 10/10.</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+6. dealwork.ai
+<p>URL: https://dealwork.ai/<br>
+Still one of the stronger task-acquisition lanes observed in prior runs, with materially more visible open-task and completed-task activity than most newly launched agent boards.<br>
+Agent work: coding, research, data transformation, writing and delegated subtasks.<br>
+Who pays: humans or agents funding contracts.<br>
+Economics from prior verified checks: AI-to-AI contracts advertised at 3%; examples included $5 agent-to-agent structured-data work and an $80 API job.<br>
+Autonomy: 9/10.<br>
+First action: poll current funded jobs and rank by expected realized profit.<br>
+Ease: 9/10. Repeatability: 9/10.</p>
+
+7. TaskBounty
+<p>URL: https://www.task-bounty.com/for-agents<br>
+Agent work: GitHub issue -&gt; reproduce -&gt; patch -&gt; tests -&gt; PR -&gt; sandbox verification.<br>
+Who pays: repository/bounty sponsors.<br>
+Verified advertised range from prior checks: $10 to a few hundred dollars; worker receives 80%.<br>
+Required: coding agent, Git/GitHub, test environment, eligible payout rail.<br>
+Autonomy: 8/10.<br>
+First action: query the smallest objectively testable bounty in a language the worker already knows.<br>
+Ease: 7/10. Repeatability: 9/10.</p>
+
+8. DeskCrew Arena
+<p>URL: https://deskcrew.io/arena<br>
+Agent work: resolve real support tickets using supplied context/KB; human reviewer chooses/approves a response.<br>
+Who pays: support desks funding bounties.<br>
+Prior verified economics: $1 bounties were visible, attempts cost about $0.06, winner received 85%, and public on-chain receipts showed $0.85 settlements.<br>
+Autonomy: 9/10.<br>
+First action: calculate expected value from bounty value, entrant count and historical approval rate before paying an entry cost.<br>
+Ease-to-first-$5: 5/10. Repeatability: 9/10.</p>
+
+9. AgentCab
+<p>URL: https://agentcab.ai/<br>
+Agent work: serve a narrow specialist function per invocation.<br>
+Who pays: users/agents purchasing calls.<br>
+Prior verified activity: 53 agents, 2,718 calls served and at least one visible agent with $8 revenue; creators receive 80% after platform share, subject to payout rules.<br>
+Autonomy: 10/10.<br>
+First action: cross-list a working deterministic capability rather than building a new generic bot.<br>
+Ease: 5/10. Repeatability: 10/10.</p>
+
+10. MCPize
+<p>URL: https://mcpize.com/<br>
+Agent work: sell MCP tools using subscriptions, one-off purchases or usage pricing.<br>
+Who pays: MCP users/developers.<br>
+Prior verified economics: creator keeps 80%; free hosting tier advertised up to 250K requests/month.<br>
+Autonomy: 10/10 after deployment.<br>
+First action: package an already-proven operation such as verification, structured extraction or API audit.<br>
+Ease: 5/10. Repeatability: 10/10.</p>
+
+11. gigs.sh
+<p>URL: https://gigs.sh/<br>
+Role: discovery feed rather than direct work. It currently lists 46 verified agent-compatible earning platforms and categorizes task markets, developer/security bounties and API monetization.<br>
+First action: use it as an upstream registry, but independently re-check task inventory and payout activity before routing work.<br>
+Ease: N/A as a direct earner. Repeatability: 10/10 as discovery infrastructure.</p>
+
+REDDIT DEMAND SIGNALS
+
+12. PR-aware QA / verification agent
+<p>Thread: https://www.reddit.com/r/softwaretesting/comments/1tiw9ct/ai_is_a_nightmare_for_qa/<br>
+A 172-vote QA discussion describes manual testing becoming the bottleneck as developers generate far more AI-assisted PRs. The discussion contains concrete examples of 2,500–4,500-line PRs, incomplete review, missed business logic and generic AI-generated test plans creating additional cleanup work. One recurring solution pattern is restricting automated test generation to the changed PR surface plus the existing test architecture.<br>
+Offer: PR + issue/spec -&gt; changed-surface map -&gt; dependency-aware targeted tests -&gt; reproduction -&gt; evidence -&gt; PASS/FAIL/HUMAN REVIEW.<br>
+Customer acquisition: GitHub-heavy SaaS teams, QA/tooling communities, OSS maintainers and paid coding-bounty ecosystems—not spammed Reddit DMs.<br>
+Charging: per verified PR or monthly team plan.<br>
+MVP: POST /verify-pr returning tests_run, failures, regression_risks, evidence and confidence.<br>
+Ease: 7/10. Repeatability: 10/10.</p>
+
+13. AI-generated-code risk gate
+<p>Demand evidence: current developer discussions indexed this week repeatedly complain that reviewers are spending their day reverse-engineering AI-generated PR intent, checking whether external services actually exist, finding accidental auth/security changes and validating mocked-away failures.<br>
+Relevant discussion surface: r/ExperiencedDevs; current indexed thread title: “AI Slop PR’s are burning me and my team out hard, anyone else experiencing this?”<br>
+Offer: architecture-aware diff -&gt; suspicious scope expansion -&gt; hallucinated dependency/API checks -&gt; auth/config changes -&gt; untested paths -&gt; prioritized human-review packet.<br>
+Charging: per PR or CI subscription.<br>
+Ease: 6/10. Repeatability: 10/10.</p>
+
+14. Test-automation-without-per-seat pricing
+<p>Current r/softwaretesting activity (synced Aug 26) shows multiple solution-request threads around switching from manual testing, choosing automation tooling and specifically wanting test automation without per-seat pricing.<br>
+Community URL: https://www.reddit.com/r/softwaretesting/<br>
+Offer: repository-native CI runner priced per verified run rather than per human seat.<br>
+Workflow: repo/PR -&gt; targeted Playwright/API tests -&gt; evidence artifacts -&gt; CI status.<br>
+Where to acquire: OSS maintainers, small SaaS QA teams, testing communities and coding marketplaces.<br>
+Ease: 6/10. Repeatability: 10/10.</p>
+
+15. Small-business overdue-invoice / admin exceptions agent
+<p>Current r/smallbusiness analysis continues to surface collection of overdue invoices as a frequent product-recommendation/problem category, alongside operational requests from businesses already paying for software.<br>
+Community URL: https://www.reddit.com/r/smallbusiness/<br>
+Offer: authorized invoice state -&gt; rules/terms -&gt; permitted reminder draft or scheduled reminder -&gt; payment reconciliation -&gt; exception queue. Keep sensitive outbound actions human-approved unless explicitly authorized.<br>
+Charging: fixed setup + monthly maintenance or per processed invoice.<br>
+Ease: 7/10. Repeatability: 10/10.</p>
+
+16. Reddit complaint miner as a paid research service
+<p>Current business-idea research guidance continues to identify r/SaaS, r/smallbusiness, r/freelance and professional niche subreddits as recurring sources of specific operational complaints and ugly spreadsheet/manual workarounds.<br>
+Customer: founders/agencies deciding what automation to build.<br>
+Agent workflow: daily compliant public search -&gt; cluster repeated complaints -&gt; verify across multiple threads -&gt; attach evidence -&gt; estimate willingness-to-pay based on existing tools/manual labor -&gt; produce ranked opportunity brief.<br>
+Acquisition: sell as a research deliverable through task markets or as a recurring report/MCP tool; do not auto-promote or spam communities.<br>
+Charging: per report or subscription.<br>
+Ease: 6/10. Repeatability: 10/10.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+
+1. Build the x402 category/liquidity mapper
+<p>agent-tools.cloud now exposes enough paid A2A supply to make automated market analysis worthwhile. Crawl paid listings; classify capability, price, uptime/health, source quality and overlap; then look for categories with multiple paid providers but obvious reliability or specialization gaps. This should choose what endpoint to build instead of guessing.</p>
+
+2. Keep dealwork.ai + TaskBounty as acquisition lanes; turn each accepted job into reusable procedure memory
+<p>For every completed job store: task type, acceptance criteria, successful toolchain, failures, tests, evaluator feedback, time/cost and settlement result. The agent should get better at jobs it has actually done, not merely accumulate prompt text.</p>
+
+3. Productize PR verification first
+<p>The demand evidence remains unusually consistent: AI makes code generation cheaper, while proving the resulting change is correct remains expensive. Build one canonical verifier, use it to pursue QA/code-review work, and expose the same engine through MCP/x402/AgentCab/MCPize.</p>
+<p>Canonical economics:<br>
+expected_realized_profit = reward × P(still_open) × P(solve) × P(accepted) × P(settled) - inference - APIs - payment/network costs - expected human review.</p>
+<p>Track every opportunity through DISCOVERED -&gt; BID/CLAIMED -&gt; DELIVERED -&gt; ACCEPTED -&gt; SETTLED -&gt; WITHDRAWN. Only settled/withdrawn value counts as earnings.</p>
+<p>Important eligibility note: many marketplaces/payment providers require an adult account holder, identity verification, or jurisdiction eligibility. Those rules must be followed as written and should never be bypassed.</p>

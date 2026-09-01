@@ -1,0 +1,107 @@
+Subject: Oracle Market Unlocks — 20 New Agent Markets — 31 Aug 2026
+Date: Mon, 31 Aug 2026 07:14:56 +0000
+Message ID: 1a056abd4746b463
+================================================================================
+
+# Oracle Market Unlocks — 20 NEW markets
+
+This run excludes the markets already covered in the previous two reports (Atlassian Forge, monday, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, Miro, WooCommerce, HubSpot, JetBrains, Fab, Unity, Fortnite UEFN, Canva Creator, Creative Market, Minecraft Marketplace, Adobe Stock, Envato/Placeit, Gumroad, Telegram Mini Apps, VRChat Marketplace, WordPress, Zoom, Microsoft Teams, Slack migration, Poe, CGTrader).
+
+Scoring: **EV / Agent Fit / Automation / Competition / Novelty**, each 1–5; competition score is inverted (5 = favorable/less crowded). H-levels use Moltwork H0–H4 and assume legitimate platform accounts and policy-compliant automation.
+
+## 1. Salesforce AgentExchange — 22/25
+**Scores:** 5 / 5 / 4 / 3 / 5. **What agents sell:** narrow Agentforce actions, topics, prompt templates, complete vertical agent templates, and increasingly MCP-backed enterprise capabilities. Salesforce launched AgentExchange with hundreds of components and 200+ partners; it explicitly frames it as a place to discover, try and buy agentic components. In 2026 Salesforce has been consolidating AppExchange/Slack/agent discovery, making this a much bigger distribution surface than the original launch.
+
+**Autonomous loop:** mine Salesforce admin/support pain → generate a tiny vertical action/topic (e.g. dedupe a particular CRM workflow, compliance handoff, niche document process) → generate Apex/Flow/API integration + tests → package metadata/template → run security/eval suite → generate listing/docs/demo → human partner/security submission → monitor installs/reviews/support → agent issues fixes and new releases. **H1/H2:** partner/account verification, security review, final commercial/legal approval. Production itself is close to H0/H1. **Moltwork assets:** `SalesforceAgentExchangePack`, metadata generator, security Harbor World, Agentforce-eval assessor, release skill, specialist Salesforce worker. **Economics:** potentially high-ticket B2B; downside is certification, enterprise support and established vendors. Best wedge: tiny workflows incumbents ignore, not broad CRM copilots.
+
+Official: https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-AgentExchange-the-Trusted-Marketplace-for-Agentforce/default.aspx
+Community caution: an indie AppExchange founder described real customers but long sales cycles and difficulty scaling solo: https://www.reddit.com/r/salesforce/comments/1kyh1b0
+
+## 2. ServiceNow Store — AI agents / scoped apps — 22/25
+**Scores:** 5 / 5 / 3 / 4 / 5. **What agents sell:** narrowly scoped workflow apps and partner-built AI agents for ITSM, HR, operations and compliance. ServiceNow explicitly revamped its 2026 Build Program to strengthen the Store as a marketplace for partner-built AI agents.
+
+**Loop:** mine recurring ServiceNow workflow pain → produce scoped app/agent → generate ATF tests, ACL/security checks and docs → simulate use cases → human joins Technology Partner Program and handles certification → publish → agent monitors incidents/reviews/version compatibility → patch/release. **H2 at onboarding, H1 thereafter.** Strong fit because enterprise workflows are structured, repetitive and testable. **Moltwork:** ServiceNowPack, ATF World, certification preflight assessor, update compatibility school, specialist worker. **Demand:** huge installed enterprise base; main negative is heavyweight certification and partner process.
+
+Official 2026 partner announcement: https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-enhances-global-Partner-Program-to-accelerate-AI-agent-innovation/default.aspx
+Publishing docs (updated Mar 12 2026): https://www.servicenow.com/docs/r/application-development/t_PublishAppsToTheServiceNowStore.html
+
+## 3. LINE MINI Apps — digital micro-products — 22/25
+**Scores:** 4 / 5 / 4 / 4 / 5. **What agents sell:** tiny utilities, digital content, paid virtual items, reservations/commerce flows and niche consumer services inside LINE. The key new unlock: on **19 Feb 2026**, Japan changed MINI App policy so verified MINI Apps can sell virtual items using LINE’s in-app purchase feature. On **11 Mar 2026**, unverified publication also opened more broadly in Taiwan and Thailand.
+
+**Loop:** identify high-frequency LINE-native pain → generate LIFF/MINI App → programmatically test → generate screenshots/copy → human provider/verification/IAP application where required → publish → use Messaging/LIFF APIs and webhooks to observe usage → agent iterates content/UX/pricing. **H1/H2:** provider identity, verified MINI App review and Japan-specific IAP eligibility; daily operation H0. **Moltwork:** LINEPack, LIFF emulator World, IAP funnel evaluator, localization skill. Great opportunity because Western agent builders largely ignore LINE despite massive Asia usage.
+
+Official 2026 policy change: https://developers.line.biz/en/news/2026/02/19/line-mini-app-policy/
+
+## 4. Databricks Marketplace — MCP servers / data products — 22/25
+**Scores:** 5 / 5 / 4 / 3 / 5. **What agents sell:** curated datasets, notebooks, AI models, apps and — newly explicit in 2026 — **MCP servers**. Databricks’ Aug 25 docs list MCP servers as first-class Marketplace assets.
+
+**Loop:** Oracle spots recurring enterprise data/agent capability gap → agent assembles/licences/cleans data or builds MCP endpoint → generates metadata/sample notebook/evals → publish or create request-access listing → agent monitors recipients/leads and refreshes dataset/tool → commercial agreement where needed. **H1/H2:** provider account, Unity Catalog/Premium requirements, commercial contracts for paid personalized listings. **Moltwork:** DatabricksPack, OpenSharing Venue, data-quality Harbor World, MCP capability assessor, update pipeline. **Demand signal:** Databricks now positions Marketplace as the common catalog for data, AI, apps and MCP; commercialized data products are supported, though some transactions remain off-platform.
+
+Official (Aug 25 2026): https://docs.databricks.com/aws/en/marketplace
+Provider: https://docs.databricks.com/aws/en/marketplace/become-provider
+
+## 5. Wix App Market — micro-SaaS apps — 21/25
+**Scores:** 5 / 5 / 4 / 3 / 4. **What agents sell:** tiny merchant/site-owner SaaS apps: specialized bookings, multilingual SEO, industry calculators, CRM syncs, content operations. Wix’s current monetization supports subscriptions, usage pricing or both; new developers keep 100% of sales revenue in year one, then 80% (subject to transaction/tax terms).
+
+**Loop:** crawl App Market reviews + Wix forums → cluster unmet requests → agent codes Wix app/API integration → tests/install simulation → generates pricing/listing/support docs → human review submission → agent handles support telemetry and releases. **H1:** seller/payment setup and review. **Moltwork:** WixPack, Wix installation World, listing/review miner, billing skill. **Why attractive:** millions of Wix users + favorable first-year economics. **Risk:** 15-business-day review cycle and discovery/marketing still matter.
+
+Official monetization (updated 2026): https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/about-monetizing-your-app
+
+## 6. Shopify App Store — tiny usage-priced utilities — 20/25
+**Scores:** 5 / 5 / 5 / 1 / 4. Not new as a marketplace, but the **May 12 2026 billing unlock is new**: Shopify App Pricing now supports usage billing through the App Events API, with subscription state and historical APIs. This makes tiny metered agent-built utilities much cleaner to monetize.
+
+**Loop:** mine 1-star reviews / merchant forums by category → pick painful micro-workflow → generate app + App Events metering → automated Shopify test store eval → listing assets → human review submission → agent watches installs, usage, churn, reviews and automatically proposes experiments/releases. **H1:** Partner account/payment/review. **Moltwork:** ShopifyPack, review-gap oracle, Billing World, merchant-support worker. **Demand:** one June 2026 community census claimed ~21.5k live public apps and ~21k new reviews in May; another founder reported ~$11.7k total revenue after five months. But community consensus is that distribution is now harder than coding.
+
+Official 2026 billing change: https://shopify.dev/changelog/shopify-app-pricing-charge-for-usage-recurring-subscriptions-or-both
+Reddit saturation data: https://www.reddit.com/r/ShopifyAppDev/comments/1tur95z/
+
+## 7. RapidAPI Hub — agent-produced paid APIs — 20/25
+**Scores:** 4 / 5 / 5 / 2 / 4. **What agents sell:** narrow extraction, normalization, enrichment, conversion, monitoring and specialist lookup APIs. This is extremely Moltwork-aligned: the worker can discover an unmet API query, generate/host the endpoint, create docs/tests/pricing, list it and continuously optimize from usage.
+
+**Loop:** mine Hub demand/search + developer complaints → build API → OpenAPI/tests → publish free + paid tiers → monitor calls/errors/support → generate fixes/new endpoints. **H1:** provider/payment account; operation H0. RapidAPI supports pay-per-use, freemium and paid plans and pays providers after subscriptions/overages. **Moltwork:** RapidAPIPack, API reliability World, demand miner, pricing optimizer, API-worker. **Risk:** marketplace fee and commodity APIs; moat should be proprietary aggregation/verification, not trivial wrappers.
+
+Official monetization: https://docs.rapidapi.com/docs/monetizing-your-api-on-rapidapicom
+Payouts: https://docs.rapidapi.com/v2.0/docs/payouts-and-finance
+
+## 8. AWS Data Exchange — paid API/data products — 20/25
+**Scores:** 5 / 5 / 4 / 3 / 3. **What agents sell:** continuously refreshed commercial datasets and metered APIs: regional pricing feeds, regulatory diffs, niche catalog intelligence, verified public-data enrichments. AWS explicitly supports API products with contract pricing, metered per request/successful request/data transferred, or combinations.
+
+**Loop:** identify enterprise dataset gap → agent builds ingestion/cleaning/provenance pipeline → publishes revisions/API assets → sets pricing → monitors subscribers/usage → refreshes automatically. **H1/H2:** AWS seller verification, data rights/legal review. **Moltwork:** AWSDataExchangePack, provenance World, freshness evaluator, dataset worker. **Why attractive:** enterprise procurement + recurring refresh work is ideal for persistent agents. **Risk:** acquiring defensible/legal data is the hard part.
+
+Official: https://docs.aws.amazon.com/data-exchange/latest/userguide/publish-API-product.html
+
+## 9. Snowflake Marketplace — paid data/analytics products — 19/25
+**Scores:** 5 / 5 / 3 / 3 / 3. **What agents sell:** proprietary or enriched datasets, analytics outputs and vertical intelligence tables. Snowflake explicitly says paid listings are best for proprietary/industry-specific data or analytics performed on free data.
+
+**Loop:** agent finds high-value recurring dataset → ETL/validate → limited trial → paid listing → monitor access and freshness → regenerate continuously. **H2:** monetization approval, Snowflake partner review and Stripe Express setup; H0/H1 refresh thereafter. **Moltwork:** SnowflakePack, data-contract evaluator, freshness/provenance School. **Economic upside:** enterprise budgets and unified procurement. **Downside:** provider vetting and supported billing-country constraints.
+
+Official: https://docs.snowflake.com/en/user-guide/data-marketplace
+Provider monetization: https://docs.snowflake.com/en/collaboration/provider-becoming
+
+## 10. Google Cloud Marketplace — micro-SaaS + data products — 19/25
+**Scores:** 5 / 5 / 3 / 3 / 3. **What agents sell:** narrow B2B SaaS and data products that enterprise customers can procure through Google Cloud. Google updated its SaaS marketplace docs on **Aug 26 2026** and supports structured review/publishing; it also has a dedicated data-product publication flow.
+
+**Loop:** mine cloud buyer pain → generate container/SaaS/data product + onboarding/billing integration → automated integration tests → human partner/review submission → publish → agent operates support/releases/usage analysis. **H2 onboarding, H1 ops.** **Moltwork:** GCPMarketplacePack, lifecycle-manager integration World, procurement-readiness assessor. Attractive for high-value micro-SaaS; unattractive for unproven consumer-ish ideas because approval/enterprise support overhead dominates.
+
+Official SaaS docs (updated Aug 26): https://docs.cloud.google.com/marketplace/docs/partners/integrated-saas
+Data products: https://docs.cloud.google.com/marketplace/docs/partners/data/publish
+
+## 11. AWS Marketplace — vertical SaaS — 18/25
+**Scores:** 5 / 5 / 3 / 2 / 3. **What agents sell:** small enterprise security/compliance/data/ops SaaS where AWS procurement is itself the distribution advantage. Since **June 1 2026**, new SaaS products must support AWS’s updated Concurrent Agreements integration.
+
+**Loop:** agent generates niche SaaS → implements entitlement/metering/subscription scenarios → integration tests → listing assets → human seller/review → agent operates product and billing event handling. **H2:** seller onboarding/security/legal; H1 after launch. **Moltwork:** AWSMarketplacePack, entitlement World, seller-readiness assessor. This is less novel but useful because an autonomous lab can cheaply create a portfolio of highly narrow enterprise utilities while AWS handles procurement.
+
+Official current requirements: https://docs.aws.amazon.com/marketplace/latest/userguide/saas-integrate-contract.html
+
+## 12. Discord Premium Apps — specialized community bots — 18/25
+**Scores:** 4 / 5 / 4 / 2 / 3. **What agents sell:** premium moderation, community analytics, role workflows, game/community utilities and specialist support bots via Discord Premium Apps.
+
+**Loop:** mine Discord admin pain → agent builds bot/app → tests commands/interactions → verifies app → sets premium SKU/subscription → App Directory listing → monitors server installs/retention/support → iterates. **H1/H2:** verified developer/app, monetization eligibility, 2FA/tax/payment setup. **Moltwork:** DiscordPack, server-simulation World, moderation safety evaluator, bot worker. **Demand:** community discussion in May 2026 still points to premium tiers as the main sustainable monetization path. **Risk:** platform revenue-share/policy complaints and intense incumbents.
+
+Official policy: https://support.discord.com/hc/en-us/articles/10575066024983-Monetization-Policy
+Reddit: https://www.reddit.com/r/discordbots/comments/1tdgbh8/
+
+## 13. Bubble Marketplace — plugins and templates — 18/25
+**Scores:** 4 / 5 / 4 / 3 / 2. **What agents sell:** paid plugins that wrap difficult APIs/UI functionality, plus full templates. Bubble permits plugin subscriptions ($1–$100/mo), one-time plugin licenses ($3–$300), and template licenses up to thousands; Bubble currently retains 25% commission.
+
+**Loop:** mine Bubble forum/plugin complaints → build missing plugin + demo app/docs → automated Bubble/bro

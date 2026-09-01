@@ -1,0 +1,918 @@
+Subject: Reddit Pain Radar — 2026-08-30 16:26 ICT
+Date: Sun, 30 Aug 2026 09:31:51 +0000
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a05202d2bb6151e
+================================================================================
+
+# Reddit Pain Radar — 30 Aug 2026, 16:26 ICT
+
+This run deliberately rotated away from the previous winners around legal deadlines, prior authorization, backup recovery, retainage, hotel night audit, benefits eligibility, OAuth offboarding and chargebacks. The strongest new seams were: independent-insurance agency obligation capture, manufacturing ERP-vs-physical inventory truth, AppFolio owner receivables/accounting state, professional-services work-to-bill leakage, and A&E field-time/evidence capture.
+
+## Ranked opportunities
+
+| Rank | Opportunity | Score | Best wedge |
+|---|---|---:|---|
+| 1 | Insurance Agency Obligation & Renewal Graph | 9.8/10 | Convert meetings/emails into source-backed AMS obligations and prove follow-through |
+| 2 | Manufacturing Inventory Reality Guard | 9.8/10 | Independently detect ERP stock that does not exist physically before MRP commits production |
+| 3 | AppFolio Owner Receivable / Fee Truth Layer | 9.6/10 | Prove exactly what each owner owes the management company and why |
+| 4 | Professional Services Work-to-Bill Provenance | 9.5/10 | Detect performed client work that never becomes an invoice |
+| 5 | A&E Field-Time / Job Evidence Sidecar | 9.2/10 | Tie project time, field presence, receipts and client billing to auditable work episodes |
+
+---
+
+# 1. Insurance Agency Obligation & Renewal Graph — 9.8/10
+
+## Evidence
+
+A March 11, 2026 independent-agency owner taking over a four-person Tennessee agency described the operational substrate very clearly. The agency uses Applied for its AMS and HubSpot for CRM, yet important information is still scattered across paper files, handwritten notes, meeting records and people's memories. Their biggest complaint is that details get missed and action items fail to make it into the system that should own them.
+
+Reddit source: https://www.reddit.com/r/InsuranceAgent/comments/1rr0jkb/horribly_inefficient_agency_workflows/
+
+The exact practitioner complaint is not simply “Applied Epic is old.” It is that the agency already pays for an AMS and CRM and nevertheless depends on somebody remembering that a commercial-line client requested a change, promised a document, needs a renewal follow-up, or raised a coverage question.
+
+Broader 2026 evidence strongly supports this becoming more important. Liberty Mutual's August 2026 Independent Agency Growth Study surveyed 1,149 U.S. agency principals/staff. AI use jumped from 37% in 2025 to 65% in 2026; users report saving about four hours/week. But only 18% say their agency has a well-defined AI policy and only 22% trust AI with business/client data. The top high-savings uses include meeting-note summarization, policy comparison and routine data/document maintenance. Big “I” ACT reporting likewise says two-thirds of independent agencies plan to increase AI usage while inaccurate output and compliance risk remain major concerns.
+
+Evidence strength: HIGH for workflow fragmentation; MEDIUM for exact prevalence of missed obligations. I found a strong current practitioner thread plus broad 2026 industry evidence, but I would not translate this into a percentage of agencies experiencing the exact failure.
+
+## Exact workflow
+
+client/prospect conversation
+→ policy/account context
+→ quote/endorsement/renewal/service request
+→ notes in email/call/meeting
+→ Applied Epic activity
+→ producer/account-manager task
+→ carrier action / document request
+→ client follow-up
+→ completion evidence
+
+The economically dangerous gap is:
+
+“we discussed it” ≠ “the agency created and satisfied the required obligation.”
+
+## Inference
+
+Do not rebuild Applied Epic.
+
+Build a source-backed Agency Obligation Graph. Every customer interaction can generate candidate obligations such as:
+
+- obtain loss runs by date X
+- request endorsement Y
+- confirm payroll/exposure figure
+- remarket before renewal
+- send certificate/document
+- chase carrier response
+- obtain signed rejection/acceptance
+- call client before policy lapses
+
+Each obligation should retain its source: email message, call transcript, meeting note, policy object, carrier document, AMS activity ID.
+
+Example:
+
+CLIENT: ABC Manufacturing
+POLICY: Commercial Auto
+RENEWAL: 2026-10-01
+
+Meeting statement: client adding six vehicles in September
+Candidate obligation: obtain vehicle schedule before 2026-09-10
+Applied Epic activity: NOT FOUND
+Owner: UNKNOWN
+
+STATUS: BUSINESS OBLIGATION UNCAPTURED
+
+AI is useful for extracting commitments, policy entities and dates from messy communications. It should not autonomously invent coverage facts or mark an insurance obligation satisfied without authoritative evidence.
+
+Must be extremely reliable: insured identity, policy/term, effective dates, carrier, source communication, responsible staff member, AMS activity state and completion evidence.
+
+Buyer: independent commercial agencies and larger personal-lines agencies.
+
+WTP: strong. Agency economics are retention-driven, and mistakes can become E&O exposure rather than mere productivity loss.
+
+Switching barrier: very low because Applied Epic/AMS remains system of record.
+
+Distribution: Applied Systems consultants, agency networks, wholesalers, insurance-automation consultants.
+
+Concrete MVP: Gmail/Outlook + Applied Epic export/API. Extract candidate obligations from meetings/emails and return only UNCAPTURED, OWNER MISSING, DUE SOON, CARRIER RESPONSE MISSING, CLIENT ACK MISSING, or PROVEN COMPLETE.
+
+---
+
+# 2. Manufacturing Inventory Reality Guard — 9.8/10
+
+## Evidence
+
+A May 9, 2026 manufacturing planner described an SAP/Oracle-class failure that is unusually revealing. ERP showed 100% material availability for a hydraulic-press assembly. Work orders were released. Two hours later the floor reported three critical clamping rings missing because a previous shift had cannibalized them for a rush dispatch without updating the ERP.
+
+Their summary: only about 30% of their job feels like planning/system management; the other 70% is physically checking stock, building Excel/VBA trackers and interrogating dispatch about what actually moved.
+
+Reddit source: https://www.reddit.com/r/manufacturing/comments/1t8bgjm/i_actually_do_this_for_living/
+
+Another March 2026 manufacturing discussion explicitly says Excel remains everywhere because the ERP does not cover bespoke/messy realities. Practitioners note that ERP can be perfectly respectable while Excel becomes the patch layer for operational truth.
+
+Macro evidence supports the economic importance of inventory accuracy. A 2026 MRPeasy customer study reports users citing a 58% improvement in inventory-tracking accuracy after implementation, alongside better production efficiency and on-time delivery. This is vendor-reported evidence, so I treat the magnitude cautiously, but it confirms inventory accuracy is a major operational metric rather than an aesthetic complaint.
+
+Evidence strength: HIGH. The Reddit example describes a concrete physical-vs-digital divergence with immediate production consequences, and adjacent practitioner comments reinforce the pattern.
+
+## Exact workflow
+
+purchase/receipt
+→ stock location
+→ issue to job
+→ staging
+→ unofficial move / cannibalization / partial pull
+→ production consumption
+→ finished goods / dispatch
+→ ERP inventory
+→ MRP availability
+→ work-order release
+
+The critical failure is:
+
+ERP AVAILABLE = TRUE
+≠
+PART PHYSICALLY AVAILABLE FOR THIS JOB
+
+## Inference
+
+Do not build another ERP/MRP.
+
+Build an Inventory Reality Guard that independently verifies high-risk material before planning commits downstream work.
+
+Canonical state:
+
+PART × LOT/SERIAL × QUANTITY × PHYSICAL ZONE × RESERVED JOB × TIMESTAMP
+
+Example:
+
+PART: CLAMP-RING-44
+ERP on-hand: 12
+ERP reserved: 9
+Physical verified: 6
+Expected staging: Press A
+Observed staging: 3
+
+WORK ORDER WO-8821 requires: 8
+
+VERDICT: MATERIAL AVAILABILITY CONTRADICTED
+DO NOT RELEASE
+
+The simplest deployment does not require fancy computer vision. Start with barcode/QR scans at key transitions and exception reconciliation. High-value/low-volume shops could later add RFID or camera observability, but the product should not depend on perfect sensors.
+
+AI can infer likely causes from shift notes and detect suspicious patterns. The trusted layer must use exact part/lot IDs, quantities, locations, reservations and event timestamps.
+
+Buyer: low-volume/high-mix manufacturers, heavy machinery, precision manufacturing, maintenance-intensive plants.
+
+WTP: high where a missing component stalls a line or causes expensive expediting.
+
+Switching barrier: low as a read-only/validation sidecar to SAP, Oracle, Epicor, Infor etc.
+
+Distribution: ERP integrators, operations consultants, barcode/RFID integrators.
+
+Concrete MVP: integrate one ERP plus mobile scanner. Watch only critical parts. Return ERP/PHYSICAL CONFLICT, UNRECORDED MOVE, RESERVED BUT MISSING, STAGING SHORT, DISPATCH NOT POSTED, and SAFE TO RELEASE.
+
+---
+
+# 3. AppFolio Owner Receivable / Fee Truth Layer — 9.6/10
+
+## Evidence
+
+A long-time AppFolio operator managing roughly 150 residential units plus some commercial property wrote on April 27, 2026 that their biggest pain is that there is no true accurate report showing what an owner owes the management company. They say AppFolio support told them there was no accurate report for this. Suppressed/pass-through fees such as application fees are a central source of complexity.
+
+Reddit source: https://www.reddit.com/r/PptyMgmtSoftware/comments/1sx4uzr/keep_or_kill_appfolio/
+
+A May follow-up from someone doing back-office accounting for property managers calls this one of the most common AppFolio frustrations they hear: the “pay owners” screen can give a working picture, but no consolidated export cleanly surfaces unpaid bills, reserves and suppressed-fee obligations. A separate AppFolio thread explains that suppressed-fee reversals and bounced/refunded tenant payments can create “funky” owner-fund states. On August 23, a user specifically asked whether normal reports expose unique transaction IDs well enough to reconcile these edge cases without paid API access.
+
+A February 2026 owner-portal thread shows the adjacent portability issue: outsourced management can make the owner's own tax/accounting workflow more manual because transactions and balance-sheet detail are not exposed in the form the owner wants. One property manager in the thread reported a 1099-K mismatch of several thousand dollars without transaction-level detail to explain it.
+
+AppFolio's February 2026 benchmark says 45% of property managers plan to consolidate technology and explicitly frames legacy software as an obstacle to moving from task completion to business outcomes.
+
+Evidence strength: HIGH for AppFolio-specific reporting gaps; MEDIUM-HIGH for market breadth because multiple 2026 threads show related owner/accounting state problems.
+
+## Exact workflow
+
+tenant fee/rent/payment
+→ property ledger
+→ management-company entitlement
+→ suppressed fee / owner-billable item
+→ owner distribution calculation
+→ management-company collection
+→ reversal/refund/bounce adjustments
+→ owner statement/reporting
+
+The missing business question is simple:
+
+“How much does each owner owe us right now, why, and which source transactions prove it?”
+
+## Inference
+
+Build an Owner Economic Ledger rather than another PMS.
+
+Canonical object:
+
+OWNER OBLIGATION
+- property
+- source transaction
+- fee type
+- gross amount
+- owner responsibility
+- management-company entitlement
+- collected amount
+- reversal state
+- source IDs
+
+Example:
+
+Owner A — Property 14
+Application fee due to manager: $150
+Tenant paid: YES
+Suppressed from owner statement: YES
+Manager collected: NO
+Later reversal: NO
+
+STATUS: MANAGEMENT COMPANY RECEIVABLE $150
+
+Portfolio view:
+
+Owner A owes management company: $1,840
+Owner B: $0
+Owner C: $720
+
+Every number must be drillable to exact AppFolio source records.
+
+AI can explain accounting anomalies and map descriptions. The trusted layer must own transaction IDs, property/owner identity, GL mapping, reversals and dollars.
+
+Buyer: property-management companies and outsourced property-management bookkeeping firms.
+
+WTP: strong where this affects owner distributions and management-fee collection.
+
+Switching barrier: negligible as an analytical sidecar.
+
+Distribution: AppFolio accountants/consultants and back-office PM bookkeeping providers.
+
+Concrete MVP: ingest normal AppFolio exports first—avoid requiring the paid API. Build a canonical owner/fee ledger and only show OWNER OWES MANAGER, MANAGER OWES OWNER, SUPPRESSED FEE UNCOLLECTED, REVERSAL CONFLICT, SOURCE ID MISSING, and RECONCILED.
+
+---
+
+# 4. Professional Services Work-to-Bill Provenance — 9.5/10
+
+## Evidence
+
+A January 2, 2026 r/consulting post from a roughly 12-person consultancy says it discovered that about 30% of project hours had never been invoiced. Some work was forgotten, some was lost between tools, and some project managers did not track it properly. The finance person was reportedly spending around three days each month reconstructing what could be billed.
+
+Reddit source: https://www.reddit.com/r/consulting/comments/1q1w0nc/anyone_else_losing_track_of_how_much_work/
+
+The opposite distortion is also highly recurrent in 2026 consulting discussions: people report working more hours than they are permitted or encouraged to record. April Deloitte threads describe staff being told to record nine hours despite working eleven or more, or to “eat” excess hours when a project budget is tight. These anecdotes demonstrate why raw timesheets are not necessarily a trustworthy representation of economic work.
+
+A May 2026 consulting thread also shows utilization itself becoming a problematic proxy: teams may have people reserved for delayed workstreams while managers still scrutinize billable percentage.
+
+Broader 2026 professional-services benchmark reporting supports the economics. SPI-derived 2026 reporting puts industry billable utilization around 66% in 2025, its lowest recorded level in that benchmark, even while margins rose. For A&E specifically, 2026 market analysis places utilization around the low 60s and labor at roughly 55–68% of net revenue, making small errors in work capture/project economics meaningful.
+
+Evidence strength: HIGH for recurrence of work/time/billing mismatch; MEDIUM for any single numerical estimate because Reddit self-reports are not representative prevalence samples.
+
+## Exact workflow
+
+client request/SOW
+→ consultant performs work
+→ emails/docs/meetings/code/deliverables
+→ time entry
+→ PM review
+→ billing rule/budget
+→ draft invoice
+→ client invoice
+→ collection
+
+There are two separate failure states:
+
+WORK PERFORMED / NO BILLABLE RECORD
+and
+TIME RECORDED / NO DEFENSIBLE WORK EVIDENCE
+
+## Inference
+
+Do not build another timer.
+
+Build an evidence-backed Work Episode Graph that proposes candidate client-work episodes from normal activity and compares them to time/invoices.
+
+Example:
+
+Client ABC
+Tuesday 10:00–11:18
+- client Zoom meeting 31m
+- project document edits 44m
+- client follow-up email 8m
+
+Timesheet: 0h
+Project terms: T&M
+
+STATUS: LIKELY UNCAPTURED CLIENT WORK
+
+Or:
+
+Timesheet: 8h client work
+Observed client-project evidence: 2.1h
+
+STATUS: EVIDENCE GAP — HUMAN REVIEW
+
+This should not become surveillance software or automatically accuse employees. The product is a finance/provenance assistant: surface unexplained gaps and let the professional approve or reject them.
+
+AI can cluster heterogeneous activity into candidate episodes and map them to client/project. The reliable substrate is timestamps, project identity, source events, contract terms and final human-approved billing.
+
+Buyer: consulting, agencies, A&E, IT services and fractional professional-services firms.
+
+WTP: high where work is billed hourly/T&M; weaker for pure fixed-fee firms unless used for margin accounting.
+
+Switching barrier: very low alongside Harvest, Deltek, Kantata, Jira, QuickBooks etc.
+
+Distribution: fractional CFO/bookkeeping firms and PSA implementation partners.
+
+Concrete MVP: Google/Microsoft calendar + project docs + time system. Detect only CLIENT ACTIVITY / NO TIME, TIME / NO PROJECT EVIDENCE, PROJECT BUDGET OVERRUN, COMPLETED WORK / NO INVOICE, and INVOICE / SOURCE WORK LINKED.
+
+---
+
+# 5. A&E Field-Time / Job Evidence Sidecar — 9.2/10
+
+## Evidence
+
+A December 31, 2025 civil-engineering thread remained active through July 2026 and is useful because it contains current practitioner follow-up rather than generic product discussion. A 50–100 person civil engineering/construction-inspection firm was trying to replace its expense/timesheet stack. Practitioners described ClickUp implementation as long and painful; others said BQE CORE becomes laggy/cumbersome and restricts easy data sharing; a roughly 100-person Unanet A/E user says the product records hours but cannot easily answer a client's concrete question such as whether a particular person was onsite at 10 a.m. the previous Wednesday. Expenses still go through Excel.
+
+Reddit source: https://www.reddit.com/r/civilengineering/comments/1q0klc6/looking_for_recommendations_for_expense_report/
+
+A July 15, 2026 follow-up says field crews do better when time is captured as work happens and tied directly to the job, while expense management often remains another system. A March 2026 civil-engineering discussion separately shows Ajera used for time/budget burn but not necessarily richer proof of what occurred.
+
+A&E economics make this narrow problem meaningful: 2026 architecture market analysis places utilization around 59–63% and net revenue per employee around $163k–$206k, while labor is the dominant cost base.
+
+Evidence strength: MEDIUM-HIGH. The workflow is clearly real and current, but the best thread began on Dec. 31, 2025 with substantial 2026 replies, so I rank it below the four categories supported entirely by 2026-started discussions.
+
+## Inference
+
+The missing primitive is not another timesheet. It is a Job Evidence Episode:
+
+EMPLOYEE × PROJECT × LOCATION/CONTEXT × TIME × EXPENSE × DELIVERABLE
+
+Example:
+
+Inspector E-44
+Project DOT-882
+Wednesday 09:42–12:11
+Mobile job clock: PRESENT
+Site location: PRESENT
+Inspection form: PRESENT
+3 photos: PRESENT
+Mileage receipt: PRESENT
+
+Client asks: “Was this inspector onsite at 10:00?”
+
+VERDICT: PROVEN
+
+That makes time useful for billing, client dispute resolution, payroll, project margin and field accountability without forcing the worker to write a miniature diary after every visit.
+
+AI can draft the narrative from evidence. Exact time, employee/project identity, submitted inspection artifacts, expense amounts and approval need deterministic provenance.
+
+Buyer: civil engineering, environmental consulting, construction inspection, surveying and other mixed field/office professional services.
+
+WTP: moderate-high, especially where government/client contracts require support for billed labor and expenses.
+
+Switching barrier: low as a field evidence layer feeding Deltek/Ajera/BQE/QuickBooks.
+
+Concrete MVP: mobile clock + receipt/photo capture + calendar + project code. Generate a source-backed daily work ledger and export approved episodes to the incumbent timesheet.
+
+---
+
+# Repeated Across Industries
+
+This run produced a different but highly consistent structural pattern:
+
+THE SYSTEM HAS A RECORD
+≠
+THE BUSINESS CAN PROVE THE UNDERLYING OBLIGATION OR REALITY
+
+Insurance:
+meeting note exists
+≠ renewal/service obligation captured and completed
+
+Manufacturing:
+ERP inventory exists
+≠ physical part available
+
+Property management:
+fees exist across ledgers
+≠ owner receivable is understandable/proven
+
+Consulting:
+timesheet exists
+≠ all performed work billed—or recorded hours defensible
+
+A&E:
+hours entered
+≠ field work can be independently reconstructed
+
+The recurring product architecture is:
+
+REAL-WORLD / ECONOMIC EVENT
++ incumbent records
++ independent source evidence
++ domain rules
+→ canonical business state
+→ PROVEN / DIVERGENT / UNKNOWN
+→ ALLOW / REVIEW / BLOCK
+
+## 1. The strongest opportunities live beside, not inside, incumbents
+
+These buyers already paid for Applied Epic, SAP/Oracle, AppFolio, Deltek, BQE, HubSpot and similar systems. That is positive evidence: there is existing software budget.
+
+The shadow process tells you what the incumbent failed to model:
+
+Applied Epic + paper/handwritten notes
+SAP + Excel/VBA + walking the floor
+AppFolio + pay-owner screen/manual reports
+PSA/timesheet + month-end reconstruction
+Deltek/A&E + Excel expenses / separate field proof
+
+## 2. Missing objects are often more important than broken objects
+
+Classic software validates records that exist. The valuable exception is increasingly “what SHOULD exist?”
+
+A client conversation should create an AMS obligation.
+A physical stock movement should create an ERP event.
+A management-company fee should create a collectible owner obligation.
+Performed T&M work should create a billable episode.
+A billed site visit should have field evidence.
+
+That is exactly the sort of reasoning agents can perform—provided a deterministic verifier checks the result.
+
+## 3. AI should compile meaning; deterministic systems should own truth
+
+Good AI jobs:
+- extract commitments from insurance calls
+- classify shift notes / infer likely inventory discrepancy cause
+- explain suppressed-fee accounting
+- group emails/docs/meetings into candidate work episodes
+- turn field evidence into a client-readable narrative
+
+Trusted state should remain:
+- identities
+- policy/project/property/part IDs
+- money
+- quantity
+- timestamps
+- contractual dates
+- source evidence
+- final human approval
+
+## 4. Outcome history is the moat
+
+Every resolved exception becomes:
+
+source state
++ discrepancy
++ explanation
++ human decision
++ real outcome
+
+Over time this produces valuable datasets: which agency communication patterns create missed renewals, which inventory events precede shortages, which AppFolio configurations produce fee leakage, which activity patterns correspond to genuinely billable work, and which field evidence survives client scrutiny.
+
+---
+
+# Best Rebuild Bets
+
+## #1 Insurance Agency Obligation & Renewal Graph
+
+Best overall balance of recurring operational pain, E&O/reputation stakes, existing software spend, low switching friction and rapidly increasing AI readiness. The 2026 industry data is unusually aligned: agency AI use is exploding, but governance/trust remain weak.
+
+Positioning:
+
+“Keep Applied Epic. We independently turn every customer conversation into source-backed obligations and show you what has not safely reached the AMS or carrier/client postcondition.”
+
+## #2 Manufacturing Inventory Reality Guard
+
+Strongest physical-world moat. The ERP is not necessarily bad—the problem is that physical transitions fail to become digital events. A sidecar that proves critical material is really present before MRP releases work can create immediate ROI.
+
+## #3 AppFolio Owner Receivable / Fee Truth
+
+Excellent incumbent-specific wedge. The customer already has AppFolio and does not want to migrate. Build the missing economic view rather than another PMS.
+
+The killer query is simply:
+
+“What does each owner owe our management company today, and which exact transactions prove it?”
+
+## #4 Professional Services Work-to-Bill Provenance
+
+Large horizontal-through-vertical opportunity. The key is to avoid becoming employee surveillance or another timer. Focus on money leakage and evidence-backed candidate work episodes.
+
+## #5 A&E Field-Time Evidence
+
+Smaller but unusually concrete. Civil/inspection firms need hours and expenses tied to provable field events, not merely rows on a timesheet. This may be a good verticalized entry point into the broader professional-services provenance thesis.
+
+# Bottom line
+
+The strongest thesis from this run is:
+
+**The opportunity is increasingly not to replace mature vertical systems. It is to build the independent evidence layer that knows what business object SHOULD exist, reconstructs what actually happened from multiple sources, and alerts or blocks when the incumbent's record diverges from real-world or economic truth.**
+
+That is particularly attractive for agent infrastructure because autonomous agents increase the rate at which software objects are created. The value of a trusted verifier rises with that automation.
+Reddit Pain Radar — 30 Aug 2026, 16:26 ICT
+<p>This run deliberately rotated away from the previous winners around legal deadlines, prior authorization, backup recovery, retainage, hotel night audit, benefits eligibility, OAuth offboarding and chargebacks. The strongest new seams were: independent-insurance agency obligation capture, manufacturing ERP-vs-physical inventory truth, AppFolio owner receivables/accounting state, professional-services work-to-bill leakage, and A&amp;E field-time/evidence capture.</p>
+
+Ranked opportunities
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Opportunity</th>
+<th>Score</th>
+<th>Best wedge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Insurance Agency Obligation &amp; Renewal Graph</td>
+<td>9.8/10</td>
+<td>Convert meetings/emails into source-backed AMS obligations and prove follow-through</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Manufacturing Inventory Reality Guard</td>
+<td>9.8/10</td>
+<td>Independently detect ERP stock that does not exist physically before MRP commits production</td>
+</tr>
+<tr>
+<td>3</td>
+<td>AppFolio Owner Receivable / Fee Truth Layer</td>
+<td>9.6/10</td>
+<td>Prove exactly what each owner owes the management company and why</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Professional Services Work-to-Bill Provenance</td>
+<td>9.5/10</td>
+<td>Detect performed client work that never becomes an invoice</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A&amp;E Field-Time / Job Evidence Sidecar</td>
+<td>9.2/10</td>
+<td>Tie project time, field presence, receipts and client billing to auditable work episodes</td>
+</tr>
+</tbody>
+</table>
+
+
+
+1. Insurance Agency Obligation &amp; Renewal Graph — 9.8/10
+
+Evidence
+<p>A March 11, 2026 independent-agency owner taking over a four-person Tennessee agency described the operational substrate very clearly. The agency uses Applied for its AMS and HubSpot for CRM, yet important information is still scattered across paper files, handwritten notes, meeting records and people’s memories. Their biggest complaint is that details get missed and action items fail to make it into the system that should own them.</p>
+<p>Reddit source: https://www.reddit.com/r/InsuranceAgent/comments/1rr0jkb/horribly_inefficient_agency_workflows/</p>
+<p>The exact practitioner complaint is not simply “Applied Epic is old.” It is that the agency already pays for an AMS and CRM and nevertheless depends on somebody remembering that a commercial-line client requested a change, promised a document, needs a renewal follow-up, or raised a coverage question.</p>
+<p>Broader 2026 evidence strongly supports this becoming more important. Liberty Mutual’s August 2026 Independent Agency Growth Study surveyed 1,149 U.S. agency principals/staff. AI use jumped from 37% in 2025 to 65% in 2026; users report saving about four hours/week. But only 18% say their agency has a well-defined AI policy and only 22% trust AI with business/client data. The top high-savings uses include meeting-note summarization, policy comparison and routine data/document maintenance. Big “I” ACT reporting likewise says two-thirds of independent agencies plan to increase AI usage while inaccurate output and compliance risk remain major concerns.</p>
+<p>Evidence strength: HIGH for workflow fragmentation; MEDIUM for exact prevalence of missed obligations. I found a strong current practitioner thread plus broad 2026 industry evidence, but I would not translate this into a percentage of agencies experiencing the exact failure.</p>
+
+Exact workflow
+<p>client/prospect conversation<br>
+→ policy/account context<br>
+→ quote/endorsement/renewal/service request<br>
+→ notes in email/call/meeting<br>
+→ Applied Epic activity<br>
+→ producer/account-manager task<br>
+→ carrier action / document request<br>
+→ client follow-up<br>
+→ completion evidence</p>
+<p>The economically dangerous gap is:</p>
+<p>“we discussed it” ≠ “the agency created and satisfied the required obligation.”</p>
+
+Inference
+<p>Do not rebuild Applied Epic.</p>
+<p>Build a source-backed Agency Obligation Graph. Every customer interaction can generate candidate obligations such as:</p>
+<ul>
+<li>obtain loss runs by date X</li>
+<li>request endorsement Y</li>
+<li>confirm payroll/exposure figure</li>
+<li>remarket before renewal</li>
+<li>send certificate/document</li>
+<li>chase carrier response</li>
+<li>obtain signed rejection/acceptance</li>
+<li>call client before policy lapses</li>
+</ul>
+<p>Each obligation should retain its source: email message, call transcript, meeting note, policy object, carrier document, AMS activity ID.</p>
+<p>Example:</p>
+<p>CLIENT: ABC Manufacturing<br>
+POLICY: Commercial Auto<br>
+RENEWAL: 2026-10-01</p>
+<p>Meeting statement: client adding six vehicles in September<br>
+Candidate obligation: obtain vehicle schedule before 2026-09-10<br>
+Applied Epic activity: NOT FOUND<br>
+Owner: UNKNOWN</p>
+<p>STATUS: BUSINESS OBLIGATION UNCAPTURED</p>
+<p>AI is useful for extracting commitments, policy entities and dates from messy communications. It should not autonomously invent coverage facts or mark an insurance obligation satisfied without authoritative evidence.</p>
+<p>Must be extremely reliable: insured identity, policy/term, effective dates, carrier, source communication, responsible staff member, AMS activity state and completion evidence.</p>
+<p>Buyer: independent commercial agencies and larger personal-lines agencies.</p>
+<p>WTP: strong. Agency economics are retention-driven, and mistakes can become E&amp;O exposure rather than mere productivity loss.</p>
+<p>Switching barrier: very low because Applied Epic/AMS remains system of record.</p>
+<p>Distribution: Applied Systems consultants, agency networks, wholesalers, insurance-automation consultants.</p>
+<p>Concrete MVP: Gmail/Outlook + Applied Epic export/API. Extract candidate obligations from meetings/emails and return only UNCAPTURED, OWNER MISSING, DUE SOON, CARRIER RESPONSE MISSING, CLIENT ACK MISSING, or PROVEN COMPLETE.</p>
+
+
+
+2. Manufacturing Inventory Reality Guard — 9.8/10
+
+Evidence
+<p>A May 9, 2026 manufacturing planner described an SAP/Oracle-class failure that is unusually revealing. ERP showed 100% material availability for a hydraulic-press assembly. Work orders were released. Two hours later the floor reported three critical clamping rings missing because a previous shift had cannibalized them for a rush dispatch without updating the ERP.</p>
+<p>Their summary: only about 30% of their job feels like planning/system management; the other 70% is physically checking stock, building Excel/VBA trackers and interrogating dispatch about what actually moved.</p>
+<p>Reddit source: https://www.reddit.com/r/manufacturing/comments/1t8bgjm/i_actually_do_this_for_living/</p>
+<p>Another March 2026 manufacturing discussion explicitly says Excel remains everywhere because the ERP does not cover bespoke/messy realities. Practitioners note that ERP can be perfectly respectable while Excel becomes the patch layer for operational truth.</p>
+<p>Macro evidence supports the economic importance of inventory accuracy. A 2026 MRPeasy customer study reports users citing a 58% improvement in inventory-tracking accuracy after implementation, alongside better production efficiency and on-time delivery. This is vendor-reported evidence, so I treat the magnitude cautiously, but it confirms inventory accuracy is a major operational metric rather than an aesthetic complaint.</p>
+<p>Evidence strength: HIGH. The Reddit example describes a concrete physical-vs-digital divergence with immediate production consequences, and adjacent practitioner comments reinforce the pattern.</p>
+
+Exact workflow
+<p>purchase/receipt<br>
+→ stock location<br>
+→ issue to job<br>
+→ staging<br>
+→ unofficial move / cannibalization / partial pull<br>
+→ production consumption<br>
+→ finished goods / dispatch<br>
+→ ERP inventory<br>
+→ MRP availability<br>
+→ work-order release</p>
+<p>The critical failure is:</p>
+<p>ERP AVAILABLE = TRUE<br>
+≠<br>
+PART PHYSICALLY AVAILABLE FOR THIS JOB</p>
+
+Inference
+<p>Do not build another ERP/MRP.</p>
+<p>Build an Inventory Reality Guard that independently verifies high-risk material before planning commits downstream work.</p>
+<p>Canonical state:</p>
+<p>PART × LOT/SERIAL × QUANTITY × PHYSICAL ZONE × RESERVED JOB × TIMESTAMP</p>
+<p>Example:</p>
+<p>PART: CLAMP-RING-44<br>
+ERP on-hand: 12<br>
+ERP reserved: 9<br>
+Physical verified: 6<br>
+Expected staging: Press A<br>
+Observed staging: 3</p>
+<p>WORK ORDER WO-8821 requires: 8</p>
+<p>VERDICT: MATERIAL AVAILABILITY CONTRADICTED<br>
+DO NOT RELEASE</p>
+<p>The simplest deployment does not require fancy computer vision. Start with barcode/QR scans at key transitions and exception reconciliation. High-value/low-volume shops could later add RFID or camera observability, but the product should not depend on perfect sensors.</p>
+<p>AI can infer likely causes from shift notes and detect suspicious patterns. The trusted layer must use exact part/lot IDs, quantities, locations, reservations and event timestamps.</p>
+<p>Buyer: low-volume/high-mix manufacturers, heavy machinery, precision manufacturing, maintenance-intensive plants.</p>
+<p>WTP: high where a missing component stalls a line or causes expensive expediting.</p>
+<p>Switching barrier: low as a read-only/validation sidecar to SAP, Oracle, Epicor, Infor etc.</p>
+<p>Distribution: ERP integrators, operations consultants, barcode/RFID integrators.</p>
+<p>Concrete MVP: integrate one ERP plus mobile scanner. Watch only critical parts. Return ERP/PHYSICAL CONFLICT, UNRECORDED MOVE, RESERVED BUT MISSING, STAGING SHORT, DISPATCH NOT POSTED, and SAFE TO RELEASE.</p>
+
+
+
+3. AppFolio Owner Receivable / Fee Truth Layer — 9.6/10
+
+Evidence
+<p>A long-time AppFolio operator managing roughly 150 residential units plus some commercial property wrote on April 27, 2026 that their biggest pain is that there is no true accurate report showing what an owner owes the management company. They say AppFolio support told them there was no accurate report for this. Suppressed/pass-through fees such as application fees are a central source of complexity.</p>
+<p>Reddit source: https://www.reddit.com/r/PptyMgmtSoftware/comments/1sx4uzr/keep_or_kill_appfolio/</p>
+<p>A May follow-up from someone doing back-office accounting for property managers calls this one of the most common AppFolio frustrations they hear: the “pay owners” screen can give a working picture, but no consolidated export cleanly surfaces unpaid bills, reserves and suppressed-fee obligations. A separate AppFolio thread explains that suppressed-fee reversals and bounced/refunded tenant payments can create “funky” owner-fund states. On August 23, a user specifically asked whether normal reports expose unique transaction IDs well enough to reconcile these edge cases without paid API access.</p>
+<p>A February 2026 owner-portal thread shows the adjacent portability issue: outsourced management can make the owner’s own tax/accounting workflow more manual because transactions and balance-sheet detail are not exposed in the form the owner wants. One property manager in the thread reported a 1099-K mismatch of several thousand dollars without transaction-level detail to explain it.</p>
+<p>AppFolio’s February 2026 benchmark says 45% of property managers plan to consolidate technology and explicitly frames legacy software as an obstacle to moving from task completion to business outcomes.</p>
+<p>Evidence strength: HIGH for AppFolio-specific reporting gaps; MEDIUM-HIGH for market breadth because multiple 2026 threads show related owner/accounting state problems.</p>
+
+Exact workflow
+<p>tenant fee/rent/payment<br>
+→ property ledger<br>
+→ management-company entitlement<br>
+→ suppressed fee / owner-billable item<br>
+→ owner distribution calculation<br>
+→ management-company collection<br>
+→ reversal/refund/bounce adjustments<br>
+→ owner statement/reporting</p>
+<p>The missing business question is simple:</p>
+<p>“How much does each owner owe us right now, why, and which source transactions prove it?”</p>
+
+Inference
+<p>Build an Owner Economic Ledger rather than another PMS.</p>
+<p>Canonical object:</p>
+<p>OWNER OBLIGATION</p>
+<ul>
+<li>property</li>
+<li>source transaction</li>
+<li>fee type</li>
+<li>gross amount</li>
+<li>owner responsibility</li>
+<li>management-company entitlement</li>
+<li>collected amount</li>
+<li>reversal state</li>
+<li>source IDs</li>
+</ul>
+<p>Example:</p>
+<p>Owner A — Property 14<br>
+Application fee due to manager: $150<br>
+Tenant paid: YES<br>
+Suppressed from owner statement: YES<br>
+Manager collected: NO<br>
+Later reversal: NO</p>
+<p>STATUS: MANAGEMENT COMPANY RECEIVABLE $150</p>
+<p>Portfolio view:</p>
+<p>Owner A owes management company: $1,840<br>
+Owner B: $0<br>
+Owner C: $720</p>
+<p>Every number must be drillable to exact AppFolio source records.</p>
+<p>AI can explain accounting anomalies and map descriptions. The trusted layer must own transaction IDs, property/owner identity, GL mapping, reversals and dollars.</p>
+<p>Buyer: property-management companies and outsourced property-management bookkeeping firms.</p>
+<p>WTP: strong where this affects owner distributions and management-fee collection.</p>
+<p>Switching barrier: negligible as an analytical sidecar.</p>
+<p>Distribution: AppFolio accountants/consultants and back-office PM bookkeeping providers.</p>
+<p>Concrete MVP: ingest normal AppFolio exports first—avoid requiring the paid API. Build a canonical owner/fee ledger and only show OWNER OWES MANAGER, MANAGER OWES OWNER, SUPPRESSED FEE UNCOLLECTED, REVERSAL CONFLICT, SOURCE ID MISSING, and RECONCILED.</p>
+
+
+
+4. Professional Services Work-to-Bill Provenance — 9.5/10
+
+Evidence
+<p>A January 2, 2026 r/consulting post from a roughly 12-person consultancy says it discovered that about 30% of project hours had never been invoiced. Some work was forgotten, some was lost between tools, and some project managers did not track it properly. The finance person was reportedly spending around three days each month reconstructing what could be billed.</p>
+<p>Reddit source: https://www.reddit.com/r/consulting/comments/1q1w0nc/anyone_else_losing_track_of_how_much_work/</p>
+<p>The opposite distortion is also highly recurrent in 2026 consulting discussions: people report working more hours than they are permitted or encouraged to record. April Deloitte threads describe staff being told to record nine hours despite working eleven or more, or to “eat” excess hours when a project budget is tight. These anecdotes demonstrate why raw timesheets are not necessarily a trustworthy representation of economic work.</p>
+<p>A May 2026 consulting thread also shows utilization itself becoming a problematic proxy: teams may have people reserved for delayed workstreams while managers still scrutinize billable percentage.</p>
+<p>Broader 2026 professional-services benchmark reporting supports the economics. SPI-derived 2026 reporting puts industry billable utilization around 66% in 2025, its lowest recorded level in that benchmark, even while margins rose. For A&amp;E specifically, 2026 market analysis places utilization around the low 60s and labor at roughly 55–68% of net revenue, making small errors in work capture/project economics meaningful.</p>
+<p>Evidence strength: HIGH for recurrence of work/time/billing mismatch; MEDIUM for any single numerical estimate because Reddit self-reports are not representative prevalence samples.</p>
+
+Exact workflow
+<p>client request/SOW<br>
+→ consultant performs work<br>
+→ emails/docs/meetings/code/deliverables<br>
+→ time entry<br>
+→ PM review<br>
+→ billing rule/budget<br>
+→ draft invoice<br>
+→ client invoice<br>
+→ collection</p>
+<p>There are two separate failure states:</p>
+<p>WORK PERFORMED / NO BILLABLE RECORD<br>
+and<br>
+TIME RECORDED / NO DEFENSIBLE WORK EVIDENCE</p>
+
+Inference
+<p>Do not build another timer.</p>
+<p>Build an evidence-backed Work Episode Graph that proposes candidate client-work episodes from normal activity and compares them to time/invoices.</p>
+<p>Example:</p>
+<p>Client ABC<br>
+Tuesday 10:00–11:18</p>
+<ul>
+<li>client Zoom meeting 31m</li>
+<li>project document edits 44m</li>
+<li>client follow-up email 8m</li>
+</ul>
+<p>Timesheet: 0h<br>
+Project terms: T&amp;M</p>
+<p>STATUS: LIKELY UNCAPTURED CLIENT WORK</p>
+<p>Or:</p>
+<p>Timesheet: 8h client work<br>
+Observed client-project evidence: 2.1h</p>
+<p>STATUS: EVIDENCE GAP — HUMAN REVIEW</p>
+<p>This should not become surveillance software or automatically accuse employees. The product is a finance/provenance assistant: surface unexplained gaps and let the professional approve or reject them.</p>
+<p>AI can cluster heterogeneous activity into candidate episodes and map them to client/project. The reliable substrate is timestamps, project identity, source events, contract terms and final human-approved billing.</p>
+<p>Buyer: consulting, agencies, A&amp;E, IT services and fractional professional-services firms.</p>
+<p>WTP: high where work is billed hourly/T&amp;M; weaker for pure fixed-fee firms unless used for margin accounting.</p>
+<p>Switching barrier: very low alongside Harvest, Deltek, Kantata, Jira, QuickBooks etc.</p>
+<p>Distribution: fractional CFO/bookkeeping firms and PSA implementation partners.</p>
+<p>Concrete MVP: Google/Microsoft calendar + project docs + time system. Detect only CLIENT ACTIVITY / NO TIME, TIME / NO PROJECT EVIDENCE, PROJECT BUDGET OVERRUN, COMPLETED WORK / NO INVOICE, and INVOICE / SOURCE WORK LINKED.</p>
+
+
+
+5. A&amp;E Field-Time / Job Evidence Sidecar — 9.2/10
+
+Evidence
+<p>A December 31, 2025 civil-engineering thread remained active through July 2026 and is useful because it contains current practitioner follow-up rather than generic product discussion. A 50–100 person civil engineering/construction-inspection firm was trying to replace its expense/timesheet stack. Practitioners described ClickUp implementation as long and painful; others said BQE CORE becomes laggy/cumbersome and restricts easy data sharing; a roughly 100-person Unanet A/E user says the product records hours but cannot easily answer a client’s concrete question such as whether a particular person was onsite at 10 a.m. the previous Wednesday. Expenses still go through Excel.</p>
+<p>Reddit source: https://www.reddit.com/r/civilengineering/comments/1q0klc6/looking_for_recommendations_for_expense_report/</p>
+<p>A July 15, 2026 follow-up says field crews do better when time is captured as work happens and tied directly to the job, while expense management often remains another system. A March 2026 civil-engineering discussion separately shows Ajera used for time/budget burn but not necessarily richer proof of what occurred.</p>
+<p>A&amp;E economics make this narrow problem meaningful: 2026 architecture market analysis places utilization around 59–63% and net revenue per employee around $163k–$206k, while labor is the dominant cost base.</p>
+<p>Evidence strength: MEDIUM-HIGH. The workflow is clearly real and current, but the best thread began on Dec. 31, 2025 with substantial 2026 replies, so I rank it below the four categories supported entirely by 2026-started discussions.</p>
+
+Inference
+<p>The missing primitive is not another timesheet. It is a Job Evidence Episode:</p>
+<p>EMPLOYEE × PROJECT × LOCATION/CONTEXT × TIME × EXPENSE × DELIVERABLE</p>
+<p>Example:</p>
+<p>Inspector E-44<br>
+Project DOT-882<br>
+Wednesday 09:42–12:11<br>
+Mobile job clock: PRESENT<br>
+Site location: PRESENT<br>
+Inspection form: PRESENT<br>
+3 photos: PRESENT<br>
+Mileage receipt: PRESENT</p>
+<p>Client asks: “Was this inspector onsite at 10:00?”</p>
+<p>VERDICT: PROVEN</p>
+<p>That makes time useful for billing, client dispute resolution, payroll, project margin and field accountability without forcing the worker to write a miniature diary after every visit.</p>
+<p>AI can draft the narrative from evidence. Exact time, employee/project identity, submitted inspection artifacts, expense amounts and approval need deterministic provenance.</p>
+<p>Buyer: civil engineering, environmental consulting, construction inspection, surveying and other mixed field/office professional services.</p>
+<p>WTP: moderate-high, especially where government/client contracts require support for billed labor and expenses.</p>
+<p>Switching barrier: low as a field evidence layer feeding Deltek/Ajera/BQE/QuickBooks.</p>
+<p>Concrete MVP: mobile clock + receipt/photo capture + calendar + project code. Generate a source-backed daily work ledger and export approved episodes to the incumbent timesheet.</p>
+
+
+
+Repeated Across Industries
+<p>This run produced a different but highly consistent structural pattern:</p>
+<p>THE SYSTEM HAS A RECORD<br>
+≠<br>
+THE BUSINESS CAN PROVE THE UNDERLYING OBLIGATION OR REALITY</p>
+<p>Insurance:<br>
+meeting note exists<br>
+≠ renewal/service obligation captured and completed</p>
+<p>Manufacturing:<br>
+ERP inventory exists<br>
+≠ physical part available</p>
+<p>Property management:<br>
+fees exist across ledgers<br>
+≠ owner receivable is understandable/proven</p>
+<p>Consulting:<br>
+timesheet exists<br>
+≠ all performed work billed—or recorded hours defensible</p>
+<p>A&amp;E:<br>
+hours entered<br>
+≠ field work can be independently reconstructed</p>
+<p>The recurring product architecture is:</p>
+<p>REAL-WORLD / ECONOMIC EVENT</p>
+<ul>
+<li>incumbent records</li>
+<li>independent source evidence</li>
+<li>domain rules<br>
+→ canonical business state<br>
+→ PROVEN / DIVERGENT / UNKNOWN<br>
+→ ALLOW / REVIEW / BLOCK</li>
+</ul>
+
+1. The strongest opportunities live beside, not inside, incumbents
+<p>These buyers already paid for Applied Epic, SAP/Oracle, AppFolio, Deltek, BQE, HubSpot and similar systems. That is positive evidence: there is existing software budget.</p>
+<p>The shadow process tells you what the incumbent failed to model:</p>
+<p>Applied Epic + paper/handwritten notes<br>
+SAP + Excel/VBA + walking the floor<br>
+AppFolio + pay-owner screen/manual reports<br>
+PSA/timesheet + month-end reconstruction<br>
+Deltek/A&amp;E + Excel expenses / separate field proof</p>
+
+2. Missing objects are often more important than broken objects
+<p>Classic software validates records that exist. The valuable exception is increasingly “what SHOULD exist?”</p>
+<p>A client conversation should create an AMS obligation.<br>
+A physical stock movement should create an ERP event.<br>
+A management-company fee should create a collectible owner obligation.<br>
+Performed T&amp;M work should create a billable episode.<br>
+A billed site visit should have field evidence.</p>
+<p>That is exactly the sort of reasoning agents can perform—provided a deterministic verifier checks the result.</p>
+
+3. AI should compile meaning; deterministic systems should own truth
+<p>Good AI jobs:</p>
+<ul>
+<li>extract commitments from insurance calls</li>
+<li>classify shift notes / infer likely inventory discrepancy cause</li>
+<li>explain suppressed-fee accounting</li>
+<li>group emails/docs/meetings into candidate work episodes</li>
+<li>turn field evidence into a client-readable narrative</li>
+</ul>
+<p>Trusted state should remain:</p>
+<ul>
+<li>identities</li>
+<li>policy/project/property/part IDs</li>
+<li>money</li>
+<li>quantity</li>
+<li>timestamps</li>
+<li>contractual dates</li>
+<li>source evidence</li>
+<li>final human approval</li>
+</ul>
+
+4. Outcome history is the moat
+<p>Every resolved exception becomes:</p>
+<p>source state</p>
+<ul>
+<li>discrepancy</li>
+<li>explanation</li>
+<li>human decision</li>
+<li>real outcome</li>
+</ul>
+<p>Over time this produces valuable datasets: which agency communication patterns create missed renewals, which inventory events precede shortages, which AppFolio configurations produce fee leakage, which activity patterns correspond to genuinely billable work, and which field evidence survives client scrutiny.</p>
+
+
+
+Best Rebuild Bets
+
+#1 Insurance Agency Obligation &amp; Renewal Graph
+<p>Best overall balance of recurring operational pain, E&amp;O/reputation stakes, existing software spend, low switching friction and rapidly increasing AI readiness. The 2026 industry data is unusually aligned: agency AI use is exploding, but governance/trust remain weak.</p>
+<p>Positioning:</p>
+<p>“Keep Applied Epic. We independently turn every customer conversation into source-backed obligations and show you what has not safely reached the AMS or carrier/client postcondition.”</p>
+
+#2 Manufacturing Inventory Reality Guard
+<p>Strongest physical-world moat. The ERP is not necessarily bad—the problem is that physical transitions fail to become digital events. A sidecar that proves critical material is really present before MRP releases work can create immediate ROI.</p>
+
+#3 AppFolio Owner Receivable / Fee Truth
+<p>Excellent incumbent-specific wedge. The customer already has AppFolio and does not want to migrate. Build the missing economic view rather than another PMS.</p>
+<p>The killer query is simply:</p>
+<p>“What does each owner owe our management company today, and which exact transactions prove it?”</p>
+
+#4 Professional Services Work-to-Bill Provenance
+<p>Large horizontal-through-vertical opportunity. The key is to avoid becoming employee surveillance or another timer. Focus on money leakage and evidence-backed candidate work episodes.</p>
+
+#5 A&amp;E Field-Time Evidence
+<p>Smaller but unusually concrete. Civil/inspection firms need hours and expenses tied to provable field events, not merely rows on a timesheet. This may be a good verticalized entry point into the broader professional-services provenance thesis.</p>
+
+Bottom line
+<p>The strongest thesis from this run is:</p>
+<p><strong>The opportunity is increasingly not to replace mature vertical systems. It is to build the independent evidence layer that knows what business object SHOULD exist, reconstructs what actually happened from multiple sources, and alerts or blocks when the incumbent’s record diverges from real-world or economic truth.</strong></p>
+<p>That is particularly attractive for agent infrastructure because autonomous agents increase the rate at which software objects are created. The value of a trusted verifier rises with that automation.</p>

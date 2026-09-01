@@ -1,0 +1,154 @@
+Subject: Agent Money Scout — 2026-09-01 00:00
+Date: Mon, 31 Aug 2026 17:24:51 +0000
+Message ID: 1a058da394e722b0
+================================================================================
+
+# Agent Money Scout — 2026-09-01 00:00
+
+Current execution order: MoltJobs → AgentPact → dealwork.ai → uGig/Algora coding lane → NEAR Agent Market → Complete Codes → selective Taskmarket/Opire.
+
+I count only settled or clearly withdrawable money. Internal credits, testnet balances, speculative tokens, GMV and unpaid submissions count as $0. Do not bypass age, identity, geography or payment-provider rules.
+
+## NEW THIS RUN
+
+### 1. uGig — fresh AI-agent services priced $5–$12 in USDC
+https://ugig.net/
+https://ugig.net/for-hire
+
+uGig explicitly supports AI-agent accounts through API/CLI and says agents can browse gigs, apply, message clients and get paid in crypto. The current service board shows fresh remote offers including: focused regression test $5 USDC; small TypeScript/Rust bug fix with regression test $12; Python/JS script sanity check $8; CSV/JSON validation $8; cited factual research $6.50. These are seller listings, not guaranteed buyers, but they give a concrete market price for agentized microservices.
+
+Agent work: bounded code QA, data cleaning, research. Who pays: customers ordering the gig. Tools: API key/CLI, GitHub/Python/TS depending on offer. Autonomy: 9/10. First action: list one bounded service with objective output and no sensitive-data requirement; do not spend custom integration effort beyond the free API/CLI path. Constraints: verify operator/payment eligibility before using crypto settlement. Ease first $5: 6/10. Repeatability: 9/10.
+
+### 2. Algora / Arakoo.ai — $130 across four open coding bounties
+https://algora.io/arakoodev/home
+
+Primary Algora page shows 4 open bounties worth $130 total: $50 AWS Comprehend redaction utility, another $25 reward on the same issue, $25 Google Palm2 JS/TS support, and $30 qdrant vector-database support. It also shows $125 already awarded across three completed bounties, with two named earners receiving $75 and $50.
+
+Agent work: clone repo → reproduce → implement integration → tests → PR. Who pays: Arakoo.ai via Algora. Tools: GitHub, JS/TS/Java depending on issue. Autonomy: 8/10. First action: inspect EdgeChains#273 ($30 qdrant) and #279 ($25 API support) for repo freshness and competing PRs. Constraints: platform/payment eligibility applies. Ease first $5: 7/10. Repeatability: 7/10.
+
+### 3. uGig as a demand-probing channel
+https://ugig.net/for-hire
+
+Beyond applying to gigs, the current board is useful evidence of what agents are trying to sell right now: bug fixes, regression tests, script audits, CSV/JSON cleanup and source-cited factual research. The useful play is to list one service that is also executable on AgentPact/dealwork so every completed job improves the same procedure.
+
+Who pays: direct client. Pricing evidence: $5–$12 visible current examples. Autonomy: 9/10. First action: publish one $5–$10 bounded QA/data offer. Ease: 6/10. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 4. MoltJobs — best immediate small paid tasks
+https://moltjobs.io/open-jobs
+
+Two funded jobs remain live: 6 USDC to publish a working MoltJobs agent starter kit on GitHub (3 days remaining), and 5 USDC to review onboarding docs and report unclear sections (2 days). Jobs are described as funded with USDC in on-chain escrow.
+
+Agent work: docs QA or lightweight coding. Who pays: job poster. Tools: MoltJobs API/MCP/CLI, GitHub for starter kit. Autonomy: 9/10. First action: take the $5 docs audit first if still claimable; lowest execution cost. Ease: 10/10. Repeatability: 8/10.
+
+### 5. AgentPact — still the strongest small-job density
+https://agentpact.xyz/needs
+
+200 Needs remain. Useful current examples: Python code review 5–10 USDC; API automation 10–25; authorized Python code/security review 10–25; web scraping automation 10–25; data analysis + visualization 10–25; Python web scraping 10–25. Large amounts of sub-dollar test noise remain.
+
+Agent work: Python/API/data QA. Who pays: Need buyer. Tools: API/MCP and task-specific stack. Autonomy: 10/10. First action: filter reward>=5, clear scope, objective acceptance, settleable. Security work only on explicitly authorized code/systems. Ease: 9/10. Repeatability: 9/10.
+
+### 6. dealwork.ai — now 161 open tasks
+https://dealwork.ai/
+
+Fresh primary state: 2.6K workers, 161 open tasks, 264 completed. It documents an $80 AI-delivered production API with tests and a $5 AI-to-AI task. Escrow is locked before work starts; AI-to-AI fee is 3%, standard contracts 10%.
+
+Agent work: code, APIs, research, data, docs. Who pays: human or agent requester. Autonomy: 9/10. First action: ingest all 161 and reject any task whose acceptance cannot be independently reproduced. Ease: 9/10. Repeatability: 9/10.
+
+### 7. NEAR Agent Market — strongest service-market demand signal
+https://market.near.ai/
+
+Primary page reports 1,284 agents, 42,118 jobs this week, $1.2M paid to builders, 96.4% success and ~14s median response. Users submit plain-English briefs and pay in USDC; marketplace routing selects specialist agents. Platform-reported metrics, so treat them as claims rather than audited figures.
+
+Agent work: specialist code/data/research services. Who pays: marketplace users. Tools: hosted agent integration. Autonomy: 9/10. First action: list one narrow objectively checkable service, not a general assistant. Ease: 7/10. Repeatability: 9/10.
+
+### 8. Complete Codes — best merge→payment architecture
+https://www.complete.codes/en/agents
+
+Agents can discover funded repos through MCP. Public tools include list_funded_repos with minimum-payout filtering; sprint details show pool, payout rate and time left; merged PRs show earnings. No conventional proposal contest.
+
+Agent work: funded OSS contribution. Who pays: Sprint funder. Tools: GitHub, repo tests, MCP. Autonomy: 9/10. First action: list funded repos with minimum payout >= $5 and sort by payout, then rank by maintainer merge velocity and testability. Ease: 7/10 when inventory matches. Repeatability: 10/10.
+
+### 9. Taskmarket — one $24.20 task exists, but competition is brutal
+https://taskmarket.dev/
+
+Current board: 6 open tasks, 28.7K agents, 2,383.097764 USDC posted volume. A dashboard/data-visualization bounty pays 24.2 USDC but already has 155 submissions. Other visible tasks are 0.327 USDC with 214 submissions and 1.297426 USDC with 192. Public leaderboard shows top agents at 120.776268 and 78.624908 USDC, so settlement is real.
+
+Agent work: winner-take-all data/research tasks. Autonomy: 10/10. First action: only attempt the $24.20 task if a cheap preflight shows a materially better result is possible. Use EV = reward × P(win) − execution cost. Ease: 3/10. Repeatability: 9/10.
+
+### 10. Opire — 376 rewards, $4,975.87 paid out; aggressive filtering required
+https://app.opire.dev/home
+
+Primary dashboard shows 376 available rewards and $4,975.87 paid out. It also contains obviously anomalous huge numbers, so aggregate open value is unreliable. Credible historic/current items coexist with noisy listings.
+
+Agent work: GitHub issue → patch → tests → PR. Who pays: bounty sponsor. Tools: repo-specific. Autonomy: 8/10. First action: verify upstream issue status, maintainer activity, competing PRs and credible funding before coding. Ease: 5/10. Repeatability: 8/10.
+
+### 11. OpenJobs — technically strong, but visible jobs are often WAGE-denominated
+https://openjobs.bot/
+
+OpenJobs reports 193 agents, 159 total jobs, 138 completed. It supports REST, CLI, MCP and SDKs and can settle USDC or WAGE on Solana. Current public copy confirms USDC settlement, but earlier visible job inventory was mainly WAGE-denominated.
+
+First action: query only USDC-denominated funded jobs >= $5. Do not treat WAGE as dollars without a verified liquid value. Autonomy: 10/10. Ease: 4/10. Repeatability: 9/10.
+
+### 12. BotHire — real on-chain agent-to-agent settlement, still tiny
+https://www.bothire.io/
+https://www.bothire.io/for-agents
+
+Current primary page shows 14 autonomous agents, 127 skills and $3 USDC settled on Base. Agents can expose skills, get hired and settle via direct payment or escrow. Humans observe; agents participate.
+
+First action: cross-list one already-proven capability. Do not build specifically for it until external hires appear. Autonomy: 10/10. Ease: 2/10. Repeatability: 9/10 potential.
+
+### 13. gigs.sh — discovery only
+https://gigs.sh/
+
+Continue using as a candidate generator, not truth. Verify every live queue and payout on the primary platform before execution. Direct first-$5: 1/10. Discovery repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. Agency data-entry automation
+https://www.reddit.com/r/automation/comments/1s3l0c6/are_there_any_ai_tools_or_ai_automations_worth/
+
+A current agency operator reports roughly five hours/week saved by moving form-submitted client data directly into its project-management tool. They specifically recommend document summarization, ticket tagging and image/screenshot processing over flashy generic chatbots.
+
+Customer/problem: agencies doing repetitive intake/admin. Workflow: form/email/document → validate → PM/CRM write → exception queue. MVP: one intake flow with before/after time measurement. Ease: 9/10. Repeatability: 10/10.
+
+### 15. Invoice processing → accounting system
+https://www.reddit.com/r/automation/comments/1oup6v1/cant_keep_up_with_my_invoice_processing_is_there/
+
+Recurring complaint: manual invoice entry. Proposed workflow in the thread is email → extraction → QuickBooks → confirmation, turning multi-minute manual processing into an automated path.
+
+Customer: bookkeeping/SMB finance. Workflow: invoice → extract fields → validate/duplicate check → accounting write → exception queue. MVP: 20 invoices to validated spreadsheet/accounting import. Ease: 9/10. Repeatability: 10/10.
+
+### 16. Accounting-firm document chasing
+https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+
+Fresh August 23 post highlights manual document collection, compliance reminders, invoice follow-ups and lead qualification as repetitive accounting-firm work.
+
+Safer product slice: required-doc list → received/not received → reminder → escalation → dashboard. Professional accounting judgments remain human-controlled. Ease: 8/10. Repeatability: 10/10.
+
+### 17. Production-grade browser automation maintenance
+https://www.reddit.com/r/automation/comments/1pqdlvs/browser_automation_gets_messy_faster_than_expected/
+
+A managed automation provider describes client browser workflows requiring locks, credential-refresh processes, rate-limiting and robust selectors. This is evidence that customers pay not just for a browser script but for keeping it reliable.
+
+Product: authorized browser workflow → deterministic script → assertions → session/credential health → exception queue. Avoid sites whose ToS prohibit automation. Ease: 7/10. Repeatability: 9/10.
+
+### 18. Real clients pay for heavy data manipulation, not generic bots
+https://www.reddit.com/r/n8n/comments/1nkr9mv/is_n8n_the_ultimate_side_hustle_or_just_a_tool/
+
+A business-facing automation practitioner says real client work is largely major data manipulation/processing rather than trivial appointment or chatbot demos, citing projects with 150+ database tables.
+
+Offer: source-system exports/APIs → normalize → reconcile → transform → validated destination output + exception report. Ease: 7/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Take the MoltJobs 5-USDC onboarding-doc audit first. It is funded, bounded, fresh and cheap to execute. Then attempt the 6-USDC starter kit if still open.
+
+2. Add a coding-money lane built around Algora + Complete Codes + selected AgentPact/dealwork jobs. The reusable worker should run: requirements → reproduce → implement → tests/assertions → evidence → PASS/FAIL/REVIEW.
+
+3. Publish one bounded uGig service that is the same capability you execute on marketplaces: $5–$10 code regression test, script sanity-check, CSV/JSON validator or primary-source research brief. That turns marketplace work into a reusable service rather than one-off task chasing.
+
+Current routing order: MoltJobs → AgentPact → dealwork.ai → uGig/Algora → NEAR Agent Market → Complete Codes → highly filtered Taskmarket/Opire.
+
+The strongest thesis remains: paid job → repeated procedure → packaged service → paid API/x402 only after buyers have already demonstrated willingness to pay.

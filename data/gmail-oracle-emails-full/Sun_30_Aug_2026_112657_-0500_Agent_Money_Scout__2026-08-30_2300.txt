@@ -1,0 +1,91 @@
+Subject: Agent Money Scout — 2026-08-30 23:00
+Date: Sun, 30 Aug 2026 11:26:57 -0500
+Message ID: 1a0537edb79d6fc0
+================================================================================
+
+Agent Money Scout — 2026-08-30 23:00
+
+NEW THIS RUN
+
+1) Jobs in AI — https://www.jobsindrones.com/
+What the agent does: Registers as an autonomous agent, browses human/agent/either-worker briefs, submits proposals, and builds completion history. Who pays: employers through milestone escrow. Payout: job-specific; no reliable universal payout verified. Requirements: agent registration, capabilities/pricing, proposal flow; Stripe-backed escrow is advertised. Autonomy: 7/10 today because programmatic discovery exists but webhook delivery is still on the roadmap. First action: register via the For Agents flow and filter specifically for agent/either-worker contract, bounty, and gig briefs. Constraints: many visible listings are human-only/full-time; obey each listing’s location, age, employment, and Stripe/payment requirements. Ease first $5: 4/10. Repeatability: 8/10.
+
+2) HYRVE AI — https://hyrveai.com/
+What the agent does: deploys a service agent, gets hired, delivers work, or trades agent-to-agent. Who pays: marketplace clients/other agents. Advertised economics: agent keeps 85%; payments support Stripe, USDT, and MPP stablecoin rails. The site’s $75 translation and monthly earning examples are explicitly samples/projections, so they are NOT counted as verified earnings. Requirements: account/agent registration, payout setup. Autonomy: 9/10. First action: create one tightly scoped service and inspect real orders before investing further. Constraints: payment-provider/identity/age/geography rules apply. Ease: 4/10. Repeatability: 9/10 if buyer liquidity proves real.
+
+3) Superteam Earn Agent Interface — https://superteam.fun/earn/agents
+What the agent does: self-registers, discovers AGENT_ALLOWED/AGENT_ONLY bounties/projects/hackathon tracks, submits artifacts, then hands payout claim to a human operator. Who pays: bounty/project sponsors. Verified current board: https://superteam.fun/earn/bounties/ shows a 500 USDC Mermail Agent Skill bounty due in ~30 days, plus higher-value USDG opportunities. Requirements: agent API key plus human claimant for payout. Autonomy: 7/10. First action: register the agent and fetch only agent-eligible listings, then score by prize, deadline, judging criteria, and competition. Constraints: each bounty may impose its own geography/age/payment rules; human claimant is required. Ease: 4/10. Repeatability: 8/10.
+
+4) Opire — $200 remaining Leantime collaborators bounty — https://app.opire.dev/issues/01J8NCWJBS24GDWTCAQEK16PVK
+What the agent does: solve a PHP project-management feature request, submit a PR, and pass maintainer review. Who pays: reward sponsors. Verified payout: $200 currently available across two $100 rewards; one previous $100 reward on the same issue is marked paid. 5 solvers currently trying/claimed. Requirements: PHP/GitHub/testing. Autonomy: 8/10. First action: reproduce the issue, inspect existing PRs/activity, and only code if no near-complete competing patch exists. Constraints: Opire/Stripe payout eligibility applies. Ease: 5/10. Repeatability: 7/10 via other OSS bounties.
+
+5) Opire — $1,500 zeroperl async Web APIs bounty — https://app.opire.dev/issues/01JN06N9GS8Q1KB2NJ318258HR
+What the agent does: implement asynchronous Web APIs for a Perl5/WebAssembly project in C. Who pays: sponsor via Opire. Verified advertised payout: $1,500 available; 0 solvers shown. Requirements: C, WebAssembly/browser runtime knowledge, GitHub. Autonomy: 7/10. First action: verify current maintainer/repository activity before writing code because the underlying issue is old. Constraints: Stripe payout rules apply. Ease: 3/10. Repeatability: 5/10.
+
+6) APIHub paid-route long tail — https://apihub.io/marketplace
+What the agent does: expose a useful API as pay-per-call x402 service. Who pays: machine callers. Current marketplace shows real transaction counts on small providers: examples include x402atlas 15 txns, ATXP 14, APINow 12, IP Intel 10, DripStack 8, StablePhone 8, AurelianFlo 6, with pricing from fractions of a cent upward. Requirements: hosted API, x402 payment integration/listing. Autonomy: 10/10. First action: cross-list a procedure already proven by paid task work; do not create another speculative generic endpoint. Constraints: only lawful, safe services; ordinary wallet/payment eligibility applies. Ease: 4/10. Repeatability: 10/10 if calls compound.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7) AgentPact — https://agentpact.xyz/needs
+Live today: 200 Needs. High-signal verified examples include Python code review 5–10 USDC; API automation 10–25; Python code/security audit 10–25; data analysis + visualization 10–25; OHLCV validation 5–15; transcription 7–14; BTC report 10–20; technical summary 5–25; technical SEO 5; Python/data execution 5. There is also enormous sub-dollar test noise. What the agent does: code/API QA, data work, research, transcription. Who pays: Need/deal buyer, optionally via Base-USDC escrow. Requirements: AgentPact API/MCP/Python/npm. Autonomy: 10/10. First action: hard-filter reward >=5 USDC, then target API automation/security/data. Constraints: only authorized scraping/data access; wallet/payment rules apply. Ease: 9/10. Repeatability: 9/10.
+
+8) dealwork.ai — https://dealwork.ai/
+Live today: 158 open tasks, 264 completed, 2.5K workers. Funds are escrowed before work; public examples show an $80 AI-delivered production API and a $5 AI-to-AI job. Fees: 10% standard, 3% AI-to-AI. What the agent does: code, APIs, research, data, docs. First action: ingest all 158 tasks and bid only where acceptance criteria can be reproduced independently. Autonomy: 9/10. Constraints: task/payment eligibility applies. Ease: 9/10. Repeatability: 9/10.
+
+9) Taskmarket — https://taskmarket.dev/
+Live today: 17 open tasks, 26.9K agents, 2,382.947764 USDC posted volume. Current examples: 24.2 USDC bounty has 125 submissions; 1.297426 USDC has 163; 0.327 USDC has 174. Leaderboard includes 120.776268 and 78.624908 USDC earned. What the agent does: bounty/claim/pitch/benchmark/auction work. Who pays: funded requester; Base-USDC settlement. First action: compute EV = reward × P(win) − execution cost; avoid crowded bounties unless your edge is strong. Autonomy: 10/10. Ease: 6/10. Repeatability: 9/10.
+
+10) OpenAnt — https://openant.ai/
+Primary page still reports 12.8K total tasks, 1.2K open, 11.3K completed, 646 settled, $34.4K paid out, $128K posted. Remote example: analyze SKU sales and output 5 insights + chart. Who pays: task poster through USDC escrow on Solana/Base. Requirements: OpenAnt skill/API/MCP-compatible agent + eligible wallet. Autonomy: 10/10 for remote digital tasks. First action: filter remote + digital + explicit USDC + objective proof; ignore physical/GPS work. Ease: 8/10. Repeatability: 9/10.
+
+11) MoltJobs — https://moltjobs.io/open-jobs
+Live today: one clearly visible 5 USDC job remains: turn 3 live job postings into ready-to-fund MoltJobs specs and contact the buyer. Escrow is funded on Base. Stack: REST, CLI, MCP, SDKs; 10 free bids/month; 5% success fee. First action: inspect the 5-USDC job, but keep any buyer contact specific, legitimate, permitted, and non-spammy. Autonomy: 8/10. Ease: 7/10. Repeatability: 8/10.
+
+12) t2000 — https://t2000.ai/jobs
+Fresh today: 92 jobs open, 73 in progress, 1,249 settled, $986.43 settled USDC. Current visible inventory is heavily ecosystem/bootstrap work: e.g. referral and purchase-loop tasks at $0.25–$1. Services charge 5%; API calls 0%. Who pays: job buyers/service/API callers. First action: reject bootstrap/referral/payment-loop tasks unless they create genuine reusable reputation/integration value; scan for external work. Autonomy: 10/10. Ease: 5/10 today. Repeatability: 10/10.
+
+13) Opire general bounty board — https://app.opire.dev/
+Current index reports 358+ available rewards and $4,975.87 paid out, but some displayed open-value figures are clearly polluted by implausible bounty entries, so use per-issue verification rather than marketplace headline totals. What the agent does: open-source issues -> patch/tests/PR. Who pays: bounty sponsors. First action: query individual issues, verify repository activity, reward status, and competing PRs. Autonomy: 8/10. Ease: 6/10 on the right issue. Repeatability: 8/10.
+
+14) gigs.sh discovery index — https://gigs.sh/
+Useful as an oracle, not payout source. It catalogs agent-task markets, developer bounties, paid APIs, and related earning channels. First action: use it to discover unfamiliar platforms, then always re-verify the primary source before execution. Autonomy: 10/10 as scouting. Ease direct: 1/10. Repeatability as discovery: 10/10.
+
+REDDIT DEMAND SIGNALS
+
+15) Batch invoice extraction + validation
+Evidence: https://www.reddit.com/r/n8n/comments/1vkg0j3/invoice_automation_in_n8n_extract_data_from_many/
+Recurring problem: small businesses repeatedly want batches of invoice PDFs/images converted into structured rows, with failures visibly separated. Workflow: authorized invoice upload -> schema extraction -> validation -> duplicate checks -> row write -> REVIEW queue. Customer: SMB finance/admin teams and automation agencies. Charge: fixed setup plus support. MVP: one folder/form into Google Sheets with deterministic schema and failure report. Human retains accounting/payment decisions. Ease: 9/10. Repeatability: 10/10.
+
+16) Reliable invoice generation/delivery
+Evidence today: https://www.reddit.com/r/n8n/comments/1w2ic89/how_i_automated_invoice_pdf_generation_email/
+Problem: real workflows need field validation, isolated PDF generation, unique filenames, HTTP failure handling, email delivery state, and retries. Workflow: validated invoice data -> PDF -> delivery -> receipt/state -> exception. Customer: freelancers/SMBs/agencies. Charge: implementation + monitoring. MVP: one spreadsheet source and one approved email channel. Human retains financial approval. Ease: 8/10. Repeatability: 9/10.
+
+17) Freelancer back-office worker
+Evidence: https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+Recurring tasks: proposals, contracts, invoice reminders, onboarding, weekly updates, testimonial requests. Best offer: do NOT build all six initially; sell invoice chaser + weekly status update with human review. Customer: freelancers/small agencies. Acquire: legitimate freelancer/automation communities and referrals. Charge: fixed setup + optional monthly maintenance. Ease: 8/10. Repeatability: 9/10.
+
+18) Accounting-firm document chaser
+Evidence: https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/
+Problem: client messages, document chasing, deadlines, invoice follow-ups, lead qualification. Workflow: authorized client -> missing document/status -> approved reminder -> receipt -> exception/escalation. Customer: bookkeeping/accounting operations. Charge: setup + recurring monitoring. Professional tax/accounting/compliance decisions stay human-controlled. Ease: 8/10. Repeatability: 10/10.
+
+19) QA requirements/evidence worker
+Evidence: https://www.reddit.com/r/QualityAssurance/comments/1rho4hn/is_qa_automation_a_good_career_in_2026/
+Pattern: AI can generate test cases/scripts, but weak requirements, complex UI flows, flaky locators, and deciding what is worth testing remain the bottleneck. Product: repo/PR + requirements -> requirement gaps -> risk-ranked tests -> execute stable subset -> evidence -> PASS/FAIL/REVIEW. Customer: teams using coding agents heavily. Charge: per PR/bug or CI subscription. MVP: /verify-pr. Ease: 9/10. Repeatability: 10/10.
+
+20) n8n-to-code migration / workflow hardening
+Evidence: https://www.reddit.com/r/n8n/comments/1vsrxtz/why_n8n_give_me_23_reasons_why_i_should_use_it/
+Pattern: builders increasingly use AI coding tools for deterministic automation and keep n8n as orchestration. Offer: workflow export + requirements -> classify deterministic app logic vs orchestration -> Python/FastAPI/GitHub Actions scaffold -> tests/logging/retries. Customer: teams whose visual workflows have become hard to maintain. Charge: migration audit + implementation. MVP: migrate one scheduled workflow into tested code. Ease: 8/10. Repeatability: 9/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) AgentPact first. Current best direct work is still API automation (10–25 USDC), Python/security review (10–25), data analysis (10–25), and several 5–15 USDC validation/transcription/SEO tasks. Filter out test spam and anything under $5 unless it has strategic value.
+
+2) Run a dedicated OSS-bounty hunter in parallel. Opire currently exposes a real $200 remaining Leantime bounty and a $1,500 zeroperl bounty. Score each issue on repository freshness, competing PRs, reproducible tests, reward status, expected engineering cost, and P(maintainer acceptance). Do not trust aggregate 'open value' numbers.
+
+3) Standardize one revenue-capable specialist: /verify-pr + /api-sanity + Python-data. That one worker maps directly onto AgentPact and dealwork today, then can be sold as a fixed service and finally cross-listed through x402/APIHub. The repeated demand signal is verification/reliability, not another generic chatbot.
+
+Current execution order:
+AgentPact -> dealwork.ai -> OpenAnt remote digital -> Taskmarket when EV is positive -> MoltJobs -> t2000 filtered external work -> Opire individual high-EV issues.
+
+Accounting rule: only settled or genuinely withdrawable real-money value counts as earnings. Testnet balances, internal credits, unpriced tokens, stale listings, illustrative cards, marketplace-GMV claims, and submitted-but-unpaid work count as $0.

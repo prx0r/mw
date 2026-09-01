@@ -1,0 +1,159 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — IT Agents, Native Billing & Creator Economies
+Date: Mon, 31 Aug 2026 19:15:41 -0700
+Message ID: 1a05ac035e892ddc
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This pass treats novelty as a hard constraint. I cross-checked the sent Oracle Market Unlocks corpus before selection and rejected candidates already covered in prior runs, including ServiceTitan, Jobber, Procore, Mews, Cloudbeds, Talkdesk, RingCentral, Clio, Simpro, NetSuite, Acumatica, Five9, NICE, and hundreds of earlier venues. The 20 venues below had no prior exact-market hit in the Oracle corpus.
+
+**Scoring:** O = expected opportunity value, A = agent suitability, F = automation feasibility, C = competitive whitespace (5 = favorable/less saturated), N = novelty/timing. Total /25.
+
+**H shorthand:** H0 = essentially machine-operable once credentials/payment rails exist; H1 = one-time human identity/account/review/consent; H2 = recurring human partner/compliance/subjective approval; H3 = recurring material human production/customer work; H4 = fundamentally human/offline.
+
+## Ranking
+
+| # | Market | O/A/F/C/N | Total | Human floor |
+|---|---|---|---:|---|
+| 1 | ManageEngine Marketplace | 5/5/4/5/5 | **24** | H1–H2 |
+| 2 | ServiceM8 Add-on Store | 5/5/5/4/5 | **24** | H1 |
+| 3 | cTrader Store | 5/5/5/4/5 | **24** | H1 |
+| 4 | Lemon Squeezy Marketplace | 5/5/5/4/4 | **23** | H1 |
+| 5 | ConnectWise Marketplace | 5/5/4/4/5 | **23** | H1–H2 |
+| 6 | TakeProfit Indicator Marketplace / Born to Earn | 4/5/5/4/5 | **23** | H1 |
+| 7 | TradingView Creator Program / Paid Spaces | 5/5/4/3/5 | **22** | H2 |
+| 8 | MQL5 Market | 5/5/5/2/4 | **21** | H1 |
+| 9 | NinjaTrader Ecosystem | 5/5/4/3/4 | **21** | H1–H2 |
+| 10 | PieceX Source Code Marketplace | 4/5/4/4/4 | **21** | H1–H2 |
+| 11 | ShipStation Integration / API Partner Ecosystem | 5/5/4/3/4 | **21** | H2 |
+| 12 | Entrata Partner Ecosystem | 5/5/3/4/4 | **21** | H2 |
+| 13 | CLIP STUDIO ASSETS / Plugin Store | 4/5/4/3/4 | **20** | H1–H2 |
+| 14 | Creality Cloud Creator Incentive | 4/4/4/4/4 | **20** | H2 |
+| 15 | MakerWorld creator economy | 4/4/4/3/4 | **19** | H2 |
+| 16 | simMarket Vendor Marketplace | 4/4/4/3/4 | **19** | H1–H2 |
+| 17 | TemplateMonster Marketplace | 3/5/4/2/4 | **18** | H2 |
+| 18 | Schneider Electric Partner-Seller Marketplace | 4/4/3/4/3 | **18** | H2 |
+| 19 | Farming Simulator ModHub + 2026 Modding Contest | 3/4/3/4/4 | **18** | H2 |
+| 20 | X-Plane.org Software Store | 3/4/3/3/3 | **16** | H1–H2 |
+
+---
+
+## 1. ManageEngine Marketplace — **24/25**
+
+**What the agent can sell.** Turnkey extensions, integrations, plugins and—crucially—deployable **Zia AI Agents** for ITSM, endpoint management, security operations, identity, monitoring and adjacent third-party systems.
+
+**Why now / demand.** ManageEngine launched its partner-developer ecosystem on **30 June 2026**. Officially, 17+ partner-developer organisations had already shipped 170+ extensions with 10,000+ global downloads, and the launch explicitly includes rapid-deploy Zia Agents. This is a new commercial surface rather than an old API directory.
+
+**Autonomous loop.** Oracle mines ManageEngine forums/changelogs/support pain → worker selects a bounded gap (e.g. failed-patch evidence, stale-account cleanup, ticket-to-device context) → Sigma/ManageEngine APIs scaffold extension → ITSMWorld generates synthetic tickets/devices/users → evaluator asserts permissions, idempotency, rollback and false-positive limits → agent compiles listing/security evidence → human approves partner/accountable declarations → Marketplace publication → install/download/support telemetry → revenue/pipeline tracked → specialist worker patches against product releases.
+
+**Human floor / infra.** H1–H2 because Marketplace validation covers functionality/security/compliance/quality. Existing APIs, Zoho Sigma extension tooling and Zia reduce the engineering floor dramatically.
+
+**Market intelligence.** Current launch coverage frames the Marketplace as a new monetisation model for partners. Competitive intensity is still low: 170+ extensions is tiny relative to the breadth of ManageEngine’s product suite.
+
+**Moltwork assets.** `ManageEngineVenue`, `ITSMWorld`, permission evaluator, Zia-agent packaging Skill, MarketplaceCertificationProcess, `ManageEngineWorker`.
+
+**Attractive when:** product has objective IT-state invariants and recurring maintenance value. **Unattractive when:** it is merely a thin LLM chat layer or needs deep enterprise consulting for every installation.
+
+## 2. ServiceM8 Add-on Store — **24/25**
+
+**What agents sell.** Small field-service add-ons: quote/invoice checks, photo/document QA, travel-time reconciliation, schedule anomaly detection, parts sync, compliance packs, job-close preflight, customer messaging bridges.
+
+**Demand/economics.** ServiceM8 explicitly promotes approved add-ons to thousands of businesses and supports native recurring billing. The developer keeps **90%**, ServiceM8 takes 10%, pays monthly through Stripe, and even supports micro-recurring fees. This is one of the cleanest native payment loops found in any scan.
+
+**Autonomous workflow.** Mine ServiceM8 community requests → build serverless Add-on/OAuth integration → install via Private Add-on URL → FieldServiceWorld simulates jobs, quotes, scheduling, invoices and offline/mobile edge cases → evaluator checks no duplicate jobs/messages/charges → agent creates listing/docs/pricing → submit via developer account → human H1 review → public Add-on Store → ServiceM8 bills customer directly → payout and install/support telemetry → worker maintains forever.
+
+**2026 pain.** Community posts still show private add-on lifecycle/stability issues and developers asking how to build and price integrations; ServiceM8’s own support confirmed the 90/10 billing split in 2026.
+
+**Assets.** `ServiceM8Venue`, `FieldServiceWorld`, billing/invoice evaluator, Add-on SDK Skill, support-runbook Process, specialist field-service worker.
+
+**Attractive:** low-ticket recurring add-ons with thousands of possible buyers and no separate payments stack. **Unattractive:** add-ons needing on-site configuration or bespoke trade-domain consulting.
+
+## 3. cTrader Store — **24/25**
+
+**What agents sell.** Prefer non-advisory, testable trading utilities: risk calculators, portfolio guards, execution QA, journal/export plugins, data-quality tools, broker-condition monitors, trade copiers with explicit controls, dashboards and plugins. Avoid claims of guaranteed alpha.
+
+**Frontier unlock.** cTrader Store already lets sellers upload cBots/indicators/plugins directly from Cloud/files and distribute to millions of cTrader users. On **28 July 2026** cTrader added subscriptions for paid tools, explicitly enabling continuously updated/data-backed products and recurring revenue. Products can run in cTrader Cloud 24/7.
+
+**Workflow.** Mine Store reviews/forums for missing utility → worker writes C#/plugin → TradingWorld runs deterministic backtests + fuzzed broker conditions + fee/slippage/rate-limit scenarios → risk/evidence evaluator rejects misleading or unstable behaviour → seller H1 verification → upload directly → price as one-time/subscription → buyers install/run from cTrader → Store sales/refunds/comments become labels → worker improves docs/product.
+
+**Demand.** A June 2026 seller reported descriptions/backtest screenshots and fast support materially improved downloads. A July community case reported roughly $4,800 across ~50 transactions for a focused tool catalogue; treat that as anecdotal, not market-wide revenue.
+
+**Assets.** `cTraderVenue`, `TradingUtilityWorld`, non-repainting/backtest evaluator, `cTraderSkill`, release/support Process.
+
+**Attractive:** measurable utility and recurring data/maintenance. **Unattractive:** generic AI-generated EAs, unverifiable performance claims, or strategies whose value disappears under realistic costs.
+
+## 4. Lemon Squeezy Marketplace — **23/25**
+
+**What agents sell.** Small software utilities, datasets, code packs, API clients, evaluators, templates, niche desktop/web tools and paid downloadable Packs generated from repeatedly observed demand.
+
+**Why it matters.** The official Marketplace is opt-in, screened and Merchant-of-Record. A product becomes eligible after **3 own-store sales or $50 revenue**. Marketplace-discovered sales incur a flat **30%** fee, and Lemon Squeezy handles tax/VAT and normal payouts.
+
+**Workflow.** Oracle finds repeated problem → worker builds digital artifact → Harbor evaluates install/use/outcomes → worker launches through Lemon Squeezy store and obtains three seed sales → eligibility achieved → listing compiled/submitted → H1 review → Marketplace discovery → transaction/payout analytics → support/issues feed specialist worker → cross-publish to other venues.
+
+**Human dependency.** H1 identity/store setup and Marketplace review. The critical human bottleneck is the first 3 sales/$50, making this a perfect target for a `PilotAcquisitionProcess`.
+
+**Demand signal.** It is a real discovery surface, not only checkout infrastructure. The 30% marketplace fee is best interpreted as customer acquisition cost; direct follow-on sales can remain on the cheaper ordinary store rail.
+
+**Assets.** generic `DigitalProductVenue`, `SeedSalesProcess`, packaging evaluator, pricing Skill, cross-market publisher.
+
+**Attractive:** reusable digital artifacts with near-zero marginal cost. **Unattractive:** $2–5 products where transaction/platform fees dominate or generic AI slop with no defensible utility.
+
+## 5. ConnectWise Marketplace — **23/25**
+
+**What agents sell.** MSP operational extensions: time-entry/billing integrity, ticket QA, SLA leakage detection, device/context enrichment, onboarding/offboarding checks, invoice reconciliation, security evidence and RMM/PSA bridges.
+
+**Commercial surface.** ConnectWise Marketplace explicitly supports marketplace transactions including billing/invoicing; developers enter via Developer Network APIs/forums, then vendor/certification paths. Test environments exist for integrations intended for public Marketplace release.
+
+**2026 pain.** MSP community discussion repeatedly highlights clunky time entry and lost billable hours, ticket KPI/onboarding automation, invoice follow-up and missing integrations. A current review summarising r/MSP complaints calls time entry a direct revenue problem.
+
+**Workflow.** Oracle mines r/MSP + ConnectWise forums → specialist selects a measurable leak → API/webhook integration → MSPWorld synthesizes tickets/contracts/time entries/configurations/invoices → evaluator checks billing arithmetic and SLA invariants → certification evidence generated → human partner/review gate → Marketplace billing → telemetry/support → worker accumulates customer-specific failure patterns without leaking data.
+
+**H floor.** H1–H2 due partner/certification relationship.
+
+**Assets.** `ConnectWiseVenue`, `MSPWorld`, billing/SLA evaluator, API/webhook Skill, PartnerGateCompiler, MSP specialist worker.
+
+**Attractive:** direct revenue-loss prevention. **Unattractive:** broad copilots that cannot prove billing or operational impact.
+
+## 6. TakeProfit Indicator Marketplace / Born to Earn — **23/25**
+
+**What agents sell.** Python/Indie indicators, market-data widgets, screening/risk utilities and paywalled research. Keep outputs analytical rather than personalized financial advice.
+
+**Frontier unlock.** TakeProfit’s own 2026 changelog describes **Born to Earn**: creators can sell indicators for recurring subscriptions, receive up to 50% lifetime referral share and pay 0% fees on sales to invited users. Its scripting environment is Python-like, which is unusually agent-friendly compared with proprietary DSLs.
+
+**Workflow.** Detect specific trader workflow complaint → code Indie indicator/widget → deterministic historical/synthetic tests → no-lookahead/repainting evaluator → publish → Stripe/platform subscriptions → usage/refund feedback → specialist iterates. Marketing assets and explainers can be generated automatically, with a human sign-off for claims.
+
+**H floor.** H1 for account/payment identity; publishing is materially more open than TradingView Paid Spaces.
+
+**Demand/competition.** Smaller user base than TradingView is the main uncertainty, but that also means lower creator saturation. Community positioning emphasizes creator monetization as the platform’s growth engine.
+
+**Assets.** `TakeProfitVenue`, shared `TradingIndicatorWorld`, anti-lookahead evaluator, Indie Skill, claim-compliance Process.
+
+**Attractive:** low distribution gate + subscriptions + Python-native production. **Unattractive:** if marketplace buyer liquidity remains too small to compensate for the easier entry.
+
+## 7. TradingView Creator Program / Paid Spaces — **22/25**
+
+**Major unlock exception?** This exact Paid Spaces market had not appeared in prior Oracle reports. It launched late 2025 and is materially different from old off-platform Pine-script selling.
+
+**What is sold.** A subscription to a curated collection of invite-only Pine indicators/strategies, managed directly inside TradingView.
+
+**2026 economics.** Official 2026 docs say TradingView is Merchant of Record, handles VAT/sales tax, pays monthly via PayPal, and currently charges **0% platform fee until at least 1 October 2026**. Access is still limited to selected authors.
+
+**Workflow.** Mine public script comments/requests → build narrow Pine utilities → PineWorld checks repainting, lookahead, execution assumptions and performance claims → publish useful public scripts/build reputation → apply/invited into Creator Program → H2 editorial gate → Paid Space subscription → subscriber/usage feedback → continuous worker maintenance.
+
+**Pain/constraint.** 2026 community discussions report the program remains selective and moderation can be slow. That gate is the primary economic risk.
+
+**Assets.** `TradingViewVenue`, Pine compiler/test Skill, anti-repaint evaluator, audience-building School, creator-reputation Process.
+
+**Attractive:** enormous existing user graph and native recurring commerce. **Unattractive:** opaque H2 invitation bottleneck and high competition.
+
+## 8. MQL5 Market — **21/25**
+
+**What agents sell.** MT4/MT5 utilities, indicators and Expert Advisors; strongest wedge is transparent read-only tools, risk/portfolio controls, broker diagnostics and workflow utilities rather than unverifiable signal bots.
+
+**Demand.** MQL5 currently says its Market contains roughly **10,000 products** and new automated apps appear daily. Current listings show utilities around $30–100 and EAs ranging into hundreds/thousands.
+
+**Workflow.** Mine reviews/questions → identify missing feature → MQL worker produces tool → MetaTraderWorld runs tester across symbols/brokers/spreads → evaluator rejects repainting, hidden martingale/grid behaviour, data leakage and fragile assumptions → H1 seller/account gate → Market listing → purchases/reviews → regression against terminal updates.
+
+**Community signal.** A June 2026 r/MT5 discussion called the Market full of AI garbage and bot

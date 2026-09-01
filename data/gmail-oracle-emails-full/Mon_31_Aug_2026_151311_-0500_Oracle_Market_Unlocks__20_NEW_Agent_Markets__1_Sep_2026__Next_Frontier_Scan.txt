@@ -1,0 +1,163 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Next Frontier Scan
+Date: Mon, 31 Aug 2026 15:13:11 -0500
+Message ID: 1a0597455ede8f3c
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+Research date: 1 September 2026
+
+This pass treats novelty as a hard constraint. I cross-checked the sent Oracle-report corpus before research. The 20 exact market names below returned no prior Oracle hit; I discarded many tempting repeats rather than padding the list.
+
+H shorthand: **H0** = essentially machine-operable after credentials; **H1** = one-time human identity/account/review/consent; **H2** = recurring human partner/compliance/subjective approval; **H3** = material recurring human production/customer work; **H4** = fundamentally human/offline. Legitimate identity, tax, payout, IP, safety and accountable legal gates should remain human.
+
+Scoring: **O** opportunity value; **A** agent suitability; **F** automation feasibility; **C** competitive whitespace (higher = less crowded); **N** novelty/timing. Total /25.
+
+## Ranking
+
+| # | Market | O | A | F | C | N | Total | H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | Fortnox Marketplace | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 2 | Gorgias App Store | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 3 | Front App Store | 5 | 5 | 5 | 4 | 4 | **23** | H1 |
+| 4 | Adalo Component Marketplace | 4 | 5 | 5 | 4 | 5 | **23** | H1 |
+| 5 | Crisp Marketplace | 4 | 5 | 5 | 4 | 5 | **23** | H1 |
+| 6 | Chargebee Marketplace | 5 | 5 | 5 | 3 | 4 | **22** | H1–H2 |
+| 7 | Teamwork.com Integrations Directory | 4 | 5 | 5 | 4 | 4 | **22** | H1–H2 |
+| 8 | HiBob Marketplace | 5 | 5 | 4 | 4 | 4 | **22** | H2 |
+| 9 | Housecall Pro App Store | 5 | 5 | 4 | 4 | 3 | **21** | H2 |
+| 10 | Guesty Marketplace | 5 | 5 | 4 | 4 | 3 | **21** | H2 |
+| 11 | Hostaway Marketplace | 5 | 5 | 4 | 4 | 3 | **21** | H2 |
+| 12 | Lodgify Marketplace | 4 | 5 | 5 | 4 | 3 | **21** | H1–H2 |
+| 13 | Kustomer App Marketplace | 4 | 5 | 5 | 4 | 3 | **21** | H1–H2 |
+| 14 | QNAP App Center / Software Store | 4 | 5 | 4 | 4 | 3 | **20** | H1–H2 |
+| 15 | Microsoft Flight Simulator Marketplace | 5 | 4 | 3 | 4 | 4 | **20** | H2 |
+| 16 | Box App Center | 5 | 5 | 4 | 3 | 3 | **20** | H2 |
+| 17 | Hostfully Integration Zone | 4 | 5 | 4 | 4 | 2 | **19** | H2 |
+| 18 | beehiiv App Marketplace | 4 | 5 | 4 | 3 | 3 | **19** | H2 |
+| 19 | Lunchbox OPEN Integrations Marketplace | 4 | 5 | 4 | 4 | 2 | **19** | H2 |
+| 20 | Braze Partner Marketplace / Alloys | 5 | 5 | 3 | 3 | 3 | **19** | H2 |
+
+---
+
+## 1. Fortnox Marketplace — 24/25
+
+**What an agent can sell.** Accounting/SMB operations products: reconciliation assistants, invoice/receipt QA, payroll/bookkeeping data checks, finance question-answering over live books, vertical reporting, migration verification, VAT/e-invoicing utilities, and MCP-accessible finance operations.
+
+**Autonomous workflow.** Oracle mines Swedish accounting pain and missing Marketplace functions → specialist generates a Fortnox OAuth app/MCP service → `AccountingWorld` seeds customers, invoices, vouchers, suppliers and fiscal periods → Harbor checks ledger invariants, permissions, idempotence and hallucination resistance → listing/pricing package → human publisher/payout approval → Marketplace sale → customer OAuth grant → recurring use → telemetry/reconciliation failures feed Worker → regression suite runs against API changes.
+
+**Human dependency.** H1 after publisher/KYC/review. Any product that posts financially consequential entries should keep first-use authorization or high-risk actions behind approval; read-only finance intelligence can approach H0.
+
+**Frontier infrastructure.** Fortnox has a Developer Portal with client IDs/secrets/scopes. More importantly, this is no longer hypothetical: a current third-party product, Nordsynk, sells a Fortnox MCP server through Fortnox Marketplace at **199 SEK per company/user/month**, connecting ChatGPT/Claude to Fortnox. That is direct evidence of a marketplace already monetizing agent-callable access.
+
+**Demand/community.** Fortnox is core operational infrastructure rather than an entertainment marketplace, so a small time/error saving can support recurring B2B pricing. Public English Reddit signal is sparse; treat Marketplace listings, partner uptake and Swedish accountant communities as better demand sources than forcing Reddit evidence.
+
+**Why agents fit.** Accounting integrations are schema-heavy, repetitive, testable and maintenance-intensive. A persistent Worker can own API/version edge cases better than one-off code generation.
+
+**Moltwork assets.** `FortnoxPack`, `AccountingWorld`, ledger invariant evaluator, OAuth/least-privilege Skill, `FinanceReadOnlySchool`, certification Process, persistent `FortnoxWorker`.
+
+**Attractive if** read-heavy, recurring and low-support; **unattractive if** each customer needs bespoke bookkeeping or liability-heavy autonomous posting.
+
+Evidence: Fortnox Developer Portal; Nordsynk Fortnox MCP Marketplace listing/pricing.
+
+## 2. Gorgias App Store — 24/25
+
+**What agents sell.** Ecommerce-support extensions and AI-Agent Actions: warranty/returns tooling, order exception diagnosis, subscription/account actions, fraud context, product troubleshooting, shipping claims, RMA evidence, loyalty/refund operations, and vertical merchant integrations.
+
+**Workflow.** Mine r/ecommerce/Gorgias pain + App Store gaps → build public app with OpenAPI-backed actions → seed `SupportWorld` with orders/customers/tickets → evaluate action correctness, permission boundaries, escalation and refund invariants → Developer Portal submission → Gorgias review → external/native SaaS subscription as applicable → installs → ticket/action telemetry → Worker retrains rules/tests and releases updates.
+
+**H-level.** H1: publisher review and merchant OAuth. High-value refund/cancellation actions should retain policy gates.
+
+**Frontier unlock.** Current Gorgias developer docs expose **llms.txt, Markdown documentation and OpenAPI**, explicitly for AI agents. Its App Store now has an **Actions** category exposing prebuilt actions to Gorgias AI Agent. Public apps go Developer Portal → review → App Store; developers can set paid subscription pricing.
+
+**Demand/community.** A February 2026 ecommerce operator described ~1,500 support tickets/month and 300–500 calls/month while estimating $500+/month for ~400 AI resolutions. A July 2026 user said complex Gorgias AI responses still often require correction. This is precisely the wedge: deterministic, domain-specific actions/evidence instead of another generic answering agent.
+
+**Why agents fit.** Ticket streams provide continuous labels; APIs expose structured state; outcomes such as successful refund/claim/order update are machine-checkable.
+
+**Moltwork assets.** `GorgiasPack`, commerce-support World, policy/action evaluator, Warranty School, escalation Skill, App Store submission Process, specialist support Worker.
+
+**Attractive if** action prevents/supports expensive tickets; **unattractive if** it merely drafts generic replies that Gorgias itself commoditizes.
+
+Official evidence: Gorgias Developer Portal/App Store docs. Community: r/ecommerce Feb/Jul 2026.
+
+## 3. Front App Store — 23/25
+
+**What agents sell.** Shared-inbox workflow apps: customer/account context panels, SLA/compliance guards, billing/order actions, escalation logic, data warehouse sync, support QA, inbox routing, channel adapters and specialist agent tooling.
+
+**Workflow.** Discover repeated workflow failure → build via Core API, plugin, channel, webhook or no-code Connectors → `InboxWorld` replays deterministic conversations → test OAuth/scopes, routing, retries and side effects → partner publication → App Store install → developer-set subscription → event/action telemetry → automatic regression and updates.
+
+**H-level.** H1. Front partner publication and customer OAuth remain human authorization points.
+
+**Frontier unlock.** Front’s developer docs were updated in August 2026 and unify Core API, plugins, app channels, webhooks and **Connectors** under one app model. Crucially, Front’s official **MCP server is in open beta** and exposes conversation data to AI agents over one OAuth endpoint with user-scoped authorization. Public apps require OAuth; MCP itself uniquely allows any teammate—not only admins—to authorize user-scoped access.
+
+**Demand.** Front says third-party developers can reach thousands of highly engaged businesses, charges no publishing fee and leaves pricing to the developer. The best gaps are operationally expensive edge cases, not generic AI chat.
+
+**Moltwork assets.** `FrontPack`, `InboxWorld`, routing/side-effect evaluator, Connector compiler, MCP↔App bridge Skill, support-ops School.
+
+**Attractive if** recurring multi-inbox pain; **unattractive if** Front absorbs the feature or integration requires constant customer-specific configuration.
+
+Official: Front “Create, manage, and publish apps”; Front MCP Server (open beta).
+
+## 4. Adalo Component Marketplace — 23/25
+
+**What agents sell.** Reusable visual/functional components: native controls, chat primitives, maps/media, file tools, advanced input, data visualization, payment/business widgets and missing mobile UI behavior.
+
+**Workflow.** Mine Adalo component requests → Worker creates React Native component → fixture apps test Web/iOS/Android behavior → screenshot/performance/action-schema evaluator → mark component paid → demo/listing → Adalo review → Stripe Express payout → installs/reviews → Worker maintains across Adalo/runtime versions.
+
+**H-level.** H1: Stripe/publisher review. After that, nearly everything is machine-operable.
+
+**Infrastructure/economics.** Adalo explicitly supports **paid component library publishing**; seller selects paid status, provides a demo, passes review and connects Stripe Express. Adalo collects the component fee and remits the developer share monthly.
+
+**Demand/community.** March–May 2026 r/Adalo posts show new component drops and active requests; one February developer was preparing a suite of premium tested components. Adalo’s own marketplace shows a small catalog relative to giant extension stores, which is attractive whitespace but also caps total TAM.
+
+**Why agents fit.** Components are bounded software objects with clear UI/action contracts and cheap regression testing.
+
+**Moltwork assets.** `AdaloPack`, cross-platform component World, screenshot/action evaluator, Component School, request-mining Process, persistent component Worker.
+
+**Attractive if** small components sell repeatedly with near-zero support; **unattractive if** marketplace volume is too low or native Adalo releases absorb features.
+
+## 5. Crisp Marketplace — 23/25
+
+**What agents sell.** Public support plugins: CRM/billing/context widgets, operator actions, automation triggers, specialist routing, data sync, vertical support tooling and externally billed SaaS services.
+
+**Workflow.** Mine support/community gaps → create Marketplace plugin → development token + trusted workspace → implement REST/RTM/webhooks/widget schema → `SupportWorld` fixture → least-privilege/side-effect tests → public submission → production token → Marketplace install → external subscription/usage → events and support telemetry → persistent maintenance.
+
+**H-level.** H1. Marketplace/business verification and production scopes are human-reviewed; runtime can be H0.
+
+**2026 unlock.** Crisp’s developer/help material updated in **May 2026** makes the production path unusually machine-readable: dev and production tokens, scoped plugin permissions, public marketplace submissions, REST, real-time API and signed Plugin Hooks. Marketplace validation is described as running multiple times per weekday and simple submissions can be processed rapidly.
+
+**Community/demand.** Public Reddit signal specific to sellers is thin. Better signal is the platform’s own 2026 documentation expansion and the breadth of support workflows plugins can modify. Avoid generic AI reply bots; specialize in actions/context/data quality.
+
+**Moltwork assets.** `CrispPack`, conversation fixture generator, scope auditor, widget compiler, webhook evaluator, PluginCertificationProcess.
+
+**Attractive if** SaaS can bill externally and support remains bounded; **unattractive if** discovery is weak or plugin is a thin wrapper around native features.
+
+Official: Crisp Plugin Quickstart, Plugin Token (updated Apr 1 2026), REST/Webhooks docs.
+
+## 6. Chargebee Marketplace — 22/25
+
+**What agents sell.** Billing/tax/accounting/revops integrations: usage-meter normalization, invoice QA, plan-migration validation, entitlement reconciliation, tax adapters, dunning intelligence, data exports and finance diagnostics.
+
+**Workflow.** Mine billing pain → generate app/adapter → `BillingWorld` simulates subscriptions, upgrades, cancellations, proration, retries and usage → evaluator verifies monetary invariants → private Marketplace launch → gain required reference merchants → public launch → external/native commercial arrangement → monitor webhooks/API failures and reconciliation → patch.
+
+**H-level.** H1–H2 because partner onboarding and reference-customer requirement remain real.
+
+**Frontier unlock.** Chargebee’s current developer surface now explicitly advertises **APIs, SDKs and MCP**, plus a Marketplace of 60+ integrations and live API explorer/webhooks. Marketplace onboarding supports adapter-style products; current docs indicate public launch follows private launch and at least five active merchant users.
+
+**Demand/community.** June/August 2026 SaaS threads complain about CSV workarounds, slow operational changes, proration doubt, usage reporting and finance reconciliation. These are excellent deterministic micro-product targets.
+
+**Moltwork assets.** `ChargebeePack`, `BillingWorld`, money/proration evaluator, UsageMeter Skill, FinanceOps School, partner-launch Process.
+
+**Attractive if** product catches/prevents revenue errors worth far more than its fee; **unattractive if** customer acquisition stalls at the five-reference gate.
+
+## 7. Teamwork.com Integrations Directory — 22/25
+
+**What agents sell.** Agency/project-operations integrations: time/billing reconciliation, client handoff, scope-change tracking, project health, CRM-to-delivery integrity, document QA, resource forecasting and support/project cross-links.
+
+**Workflow.** Mine agency pain → build app using public APIs → create Developer Portal app/scopes → synthetic projects/tasks/time/client data → Harbor tests writes, permissions and idempotence → verification → Integrations Directory → externally billed micro-SaaS → usage/churn → Worker maintains.
+
+**H-level.** H1–H2: verification/partner relationship required; runtime mostly H0.
+
+**Infrastructure.** Teamwork’s current Developer Portal explicitly lays out **Create App → Develop and Test → Get Verified → Go live**. Its Integration Partner program promises API docs/support and directory distribution once verified.
+
+**Demand.** Agency software has high willingness to pay for time/billing/scope integrity. Community signal is less concentrated than for larger PM tools; this is a whitespace advant

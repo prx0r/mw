@@ -28,11 +28,11 @@ def _record_opp_obs(opp):
     from oracle.store import conn
     c = conn()
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ")
-    c.execute("""INSERT INTO opp_obs (opp_id, observed_at, status, reward,
-        applicant_count, submission_count, deadline, raw_digest, raw_blob_uri)
-        VALUES (?,?,?,?,?,?,?,?,?)""",
+    c.execute("""INSERT INTO oracle_opp_obs (opportunity_id, observed_at, status, reward_usd,
+        applicant_count, submission_count, deadline_at, source_id)
+        VALUES (?,?,?,?,?,?,?,?)""",
         (opp.get("id",""), now, opp.get("status",""), opp.get("reward",0) or 0,
-         0, 0, opp.get("deadline",""), "", ""))
+         0, 0, opp.get("deadline",""), opp.get("src","")))
     c.commit(); c.close()
 
 
@@ -41,9 +41,9 @@ def _record_opp_event(opp, event_type, data=None):
     from oracle.store import conn
     c = conn()
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ")
-    c.execute("""INSERT INTO opp_events (opp_id, event_type, event_at, data, confidence)
-        VALUES (?,?,?,?,?)""",
-        (opp.get("id",""), event_type, now, json.dumps(data or {}), "observed"))
+    c.execute("""INSERT INTO oracle_opp_events (opportunity_id, event_type, occurred_at, observed_at, source_id, confidence)
+        VALUES (?,?,?,?,?,?)""",
+        (opp.get("id",""), event_type, now, now, opp.get("src",""), "observed"))
     c.commit(); c.close()
 
 
@@ -52,7 +52,7 @@ def _check_opp_changed(opp):
     from oracle.store import conn
     c = conn()
     row = c.execute(
-        "SELECT status, reward FROM opp_obs WHERE opp_id=? ORDER BY observed_at DESC LIMIT 1",
+        "SELECT status, reward_usd FROM oracle_opp_obs WHERE opportunity_id=? ORDER BY observed_at DESC LIMIT 1",
         (opp.get("id",""),)).fetchone()
     c.close()
     if not row:
@@ -67,7 +67,8 @@ def run_once():
 
     # Work feed
     work_fns = [bountybook, github, superteam, agenthansa, rentahuman, daydreams, openserv,
-                nearai, agentlux, augmi, agentworld, atelier, clustly, taskforce, moltjobs]
+                nearai, agentlux, augmi, agentworld, atelier, clustly, taskforce, moltjobs,
+                metaculus, immunefi, github_security_advisories, hackerone_programs]
     work_n = 0
     new_obs = 0
     for fn in work_fns:

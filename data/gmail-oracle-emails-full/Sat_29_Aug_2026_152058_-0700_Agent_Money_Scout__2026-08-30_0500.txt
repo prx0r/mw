@@ -1,0 +1,276 @@
+Subject: Agent Money Scout — 2026-08-30 05:00
+Date: Sat, 29 Aug 2026 15:20:58 -0700
+Message ID: 1a04f9c9c99ab6a7
+================================================================================
+
+# Agent Money Scout — 2026-08-30 05:00
+
+## Executive summary
+
+The strongest genuinely new opportunity this run is **Atrest.ai**: it claims 105+ active agents, 1,200+ completed tasks, and $48K+ USDC transacted, with explicit live task categories and advertised ranges such as $5–25 for code review, $10–50 for data analysis, $8–40 for research, and $15–60 for API integration. Those figures are platform-reported rather than independently audited, but the marketplace design is unusually aligned with autonomous workers: semantic matching, guardrails, escrow before execution, and AI-judge verification.
+
+**CLAWORK** is smaller but has more concrete profile-level evidence: it currently shows an agent with one completed design task around 2 USDC, and listed engineering agents around 10–20 USDC/task. **AgentMart** is the strongest fresh productization surface: 60 shops, 73 agents, 305 products, x402 checkout on Base, and sellers retain 97% of sales. Its current live marketplace, however, is dominated by free products, so it is better as a cross-listing/productization channel than an immediate income source.
+
+For direct task income, **Taskmarket + dealwork.ai + t2000** still have the best combination of live inventory, escrow/settlement, and machine-readable execution. Taskmarket currently reports 19 open tasks and 2,380.714419 USDC posted volume; dealwork reports 156 open tasks and 264 completed; t2000 continues to show meaningful public seller settlements.
+
+---
+
+# NEW THIS RUN
+
+## 1. Atrest.ai — strongest new autonomous job market
+URL: https://atrest.ai/
+Pricing: https://atrest.ai/pricing
+
+**What the agent does:** code review, data analysis, content, research, bug fixing, cleaning, API integration, translation, testing, competitive analysis, reports, prompt engineering, and public-web scraping.
+
+**Who pays:** other agents posting tasks into escrow.
+
+**Advertised payouts:** code review $5–25/task; data analysis $10–50; research $8–40; bug fixing $10–35; API integration $15–60; unit testing $5–20; report generation $8–30; web scraping $3–18. These are current platform-advertised category ranges, not independently verified worker receipts.
+
+**Current traction claims:** 105+ active agents, 1,200+ tasks completed, $48K+ USDC transacted, 4.2s average match time. Treat these as platform-reported until independently reconciled on-chain.
+
+**Requirements/tools:** register agent, define capabilities and guardrails, API access, USDC wallet. Free plan allows 10 tasks/month and 100 API calls/day with a 12% transaction fee; paid tiers reduce fees.
+
+**Autonomy:** 10/10. The product explicitly supports auto-accept + execute within configured guardrails.
+
+**Exact first action:** register one narrow worker such as code-review/research/API-QA, cap it to low-risk tasks under a small escrow amount, and verify whether the API exposes genuine currently funded jobs before scaling.
+
+**Constraints:** no explicit age/geography rule was surfaced in the primary pages I found; external wallet/payment requirements still apply and should be followed as written.
+
+**Ease to first $5: 7/10. Repeatability: 9/10.**
+
+## 2. CLAWORK — small but concrete agent freelance market
+URL: https://www.clawork.online/
+
+**What the agent does:** engineering, testing/security work, research, data analysis, writing, design, APIs and PRs.
+
+**Who pays:** humans or agents hiring through the marketplace.
+
+**Current pricing/evidence:** the site currently shows an image/design agent around 2 USDC/task with 1 completed job; engineering agents are listed around 10–20 USDC/task. Settlement is USDC through x402 on Base.
+
+**Requirements:** wallet, structured machine-readable agent profile, ERC-8004 on-chain identity.
+
+**Autonomy:** 9/10; hiring is designed to fit inside HTTP calls.
+
+**Exact first action:** register an existing worker with a narrow profile and use a fixed deliverable—e.g. PR review, API QA report, or source-backed research—rather than a generic assistant.
+
+**Constraints:** no explicit age rule surfaced in the crawled primary page; normal wallet/account rules apply.
+
+**Ease 6/10. Repeatability 8/10.**
+
+## 3. AgentMart — sell reusable skills/workflows/research packs
+URL: https://agentmart.store/
+Terms: https://www.agentmart.store/terms
+
+**What the agent sells:** prompts, workflows, playbooks, research packs, templates, automation assets, browser/test helpers, verification checklists, and other reusable digital resources.
+
+**Who pays:** humans or agents buying downloadable resources; x402 checkout is available on Base.
+
+**Economics:** sellers keep 97%; AgentMart takes 3%. Current platform counts: 60 shops, 73 agents, 305 products.
+
+**Demand caveat:** the current live-sales panel is dominated by $0 products. One browser-automation product shows 7 purchases, but all were free; its seller has 16 sales and $0 revenue. So this is currently a good cross-listing/productization channel, not proven near-term cash flow.
+
+**Requirements:** own or have rights to everything sold; AgentMart prohibits illegal goods/services, IP infringement, malware, fraud, impersonation, and abusive scraping.
+
+**Autonomy:** 9/10 once products are published.
+
+**Exact first action:** package a procedure that already solved a paid task, including tests/examples/output schema. Good candidates: `automation-health`, `verify-pr`, `API contract preflight`, `invoice normalizer`, or `release evidence pack`.
+
+**Ease 4/10. Repeatability 9/10.**
+
+## 4. GetAgentic — high stated volume, but seller KYC required
+URL: https://getagentic.io/
+Seller page: https://getagentic.io/sell
+Pricing: https://getagentic.io/pricing
+
+**What the agent does:** design, research, security auditing, coding, data work, and other paid digital services.
+
+**Who pays:** buyers hiring agents on Base.
+
+**Economics:** jobs under $100 use x402 with 0% platform fee; seller keeps 100%. Jobs $100+ use escrow and seller keeps 98% after the 2% platform fee.
+
+**Current platform claims:** 2,847 active agents, $1.2M total volume, 45.2K transactions; visible examples include $25 logo design and $120 security audit. These are platform-reported and should not be treated as audited earnings evidence.
+
+**Requirements:** seller must complete Sumsub identity verification; wallet required. First agent is free.
+
+**Autonomy:** 9/10.
+
+**Exact first action:** only consider after confirming seller/payment eligibility; then list one narrow fixed-price capability rather than a general-purpose agent.
+
+**Eligibility:** seller KYC is mandatory. Do not bypass identity/age/geography requirements.
+
+**Ease 4/10. Repeatability 9/10 if eligible.**
+
+## 5. AiPayGen — another x402 API distribution rail
+URL: https://aipaygen.com/sell
+
+**What the agent sells:** any HTTP API that can be called per request.
+
+**Who pays:** AI agents using x402.
+
+**Economics:** provider sets the price; USDC is paid per call on Base. The platform advertises 291 active agents able to discover listed APIs, but I found no current independently verified provider revenue.
+
+**Requirements:** API endpoint, Base payment address, rights to commercialize the output.
+
+**Autonomy:** 10/10 after deployment.
+
+**Exact first action:** cross-list an existing endpoint and measure paid external calls. Do not build a new product solely for this marketplace.
+
+**Ease 4/10. Repeatability 9/10.**
+
+## 6. AgentWorld — live micro-job model on Base
+URL: https://agentworld.me/learn/ai-agent-jobs
+
+**What the agent does:** content writing, research, summarization, data analysis, copywriting and other small digital tasks.
+
+**Who pays:** clients and other agents who pre-fund USDC rewards.
+
+**Advertised payout:** rewards range from a few cents to a few dollars per task. That is platform guidance rather than a precise current inventory snapshot.
+
+**Requirements:** Base wallet and an agent that can poll/claim/deliver work.
+
+**Autonomy:** 10/10; its documented worker loop is watch → claim → deliver → payout.
+
+**Exact first action:** inspect the current board and reject tasks whose reward is below inference/tool cost.
+
+**Ease 5/10. Repeatability 8/10 if inventory persists.**
+
+---
+
+# STILL ACTIVE FROM PRIOR RUNS
+
+## 7. Taskmarket — strongest visible funded task feed
+URL: https://taskmarket.dev/
+
+**Current state:** 19 tasks open, ~26.7K agents, 2,380.714419 USDC posted volume.
+
+The headline 24.2-USDC `BRYAN'S HARD DATA` bounty currently has 68 submissions, which makes raw reward misleading. Taskmarket also has public worker receipts: one agent profile shows a completed 2-USDC task with 1.85 USDC earned after fees.
+
+**Agent work:** research, coding, data, analysis and structured files.
+**Who pays:** requester funds escrow.
+**Autonomy:** 10/10.
+**First action:** compute `net reward × estimated win probability` before executing.
+**Ease 8/10. Repeatability 9/10.**
+
+## 8. dealwork.ai — broadest serious task inventory
+URL: https://dealwork.ai/
+
+**Current state:** 2.5K workers, 156 open tasks, 264 completed tasks, ~1.1-day typical delivery.
+
+The platform still displays a concrete $80 human→AI production API task completed with tests. Standard fee is 10%; AI-to-AI contracts are 3%.
+
+**Agent work:** code/APIs, research, transformations, documentation and data.
+**Who pays:** humans or other agents through escrow.
+**Tools:** `skill.md`, REST API, worker daemon.
+**Autonomy:** 9/10.
+**First action:** connect one specialist and bid only on objective, testable deliverables.
+**Ease 8/10. Repeatability 9/10.**
+
+## 9. t2000 — strongest job→service→API ladder
+URL: https://t2000.ai/
+
+**What the agent can do:** claim open jobs, list fixed-price services, or expose paid APIs.
+
+Current public profiles show meaningful settlement totals including workers around $150 and $138.66 settled. Fixed services pay out after a 5% fee; paid API calls currently have 0% marketplace fee.
+
+**Autonomy:** 9/10.
+**First action:** use tiny jobs only to establish integration/reputation; move quickly toward externally useful services and APIs.
+**Ease 7/10. Repeatability 9/10.**
+
+## 10. WorkProtocol — real settlement but thin inventory
+URL: https://workprotocol.ai/
+
+**Current state:** 734 agents, 35 jobs posted, 1,325 USDC settled. A separate official page lists 12 jobs completed and a $50 minimum budget.
+
+**Agent work:** code, content, data/ETL, research and custom deliverables.
+**Who pays:** requester locks USDC in Base escrow before execution.
+**Verification:** automated tests/build/lint for suitable code tasks or human review.
+**Autonomy:** 9/10.
+**First action:** subscribe to the feed and execute only when objective acceptance criteria match an existing specialist.
+**Ease now 4/10. Repeatability 9/10.**
+
+## 11. MoltJobs — infrastructure good, current work weak
+URL: https://moltjobs.io/open-jobs
+
+**Current visible work:** four 2-USDC publication/promotional jobs. Each is escrow-funded, but they are poor autonomous-worker targets unless every account/disclosure/community rule can legitimately be satisfied.
+
+The platform itself explicitly says it is new/small with few completed jobs. It supports REST, MCP, CLI, webhooks, 10 free bids/month and a 5% success fee.
+
+**Autonomy:** 9/10.
+**First action:** continue polling for coding, research, data or objectively verifiable work; do not chase spammy/publication tasks.
+**Ease 3/10 currently. Repeatability 8/10.**
+
+## 12. Clawlancer — good agent plumbing, weak current task economics
+URL: https://clawlancer.ai/marketplace
+
+**Current state:** 50 listings, but 44 are starter gigs at ≤$1; many visible jobs are around $0.01.
+
+**Agent work:** coding, research, writing, analysis, data and design.
+**Tools:** `npx clawlancer-mcp`, REST API, Base wallet, ERC-8004 identity.
+**Autonomy:** 10/10.
+**First action:** ignore penny tasks unless testing integration; alert only on meaningful externally funded bounties.
+**Ease 4/10. Repeatability 8/10.**
+
+## 13. agentsbay — strong settlement count, small seller base
+URL: https://agentsbay.ai/
+
+**Current primary-source stats:** 27 registered agents, 774 settled jobs, ~$1.5K USDC in escrow, ~6-minute average verification.
+
+**Agent work:** coding, research, analysis and structured artifacts.
+**Who pays:** humans or agents; Polygon USDC escrow.
+**Autonomy:** 9/10.
+**First action:** inspect live jobs and cross-list a reliable specialist. Be selective because previous scans have shown noisy/junk entries.
+**Ease 6/10. Repeatability 9/10.**
+
+## 14. req402 — paid API distribution with visible usage
+URL: https://www.req402.com/
+
+The strongest visible example remains a weather API at $0.002/request with 120,485 platform-reported requests. Providers set prices and receive USDC directly on Base.
+
+**Agent work:** deterministic per-call API capabilities.
+**Autonomy:** 10/10.
+**First action:** cross-list an existing paid endpoint and count only external paid requests as evidence.
+**Ease 6/10. Repeatability 10/10.**
+
+## 15. PayAPI Market — strongest verification culture among x402 directories
+URL: https://payapi.market/
+
+Current page reports 91 live APIs, 588 endpoints and 74 settlement-verified listings. The verification badge requires the marketplace to actually pay for the endpoint and receive a working response. Providers keep 100% of settlement value.
+
+**Agent work:** data APIs, verification endpoints, public-evidence retrieval, monitoring, etc.
+**Autonomy:** 10/10.
+**First action:** list only an endpoint already proven to produce useful results.
+**Ease 6/10. Repeatability 10/10.**
+
+## 16. PayanAgent — unified x402 + bespoke work requests
+URL: https://payanagent.com/
+
+Still interesting because it combines a catalog of 24,000+ aggregated x402 services with direct bespoke requests, bidding, fulfillment, escrow, and signed receipts.
+
+**Agent work:** API calls or custom code/research/data work.
+**Who pays:** agents/SaaS buyers.
+**Fee:** advertised 0% platform fee on native flows.
+**Autonomy:** 10/10.
+**First action:** monitor the actual bespoke request feed, not the enormous aggregated API count.
+**Ease 6/10. Repeatability 10/10.**
+
+---
+
+# REDDIT DEMAND SIGNALS
+
+## 17. Automation outcome monitoring — strongest recurring product signal
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+A fresh August 29 operator describes the core issue: a workflow can report success while the intended message/action never happened. A dead token, rejected template or disconnected webhook can silently break the business outcome.
+
+**Recurring problem pattern:** automation engines monitor execution status, but customers care about the external business event.
+
+**MVP:** `expected event + deadline + downstream receipt/state -> HEALTHY / FAILED / SILENT`.
+
+**Customer:** n8n/Make/Zapier agencies and businesses with production workflows.
+**Acquisition:** automation consultants, existing agencies, operators—not mass spam.
+**Charge:** setup + monthly monitoring per workflow/client.
+**Autonomy:** 9/10.
+**Ease 8/10. Repeatability 10/10.**
+
+## 18. Inventory/reorder automation — buyers pay for boring operational cert

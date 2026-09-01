@@ -1,0 +1,236 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Automotive, Treasury, POS & Vertical App Stores
+Date: Mon, 31 Aug 2026 19:09:26 -0500
+Message ID: 1a05a4ca127dc457
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+Research date: 1 September 2026
+
+This pass treats novelty as a hard constraint. I cross-checked the sent Oracle-report corpus in Gmail before selection. The 20 venues below did not appear in prior reports. I also rejected repeat candidates such as Clover App Market and Ecwid App Market after the novelty check.
+
+Scoring: Opportunity Value / Agent Suitability / Automation Feasibility / Competitive Intensity (higher = less crowded) / Novelty, each 1–5; total /25.
+
+## Ranking
+
+1. Fortellis Marketplace — 24/25 — H1–H2
+2. Kyriba Marketplace — 23/25 — H1–H2
+3. Sibros SDV App Marketplace — 23/25 — H2
+4. Ewity App Store — 23/25 — H1
+5. phosphorOS Marketplace — 23/25 — H1
+6. Pabau App Marketplace — 22/25 — H1–H2
+7. Cegid Jasmin App Store — 22/25 — H1
+8. Lightspeed App Marketplace — 22/25 — H1–H2
+9. Foodics App Marketplace — 22/25 — H1–H2
+10. Bexio App Marketplace — 22/25 — H1–H2
+11. Carfluence Marketplace — 21/25 — H1
+12. O2VEND App Marketplace — 21/25 — H1
+13. Virtuous App Marketplace — 21/25 — H1–H2
+14. DoorDash Marketplace Provider ecosystem — 21/25 — H2
+15. Grameenphone AppCity — 20/25 — H1–H2
+16. Loyverse App Marketplace — 20/25 — H1
+17. Clinelo Marketplace — 20/25 — H1–H2
+18. Ciyex Hub — 19/25 — H2
+19. Voila App Store / Developer Marketplace — 19/25 — H1
+20. SniptCart App Store — 18/25 — H1
+
+---
+
+## 1. Fortellis Marketplace — 24/25
+**Exact market:** Fortellis, CDK Global’s automotive API + app marketplace.
+
+**What agents can sell:** dealership service-appointment tools, parts-availability utilities, inventory QA, customer follow-up, DMS data normalization, warranty evidence, lead-routing and revenue-leakage apps.
+
+**Autonomous workflow:** Oracle detects repetitive dealership/DMS pain → Worker reads Fortellis APIs/specs → builds bounded app → AutomotiveDealerWorld seeds synthetic customers/vehicles/repair orders → evaluator checks appointment, inventory and accounting invariants → package/list → Marketplace install → subscription billed externally/platform-partner model → monitor API failures and user outcomes → specialist maintains versions.
+
+**Human dependency:** H1 for product/account/listing; H2 where dealer/OEM production data or partner approval is required.
+
+**Infrastructure:** 135+ published APIs, 425+ marketplace apps, 82k+ dealer integrations and 6.7B+ API transactions/year are currently reported by Fortellis. Its ecosystem includes API specs and structured workflows, making agent generation/testing unusually tractable.
+
+**Demand / pain:** public community discussion around dealership software repeatedly centers on fragmented DMS stacks, appointment/parts synchronization, duplicated data and brittle integrations. The installed transaction base is the strongest demand proxy here.
+
+**Why agents fit:** large repetitive schema surface, deterministic business-state invariants, continuous compatibility work.
+
+**Moltwork assets:** `FortellisPack`, `AutomotiveDealerWorld`, DMS fixture generator, appointment/parts evaluator, Automotive School, `DealerIntegrationWorker`.
+
+**Attractive if:** one narrow product solves a measurable dealership cost and ports across dealers. **Unattractive if:** partner access becomes high-touch OEM sales or data rights dominate engineering.
+
+## 2. Kyriba Marketplace — 23/25
+**What to sell:** treasury reconciliation, bank-file QA, payment exception triage, cash-position validation, ERP↔bank connectivity monitors.
+
+**Workflow:** detect recurring treasury exception → build against Swagger/Postman APIs → TreasuryWorld with synthetic banks/accounts/payment files → reconcile expected vs actual → publish in Kyriba Marketplace → charge SaaS/subscription → track failed settlements, support tickets and reconciliation precision.
+
+**H:** H1–H2; money movement should remain human-approved initially.
+
+**Infra:** free Developer Portal, Swagger API catalog, Postman samples, changelogs, publishing path.
+
+**Demand:** a May 2026 Workday/Kyriba thread described firms consolidating 4–5 bank integrations through Kyriba, while another practitioner said their finance team opens roughly one support ticket a week for Kyriba connectivity/issues. That is a strong maintenance-market signal.
+
+**Why suited:** treasury connectivity is structured, expensive, repetitive and evaluator-friendly.
+
+**Assets:** `TreasuryWorld`, ISO20022/payment-file evaluator, BankConnector School, reconciliation Skill, persistent `TreasuryWorker`.
+
+**Economics:** attractive when failures are costly and willingness-to-pay is enterprise-grade; unattractive if every deployment requires bespoke bank certification.
+
+## 3. Sibros SDV App Marketplace — 23/25
+**Market:** Sibros software-defined vehicle App Marketplace.
+
+**Sell:** fleet telemetry apps, OTA campaign QA, remote-command safety utilities, energy/battery anomaly analysis, compliance/evidence agents.
+
+**Workflow:** discover OEM/fleet operational gap → use cloud APIs + C/C++/Kotlin SDKs → VehicleWorld replay telemetry → safety evaluator blocks dangerous remote actions → package app → marketplace/OEM deployment → usage/vehicle fault telemetry → maintenance.
+
+**H:** H2 because physical vehicles/OEM approval remain consequential.
+
+**Infra:** Sibros currently promotes Cloud REST APIs, native device SDKs and a new SDV App Marketplace.
+
+**Demand:** software-defined vehicle complexity is increasing while fleets/OEMs need vendor-neutral telemetry and diagnostics. Community signal is thinner than Fortellis; treat demand confidence as medium until a buyer interview confirms a narrow wedge.
+
+**Assets:** `VehicleWorld`, CAN/telemetry fixtures, OTA regression evaluator, Vehicle School, specialist fleet worker.
+
+**Economics:** high ACV, but slow partner cycles and hardware validation can kill velocity.
+
+## 4. Ewity App Store — 23/25
+**Market:** Ewity POS App Store.
+
+**Sell:** accounting sync, loyalty, stock anomaly, vendor ordering, voucher/top-up, restaurant/retail back-office apps.
+
+**Workflow:** inspect POS pain → build on whole-business API → private-test in up to 10 real Ewity businesses → RetailPOSWorld tests catalogue/order/inventory/bill invariants → submit to App Store → merchant installs → external billing or app commercial agreement → monitor transaction outcomes.
+
+**H:** H1. Human gate is mainly real-business pilot/listing approval.
+
+**Infra:** whole-business API covering catalogue, customers, sales, inventory, purchases and expenses; in-POS native JSON UI or sandboxed iframe; free developer entry; explicit App Store submission path.
+
+**Demand:** smaller platform, but unusually low supply competition. Strong technical attractiveness, lower demand confidence than Lightspeed/Foodics.
+
+**Assets:** `EwityVenuePack`, `RetailPOSWorld`, receipt/inventory evaluator, POS School, merchant-ops worker.
+
+**Economics:** attractive if low competition offsets smaller TAM; unattractive if merchant count is too limited for meaningful recurring revenue.
+
+## 5. phosphorOS Marketplace — 23/25
+**Market:** phosphorOS nightlife/venue software marketplace.
+
+**Sell:** promoter analytics, inventory/stock apps, reservation tools, staff reconciliation, POS sync, event profitability and compliance utilities.
+
+**Workflow:** discover venue friction → live API explorer/sandbox → implement OAuth app → NightlifeWorld synthetic events/tables/tickets → deterministic preflight → submit → promised review feedback within 48 hours → subscription/per-transaction billing handled by phosphorOS → revenue telemetry.
+
+**H:** H1.
+
+**Infra:** live API explorer, source-generated docs, OAuth2 scopes, one-click installs, built-in billing/payouts and explicit revenue share.
+
+**Demand:** public community evidence is still sparse; this is a frontier/supply-side bet, not a proven giant market.
+
+**Assets:** `NightlifeWorld`, table/reservation/ticket evaluator, Venue Ops School, specialist nightlife worker.
+
+**Economics:** excellent automation feasibility, uncertain audience scale.
+
+## 6. Pabau App Marketplace — 22/25
+**Sell:** clinic/admin integrations, invoice and appointment reconciliation, medical-spa inventory, consent/form workflow, nonclinical QA tools.
+
+**Workflow:** pain discovery → API/Zapier/Make implementation → ClinicAdminWorld → privacy/permission evaluator → App Partner review → Marketplace listing → SaaS billing → monitor appointments/invoices/errors.
+
+**H:** H1–H2; avoid autonomous diagnosis/treatment. Human approval for clinical/high-impact actions.
+
+**Infra:** open API plus Zapier/Make and an App Partner Programme; Pabau says 3,000+ healthcare practices.
+
+**Community:** clinic software users commonly complain about duplicated workflows, appointment/billing sync and vendor lock-in. Direct 2026 Pabau Reddit signal is limited, reducing confidence.
+
+**Assets:** `ClinicAdminWorld`, privacy evaluator, appointment/billing Skill, Pabau Pack.
+
+**Economics:** attractive in nonclinical admin where errors cost staff time; unattractive if compliance/support burden dominates revenue.
+
+## 7. Cegid Jasmin App Store — 22/25
+**Sell:** Iberian accounting/ERP plugins: VAT validation, invoice QA, ecommerce sync, reporting, inventory automation.
+
+**Workflow:** detect workflow gap → OAuth2/Postman/API build → ERPWorld fixtures → tax/accounting invariant tests → create app → publish through Jasmin App Store workflow → track adoption/errors/revenue.
+
+**H:** H1.
+
+**Infra:** official Developers Network includes OAuth2, Postman, API docs, app creation and publishing flows.
+
+**Demand:** mature SMB ERP ecosystems support willingness to pay for compliance and ecommerce bridges; competition is moderate but region/language specialization creates niches.
+
+**Assets:** `JasminPack`, IberianERPWorld, VAT evaluator, ERP School.
+
+## 8. Lightspeed App Marketplace — 22/25
+**Sell:** retail/restaurant inventory, supplier-ordering, menu QA, multi-location reconciliation, ecommerce/POS adapters.
+
+**Workflow:** mine merchant pain → API integration → POSWorld fixtures → inventory/order idempotence tests → partner submission → Marketplace distribution → external subscription → monitor merchant sync failures.
+
+**H:** H1–H2 depending on partner approval.
+
+**Infra:** mature APIs/webhooks and established marketplace distribution.
+
+**Demand/community:** 2026 retail operators still report pain from stitching ecommerce, POS, warehouse and purchasing systems together; one $3–5M retailer described 20k SKUs and explicitly wanted less double handling and fewer disconnected tools. This is exactly the connector/reconciliation wedge.
+
+**Assets:** `LightspeedPack`, `RetailPOSWorld`, inventory reconciliation evaluator, Retail School.
+
+## 9. Foodics App Marketplace — 22/25
+**Sell:** restaurant menu/inventory sync, reservation/spend linking, accounting, procurement, waste and margin tools.
+
+**Workflow:** RestaurantWorker detects problem → Foodics API connector → RestaurantWorld creates menu/orders/tables → evaluator checks taxes, modifiers, inventory and payment totals → submit integration → merchants request/install → recurring SaaS billing → monitor order accuracy.
+
+**H:** H1–H2.
+
+**Infra:** active restaurant App Marketplace with third-party integrations across reservation, menu, payments, accounting and operations.
+
+**Demand:** Middle East restaurant operators have high integration density; Foodics listings already demonstrate demand for reservation and menu products. Community pain is concentrated around delivery/POS fragmentation and menu synchronization.
+
+**Assets:** `FoodicsPack`, `RestaurantWorld`, menu/order evaluator, GulfRestaurant School.
+
+## 10. Bexio App Marketplace — 22/25
+**Sell:** Swiss accounting reconciliation, VAT/QR-bill automation, ecommerce sync, time/project → invoice bridges.
+
+**Workflow:** identify Swiss SMB pain → OAuth/OIDC integration → AccountingWorld → invoice/VAT/duplicate tests → gain initial users → meet marketplace thresholds → multilingual listing → track reconciliations and MRR.
+
+**H:** H1–H2 because current listing requirements reportedly include >10 bexio customers, >20 active users and German/French/Italian/English support.
+
+**Infra:** API/OAuth plus third-party unified integration tooling; synthetic webhooks can compensate for missing native webhooks.
+
+**Demand:** integration vendor Maesn reports a customer generating 800+ integration-driven inbound leads in two weeks, a strong channel-value signal. Swiss compliance/localization lowers competition.
+
+**Assets:** `SwissAccountingWorld`, QR-bill/VAT evaluator, localization Skill, Bexio Pack.
+
+## 11. Carfluence Marketplace — 21/25
+**Market:** dealership-specific AI/data platform with MCP/REST and marketplace publishing.
+
+**Sell:** dealer lead agents, inventory intelligence, trade-in analysis, follow-up automation, data cleanup.
+
+**Workflow:** MCP exposes 53+ dealer data sources → Worker composes tool → DealerWorld → evaluate lead routing/data consistency → publish → earn from other dealerships → persistent improvement.
+
+**H:** H1.
+
+**Infra:** explicit MCP servers, REST APIs, no-code/full-code tools, Marketplace publishing and revenue language.
+
+**Demand:** frontier platform with smaller proven installed base; high novelty, medium demand confidence.
+
+**Assets:** `DealerMCPPack`, lead evaluator, Dealer Sales School.
+
+## 12. O2VEND App Marketplace — 21/25
+**Sell:** unified-commerce apps, Liquid themes, WMS/ERP connectors, stock/order automations.
+
+**Workflow:** merchant gap discovery → REST/OAuth/webhooks → CommerceWorld → sync/idempotence evaluator → publish App Marketplace app/theme → merchant installation → subscription → telemetry.
+
+**H:** H1.
+
+**Infra:** Admin + Storefront REST APIs, webhooks, OAuth/API keys, Liquid themes and marketplace apps.
+
+**Demand:** public scale proof is limited, but the unified POS/ecommerce/warehouse surface is agent-friendly and low competition.
+
+**Assets:** `O2VENDPack`, OmniCommerceWorld, stock/order evaluator.
+
+## 13. Virtuous App Marketplace — 21/25
+**Sell:** donor data cleanup, gift reconciliation, enrichment, stewardship automation, event/giving integrations.
+
+**Workflow:** nonprofit pain discovery → public API integration → NonprofitCRMWorld → duplicate/gift attribution evaluator → partner listing → external SaaS billing → monitor donor records/revenue impact.
+
+**H:** H1–H2.
+
+**Infra:** App Marketplace plus API and Zapier ecosystem.
+
+**Demand:** nonprofit CRMs have chronic migration, duplicate-data and donor-attribution pain; willingness-to-pay is lower than enterprise but retention can be high if trusted.
+
+**Assets:** `VirtuousPack`, `NonprofitCRMWorld`, donation reconciliation evaluator, Fundraising Ops School.
+
+## 14. DoorDash Marketplace Provider ecosystem — 21/25
+**Sell/perform:** middleware for menu/catalog, availability, order status, taxes, item mapping and multi-location restaurant/retail onboarding.
+
+**Workflow:** identify merchant/middleware gap → obtain limited-access Marketplace API → sandbox provider → create catalog/menu bridge → RestaurantCommerceWorld → order-state evaluator → partner pro

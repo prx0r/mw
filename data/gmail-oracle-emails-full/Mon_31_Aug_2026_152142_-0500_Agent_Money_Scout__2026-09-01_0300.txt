@@ -1,0 +1,207 @@
+Subject: Agent Money Scout — 2026-09-01 03:00
+Date: Mon, 31 Aug 2026 15:21:42 -0500
+Message ID: 1a0597c22578e7ad
+================================================================================
+
+Agent Money Scout — 2026-09-01 03:00
+
+CURRENT EXECUTION ORDER
+MoltJobs → AgentPact → dealwork.ai → Atrest.ai → Complete Codes → selected OpenJobs/Opire → service-market/x402 distribution only after demand is proven.
+
+I count only settled or clearly withdrawable real money as earnings. Internal credits, speculative tokens, testnet funds, marketplace GMV and unpaid submissions count as $0.
+
+NEW THIS RUN
+
+1) Atrest.ai — strongest new discovery
+URL: https://atrest.ai/
+What the agent does: code review, data analysis, research, bug fixing, API integration, unit testing, web scraping, competitive analysis and other bounded digital tasks.
+Who pays: other agents/requesters; USDC is locked in smart-contract escrow before work starts.
+Advertised economics: platform reports 105+ active agents, 1,200+ tasks completed and $48K+ USDC transacted. It advertises task bands including code review $5–25, data analysis $10–50, research $8–40, bug fixing $10–35, API integration $15–60, unit testing $5–20 and competitive analysis $12–45. These are platform-reported figures, not independently audited.
+Tools: agent runtime plus Atrest registration/API; relevant code/data/research tools.
+Autonomy: 10/10. Agents can auto-accept tasks fitting guardrails; an AI judge verifies delivery and releases escrow.
+First action: register a narrow capability such as API QA, unit-test generation or data validation, set a hard minimum payout of $5 and auto-accept only tasks with objective acceptance criteria.
+Constraints: public age/account/payment terms were not sufficiently clear in this pass; operator must independently satisfy applicable legal and wallet requirements.
+Ease to first $5: 7/10. Repeatability: 9/10.
+
+2) Agrenting — stablecoin escrow + 95% provider split
+URL: https://agrenting.com/
+What the agent does: provider-operated coding, research, summarization, automation or other repeatable services.
+Who pays: marketplace hirers.
+Payout: provider keeps 95% of completed-task revenue; templates pay 70%. Withdrawals are supported in USDT/USDC/DAI via NOWPayments. Current listings include a $35/task CI-parser agent and $10/task translation/research agent, but both showed 0 completed tasks, so they are price evidence rather than demand evidence.
+Tools: REST/WebSocket provider integration; OpenClaw/CoPaw/NanoClaw/ZeroClaw/Hermes/custom agents supported.
+Autonomy: 9/10.
+First action: cross-list an already-proven $10–$35 capability; do not build Agrenting-specific functionality before the first unrelated paid hire.
+Constraints: tiered review and payment-provider requirements apply; confirm operator eligibility.
+Ease: 4/10. Repeatability: 9/10 if buyer traffic appears.
+
+3) TaskForce — milestone USDC marketplace for agents and humans
+URL: https://www.task-force.app/
+What the agent does: code, research, design, QA, data, marketing, admin or market-research tasks.
+Who pays: task posters through milestone escrow.
+Advertised pricing/examples: the primary page shows illustrative tasks at 200–500 USDC and milestone releases, but I did not verify a concrete current live task at those budgets, so those numbers are examples, not active opportunities.
+Tools: Agent API; Base/Solana USDC wallets; deliverables with evidence/screenshots.
+Autonomy: 9/10.
+First action: query the live task API and require funded + open + >=$5 + objective milestones before bidding.
+Constraints: verify account/legal/payment requirements before onboarding.
+Ease today: 3/10. Repeatability potential: 9/10.
+
+4) Daydreams Task Market — on-chain outcome market
+URL: https://www.daydreams.systems/
+What the agent does: bids/pitches/proofs/submissions against funded tasks.
+Who pays: requester that escrows USDC.
+Payout: task-specific; no concrete worthwhile live bounty was verified in this pass.
+Tools: Task Market on Base mainnet; agent/API stack.
+Autonomy: 10/10.
+First action: add the live task feed as a scanner source; execute only funded >=$5 tasks with explicit winner/acceptance mechanics.
+Constraints: task-specific and wallet requirements apply.
+Ease: 3/10. Repeatability: 9/10.
+
+5) A2AWire — agent-to-agent USDC escrow rail
+URL: https://a2awire.com/
+What the agent does: exposes a service another agent can hire; delivery is verified and settled on Base USDC.
+Who pays: hiring agent.
+Payout: provider-defined; I did not verify a specific active paid request this run.
+Tools: MCP server plus agent endpoint.
+Autonomy: 10/10.
+First action: cross-list only a capability already proven on task boards.
+Ease: 2/10. Repeatability: 9/10 if demand develops.
+
+6) Hober — Base-mainnet escrow marketplace + x402
+URL: https://www.hober.dev/
+What the agent does: list an agent, accept jobs, deliver and be scored; payout follows the score.
+Who pays: requester funding USDC escrow.
+Payout: task-specific; public site shows the settlement system but I did not verify a worthwhile live job amount.
+Tools: Base x402/escrow plus hosted agent.
+Autonomy: 10/10.
+First action: scanner/cross-list only until a funded >=$5 job is visible.
+Ease: 2/10. Repeatability: 8/10.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7) MoltJobs — still clearest immediate real-money queue
+URL: https://moltjobs.io/open-jobs
+Current verified listing: 5 USDC to turn 3 live job postings into ready-to-fund MoltJobs specs and contact the buyer; page says the work is funded with USDC in on-chain escrow.
+Agent does: research/specification plus legitimate individualized buyer contact.
+Who pays: MoltJobs job poster.
+Tools: MCP, CLI, API, TypeScript/Python SDKs; Base wallet.
+Autonomy: 9/10.
+First action: poll OPEN jobs and take the newest funded >=$5 non-spammy task with explicit acceptance criteria. Prefer research/docs over social outreach when economics are similar.
+Constraints: certification can gate protected work; 5% fee; comply with destination-platform promotion/outreach rules.
+Ease: 8/10. Repeatability: 8/10.
+
+8) AgentPact — strongest recurring small-job queue
+URL: https://agentpact.xyz/needs
+Recent live scans repeatedly surfaced $5–$25 Python review, API automation, scraping and data-analysis jobs.
+Agent does: code/API/data/research work.
+Who pays: Need/deal buyer via Base-USDC escrow.
+Tools: MCP/npm/Python integration.
+Autonomy: 10/10.
+First action: enforce reward >= $5 AND clear scope AND objective acceptance AND settleable. Security work only where the requester explicitly authorizes the system/code.
+Ease: 9/10. Repeatability: 9/10.
+
+9) dealwork.ai — broad escrowed queue
+URL: https://dealwork.ai/
+Recent primary checks showed roughly 157–161 open tasks and 264 completed tasks. Platform examples include an $80 production API delivered by an AI worker and a $5 autonomous AI-to-AI contract.
+Agent does: code, APIs, research, data transformation, documentation.
+Who pays: human or agent requester.
+Tools: dealwork task/escrow stack plus normal development tools.
+Autonomy: 9/10.
+First action: ingest the full queue and reject any task whose acceptance condition cannot be independently reproduced.
+Constraints: responsible human/legal-entity owner requirement; fees apply.
+Ease: 9/10. Repeatability: 9/10.
+
+10) Complete Codes — best coding-agent architecture
+URL: https://www.complete.codes/en/agents
+What the agent does: discover funded GitHub Sprints, implement issues, submit PRs; eligible merged code triggers Base-USDC payout.
+Who pays: repo/Sprint sponsor.
+Payout: Sprint-specific; agent API exposes payout information.
+Tools: GitHub, MCP/REST, repo test suite.
+Autonomy: 9/10.
+First action: query active funded repos with next_payout >= $5 and rank by issue complexity, testability and maintainer merge velocity.
+Ease: 7/10. Repeatability: 10/10.
+
+11) OpenJobs — good machine-work infrastructure; currency filter matters
+URL: https://openjobs.bot/
+What the agent does: coding/data/research tasks through REST/MCP/SDKs.
+Who pays: job posters.
+Payout: USDC or WAGE on Solana. Do not convert WAGE into dollars without independently verified liquidity/value.
+Autonomy: 10/10.
+First action: scan USDC-only funded jobs >= $5.
+Ease: 4/10. Repeatability: 9/10.
+
+12) Opire — real GitHub bounty money, very noisy
+URL: https://app.opire.dev/home
+What the agent does: solve OSS GitHub issues and submit PRs.
+Who pays: issue sponsor.
+Payout: issue-specific; prior scans verified real payouts but also stale/anomalous listings.
+Autonomy: 8/10.
+First action: issue still open → reward still funded → maintainer active → no superior competing PR → reproducible locally.
+Ease: 5/10. Repeatability: 8/10.
+
+13) BotGuild / AgentBazaar / similar service rails — distribution, not first revenue
+BotGuild: https://botguild.ai/app/gigs/
+AgentBazaar: https://www.agentbazaar.dev/
+These remain useful for testing the full autonomous lifecycle or cross-listing a proven service, but recent BotGuild gigs were mostly sub-$1 and AgentBazaar demand was not strong enough to beat task boards.
+First action: cross-list only proven QA/data/test/research services; do not spend real build time until an external buyer arrives.
+Ease: 2–3/10. Repeatability potential: 9–10/10.
+
+14) gigs.sh — discovery oracle only
+URL: https://gigs.sh/
+Use it to discover additional marketplaces, then verify primary live inventory, payout rails and terms before execution.
+Ease to first $5 directly: 1/10. Discovery repeatability: 10/10.
+
+REDDIT DEMAND SIGNALS
+
+15) Simple lead workflow beats fancy multi-agent demos
+Thread: https://www.reddit.com/r/n8n/comments/1s5qquo/ive_built_30_automations_the_ones_making_clients/
+Signal: a practitioner who says they shipped 30+ automations reports a simple lead-finding/personalization workflow drove 40+ booked calls/month for 8 months, while a six-week multi-agent demo produced zero revenue.
+Product pattern: source leads → enrich → draft personalized outreach → human-approved send queue → CRM logging.
+Customer: B2B sales teams/agencies.
+Charge: fixed setup + recurring maintenance/lead volume.
+MVP: generate a verified spreadsheet of prospects and drafts; do not automate unsolicited sends where platform or anti-spam rules prohibit it.
+Ease: 8/10. Repeatability: 10/10.
+
+16) One small automation can become a paid contract
+Thread: https://www.reddit.com/r/n8n/comments/1vev45x/how_n8n_helped_me_move_from_a_nontech_internship/
+Signal: poster says one repetitive-process automation eventually led to a 30-hour/month automation contract.
+Product pattern: find one manual process → automate → measure saved time/errors → expand.
+Ease: 8/10. Repeatability: 10/10.
+
+17) Founders pay to eliminate repetitive manual workflows
+Thread: https://www.reddit.com/r/n8n/comments/1r9q0kd/i_have_built_n8n_automations_for_a_dozen_startups/
+Signal: practitioner says actual paying businesses usually start with vague “automate my business” requests; money is found by locating the one repetitive task consuming hours. Complex 15+ node workflows become maintenance liabilities.
+Product: workflow audit → identify highest-ROI bounded process → small modular automation → observability/error handling.
+Ease: 8/10. Repeatability: 10/10.
+
+18) WhatsApp commerce automation — concrete $500 example
+Thread: https://www.reddit.com/r/n8n/comments/1rq486u/i_made_500_on_my_first_n8n_paid_project_building/
+Signal: poster reports a $500 project for a bookstore automating repetitive WhatsApp availability/pricing/order conversations, media handling and order-data flow.
+Product: inbound message → intent → inventory/order lookup → permitted response/action → structured order data → human exception.
+Customer: small retailers using WhatsApp as their storefront.
+Ease: 8/10. Repeatability: 9/10.
+
+19) Weekly reporting automation
+Thread: https://www.reddit.com/r/automation/comments/1re8bc1/built_an_automation_this_week_that_saved_a_client/
+Signal: a client was manually pulling Stripe/Airtable/Sheets data weekly; a three-hour workflow replaced the recurring process.
+Product: data sources → reconcile/normalize → summary → email/dashboard → anomaly queue.
+Customer: agencies/SMBs/ops teams.
+Ease: 9/10. Repeatability: 10/10.
+
+20) Workflow reliability/verification remains the strongest direct-customer meta-product
+Recurring problem: businesses can generate automations quickly, but retries, brittle mappings, state, auth, duplicate writes, API failures and maintenance are still expensive.
+MVP: workflow JSON + fixtures + recent executions → schema validation → retry/idempotency checks → unsafe writes → cost/failure exposure → PASS/REVIEW report.
+Customer acquisition: automation agencies, n8n/Make consultants, referrals, technical content and communities where service offers are permitted.
+Charge: fixed audit, then recurring monitoring.
+Ease: 9/10. Repeatability: 10/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) Keep the universal earning worker pointed at MoltJobs → AgentPact → dealwork. They still offer the best evidence of short time-to-first-real-money. Use:
+EV = payout × P(acceptance) × P(win) − model/API/runtime cost.
+
+2) Add Atrest.ai immediately as a new high-priority scanner. Its platform-reported $48K+ USDC transacted and task bands of roughly $5–$60 are materially more promising than the penny-task marketplaces. Start with API QA, unit testing, data validation or research because they have objective outputs.
+
+3) Build the direct-customer product around workflow verification/reliability. The Reddit evidence keeps converging on boring, bounded, measurable automation rather than elaborate agent demos. A strong first offer is: “Send one production workflow plus recent executions; receive an evidence-backed reliability, cost, idempotency and failure-mode report.”
+
+Core strategy:
+paid task → repeated procedure → packaged service → marketplace/API/x402 distribution after actual demand is proven.

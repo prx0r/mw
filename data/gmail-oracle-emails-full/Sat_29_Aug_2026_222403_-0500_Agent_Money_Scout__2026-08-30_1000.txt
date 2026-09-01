@@ -1,0 +1,205 @@
+Subject: Agent Money Scout — 2026-08-30 10:00
+Date: Sat, 29 Aug 2026 22:24:03 -0500
+Message ID: 1a050b21726c7077
+================================================================================
+
+# Agent Money Scout — 2026-08-30 10:00
+
+## NEW THIS RUN
+
+### 1) OKX AI — serious new agent marketplace
+URL: https://www.okx.com/en-us/learn/okx-ai
+Primary source: OKX, updated 2026-07-06.
+What the agent does: list a specialist service in the Agent Marketplace or take work through the Task Marketplace. Complex jobs use escrow; standardized services can use instant pay-per-call. Builders are paid in USDT or USDG.
+Who pays: humans/agents buying services or posting tasks.
+Verified payout/pricing: seller/task-specific; OKX does not publish a defensible universal payout range, so none is invented.
+Required: Onchain OS, Agentic Wallet, email; MCP-compatible clients include Claude Code, Codex, Hermes and OpenClaw. OKX says no OKX exchange account is required to get started.
+Autonomy: 10/10.
+First action: install Onchain OS and inspect live Task Marketplace inventory before building anything specifically for OKX AI.
+Constraints: wallet/service availability and local legal/payment eligibility apply; do not bypass restrictions.
+Scores: first $5 6/10; repeatability 10/10.
+
+### 2) AgentBazaar — Solana agent-services marketplace
+URL: https://www.agentbazaar.dev/
+What the agent does: register a narrow service, receive tasks via WebSocket or HTTPS push, quote dynamically, execute, and settle in USDC. Supports MCP, SDK, REST and ERC-8004 identity.
+Who pays: agents/humans hiring a registered specialist.
+Verified economics: 97% to agent, 3% platform. Site examples show micro-services such as code audit $0.05, doc writing $0.03 and test generation $0.04, but these are examples rather than verified buyer demand.
+Required: Solana wallet; endpoint or locally running WebSocket worker.
+Autonomy: 10/10.
+First action: register an existing code/research/QA specialist and use platform_stats/my_jobs to verify actual paid activity before investing further.
+Constraints: no useful seller-income distribution surfaced; treat liquidity as unproven.
+Scores: first $5 4/10; repeatability 9/10.
+
+### 3) 0xWork — real historical payouts, but zero tasks right now
+URL: https://www.0xwork.org/tasks
+What the agent does: writing, research, code, creative and data tasks using Base/USDC escrow.
+Who pays: task posters.
+Verified economics: platform advertises typical category ranges of writing $5–25, research $5–50, code $10–100, creative $3–30 and data $5–40. Historical on-chain pages show paid tasks including a completed $50 task. Standard platform fee is 5% (2% for qualifying token holders).
+IMPORTANT CURRENT STATE: live task board currently shows 0 tasks and $0 USDC available. New hosted-agent launches are also temporarily paused.
+Required: wallet plus 10,000 AXOBOTL to register; workers stake AXOBOTL equal to 10% of bounty when claiming. This adds upfront/token risk.
+Autonomy: 10/10 technically.
+First action: do NOT buy/stake anything for this now. Keep it in discovery and wait for funded tasks to reappear.
+Scores: first $5 1/10 now; repeatability 8/10 if liquidity returns.
+
+### 4) pact0 — tiny-task architecture worth monitoring
+URL: https://pact0.com/how-it-works
+What the agent does: claim a capability-matched microtask, deliver output, receive buyer-released payment and a signed work credential.
+Who pays: buyers who fund a budget in advance.
+Verified payout: starter pool practice jobs are around $0.05; I did not verify a sufficiently strong current paid-job inventory to quote normal earnings.
+Required: agent profile/capabilities and compatible account/payment setup.
+Autonomy: 9/10.
+First action: query the live task surface; don't spend integration effort unless funded non-starter jobs exist.
+Scores: first $5 2/10; repeatability 8/10 if liquidity develops.
+
+### 5) StacksTasker — live architecture, stale visible task
+URL: https://stackstasker.com/
+What the agent does: agents/humans post, bid, complete and settle tasks on Stacks via x402.
+Who pays: task poster.
+Verified current state: indexed site exposes an open 0.100 STX task, but it is roughly 194 days old, so this is not high-confidence fresh liquidity.
+Autonomy: 9/10.
+First action: monitor for a genuinely recent funded task; do not prioritize the stale listing.
+Scores: first $5 1/10; repeatability 7/10 if activity restarts.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6) Taskmarket — live and funded, but competition is brutal
+URL: https://taskmarket.dev/
+Current primary-source state: 19 open tasks, 26.7K agents, 2,380.714419 USDC posted volume. The top live 24.2-USDC data-visualisation bounty currently has 105 submissions. A separate 0.324-USDC API-evaluation task has 87 submissions.
+Work: research, code, data, evaluation and structured artifacts.
+Payment: Base USDC, funded before work, winner paid on acceptance.
+Autonomy: 10/10.
+First action: rank by expected value, not headline reward: reward × probability of acceptance minus execution/tool costs.
+Scores: first $5 7/10; repeatability 9/10.
+
+### 7) OpenJobs — strong completed-job signal
+URL: https://openjobs.bot/jobs
+Current primary-source homepage reports 193 AI agents registered, 159 total jobs posted, 138 jobs completed and 9,656 total volume. Jobs can pay USDC or WAGE on Solana and use escrow.
+Work: research, software, data and other remotely verifiable tasks.
+Required: API/CLI/SDK worker and compatible Solana setup.
+Autonomy: 10/10.
+First action: inspect the current USDC jobs and ignore anything whose payout rail or acceptance test is unclear.
+Scores: first $5 8/10; repeatability 9/10.
+
+### 8) t2000 — biggest positive movement this run
+URL: https://t2000.ai/jobs
+Fresh primary-source state: 169 jobs open, 75 in progress, 1,186 settled, $966.13 settled USDC. This is a significant increase in visible open inventory versus earlier runs. Services page lists 352 hire listings, 19 instant APIs, $957.43 settled USDC and $1.29 paid via x402.
+Work: claim open jobs, sell fixed-price services, or expose paid APIs.
+Who pays: task posters/service/API buyers.
+Fees: services 5% on settlement; API calls 0% marketplace fee.
+Autonomy: 9/10.
+First action: THIS is the board I would rescan first now: query the 169 open jobs, dedupe low-value/internal tasks, and rank real externally useful jobs by expected net return.
+Scores: first $5 8/10; repeatability 10/10.
+
+### 9) Claw Jobs
+URL: https://claw-jobs.com/
+Still uses Bitcoin Lightning escrow for agent/human gigs. Prior verified state showed multiple real-money research/code/documentation gigs above the $5 threshold. The current front page confirms the escrow/bid/payment loop, though this run's crawler did not surface a cleaner fresh list than the previous run.
+Autonomy: 9/10.
+First action: poll real-Bitcoin listings and exclude testnet-labelled tasks.
+Scores: first $5 8/10; repeatability 8/10.
+
+### 10) dealwork.ai
+URL: https://dealwork.ai/
+Still exposes a REST API for jobs/contracts/agents/wallets. Prior runs verified ~156 open tasks, 264 completed, and a concrete $80 production API job completed by an AI worker.
+Work: software, APIs, research, transformations and documentation.
+Autonomy: 9/10.
+First action: bid only where acceptance criteria can be reproduced before submission.
+Scores: first $5 8/10; repeatability 9/10.
+
+### 11) BotWork
+URL: https://www.botwork.network/
+Fresh page: 46 specialist agents; buyers post research/code/design/copy/data work; 90% of settlement goes to the worker, 5% relay, 5% BotWork. Agent owners can connect via TypeScript SDK or webhook.
+Autonomy: 9/10.
+First action: attach an existing reliable worker rather than building a new BotWork-specific one, then measure real paid inbound demand.
+Scores: first $5 6/10; repeatability 9/10.
+
+### 12) Agrenting
+URL: https://agrenting.com/
+Fresh page still advertises $0 monthly fees, 95% provider share, escrow-protected USDT/USDC/DAI work, REST/WebSocket registration and support for multiple agent runtimes. Its visible listings are explicitly illustrative, so buyer liquidity remains unproven.
+Autonomy: 9/10.
+First action: zero-cost cross-list only; stop if no externally funded task arrives.
+Scores: first $5 4/10; repeatability 9/10 if demand develops.
+
+## REDDIT DEMAND SIGNALS
+
+### 13) QA bug-investigator / PR verifier
+Thread: https://www.reddit.com/r/QualityAssurance/comments/1vzso59/qa_roles_has_changed/
+Fresh Aug 27 signal: practitioners describe a single QA/SDET increasingly acting as an orchestrator of parallel AI agents. One reports a predefined bug-investigator agent finding a root cause, after which the development lead asked whether it could implement the fix too.
+Recurring problem: generation is cheap; trustworthy reproduction, test selection, root-cause evidence and approval are still valuable.
+Offer: PR/issue + acceptance criteria -> changed-surface analysis -> risk-ranked tests -> reproduce -> evidence packet -> PASS/FAIL/REVIEW -> optional patch behind human approval.
+Customer: software teams using coding agents.
+Acquisition: dev agencies, QA consultants, engineering teams and legitimate software communities.
+MVP: /verify-pr or /investigate-bug.
+Score: first $5 8/10; repeatability 10/10.
+
+### 14) Solo-business admin worker
+Thread: https://www.reddit.com/r/smallbusiness/comments/1r307db/how_did_you_reduce_admin_time_as_a_solo_business/
+Concrete complaint: a solo consultant reports roughly 2h/day email management, 1.5h/day meeting prep/notes, 3h/week invoicing/follow-ups, 2h/week document management and 1h/day answering repetitive client questions.
+Recurring problem: not one sophisticated AI task, but dozens of deterministic handoffs.
+Offer: inbox triage + meeting brief + invoice reminder + document lookup + human exception queue.
+Customer: consultants/freelancers/tiny agencies.
+Acquisition: referrals, freelancer/consultant communities, existing automation providers; avoid unsolicited spam.
+MVP: start only with invoice follow-up + weekly client brief.
+Score: first $5 8/10; repeatability 10/10.
+
+### 15) Accounting automation cost estimator
+Thread: https://www.reddit.com/r/n8n/comments/1t7nwzn/costs_for_automation/
+A person joining an accounting firm specifically asks how to budget ongoing automation for classifying/sending email and WhatsApp customer-service/data extraction.
+Recurring problem: businesses can build automations but struggle to know ongoing infra/model/API cost and viability.
+Offer: workflow JSON + expected volume -> node/API/model map -> estimated monthly cost -> worst-case retry/loop exposure -> cheaper alternatives -> budget alerts.
+Customer: automation agencies and internal ops teams.
+MVP: /workflow-cost-report.
+Score: first $5 8/10; repeatability 10/10.
+
+### 16) Production automation hardening
+Thread: https://www.reddit.com/r/n8n/comments/1pmi6mb/i_build_n8n_workflows_for_dozens_of_clients_heres/
+High-signal agency operator describes retries/error outputs and persistent run logging as the difference between amateur and professional deployments because APIs/network calls fail and clients need traceability.
+Offer: authorized workflow/config/log export -> retry/error-path audit -> observability gaps -> reproducible failure tests -> remediation report.
+Customer: n8n/Make/Zapier agencies.
+MVP: fixed-price production-readiness audit, then recurring monitoring.
+Score: first $5 8/10; repeatability 10/10.
+
+### 17) Mechanics-vs-judgment automation
+Thread: https://www.reddit.com/r/smallbusiness/comments/1vk5iha/the_scariest_part_of_automating_my_business/
+Fresh Aug 10 business-owner account says useful automation targeted mechanics—retyping leads into CRM, copying spreadsheet values, chasing known-due invoices—while leaving judgment calls to people.
+Recurring pattern: bounded cross-system mechanics are easier to sell and safer to automate than vague 'AI employee' promises.
+Offer: authorized input -> validate -> sync systems -> verify state -> exception queue.
+MVP: one repetitive cross-system workflow with before/after time measurement.
+Score: first $5 8/10; repeatability 10/10.
+
+## FILTERED OUT / DOWNRANKED
+
+0xWork is not currently executable despite interesting historical payouts: its live board shows zero tasks and registration requires token staking. StacksTasker's visible task is stale. WORQ currently reports zero active agents. Virtuals' current public ACP counters render as zero in the fetched page, so I did not treat ecosystem hype as immediate job liquidity. I also excluded gambling/prediction-market routes, deceptive promotion, spam, unsafe work, and anything requiring age/identity/geography rules to be bypassed.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1) Re-rank t2000 upward immediately
+The biggest actionable change is t2000's current 169 open jobs / 1,186 settled / $966.13 settled USDC. Query and classify the 169 jobs now, separating genuine external work from platform-seeded microtasks. This is currently more promising than spending another hour integrating a zero-liquidity marketplace.
+
+Recommended work-router order this run:
+**t2000 -> OpenJobs -> Claw Jobs -> dealwork.ai -> Taskmarket -> BotWork**
+
+Use:
+expected_net = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) - inference/API/tool/review/payment costs.
+
+### 2) Build /verify-pr or /investigate-bug as the first worker specialization
+The Aug 27 QA thread is unusually direct evidence that real teams are already using predefined agent workflows for bug root-cause investigation. This maps cleanly onto marketplace work and can later become a fixed service/API.
+
+Minimal output contract:
+PR/issue + acceptance criteria -> reproduce -> risk-ranked tests -> evidence -> PASS/FAIL/REVIEW -> optional patch.
+
+### 3) Build a separate 'productization oracle'
+Every paid task that succeeds should be classified for reuse:
+paid job -> procedure -> tests/failure cases -> fixed service -> paid API/skill.
+
+Best current SKU families:
+- /verify-pr
+- /investigate-bug
+- /automation-health
+- /workflow-cost-report
+- /normalize-invoice
+- /structured-evidence
+- /release-check
+
+New distribution rails worth low-cost testing after the procedure proves itself: OKX AI and AgentBazaar. Do not speculate by building for empty marketplaces first.
+
+Only settled/withdrawn real-money value counts as earnings; testnet tokens, credits, platform GMV claims, illustrative listings and unfinished escrow are not earnings.

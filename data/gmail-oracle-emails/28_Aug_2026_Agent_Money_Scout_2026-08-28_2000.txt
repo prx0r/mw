@@ -1,0 +1,142 @@
+Subject: Agent Money Scout — 2026-08-28 20:00
+Date: Fri, 28 Aug 2026 08:22:57 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a04889afa3f2bbc
+================================================================================
+
+# Agent Money Scout — 28 Aug 2026, 20:00
+
+## NEW THIS RUN
+
+### 1. Molty Cash — agent/human gig marketplace on Base
+Source: https://synthesis.mandate.md/tracks/agent-services-on-base-iqp1ub
+What the agent does: discovers funded gigs, claims them, completes the task, submits the deliverable, and gets paid when approved. Who pays: gig posters. Economics: USDC on Base via x402; the public Synthesis entry describes real paid-task settlement but does not publish enough current live-gig pricing to quote a reliable median. Requirements: Base wallet, x402-compatible client/skill integration, task-specific capabilities. Autonomy: 9/10. First action: add the marketplace/skill feed to the universal job router and query only funded mainnet gigs. Eligibility: obey any wallet/platform age, identity and jurisdiction rules; do not bypass them. First-$5: 6/10. Repeatability: 8/10.
+
+### 2. Execution Market — agents outsource real-world execution
+Source: https://agent-tools.cloud/a2a?q=a2a-agent
+What the agent does: an AI agent posts verifiable real-world tasks, while executors complete them and submit evidence; the opportunity for an autonomous worker is primarily orchestration, verification, evidence review and task decomposition rather than performing restricted physical work. Who pays: task principals/agents. Economics: x402 gasless payments per deliverable and metered MPP sessions are advertised. Requirements: A2A interface, evidence schemas, payment wallet. Autonomy: 8/10 for orchestration/evidence work. First action: query the A2A directory and inspect supported task types and live task availability. First-$5: 5/10. Repeatability: 8/10.
+
+### 3. AiScale Agent Services — sell intelligence per request
+Source: https://agent-tools.cloud/a2a?q=job
+What the agent does: sell sentiment analysis, company/contact enrichment, news summarization, web extraction, contract analysis, code review or deep research synthesis. Who pays: other agents per request. Economics: USDC on Base via x402; no account/API key model. Requirements: stable HTTP/A2A endpoint with deterministic schema and wallet. Autonomy: 10/10. First action: package one existing research/evidence capability as a narrow endpoint and list it in x402/A2A directories. First-$5: 5/10. Repeatability: 10/10.
+
+### 4. AgentDataHub — pay-per-call data marketplace
+Source: https://agent-tools.cloud/a2a?q=job
+What the agent does: publish structured data/AI endpoints. The directory currently describes 150+ x402 endpoints spanning macro data, market indicators, DeFi health, weather and AI inference. Who pays: agent callers. Economics: prices advertised from $0.001/call in USDC on Base. Requirements: deterministic data/API product, x402 settlement. Autonomy: 10/10. First action: identify one high-frequency dataset you can source legally and reliably, then publish an endpoint with a tiny paid tier. First-$5: 4/10. Repeatability: 10/10.
+
+### 5. AgentReader-style paid web intelligence
+Source: https://agent-tools.cloud/a2a?q=web-agent
+What the agent does: web fetch, extraction and intelligence as a paid utility. The directory shows AgentReader with 11 paid HTTP endpoints, USDC on Base, no API keys/accounts, and no charge on failed requests. Who pays: other agents needing web content. Requirements: robust fetch/extract stack and deterministic failure handling. Autonomy: 10/10. First action: avoid cloning generic scraping; differentiate with evidence bundles, change detection or niche extraction. First-$5: 5/10. Repeatability: 10/10.
+
+### 6. Skill-audit / agent security scanning
+Source: https://agent-tools.cloud/a2a?q=web-agent
+What the agent does: scan agent skills/MCP tools for prompt injection, malicious instructions, URL trust and unsafe behavior; optionally bundle web search/read tools. Who pays: agent operators before installing or invoking third-party tools. Economics: pay-per-call USDC on Base via x402 is advertised. Requirements: static/dynamic scanning, evidence output, deterministic policy rules. Autonomy: 10/10. First action: expose `/audit-skill` returning findings, severity, evidence and allow/block recommendation. First-$5: 5/10. Repeatability: 10/10.
+
+### 7. APIMesh — tiny paid web/SEO/security/devops APIs
+Source: https://agent-tools.cloud/a2a?q=a2a-agent
+What the agent does: sell narrow machine-callable analysis APIs to agents. Who pays: calling agents. Economics: directory marks APIMesh as agent-pays/x402; exact public pricing was not surfaced, so no payout figure is assumed. Requirements: simple API + A2A discovery. Autonomy: 10/10. First action: benchmark which APIMesh-like capabilities have obvious repeat demand, then ship a better or cheaper specialized endpoint. First-$5: 4/10. Repeatability: 9/10.
+
+### 8. Synthesis/Base agent-services track as product-demand corpus
+Source: https://synthesis.mandate.md/tracks/agent-services-on-base-iqp1ub
+What the agent does: not a live bounty to enter now, but the showcase is a high-signal corpus of agent services that demonstrated real x402 willingness-to-pay. Examples include paid decision APIs, accessibility audits at $0.10, legal-record queries at $0.02, content intelligence at $0.01, and other mainnet services. Who pays: end users/agents per call. Economics: published examples span roughly $0.01-$0.10 per request. Requirements: reliable specialist service + discovery + Base/x402. Autonomy: 10/10. First action: crawl the winners/showcase into the oracle and compute service categories, prices, proof of mainnet activity and duplicates. First-$5: 5/10. Repeatability: 10/10.
+
+### 9. agent-tools.cloud directory arbitrage
+Source: https://agent-tools.cloud/categories
+What the agent does: mine a live catalog of 21,267 x402 services, 24,657 MCP servers and 2,242 A2A agents to find underserved capabilities and pricing gaps. Who pays: monetization happens by shipping a competing/complementary paid service, not by the directory itself. Economics: directory is discovery infrastructure; no payout is claimed. Requirements: crawler, schema normalization, liveness checks, pricing/usage extraction. Autonomy: 10/10. First action: ingest categories with low provider counts but high agent relevance, then test demand by listing one service. First-$5: 4/10. Repeatability: 10/10.
+
+### 10. ToolTrust/Smithery paid-MCP discovery as a product-selection engine
+Source: https://www.tooltrust.dev/
+What the agent does: identify production MCPs already charging via x402—examples surfaced include pay-per-call scraping, compliance, data and agent-search tools—then build differentiated wrappers or reliability/verification layers. Who pays: downstream agent callers. Economics: examples include $0.001-$0.008 scraping calls and $0.005 agent-search calls. Requirements: crawler, price normalization, quality/liveness tests. Autonomy: 10/10. First action: score paid MCPs by price, duplicate density, reliability and how easily your worker can reproduce/improve them. First-$5: 4/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+SporeAgent, Clawlancer, MoltJobs, Mercatai, AgentGigs, TaskForce, ClawGig and ClawFreelance remain the main task-market polling set. AgentBazaar, AgentPay Store, Agent402, PayanAgent, Agoragentic and Atelier remain the passive capability-sale set. x402 Arena remains particularly useful as usage/revenue intelligence rather than merely another listing directory.
+
+The router should continue to distinguish `listed_reward`, `credited_reward` and `withdrawn_reward`; only the last should count as realized revenue.
+
+## REDDIT DEMAND SIGNALS
+
+I ran fresh Reddit-focused searches for invoice/data-entry pain, lead follow-up/CRM automation, support triage and QA bottlenecks. This pass did not return new high-confidence Reddit threads that were better than the signals already logged in prior runs, so I am not inventing or recycling weak Reddit evidence as 'new'.
+
+Fresh public-market evidence still points to the same monetizable work. Upwork's August 2026 data-entry market shows paid demand for invoice-to-Excel conversion, CRM cleanup, product listing, lead research and data scraping; its pricing guide currently places basic spreadsheet/list work around $100-$300/project, CRM/database cleanup around $300-$750, and more complex financial data work higher. Source: https://www.upwork.com/hire/data-entry-specialists/
+
+A current 2026 small-business automation summary ranks lead qualification/routing, support triage, invoice/contract processing, competitive intelligence and automated reporting among the highest-ROI agent use cases, with estimated time recovery ranging from roughly 3 to 15 hours/week depending on workflow. Source: https://lunarailab.com/blog/2026/03/13/ai-agents-for-small-business-automation-use-cases-that-actually-work/
+
+The practical implication remains: sell a finished operation, not 'AI automation'. Good first offers are `invoice -> verified structured record`, `lead -> qualified + routed`, `PR -> verified QA evidence`, and `competitor pages -> change report`.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. **Turn the oracle itself into the paid product.** Ingest agent-tools.cloud + Synthesis + x402 directories and expose `/work`, `/services`, `/pricing`, `/liquidity`, and `/opportunity-score`. Other agents pay for normalized, deduplicated, freshness-checked market intelligence instead of crawling dozens of fragmented registries.
+
+2. **Build one `verify/inspect` worker before another general agent.** The newest paid-service evidence keeps clustering around audits, verification, web extraction, due diligence, security and structured evidence. A robust `/audit-api`, `/audit-skill`, or `/verify-company` endpoint can be sold across many x402 registries while also completing bounty work.
+
+3. **Add marketplace liquidity telemetry immediately.** Track `new_jobs_24h`, `funded_jobs`, `median_reward`, `time_to_claim`, `agent_count`, `acceptance_rate`, `settled_payouts`, `median_service_price`, `paid_calls`, and `buyers`. This is more valuable than another directory because it answers the economic question agents actually care about: *where is there money right now?*
+
+Bottom line: the strongest new opportunity is increasingly not one more gig board. It is building the **economic intelligence layer over the rapidly fragmenting agent-services market**, then using the same data to route your own worker and sell market intelligence to everyone else's workers.
+Agent Money Scout — 28 Aug 2026, 20:00
+
+NEW THIS RUN
+
+1. Molty Cash — agent/human gig marketplace on Base
+<p>Source: https://synthesis.mandate.md/tracks/agent-services-on-base-iqp1ub<br>
+What the agent does: discovers funded gigs, claims them, completes the task, submits the deliverable, and gets paid when approved. Who pays: gig posters. Economics: USDC on Base via x402; the public Synthesis entry describes real paid-task settlement but does not publish enough current live-gig pricing to quote a reliable median. Requirements: Base wallet, x402-compatible client/skill integration, task-specific capabilities. Autonomy: 9/10. First action: add the marketplace/skill feed to the universal job router and query only funded mainnet gigs. Eligibility: obey any wallet/platform age, identity and jurisdiction rules; do not bypass them. First-$5: 6/10. Repeatability: 8/10.</p>
+
+2. Execution Market — agents outsource real-world execution
+<p>Source: https://agent-tools.cloud/a2a?q=a2a-agent<br>
+What the agent does: an AI agent posts verifiable real-world tasks, while executors complete them and submit evidence; the opportunity for an autonomous worker is primarily orchestration, verification, evidence review and task decomposition rather than performing restricted physical work. Who pays: task principals/agents. Economics: x402 gasless payments per deliverable and metered MPP sessions are advertised. Requirements: A2A interface, evidence schemas, payment wallet. Autonomy: 8/10 for orchestration/evidence work. First action: query the A2A directory and inspect supported task types and live task availability. First-$5: 5/10. Repeatability: 8/10.</p>
+
+3. AiScale Agent Services — sell intelligence per request
+<p>Source: https://agent-tools.cloud/a2a?q=job<br>
+What the agent does: sell sentiment analysis, company/contact enrichment, news summarization, web extraction, contract analysis, code review or deep research synthesis. Who pays: other agents per request. Economics: USDC on Base via x402; no account/API key model. Requirements: stable HTTP/A2A endpoint with deterministic schema and wallet. Autonomy: 10/10. First action: package one existing research/evidence capability as a narrow endpoint and list it in x402/A2A directories. First-$5: 5/10. Repeatability: 10/10.</p>
+
+4. AgentDataHub — pay-per-call data marketplace
+<p>Source: https://agent-tools.cloud/a2a?q=job<br>
+What the agent does: publish structured data/AI endpoints. The directory currently describes 150+ x402 endpoints spanning macro data, market indicators, DeFi health, weather and AI inference. Who pays: agent callers. Economics: prices advertised from $0.001/call in USDC on Base. Requirements: deterministic data/API product, x402 settlement. Autonomy: 10/10. First action: identify one high-frequency dataset you can source legally and reliably, then publish an endpoint with a tiny paid tier. First-$5: 4/10. Repeatability: 10/10.</p>
+
+5. AgentReader-style paid web intelligence
+<p>Source: https://agent-tools.cloud/a2a?q=web-agent<br>
+What the agent does: web fetch, extraction and intelligence as a paid utility. The directory shows AgentReader with 11 paid HTTP endpoints, USDC on Base, no API keys/accounts, and no charge on failed requests. Who pays: other agents needing web content. Requirements: robust fetch/extract stack and deterministic failure handling. Autonomy: 10/10. First action: avoid cloning generic scraping; differentiate with evidence bundles, change detection or niche extraction. First-$5: 5/10. Repeatability: 10/10.</p>
+
+6. Skill-audit / agent security scanning
+<p>Source: https://agent-tools.cloud/a2a?q=web-agent<br>
+What the agent does: scan agent skills/MCP tools for prompt injection, malicious instructions, URL trust and unsafe behavior; optionally bundle web search/read tools. Who pays: agent operators before installing or invoking third-party tools. Economics: pay-per-call USDC on Base via x402 is advertised. Requirements: static/dynamic scanning, evidence output, deterministic policy rules. Autonomy: 10/10. First action: expose <code>/audit-skill</code> returning findings, severity, evidence and allow/block recommendation. First-$5: 5/10. Repeatability: 10/10.</p>
+
+7. APIMesh — tiny paid web/SEO/security/devops APIs
+<p>Source: https://agent-tools.cloud/a2a?q=a2a-agent<br>
+What the agent does: sell narrow machine-callable analysis APIs to agents. Who pays: calling agents. Economics: directory marks APIMesh as agent-pays/x402; exact public pricing was not surfaced, so no payout figure is assumed. Requirements: simple API + A2A discovery. Autonomy: 10/10. First action: benchmark which APIMesh-like capabilities have obvious repeat demand, then ship a better or cheaper specialized endpoint. First-$5: 4/10. Repeatability: 9/10.</p>
+
+8. Synthesis/Base agent-services track as product-demand corpus
+<p>Source: https://synthesis.mandate.md/tracks/agent-services-on-base-iqp1ub<br>
+What the agent does: not a live bounty to enter now, but the showcase is a high-signal corpus of agent services that demonstrated real x402 willingness-to-pay. Examples include paid decision APIs, accessibility audits at $0.10, legal-record queries at $0.02, content intelligence at $0.01, and other mainnet services. Who pays: end users/agents per call. Economics: published examples span roughly $0.01-$0.10 per request. Requirements: reliable specialist service + discovery + Base/x402. Autonomy: 10/10. First action: crawl the winners/showcase into the oracle and compute service categories, prices, proof of mainnet activity and duplicates. First-$5: 5/10. Repeatability: 10/10.</p>
+
+9. agent-tools.cloud directory arbitrage
+<p>Source: https://agent-tools.cloud/categories<br>
+What the agent does: mine a live catalog of 21,267 x402 services, 24,657 MCP servers and 2,242 A2A agents to find underserved capabilities and pricing gaps. Who pays: monetization happens by shipping a competing/complementary paid service, not by the directory itself. Economics: directory is discovery infrastructure; no payout is claimed. Requirements: crawler, schema normalization, liveness checks, pricing/usage extraction. Autonomy: 10/10. First action: ingest categories with low provider counts but high agent relevance, then test demand by listing one service. First-$5: 4/10. Repeatability: 10/10.</p>
+
+10. ToolTrust/Smithery paid-MCP discovery as a product-selection engine
+<p>Source: https://www.tooltrust.dev/<br>
+What the agent does: identify production MCPs already charging via x402—examples surfaced include pay-per-call scraping, compliance, data and agent-search tools—then build differentiated wrappers or reliability/verification layers. Who pays: downstream agent callers. Economics: examples include $0.001-$0.008 scraping calls and $0.005 agent-search calls. Requirements: crawler, price normalization, quality/liveness tests. Autonomy: 10/10. First action: score paid MCPs by price, duplicate density, reliability and how easily your worker can reproduce/improve them. First-$5: 4/10. Repeatability: 10/10.</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+<p>SporeAgent, Clawlancer, MoltJobs, Mercatai, AgentGigs, TaskForce, ClawGig and ClawFreelance remain the main task-market polling set. AgentBazaar, AgentPay Store, Agent402, PayanAgent, Agoragentic and Atelier remain the passive capability-sale set. x402 Arena remains particularly useful as usage/revenue intelligence rather than merely another listing directory.</p>
+<p>The router should continue to distinguish <code>listed_reward</code>, <code>credited_reward</code> and <code>withdrawn_reward</code>; only the last should count as realized revenue.</p>
+
+REDDIT DEMAND SIGNALS
+<p>I ran fresh Reddit-focused searches for invoice/data-entry pain, lead follow-up/CRM automation, support triage and QA bottlenecks. This pass did not return new high-confidence Reddit threads that were better than the signals already logged in prior runs, so I am not inventing or recycling weak Reddit evidence as ‘new’.</p>
+<p>Fresh public-market evidence still points to the same monetizable work. Upwork’s August 2026 data-entry market shows paid demand for invoice-to-Excel conversion, CRM cleanup, product listing, lead research and data scraping; its pricing guide currently places basic spreadsheet/list work around $100-$300/project, CRM/database cleanup around $300-$750, and more complex financial data work higher. Source: https://www.upwork.com/hire/data-entry-specialists/</p>
+<p>A current 2026 small-business automation summary ranks lead qualification/routing, support triage, invoice/contract processing, competitive intelligence and automated reporting among the highest-ROI agent use cases, with estimated time recovery ranging from roughly 3 to 15 hours/week depending on workflow. Source: https://lunarailab.com/blog/2026/03/13/ai-agents-for-small-business-automation-use-cases-that-actually-work/</p>
+<p>The practical implication remains: sell a finished operation, not ‘AI automation’. Good first offers are <code>invoice -&gt; verified structured record</code>, <code>lead -&gt; qualified + routed</code>, <code>PR -&gt; verified QA evidence</code>, and <code>competitor pages -&gt; change report</code>.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+<ol>
+<li>
+<p><strong>Turn the oracle itself into the paid product.</strong> Ingest agent-tools.cloud + Synthesis + x402 directories and expose <code>/work</code>, <code>/services</code>, <code>/pricing</code>, <code>/liquidity</code>, and <code>/opportunity-score</code>. Other agents pay for normalized, deduplicated, freshness-checked market intelligence instead of crawling dozens of fragmented registries.</p>
+</li>
+<li>
+<p><strong>Build one <code>verify/inspect</code> worker before another general agent.</strong> The newest paid-service evidence keeps clustering around audits, verification, web extraction, due diligence, security and structured evidence. A robust <code>/audit-api</code>, <code>/audit-skill</code>, or <code>/verify-company</code> endpoint can be sold across many x402 registries while also completing bounty work.</p>
+</li>
+<li>
+<p><strong>Add marketplace liquidity telemetry immediately.</strong> Track <code>new_jobs_24h</code>, <code>funded_jobs</code>, <code>median_reward</code>, <code>time_to_claim</code>, <code>agent_count</code>, <code>acceptance_rate</code>, <code>settled_payouts</code>, <code>median_service_price</code>, <code>paid_calls</code>, and <code>buyers</code>. This is more valuable than another directory because it answers the economic question agents actually care about: <em>where is there money right now?</em></p>
+</li>
+</ol>
+<p>Bottom line: the strongest new opportunity is increasingly not one more gig board. It is building the <strong>economic intelligence layer over the rapidly fragmenting agent-services market</strong>, then using the same data to route your own worker and sell market intelligence to everyone else’s workers.</p>

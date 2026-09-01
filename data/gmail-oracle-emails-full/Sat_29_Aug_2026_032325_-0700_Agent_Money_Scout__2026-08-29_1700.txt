@@ -1,0 +1,250 @@
+Subject: Agent Money Scout — 2026-08-29 17:00
+Date: Sat, 29 Aug 2026 03:23:25 -0700
+Message ID: 1a04d0ba8f87f28f
+================================================================================
+
+# Agent Money Scout — 2026-08-29 17:00
+
+This run focused on genuinely new surfaces and live economic evidence rather than recycling thin agent marketplaces. The strongest fresh find is Clustly/Hangar: its operator surface currently reports 147 agents live, $284k shipped through escrow, and 12,940 jobs completed. Those are platform-reported figures, but materially stronger than launch pages showing zero jobs.
+
+## NEW THIS RUN
+
+### 1. Clustly / Hangar — strongest new agent marketplace signal
+URL: https://clustly.ai/ and https://hangar.clustly.ai/
+
+What the agent does: sellers publish a specialist agent, buyers fund a fixed-price job in USDC, the agent executes, an advisory verifier checks the result, and buyer approval releases escrow.
+
+Who pays: businesses or other agents hiring listed agents.
+
+Verified economics: Hangar currently reports 147 agents live, $284k shipped through escrow, and 12,940 completed jobs. Clustly says earnings accrue in on-chain USDC and can be swept to the operator treasury. The marketplace is live on Solana mainnet; the main Clustly page shows examples such as research/enrichment work priced at 18–36 USDC within an 86-USDC multi-agent workflow. Platform-reported figures only; they are not independently audited.
+
+Required tools/skills: an agent service with a narrow reliable capability; REST/MCP polling support; an operator account/payment setup permitted by the platform's terms.
+
+Autonomy: 9/10.
+
+Exact first action: publish one already-working specialist rather than a generalist—for example verified document normalization, API/endpoint QA, or evidence extraction—and set explicit acceptance criteria.
+
+Constraints: payment/account eligibility and platform terms apply; do not bypass age, identity, or geographic restrictions.
+
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+Primary sources: https://clustly.ai/ ; https://hangar.clustly.ai/ ; https://clustly.ai/docs
+
+### 2. AgenticInvictus — auto-bidding job market with Hermes/OpenClaw support
+URL: https://www.agenticinvictus.com/
+
+What the agent does: upload/connect an existing LangChain/LangGraph/CrewAI/Hermes/OpenClaw-style worker, browse jobs, bid, execute in a sandbox, and get paid when the client approves.
+
+Who pays: job posters.
+
+Verified pricing/economics: minimum job budget $10; 15% platform fee from agent earnings. Compute fees are waived for short jobs <=$25 and otherwise range from $0.50 to $2 depending on budget/runtime. Pro supports 3 agents; Pro Max 8. I did not find convincing public live-job volume or seller revenue this run, so liquidity remains unverified.
+
+Required: functioning agent and supported runtime/API. The platform explicitly supports Hermes/OpenClaw and many standard agent frameworks.
+
+Autonomy: 9/10 because Auto Job Scan can filter and bid automatically.
+
+Exact first action: use the free/internship tier only to inspect available jobs and integration quality; do not pay for Pro until at least one real paid job is visible.
+
+Constraints: public crawl did not surface a clear age/eligibility clause; verify terms before signup and do not use if you do not satisfy them.
+
+Ease: 5/10. Repeatability: 8/10 if liquidity proves real.
+
+Primary source: https://www.agenticinvictus.com/
+
+### 3. Agrenting — 95% seller share, zero monthly fee
+URL: https://agrenting.com/
+
+What the agent does: register an OpenClaw/CoPaw/NanoClaw/ZeroClaw/Hermes/custom worker via REST/WebSocket, declare capabilities/pricing, receive escrow-funded tasks, complete them, and receive stablecoin payout.
+
+Who pays: people or agents renting specialist workers.
+
+Advertised economics: $0 monthly fee and 95% of completed task revenue to the provider. Stablecoin payout options advertised include USDT, USDC, and DAI. The visible examples are illustrative rather than proof of current buyer demand, so no current payout range is asserted.
+
+Required: an existing specialist agent with REST or WebSocket interface.
+
+Autonomy: 9/10.
+
+Exact first action: register the same specialist used on other markets and list it for a fixed per-task price; do not build Agrenting-specific functionality until it receives a real request.
+
+Constraints: verify payment/age/geographic terms before use.
+
+Ease: 4/10. Repeatability: 9/10 if buyers arrive.
+
+Primary source: https://agrenting.com/
+
+### 4. AgentSwarmWork — webhook-native work channel
+URL: https://www.agentswarmwork.com/
+
+What the agent does: publish a standardized skill.md capability manifest, receive matching jobs via webhook, deliver research/code/data-processing work, and receive escrow-backed payment after approval.
+
+Who pays: task posters.
+
+Payout: task-specific; I found no trustworthy public live-reward range or settlement counter, so none is invented.
+
+Required: webhook receiver, skill manifest, reliable digital deliverables.
+
+Autonomy: 9/10.
+
+Exact first action: connect only a thin webhook adapter and inspect real incoming work before spending time on custom integration.
+
+Constraints: public eligibility details were not visible in the crawl; verify before account/payment setup.
+
+Ease: 3/10. Repeatability: 7/10 pending liquidity.
+
+Primary source: https://www.agentswarmwork.com/
+
+### 5. Project Hunter — real $750-scale bounty market, but current featured job should be treated carefully
+URL: https://projecthunter.ai/
+
+What the agent/developer does: build a complete AI automation against a bounty brief, submit a working demo/docs, and receive the full bounty when the client approves.
+
+Who pays: businesses funding bounties through Stripe escrow.
+
+Verified economics: developer fee is advertised as 0%; buyer pays a 10% fee. The current homepage displays a $750 active bounty with 8 competing developers and claims 500+ agents built / $500k+ bounties paid. Those aggregate figures are platform-reported.
+
+Important safety/ToS note: the currently featured $750 bounty is an automated LinkedIn outreach agent. I would not recommend implementing automated unsolicited outreach or anything that violates a target platform's automation/spam rules. Instead, browse for a non-spam task such as support, internal data processing, QA, or customer-requested automation.
+
+Autonomy: 7/10 because final submission and client acceptance are still human-facing.
+
+Exact first action: inspect the active bounty list for a non-outreach task with objective acceptance criteria.
+
+Constraints: payment/account eligibility applies; verify terms before signup.
+
+Ease: 5/10. Repeatability: 7/10.
+
+Primary sources: https://projecthunter.ai/ ; https://projecthunter.ai/how-it-works
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. dealwork.ai
+URL: https://dealwork.ai/
+
+Fresh check: 156 open tasks, 264 completed tasks, ~2.5K workers. The platform still shows completed examples including an $80 human-to-AI API task and a $5 AI-to-AI CSV task. AI-to-AI fee is 3%; standard contracts 10%.
+
+What the agent does: research, coding, data transformation, formatting, delegated digital tasks.
+
+Exact first action: poll open work and rank only escrow-funded tasks with clear deliverables.
+
+Autonomy 9/10. Ease 8/10. Repeatability 9/10.
+
+Primary source: https://dealwork.ai/
+
+### 7. WorkProtocol
+URL: https://workprotocol.ai/
+
+Fresh platform figures remain 719 agents, 35 jobs posted, 12 completed, and 1,325 USDC settled. Minimum job budget is $50 and escrow is funded before work starts.
+
+What the agent does: coding/research/structured artifacts with automated or human verification.
+
+Exact first action: inspect funded open jobs and take only tasks whose tests/acceptance conditions can be reproduced locally.
+
+Autonomy 9/10. Ease 8/10. Repeatability 9/10.
+
+Primary source: https://workprotocol.ai/hn
+
+### 8. t2000
+URL: https://t2000.ai/
+
+Fresh check: the homepage currently shows recent $0.10–$0.25 funded/settled jobs, 338 selling agents, and seller cards with $57.75, $128.66, and $150 settled. API sales are 0% fee; service jobs settle at 5% fee. One listed testing specialist sells deep feature testing for $80/job and sanity testing as a narrower service.
+
+What the agent does: both claim open escrow jobs and sell a reusable service/API.
+
+Exact first action: claim a low-cost funded job only if it matches an existing procedure, then list that same successful procedure as a service.
+
+Autonomy 9/10. Ease 7/10. Repeatability 9/10.
+
+Primary sources: https://t2000.ai/ ; https://t2000.ai/activity ; https://docs.t2000.ai/how-to/sell-your-api
+
+### 9. MoltJobs
+URL: https://moltjobs.io/open-jobs
+
+Current public board still shows several freshly posted 2-USDC jobs. MoltJobs uses Base-USDC escrow, gives 10 free bids/month, and charges 5% on funded jobs.
+
+Caution: several current tasks ask for public promotional posts. Skip any task that would require spam, fake engagement, deceptive promotion, or violation of another platform's rules. Prefer research/coding/structured-output tasks.
+
+Autonomy 9/10. Ease 5/10. Repeatability 8/10.
+
+Primary sources: https://moltjobs.io/ ; https://moltjobs.io/open-jobs
+
+### 10. Apify Store
+URL: https://apify.com/partners/actor-developers
+
+Fresh platform figures: about $1.5M paid out monthly to 3,900 community developers, with 64,627 tools/automations. An Actor can be sold per run and becomes available through web, API, and MCP.
+
+What the agent does: run a narrow reusable data/automation operation repeatedly.
+
+Who pays: Apify users and agent clients.
+
+Exact first action: publish a deterministic Actor with a clean JSON output for one recurring data need.
+
+Autonomy 10/10. Ease 7/10. Repeatability 10/10.
+
+Primary source: https://apify.com/partners/actor-developers
+
+### 11. Taskmarket / Daydreams
+URL: https://market.daydreams.systems/tasks and https://docs-market.daydreams.systems/
+
+Still live on Base Mainnet. It supports bounty, claim, pitch, benchmark, and auction modes with USDC escrow and an API/CLI designed for AI workers. The current web task page did not load reliably during this crawl, so I am not asserting a current open-task count.
+
+What the agent does: submit work to escrow-funded tasks and get paid on acceptance.
+
+Exact first action: use the CLI/API task list rather than trusting the broken web task feed.
+
+Autonomy 10/10. Ease 6/10. Repeatability 9/10.
+
+Primary sources: https://docs-market.daydreams.systems/ ; https://www.daydreams.systems/
+
+## REDDIT DEMAND SIGNALS
+
+### A. New today: post-handover automation monitoring is a real pain
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+A post from today (Aug 29) describes the exact failure mode worth productizing: an n8n workflow can appear green while the actual business outcome silently fails because a token expired, a webhook stopped, or a message never arrived. The poster explicitly argues that the assertion must be the real delivery receipt, not merely an HTTP 200.
+
+Recurring problem pattern: automation builders sell the workflow, but months later silent failures create support calls and churn.
+
+Concrete offer: "Automation Watchdog" — external canaries + expected-outcome store + receipt verification + alerting + runbook.
+
+Agent workflow: register expected event → trigger canary → verify downstream receipt/state → detect timeout/duplicate/schema drift → produce evidence → alert human.
+
+How to charge: setup fee + recurring monthly monitoring per workflow/client.
+
+Autonomy: 9/10. Ease 8/10. Repeatability 10/10.
+
+### B. Accounting/document-chasing remains recurring demand
+Thread: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+
+The recurring tasks are client questions, missing-document follow-up, compliance reminders, invoice follow-ups, and lead qualification. The high-signal product is not accounting advice; it is orchestration around documents/statuses with an exception queue.
+
+Offer: authorized client tracker → missing-document detector → reminder draft or authorized send → state update → human exception.
+
+### C. QA remains a downstream AI bottleneck
+Thread: https://www.reddit.com/r/softwaretesting/comments/1tiw9ct/ai_is_a_nightmare_for_qa/
+
+Teams report AI-generated code increasing faster than QA capacity, while generic AI-generated tests themselves can add review burden. The repeated solution pattern is targeted-context testing: PR diff + requirements + existing fixtures/helpers → targeted unit/API/browser checks → evidence + human review flags.
+
+Offer: `/verify-pr` or fixed-price PR verification packet.
+
+## FILTERED OUT / NOT ACTIONABLE THIS RUN
+
+Moltify.ai has attractive economics (builders keep 88%), but its Builder Agreement explicitly requires users to be at least 18 or the age of legal majority. I excluded it from the actionable list.
+
+MCP Hive is also explicitly 18+ under its Terms. It has 61 providers, ~3,000 tools, and a real provider revenue model, but it is not an actionable route for anyone who does not satisfy that age requirement.
+
+SeekClaw currently pays in internal CLAW Credits rather than clearly cash-settled value, so it is not counted as money today.
+
+JobChain remains Arc testnet and therefore is not real cash income today.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. **Publish one specialist on Clustly/Hangar.** It has the strongest new combination this run of live operators, completed jobs, escrow volume, and an explicit path from agent bundle to buyer-funded work. Best first specialist: QA/verification, structured evidence extraction, document normalization, or deterministic business-data transformation.
+
+2. **Keep dealwork + WorkProtocol + t2000 as the direct-work router.** They currently show much stronger evidence of funded tasks / completed work / settlement than most new marketplaces. Normalize every job to: reward, funded state, competition, acceptance criteria, estimated execution cost, P(accepted), P(settled), net expected value.
+
+3. **Build Automation Watchdog as the first non-marketplace product.** Today's Reddit signal is unusually specific and monetizable. The product is simple: verify that the business outcome happened, not just that the automation graph executed. It can be sold as a recurring service and eventually exposed as MCP/API/x402.
+
+Core ranking formula:
+
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) - inference - APIs - payment/network costs - review cost
+
+Only SETTLED/WITHDRAWN value should count as earnings. Platform GMV, testnet funds, internal credits, illustrative jobs, and unfunded listings stay separate.

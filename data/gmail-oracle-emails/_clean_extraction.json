@@ -1,0 +1,2191 @@
+{
+  "total_emails": 45,
+  "total_marketplaces_found": 269,
+  "marketplace_names": {
+    "AI lowers configuration cost; it does not remove the need for a trusted runtime": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 14:27",
+      "email_date": "Fri, 28 Aug 2026 00:29:42 -0700",
+      "filename": "28_Aug_2026_Reddit_Pain_Radar_2026-08-28_1427.txt"
+    },
+    "AI should compile meaning; deterministic systems should own truth": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-30 16:26 ICT",
+      "email_date": "Sun, 30 Aug 2026 09:31:51 +0000",
+      "filename": "30_Aug_2026_Reddit_Pain_Radar_2026-08-30_1626_ICT.txt"
+    },
+    "APILayer Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "AR invoice drafting with tiered/custom pricing": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "Accounting \u201cindependent truth/reconciliation layer\u201d": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "Accounts-payable inbox triage": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "ActiveCampaign App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Adalo Component Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Add OpenAnt to the job oracle, but filter to remote digital tasks only": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "Add an OSS bounty worker alongside marketplace scanning": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "Adobe Commerce Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Adobe Creative Cloud Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Agent workflow reliability / business-outcome verification": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "AgentGigs": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "AgentMarket": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "AgentMart": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "AgentPact": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Aircall App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Airtable Interface Extensions / Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Alexa Skills Store": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Alipay Mini Programs": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Amazon Selling Partner Appstore": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "AppDirect Marketplace / AppDistribution": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "AppFolio Stack Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "AppHighway MCP Tool Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "ArtStation Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Asana App Directory": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Autodesk Design and Make Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "AutomationWorkflows.io": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "BOOTH.pm VRChat/Unity asset shops": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "BambooHR Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Bitrix24 Market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Boomi Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Box App Center": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Braze Partner Marketplace / Alloys": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Bubble Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Buildium Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "BuiltByBit Hytale resources": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "CGTrader": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "CMDB Entity + Ownership Truth": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-29 22:27 ICT",
+      "email_date": "Sat, 29 Aug 2026 10:30:16 -0500",
+      "filename": "29_Aug_2026_Reddit_Pain_Radar_2026-08-29_2227_ICT.txt"
+    },
+    "CRE underwriting \u201cdocument-to-model verification pipeline\u201d": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "CS-Cart Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Celigo integrator.io Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Cfx Marketplace / Tebex for FiveM": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Chargebee Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Cin7 Technology & ISV Partner market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Cisco Networking App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Clawget": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "CloudBlue Connect": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Clover App Market": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Clustly": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Codester": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Compatibility-maintenance Worker": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Concrete CMS Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Constant Contact Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Construction \u201cfield-first operational layer\u201d": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "Core Games Perks economy": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Coupa App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Craft CMS Plugin Store": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Creatio Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Creative Fabrica": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Creative Fabrica Creator Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Crisp Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Cross-venue distribution Process": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "CrowdStrike Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Cubebrush": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Cults3D": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "CurseForge Premium Mods": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "Customer-support deflection with evidence + escalation": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "D2L Brightspace IntegrationHub": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "DAZ 3D Published Artist marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Data-integrity verifier for automations": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Declarative SaaS test-tenant factory": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Dental/appointment booking QA worker": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Design Bundles": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Dialpad App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "DigitalOcean Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Discord Premium Apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "DoliStore": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Dota 2 Item Workshop": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "DroneDeploy App Market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Duda App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "EKG.gg": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "EXVIV x402 Radar": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Ecwid App Market": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Elgato Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Elgato Stream Deck Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "Epic Showroom / Connection Hub": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Etsy Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Exact Online App Center": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Fantasy Grounds Forge": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Food4Rhino": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Fortnox Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Foundry VTT Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Frappe Cloud Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "FreshBooks App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Freshworks Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Front App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "GameDev Market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "Garmin Connect IQ Store": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Geotab Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Ghost Theme Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Glide Template Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "GmodStore": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Google August-2026 incident evidence pack": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Google Workspace Marketplace add-ons": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Gorgias App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Grafana Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Greenhouse Partner Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Guesty Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "HashiCorp Terraform Registry": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Heroku Add-ons Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "HiBob Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Hostaway Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Hostfully Integration Zone": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Housecall Pro App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Humans are still the reconciliation bus": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 14:27",
+      "email_date": "Fri, 28 Aug 2026 00:29:42 -0700",
+      "filename": "28_Aug_2026_Reddit_Pain_Radar_2026-08-28_1427.txt"
+    },
+    "Hye.gg": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "IMVU Creator Catalog": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Incumbent replacement becomes easier through a shadow system": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 14:27",
+      "email_date": "Fri, 28 Aug 2026 00:29:42 -0700",
+      "filename": "28_Aug_2026_Reddit_Pain_Radar_2026-08-28_1427.txt"
+    },
+    "Instructure EdTech Collective Marketplace / Canvas Apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Intercom App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Invoice extraction + duplicate detection": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "Jamf Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Joomla Extensions Directory": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Jumpseller App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Keap Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Kintone / KDDI America Plug-in Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Klaviyo App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Kustomer App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Leanpub Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Legal Matter Document Canonicalizer": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-29 22:27 ICT",
+      "email_date": "Sat, 29 Aug 2026 10:30:16 -0500",
+      "filename": "29_Aug_2026_Reddit_Pain_Radar_2026-08-29_2227_ICT.txt"
+    },
+    "Legal \u201cfirm-owned operational data layer\u201d": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "Lever Partner Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Lightspeed eCom App Market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Lodgify Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Lunchbox OPEN Integrations Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "MSP \u201cunbundled PSA kernel\u201d": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "MYOB App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Mailchimp Integration Directory": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Manufacturing Physical-vs-ERP Truth": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-29 22:27 ICT",
+      "email_date": "Sat, 29 Aug 2026 10:30:16 -0500",
+      "filename": "29_Aug_2026_Reddit_Pain_Radar_2026-08-29_2227_ICT.txt"
+    },
+    "Manufacturing \u201cERP exception engine\u201d": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "Merkado AI App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Microsoft AppSource": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Microsoft Flight Simulator Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Microsoft Security Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Microsoft Teams Store / AppSource": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "MikroTask": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "Mindbody Partner Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Missing objects are often more important than broken objects": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-30 16:26 ICT",
+      "email_date": "Sun, 30 Aug 2026 09:31:51 +0000",
+      "filename": "30_Aug_2026_Reddit_Pain_Radar_2026-08-30_1626_ICT.txt"
+    },
+    "Modrinth": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "MoltJobs": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Moltify": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Motive App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "MyFonts": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "MyMiniFactory": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "Neura Market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "OAuth and credential handoff": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "October CMS Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Odoo Apps Store": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "OpenAnt": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "OpenCart Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Oracle Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Outcome history is the moat": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-30 16:26 ICT",
+      "email_date": "Sun, 30 Aug 2026 09:31:51 +0000",
+      "filename": "30_Aug_2026_Reddit_Pain_Radar_2026-08-30_1626_ICT.txt"
+    },
+    "Overwolf Appstore": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "Paddle Apps / Marketplace Publisher Program": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Palo Alto Networks Cortex XSOAR Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Partner/certification dossier automation": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Personio Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Pipedrive Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Plesk Extensions Catalog": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Poe Creator Platform": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "PointClickCare Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "PrestaShop Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Productize AP/invoice verification rather than another generic AI service": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "Property-management payments/onboarding infrastructure": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "QNAP App Center / Software Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "QuickBooks App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "QuickNode Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Railway Template Marketplace / OSS Partner Program": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "RapidAPI Hub": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "RealPage Exchange (RPX)": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Reallusion Marketplace / Content Store": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "RenderHub": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Replit Extensions Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Restaurant \u201creliability-first POS control plane\u201d": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "email_date": "Thu, 27 Aug 2026 23:27:58 -0500",
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt"
+    },
+    "Rippling App Shop": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Roll20 Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "SAP Store": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "SHOPLINE App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "SaaS Seat Reclamation Runtime": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-29 22:27 ICT",
+      "email_date": "Sat, 29 Aug 2026 10:30:16 -0500",
+      "filename": "29_Aug_2026_Reddit_Pain_Radar_2026-08-29_2227_ICT.txt"
+    },
+    "Sabre Red App Centre": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Sage Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Salesforce AppExchange": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Samsara App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Samsung Galaxy Store": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Scaling AP without hiring": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "Second Life Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "SellMyApp": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Shopify Theme Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Shoplazza App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Shopware Store": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Siemens Xcelerator Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Silent-workflow outcome monitor": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Simpro Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "SketchUp Extension Warehouse": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Slack Marketplace modernization": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Splunkbase": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Square App Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Squarespace Extensions / Apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Statamic Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Stripe App Marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "SugarCRM Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "SuiteCRM Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Superhive (Blender Market)": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "Superhive (formerly Blender Market)": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Synology Package Center": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Taskmarket": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Teachers Pay Teachers": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "Teamwork.com Integrations Directory": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "Telegram Mini Apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Thangs Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "The Sims 4 Maker Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "The strongest opportunities live beside, not inside, incumbents": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-30 16:26 ICT",
+      "email_date": "Sun, 30 Aug 2026 09:31:51 +0000",
+      "filename": "30_Aug_2026_Reddit_Pain_Radar_2026-08-30_1626_ICT.txt"
+    },
+    "The strongest wedge is immediately before an irreversible action": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 14:27",
+      "email_date": "Fri, 28 Aug 2026 00:29:42 -0700",
+      "filename": "28_Aug_2026_Reddit_Pain_Radar_2026-08-28_1427.txt"
+    },
+    "Tiendanube / Nuvemshop App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Toku.agency": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Travelport Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "TurboSquid": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Twilio Marketplace Add-ons": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Twitch Extensions": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Twitch Extensions Directory": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "VRChat Avatar Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "VRChat Creator Economy / Avatar Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Vendasta Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "Visma App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "WHMCS Marketplace": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Walmart Marketplace App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "War Thunder Revenue Share Program": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "Warframe TennoGen": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "WeChat Mini Programs": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Weekly SEO traffic-loss + internal-link triage": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "Whop App Store": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Wix App Market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "WordPress MCP-ready SaaS plugins": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Xero Accrual Timing Subledger": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-29 22:27 ICT",
+      "email_date": "Sat, 29 Aug 2026 10:30:16 -0500",
+      "filename": "29_Aug_2026_Reddit_Pain_Radar_2026-08-29_2227_ICT.txt"
+    },
+    "Xero App Store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "ZEPETO Studio Items": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Zazzle Creator Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "Zendesk Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Zoho Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "Zoom App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "Zuora Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "Zyla API Hub": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "api0.app API Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "athenahealth Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "beehiiv App Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "email_date": "Mon, 31 Aug 2026 15:13:11 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt"
+    },
+    "dealwork.ai": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "dotMCP Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "eBay seller ecosystem + official API MCP": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "gigs.sh": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "itch.io asset marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "itch.io game-asset/tool market": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "mod.io Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "n8n Workflow Template Library + affiliate economics": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "n8n production-hardening audit": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "email_date": "Sun, 30 Aug 2026 20:23:04 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt"
+    },
+    "nopCommerce Marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "workpnp": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "email_date": "Sun, 30 Aug 2026 08:26:11 -0700",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt"
+    },
+    "\u201cIntegration\u201d should mean proven equivalence, not an API connection": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-28 14:27",
+      "email_date": "Fri, 28 Aug 2026 00:29:42 -0700",
+      "filename": "28_Aug_2026_Reddit_Pain_Radar_2026-08-28_1427.txt"
+    }
+  },
+  "total_api_endpoints": 122,
+  "api_endpoints": {
+    "https://api.bountybook.ai": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 10:00",
+      "email_date": "Sun, 30 Aug 2026 22:25:47 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_1000.txt"
+    },
+    "https://api.complete.codes/v1/sprints?status=active&amp;min_payout=5&amp;sort=payout": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 18:00",
+      "email_date": "Mon, 31 Aug 2026 06:25:49 -0500",
+      "filename": "31_Aug_2026_Agent_Money_Scout_2026-08-31_1800.txt"
+    },
+    "https://api.complete.codes/v1/sprints?status=active&min_payout=5&sort=payout`,": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 18:00",
+      "email_date": "Mon, 31 Aug 2026 06:25:49 -0500",
+      "filename": "31_Aug_2026_Agent_Money_Scout_2026-08-31_1800.txt"
+    },
+    "https://api.slack.com/changelog/2024-09-legacy-custom-bots-classic-apps-deprecation": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://api.the402.ai": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 03:00",
+      "email_date": "Sat, 29 Aug 2026 15:26:27 -0500",
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-30_0300.txt"
+    },
+    "https://api0.app": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://apihub.io": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-31 02:00",
+      "email_date": "Sun, 30 Aug 2026 14:26:29 -0500",
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0200.txt"
+    },
+    "https://developer-docs.amazon.com/sp-api/docs/selling-partner-appstore": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer-docs.amazon.com/sp-api/docs/what-is-the-selling-partner-api": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.adobe.com/commerce/marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.adobe.com/premiere-pro/uxp/plugins/distribution/adobe-marketplace": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.aircall.io": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://developer.appdirect.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://developer.atlassian.com/platform/marketplace/pricing-payment-and-billing": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.chrome.com/blog/cws-new-enterprise-publishing-option": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.chrome.com/docs/webstore/api": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.cisco.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.crowdstrike.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.dronedeploy.com/docs/faqs.html": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "https://developer.duda.co/docs/app-store-payments": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.duda.co/docs/app-store-requirements": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.ebay.com/api-docs/sell/static/overview.html": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.garmin.com/connect-iq/monetization/app-sales": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.gomotive.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.intuit.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developer.jamf.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.keap.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://developer.monday.com/apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.monday.com/apps/changelog/announcing-the-revshare-program": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.myob.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.paddle.com/build/apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://developer.paddle.com/changelog/2026/oauth-apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://developer.pointclickcare.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://developer.reallusion.com/join.html": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.rippling.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.sage.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/code-analyzer.html": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.samsung.com/galaxy-store/blog/en/2026/08/13/integrating-revenuecat-with-samsung-in-app-purchase-for-galaxy-store-applications": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.shopline.com/docs/apps": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.shopline.com/docs/apps/authentication": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.siemens.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.sketchup.com": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.squareup.com": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.travelport.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://developer.walmart.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.walmart.com/us-marketplace/docs/oauth-authentication": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.walmart.com/us-marketplace/docs/solution-providers": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developer.woocommerce.com/docs/woo-marketplace/getting-started": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.wordpress.org/plugins/wordpress-org": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developer.xero.com/grow-with-xero": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developer.xero.com/pricing": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developer.zendesk.com/documentation/marketplace/publishing-to-the-marketplace/submit-your-app": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developers.activecampaign.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.asana.com/docs": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.dialpad.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://developers.etsy.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.etsy.com/documentation/essentials/authentication": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.etsy.com/documentation/tutorials/listings": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.freshworks.com/docs/app-sdk/v3.0": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developers.google.com/workspace/guides/configure-mcp-servers": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.google.com/workspace/marketplace/manage-app-listing": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.hubspot.com/changelog/deprecating-support-for-classic-legacy-crm-cards": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.hubspot.com/changelog/legacy-public-app-creation-sunset": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.intercom.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developers.intercom.com/docs/publish-to-the-app-store/listing-your-app": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developers.klaviyo.com/en/docs/flow_templates": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.klaviyo.com/en/docs/klaviyo_app_marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.lightspeedhq.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://developers.mindbodyonline.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://developers.miro.com/docs/monetization": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.miro.com/docs/publish-your-app": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.pipedrive.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://developers.reddit.com/app-registration": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.reddit.com/apps/consensus-canvas": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.reddit.com/docs": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.samsara.com/docs/partner-developer-portal": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.squarespace.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.vendasta.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://developers.zoom.us/docs/distribute/monetization/monetization-dashboard": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.zoom.us/docs/distribute/monetization/pricing-plans": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://developers.zoom.us/docs/distribute/monetization/provisioning": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.athenahealth.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.celigo.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.cloudbase.net/en/integration/wechat-pay-miniprogram": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.clover.com": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.connect.visma.com/docs/visma-app-store": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://docs.coregames.com/references/perks/program": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://docs.curseforge.com/docs/game-integration/unreal/monetization": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "https://docs.elgato.com/maker-console/submitting-products": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.elgato.com/marketplace/become-a-maker": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "https://docs.elgato.com/monetization/revenue-share": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.elgato.com/streamdeck/sdk/introduction/distribution": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 04:10:45 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt"
+    },
+    "https://docs.frappe.io/cloud/marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "https://docs.github.com/en/apps/github-marketplace/selling-your-app-on-github-marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.github.com/en/enterprise-cloud@latest/apps/github-marketplace/creating-apps-for-github-marketplace/requirements-for-listing-an-app": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Sun, 30 Aug 2026 22:08:51 -0700",
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.mod.io/monetization/marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N1296349.html": {
+      "email_subject": "Reddit Pain Radar \u2014 2026-08-31 01:27 ICT",
+      "email_date": "Sun, 30 Aug 2026 13:32:25 -0500",
+      "filename": "30_Aug_2026_Reddit_Pain_Radar_2026-08-31_0127_ICT.txt"
+    },
+    "https://docs.rapidapi.com/docs/monetizing-your-api-on-rapidapicom": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.rapidapi.com/docs/payouts-and-finance": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.rapidapi.com/docs/what-is-rapidapi": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 06:32:04 +0000",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.stripe.com/stripe-apps/publish-app": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.tebex.io/creators/growth-and-success/cfx-marketplace": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "email_date": "Mon, 31 Aug 2026 05:11:54 -0400",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt"
+    },
+    "https://docs.tools402.dev": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-29 14:00",
+      "email_date": "Sat, 29 Aug 2026 02:22:46 -0500",
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-29_1400.txt"
+    },
+    "https://docs.whop.com": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://docs.zepeto.me/studio": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 08:25:38 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt"
+    },
+    "https://marketplace.agent402.app": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-29 04:00",
+      "email_date": "Fri, 28 Aug 2026 16:26:14 -0500",
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-29_0400.txt"
+    },
+    "https://marketplace.agent402.app/marketplace": {
+      "email_subject": "Agent Money Scout \u2014 2026-08-30 03:00",
+      "email_date": "Sat, 29 Aug 2026 15:26:27 -0500",
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-30_0300.txt"
+    },
+    "https://marketplace.apilayer.com/about-us": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "email_date": "Mon, 31 Aug 2026 14:19:46 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt"
+    },
+    "https://marketplace.creatio.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://marketplace.crowdstrike.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://marketplace.cs-cart.com": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://marketplace.digitalocean.com/vendors": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://marketplace.geotab.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://marketplace.jamf.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 11:21:57 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://marketplace.kddi-america.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://marketplace.oracle.com/partnerHome": {
+      "email_subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 05:14:22 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt"
+    },
+    "https://marketplace.pointclickcare.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://marketplace.secondlife.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "email_date": "Mon, 31 Aug 2026 16:13:15 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt"
+    },
+    "https://marketplace.travelport.com": {
+      "email_subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "email_date": "Mon, 31 Aug 2026 12:20:59 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt"
+    },
+    "https://marketplace.whmcs.com": {
+      "email_subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "email_date": "Mon, 31 Aug 2026 07:20:14 -0500",
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt"
+    }
+  },
+  "email_summaries": [
+    {
+      "filename": "27_Aug_2026_Reddit_Pain_Radar_2026-08-28_1125_ICT.txt",
+      "subject": "Reddit Pain Radar \u2014 2026-08-28 11:25 ICT",
+      "date": "Thu, 27 Aug 2026 23:27:58 -0500"
+    },
+    {
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-28_2000.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-28 20:00",
+      "date": "Fri, 28 Aug 2026 08:22:57 -0500"
+    },
+    {
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-28_2100.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-28 21:00",
+      "date": "Fri, 28 Aug 2026 09:22:26 -0500"
+    },
+    {
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-29_0400.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-29 04:00",
+      "date": "Fri, 28 Aug 2026 16:26:14 -0500"
+    },
+    {
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-29_0500.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-29 05:00",
+      "date": "Fri, 28 Aug 2026 17:25:24 -0500"
+    },
+    {
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-29_0800.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-29 08:00",
+      "date": "Fri, 28 Aug 2026 20:25:16 -0500"
+    },
+    {
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-29_1000.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-29 10:00",
+      "date": "Fri, 28 Aug 2026 22:22:13 -0500"
+    },
+    {
+      "filename": "28_Aug_2026_Agent_Money_Scout_2026-08-29_1300.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-29 13:00",
+      "date": "Fri, 28 Aug 2026 23:24:53 -0700"
+    },
+    {
+      "filename": "28_Aug_2026_Reddit_Pain_Radar_2026-08-28_1427.txt",
+      "subject": "Reddit Pain Radar \u2014 2026-08-28 14:27",
+      "date": "Fri, 28 Aug 2026 00:29:42 -0700"
+    },
+    {
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-29_1400.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-29 14:00",
+      "date": "Sat, 29 Aug 2026 02:22:46 -0500"
+    },
+    {
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-29_1900.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-29 19:00",
+      "date": "Sat, 29 Aug 2026 07:26:10 -0500"
+    },
+    {
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-30_0300.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-30 03:00",
+      "date": "Sat, 29 Aug 2026 15:26:27 -0500"
+    },
+    {
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-30_1000.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-30 10:00",
+      "date": "Sat, 29 Aug 2026 22:24:03 -0500"
+    },
+    {
+      "filename": "29_Aug_2026_Agent_Money_Scout_2026-08-30_1100.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-30 11:00",
+      "date": "Sat, 29 Aug 2026 23:34:13 -0500"
+    },
+    {
+      "filename": "29_Aug_2026_Reddit_Pain_Radar_2026-08-29_2227_ICT.txt",
+      "subject": "Reddit Pain Radar \u2014 2026-08-29 22:27 ICT",
+      "date": "Sat, 29 Aug 2026 10:30:16 -0500"
+    },
+    {
+      "filename": "29_Aug_2026_Reddit_Pain_Radar_2026-08-30_0025_ICT.txt",
+      "subject": "Reddit Pain Radar \u2014 2026-08-30 00:25 ICT",
+      "date": "Sat, 29 Aug 2026 10:28:11 -0700"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_0900.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-30 09:00",
+      "date": "Sun, 30 Aug 2026 02:25:00 +0000"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_1800.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-30 18:00",
+      "date": "Sun, 30 Aug 2026 11:24:55 +0000"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-30_2200.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-30 22:00",
+      "date": "Sun, 30 Aug 2026 08:26:11 -0700"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0100.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 01:00",
+      "date": "Sun, 30 Aug 2026 18:23:52 +0000"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0200.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 02:00",
+      "date": "Sun, 30 Aug 2026 14:26:29 -0500"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0300.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 03:00",
+      "date": "Sun, 30 Aug 2026 20:26:02 +0000"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0500.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 05:00",
+      "date": "Sun, 30 Aug 2026 22:27:08 +0000"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_0800.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 08:00",
+      "date": "Sun, 30 Aug 2026 20:23:04 -0500"
+    },
+    {
+      "filename": "30_Aug_2026_Agent_Money_Scout_2026-08-31_1000.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 10:00",
+      "date": "Sun, 30 Aug 2026 22:25:47 -0500"
+    },
+    {
+      "filename": "30_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "date": "Sun, 30 Aug 2026 22:08:51 -0700"
+    },
+    {
+      "filename": "30_Aug_2026_Reddit_Pain_Radar_2026-08-30_1626_ICT.txt",
+      "subject": "Reddit Pain Radar \u2014 2026-08-30 16:26 ICT",
+      "date": "Sun, 30 Aug 2026 09:31:51 +0000"
+    },
+    {
+      "filename": "30_Aug_2026_Reddit_Pain_Radar_2026-08-31_0127_ICT.txt",
+      "subject": "Reddit Pain Radar \u2014 2026-08-31 01:27 ICT",
+      "date": "Sun, 30 Aug 2026 13:32:25 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Agent_Money_Scout_2026-08-31_1500.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 15:00",
+      "date": "Mon, 31 Aug 2026 03:28:08 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Agent_Money_Scout_2026-08-31_1700.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 17:00",
+      "date": "Mon, 31 Aug 2026 05:25:33 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Agent_Money_Scout_2026-08-31_1800.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 18:00",
+      "date": "Mon, 31 Aug 2026 06:25:49 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Agent_Money_Scout_2026-08-31_2100.txt",
+      "subject": "Agent Money Scout \u2014 2026-08-31 21:00",
+      "date": "Mon, 31 Aug 2026 09:32:36 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Agent_Money_Scout_2026-09-01_0300.txt",
+      "subject": "Agent Money Scout \u2014 2026-09-01 03:00",
+      "date": "Mon, 31 Aug 2026 15:21:42 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026",
+      "date": "Mon, 31 Aug 2026 12:20:59 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Fresh_.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Fresh Scan",
+      "date": "Mon, 31 Aug 2026 14:19:46 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Next_F.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Next Frontier Scan",
+      "date": "Mon, 31 Aug 2026 15:13:11 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_1_Sep_2026_Run_11.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 1 Sep 2026 \u2014 Run 11",
+      "date": "Mon, 31 Aug 2026 16:13:15 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_31_Aug_2026.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 31 Aug 2026",
+      "date": "Mon, 31 Aug 2026 11:21:57 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_NEW_Agent_Markets_Scan_4_31_Aug_202.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 NEW Agent Markets \u2014 Scan 4 \u2014 31 Aug 2026",
+      "date": "Mon, 31 Aug 2026 04:10:45 -0400"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent-Accessible_Markets_31_Aug.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 New Agent-Accessible Markets \u2014 31 Aug 2026",
+      "date": "Mon, 31 Aug 2026 08:25:38 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_2026-08-31_1604_I.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 2026-08-31 16:04 ICT",
+      "date": "Mon, 31 Aug 2026 05:11:54 -0400"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_20_New_Agent_Markets_31_Aug_2026.txt",
+      "subject": "Oracle Market Unlocks \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "date": "Mon, 31 Aug 2026 06:32:04 +0000"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_6_20_New_Agent_Markets_31_Aug_2026.txt",
+      "subject": "Oracle Market Unlocks #6 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "date": "Mon, 31 Aug 2026 05:14:22 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Oracle_Market_Unlocks_8_20_New_Agent_Markets_31_Aug_2026.txt",
+      "subject": "Oracle Market Unlocks #8 \u2014 20 New Agent Markets \u2014 31 Aug 2026",
+      "date": "Mon, 31 Aug 2026 07:20:14 -0500"
+    },
+    {
+      "filename": "31_Aug_2026_Reddit_Pain_Radar_2026-08-31_1528_ICT.txt",
+      "subject": "Reddit Pain Radar \u2014 2026-08-31 15:28 ICT",
+      "date": "Mon, 31 Aug 2026 04:32:27 -0400"
+    }
+  ]
+}

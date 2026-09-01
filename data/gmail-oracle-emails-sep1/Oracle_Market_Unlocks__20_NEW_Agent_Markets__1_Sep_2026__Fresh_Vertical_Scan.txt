@@ -1,0 +1,185 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Fresh Vertical Scan
+Date: Mon, 31 Aug 2026 17:11:59 -0500
+Message ID: 1a059e1187565d23
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+Research date: 1 September 2026
+
+I treated novelty as a hard constraint and cross-checked the sent Oracle-report corpus in Gmail before research. The 20 exact venue names below had no prior exact-market hit in the sent Oracle reports. This run deliberately moves into underexplored vertical distribution surfaces rather than repeating Shopify-style ecosystems.
+
+H shorthand: **H0** = essentially machine-operable after credentials; **H1** = one-time human identity/account/review/consent; **H2** = recurring human partner/compliance/subjective approval; **H3** = material recurring human production/customer work; **H4** = fundamentally human/offline. Legitimate identity, KYC, tax, privacy, IP, safety and accountable legal gates remain human.
+
+Scoring: O = opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (5 = less crowded); N = novelty/timing. Total /25.
+
+## Ranked 20
+
+| # | Market | O | A | F | C | N | Total | H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | Deliverect Developer Ecosystem / partner marketplace | 5 | 5 | 5 | 4 | 5 | **24** | H1–H2 |
+| 2 | Paylocity Marketplace | 5 | 5 | 4 | 4 | 5 | **23** | H2 |
+| 3 | SiteMinder Exchange | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 4 | Blackbaud Marketplace | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 5 | Attentive App Marketplace | 5 | 5 | 5 | 3 | 4 | **22** | H1–H2 |
+| 6 | Alteryx Marketplace | 5 | 5 | 4 | 4 | 4 | **22** | H1–H2 |
+| 7 | Dayforce Exchange | 5 | 5 | 4 | 4 | 4 | **22** | H2 |
+| 8 | Clever App Gallery / Clever Library | 5 | 5 | 4 | 4 | 4 | **22** | H2 |
+| 9 | Anthology App Catalog (Blackboard) | 5 | 5 | 4 | 3 | 4 | **21** | H2 |
+| 10 | Schoology App Center | 4 | 5 | 5 | 3 | 4 | **21** | H1–H2 |
+| 11 | DrChrono App Directory | 5 | 5 | 4 | 3 | 4 | **21** | H2 |
+| 12 | Neon One Certified Integrations | 4 | 5 | 4 | 4 | 3 | **20** | H2 |
+| 13 | Yotpo Integrations Directory | 4 | 5 | 4 | 3 | 4 | **20** | H2 |
+| 14 | Help Scout public integrations / App Directory | 4 | 5 | 5 | 3 | 3 | **20** | H1–H2 |
+| 15 | DonorPerfect Integrations | 4 | 5 | 4 | 4 | 3 | **20** | H1–H2 |
+| 16 | Matillion Exchange | 4 | 5 | 5 | 3 | 2 | **19** | H1 |
+| 17 | Domo Appstore / Asset distribution ecosystem | 4 | 5 | 4 | 3 | 3 | **19** | H1–H2 |
+| 18 | PowerSchool Partner Network | 5 | 4 | 3 | 3 | 4 | **19** | H2 |
+| 19 | ClassLink LaunchPad application library | 4 | 5 | 4 | 3 | 2 | **18** | H2 |
+| 20 | Airtable Extensions Marketplace | 3 | 5 | 3 | 3 | 1 | **15** | H1–H2 |
+
+---
+
+## 1. Deliverect Developer Ecosystem / partner marketplace — 24/25
+
+**What an agent can sell.** Restaurant/retail connectors and operational utilities: POS/menu/order reconciliation, loyalty adapters, payment connectors, dispatch integrations, order-state QA, failed-order recovery, menu normalization and vertical analytics.
+
+**Autonomous workflow.** Oracle mines restaurant operator/POS integration complaints → specialist Worker chooses one repeated failure mode → uses Deliverect APIs/MCP to discover capabilities → generates connector → RestaurantWorld seeds stores, menus, modifiers, orders, cancellations, refunds and delivery events → Harbor verifies idempotence, state transitions, prices/taxes and retry behavior → partner review → deploy to customers → monitor errors/order outcomes → persistent Worker patches changes.
+
+**Human dependency.** H1–H2: partner application and customer credentials are human gates; engineering/maintenance can approach H0.
+
+**Frontier infrastructure.** Deliverect’s current developer site exposes an **MCP Server**, 11 APIs, 100+ endpoints, API reference/changelog and an integration-partner path. This is a meaningful H-level drop: agents can query platform capability directly rather than hardcoding bespoke docs.
+
+**Demand.** Deliverect says it is trusted by **60,000+ establishments**. Restaurant integration problems are repetitive and costly because failed order/menu/POS state has immediate revenue impact.
+
+**Community/pain.** Restaurant operators repeatedly complain about duplicated menus, missing modifiers, sync failures and order-state mismatch across POS/delivery systems. Treat the platform’s own partner/help ecosystem as stronger evidence than generic Reddit for this niche.
+
+**Why agents fit.** Orders are explicit state machines with hard invariants; connector maintenance is repetitive and release-driven.
+
+**Reusable Moltwork assets.** `DeliverectPack`, `RestaurantWorld`, menu/order evaluator, MCP discovery Skill, POS reconciliation School, certification Process, persistent RestaurantIntegrationWorker.
+
+**Economics.** Attractive if one connector serves many locations and support is mostly automated. Bad if every restaurant needs bespoke mapping/onboarding.
+
+Sources: https://developers.deliverect.com/ ; https://help.deliverect.com/en/articles/8347495-become-a-partner ; https://resources.developers.deliverect.com/en/articles/13632816-store-integration-overview
+
+## 2. Paylocity Marketplace — 23/25
+
+**What to sell.** Payroll/HR reconciliation, benefits/vendor sync, worker-comp adapters, employee lifecycle QA, payroll anomaly monitors, onboarding/offboarding integrations and finance exports.
+
+**Workflow.** Mine payroll complaints → build against sandbox → WorkforceWorld creates hires, terminations, pay periods, overtime, benefits and corrections → Harbor checks duplicate workers, terminated-worker state, overtime, pagination/webhooks and reconciliation → early-adopter customers → Marketplace listing → monitor production API error rate → Worker patches until certification thresholds are hit.
+
+**H-level.** H2 because partnership/commercial terms and customer advocates are required.
+
+**Infrastructure.** Paylocity’s official partner journey provides sandbox/API access and Marketplace distribution. Certification is unusually measurable: three mutual customer advocates, at least 90 days active, and **<5% API error rate** over the prior 90 days.
+
+**Demand/community.** 2026 Reddit payroll users report serious glitches, including terminated employees unexpectedly receiving pay records and overtime-calculation failures, plus frustration with support. That is high-value evidence for independent reconciliation/guardrail products.
+
+**Why agents fit.** Payroll data is structured and exceptions are machine-checkable; a persistent Worker benefits from accumulating edge-case fixtures.
+
+**Moltwork assets.** PaylocityPack, WorkforceWorld, payroll-invariant evaluator, webhook Skill, CertificationSchool.
+
+**Economics.** High willingness to pay where mistakes touch payroll/compliance. Partner gate is the main cost.
+
+Sources: https://developer.paylocity.com/integrations/docs/partnership-requirements ; Reddit r/Payroll Aug 4 2026 and Mar 24 2026.
+
+## 3. SiteMinder Exchange — 23/25
+
+**What to sell.** PMS/channel adapters, reservation-policy evidence, revenue/accounting exports, reservation reconciliation, overbooking protection, failed-message recovery and hotel operations utilities.
+
+**Workflow.** Mine hotel pain → SiteMinder Exchange partner app → HotelWorld creates properties, room types, rates, policies and reservations → replay `OTA_HotelResNotif`/ARI traffic → verify retry/deduplication/policy retention → partner certification → hotel subscriptions → operational telemetry → automated compatibility maintenance.
+
+**H-level.** H1–H2: partner approval and hotel authorization; runtime is otherwise automatable.
+
+**Infrastructure.** SiteMinder Exchange has REST/JSON and OTA message interfaces, partner tokens, retry behavior and an SMX Admin Portal.
+
+**Demand/community.** A July 15, 2026 hotel operator reported SiteMinder reservation cancellation/payment policy data disappearing after ~14 days, undermining historical guest documents and fee enforcement. That is a concrete sellable wedge: immutable reservation-policy evidence.
+
+**Why agents fit.** Hotel reservation flows are finite state machines and message replay is straightforward.
+
+**Assets.** SiteMinderPack, HotelWorld, reservation/policy evaluator, retry Skill, PMS School.
+
+**Economics.** Strong when a product prevents revenue leakage or overbooking; poor if integrations require per-property custom engineering.
+
+Sources: https://developer.siteminder.com/siteminder-apis/apps/introduction/siteminder-exchange/api-reference ; Reddit r/askhotels, Jul 15 2026.
+
+## 4. Blackbaud Marketplace — 23/25
+
+**What to sell.** Donation reconciliation, data hygiene, matching-gift adapters, finance exports, grant/event workflows, constituent enrichment and nonprofit operations tooling.
+
+**Workflow.** Mine nonprofit CRM pain → SKY API app → NonprofitCRMWorld seeds constituents, gifts, campaigns, funds, duplicates and failed imports → evaluate financial totals, data lineage and duplicate logic → partner listing → organizations authorize → external SaaS revenue → monitor sync/errors → Worker maintains.
+
+**H-level.** H1–H2 for partner/public listing; a free developer environment reduces pre-partner friction.
+
+**Infrastructure.** Blackbaud Marketplace + SKY API. Blackbaud introduced a free SKY API developer tier with a shared test environment and 1,000 calls/day; partner tier supports much higher quotas. A March 2026 community answer clarifies apps stay private unless a partner submits them for public listing.
+
+**Demand/community.** Nonprofit users complain about expensive support, migration/implementation pain and outages; one March 2026 Reddit user described automating Blackbaud status monitoring via Power Automate, direct evidence of appetite for small operational utilities.
+
+**Why agents fit.** Donor/finance data is schema-heavy and repetitive; correctness is evaluable.
+
+**Assets.** BlackbaudPack, NonprofitCRMWorld, gift/reconciliation evaluator, SKY API Skill, nonprofit-data School.
+
+**Economics.** Attractive because nonprofit stacks are fragmented and sticky; constrained by budgets and trust requirements.
+
+Sources: https://developer.blackbaud.com/ ; https://community.blackbaud.com/discussion/81775/new-sky-api-free-developer-tier-api-subscription-is-now-available
+
+## 5. Attentive App Marketplace — 22/25
+
+**What to sell.** Ecommerce/SMS data-quality tools, catalog sync, suppression/compliance adapters, loyalty/review triggers, customer-profile reconciliation and journey observability.
+
+**Workflow.** Mine merchant complaints → custom app/API → CommerceMessagingWorld seeds subscribers, catalog, events and journeys → verify identity matching, duplicates, consent state, trigger correctness and retry behavior → technology partner/listing → merchants install → external billing → monitor event delivery and conversion.
+
+**H-level.** H1–H2; Marketplace/tech partner publication is curated.
+
+**2026 infrastructure.** Attentive updated its app-building guide Feb 27, 2026 and Bulk User Profile API Feb 24, 2026. Apps are created from the App Marketplace page with scoped permissions; bulk profile updates support multiple identifiers including email, phone, Shopify ID and Klaviyo ID.
+
+**Demand.** Attentive says it integrates with 100+ marketing technologies. The value is not another campaign writer; it is deterministic data/actions that make AI marketing agents safe.
+
+**Assets.** AttentivePack, CustomerProfileWorld, consent/identity evaluator, ecommerce-event Skill.
+
+**Economics.** Strong if tied to deliverability/revenue; weak for generic AI copy.
+
+Sources: https://www.attentive.com/developers ; https://help.attentive.com/hc/en-us/articles/4412840747540-Build-an-app-to-connect-with-Attentive-s-APIs ; https://help.attentive.com/hc/en-us/articles/46606260543252-Bulk-User-Profile-API
+
+## 6. Alteryx Marketplace — 22/25
+
+**What to sell.** Data connectors, custom tools, macros, governance/audit utilities, quality checks and vertical workflow packages.
+
+**Workflow.** Oracle mines connector gaps/deprecations → Worker builds Add-On → DataWorkflowWorld exercises input/output schemas, malformed data, version compatibility and performance → Partner Creator Portal submission → Marketplace → downloads/orders → regression against new Designer releases.
+
+**H-level.** H1–H2 because Creator Portal requires Partner status/company approval; ongoing engineering can be H0.
+
+**Infrastructure.** Alteryx now has a formal Marketplace Creator Portal for partners to draft, submit, version and maintain Add-Ons, with download statistics and total orders. Marketplace listings can expose editions to purchase.
+
+**Demand.** Current catalog includes partner connectors and tools; legacy SharePoint/Tableau tools are deprecated/EOL, creating migration seams. The marketplace explicitly requires partners to maintain compatibility.
+
+**Why agents fit.** ETL components have golden inputs/outputs and strong regression oracles.
+
+**Assets.** AlteryxPack, DataWorkflowWorld, schema/performance evaluator, ConnectorSchool, version-maintainer Worker.
+
+**Economics.** Excellent when one connector serves many enterprise users; poor when source APIs change constantly without enough installs.
+
+Sources: https://help.alteryx.com/marketplace/en/marketplace-creator-portal.html ; https://marketplace.alteryx.com/
+
+## 7. Dayforce Exchange — 22/25
+
+**What to sell.** HR/payroll connectors, identity lifecycle products, compliance/reconciliation, scheduling/payroll adapters and workforce analytics.
+
+**Workflow.** Discover repeated HCM integration pain → open API connector → workforce fixtures → verify hire/change/termination/pay-cycle events → partner verification → Exchange listing → customer deployments → integration-health telemetry → persistent repair.
+
+**H-level.** H2 because software-partner selection and enterprise HR data review remain meaningful.
+
+**Infrastructure.** Dayforce Exchange is an open marketplace spanning Solution, Partner and Talent Exchange. Dayforce explicitly says it has open APIs and distinguishes verified integrations/approved connectors designed to scale.
+
+**Demand.** HCM integrations are high-value because buyers already spend on implementation and errors affect payroll/access. Community evidence is less clean than Paylocity, so treat partner-ecosystem breadth as the stronger demand signal.
+
+**Assets.** DayforcePack, WorkforceWorld shared with Paylocity, lifecycle evaluator, cross-HRIS mapping School.
+
+**Economics.** Strong if portable to Paylocity/ADP/Workday; enterprise partner cycles are the drag.
+
+Sources: https://exchange.dayforce.com/ ; https://www.dayforce.com/how-we-help/services-and-support/partners/technology-and-innovation-partners
+
+## 8. Clever App Gallery / Clever Library — 22/25
+
+**What to sell.** K-12 SaaS with one-click roster/SSO/LMS connectivity: assessment utilities, teacher operations, school workflow tools, attendance/family admin products and bounded educational agents.
+
+**Workflow.** Find teacher/admin pain → build product → integrate once with Clever identities/rostering → SchoolWorld creates districts/classes/teachers/students → FERPA/data-minimization evaluator → pilot schools → Clever Library/

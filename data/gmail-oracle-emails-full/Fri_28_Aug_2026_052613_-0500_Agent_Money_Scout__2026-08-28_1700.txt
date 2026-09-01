@@ -1,0 +1,132 @@
+Subject: Agent Money Scout — 2026-08-28 17:00
+Date: Fri, 28 Aug 2026 05:26:13 -0500
+Message ID: 1a047e7dfd03b243
+================================================================================
+
+# Agent Money Scout — 28 Aug 2026, 17:00
+
+## NEW THIS RUN
+
+1. MOLTIFY — https://www.moltify.ai/
+What: Marketplace where humans and AI agents hire specialist AI workers for contract review, code analysis, research, content, data processing and similar tasks.
+Who pays: Buyers funding per-task escrow.
+Economics: Public site says tasks range from $2 to $100+ and builders keep 88%.
+Requirements: Build/list a reliable specialist agent and pass platform review/monitoring.
+Autonomy: 8/10.
+First action: Package one narrow research/evidence/data-processing worker and apply/list it.
+First-$5: 8/10. Repeatability: 9/10.
+
+2. SYNMERCO — https://synmerco.com/
+What: Register an MCP/A2A/REST/x402 agent, list services, bid on posted jobs, negotiate and settle via escrow. Also has a referral program.
+Who pays: Buyers posting tasks or hiring services.
+Economics: Free to register/list/browse. Standard $5-$100K escrows cost 3.25% on successful settlement. Referral program pays 0.25% of referred agents' Standard-tier settled escrows. Supports USDC and fiat rails.
+Requirements: Publish /.well-known/agent.json or register via API; payment/identity requirements apply where relevant.
+Autonomy: 9/10.
+First action: Publish an agent.json for the research/evidence worker and submit the URL.
+First-$5: 6/10. Repeatability: 9/10.
+
+3. OKX AI — https://www.okx.com/en-us/learn/okx-ai
+What: Two-sided agent economy launched July 2026: Agent Marketplace for listing priced services and Task Marketplace for agents to find work. Supports escrow for complex work and pay-per-call for standardized services.
+Who pays: Other agents/users hiring the service.
+Economics: Official launch says builders are paid in USDT or USDG; exact per-task prices vary.
+Requirements: Must satisfy OKX's applicable account, jurisdiction, identity and age rules. Do not bypass restrictions.
+Autonomy: 9/10 once legitimately onboarded.
+First action: Check eligibility and marketplace onboarding, then list one narrow paid service rather than a generic agent.
+First-$5: 5/10. Repeatability: 9/10.
+
+4. UPWORK MCP — https://www.upwork.com/ai/mcp
+What: Official MCP server released August 2026. A freelancer-side AI agent can search jobs, draft proposals, respond to invitations, manage contracts, submit milestone work and track earnings.
+Who pays: Normal Upwork clients.
+Economics: Normal Upwork budgets/fees and Connects; MCP itself is free.
+Requirements: Valid Upwork account and all platform eligibility requirements. Important limitation: write/binding actions require confirmation and final financial actions happen on Upwork, so this is semi-autonomous rather than autonomous.
+Autonomy: 6/10.
+First action: If legitimately eligible, connect mcp.upwork.com/mcp and create a narrow saved search for research/data/automation jobs the worker can complete deterministically.
+First-$5: 7/10. Repeatability: 9/10.
+
+5. SYNMERCO REFERRAL AGENT — https://synmerco.com/pricing
+What: Instead of doing the underlying work, an agent discovers useful specialist agents and refers/registers them into Synmerco.
+Who pays: Synmerco protocol from settled Standard-tier escrows.
+Economics: 0.25% of every eligible referred agent's Standard-tier settled escrow, no stated cap/expiration.
+Requirements: Referral registration and legitimate participants; no spam.
+Autonomy: 10/10.
+First action: Register as referrer, then have the scout identify unlisted high-quality MCP/x402 services that would genuinely benefit from the marketplace.
+First-$5: 3/10. Repeatability: 10/10 if network activity grows.
+
+6. AGENTNDX / PAID MCP DISCOVERY SIGNAL — https://agentndx.ai/browse/
+What: Agent directory already indexes x402-enabled services. One visible example charges $0.005 USDC/search for MCP/agent discovery.
+Who pays: Other agents making calls.
+Economics: Demonstrates that ultra-cheap machine-readable search/discovery itself can be monetized.
+Requirements: Ship a useful endpoint and register it in agent directories/x402 ecosystems where permitted.
+Autonomy: 10/10.
+First action: Turn a normalized agent-job/opportunity index into a $0.005-$0.02/query API: /find-work?skill=research&min_reward=5.
+First-$5: 4/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+7. SporeAgent — https://sporeagent.com/ — strongest visible task-shaped bounty source from prior runs. Keep polling for scraping/testing/research work.
+8. Clawlancer — https://clawlancer.ai/ — REST/MCP Base-USDC bounties; keep high priority.
+9. MoltJobs — https://molt-jobs.com/ — API/MCP/CLI work market; keep high priority.
+10. ClawGig — https://clawgig.ai/ — agent freelance flow; keep scanning but verify each funded gig.
+11. TaskForce — https://www.task-force.app/ — USDC milestone work; thin adapter remains worthwhile.
+12. AgentBazaar — https://www.agentbazaar.dev/ — passive pay-per-capability layer; keep one service listed.
+13. AgentPay Store — https://agentpaystore.com/ — x402 paid HTTP endpoints; passive idle-time revenue experiment.
+14. x402 Arena — https://x402arena.gg/ — keep using as market-intelligence: observe which endpoint categories actually receive paid calls.
+
+## REDDIT DEMAND SIGNALS
+
+15. LEAD FOLLOW-UP AGENT
+Evidence: April 2026 small-business post describes 3 hours in one week spent manually following up leads, six back-and-forth messages to schedule one call, and a forgotten warm lead.
+Problem: Speed-to-lead and follow-up discipline.
+Agent workflow: authorized form/email -> enrich -> classify -> permitted personalized response -> scheduling -> CRM update -> escalation.
+Offer: "Every inbound lead gets a qualified response and next step within minutes; you review exceptions."
+Acquisition: service businesses already using forms/CRM; do not spam Reddit.
+Pricing: test fixed setup + monthly fee, or per qualified appointment.
+First-$5: 8/10. Repeatability: 10/10.
+Source: https://www.reddit.com/r/smallbusiness/comments/1svub6a/
+
+16. INTERNAL REPORTING AGENT
+Evidence: March 2026 automation thread reports one high-frequency reporting/data-entry automation cutting about 10 hours/week; another agency comment reports roughly 5 hours/week saved moving client form data into project management.
+Workflow: authorized APIs/CSV/tickets -> normalize -> reconcile -> anomalies -> cited summary -> scheduled report.
+Offer: "Your Monday operations report assembles itself; humans only review exceptions."
+Pricing: monthly retainer tied to source count/report frequency.
+First-$5: 7/10. Repeatability: 10/10.
+Sources: https://www.reddit.com/r/automation/comments/1rvy8ca/ and https://www.reddit.com/r/automation/comments/1s3l0c6/
+
+17. INVOICE CAPTURE AGENT
+Evidence: Aug 13 post describes clients spending hours every week manually entering invoice fields; other 2026 posts repeatedly identify invoice chasing as painful repetitive admin.
+Workflow: authorized inbox -> read attachment -> extract -> validate totals/vendor -> accounting row -> duplicate detection -> exception queue.
+Offer: "Forward invoices here; every valid invoice becomes a verified accounting record."
+Pricing: per document or monthly volume bundle.
+First-$5: 8/10. Repeatability: 10/10.
+Source: https://www.reddit.com/r/SmallBusiness_US/comments/1vnbosd/
+
+18. POST-SERVICE REVENUE AGENT
+Evidence: Feb 2026 service-business post says the most valuable automation was not scheduling but post-job follow-up: send invoice, request review after 48h, prompt rebooking around 30 days.
+Workflow: completed-job event -> invoice -> review request -> rebook reminder -> stop/escalate based on outcome.
+Offer: charge on recovered/rebooked revenue or monthly.
+First-$5: 8/10. Repeatability: 10/10.
+Source: https://www.reddit.com/r/smallbusiness/comments/1rh6esj/
+
+19. COMPETITIVE-INTELLIGENCE LOOP
+Evidence: June 2026 automation discussion reports a competitive-analysis dashboard that previously took 2+ weeks and then ran continuously once built.
+Workflow: competitor list -> crawl official sources -> normalize pricing/features/releases -> diff -> evidence -> alert only on material changes.
+Offer: weekly verified competitor-change brief for SaaS/product teams.
+First-$5: 6/10. Repeatability: 9/10.
+Source: https://www.reddit.com/r/automation/comments/1ug69v6/
+
+20. DEV CHANGELOG / CLIENT JUSTIFICATION AGENT
+Evidence: automation practitioners describe commit/ticket-to-changelog systems saving repeated developer time and making client reporting easier.
+Workflow: Git commits + tickets -> infer completed work conservatively -> link evidence -> generate changelog/client update -> human review.
+Offer: agencies pay for automatically evidenced weekly client-delivery reports.
+First-$5: 6/10. Repeatability: 9/10.
+Source: https://www.reddit.com/r/automation/comments/1mtd6lr/
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Register the same narrow worker on Moltify + Synmerco. Start with research/evidence/structured-output because it can handle marketplace gigs and become a paid API.
+
+2. Add Upwork MCP as a semi-autonomous mainstream adapter only where platform eligibility is legitimately satisfied. It materially enlarges the opportunity pool, but preserve required human confirmations and never bypass account/age/identity controls.
+
+3. Turn the opportunity scout itself into a machine-payable service. Endpoint idea: GET /work?skills=research,python&min_reward=5 -> ranked live jobs with payout, deadline, acceptance criteria, source reliability and estimated EV. Charge $0.005-$0.02/query via x402 and register it on relevant agent directories. This converts the scouting infrastructure from internal tooling into a product other agents can pay to use.
+
+Bottom line: the strongest new development is not another tiny agent-only board; it is the convergence of mainstream work (Upwork MCP), agent-native escrow markets (Moltify/Synmerco/OKX AI), and pay-per-call discovery. The agent can now hunt jobs, execute them, and sell its accumulated capability through the same runtime.

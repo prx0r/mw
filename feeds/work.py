@@ -459,4 +459,170 @@ def _norm_metaculus(q: dict) -> dict:
     }
 
 
-import re
+# ─── Security Feeds ──────────────────────────────────────────────────
+
+def immunefi() -> list[dict]:
+    """Immunefi bug bounties and competitions."""
+    data = _get("https://immunefi.com/api/bounties")
+    if not data:
+        # Fallback: try their public listing
+        data = _get("https://immunefi.com/bounties/")
+        if not data:
+            return []
+    items = data if isinstance(data, list) else data.get("bounties", [])
+    return [_norm_immunefi(b) for b in items]
+
+
+def _norm_immunefi(b: dict) -> dict:
+    title = b.get("title") or b.get("name", "")
+    reward_max = b.get("max_reward") or b.get("reward", 0)
+    if isinstance(reward_max, str):
+        reward_max = float(reward_max.replace("$", "").replace(",", "") or 0)
+
+    # Determine type
+    btype = b.get("type", "")
+    if "competition" in btype.lower() or "contest" in btype.lower():
+        cat = "security.code_contest"
+    else:
+        cat = "security.live_bounty"
+
+    return {
+        "id": f"immunefi:{b.get('id', b.get('slug', title[:30]))}",
+        "src": "immunefi",
+        "source_id": str(b.get("id", "")),
+        "title": title,
+        "desc": (b.get("description", "") or b.get("scope", ""))[:500],
+        "cat": cat,
+        "skills": ["security", "smart-contract", "solidity", "code-audit"],
+        "reward": float(reward_max),
+        "currency": "USD",
+        "status": "open",
+        "posted": b.get("created_at", b.get("published_at", "")),
+        "url": b.get("url", f"https://immunefi.com/bounty/{b.get('slug', '')}/"),
+        "extra": {
+            "platform": "immunefi",
+            "bounty_type": btype,
+            "protocols": b.get("protocols", []),
+            "max_reward_usd": float(reward_max),
+            "school": "code-audit",
+            "pool": "security",
+        },
+    }
+
+
+def github_security_advisories(token: str = "") -> list[dict]:
+    """GitHub Security Advisories (public API, no auth needed for range query)."""
+    h = {"Accept": "application/vnd.github+json"}
+    if token:
+        h["Authorization"] = f"token {token}"
+    try:
+        req = urllib.request.Request(
+            "https://api.github.com/advisories?per_page=50&sort=published&direction=desc",
+            headers=h)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+            return [_norm_github_adv(a) for a in data]
+    except:
+        return []
+
+
+def _norm_github_adv(a: dict) -> dict:
+    severity = a.get("severity", "unknown")
+    cve = a.get("cve_id", "")
+    desc = a.get("description", "") or a.get("summary", "")
+
+    # Extract ecosystem from vulnerabilities
+    ecosystems = set()
+    for v in a.get("vulnerabilities", []):
+        pkg = v.get("package", {})
+        eco = pkg.get("ecosystem", "")
+        if eco:
+            ecosystems.add(eco.lower())
+
+    skills = ["security", "oss", "vulnerability"]
+    for eco in ecosystems:
+        if eco in ("npm", "pypi", "cargo", "go", "maven"):
+            skills.append(f"security.{eco}")
+
+    return {
+        "id": f"ghsa:{a.get('ghsa_id', cve)}",
+        "src": "github_security",
+        "source_id": a.get("ghsa_id", cve),
+        "title": f"{cve}: {a.get('summary', 'Security advisory')}" if cve else a.get("summary", ""),
+        "desc": desc[:500],
+        "cat": "security.oss_reward",
+        "skills": skills,
+        "reward": 0,  # GitHub doesn't pay directly, but OEMs do
+        "currency": "USD",
+        "status": "published",
+        "posted": a.get("published_at", ""),
+        "url": a.get("html_url", ""),
+        "extra": {
+            "platform": "github",
+            "severity": severity,
+            "cve_id": cve,
+            "cvss_score": a.get("cvss", {}).get("score", 0) if isinstance(a.get("cvss"), dict) else 0,
+            "ecosystems": list(ecosystems),
+            "patched_versions": [v.get("patched_version", "") for v in a.get("vulnerabilities", [])],
+            "school": "code-audit",
+            "pool": "security",
+        },
+    }
+
+
+def hackerone_programs() -> list[dict]:
+    """HackerOne public program listings."""
+    # HackerOne public API is limited, but their directory is scrapable
+    data = _get("https://api.hackerone.com/v1/hackers/programs")
+    if not data:
+        return []
+    items = data if isinstance(data, list) else data.get("data", [])
+    return [_norm_hackerone(p) for p in items]
+
+
+def _norm_hackerone(p: dict) -> dict:
+    attrs = p.get("attributes", p)
+    name = attrs.get("name", "")
+    offer_bounties = attrs.get("offers_bounties", False)
+    offers_swag = attrs.get("offers_swag", False)
+
+    # Filter to security-relevant programs
+    if not (offer_bounties or offers_swag):
+        return None
+
+    # Determine category
+    offers_ai = any(kw in name.lower() for kw in ["ai", "llm", "agent", "rag", "ml"])
+    cat = "security.ai_redteam" if offers_ai else "security.triage"
+
+    skills = ["security"]
+    if offers_ai:
+        skills.extend(["security.ai", "ai-security"])
+
+    result = {
+        "id": f"h1:{p.get('id', name[:30])}",
+        "src": "hackerone",
+        "source_id": str(p.get("id", "")),
+        "title": name,
+        "desc": (attrs.get("policy", "") or attrs.get("structured_scope", ""))[:500],
+        "cat": cat,
+        "skills": skills,
+        "reward": 0,
+        "currency": "USD",
+        "status": "open",
+        "posted": "",
+        "url": f"https://hackerone.com/{attrs.get('handle', '')}",
+        "extra": {
+            "platform": "hackerone",
+            "offers_bounties": offer_bounties,
+            "offers_swag": offers_swag,
+            "offers_ai_program": offers_ai,
+            "school": "ai-redteam" if offers_ai else "code-audit",
+            "pool": "security",
+        },
+    }
+    return result
+
+
+# Filter out None values from security feeds
+def _filter_none(items: list) -> list:
+    return [i for i in items if i is not None]

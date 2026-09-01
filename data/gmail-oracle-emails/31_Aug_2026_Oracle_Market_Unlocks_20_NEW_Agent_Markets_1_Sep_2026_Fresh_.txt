@@ -1,0 +1,1097 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Fresh Scan
+Date: Mon, 31 Aug 2026 14:19:46 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a059436dd84418f
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This scan treats novelty as a hard constraint. I cross-checked the sent Oracle reports before researching candidates and excluded venues already covered in previous runs. The 20 below returned no prior exact-market hit in the Oracle corpus. I also rejected several tempting repeats (including VTEX, Discord Premium Apps, BigCommerce, Zoom App Marketplace, FlutterFlow, Overwolf, MyMiniFactory, Thangs, Teachers Pay Teachers, Cults3D and MCPize).
+
+**H-level shorthand:** H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human subjective/legal/QA/reviewer work; H3 = material recurring human production/customer sponsorship; H4 = fundamentally human/offline. Legitimate identity, legal, tax, payout, IP and safety gates should not be bypassed.
+
+**Scoring:** O = expected opportunity value, A = agent suitability, F = automation feasibility, C = competitive whitespace (higher = less crowded), N = novelty/timing. Total /25.
+
+| # | Market | O | A | F | C | N | Total | Post-setup H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | Zyla API Hub | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 2 | DroneDeploy App Market | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 3 | QuickNode Marketplace | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 4 | AppHighway MCP Tool Marketplace | 4 | 5 | 5 | 4 | 5 | **23** | H1 |
+| 5 | Shoplazza App Store | 5 | 5 | 5 | 3 | 4 | **22** | H1 |
+| 6 | Bitrix24 Market | 5 | 5 | 5 | 3 | 4 | **22** | H1 |
+| 7 | Replit Extensions Store | 4 | 5 | 5 | 4 | 4 | **22** | H1 |
+| 8 | mod.io Marketplace | 5 | 5 | 4 | 3 | 4 | **21** | H2 |
+| 9 | Frappe Cloud Marketplace | 4 | 5 | 5 | 3 | 4 | **21** | H1 |
+| 10 | APILayer Marketplace | 5 | 5 | 5 | 2 | 4 | **21** | H1 |
+| 11 | dotMCP Marketplace | 4 | 5 | 5 | 3 | 4 | **21** | H1 |
+| 12 | Twilio Marketplace Add-ons | 5 | 5 | 4 | 3 | 3 | **20** | H1–H2 |
+| 13 | nopCommerce Marketplace | 4 | 5 | 5 | 3 | 3 | **20** | H1 |
+| 14 | DoliStore | 4 | 5 | 5 | 3 | 3 | **20** | H1 |
+| 15 | Food4Rhino | 4 | 5 | 4 | 4 | 3 | **20** | H1–H2 |
+| 16 | The Sims 4 Maker Marketplace | 5 | 4 | 3 | 3 | 4 | **19** | H2 |
+| 17 | VRChat Creator Economy / Avatar Marketplace | 4 | 4 | 4 | 3 | 4 | **19** | H2 |
+| 18 | Warframe TennoGen | 4 | 4 | 3 | 3 | 4 | **18** | H2 |
+| 19 | Dota 2 Item Workshop | 5 | 4 | 3 | 2 | 4 | **18** | H2 |
+| 20 | War Thunder Revenue Share Program | 4 | 4 | 3 | 3 | 3 | **17** | H2 |
+
+---
+
+## 1. Zyla API Hub — 24/25
+
+**What an agent can sell:** narrow production APIs: document transforms, difficult data normalization, regulatory/public-data wrappers, industry-specific lookup services, parsers, validators, enrichment and evidence services. The best wedge is not another generic AI endpoint; it is a capability where a developer would otherwise maintain brittle scraping/data plumbing.
+
+**Autonomous workflow:** Oracle mines developer pain, API requests and missing data surfaces → Worker builds API → imports OpenAPI/Postman description → Harbor `APIWorld` runs schema, latency, correctness, rate-limit, adversarial-input and uptime tests → pricing/free tier generated → publisher review/onboarding → listing → subscriptions/calls → Zyla handles billing/customer support → usage and errors feed Hydra → Worker patches and expands successful endpoints.
+
+**H-level:** H1. Publisher/payout identity and initial review remain human; execution, support triage and maintenance can be nearly H0.
+
+**Frontier infrastructure:** Zyla advertises one-click Postman import, API monitoring, unified subscription/billing and compatibility with MCP clients. It says publishers keep 80%, start at $0, and the network handles 3B+ API calls/month. That machine-callable distribution is the important part.
+
+**Demand/community:** public Reddit signal for Zyla specifically is thin, but current MCP discussions show clear demand for paid machine-callable services and frustration that MCP monetization remains fragmented. Marketplace-reported call volume is stronger evidence than a small subreddit here.
+
+**Moltwork assets:** `ZylaPack`, `APIWorld`, schema/correctness evaluator, pricing experiment Process, `APIProductSchool`, OpenAPI-to-product Skill, persistent API Worker.
+
+**Attractive if:** the endpoint has deterministic QA, low marginal COGS, recurring calls and differentiated data/process. **Unattractive if:** it is a thin LLM wrapper, depends on unstable scraping, or support/uptime costs exceed subscription revenue.
+
+Official: https://www.zylalabs.com/monetize-your-api
+
+---
+
+## 2. DroneDeploy App Market — 23/25
+
+**What an agent can sell:** construction/agriculture/inspection micro-apps: measurement QA, roof/solar analysis helpers, defect tagging, export transforms, compliance evidence, annotation automation, project synchronization, GIS/BIM adapters and reporting workflows.
+
+**Autonomous workflow:** mine UAV/construction workflows and App Market gaps → generate an app using DroneDeploy APIs → seed synthetic projects/maps → Harbor `DroneWorld` tests geometry, map layers, export correctness, permissions, failure recovery and cross-device behavior → generate listing/evidence → partner review → paid App Market listing → installs/revenue → monitor API/changelog/project failures → persistent Worker maintains it.
+
+**H-level:** H1–H2. Partner approval and domain assertions remain human; maintenance can approach H0. Physical-site ground truth remains a deliberate H2 gate for applications making safety/measurement claims.
+
+**Infrastructure:** DroneDeploy's developer FAQ explicitly supports publishing inside the UI and paid apps with a **70% developer / 30% DroneDeploy** split. App organization-wide install functionality was updated in March 2026, making deployment across customer teams easier.
+
+**Demand/community:** DroneDeploy is used for expensive real-world workflows where even small time savings can support business pricing. Community discussion around drone mapping consistently centers on software cost, export limitations and workflow fragmentation—good signs for targeted utilities, but also evidence that customers expect professional reliability.
+
+**Moltwork assets:** `DroneDeployPack`, `DroneWorld`, geospatial invariant evaluator, orthomosaic/report fixture generator, construction/inspection School, AppCertification Process.
+
+**Attractive if:** software saves field/analyst time or prevents reporting errors. **Unattractive if:** value depends on untestable computer-vision claims or recurring human site interpretation.
+
+Official: https://developer.dronedeploy.com/docs/faqs.html
+
+---
+
+## 3. QuickNode Marketplace — 23/25
+
+**What agents sell:** blockchain data APIs, transaction simulation/broadcast tools, compliance/risk signals, indexed datasets, RPC extensions, alerts and chain-specific developer utilities.
+
+**Workflow:** Oracle mines repeated RPC/data pain + new-chain releases → Worker builds REST/JSON-RPC/external add-on → disposable chain fixtures → Harbor checks deterministic responses, reorg behavior, latency, rate limits, health endpoint, billing boundaries and failure degradation → partner beta → publish → add-on enabled on QuickNode endpoints → Marketplace revenue → telemetry → continuous chain/version maintenance.
+
+**H-level:** H1–H2 due partner onboarding/testing; runtime is close to H0.
+
+**Infrastructure/demand:** QuickNode's current add-on catalog says third parties can publish data/transaction/compliance services to **700K+ developer accounts**; Marketplace docs were updated May 25, 2026. Partner docs provide boilerplate, beta testing and required health checks. The original revenue model gives developers 70% of Marketplace revenue.
+
+**Community intelligence:** web3 developers repeatedly pay to avoid running their own indexers/nodes and complain about provider/RPC inconsistencies. Competition is meaningful, so generic balance/token APIs are unattractive. Frontier chains, compliance data and high-value execution primitives are better.
+
+**Moltwork assets:** `QuickNodePack`, `ChainWorld`, reorg/latency evaluator, `RPCProductSchool`, health/SLA Skill, chain-launch Opportunity detector.
+
+**Attractive if:** each call has economic value and low marginal compute. **Unattractive if:** QuickNode itself commoditizes the feature or chain-specific demand disappears.
+
+Official: https://www.quicknode.com/add-ons and https://www.quicknode.com/guides/marketplace/marketplace-developers/how-to-create-a-rest-api-add-on-for-marketplace
+
+---
+
+## 4. AppHighway MCP Tool Marketplace — 23/25
+
+**What agents sell:** MCP-compatible functions priced per tool call: document parsers, structured-data transforms, domain lookups, data-quality checks, calculators, compliance checks and specialist analysis tools.
+
+**Workflow:** Oracle discovers high-frequency missing agent capability → build MCP server/tool → protocol + golden-set Harbor evaluation → security/side-effect classification → publish for review → one-click install into Claude/Cursor/Windsurf/custom agents → calls consume points → publisher receives usage revenue → per-call telemetry informs pricing and specialization.
+
+**H-level:** H1 for publisher/payout/review; the rest can be H0.
+
+**Infrastructure/demand:** current Marketplace claims **159 tools, 583K+ total installs and up to 90% revenue share** with unified auth and per-call points. Because the platform is young, treat these first-party metrics as claims to validate experimentally, not audited market size. Reddit's MCP community shows strong interest but also a warning: basic MCP wrappers are trivial, so only capabilities with a real proprietary/data/service backend are defensible.
+
+**Moltwork assets:** `AppHighwayVenue`, MCP conformance evaluator, per-call economics evaluator, ToolCard compiler, `MCPCommercializationProcess`, specialist Tool Worker.
+
+**Attractive if:** useful output is compact, measurable and repeated. **Unattractive if:** the tool is just formatting or something any agent can implement locally in minutes.
+
+Official: https://apphighway.com/en/marketplace
+
+---
+
+## 5. Shoplazza App Store — 22/25
+
+**What agents sell:** merchant micro-SaaS for cross-border stores: B2B ordering, catalog cleanup, feed QA, payment/risk operations, fulfillment adapters, migration tools, merchandising QA and reporting.
+
+**Workflow:** mine merchant support/review pain → build OAuth app against Admin API → developer-store fixture → replay orders/products/refunds/webhooks → Harbor commerce invariants → create listing/pricing → App Store review → merchant installs → recurring app charge → telemetry/churn/reviews → Worker updates.
+
+**H-level:** H1.
+
+**Infrastructure/demand:** Shoplazza says its partner program reaches **500,000+ retail/e-commerce businesses** and 500+ partners. App developers get Partner Center, OAuth/Open APIs, dev stores, App Store distribution and recurring-charge pricing. 2026 Shoplazza material emphasizes cross-border payment and merchant operations, which is exactly where narrow integrations have value.
+
+**Community:** English Reddit coverage is limited relative to Shopify. This is partly the opportunity: less public competition intelligence and fewer extension developers, but also harder demand discovery. Treat App Store installs/reviews and merchant communities as primary signal.
+
+**Moltwork assets:** `ShoplazzaPack`, `CommerceWorld`, webhook/idempotence evaluator, cross-border merchant School, Shopify→Shoplazza Porting Process.
+
+**Attractive if:** porting a successful commerce process is cheap. **Unattractive if:** acquisition depends entirely on external sales rather than App Store discovery.
+
+Official: https://www.shoplazza.com/partner
+
+---
+
+## 6. Bitrix24 Market — 22/25
+
+**What agents sell:** CRM/contact-center/workflow apps, vertical record utilities, data-quality tools, lead routing, reporting, telephony adapters and narrow industry workflows.
+
+**Workflow:** mine Market reviews/support forums → generate REST app → create synthetic CRM/deals/tasks/contact-center fixture → evaluate permissions, workflow triggers, duplicate writes, retries and migration behavior → submit → freemium app distribution → upgrades/subscriptions handled by developer model → install/usage/support telemetry → persistent Worker patches.
+
+**H-level:** H1.
+
+**Demand:** Bitrix24's current developer page claims **15M+ users, 780+ apps, 160+ developers and 900K+ downloads**, with a free REST API and freemium monetization. Those numbers imply unusually high users-per-developer compared with many western SaaS marketplaces.
+
+**Community:** Bitrix24 users often complain about complexity and configuration burden. That is favorable for small opinionated workflow apps, but the platform's breadth means support edge cases can explode.
+
+**Moltwork assets:** `BitrixPack`, `CRMWorld`, automation-trigger evaluator, vertical CRM Schools, migration Skill, Russian/English listing Process.
+
+**Attractive if:** one narrow workflow removes configuration pain for a broad user slice. **Unattractive if:** each customer expects bespoke CRM consulting.
+
+Official: https://www.bitrix24.com/apps/dev.php
+
+---
+
+## 7. Replit Extensions Store — 22/25
+
+**What agents sell:** IDE/deployment utilities, project analyzers, specialized generators, developer dashboards, migration/dependency tools and workflow extensions.
+
+**Workflow:** mine Replit developer pain → have a Worker build the extension inside Replit → fixture projects across languages → evaluator tests permissions, latency, workspace mutation, failure isolation and UI → store submission → subscription revenue → usage reports → Worker maintains against Replit changes.
+
+**H-level:** H1.
+
+**Infrastructure:** Replit's Extensions terms explicitly contemplate revenue-generating extensions and developer revenue share, with monthly revenue reports/payments. Replit's agent-first environment also lowers product-building friction dramatically.
+
+**2026 constraint/community:** Replit has been shifting product focus strongly toward Agent-created apps; community reactions include frustration about older developer-framework surfaces changing. That is both opportunity and platform risk. Build extensions tightly coupled to durable workflows, not internal UI assumptions.
+
+**Moltwork assets:** `ReplitPack`, `IDEWorld`, workspace-mutation evaluator, extension scaffold Skill, Replit-change watcher.
+
+**Attractive if:** extension improves workflows Agent itself does not already commoditize. **Unattractive if:** Replit absorbs the feature or deprecates the extension surface.
+
+Official terms: https://replit.com/extensions-terms
+
+---
+
+## 8. mod.io Marketplace — 21/25
+
+**What agents can sell:** premium UGC in games that enable mod.io Marketplace: maps, game modes, items, vehicles, level packs, cosmetic assets, scenarios and other game-specific mods.
+
+**Workflow:** Oracle identifies enabled game + underserved content cluster → Worker builds/modifies asset/code using game SDK → per-game Harbor World runs loading, performance, multiplayer/version, dependency and exploit tests → human originality/gameplay review → submit to publisher-defined moderation → premium listing → player purchase → Creator Credits → USD payout after reconciliation → telemetry/reviews → compatibility Worker maintains.
+
+**H-level:** H2 because authorship, quality and game-specific moderation are material. Agents should augment a legitimate creator, not flood marketplaces.
+
+**2026 frontier:** mod.io's May 21, 2026 docs make premium UGC economics unusually explicit: creators can expect roughly **20–40% of total amount spent**, with ~25% described as an industry norm. Marketplace supports Unreal, Unity, C++ and REST, USD pricing or virtual currency, creator wallets and cross-platform purchasing.
+
+**Demand/community:** game-specific; therefore Oracle must score each enabled game separately. The technical infrastructure is excellent, but the commercial distribution depends on publisher adoption and player population.
+
+**Moltwork assets:** `modioPack`, per-game `UGCWorld`, exploit/performance evaluator, GamePorting School, provenance/evidence Process, persistent mod-maintainer Worker.
+
+**Attractive if:** one product can sell cross-platform and compatibility can be automated. **Unattractive if:** the game is small, creator approval is opaque, or subjective content production dominates.
+
+Official: https://docs.mod.io/monetization/marketplace
+
+---
+
+## 9. Frappe Cloud Marketplace — 21/25
+
+**What agents sell:** ERPNext/Frappe apps: regional tax/e-invoicing, vertical workflow modules, reports, payment adapters, document generators, data cleanup, integrations and administrative agents.
+
+**Workflow:** mine ERPNext forum issues → Worker builds GitHub-hosted Frappe app → disposable ERPNext fixture with company/invoices/stock/users → evaluator runs install/migration/version/security/accounting invariants → add from GitHub → Marketplace review → paid/free listing → Frappe Cloud install telemetry → Worker follows ERPNext releases.
+
+**H-level:** H1.
+
+**Infrastructure/frontier:** Marketplace docs themselves now expose Markdown/LLM-friendly actions and were updated in 2026. Apps can be paid, must be open-source/GPL-compatible, are added directly from GitHub and normally reviewed within a stated ~10-day SLA.
+
+**Community:** February 2026 discussion explicitly asks for an ERPNext AI assistant and mentions Frappe MCP/Otto projects, while users remain skeptical of hallucinating agents touching business data. This strongly favors bounded deterministic utilities over general ERP chatbots.
+
+**Moltwork assets:** `FrappePack`, `ERPWorld`, ledger/stock/workflow evaluator, regional compliance School, GitHub→Marketplace Process.
+
+**Attractive if:** the app solves repeatable ERP pain and support can be tested. **Unattractive if:** licensing makes proprietary moat impossible or every deployment is highly customized.
+
+Official: https://docs.frappe.io/cloud/marketplace
+
+---
+
+## 10. APILayer Marketplace — 21/25
+
+**What agents sell:** curated production APIs: validation, geodata, finance, security, parsing, conversion, niche public datasets and developer infrastructure.
+
+**Workflow:** discover repeated developer need → build API → produce OpenAPI/Postman docs → Harbor correctness/load/security/SLA suite → submit for curation → paid plans → API calls/subscriptions → monitor latency/errors/churn → autonomously patch and expand endpoints.
+
+**H-level:** H1.
+
+**Demand:** APILayer currently says its curated ecosystem serves **2.2M+ developers** and processes **30M+ API calls/month**. Its marketplace documentation says API publishers can monetize; historical publisher guidance describes a 15% platform share. Current public surfaces should be rechecked before setting a business model because commercial terms can change.
+
+**Community:** little APILayer-specific Reddit seller discussion; general API-marketplace pain is discoverability, commoditization and reliability. APILayer's curation is an advantage if Harbor can prove exceptional reliability.
+
+**Moltwork assets:** `APILayerPack`, `APIWorld`, SLA evaluator, OpenAPI publishing Skill, pricing/retention Process.
+
+**Attractive if:** high-value deterministic API. **Unattractive if:** marketplace selection is slow or the API is indistinguishable from 20 competitors.
+
+Official: https://marketplace.apilayer.com/about-us
+
+---
+
+## 11. dotMCP Marketplace — 21/25
+
+**What agents sell:** hosted MCP servers with free, subscription and usage-based tiers.
+
+**Workflow:** pain discovery → generate/import API into MCP → protocol/security/golden-task evaluation → publish/host → client installs key in Claude/Cursor/etc → subscriptions/overage → Stripe Connect payout → per-tool analytics → Worker tunes functionality and pricing.
+
+**H-level:** H1.
+
+**Economics/infrastructure:** dotMCP currently advertises free hosting/publishing, **80% publisher revenue / 20% platform fee**, monthly Stripe Connect payouts, visual builder/API imports, analytics and usage/subscription tiers.
+
+**Community:** January 2026 MCP discussions explicitly complain that monetization is too hacky while other commenters correctly note that MCP itself is just a thin protocol layer. Therefore the defensible object is the *service behind the MCP*, not the manifest.
+
+**Moltwork assets:** `dotMCPVenue`, MCP protocol evaluator, API→MCP Skill, billing-meter evaluator, ToolEconomics School.
+
+**Attractive if:** underlying service has proprietary data/computation. **Unattractive if:** local implementation is trivial or MCP host compatibility fragments.
+
+Official: https://dotmcp.io/pricing
+
+---
+
+## 12. Twilio Marketplace Add-ons — 20/25
+
+**What agents sell:** caller/number intelligence, fraud/risk enrichment, consent/compliance checks, transcription or structured voice analysis, routing signals, media-stream processors and payment connectors.
+
+**Workflow:** mine communications pain → build Add-on endpoint → Twilio fixture generates SMS/calls/lookups/recordings → Harbor tests callback semantics, latency, PII handling, billing units and degraded behavior → Marketplace publisher review → installable Add-on → invoked automatically within Twilio API flow → Twilio usage-based billing → Marketplace API reports usage → Worker maintains service.
+
+**H-level:** H1–H2 because telecom/security/privacy claims need accountable review.
+
+**Frontier infrastructure:** Twilio Marketplace has a proper API for browsing/installing/managing listings; Add-ons use Twilio's usage billing; publishers can report usage programmatically. Twilio docs also advertise OpenAPI and AI-agent-oriented developer tooling.
+
+**Community pain:** June 2026 Twilio users discussed toll-fraud/security surprises around programmable controls. That points to real willingness to pay for bounded fraud/permission evidence, but also raises the liability bar dramatically.
+
+**Moltwork assets:** `TwilioPack`, `CommsWorld`, callback/fraud evaluator, PII-policy School, usage-meter Process.
+
+**Attractive if:** signal prevents expensive fraud/support or enriches billions of communications events. **Unattractive if:** false positives or compliance liability are hard to bound.
+
+Official: https://www.twilio.com/docs/marketplace
+
+---
+
+## 13. nopCommerce Marketplace — 20/25
+
+**What agents sell:** .NET ecommerce plugins: regional tax/payment/shipping integrations, feeds, B2B features, search/admin tools, checkout QA and catalog workflows.
+
+**Workflow:** mine merchant requests → Worker creates plugin → disposable nopCommerce versions/database/store fixture → install/upgrade/uninstall/security/checkout tests → generate demo/docs → Marketplace technical review → paid listing points to seller checkout → revenue direct to seller → download/review telemetry → version-maintainer Worker.
+
+**H-level:** H1.
+
+**Economics:** nopCommerce explicitly allows commercial extensions and takes **no revenue share**; sellers process payment themselves. There is a paid-listing fee after a 30-day free trial, which creates a useful economic selection pressure. Review checks source, deployable package, security and supported versions.
+
+**Community:** the ecosystem is less fashionable than Shopify/WooCommerce, which is positive for whitespace but negative for total demand. Merchants using nopCommerce tend to be more technical and version-sensitive, favoring well-maintained integrations over visual novelty.
+
+**Moltwork assets:** `nopPack`, `CommerceDotNetWorld`, version/security evaluator, plugin packaging Skill, direct-license Process.
+
+**Attractive if:** a $50–300 plugin can recur across many stores. **Unattractive if:** listing/support costs exceed the smaller audience.
+
+Official: https://www.nopcommerce.com/en/submitting-plugins-to-nopcommerce-marketplace
+
+---
+
+## 14. DoliStore — 20/25
+
+**What agents sell:** Dolibarr ERP/CRM modules: EU/local compliance, PDF/document modules, invoicing, connectors, vertical workflows, reporting and automation.
+
+**Workflow:** forum/regulation gap discovery → PHP module → disposable Dolibarr fixtures → Harbor tests packaging, migrations, permissions, invoice/accounting invariants and current-version compatibility → request approval → DoliStore sale → foundation handles buyer transaction → seller invoices foundation after settlement period → support/reviews → Worker patches.
+
+**H-level:** H1.
+
+**Economics:** current seller terms state the seller receives **80%** of gains made by the foundation, with thresholds before payout. New modules normally require approval; packaging rules are machine-checkable. A very current Dolibarr wiki page (Aug 13, 2026) still points users to DoliStore modules, showing the channel is live.
+
+**Community constraint:** DoliStore sellers have complained about refund policy and source-code resale/piracy. That makes proprietary code a weak moat; persistent support, compliance freshness and evidence are stronger moats.
+
+**Moltwork assets:** `DolibarrPack`, `ERPWorld`, invoice/PDF evaluator, EU-regulation School, package-validation Skill.
+
+**Attractive if:** regulatory/version maintenance creates recurring value. **Unattractive if:** source redistribution destroys pricing power.
+
+Official: https://www.dolistore.com/terms-and-conditions-of-use-module-providers.php
+
+---
+
+## 15. Food4Rhino — 20/25
+
+**What agents sell/distribute:** Rhino/Grasshopper plugins, scripts, definitions, materials, fabrication/CAD utilities, BIM interoperability and computational-design tools. Food4Rhino itself is primarily discovery/distribution; commercial apps can link to external purchase/licensing.
+
+**Workflow:** mine architects/designers' repetitive Grasshopper pain → Worker builds .gha/.rhp/.ghpy/plugin → synthetic Rhino geometries → Harbor tests geometry invariants, file compatibility, speed, undo/failure behavior and Rhino versions → Package Manager/Food4Rhino release → external license/payment when commercial → download/review/support signal → Worker maintains.
+
+**H-level:** H1–H2 because domain geometry/design validation can require an expert.
+
+**Infrastructure/demand:** Food4Rhino is McNeel's plugin community service and supports direct developer uploads plus synchronization into Rhino Package Manager. Commercial products exist: for example Crane shows **44K+ downloads** and paid/trial distribution. Community support threads show installation/version friction—exactly what Package Manager integration and automated compatibility tests can reduce.
+
+**Moltwork assets:** `RhinoPack`, `CADGeometryWorld`, geometry/performance evaluator, Grasshopper School, package/publish Process.
+
+**Attractive if:** tool saves professional modeling time. **Unattractive if:** it is mainly subjective design generation or requires bespoke consultancy.
+
+Official: https://www.food4rhino.com/en/faq
+
+---
+
+## 16. The Sims 4 Maker Marketplace — 19/25
+
+**Why this is a frontier market:** EA launched the first-party Marketplace on **March 17, 2026** and opened the Maker Program on March 5. This is new, not a legacy CC site.
+
+**What agents can help produce:** original Create-a-Sim and Build/Buy item families and themed Maker Packs. Agents should perform mesh/material variants, LOD/texture validation, packaging, regression testing and metadata—not replace authorship/IP judgment.
+
+**Workflow:** trend/gap discovery → human-approved art direction → Worker creates/assists asset family using Maker Suite → `SimsWorld` tests LOD, clipping, swatches, catalog metadata, performance and patch compatibility → human creative/IP gate → Maker review → Marketplace → Moola sales → roughly **30% to Maker** → sales/review data → Worker maintains packs.
+
+**H-level:** H2. EA requires 18+, English proficiency, technical assessment and human-reviewed content.
+
+**Demand/community:** initial Reddit reaction was highly polarized: a March 22 thread had 600+ upvotes criticizing the 30% share, while another March thread reported claims the Marketplace exceeded EA's expectations. Users also complain that paid content must not break after patches—an opportunity for automated regression testing.
+
+**Moltwork assets:** `SimsMakerPack`, `SimsWorld`, clipping/LOD evaluator, provenance gate, PatchCompatibility Worker.
+
+**Attractive if:** console discovery creates a buyer base unavailable to traditional CC. **Unattractive if:** 30% economics + heavy human curation make production cost too high.
+
+Official: https://www.ea.com/games/the-sims/the-sims-4/news/the-sims-maker-program-and-marketplace
+
+---
+
+## 17. VRChat Creator Economy / Avatar Marketplace — 19/25
+
+**What agents can help sell:** avatars, avatar variants, world products, group products/subscriptions and related virtual goods inside VRChat's Creator Economy.
+
+**Workflow:** demand mining from avatar/world communities → human art direction → Worker creates variants/materials/optimization → Unity/VRChat fixture evaluates performance rank, bones, shaders, platform compatibility and safety → authorized seller review → product/listing → in-world/in-app store → credits → creator payout → telemetry/community feedback → Worker maintains SDK/platform compatibility.
+
+**H-level:** H2. Originality, identity/payout, trust & safety and subjective avatar quality remain human.
+
+**Infrastructure:** VRChat's Creator Economy supports products, stores, subscriptions and payouts; Avatar Marketplace provides a structured seller/listing/review path. This is more machine-operable than external Booth/Gumroad-only distribution, although Unity/editor steps remain significant.
+
+**Community:** creator-market sellers face saturation and strong quality expectations. The better agent role is optimization/variants/testing and continuous SDK maintenance rather than indiscriminate avatar generation.
+
+**Moltwork assets:** `VRChatPack`, `AvatarWorld`, performance-rank evaluator, Unity automation Skill, provenance/visual QA Process.
+
+**Attractive if:** one core authored avatar can support many validated variants and long-tail sales. **Unattractive if:** discovery is dominated by social brand rather than product quality.
+
+Official: https://creators.vrchat.com/economy/
+
+---
+
+## 18. Warframe TennoGen — 18/25
+
+**What agents can help submit:** Warframe/weapon skins, helmets, Syandanas, armor and other accepted TennoGen categories.
+
+**Workflow:** mine frame/accessory demand → human selects concept → Worker handles mesh cleanup, UVs, texture variants, presentation renders and technical checks → TennoGen Tool/Blender fixture → evaluator verifies guidelines/poly/material constraints → human art/IP review → Steam Workshop submission → DE internal art review → selected item added to game → creator receives **30% of Steam sale** → Workshop/community feedback → asset-maintainer Worker.
+
+**H-level:** H2 because selection is intentionally artistic and human.
+
+**Demand/community:** very fresh Aug 30, 2026 Reddit discussion says newer frames are 'starving for fashion options'; an Aug 7 TennoGen artist explains that acceptance is harder now and one item can take **1–6 months**, with fewer active powerhouse artists. That makes production-assistance and preflight tooling valuable, while also making acceptance probability the main bottleneck.
+
+**Moltwork assets:** `TennoGenPack`, asset-guideline evaluator, `WarframeArtWorld`, frame-demand miner, Blender/TennoGen Skill.
+
+**Attractive if:** automation reduces a months-long technical production loop without compromising originality. **Unattractive if:** acceptance remains too low for expected labor.
+
+Official: https://www.warframe.com/en/news/tennogen-101
+
+---
+
+## 19. Dota 2 Item Workshop — 18/25
+
+**What agents can help submit:** armor/weapons/clothing/couriers and 2D merchandise designs for Valve selection and revenue participation.
+
+**Workflow:** demand/theme analysis → human concept → Worker creates/retopologizes/UVs/textures/LODs → Dota Workshop Tools fixture → evaluator checks hero silhouette, budgets, materials and technical requirements → human artistic gate → Steam Workshop submission → votes/Valve curation → accepted item → share of store sales → telemetry/community reaction → iterative Worker.
+
+**H-level:** H2.
+
+**Demand/community:** Valve says thousands of community items have been submitted. A July 22, 2026 artist discussion describes the process as highly technical and tedious and estimates **4–8 weeks full-time** for an experienced artist to make a quality skin. This is nearly a textbook place for agents to compress mechanical production while leaving final design human.
+
+**Competition:** very high and Valve selection is opaque; do not model this as H0 autonomous income.
+
+**Moltwork assets:** `DotaWorkshopPack`, hero-asset World, budget/silhouette evaluator, technical preflight Skill, acceptance-prediction experiment.
+
+**Attractive if:** Worker reduces weeks of repetitive asset labor. **Unattractive if:** acceptance probability dominates economics.
+
+Official: https://www.dota2.com/workshop/
+
+---
+
+## 20. War Thunder Revenue Share Program — 17/25
+
+**What agents can help produce:** vehicle/aircraft/ship 3D models, cockpits, camouflage and other UGC created with the War Thunder CDK.
+
+**Workflow:** mine player demand + missing historical variants → source/reference collection → human provenance/history gate → Worker builds/retopologizes/textures → CDK/engine fixture checks dimensions, LOD, materials and rendering → human authenticity/art review → submission → Gaijin selection → fixed fee or revenue share → usage/sales/community feedback → Worker maintains assets.
+
+**H-level:** H2.
+
+**Economics:** official War Thunder wiki lists possible rewards including **$6,000–$10,000** fixed fees for aircraft/tank/ship 3D models, **$1,500–$8,000** for cockpits, smaller camouflage fees, or share revenue for certain UGC sold through Gaijin Market/trophy systems. This is potentially high-value per accepted artifact but selection-heavy.
+
+**Demand/community:** a June 2026 community analysis estimated millions of dollars of pack sales during one sale window (not official sales data), showing strong willingness to spend on vehicles/cosmetics. The same community is hostile to low-quality/AI content, so provenance and human authorship matter.
+
+**Moltwork assets:** `WarThunderPack`, `VehicleAssetWorld`, dimensional/reference evaluator, historical-provenance Skill, CDK packaging Process.
+
+**Attractive if:** technical asset production cost collapses and acceptance rate is reasonable. **Unattractive if:** detailed historical art/research remains largely human or automated content violates creator/platform rules.
+
+Official: https://wiki.warthunder.com/194-revenue-share-program
+
+---
+
+# Frontier Unlocks
+
+### 1. MCP has begun becoming a transaction surface, not merely a protocol
+
+AppHighway and dotMCP now offer explicit publisher economics for MCP tools: per-call/subscription pricing, hosting/auth, analytics and payouts. Zyla additionally markets existing APIs as callable from MCP clients. Current Reddit discussion captures the unresolved problem precisely: developers want agent-native monetization, but a raw MCP wrapper has almost zero defensibility. The opportunity is **MCP distribution + a hard underlying capability**.
+
+This suggests an Oracle field:
+
+`CapabilityMoat = proprietary_data + expensive_computation + reliability + specialist_process + accumulated_evidence`
+
+MCP by itself should score near zero.
+
+### 2. QuickNode's Marketplace docs were refreshed May 25, 2026
+
+The current surface explicitly supports JSON-RPC, REST and external add-ons, health-check contracts, partner beta and publication. That makes a blockchain primitive unusually easy to turn into a metered commercial product.
+
+### 3. mod.io standardized premium UGC economics in May 2026
+
+Updated monetization docs now spell out cross-platform USD/virtual-currency workflows, Creator Credits and creator revenue in a way that makes UGC revenue machine-trackable. This matters because the Worker can observe outcome data without requiring its own payment stack.
+
+### 4. The Sims 4 opened a first-party creator marketplace in March 2026
+
+EA moved vetted creator content from external CC ecosystems into an official PC/Mac/console commerce surface with Maker Suite, human QA, pricing and payout rules. This is a real venue unlock, although the 30% share and H2 creative gate constrain autonomy.
+
+### 5. Frappe's Marketplace surface is increasingly LLM-readable
+
+The current docs can be copied/downloaded in Markdown and apps publish from GitHub; together with the Frappe ecosystem's emerging MCP work this lowers the cost of a persistent ERP specialist learning the venue.
+
+### 6. Twilio Marketplace is more machine-manageable than its age suggests
+
+Marketplace v1 APIs allow programmatic listing discovery/install/configuration and publishers can report usage. Combined with OpenAPI/CLI/serverless tooling, old Marketplace infrastructure is newly much easier for agents to operate.
+
+---
+
+# Human Dependency Reduction
+
+The highest-value remaining dependencies are not 'make the art/code'—models already help there. They are the gates that prevent a finished artifact from becoming a safely transactable product.
+
+## A. `MarketplaceCertificationProcess` — highest priority
+
+Input: frozen product artifact.
+
+Output automatically generated:
+- permissions/scopes inventory;
+- data-flow/privacy map;
+- threat model;
+- deterministic test report;
+- screenshots/demo fixture;
+- compatibility/version matrix;
+- pricing/meter definition;
+- support/SLA document;
+- reviewer credentials/instructions;
+- listing metadata/release notes;
+- provenance/IP evidence where relevant.
+
+Then send only accountable assertions to HumanQueue. This converts many H2 reviews into a single H1 decision.
+
+## B. `VenueWorldFactory`
+
+Build declarative disposable test environments:
+- `APIWorld` for Zyla/APILayer/AppHighway/dotMCP;
+- `ChainWorld` for QuickNode;
+- `CommerceWorld` for Shoplazza/nopCommerce;
+- `ERPWorld` for Frappe/Dolibarr/Bitrix24;
+- `DroneWorld` for DroneDeploy;
+- `CADGeometryWorld` for Food4Rhino;
+- `UGCWorld` families for Sims/VRChat/Warframe/Dota/War Thunder.
+
+The World is the multiplier: once one is built, every later product in that venue becomes much cheaper to validate.
+
+## C. `PersistentCompatibilityWorker`
+
+Watch upstream release/changelog → identify owned products potentially affected → provision World → rerun matrix → reproduce break → patch → re-evaluate → generate release → submit/update. This is where an agent can be structurally better than indie sellers who discover breakage through angry users.
+
+## D. `ProvenanceGate`
+
+Creator markets make this mandatory. Every asset should carry source/reference lineage, model/tool history, licenses and explicit human approval. Agents are best used for technical production, variants, optimization and QA—not bypassing authorship or platform AI-content rules.
+
+## E. `EconomicCallability` should be decomposed
+
+Instead of one API flag, score each venue on:
+
+`discover → produce → validate → publish → transact → observe → maintain`
+
+The strongest venues here are Zyla/AppHighway/dotMCP because the product itself is already machine-callable and economically metered. DroneDeploy/QuickNode/Twilio are next because high-value vertical actions have structured install/billing surfaces.
+
+---
+
+# Recommended experiments
+
+**1. Zyla API Hub:** make one narrowly useful API from an Oracle-discovered repeated pain point. Goal: prove `signal → API → evaluator → listing → real calls → revenue` with minimal human dependency.
+
+**2. DroneDeploy:** build a bounded project/report QA or export utility rather than computer-vision magic. Goal: create the first serious `DroneWorld` and test whether vertical professional software supports much higher value per transaction.
+
+**3. AppHighway + dotMCP paired test:** publish the *same underlying capability* into two MCP marketplaces. Goal: measure distribution leverage, install friction, pricing elasticity and whether revenue is actually material rather than relying on first-party marketplace claims.
+
+**4. QuickNode:** build one data/compliance/transaction primitive for a frontier chain using the partner boilerplate. Goal: test metered agent/developer demand and persistent chain-maintenance specialization.
+
+**5. Frappe/DoliStore paired ERP test:** use one reusable ERP World to make two related deterministic workflow products. Goal: measure how much specialist memory/process/fixtures transfer across adjacent venues.
+
+The central result from this run is that Moltwork should increasingly favor **commercial surfaces where the artifact is callable, testable and metered**. Creator economies remain useful experiments, but their H2 artistic/provenance gates make them weaker first targets than API/MCP/vertical software markets. The strongest new opportunity family is therefore not another bounty board: it is **small machine-callable capabilities sold into existing developer/vertical ecosystems, with Harbor evidence and a persistent maintenance Worker as the moat.**
+Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+<p><strong>Research date:</strong> 1 September 2026</p>
+<p>This scan treats novelty as a hard constraint. I cross-checked the sent Oracle reports before researching candidates and excluded venues already covered in previous runs. The 20 below returned no prior exact-market hit in the Oracle corpus. I also rejected several tempting repeats (including VTEX, Discord Premium Apps, BigCommerce, Zoom App Marketplace, FlutterFlow, Overwolf, MyMiniFactory, Thangs, Teachers Pay Teachers, Cults3D and MCPize).</p>
+<p><strong>H-level shorthand:</strong> H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human subjective/legal/QA/reviewer work; H3 = material recurring human production/customer sponsorship; H4 = fundamentally human/offline. Legitimate identity, legal, tax, payout, IP and safety gates should not be bypassed.</p>
+<p><strong>Scoring:</strong> O = expected opportunity value, A = agent suitability, F = automation feasibility, C = competitive whitespace (higher = less crowded), N = novelty/timing. Total /25.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Market</th>
+<th>O</th>
+<th>A</th>
+<th>F</th>
+<th>C</th>
+<th>N</th>
+<th>Total</th>
+<th>Post-setup H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Zyla API Hub</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td><strong>24</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DroneDeploy App Market</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td><strong>23</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>QuickNode Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td><strong>23</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AppHighway MCP Tool Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td><strong>23</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Shoplazza App Store</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td><strong>22</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Bitrix24 Market</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td><strong>22</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Replit Extensions Store</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td><strong>22</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>mod.io Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Frappe Cloud Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>APILayer Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>dotMCP Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Twilio Marketplace Add-ons</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td><strong>20</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>nopCommerce Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td><strong>20</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>DoliStore</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td><strong>20</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Food4Rhino</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td><strong>20</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>The Sims 4 Maker Marketplace</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td><strong>19</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>17</td>
+<td>VRChat Creator Economy / Avatar Marketplace</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td><strong>19</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Warframe TennoGen</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td><strong>18</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Dota 2 Item Workshop</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+<td><strong>18</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>War Thunder Revenue Share Program</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td><strong>17</strong></td>
+<td>H2</td>
+</tr>
+</tbody>
+</table>
+
+
+
+1. Zyla API Hub — 24/25
+<p><strong>What an agent can sell:</strong> narrow production APIs: document transforms, difficult data normalization, regulatory/public-data wrappers, industry-specific lookup services, parsers, validators, enrichment and evidence services. The best wedge is not another generic AI endpoint; it is a capability where a developer would otherwise maintain brittle scraping/data plumbing.</p>
+<p><strong>Autonomous workflow:</strong> Oracle mines developer pain, API requests and missing data surfaces → Worker builds API → imports OpenAPI/Postman description → Harbor <code>APIWorld</code> runs schema, latency, correctness, rate-limit, adversarial-input and uptime tests → pricing/free tier generated → publisher review/onboarding → listing → subscriptions/calls → Zyla handles billing/customer support → usage and errors feed Hydra → Worker patches and expands successful endpoints.</p>
+<p><strong>H-level:</strong> H1. Publisher/payout identity and initial review remain human; execution, support triage and maintenance can be nearly H0.</p>
+<p><strong>Frontier infrastructure:</strong> Zyla advertises one-click Postman import, API monitoring, unified subscription/billing and compatibility with MCP clients. It says publishers keep 80%, start at $0, and the network handles 3B+ API calls/month. That machine-callable distribution is the important part.</p>
+<p><strong>Demand/community:</strong> public Reddit signal for Zyla specifically is thin, but current MCP discussions show clear demand for paid machine-callable services and frustration that MCP monetization remains fragmented. Marketplace-reported call volume is stronger evidence than a small subreddit here.</p>
+<p><strong>Moltwork assets:</strong> <code>ZylaPack</code>, <code>APIWorld</code>, schema/correctness evaluator, pricing experiment Process, <code>APIProductSchool</code>, OpenAPI-to-product Skill, persistent API Worker.</p>
+<p><strong>Attractive if:</strong> the endpoint has deterministic QA, low marginal COGS, recurring calls and differentiated data/process. <strong>Unattractive if:</strong> it is a thin LLM wrapper, depends on unstable scraping, or support/uptime costs exceed subscription revenue.</p>
+<p>Official: https://www.zylalabs.com/monetize-your-api</p>
+
+
+
+2. DroneDeploy App Market — 23/25
+<p><strong>What an agent can sell:</strong> construction/agriculture/inspection micro-apps: measurement QA, roof/solar analysis helpers, defect tagging, export transforms, compliance evidence, annotation automation, project synchronization, GIS/BIM adapters and reporting workflows.</p>
+<p><strong>Autonomous workflow:</strong> mine UAV/construction workflows and App Market gaps → generate an app using DroneDeploy APIs → seed synthetic projects/maps → Harbor <code>DroneWorld</code> tests geometry, map layers, export correctness, permissions, failure recovery and cross-device behavior → generate listing/evidence → partner review → paid App Market listing → installs/revenue → monitor API/changelog/project failures → persistent Worker maintains it.</p>
+<p><strong>H-level:</strong> H1–H2. Partner approval and domain assertions remain human; maintenance can approach H0. Physical-site ground truth remains a deliberate H2 gate for applications making safety/measurement claims.</p>
+<p><strong>Infrastructure:</strong> DroneDeploy’s developer FAQ explicitly supports publishing inside the UI and paid apps with a <strong>70% developer / 30% DroneDeploy</strong> split. App organization-wide install functionality was updated in March 2026, making deployment across customer teams easier.</p>
+<p><strong>Demand/community:</strong> DroneDeploy is used for expensive real-world workflows where even small time savings can support business pricing. Community discussion around drone mapping consistently centers on software cost, export limitations and workflow fragmentation—good signs for targeted utilities, but also evidence that customers expect professional reliability.</p>
+<p><strong>Moltwork assets:</strong> <code>DroneDeployPack</code>, <code>DroneWorld</code>, geospatial invariant evaluator, orthomosaic/report fixture generator, construction/inspection School, AppCertification Process.</p>
+<p><strong>Attractive if:</strong> software saves field/analyst time or prevents reporting errors. <strong>Unattractive if:</strong> value depends on untestable computer-vision claims or recurring human site interpretation.</p>
+<p>Official: https://developer.dronedeploy.com/docs/faqs.html</p>
+
+
+
+3. QuickNode Marketplace — 23/25
+<p><strong>What agents sell:</strong> blockchain data APIs, transaction simulation/broadcast tools, compliance/risk signals, indexed datasets, RPC extensions, alerts and chain-specific developer utilities.</p>
+<p><strong>Workflow:</strong> Oracle mines repeated RPC/data pain + new-chain releases → Worker builds REST/JSON-RPC/external add-on → disposable chain fixtures → Harbor checks deterministic responses, reorg behavior, latency, rate limits, health endpoint, billing boundaries and failure degradation → partner beta → publish → add-on enabled on QuickNode endpoints → Marketplace revenue → telemetry → continuous chain/version maintenance.</p>
+<p><strong>H-level:</strong> H1–H2 due partner onboarding/testing; runtime is close to H0.</p>
+<p><strong>Infrastructure/demand:</strong> QuickNode’s current add-on catalog says third parties can publish data/transaction/compliance services to <strong>700K+ developer accounts</strong>; Marketplace docs were updated May 25, 2026. Partner docs provide boilerplate, beta testing and required health checks. The original revenue model gives developers 70% of Marketplace revenue.</p>
+<p><strong>Community intelligence:</strong> web3 developers repeatedly pay to avoid running their own indexers/nodes and complain about provider/RPC inconsistencies. Competition is meaningful, so generic balance/token APIs are unattractive. Frontier chains, compliance data and high-value execution primitives are better.</p>
+<p><strong>Moltwork assets:</strong> <code>QuickNodePack</code>, <code>ChainWorld</code>, reorg/latency evaluator, <code>RPCProductSchool</code>, health/SLA Skill, chain-launch Opportunity detector.</p>
+<p><strong>Attractive if:</strong> each call has economic value and low marginal compute. <strong>Unattractive if:</strong> QuickNode itself commoditizes the feature or chain-specific demand disappears.</p>
+<p>Official: https://www.quicknode.com/add-ons and https://www.quicknode.com/guides/marketplace/marketplace-developers/how-to-create-a-rest-api-add-on-for-marketplace</p>
+
+
+
+4. AppHighway MCP Tool Marketplace — 23/25
+<p><strong>What agents sell:</strong> MCP-compatible functions priced per tool call: document parsers, structured-data transforms, domain lookups, data-quality checks, calculators, compliance checks and specialist analysis tools.</p>
+<p><strong>Workflow:</strong> Oracle discovers high-frequency missing agent capability → build MCP server/tool → protocol + golden-set Harbor evaluation → security/side-effect classification → publish for review → one-click install into Claude/Cursor/Windsurf/custom agents → calls consume points → publisher receives usage revenue → per-call telemetry informs pricing and specialization.</p>
+<p><strong>H-level:</strong> H1 for publisher/payout/review; the rest can be H0.</p>
+<p><strong>Infrastructure/demand:</strong> current Marketplace claims <strong>159 tools, 583K+ total installs and up to 90% revenue share</strong> with unified auth and per-call points. Because the platform is young, treat these first-party metrics as claims to validate experimentally, not audited market size. Reddit’s MCP community shows strong interest but also a warning: basic MCP wrappers are trivial, so only capabilities with a real proprietary/data/service backend are defensible.</p>
+<p><strong>Moltwork assets:</strong> <code>AppHighwayVenue</code>, MCP conformance evaluator, per-call economics evaluator, ToolCard compiler, <code>MCPCommercializationProcess</code>, specialist Tool Worker.</p>
+<p><strong>Attractive if:</strong> useful output is compact, measurable and repeated. <strong>Unattractive if:</strong> the tool is just formatting or something any agent can implement locally in minutes.</p>
+<p>Official: https://apphighway.com/en/marketplace</p>
+
+
+
+5. Shoplazza App Store — 22/25
+<p><strong>What agents sell:</strong> merchant micro-SaaS for cross-border stores: B2B ordering, catalog cleanup, feed QA, payment/risk operations, fulfillment adapters, migration tools, merchandising QA and reporting.</p>
+<p><strong>Workflow:</strong> mine merchant support/review pain → build OAuth app against Admin API → developer-store fixture → replay orders/products/refunds/webhooks → Harbor commerce invariants → create listing/pricing → App Store review → merchant installs → recurring app charge → telemetry/churn/reviews → Worker updates.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Infrastructure/demand:</strong> Shoplazza says its partner program reaches <strong>500,000+ retail/e-commerce businesses</strong> and 500+ partners. App developers get Partner Center, OAuth/Open APIs, dev stores, App Store distribution and recurring-charge pricing. 2026 Shoplazza material emphasizes cross-border payment and merchant operations, which is exactly where narrow integrations have value.</p>
+<p><strong>Community:</strong> English Reddit coverage is limited relative to Shopify. This is partly the opportunity: less public competition intelligence and fewer extension developers, but also harder demand discovery. Treat App Store installs/reviews and merchant communities as primary signal.</p>
+<p><strong>Moltwork assets:</strong> <code>ShoplazzaPack</code>, <code>CommerceWorld</code>, webhook/idempotence evaluator, cross-border merchant School, Shopify→Shoplazza Porting Process.</p>
+<p><strong>Attractive if:</strong> porting a successful commerce process is cheap. <strong>Unattractive if:</strong> acquisition depends entirely on external sales rather than App Store discovery.</p>
+<p>Official: https://www.shoplazza.com/partner</p>
+
+
+
+6. Bitrix24 Market — 22/25
+<p><strong>What agents sell:</strong> CRM/contact-center/workflow apps, vertical record utilities, data-quality tools, lead routing, reporting, telephony adapters and narrow industry workflows.</p>
+<p><strong>Workflow:</strong> mine Market reviews/support forums → generate REST app → create synthetic CRM/deals/tasks/contact-center fixture → evaluate permissions, workflow triggers, duplicate writes, retries and migration behavior → submit → freemium app distribution → upgrades/subscriptions handled by developer model → install/usage/support telemetry → persistent Worker patches.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Demand:</strong> Bitrix24’s current developer page claims <strong>15M+ users, 780+ apps, 160+ developers and 900K+ downloads</strong>, with a free REST API and freemium monetization. Those numbers imply unusually high users-per-developer compared with many western SaaS marketplaces.</p>
+<p><strong>Community:</strong> Bitrix24 users often complain about complexity and configuration burden. That is favorable for small opinionated workflow apps, but the platform’s breadth means support edge cases can explode.</p>
+<p><strong>Moltwork assets:</strong> <code>BitrixPack</code>, <code>CRMWorld</code>, automation-trigger evaluator, vertical CRM Schools, migration Skill, Russian/English listing Process.</p>
+<p><strong>Attractive if:</strong> one narrow workflow removes configuration pain for a broad user slice. <strong>Unattractive if:</strong> each customer expects bespoke CRM consulting.</p>
+<p>Official: https://www.bitrix24.com/apps/dev.php</p>
+
+
+
+7. Replit Extensions Store — 22/25
+<p><strong>What agents sell:</strong> IDE/deployment utilities, project analyzers, specialized generators, developer dashboards, migration/dependency tools and workflow extensions.</p>
+<p><strong>Workflow:</strong> mine Replit developer pain → have a Worker build the extension inside Replit → fixture projects across languages → evaluator tests permissions, latency, workspace mutation, failure isolation and UI → store submission → subscription revenue → usage reports → Worker maintains against Replit changes.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Infrastructure:</strong> Replit’s Extensions terms explicitly contemplate revenue-generating extensions and developer revenue share, with monthly revenue reports/payments. Replit’s agent-first environment also lowers product-building friction dramatically.</p>
+<p><strong>2026 constraint/community:</strong> Replit has been shifting product focus strongly toward Agent-created apps; community reactions include frustration about older developer-framework surfaces changing. That is both opportunity and platform risk. Build extensions tightly coupled to durable workflows, not internal UI assumptions.</p>
+<p><strong>Moltwork assets:</strong> <code>ReplitPack</code>, <code>IDEWorld</code>, workspace-mutation evaluator, extension scaffold Skill, Replit-change watcher.</p>
+<p><strong>Attractive if:</strong> extension improves workflows Agent itself does not already commoditize. <strong>Unattractive if:</strong> Replit absorbs the feature or deprecates the extension surface.</p>
+<p>Official terms: https://replit.com/extensions-terms</p>
+
+
+
+8. mod.io Marketplace — 21/25
+<p><strong>What agents can sell:</strong> premium UGC in games that enable mod.io Marketplace: maps, game modes, items, vehicles, level packs, cosmetic assets, scenarios and other game-specific mods.</p>
+<p><strong>Workflow:</strong> Oracle identifies enabled game + underserved content cluster → Worker builds/modifies asset/code using game SDK → per-game Harbor World runs loading, performance, multiplayer/version, dependency and exploit tests → human originality/gameplay review → submit to publisher-defined moderation → premium listing → player purchase → Creator Credits → USD payout after reconciliation → telemetry/reviews → compatibility Worker maintains.</p>
+<p><strong>H-level:</strong> H2 because authorship, quality and game-specific moderation are material. Agents should augment a legitimate creator, not flood marketplaces.</p>
+<p><strong>2026 frontier:</strong> mod.io’s May 21, 2026 docs make premium UGC economics unusually explicit: creators can expect roughly <strong>20–40% of total amount spent</strong>, with ~25% described as an industry norm. Marketplace supports Unreal, Unity, C++ and REST, USD pricing or virtual currency, creator wallets and cross-platform purchasing.</p>
+<p><strong>Demand/community:</strong> game-specific; therefore Oracle must score each enabled game separately. The technical infrastructure is excellent, but the commercial distribution depends on publisher adoption and player population.</p>
+<p><strong>Moltwork assets:</strong> <code>modioPack</code>, per-game <code>UGCWorld</code>, exploit/performance evaluator, GamePorting School, provenance/evidence Process, persistent mod-maintainer Worker.</p>
+<p><strong>Attractive if:</strong> one product can sell cross-platform and compatibility can be automated. <strong>Unattractive if:</strong> the game is small, creator approval is opaque, or subjective content production dominates.</p>
+<p>Official: https://docs.mod.io/monetization/marketplace</p>
+
+
+
+9. Frappe Cloud Marketplace — 21/25
+<p><strong>What agents sell:</strong> ERPNext/Frappe apps: regional tax/e-invoicing, vertical workflow modules, reports, payment adapters, document generators, data cleanup, integrations and administrative agents.</p>
+<p><strong>Workflow:</strong> mine ERPNext forum issues → Worker builds GitHub-hosted Frappe app → disposable ERPNext fixture with company/invoices/stock/users → evaluator runs install/migration/version/security/accounting invariants → add from GitHub → Marketplace review → paid/free listing → Frappe Cloud install telemetry → Worker follows ERPNext releases.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Infrastructure/frontier:</strong> Marketplace docs themselves now expose Markdown/LLM-friendly actions and were updated in 2026. Apps can be paid, must be open-source/GPL-compatible, are added directly from GitHub and normally reviewed within a stated ~10-day SLA.</p>
+<p><strong>Community:</strong> February 2026 discussion explicitly asks for an ERPNext AI assistant and mentions Frappe MCP/Otto projects, while users remain skeptical of hallucinating agents touching business data. This strongly favors bounded deterministic utilities over general ERP chatbots.</p>
+<p><strong>Moltwork assets:</strong> <code>FrappePack</code>, <code>ERPWorld</code>, ledger/stock/workflow evaluator, regional compliance School, GitHub→Marketplace Process.</p>
+<p><strong>Attractive if:</strong> the app solves repeatable ERP pain and support can be tested. <strong>Unattractive if:</strong> licensing makes proprietary moat impossible or every deployment is highly customized.</p>
+<p>Official: https://docs.frappe.io/cloud/marketplace</p>
+
+
+
+10. APILayer Marketplace — 21/25
+<p><strong>What agents sell:</strong> curated production APIs: validation, geodata, finance, security, parsing, conversion, niche public datasets and developer infrastructure.</p>
+<p><strong>Workflow:</strong> discover repeated developer need → build API → produce OpenAPI/Postman docs → Harbor correctness/load/security/SLA suite → submit for curation → paid plans → API calls/subscriptions → monitor latency/errors/churn → autonomously patch and expand endpoints.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Demand:</strong> APILayer currently says its curated ecosystem serves <strong>2.2M+ developers</strong> and processes <strong>30M+ API calls/month</strong>. Its marketplace documentation says API publishers can monetize; historical publisher guidance describes a 15% platform share. Current public surfaces should be rechecked before setting a business model because commercial terms can change.</p>
+<p><strong>Community:</strong> little APILayer-specific Reddit seller discussion; general API-marketplace pain is discoverability, commoditization and reliability. APILayer’s curation is an advantage if Harbor can prove exceptional reliability.</p>
+<p><strong>Moltwork assets:</strong> <code>APILayerPack</code>, <code>APIWorld</code>, SLA evaluator, OpenAPI publishing Skill, pricing/retention Process.</p>
+<p><strong>Attractive if:</strong> high-value deterministic API. <strong>Unattractive if:</strong> marketplace selection is slow or the API is indistinguishable from 20 competitors.</p>
+<p>Official: https://marketplace.apilayer.com/about-us</p>
+
+
+
+11. dotMCP Marketplace — 21/25
+<p><strong>What agents sell:</strong> hosted MCP servers with free, subscription and usage-based tiers.</p>
+<p><strong>Workflow:</strong> pain discovery → generate/import API into MCP → protocol/security/golden-task evaluation → publish/host → client installs key in Claude/Cursor/etc → subscriptions/overage → Stripe Connect payout → per-tool analytics → Worker tunes functionality and pricing.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Economics/infrastructure:</strong> dotMCP currently advertises free hosting/publishing, <strong>80% publisher revenue / 20% platform fee</strong>, monthly Stripe Connect payouts, visual builder/API imports, analytics and usage/subscription tiers.</p>
+<p><strong>Community:</strong> January 2026 MCP discussions explicitly complain that monetization is too hacky while other commenters correctly note that MCP itself is just a thin protocol layer. Therefore the defensible object is the <em>service behind the MCP</em>, not the manifest.</p>
+<p><strong>Moltwork assets:</strong> <code>dotMCPVenue</code>, MCP protocol evaluator, API→MCP Skill, billing-meter evaluator, ToolEconomics School.</p>
+<p><strong>Attractive if:</strong> underlying service has proprietary data/computation. <strong>Unattractive if:</strong> local implementation is trivial or MCP host compatibility fragments.</p>
+<p>Official: https://dotmcp.io/pricing</p>
+
+
+
+12. Twilio Marketplace Add-ons — 20/25
+<p><strong>What agents sell:</strong> caller/number intelligence, fraud/risk enrichment, consent/compliance checks, transcription or structured voice analysis, routing signals, media-stream processors and payment connectors.</p>
+<p><strong>Workflow:</strong> mine communications pain → build Add-on endpoint → Twilio fixture generates SMS/calls/lookups/recordings → Harbor tests callback semantics, latency, PII handling, billing units and degraded behavior → Marketplace publisher review → installable Add-on → invoked automatically within Twilio API flow → Twilio usage-based billing → Marketplace API reports usage → Worker maintains service.</p>
+<p><strong>H-level:</strong> H1–H2 because telecom/security/privacy claims need accountable review.</p>
+<p><strong>Frontier infrastructure:</strong> Twilio Marketplace has a proper API for browsing/installing/managing listings; Add-ons use Twilio’s usage billing; publishers can report usage programmatically. Twilio docs also advertise OpenAPI and AI-agent-oriented developer tooling.</p>
+<p><strong>Community pain:</strong> June 2026 Twilio users discussed toll-fraud/security surprises around programmable controls. That points to real willingness to pay for bounded fraud/permission evidence, but also raises the liability bar dramatically.</p>
+<p><strong>Moltwork assets:</strong> <code>TwilioPack</code>, <code>CommsWorld</code>, callback/fraud evaluator, PII-policy School, usage-meter Process.</p>
+<p><strong>Attractive if:</strong> signal prevents expensive fraud/support or enriches billions of communications events. <strong>Unattractive if:</strong> false positives or compliance liability are hard to bound.</p>
+<p>Official: https://www.twilio.com/docs/marketplace</p>
+
+
+
+13. nopCommerce Marketplace — 20/25
+<p><strong>What agents sell:</strong> .NET ecommerce plugins: regional tax/payment/shipping integrations, feeds, B2B features, search/admin tools, checkout QA and catalog workflows.</p>
+<p><strong>Workflow:</strong> mine merchant requests → Worker creates plugin → disposable nopCommerce versions/database/store fixture → install/upgrade/uninstall/security/checkout tests → generate demo/docs → Marketplace technical review → paid listing points to seller checkout → revenue direct to seller → download/review telemetry → version-maintainer Worker.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Economics:</strong> nopCommerce explicitly allows commercial extensions and takes <strong>no revenue share</strong>; sellers process payment themselves. There is a paid-listing fee after a 30-day free trial, which creates a useful economic selection pressure. Review checks source, deployable package, security and supported versions.</p>
+<p><strong>Community:</strong> the ecosystem is less fashionable than Shopify/WooCommerce, which is positive for whitespace but negative for total demand. Merchants using nopCommerce tend to be more technical and version-sensitive, favoring well-maintained integrations over visual novelty.</p>
+<p><strong>Moltwork assets:</strong> <code>nopPack</code>, <code>CommerceDotNetWorld</code>, version/security evaluator, plugin packaging Skill, direct-license Process.</p>
+<p><strong>Attractive if:</strong> a $50–300 plugin can recur across many stores. <strong>Unattractive if:</strong> listing/support costs exceed the smaller audience.</p>
+<p>Official: https://www.nopcommerce.com/en/submitting-plugins-to-nopcommerce-marketplace</p>
+
+
+
+14. DoliStore — 20/25
+<p><strong>What agents sell:</strong> Dolibarr ERP/CRM modules: EU/local compliance, PDF/document modules, invoicing, connectors, vertical workflows, reporting and automation.</p>
+<p><strong>Workflow:</strong> forum/regulation gap discovery → PHP module → disposable Dolibarr fixtures → Harbor tests packaging, migrations, permissions, invoice/accounting invariants and current-version compatibility → request approval → DoliStore sale → foundation handles buyer transaction → seller invoices foundation after settlement period → support/reviews → Worker patches.</p>
+<p><strong>H-level:</strong> H1.</p>
+<p><strong>Economics:</strong> current seller terms state the seller receives <strong>80%</strong> of gains made by the foundation, with thresholds before payout. New modules normally require approval; packaging rules are machine-checkable. A very current Dolibarr wiki page (Aug 13, 2026) still points users to DoliStore modules, showing the channel is live.</p>
+<p><strong>Community constraint:</strong> DoliStore sellers have complained about refund policy and source-code resale/piracy. That makes proprietary code a weak moat; persistent support, compliance freshness and evidence are stronger moats.</p>
+<p><strong>Moltwork assets:</strong> <code>DolibarrPack</code>, <code>ERPWorld</code>, invoice/PDF evaluator, EU-regulation School, package-validation Skill.</p>
+<p><strong>Attractive if:</strong> regulatory/version maintenance creates recurring value. <strong>Unattractive if:</strong> source redistribution destroys pricing power.</p>
+<p>Official: https://www.dolistore.com/terms-and-conditions-of-use-module-providers.php</p>
+
+
+
+15. Food4Rhino — 20/25
+<p><strong>What agents sell/distribute:</strong> Rhino/Grasshopper plugins, scripts, definitions, materials, fabrication/CAD utilities, BIM interoperability and computational-design tools. Food4Rhino itself is primarily discovery/distribution; commercial apps can link to external purchase/licensing.</p>
+<p><strong>Workflow:</strong> mine architects/designers’ repetitive Grasshopper pain → Worker builds .gha/.rhp/.ghpy/plugin → synthetic Rhino geometries → Harbor tests geometry invariants, file compatibility, speed, undo/failure behavior and Rhino versions → Package Manager/Food4Rhino release → external license/payment when commercial → download/review/support signal → Worker maintains.</p>
+<p><strong>H-level:</strong> H1–H2 because domain geometry/design validation can require an expert.</p>
+<p><strong>Infrastructure/demand:</strong> Food4Rhino is McNeel’s plugin community service and supports direct developer uploads plus synchronization into Rhino Package Manager. Commercial products exist: for example Crane shows <strong>44K+ downloads</strong> and paid/trial distribution. Community support threads show installation/version friction—exactly what Package Manager integration and automated compatibility tests can reduce.</p>
+<p><strong>Moltwork assets:</strong> <code>RhinoPack</code>, <code>CADGeometryWorld</code>, geometry/performance evaluator, Grasshopper School, package/publish Process.</p>
+<p><strong>Attractive if:</strong> tool saves professional modeling time. <strong>Unattractive if:</strong> it is mainly subjective design generation or requires bespoke consultancy.</p>
+<p>Official: https://www.food4rhino.com/en/faq</p>
+
+
+
+16. The Sims 4 Maker Marketplace — 19/25
+<p><strong>Why this is a frontier market:</strong> EA launched the first-party Marketplace on <strong>March 17, 2026</strong> and opened the Maker Program on March 5. This is new, not a legacy CC site.</p>
+<p><strong>What agents can help produce:</strong> original Create-a-Sim and Build/Buy item families and themed Maker Packs. Agents should perform mesh/material variants, LOD/texture validation, packaging, regression testing and metadata—not replace authorship/IP judgment.</p>
+<p><strong>Workflow:</strong> trend/gap discovery → human-approved art direction → Worker creates/assists asset family using Maker Suite → <code>SimsWorld</code> tests LOD, clipping, swatches, catalog metadata, performance and patch compatibility → human creative/IP gate → Maker review → Marketplace → Moola sales → roughly <strong>30% to Maker</strong> → sales/review data → Worker maintains packs.</p>
+<p><strong>H-level:</strong> H2. EA requires 18+, English proficiency, technical assessment and human-reviewed content.</p>
+<p><strong>Demand/community:</strong> initial Reddit reaction was highly polarized: a March 22 thread had 600+ upvotes criticizing the 30% share, while another March thread reported claims the Marketplace exceeded EA’s expectations. Users also complain that paid content must not break after patches—an opportunity for automated regression testing.</p>
+<p><strong>Moltwork assets:</strong> <code>SimsMakerPack</code>, <code>SimsWorld</code>, clipping/LOD evaluator, provenance gate, PatchCompatibility Worker.</p>
+<p><strong>Attractive if:</strong> console discovery creates a buyer base unavailable to traditional CC. <strong>Unattractive if:</strong> 30% economics + heavy human curation make production cost too high.</p>
+<p>Official: https://www.ea.com/games/the-sims/the-sims-4/news/the-sims-maker-program-and-marketplace</p>
+
+
+
+17. VRChat Creator Economy / Avatar Marketplace — 19/25
+<p><strong>What agents can help sell:</strong> avatars, avatar variants, world products, group products/subscriptions and related virtual goods inside VRChat’s Creator Economy.</p>
+<p><strong>Workflow:</strong> demand mining from avatar/world communities → human art direction → Worker creates variants/materials/optimization → Unity/VRChat fixture evaluates performance rank, bones, shaders, platform compatibility and safety → authorized seller review → product/listing → in-world/in-app store → credits → creator payout → telemetry/community feedback → Worker maintains SDK/platform compatibility.</p>
+<p><strong>H-level:</strong> H2. Originality, identity/payout, trust &amp; safety and subjective avatar quality remain human.</p>
+<p><strong>Infrastructure:</strong> VRChat’s Creator Economy supports products, stores, subscriptions and payouts; Avatar Marketplace provides a structured seller/listing/review path. This is more machine-operable than external Booth/Gumroad-only distribution, although Unity/editor steps remain significant.</p>
+<p><strong>Community:</strong> creator-market sellers face saturation and strong quality expectations. The better agent role is optimization/variants/testing and continuous SDK maintenance rather than indiscriminate avatar generation.</p>
+<p><strong>Moltwork assets:</strong> <code>VRChatPack</code>, <code>AvatarWorld</code>, performance-rank evaluator, Unity automation Skill, provenance/visual QA Process.</p>
+<p><strong>Attractive if:</strong> one core authored avatar can support many validated variants and long-tail sales. <strong>Unattractive if:</strong> discovery is dominated by social brand rather than product quality.</p>
+<p>Official: https://creators.vrchat.com/economy/</p>
+
+
+
+18. Warframe TennoGen — 18/25
+<p><strong>What agents can help submit:</strong> Warframe/weapon skins, helmets, Syandanas, armor and other accepted TennoGen categories.</p>
+<p><strong>Workflow:</strong> mine frame/accessory demand → human selects concept → Worker handles mesh cleanup, UVs, texture variants, presentation renders and technical checks → TennoGen Tool/Blender fixture → evaluator verifies guidelines/poly/material constraints → human art/IP review → Steam Workshop submission → DE internal art review → selected item added to game → creator receives <strong>30% of Steam sale</strong> → Workshop/community feedback → asset-maintainer Worker.</p>
+<p><strong>H-level:</strong> H2 because selection is intentionally artistic and human.</p>
+<p><strong>Demand/community:</strong> very fresh Aug 30, 2026 Reddit discussion says newer frames are ‘starving for fashion options’; an Aug 7 TennoGen artist explains that acceptance is harder now and one item can take <strong>1–6 months</strong>, with fewer active powerhouse artists. That makes production-assistance and preflight tooling valuable, while also making acceptance probability the main bottleneck.</p>
+<p><strong>Moltwork assets:</strong> <code>TennoGenPack</code>, asset-guideline evaluator, <code>WarframeArtWorld</code>, frame-demand miner, Blender/TennoGen Skill.</p>
+<p><strong>Attractive if:</strong> automation reduces a months-long technical production loop without compromising originality. <strong>Unattractive if:</strong> acceptance remains too low for expected labor.</p>
+<p>Official: https://www.warframe.com/en/news/tennogen-101</p>
+
+
+
+19. Dota 2 Item Workshop — 18/25
+<p><strong>What agents can help submit:</strong> armor/weapons/clothing/couriers and 2D merchandise designs for Valve selection and revenue participation.</p>
+<p><strong>Workflow:</strong> demand/theme analysis → human concept → Worker creates/retopologizes/UVs/textures/LODs → Dota Workshop Tools fixture → evaluator checks hero silhouette, budgets, materials and technical requirements → human artistic gate → Steam Workshop submission → votes/Valve curation → accepted item → share of store sales → telemetry/community reaction → iterative Worker.</p>
+<p><strong>H-level:</strong> H2.</p>
+<p><strong>Demand/community:</strong> Valve says thousands of community items have been submitted. A July 22, 2026 artist discussion describes the process as highly technical and tedious and estimates <strong>4–8 weeks full-time</strong> for an experienced artist to make a quality skin. This is nearly a textbook place for agents to compress mechanical production while leaving final design human.</p>
+<p><strong>Competition:</strong> very high and Valve selection is opaque; do not model this as H0 autonomous income.</p>
+<p><strong>Moltwork assets:</strong> <code>DotaWorkshopPack</code>, hero-asset World, budget/silhouette evaluator, technical preflight Skill, acceptance-prediction experiment.</p>
+<p><strong>Attractive if:</strong> Worker reduces weeks of repetitive asset labor. <strong>Unattractive if:</strong> acceptance probability dominates economics.</p>
+<p>Official: https://www.dota2.com/workshop/</p>
+
+
+
+20. War Thunder Revenue Share Program — 17/25
+<p><strong>What agents can help produce:</strong> vehicle/aircraft/ship 3D models, cockpits, camouflage and other UGC created with the War Thunder CDK.</p>
+<p><strong>Workflow:</strong> mine player demand + missing historical variants → source/reference collection → human provenance/history gate → Worker builds/retopologizes/textures → CDK/engine fixture checks dimensions, LOD, materials and rendering → human authenticity/art review → submission → Gaijin selection → fixed fee or revenue share → usage/sales/community feedback → Worker maintains assets.</p>
+<p><strong>H-level:</strong> H2.</p>
+<p><strong>Economics:</strong> official War Thunder wiki lists possible rewards including <strong>$6,000–$10,000</strong> fixed fees for aircraft/tank/ship 3D models, <strong>$1,500–$8,000</strong> for cockpits, smaller camouflage fees, or share revenue for certain UGC sold through Gaijin Market/trophy systems. This is potentially high-value per accepted artifact but selection-heavy.</p>
+<p><strong>Demand/community:</strong> a June 2026 community analysis estimated millions of dollars of pack sales during one sale window (not official sales data), showing strong willingness to spend on vehicles/cosmetics. The same community is hostile to low-quality/AI content, so provenance and human authorship matter.</p>
+<p><strong>Moltwork assets:</strong> <code>WarThunderPack</code>, <code>VehicleAssetWorld</code>, dimensional/reference evaluator, historical-provenance Skill, CDK packaging Process.</p>
+<p><strong>Attractive if:</strong> technical asset production cost collapses and acceptance rate is reasonable. <strong>Unattractive if:</strong> detailed historical art/research remains largely human or automated content violates creator/platform rules.</p>
+<p>Official: https://wiki.warthunder.com/194-revenue-share-program</p>
+
+
+
+Frontier Unlocks
+
+1. MCP has begun becoming a transaction surface, not merely a protocol
+<p>AppHighway and dotMCP now offer explicit publisher economics for MCP tools: per-call/subscription pricing, hosting/auth, analytics and payouts. Zyla additionally markets existing APIs as callable from MCP clients. Current Reddit discussion captures the unresolved problem precisely: developers want agent-native monetization, but a raw MCP wrapper has almost zero defensibility. The opportunity is <strong>MCP distribution + a hard underlying capability</strong>.</p>
+<p>This suggests an Oracle field:</p>
+<p><code>CapabilityMoat = proprietary_data + expensive_computation + reliability + specialist_process + accumulated_evidence</code></p>
+<p>MCP by itself should score near zero.</p>
+
+2. QuickNode’s Marketplace docs were refreshed May 25, 2026
+<p>The current surface explicitly supports JSON-RPC, REST and external add-ons, health-check contracts, partner beta and publication. That makes a blockchain primitive unusually easy to turn into a metered commercial product.</p>
+
+3. mod.io standardized premium UGC economics in May 2026
+<p>Updated monetization docs now spell out cross-platform USD/virtual-currency workflows, Creator Credits and creator revenue in a way that makes UGC revenue machine-trackable. This matters because the Worker can observe outcome data without requiring its own payment stack.</p>
+
+4. The Sims 4 opened a first-party creator marketplace in March 2026
+<p>EA moved vetted creator content from external CC ecosystems into an official PC/Mac/console commerce surface with Maker Suite, human QA, pricing and payout rules. This is a real venue unlock, although the 30% share and H2 creative gate constrain autonomy.</p>
+
+5. Frappe’s Marketplace surface is increasingly LLM-readable
+<p>The current docs can be copied/downloaded in Markdown and apps publish from GitHub; together with the Frappe ecosystem’s emerging MCP work this lowers the cost of a persistent ERP specialist learning the venue.</p>
+
+6. Twilio Marketplace is more machine-manageable than its age suggests
+<p>Marketplace v1 APIs allow programmatic listing discovery/install/configuration and publishers can report usage. Combined with OpenAPI/CLI/serverless tooling, old Marketplace infrastructure is newly much easier for agents to operate.</p>
+
+
+
+Human Dependency Reduction
+<p>The highest-value remaining dependencies are not ‘make the art/code’—models already help there. They are the gates that prevent a finished artifact from becoming a safely transactable product.</p>
+
+A. <code>MarketplaceCertificationProcess</code> — highest priority
+<p>Input: frozen product artifact.</p>
+<p>Output automatically generated:</p>
+<ul>
+<li>permissions/scopes inventory;</li>
+<li>data-flow/privacy map;</li>
+<li>threat model;</li>
+<li>deterministic test report;</li>
+<li>screenshots/demo fixture;</li>
+<li>compatibility/version matrix;</li>
+<li>pricing/meter definition;</li>
+<li>support/SLA document;</li>
+<li>reviewer credentials/instructions;</li>
+<li>listing metadata/release notes;</li>
+<li>provenance/IP evidence where relevant.</li>
+</ul>
+<p>Then send only accountable assertions to HumanQueue. This converts many H2 reviews into a single H1 decision.</p>
+
+B. <code>VenueWorldFactory</code>
+<p>Build declarative disposable test environments:</p>
+<ul>
+<li><code>APIWorld</code> for Zyla/APILayer/AppHighway/dotMCP;</li>
+<li><code>ChainWorld</code> for QuickNode;</li>
+<li><code>CommerceWorld</code> for Shoplazza/nopCommerce;</li>
+<li><code>ERPWorld</code> for Frappe/Dolibarr/Bitrix24;</li>
+<li><code>DroneWorld</code> for DroneDeploy;</li>
+<li><code>CADGeometryWorld</code> for Food4Rhino;</li>
+<li><code>UGCWorld</code> families for Sims/VRChat/Warframe/Dota/War Thunder.</li>
+</ul>
+<p>The World is the multiplier: once one is built, every later product in that venue becomes much cheaper to validate.</p>
+
+C. <code>PersistentCompatibilityWorker</code>
+<p>Watch upstream release/changelog → identify owned products potentially affected → provision World → rerun matrix → reproduce break → patch → re-evaluate → generate release → submit/update. This is where an agent can be structurally better than indie sellers who discover breakage through angry users.</p>
+
+D. <code>ProvenanceGate</code>
+<p>Creator markets make this mandatory. Every asset should carry source/reference lineage, model/tool history, licenses and explicit human approval. Agents are best used for technical production, variants, optimization and QA—not bypassing authorship or platform AI-content rules.</p>
+
+E. <code>EconomicCallability</code> should be decomposed
+<p>Instead of one API flag, score each venue on:</p>
+<p><code>discover → produce → validate → publish → transact → observe → maintain</code></p>
+<p>The strongest venues here are Zyla/AppHighway/dotMCP because the product itself is already machine-callable and economically metered. DroneDeploy/QuickNode/Twilio are next because high-value vertical actions have structured install/billing surfaces.</p>
+
+
+
+Recommended experiments
+<p><strong>1. Zyla API Hub:</strong> make one narrowly useful API from an Oracle-discovered repeated pain point. Goal: prove <code>signal → API → evaluator → listing → real calls → revenue</code> with minimal human dependency.</p>
+<p><strong>2. DroneDeploy:</strong> build a bounded project/report QA or export utility rather than computer-vision magic. Goal: create the first serious <code>DroneWorld</code> and test whether vertical professional software supports much higher value per transaction.</p>
+<p><strong>3. AppHighway + dotMCP paired test:</strong> publish the <em>same underlying capability</em> into two MCP marketplaces. Goal: measure distribution leverage, install friction, pricing elasticity and whether revenue is actually material rather than relying on first-party marketplace claims.</p>
+<p><strong>4. QuickNode:</strong> build one data/compliance/transaction primitive for a frontier chain using the partner boilerplate. Goal: test metered agent/developer demand and persistent chain-maintenance specialization.</p>
+<p><strong>5. Frappe/DoliStore paired ERP test:</strong> use one reusable ERP World to make two related deterministic workflow products. Goal: measure how much specialist memory/process/fixtures transfer across adjacent venues.</p>
+<p>The central result from this run is that Moltwork should increasingly favor <strong>commercial surfaces where the artifact is callable, testable and metered</strong>. Creator economies remain useful experiments, but their H2 artistic/provenance gates make them weaker first targets than API/MCP/vertical software markets. The strongest new opportunity family is therefore not another bounty board: it is <strong>small machine-callable capabilities sold into existing developer/vertical ecosystems, with Harbor evidence and a persistent maintenance Worker as the moat.</strong></p>

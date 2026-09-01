@@ -1,0 +1,149 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — x402, GIS, Energy, Network Apps & Vertical Marketplaces
+Date: Mon, 31 Aug 2026 22:13:06 -0500
+Message ID: 1a05af4c8850d0c4
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This pass treats novelty as a hard constraint. I searched the prior sent `Oracle Market Unlocks` corpus before selection and rejected exact-market repeats. In particular, I discarded Procore, Motive, ServiceTitan, SHOPLINE, Clio, athenahealth, Jobber, HighLevel, Buildium, Modrinth, CurseForge, Creative Fabrica, CGTrader, Pond5, Duda, MYOB, Roll20, and other previously covered venues. The 20 below had no prior exact-market hit in the sent Oracle-report corpus.
+
+**Scoring:** O = opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (5 = favorable/less crowded); N = novelty/timing. Total /25.
+
+**H shorthand:** H0 = essentially machine-operable once credentials/payment rails exist. H1 = one-time human identity/account/KYC/review/consent. H2 = recurring/material human partner, compliance, customer, or subjective approval. H3 = recurring human production/physical testing/customer work. H4 = fundamentally human/legal/regulated/physical step that should not be delegated.
+
+## Ranked summary
+
+| # | Market | O/A/F/C/N | Total | Primary wedge | H |
+|---|---|---:|---:|---|---|
+| 1 | PayWeave Agent Bazaar | 5/5/5/5/5 | 25 | Paid APIs/functions/files consumed autonomously by agents | H0–H1 |
+| 2 | SuperLayers Marketplace | 5/5/5/4/5 | 24 | GIS datasets + automated geospatial workflows | H1 |
+| 3 | ZeroTouch Developer Marketplace | 5/5/4/5/5 | 24 | Home-energy optimization/diagnostics apps | H1–H2 |
+| 4 | Cambium cnMaestro MarketApps Hub | 5/5/5/4/5 | 24 | Network diagnostics/config/audit micro-apps | H1 |
+| 5 | Trackunit Marketplace | 5/5/4/4/4 | 22 | Construction-equipment state/integrity apps | H1–H2 |
+| 6 | Onshape App Store | 5/5/4/3/4 | 21 | CAD automation, QA and documentation apps | H1–H2 |
+| 7 | Ellucian Marketplace | 5/5/3/4/4 | 21 | Higher-ed SIS integrations + lifecycle automation | H2 |
+| 8 | Rent Manager Integrations Program Marketplace | 5/5/3/3/4 | 20 | Property-maintenance/accounting operations agents | H2 |
+| 9 | Docebo Integrations Marketplace + MCP | 5/5/3/3/4 | 20 | Learning/compliance workflow agents and connectors | H2 |
+| 10 | FreedomKit Developer Marketplace | 4/5/5/3/3 | 20 | Creator/agency CRM micro-apps sold per sub-account | H1 |
+| 11 | AlfaDocs App Marketplace | 4/5/4/4/3 | 20 | Dental-practice admin/reconciliation apps | H2 |
+| 12 | Caspio Marketplace | 4/5/4/3/3 | 19 | Vertical no-code app blocks and deployable solutions | H1–H2 |
+| 13 | Fleetio Integrations Directory | 5/5/3/3/3 | 19 | Fleet maintenance/procurement/reconciliation SaaS | H2 |
+| 14 | Glyphh Marketplace | 4/5/5/4/1 | 19 | Sandboxed enterprise AI apps running on customer models/data | H1 |
+| 15 | Burdenoff Marketplace | 3/5/5/4/2 | 19 | Apps, workflow nodes and agents with native marketplace payout | H1 |
+| 16 | Vodafone Developer Marketplace | 5/5/3/3/2 | 18 | Telecom identity/network/messaging API products | H2 |
+| 17 | Energy Web X Marketplace | 4/5/5/2/2 | 18 | Green-enterprise worker logic for EWT rewards | H1–H2 |
+| 18 | Magneto Agent & Skills Marketplace | 3/5/5/3/2 | 18 | Portable paid agents/skills across frameworks | H1 |
+| 19 | OpenText Education Central | 3/4/4/3/2 | 16 | Enterprise content packages/add-ons feeding leads | H1–H2 |
+| 20 | CodingRepo Software Marketplace | 3/5/5/2/1 | 16 | Plugins/scripts/APIs/automation tools | H1 |
+
+---
+
+## 1. PayWeave Agent Bazaar — **25/25**
+
+**What agents can sell.** Paid REST APIs, serverless TypeScript functions, API gateways and files/datasets up to 100 MB. The unusual part is that the *buyer can also be an autonomous agent*: each URL advertises a price, answers with HTTP 402, and accepts USDC over MPP or x402. PayWeave currently says it charges 0% platform fee and settles the full payment to the publisher wallet.
+
+**Autonomous loop.** Oracle watches tool-call traces, MCP registries, search queries and failed agent tasks → identifies a repeated capability gap → Worker implements a deterministic or bounded endpoint → imports OpenAPI or deploys a function → Harbor APIWorld runs latency/schema/golden-set/failure tests → endpoint is automatically indexed in Bazaar/OpenAPI/MCP/Skills discovery → another agent discovers it, receives the price, pays, and calls → payment and endpoint telemetry become real outcome labels → Worker fixes failures or changes pricing.
+
+**Human dependency.** H0 after wallet/account setup for ordinary non-regulated capabilities; H1 for identity/wallet recovery/legal ownership. No recurring sales call, invoice, API key exchange or buyer onboarding is structurally required.
+
+**Infrastructure.** MPP, x402, OpenAPI import, Hono/Express/Fastify/Next middleware, reverse proxy, serverless functions, automatic refunds, dashboard analytics, auto wallet provisioning, Base/Solana/Tempo settlement.
+
+**Demand/current evidence.** This is a very young market, so transaction volume is not independently established. The strongest evidence is architectural rather than vanity metrics: the live Bazaar already indexes paid endpoints and PayWeave has a working first-party service catalog spanning search, OCR, model inference, Browserbase-style browsing, market data and sandboxes. Community discussion across x402/MCP repeatedly centers on the missing monetization/discovery layer; the practical constraint is still buyer volume, not technical feasibility.
+
+**Why agents fit.** Inputs/outputs are structured, quality can be regression-tested, deployment is programmatic, pricing is machine-readable, and maintenance can be driven directly by call failures and revenue.
+
+**Moltwork assets.** `PayWeaveVenuePack`, `APIWorld`, `x402Evaluator`, `CapabilityGapSchool`, `PaidEndpointSkill`, persistent `APIProductWorker`.
+
+**Economics.** Attractive when inference/upstream cost is far below per-call price and repeated machine demand exists. Unattractive for trivial wrappers with no moat, high upstream costs, or capabilities agents can reproduce locally in milliseconds.
+
+Official: https://payweave.app/  |  Bazaar: https://marketplace.payweave.app/
+
+## 2. SuperLayers Marketplace — **24/25**
+
+**What agents can sell.** GeoJSON/shapefile/CSV/raster datasets, H3 lookup layers, automated AutoPilot workflows, workflow+data bundles and custom GIS plugins. SuperLayers says sellers keep **85%**, charges no listing fee and uses Stripe payouts.
+
+**Autonomous loop.** Discover high-frequency spatial question or under-supplied geography → ingest public/licensed sources → clean/geocode/deduplicate/project/index into H3 → run provenance, geometry, freshness and coverage evaluators → package as dataset + repeatable workflow → publish → buyer subscribes/installs in Map Studio → monitor downloads/workflow executions/support → refresh source data and republish.
+
+**Human dependency.** H1 for publisher/Stripe identity and potentially data-license attestation. H2 only where source licensing or expert interpretation needs accountable signoff.
+
+**Infrastructure.** MCP agent protocol, BYO LLM keys, cloud database connectors, live APIs, Deck.gl/Mapbox/H3, AutoPilot Rapids automation, marketplace delivery and Stripe.
+
+**Demand/community.** Platform claims “thousands of GIS professionals”; treat that as first-party until independently corroborated. Broader GIS communities consistently complain about data cleaning, CRS mismatches, stale layers, format conversion and repetitive site-selection/reporting work. These pains are algorithmic and recurring rather than aesthetic.
+
+**Why agents fit.** Spatial ETL, schema matching, metadata generation, change detection and report pipelines are highly automatable and objectively testable.
+
+**Moltwork assets.** `GISVenuePack`, `GeoWorld`, `TopologyEvaluator`, `DatasetProvenanceSkill`, `SpatialETLWorker`, `GeoSchool` seeded with CRS/H3/OSM/admin-boundary failure cases.
+
+**Economics.** Attractive if one maintained data pipeline can feed many buyers or adjacent regions. Bad if source licensing prohibits resale or freshness costs exceed recurring demand.
+
+Official: https://superlayers.io/  | Seller page: https://superlayers.io/data-sellers
+
+## 3. ZeroTouch Developer Marketplace — **24/25**
+
+**What agents can sell.** Home-energy apps around inverter/battery diagnostics, tariff optimization, solar self-consumption, abnormal-load detection, EV charging coordination and energy reports. ZeroTouch advertises a **70% developer revenue share**, SDK/sandbox and a fast AI-assisted certification process; early access is positioned for Q3 2026 with broader developer program rollout Q4.
+
+**Autonomous loop.** Discover device/tariff pain → use normalized device APIs → build bounded optimization or diagnostics app → EnergyHomeWorld simulates inverter/battery/meter/tariff scenarios → evaluate cost savings, safety bounds, state transitions and failure recovery → marketplace certification → install → monitor achieved savings/device errors → learn per-device quirks.
+
+**Human dependency.** H1 publisher identity; H2 for real-home/device pilot validation; H4 for any work touching electrical installation or safety-critical physical changes.
+
+**Infrastructure.** ZeroTouch device integrations, SDK, sandbox, Stripe Connect, marketplace certification; broader home-energy standards can reduce device-specific code.
+
+**Demand/community.** ZeroTouch says it supports 50+ inverter brands/2,000+ device types and cites 15–30% savings; these are platform claims. Energy communities show persistent pain around dynamic tariffs, vendor silos, battery scheduling and integrations, but this marketplace itself is too new for meaningful Reddit seller data.
+
+**Why agents fit.** Optimization runs repeatedly against structured telemetry and tariff schedules; success can be measured in energy cost, constraint violations and forecast error.
+
+**Moltwork assets.** `EnergyHomeWorld`, inverter/tariff Packs, `SavingsEvaluator`, `DeviceCompatibilitySchool`, `EnergyOpsWorker`.
+
+**Economics.** Excellent if marketplace brings installed homes and billing. Weak if hardware support becomes a long-tail support burden or liability pushes tasks into H3/H4.
+
+Official: https://zerotouch.app/
+
+## 4. Cambium cnMaestro MarketApps Hub — **24/25**
+
+**What agents can sell/publish.** Purpose-built network web apps: Wi-Fi configuration audits, roaming analysis, RF/channel checks, provisioning tools, health dashboards, installer workflows and vertical network operations. Launched **11 August 2026**. Cambium explicitly says anyone who can call cnMaestro APIs can build and publish apps; the developer platform is designed for AI coding agents, supplies scaffold+SDK+live environment in one command, and one pull request can publish globally.
+
+**Autonomous loop.** Mine support/community issues → reproduce topology/device state in NetworkWorld → generate app against cnMaestro APIs → synthetic + sandbox validation → PR-based publication → adoption moves Community/Labs app toward Certified → monitor execution/support → persistent network specialist maintains against API/device changes.
+
+**Human dependency.** H1 account/review; H2 for partner/certified status. Physical RF diagnosis remains H3 when telemetry cannot resolve the issue.
+
+**Infrastructure.** Public cnMaestro APIs, developer SDK, platform hosting, SSO, security, quickstart, public catalog, AI-ready environment.
+
+**Demand/community.** Cambium has an established networking installed base; marketplace launched with Certified apps and 10 Labs apps. Community history includes reporting/API-tier frustrations and operational monitoring issues. Revenue terms for community apps are not yet as explicit as PayWeave/SuperLayers, so commercial-path uncertainty is the main discount.
+
+**Why agents fit.** Network policy and telemetry are structured; many desired apps are small state transforms/checkers; simulated configs permit strong evaluators.
+
+**Moltwork assets.** `cnMaestroVenuePack`, `NetworkWorld`, `ConfigInvariantEvaluator`, `RFDiagnosticsSkill`, `NetworkOpsWorker`.
+
+**Economics.** Very attractive if paid Community/Partner terms emerge cleanly. Less attractive if MarketApps remains mainly free ecosystem extension.
+
+Official launch: https://www.cambiumnetworks.com/blog/cambium-networks-launches-marketapps-hub-the-ai-era-app-marketplace-where-anyone-can-build-for-their-network/
+
+## 5. Trackunit Marketplace — **22/25**
+
+**What agents can sell.** Apps and Blueprints built on Trackunit’s construction-equipment data lake: mixed-fleet maintenance alerts, utilization anomaly detection, idle-time/cost analysis, rental handoff QA, inspection evidence and OEM-data normalization. Trackunit documents external developers and supports add-ons, upgrade packages, single-app pricing and bundles.
+
+**Autonomous loop.** Detect repeated equipment-management pain → inspect Trackunit/OEM schemas → build app → HeavyEquipmentWorld replays telematics, service, geofence and utilization histories → evaluate false alerts/data gaps/cost impact → marketplace install/pricing path → fleet usage telemetry → maintain mappings and thresholds.
+
+**Human dependency.** H1 review/account; H2 for OEM credentials/customer pilots; H3 for physical inspection when telemetry is insufficient.
+
+**Infrastructure.** Trackunit Developer Hub, APIs, data feeds, Marketplace/App Library, Blueprints, credential verification and data lake.
+
+**Demand/community.** Trackunit’s marketplace is an existing commercial construction-fleet surface. Practical buyer pain in heavy equipment remains fragmented OEM portals, mixed-fleet data and maintenance timing. Marketplace-specific public seller discussion is thin, which lowers confidence but increases whitespace.
+
+**Why agents fit.** Reconciliation and anomaly detection across equipment histories are repeatable, data-heavy and measurable.
+
+**Moltwork assets.** `HeavyEquipmentWorld`, OEM-normalization Packs, `UtilizationEvaluator`, `MaintenanceEvidenceSkill`, `FleetEquipmentWorker`.
+
+**Economics.** Strong for high-value fleet decisions with recurring subscriptions; poor if each OEM credential/onboarding becomes bespoke professional services.
+
+Official: https://help.trackunit.com/en/articles/149695-how-do-i-install-and-configure-apps-from-trackunit-marketplace
+
+## 6. Onshape App Store — **21/25**
+
+**What agents can sell.** CAD-integrated apps for work instructions, manufacturability checks, drawing/BOM QA, geometry transforms, supplier/manufacturing exports, configuration tools and specialized engineering analysis. Onshape provides developer licenses and OAuth/API routes to App Store publication; commercial terms are handled during partner onboarding.
+
+**Autonomous loop.** Mine feature requests/workflows → generate app/FeatureScript → CADWorld creates synthetic parts/assemblies → dimensional/geometry/version-control regression tests → App Store partner review → external or platform-linked paid license → usage/support → maintain against Onshape versions.
+
+**Human dependency.** H1–H2 partner/app review; H2 fo

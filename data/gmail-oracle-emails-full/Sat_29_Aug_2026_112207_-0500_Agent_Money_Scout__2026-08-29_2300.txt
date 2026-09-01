@@ -1,0 +1,184 @@
+Subject: Agent Money Scout — 2026-08-29 23:00
+Date: Sat, 29 Aug 2026 11:22:07 -0500
+Message ID: 1a04e5411e500f6a
+================================================================================
+
+# Agent Money Scout — 2026-08-29 23:00
+
+## NEW THIS RUN
+
+### 1) PayAPI Market — settlement-verified x402 API storefront
+URL: https://payapi.market/
+What the agent does: expose a narrow API/data capability that other agents can buy per call.
+Who pays: autonomous agents and developers consuming the endpoint.
+Verified economics: 94 live APIs, 77 settlement-verified, 600 endpoints. Listing is free and providers keep 100% of settlements. Current listing prices range from roughly $0.001/request for simple lookups to materially higher prices for specialist data and tooling.
+Required: working HTTP API, Base/x402-compatible payment endpoint, rights to the underlying data/service.
+Autonomy: 10/10 once deployed.
+First action: cross-list one already-working capability such as /verify-pr, /automation-health, /package-health, /structured-evidence or /release-check. Do not build a PayAPI-only product first.
+Constraints: only sell data/APIs you are allowed to access and redistribute; payment/wallet eligibility still applies.
+Ease-to-first-$5: 6/10. Repeatability: 10/10.
+Why it is high signal: the marketplace distinguishes merely listed APIs from APIs it has actually paid and received valid output from.
+
+### 2) x402apis.io — decentralized provider registry
+URL: https://www.x402apis.io/
+What the agent does: run a provider node and serve its own custom logic or legitimately resell an upstream API where provider terms allow it.
+Who pays: agents discovering and routing calls through the registry.
+Payout: USDC; no trustworthy current provider-income figure was visible this run.
+Required: provider node, API/service, wallet/payment setup.
+Autonomy: 10/10.
+First action: inspect active provider/request stats, then register only an existing useful endpoint if there is real external routing activity.
+Constraints: do not share/resell API credentials where upstream terms forbid it.
+Ease-to-first-$5: 4/10. Repeatability: 9/10 if buyer routing proves real.
+
+### 3) Agent Bazaar — x402 skills marketplace
+URL: https://www.agent-bazaar.com/marketplace
+What the agent does: list code review, research, scraping, testing, automation and other agent-callable skills.
+Who pays: agents buying skills per call.
+Advertised pricing: visible skills range from about $0.005/call to $0.25/call for many software/data capabilities.
+Critical caveat: the visible listings I inspected currently show 0 uses and many are still marked pending, so this is a distribution experiment, not demonstrated liquidity.
+Required: HTTP/API skill, x402 integration.
+Autonomy: 10/10.
+First action: cross-list an existing endpoint only; do not spend time building marketplace-specific infrastructure.
+Ease-to-first-$5: 2/10. Repeatability: 8/10 if usage arrives.
+
+### 4) Prometheus August AI Challenge — conditional current hackathon
+URL: https://august-ai-challenge-31059.devpost.com/
+What the agent can do: build, test, document and demo an educational AI application.
+Who pays: hackathon organizer through prizes.
+Prize: $1,500 total — $1,000 first, $400 second, $100 third.
+Deadline: August 29, 2026 at 11:45 PM PDT.
+Eligibility: ages 13+ but STUDENTS ONLY; professional organizations excluded. Solo or teams up to 4. Core application logic must have been written during the Aug 17–29 event window.
+Autonomy: 7/10 for implementation, but account/submission steps remain human-controlled.
+First action: only consider this if already eligible as a student and you already have a compliant project started in-window; otherwise skip because the deadline is too close.
+Ease-to-first-$5: 1/10. Repeatability: 2/10.
+
+### 5) Automation Outcome Watchdog — creative play with fresh demand today
+Demand evidence: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+Customer/problem: n8n/Make/Zapier agencies whose workflows can show green executions even when the intended business result never happened.
+Agent workflow: expected event -> independent canary -> verify downstream receipt/state -> flag missing/late/duplicate/malformed result -> evidence + likely cause.
+Where to acquire customers: automation consultants, n8n agencies, operations teams managing client workflows.
+How to charge: fixed setup + recurring per-workflow monitoring.
+Concrete MVP: user supplies workflow name, expected schedule and downstream success condition; agent maintains an external expectation store and checks the real-world receipt/state.
+Autonomy: 9/10.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### 6) Verified Invoice / AR Worker
+Demand evidence: https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/ and https://www.reddit.com/r/n8nbusinessautomation/comments/1vkgayo/invoice_automation_in_n8n_extract_data_from_many/
+Customer/problem: SMBs still manually stage invoices, sync Stripe/QBO, handle custom pricing tiers, extract invoices and chase exceptions.
+Agent workflow: authorized invoice/PDF/input -> extract fixed schema -> apply tested pricing rules -> validate totals/IDs -> stage draft -> sync systems -> exception queue.
+Where to acquire customers: bookkeeping/accounting automation communities, freelancers already using QBO/Stripe, small agencies.
+How to charge: setup fee + per-document or monthly allowance.
+Concrete MVP: invoice upload/email -> validated JSON + draft invoice + exception list, never auto-post accounting entries when validation fails.
+Autonomy: 8/10.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### 7) Stateful Browser Job Worker
+Demand evidence: https://www.reddit.com/r/Agent_AI/comments/1vsdh16/n8n_should_orchestrate_the_browser_agent_not/
+Customer/problem: workflows need to log into legitimate vendor/customer portals, handle long sessions, downloads, changing tabs and screenshots; making n8n itself own browser state becomes fragile.
+Agent workflow: authorized browser job -> stateful session -> perform permitted portal task -> save artifact + screenshot/log -> return structured result to orchestrator.
+Where to acquire customers: automation agencies already supporting invoice portals, internal business systems and back-office web apps.
+How to charge: per browser job or managed monthly worker.
+Concrete MVP: one authorized portal flow such as invoice download -> artifact + success evidence. Use APIs instead whenever available.
+Autonomy: 8/10.
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 8) Taskmarket
+URL: https://taskmarket.dev/
+Current primary-source snapshot: 19 open funded tasks, about 26.7K agents, 2,380.714419 USDC posted volume. One current bounty is 24.2 USDC with 68 submissions.
+What agent does: research, coding, data/visualisation and structured deliverables.
+Who pays: requester pre-funding Base-USDC escrow.
+Required: Taskmarket skill/API and wallet.
+Autonomy: 10/10.
+First action: rank live tasks by net reward x probability of winning minus execution cost. Do not chase crowded low-value tasks.
+Constraints: task-specific eligibility and platform rules.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 9) t2000
+URL: https://t2000.ai/
+Fresh primary-source activity: live funded and delivered work is visible today; current seller profiles show settled totals including $57.75, $128.66 and $150. Services take 5% on settlement; API calls 0%.
+What agent does: claim open work or list a reusable service/API.
+Who pays: job posters / API consumers.
+Autonomy: 9/10.
+First action: poll open jobs; use tiny proof jobs only to validate integration/reputation, then target externally useful work.
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+### 10) WorkProtocol
+URL: https://workprotocol.ai/
+Current primary-source snapshot: 734 agents, 35 jobs posted, 1,325 USDC settled. Jobs are escrow-funded on Base before work begins; the separate official overview states a $50 minimum job budget.
+What agent does: bugs/features, code review, research, ETL/data, writing or other structured deliverables.
+Who pays: job poster.
+Autonomy: 9/10.
+First action: inspect acceptance criteria and reproduce the verification path before claiming.
+Ease-to-first-$5: 8/10 when a suitable live job exists. Repeatability: 9/10.
+
+### 11) TaskBounty
+URL: https://www.task-bounty.com/for-agents
+What agent does: GitHub issue -> reproduce -> patch -> regression test -> PR -> sandbox verification.
+Who pays: bounty poster.
+Advertised payout: $10 to a few hundred dollars per bounty; solver receives 80% according to official guidance.
+Required: coding agent, GitHub workflow, tests.
+Autonomy: 9/10.
+First action: choose a deterministic bug that can be reproduced cheaply before spending on a full solution.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 12) MoltJobs
+URL: https://moltjobs.io/
+What agent does: discover jobs, bid, deliver and settle through REST/MCP/CLI/webhooks.
+Who pays: job posters via Base-USDC escrow.
+Economics: 10 free bids/month and 5% success fee.
+Current caution: recent inventory has leaned toward promotional/social tasks. Skip anything that would be spammy, misleading or violate another site's rules.
+Autonomy: 9/10.
+First action: keep polling for coding/research/data work rather than forcing poor-fit promotional tasks.
+Ease-to-first-$5: 4/10 currently. Repeatability: 8/10.
+
+### 13) gigs.sh
+URL: https://gigs.sh/
+Role: discovery index rather than earnings source.
+Current directory: 46 agent-compatible platforms; its global verification date is still May 18, 2026.
+First action: use it only to discover unseen markets, then independently verify live inventory, real settlements and eligibility.
+Ease-to-first-$5: 3/10 directly. Repeatability as discovery: 9/10.
+
+## REDDIT DEMAND SIGNALS
+
+### A) The workflow can be green while the business result is broken
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+Recurring problem: dead tokens, rejected templates and silent webhook failures. The commercially useful assertion is a delivery receipt/business-state check, not merely an HTTP 200 or successful graph run.
+Best product: Automation Outcome Watchdog.
+
+### B) Cold-selling generic "AI automation" is weak; real operational pain converts
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1vy5a3n/i_spent_months_reaching_out_but_nothing_is_working/
+Signal: poster contacted 100+ businesses with generic AI automation offers and signed none; the actual paid project came through a connection and solved a concrete inventory/reorder problem.
+Pattern: sell an observable outcome ("never run out of this part without an alert") rather than "AI agents."
+
+### C) AR/accounting edge cases remain valuable
+Thread: https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/
+Problem: custom discounts, tiered usage, QBO/Stripe synchronization, retries and duplicate-invoice risk.
+Pattern: pricing logic should be explicit/testable; orchestration should move validated state, with exceptions handed to a human.
+
+### D) Stateful browser work remains painful
+Thread: https://www.reddit.com/r/Agent_AI/comments/1vsdh16/n8n_should_orchestrate_the_browser_agent_not/
+Problem: MFA, persistent sessions, new tabs, slow downloads, cookie dialogs and concurrent runs turn browser workflows into brittle orchestration.
+Pattern: sell a dedicated authorized browser worker with artifacts/screenshots, while preferring APIs when available.
+
+## FILTERED OUT / NOT REAL MONEY NOW
+
+- AuraGate (https://auragate.app/) currently states it is an Arc Testnet demo; its displayed USDC is not real mainnet revenue.
+- ClawTasks (https://clawtasks.com/) currently says it is free-task-only while paid bounties are wound down.
+- Agent Bazaar has many listings but the ones inspected show 0 uses; treat as distribution, not demand.
+- JellyNet advertises monetizing spare API keys. I would not recommend sharing/reselling credentials unless the upstream provider explicitly permits resale/delegation.
+- All Things Agentic Hackathon is active but its official rules require entrants to be above the age of majority where they live, so it is not generally available to minors.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Direct work: route Taskmarket + WorkProtocol + TaskBounty + t2000 into one normalized worker queue. Score every job using funded status, reward, competition, deterministic acceptance, execution cost, P(accepted) and P(settled). Only settled/withdrawn money counts as revenue.
+
+2. Product: build /automation-health first. Today's demand signal is unusually clear: workflow generation is cheap; proving the intended downstream result still happened is not. Start with external canaries + delivery/state receipts + evidence-rich alerts.
+
+3. Distribution: after one paid capability is proven, list it on PayAPI Market. It is the strongest new API rail this run because it separately marks settlement-verified endpoints and lets providers keep 100% of the listed settlement. Start with /verify-pr, /automation-health, /structured-evidence, /package-health or /release-check.
+
+Economic ranking formula:
+realized_EV = reward × P(funded) × P(still open) × P(solve) × P(accepted) × P(settled) − inference/API/payment/review costs.
+
+Do not count testnet balances, internal credits, marketplace GMV, illustrative listings or unfunded jobs as earnings.

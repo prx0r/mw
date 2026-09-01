@@ -1,0 +1,372 @@
+Subject: Agent Money Scout — 2026-08-30 22:00
+Date: Sun, 30 Aug 2026 08:26:11 -0700
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a0534736ad0f526
+================================================================================
+
+# Agent Money Scout — 2026-08-30 22:00
+
+## Executive signal
+
+This run found four useful new surfaces: **OpenAnt**, **workpnp**, **Clawget**, and **AgentMart**, plus two high-ticket open-source bounties on **Opire**. The most important new direct-work discovery is OpenAnt: its primary site currently reports 12.8K total tasks, 1.2K open, 11.3K completed, 646 settled, $34.4K paid out and $128K total posted, with USDC escrow on Solana/Base and remote tasks such as SKU analysis and short-form asset production. These figures are platform-reported rather than independently audited, so individual receipts should still be verified before relying on them.
+
+For first-dollar probability, the execution queue remains **AgentPact → dealwork.ai → OpenAnt remote-only → Taskmarket when EV works → MikroTask → MoltJobs → t2000 filtered external work**.
+
+# NEW THIS RUN
+
+## 1. OpenAnt — strongest new direct work surface
+URL: https://openant.ai/
+Tasks: https://openant.ai/tasks
+
+What the agent does: remote digital work such as analyzing SKU sales and producing short assets; the same network also contains physical verification tasks, which should be ignored unless they are appropriate, lawful and safely supervised. Who pays: task posters through USDC escrow. Verifiable/platform-reported economics: 12.8K total tasks, 1.2K open, 11.3K completed, 646 settled, $34.4K paid out, $128K posted. The site says beta platform fee is 0% and settlement occurs on Solana/Base.
+
+Required: OpenAnt skill/API/MCP-compatible agent and a compatible wallet where legally eligible. Autonomy: 10/10 for remote digital work. Exact first action: install/read the OpenAnt join skill, then filter the task feed to remote, digital, USDC-funded tasks with explicit proof requirements. Do not use the physical/GPS task inventory as the default automation target.
+
+Eligibility: no clear universal age clause surfaced in the pages checked; wallet/provider, local law, and task-specific requirements still apply and should never be bypassed.
+
+Ease to first $5: 8/10. Repeatability: 9/10.
+
+## 2. workpnp — clean agent-to-agent escrow marketplace
+URL: https://workpnp.com/
+Skill: https://workpnp.com/skill.md
+
+What the agent does: finds work on a heartbeat, bids with price + ETA, completes deliverables and submits before deadline. Who pays: hiring agents. Payment: USDC on Base, locked before work begins; worker receives 90%, platform takes 10%; buyer silence for 72 hours auto-accepts the delivery.
+
+Required: one API registration, human ownership verification via email/X, wallet. Autonomy: 9/10 after ownership verification. Exact first action: register one narrow worker and inspect the live board/API; do not execute until the budget and escrow state are explicit.
+
+Current limitation: the public board did not render enough inventory server-side for me to verify a strong live job or payout this run.
+
+Ease: 5/10. Repeatability: 9/10 potential.
+
+## 3. Clawget — sell reusable agent capabilities rather than labor
+URL: https://www.clawget.io/
+
+Clawget is a marketplace where agents list capabilities/resources and get paid when another agent buys them. The site currently reports 171 agents, 29 creators and $1.3K revenue, and shows paid listings such as a 5-USDC marketplace-purchase triage operator, a 20-USDC FastAPI/Docker app factory, a 6-USDC YouTube market-intelligence workflow, a 19-USDC automation/MCP compiler and a 49-USDC workflow-plugin factory.
+
+Who pays: agent buyers. Required: API registration/CLI/SDK and wallet. Autonomy: 10/10. Exact first action: package one proven process—e.g. API sanity check, PR verification, CSV/data audit, or research brief—as a reusable skill or workflow and list it once. Do not spend substantial time building inventory until an outside buyer appears.
+
+Revenue figures and listings are platform-reported; they are not a guarantee of seller liquidity.
+
+Ease: 5/10. Repeatability: 10/10 if buying continues.
+
+## 4. AgentMart — digital products for agents
+URL: https://agentmart.store/
+Marketplace: https://agentmart.store/discover
+
+AgentMart currently reports 60 shops, 73 agents and 305 products. Sellers receive 97% of USDC sales on Base; AgentMart keeps 3%. Current products include an Evidence-First Research Brief Template ($2.99), OpenAPI Audit Operator Kit ($4.99), AI Visibility Measurement Pack ($3.99), invoice follow-up packs ($49), and a fixed-scope OpenAPI Contract Audit ($200).
+
+What the agent does: create research packs, checklists, workflows, automation assets, templates or services that are reusable rather than bespoke. Who pays: marketplace buyers. Autonomy: 10/10 for digital auto-delivery.
+
+Critical demand check: AgentMart's live recent-sales panel currently shows several $0/free transactions, so catalog size is stronger than demonstrated paid demand. Exact first action: list one small proven asset and track organic paid conversion. Do not bulk-generate low-quality products.
+
+Terms prohibit fraud, spam, illegal content, stolen goods and IP infringement. No clear universal age clause surfaced in the indexed Terms; wallet/legal eligibility must still be satisfied.
+
+Ease: 4/10. Repeatability: 9/10 potential.
+
+## 5. Opire — $70 Deno open-source coding bounty
+URL: https://app.opire.dev/issues/01J8T24PJDXX69RM7XV24SQT11
+
+What the agent does: implement 'view test coverage in editor' for denoland/deno. Reward: $70, status Open, one reward available, four solvers trying/claimed when checked. Stack: Rust/LSP/testing.
+
+Who pays: bounty sponsor through Opire/Stripe. Exact first action: reproduce the issue and inspect competing PRs before coding. Opire says developers claim bounties by solving the associated issue and creating a valid PR; payout is initiated by the bounty creator and lands in Stripe in roughly 1–7 days depending on payment method.
+
+Autonomy: 8/10. Eligibility: Stripe payout eligibility and project contribution rules apply; do not bypass account, age or geography rules.
+
+Ease: 6/10. Repeatability: 7/10.
+
+## 6. Opire — $1,500 zeroperl asynchronous Web APIs bounty
+URL: https://app.opire.dev/issues/01JN06N9GS8Q1KB2NJ318258HR
+
+This is a much larger but much harder/staler target: $1,500 available, status Open, zero solvers when checked, C/WASM-oriented work on asynchronous Web APIs for zeroperl. The reward is concrete and current on the Opire page, but the underlying issue is old, so freshness with the maintainer must be verified before execution.
+
+Exact first action: inspect the GitHub issue and repository activity; only start if maintainers confirm the bounty remains claimable and acceptance criteria are still valid.
+
+Ease: 3/10. Repeatability: 4/10.
+
+# STILL ACTIVE FROM PRIOR RUNS
+
+## 7. AgentPact — still #1 first-dollar target
+URL: https://agentpact.xyz/needs
+
+AgentPact remains the best direct queue from recent runs. Its primary marketplace supports offers, Needs, negotiated deals, milestones and optional Base-USDC escrow via MCP/Python/npm. Recent live scans exposed multiple 5–25 USDC Python/API/security/data tasks, mixed with a large amount of sub-dollar test traffic.
+
+Agent workflow: query Needs → reject reward < $5 → require fresh timestamp + objective deliverable → propose deal → deliver → settle. Who pays: Need/deal buyer. Autonomy: 10/10.
+
+Exact first action: target API automation, Python code/security review, data analysis/visualization and format-validation work.
+
+Ease: 9/10. Repeatability: 9/10.
+
+## 8. dealwork.ai — strongest broad queue
+URL: https://dealwork.ai/
+
+Recent primary state: roughly 156 open tasks and 264 completed tasks, with funds escrowed before work. Public history includes an $80 AI-delivered production API with tests and smaller AI-to-AI work. Standard fee has been 10%, AI-to-AI 3%.
+
+Agent does: coding, APIs, research, data transformation and documentation. Exact first action: ingest every open task and bid only where acceptance can be reproduced before submission.
+
+Ease: 9/10. Repeatability: 9/10.
+
+## 9. Taskmarket — real settlement, high competition
+URL: https://taskmarket.dev/
+
+The market has repeatedly shown real Base-USDC settlement receipts, including a 5-USDC deck bounty paying 4.625 USDC net after the 7.5% fee. A recent 20-USDC app-building task had 72 submissions, showing why competition belongs in expected-value scoring.
+
+Filter: status=open AND due_at>now AND escrow=funded. Then EV = reward × P(win) − execution/tool cost.
+
+Exact first action: scan for newly created tasks with low submission counts rather than headline rewards already crowded by dozens of agents.
+
+Ease: 6/10. Repeatability: 9/10.
+
+## 10. MoltJobs — one current $5 job remains
+URL: https://moltjobs.io/open-jobs
+
+The board currently shows a 5-USDC job: turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer. Funds are in USDC escrow. MoltJobs offers API/CLI/MCP/webhooks, ten free monthly bid credits and a 5% success fee.
+
+Exact first action: inspect the $5 task; any buyer contact must be specific, permitted and non-spammy.
+
+Ease: 7/10. Repeatability: 8/10.
+
+## 11. t2000 — best job→service→API architecture
+URL: https://t2000.ai/
+
+Public sellers currently display settled totals such as $57.75, $140.66 and $150. Individual settlement receipts also verify real USDC payouts; one $0.01 task settled $0.0095 after the 5% fee.
+
+The current problem is inventory quality: recent queues contain lots of tiny ecosystem/bootstrap tasks. Use t2000 to learn and productize only externally useful jobs.
+
+Path: paid job → reusable procedure → fixed service → paid API. Service fee 5%; API calls currently 0% platform fee.
+
+Ease: 6/10. Repeatability: 10/10.
+
+## 12. MikroTask — fixed-price £5 floor
+URL: https://mikrotask.com/
+
+MikroTask explicitly supports AI agents for repeatable digital work such as research, drafts and data cleanup. Price tiers are £5/£10/£25/£50, with USD/USDT/USDC payout after buyer approval.
+
+Exact first action: monitor buyer-posted tasks and list one narrow £5 capability rather than general AI services.
+
+Ease: 8/10. Repeatability: 8/10.
+
+# REDDIT DEMAND SIGNALS
+
+## 13. Accounts-payable inbox triage — people report >30 hours/week saved
+Thread: https://www.reddit.com/r/n8n/comments/1vj90ec/removed/
+
+A current discussion includes an operator describing an LLM workflow that triages vendor payment requests, checks invoice state against ERP/data warehouse, and drafts responses for human approval; they report more than 30 staff-hours/week saved in a high-volume FMCG environment.
+
+Recurring problem: suppliers repeatedly ask 'where is my payment?', staff manually look up invoice state, then write nearly identical replies.
+
+Safe commercial agent: authorized AP inbox → classify request → lookup invoice state → grounded response draft → human approval. Do not let the agent approve payments or make accounting judgments.
+
+Customer: AP teams and finance-ops consultants. Acquisition: accounting/ERP consultants, existing automation customers, permitted communities. Charge: fixed implementation + monthly support/monitoring.
+
+Ease: 9/10. Repeatability: 10/10.
+
+## 14. AR invoice drafting with tiered/custom pricing
+Thread: https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/
+
+A current buyer explicitly says they rely on manual QBO + Stripe entry and are considering paying someone to fix their n8n setup because tiered usage and custom discounts break the workflow.
+
+Recurring pattern: billing rules are too complex to live safely inside ad-hoc automation conditions.
+
+MVP: authorized usage + versioned client pricing rules → calculate/stage invoice draft → sync stable invoice ID/status to QBO and Stripe → human review before issue/send. Keep payment approval and accounting judgment human-controlled.
+
+This is one of the strongest 'person actively looking for help' signals in the run.
+
+Ease: 9/10. Repeatability: 10/10.
+
+## 15. Invoice extraction + duplicate detection
+Thread: https://www.reddit.com/r/n8nforbeginners/comments/1vjv0in/built_an_aipowered_invoice_processing_workflow/
+
+A recent workflow automates supplier-invoice attachment extraction, field capture, validation, duplicate detection, tracker update and error notifications.
+
+Product: authorized invoice → structured extraction → validation → duplicate/missing checks → VERIFIED or HUMAN REVIEW.
+
+Customer: bookkeepers/AP teams. Charge: setup fee + ongoing exception handling/monitoring. Keep accounting decisions with qualified humans.
+
+Ease: 8/10. Repeatability: 10/10.
+
+## 16. Scaling AP without hiring
+Thread: https://www.reddit.com/r/Netsuite/comments/1vgbe91/invoice_volumes_are_increasing_but_our_ap_team_is/
+
+A NetSuite team reports growing invoice volume with unchanged headcount, specifically calling out repetitive entry, field checking, PO lookup, approval chasing and tracker updates.
+
+MVP: invoice + PO → match/validate → approval-status check → exception queue → tracker sync. Again, no autonomous payment approval.
+
+Ease: 8/10. Repeatability: 10/10.
+
+## 17. Agent workflow reliability / business-outcome verification
+Thread pattern: current n8n discussions repeatedly report that workflows can technically run while the business outcome fails, and that small deterministic automations often outperform giant 'autonomous agent' graphs.
+
+Offer: expected event + deadline + downstream receipt/state + normal-volume baseline → HEALTHY / FAILED / SILENT / REVIEW.
+
+Customer: n8n/Make/Zapier agencies. Concrete MVP: one client workflow, one externally stored expectation, one downstream receipt check, daily exception report.
+
+Ease: 9/10. Repeatability: 10/10.
+
+# BEST 3 ACTIONS TO TRY NOW
+
+## 1. Add OpenAnt to the job oracle, but filter to remote digital tasks only
+OpenAnt is the first genuinely new market in several runs with platform-reported scale large enough to matter: 1.2K open tasks, 646 settled, $34.4K paid out. Verify individual funded task values and receipts before moving it above AgentPact/dealwork.
+
+Current execution order:
+AgentPact → dealwork.ai → OpenAnt remote digital → Taskmarket when EV works → MikroTask → MoltJobs → t2000 filtered external work.
+
+## 2. Add an OSS bounty worker alongside marketplace scanning
+The Opire results show why 'agent jobs' should not mean only agent-native marketplaces. Today there is a $70 Deno Rust bounty and a $1,500 zeroperl C/WASM bounty marked open. The worker should automatically check issue state, maintainer activity, competing PRs, tests, reward state and expected engineering cost before writing code.
+
+## 3. Productize AP/invoice verification rather than another generic AI service
+The strongest independent demand evidence this run is concentrated in finance operations: supplier payment requests, invoice extraction, duplicate detection, PO matching, approval chasing and custom pricing. A safe bounded product is:
+
+invoice/request → extract → validate → lookup authorized business state → draft/update → HUMAN REVIEW for financial decisions.
+
+That gives a sellable fixed implementation now and a recurring monitoring product later.
+
+## Scanner rule
+Only settled or genuinely withdrawable real-money value counts as earnings. Testnet balances, unpriced tokens, platform credits, stale tasks, illustrative seller cards, submitted-but-unpaid work and self-reported marketplace GMV are not earnings until independently supported by a real settlement/withdrawal path.
+Agent Money Scout — 2026-08-30 22:00
+
+Executive signal
+<p>This run found four useful new surfaces: <strong>OpenAnt</strong>, <strong>workpnp</strong>, <strong>Clawget</strong>, and <strong>AgentMart</strong>, plus two high-ticket open-source bounties on <strong>Opire</strong>. The most important new direct-work discovery is OpenAnt: its primary site currently reports 12.8K total tasks, 1.2K open, 11.3K completed, 646 settled, $34.4K paid out and $128K total posted, with USDC escrow on Solana/Base and remote tasks such as SKU analysis and short-form asset production. These figures are platform-reported rather than independently audited, so individual receipts should still be verified before relying on them.</p>
+<p>For first-dollar probability, the execution queue remains <strong>AgentPact → dealwork.ai → OpenAnt remote-only → Taskmarket when EV works → MikroTask → MoltJobs → t2000 filtered external work</strong>.</p>
+
+NEW THIS RUN
+
+1. OpenAnt — strongest new direct work surface
+<p>URL: https://openant.ai/<br>
+Tasks: https://openant.ai/tasks</p>
+<p>What the agent does: remote digital work such as analyzing SKU sales and producing short assets; the same network also contains physical verification tasks, which should be ignored unless they are appropriate, lawful and safely supervised. Who pays: task posters through USDC escrow. Verifiable/platform-reported economics: 12.8K total tasks, 1.2K open, 11.3K completed, 646 settled, $34.4K paid out, $128K posted. The site says beta platform fee is 0% and settlement occurs on Solana/Base.</p>
+<p>Required: OpenAnt skill/API/MCP-compatible agent and a compatible wallet where legally eligible. Autonomy: 10/10 for remote digital work. Exact first action: install/read the OpenAnt join skill, then filter the task feed to remote, digital, USDC-funded tasks with explicit proof requirements. Do not use the physical/GPS task inventory as the default automation target.</p>
+<p>Eligibility: no clear universal age clause surfaced in the pages checked; wallet/provider, local law, and task-specific requirements still apply and should never be bypassed.</p>
+<p>Ease to first $5: 8/10. Repeatability: 9/10.</p>
+
+2. workpnp — clean agent-to-agent escrow marketplace
+<p>URL: https://workpnp.com/<br>
+Skill: https://workpnp.com/skill.md</p>
+<p>What the agent does: finds work on a heartbeat, bids with price + ETA, completes deliverables and submits before deadline. Who pays: hiring agents. Payment: USDC on Base, locked before work begins; worker receives 90%, platform takes 10%; buyer silence for 72 hours auto-accepts the delivery.</p>
+<p>Required: one API registration, human ownership verification via email/X, wallet. Autonomy: 9/10 after ownership verification. Exact first action: register one narrow worker and inspect the live board/API; do not execute until the budget and escrow state are explicit.</p>
+<p>Current limitation: the public board did not render enough inventory server-side for me to verify a strong live job or payout this run.</p>
+<p>Ease: 5/10. Repeatability: 9/10 potential.</p>
+
+3. Clawget — sell reusable agent capabilities rather than labor
+<p>URL: https://www.clawget.io/</p>
+<p>Clawget is a marketplace where agents list capabilities/resources and get paid when another agent buys them. The site currently reports 171 agents, 29 creators and $1.3K revenue, and shows paid listings such as a 5-USDC marketplace-purchase triage operator, a 20-USDC FastAPI/Docker app factory, a 6-USDC YouTube market-intelligence workflow, a 19-USDC automation/MCP compiler and a 49-USDC workflow-plugin factory.</p>
+<p>Who pays: agent buyers. Required: API registration/CLI/SDK and wallet. Autonomy: 10/10. Exact first action: package one proven process—e.g. API sanity check, PR verification, CSV/data audit, or research brief—as a reusable skill or workflow and list it once. Do not spend substantial time building inventory until an outside buyer appears.</p>
+<p>Revenue figures and listings are platform-reported; they are not a guarantee of seller liquidity.</p>
+<p>Ease: 5/10. Repeatability: 10/10 if buying continues.</p>
+
+4. AgentMart — digital products for agents
+<p>URL: https://agentmart.store/<br>
+Marketplace: https://agentmart.store/discover</p>
+<p>AgentMart currently reports 60 shops, 73 agents and 305 products. Sellers receive 97% of USDC sales on Base; AgentMart keeps 3%. Current products include an Evidence-First Research Brief Template ($2.99), OpenAPI Audit Operator Kit ($4.99), AI Visibility Measurement Pack ($3.99), invoice follow-up packs ($49), and a fixed-scope OpenAPI Contract Audit ($200).</p>
+<p>What the agent does: create research packs, checklists, workflows, automation assets, templates or services that are reusable rather than bespoke. Who pays: marketplace buyers. Autonomy: 10/10 for digital auto-delivery.</p>
+<p>Critical demand check: AgentMart’s live recent-sales panel currently shows several $0/free transactions, so catalog size is stronger than demonstrated paid demand. Exact first action: list one small proven asset and track organic paid conversion. Do not bulk-generate low-quality products.</p>
+<p>Terms prohibit fraud, spam, illegal content, stolen goods and IP infringement. No clear universal age clause surfaced in the indexed Terms; wallet/legal eligibility must still be satisfied.</p>
+<p>Ease: 4/10. Repeatability: 9/10 potential.</p>
+
+5. Opire — $70 Deno open-source coding bounty
+<p>URL: https://app.opire.dev/issues/01J8T24PJDXX69RM7XV24SQT11</p>
+<p>What the agent does: implement ‘view test coverage in editor’ for denoland/deno. Reward: $70, status Open, one reward available, four solvers trying/claimed when checked. Stack: Rust/LSP/testing.</p>
+<p>Who pays: bounty sponsor through Opire/Stripe. Exact first action: reproduce the issue and inspect competing PRs before coding. Opire says developers claim bounties by solving the associated issue and creating a valid PR; payout is initiated by the bounty creator and lands in Stripe in roughly 1–7 days depending on payment method.</p>
+<p>Autonomy: 8/10. Eligibility: Stripe payout eligibility and project contribution rules apply; do not bypass account, age or geography rules.</p>
+<p>Ease: 6/10. Repeatability: 7/10.</p>
+
+6. Opire — $1,500 zeroperl asynchronous Web APIs bounty
+<p>URL: https://app.opire.dev/issues/01JN06N9GS8Q1KB2NJ318258HR</p>
+<p>This is a much larger but much harder/staler target: $1,500 available, status Open, zero solvers when checked, C/WASM-oriented work on asynchronous Web APIs for zeroperl. The reward is concrete and current on the Opire page, but the underlying issue is old, so freshness with the maintainer must be verified before execution.</p>
+<p>Exact first action: inspect the GitHub issue and repository activity; only start if maintainers confirm the bounty remains claimable and acceptance criteria are still valid.</p>
+<p>Ease: 3/10. Repeatability: 4/10.</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7. AgentPact — still #1 first-dollar target
+<p>URL: https://agentpact.xyz/needs</p>
+<p>AgentPact remains the best direct queue from recent runs. Its primary marketplace supports offers, Needs, negotiated deals, milestones and optional Base-USDC escrow via MCP/Python/npm. Recent live scans exposed multiple 5–25 USDC Python/API/security/data tasks, mixed with a large amount of sub-dollar test traffic.</p>
+<p>Agent workflow: query Needs → reject reward &lt; $5 → require fresh timestamp + objective deliverable → propose deal → deliver → settle. Who pays: Need/deal buyer. Autonomy: 10/10.</p>
+<p>Exact first action: target API automation, Python code/security review, data analysis/visualization and format-validation work.</p>
+<p>Ease: 9/10. Repeatability: 9/10.</p>
+
+8. dealwork.ai — strongest broad queue
+<p>URL: https://dealwork.ai/</p>
+<p>Recent primary state: roughly 156 open tasks and 264 completed tasks, with funds escrowed before work. Public history includes an $80 AI-delivered production API with tests and smaller AI-to-AI work. Standard fee has been 10%, AI-to-AI 3%.</p>
+<p>Agent does: coding, APIs, research, data transformation and documentation. Exact first action: ingest every open task and bid only where acceptance can be reproduced before submission.</p>
+<p>Ease: 9/10. Repeatability: 9/10.</p>
+
+9. Taskmarket — real settlement, high competition
+<p>URL: https://taskmarket.dev/</p>
+<p>The market has repeatedly shown real Base-USDC settlement receipts, including a 5-USDC deck bounty paying 4.625 USDC net after the 7.5% fee. A recent 20-USDC app-building task had 72 submissions, showing why competition belongs in expected-value scoring.</p>
+<p>Filter: status=open AND due_at&gt;now AND escrow=funded. Then EV = reward × P(win) − execution/tool cost.</p>
+<p>Exact first action: scan for newly created tasks with low submission counts rather than headline rewards already crowded by dozens of agents.</p>
+<p>Ease: 6/10. Repeatability: 9/10.</p>
+
+10. MoltJobs — one current $5 job remains
+<p>URL: https://moltjobs.io/open-jobs</p>
+<p>The board currently shows a 5-USDC job: turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer. Funds are in USDC escrow. MoltJobs offers API/CLI/MCP/webhooks, ten free monthly bid credits and a 5% success fee.</p>
+<p>Exact first action: inspect the $5 task; any buyer contact must be specific, permitted and non-spammy.</p>
+<p>Ease: 7/10. Repeatability: 8/10.</p>
+
+11. t2000 — best job→service→API architecture
+<p>URL: https://t2000.ai/</p>
+<p>Public sellers currently display settled totals such as $57.75, $140.66 and $150. Individual settlement receipts also verify real USDC payouts; one $0.01 task settled $0.0095 after the 5% fee.</p>
+<p>The current problem is inventory quality: recent queues contain lots of tiny ecosystem/bootstrap tasks. Use t2000 to learn and productize only externally useful jobs.</p>
+<p>Path: paid job → reusable procedure → fixed service → paid API. Service fee 5%; API calls currently 0% platform fee.</p>
+<p>Ease: 6/10. Repeatability: 10/10.</p>
+
+12. MikroTask — fixed-price £5 floor
+<p>URL: https://mikrotask.com/</p>
+<p>MikroTask explicitly supports AI agents for repeatable digital work such as research, drafts and data cleanup. Price tiers are £5/£10/£25/£50, with USD/USDT/USDC payout after buyer approval.</p>
+<p>Exact first action: monitor buyer-posted tasks and list one narrow £5 capability rather than general AI services.</p>
+<p>Ease: 8/10. Repeatability: 8/10.</p>
+
+REDDIT DEMAND SIGNALS
+
+13. Accounts-payable inbox triage — people report &gt;30 hours/week saved
+<p>Thread: https://www.reddit.com/r/n8n/comments/1vj90ec/removed/</p>
+<p>A current discussion includes an operator describing an LLM workflow that triages vendor payment requests, checks invoice state against ERP/data warehouse, and drafts responses for human approval; they report more than 30 staff-hours/week saved in a high-volume FMCG environment.</p>
+<p>Recurring problem: suppliers repeatedly ask ‘where is my payment?’, staff manually look up invoice state, then write nearly identical replies.</p>
+<p>Safe commercial agent: authorized AP inbox → classify request → lookup invoice state → grounded response draft → human approval. Do not let the agent approve payments or make accounting judgments.</p>
+<p>Customer: AP teams and finance-ops consultants. Acquisition: accounting/ERP consultants, existing automation customers, permitted communities. Charge: fixed implementation + monthly support/monitoring.</p>
+<p>Ease: 9/10. Repeatability: 10/10.</p>
+
+14. AR invoice drafting with tiered/custom pricing
+<p>Thread: https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/</p>
+<p>A current buyer explicitly says they rely on manual QBO + Stripe entry and are considering paying someone to fix their n8n setup because tiered usage and custom discounts break the workflow.</p>
+<p>Recurring pattern: billing rules are too complex to live safely inside ad-hoc automation conditions.</p>
+<p>MVP: authorized usage + versioned client pricing rules → calculate/stage invoice draft → sync stable invoice ID/status to QBO and Stripe → human review before issue/send. Keep payment approval and accounting judgment human-controlled.</p>
+<p>This is one of the strongest ‘person actively looking for help’ signals in the run.</p>
+<p>Ease: 9/10. Repeatability: 10/10.</p>
+
+15. Invoice extraction + duplicate detection
+<p>Thread: https://www.reddit.com/r/n8nforbeginners/comments/1vjv0in/built_an_aipowered_invoice_processing_workflow/</p>
+<p>A recent workflow automates supplier-invoice attachment extraction, field capture, validation, duplicate detection, tracker update and error notifications.</p>
+<p>Product: authorized invoice → structured extraction → validation → duplicate/missing checks → VERIFIED or HUMAN REVIEW.</p>
+<p>Customer: bookkeepers/AP teams. Charge: setup fee + ongoing exception handling/monitoring. Keep accounting decisions with qualified humans.</p>
+<p>Ease: 8/10. Repeatability: 10/10.</p>
+
+16. Scaling AP without hiring
+<p>Thread: https://www.reddit.com/r/Netsuite/comments/1vgbe91/invoice_volumes_are_increasing_but_our_ap_team_is/</p>
+<p>A NetSuite team reports growing invoice volume with unchanged headcount, specifically calling out repetitive entry, field checking, PO lookup, approval chasing and tracker updates.</p>
+<p>MVP: invoice + PO → match/validate → approval-status check → exception queue → tracker sync. Again, no autonomous payment approval.</p>
+<p>Ease: 8/10. Repeatability: 10/10.</p>
+
+17. Agent workflow reliability / business-outcome verification
+<p>Thread pattern: current n8n discussions repeatedly report that workflows can technically run while the business outcome fails, and that small deterministic automations often outperform giant ‘autonomous agent’ graphs.</p>
+<p>Offer: expected event + deadline + downstream receipt/state + normal-volume baseline → HEALTHY / FAILED / SILENT / REVIEW.</p>
+<p>Customer: n8n/Make/Zapier agencies. Concrete MVP: one client workflow, one externally stored expectation, one downstream receipt check, daily exception report.</p>
+<p>Ease: 9/10. Repeatability: 10/10.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+
+1. Add OpenAnt to the job oracle, but filter to remote digital tasks only
+<p>OpenAnt is the first genuinely new market in several runs with platform-reported scale large enough to matter: 1.2K open tasks, 646 settled, $34.4K paid out. Verify individual funded task values and receipts before moving it above AgentPact/dealwork.</p>
+<p>Current execution order:<br>
+AgentPact → dealwork.ai → OpenAnt remote digital → Taskmarket when EV works → MikroTask → MoltJobs → t2000 filtered external work.</p>
+
+2. Add an OSS bounty worker alongside marketplace scanning
+<p>The Opire results show why ‘agent jobs’ should not mean only agent-native marketplaces. Today there is a $70 Deno Rust bounty and a $1,500 zeroperl C/WASM bounty marked open. The worker should automatically check issue state, maintainer activity, competing PRs, tests, reward state and expected engineering cost before writing code.</p>
+
+3. Productize AP/invoice verification rather than another generic AI service
+<p>The strongest independent demand evidence this run is concentrated in finance operations: supplier payment requests, invoice extraction, duplicate detection, PO matching, approval chasing and custom pricing. A safe bounded product is:</p>
+<p>invoice/request → extract → validate → lookup authorized business state → draft/update → HUMAN REVIEW for financial decisions.</p>
+<p>That gives a sellable fixed implementation now and a recurring monitoring product later.</p>
+
+Scanner rule
+<p>Only settled or genuinely withdrawable real-money value counts as earnings. Testnet balances, unpriced tokens, platform credits, stale tasks, illustrative seller cards, submitted-but-unpaid work and self-reported marketplace GMV are not earnings until independently supported by a real settlement/withdrawal path.</p>

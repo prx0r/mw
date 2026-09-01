@@ -1,0 +1,174 @@
+Subject: Agent Money Scout — 2026-08-31 17:00
+Date: Mon, 31 Aug 2026 05:25:33 -0500
+Message ID: 1a0575a56c08784f
+================================================================================
+
+# Agent Money Scout — 2026-08-31 17:00
+
+Current ranking: AgentPact → dealwork.ai → OpenAnt → Taskmarket’s new $10 build → MoltJobs → selective Opire / Drips Wave → Complete Codes when funded Sprints are visible.
+
+I count only settled or clearly withdrawable money. I excluded platforms whose primary terms explicitly require users to be 18+, including TaskBounty and HYRVE. For any platform with unclear age/payment terms, verify eligibility first and do not bypass KYC, wallet, geography, or account restrictions.
+
+## NEW THIS RUN
+
+### 1) Complete Codes — merge-to-USDC coding market
+URL: https://www.complete.codes/en
+What the agent does: discover funded GitHub repos via MCP/REST, submit useful PRs, run CI/tests, and get paid when a maintainer merges an eligible PR.
+Who pays: repository Sprint funders.
+Payout: pool-based; site examples show roughly $20 or $100 per merge from a $1,000 pool depending on payout settings. USDC lands on Base immediately after an eligible merge.
+Tools: GitHub coding agent, MCP/REST, repo toolchain/tests.
+Autonomy: 9/10.
+First action: inspect only paid/funded Sprints, then choose a repo with active maintainers, reproducible issues, and CI you can run locally.
+Constraints: platform/payment eligibility not clearly stated on the public page; verify before account/payment activity.
+Ease first $5: 6/10. Repeatability: 9/10.
+
+### 2) Drips Stellar Wave 8 — $75,000 open-source contribution pool
+URL: https://www.drips.network/wave/stellar
+Current state: primary page says Wave 8 is active until August 31 with a $75,000 budget.
+What the agent does: browse approved Stellar ecosystem issues, implement fixes/features, open PRs, and earn points for accepted contributions; points convert into a share of the pool.
+Who pays: Stellar Wave program.
+Payout: share of $75,000 pool, paid as USDC on Stellar after evaluation; no per-issue dollar amount is guaranteed.
+Tools: GitHub, relevant project language/toolchain, tests.
+Autonomy: 8/10.
+First action: inspect open approved issues and choose the smallest reproducible issue with active maintainer attention.
+Constraints: mandatory identity verification/KYC before applying and withdrawing; do not participate unless eligible.
+Ease first $5: 5/10. Repeatability: 8/10 (monthly Waves).
+
+### 3) Complete Codes + coding-agent loop
+This is distinct enough to operationalize: `funded repo → issue/maintenance opportunity → reproduce → patch → tests/CI → PR → merge eligibility → USDC`.
+The key advantage versus winner-take-all bounty boards is that there is no proposal phase; the merge is the acceptance gate. Earlier merges receive a larger share of the remaining pool.
+Ease: 6/10. Repeatability: 9/10.
+
+### 4) BTNOMB — useful demand board, but NOT an execution target yet
+URL: https://bounty.btnomb.com/
+The board exposes interesting requests such as an AI code reviewer and an LLM observability dashboard with $200 bids, but its own primary page explicitly says no payout has yet been executed on the board. Several listings are marked not funded or demo-only.
+What the agent would do: build software against a brief and negotiate/submit through the API.
+Who pays: bounty poster, if escrow is actually deposited.
+First action: monitor only; require explicit funded escrow before spending compute or paying the $0.10 brief-unlock fee.
+Autonomy: 9/10. Ease first $5: 1/10 today. Repeatability: 7/10 if funded demand becomes real.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 5) AgentPact
+URL: https://agentpact.xyz/needs
+Still the highest-priority general queue. Recent primary listings include roughly 5–10 USDC Python review and 10–25 USDC API automation, authorized code/security review, scraping automation, and data-analysis work.
+Agent: Python/API/data/QA worker.
+Who pays: Need/deal buyer through Base-USDC settlement.
+First action: filter `reward >= $5 AND clear_scope AND objectively_testable AND settleable`.
+Autonomy: 10/10. Ease: 9/10. Repeatability: 9/10.
+
+### 6) dealwork.ai
+URL: https://dealwork.ai/
+Fresh state: 157 open tasks, 264 completed, 2.5K workers. Escrow is funded before work begins. The platform documents an $80 AI-built production API and $5 AI-to-AI work.
+Agent: coding, APIs, data transformations, research, documentation.
+First action: ingest the live queue and only bid where the acceptance test can be reproduced independently.
+Autonomy: 9/10. Ease: 9/10. Repeatability: 9/10.
+
+### 7) OpenAnt
+URL: https://openant.ai/
+Fresh primary metrics: 12.8K total tasks, 1.2K open, 646 settled, $34.4K paid out, $128K posted. Current remote example: analyze SKU sales and return five insights plus a chart.
+Agent: remote digital/data/research work.
+First action: filter `remote + digital + explicit reward + objective proof`; ignore GPS/photo/physical work.
+Autonomy: 10/10. Ease: 8/10. Repeatability: 9/10.
+
+### 8) Taskmarket — NEW $10 specific task
+URL: https://taskmarket.dev/tasks/0x0f50fb11e2c983117a758986f8f6808f5959ec7abfca596cef74ca67f863dbdc
+Current bounty: 10 USDC to build an Inference Chip Index with a Next.js leaderboard and Lucid Agents API. Nine days remain; 55 submissions from 31 submitters are already visible. The escrow transaction is public and the platform fee is 7.5%.
+Agent: Next.js/TypeScript + MLPerf data normalization + Lucid Agents/x402 API.
+First action: estimate whether you can materially beat existing submissions before building. With 31 competitors, expected value is much lower than the nominal $10.
+Autonomy: 9/10. Ease: 4/10. Repeatability: 9/10.
+
+### 9) MoltJobs
+URL: https://moltjobs.io/open-jobs
+One concrete funded job remains: 5 USDC to convert three live job postings into ready-to-fund MoltJobs specs and contact their buyers.
+Agent: research/specification plus permitted individualized outreach.
+First action: inspect that exact listing and only use legitimate one-to-one contact; no bulk promotion.
+Autonomy: 8/10. Ease: 7/10. Repeatability: 8/10.
+
+### 10) Opire
+URL: https://opire.dev/home
+Featured bounties still include $3,280 C++, $590 Python, $590 TypeScript, $395 Rust, $308 TypeScript and $70 issues. Several are old, so current issue/maintainer activity matters more than the headline reward.
+Agent: reproduce GitHub issue → patch → tests → PR.
+First action: check repo freshness, issue status, competing PRs, maintainer responsiveness and payout credibility before coding.
+Constraints: Stripe/payment-provider eligibility applies; Opire’s privacy terms contemplate minors with guardian consent for certain data processing, but payment eligibility must still be satisfied.
+Autonomy: 8/10. Ease: 5/10. Repeatability: 8/10.
+
+### 11) Clustly / Hangar
+URLs: https://clustly.ai/ and https://hangar.clustly.ai/
+Clustly’s current site says the marketplace is live on Solana mainnet with USDC escrow. Hangar advertises hosted agents that pass security review and get listed for buyer hires; the platform reports 147 agents live, $284K shipped through escrow and 12,940 jobs completed, though these are platform-reported figures.
+Agent: package a narrow specialist service and accept funded hires.
+First action: list only a capability already proven via paid task work; do not build speculative supply.
+Autonomy: 9/10. Ease: 4/10. Repeatability: 9/10.
+
+### 12) AuraGate
+URL: https://auragate.app/
+Current primary metrics: 1,228 paid requests, $2.58 USDC revenue and 42 unique buyers across its service catalog.
+Agent: expose a callable x402 API/data utility.
+First action: cross-list a proven capability and measure unique external paying buyers rather than calls.
+Autonomy: 10/10. Ease: 3/10. Repeatability: 10/10 if organic demand appears.
+
+### 13) Laguna Network affiliate rail
+URL: https://laguna.network/intl/en/mcp
+Agent recommends genuinely relevant products/deals from 200+ participating merchants and earns a commission on qualifying purchases, paid in USDC on Base.
+Who pays: merchant affiliate economics.
+First action: add only to an existing recommendation/deal product with real user traffic; disclose the affiliate relationship and never spam or distort recommendations.
+Autonomy: 10/10. Ease: 5/10 with distribution. Repeatability: 10/10.
+
+### 14) gigs.sh
+URL: https://gigs.sh/
+Still useful as a discovery oracle: 46 platforms across agent task markets, dev bounties, security programs, competitions, hackathons, content, and API monetization. But its verification snapshot is dated May 18, 2026, so every candidate must be reverified on the primary source.
+Direct earning: 1/10. Discovery repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 15) n8n cost / runaway-execution guard
+Thread: https://www.reddit.com/r/n8n/comments/1w217kl/production_n8n_costs_what_actually_moves_the/
+A production operator reports unbounded retries taking one overnight bill from $12 to $847. Other recurring problems include silent model fallback, full-history pagination and naive rate limiting.
+Offer: `workflow JSON + executions + provider prices → retry/loop scan → spend estimate → budget guard → PASS/REVIEW`.
+Customer: automation agencies and teams running production workflows.
+MVP: one exported workflow in; top cost/reliability risks out.
+Ease: 9/10. Repeatability: 10/10.
+
+### 16) Workflow cost estimator / margin protection
+Thread: https://www.reddit.com/r/n8n/comments/1vgi240/i_built_a_free_tool_that_shows_the_real_monthly/
+A client-workflow builder says retry loops, sub-workflow model escalation and paid APIs caused real bills to run 3–4× their quoted happy-path estimates.
+Offer: cost-before-quote audit with node-level causes and worst-case ranges.
+Charge: fixed audit or bundle into an automation build.
+Ease: 9/10. Repeatability: 10/10.
+
+### 17) Per-client AI cost accounting
+Thread: https://www.reddit.com/r/n8n/comments/1vkhqk0/n8n_cost_tracking_app_open_source_for_the/
+A recent open-source tool drew strong interest by tracking token cost per workflow/client/project and budget alerts across 2,500+ model prices.
+Opportunity: turn tracking into a hosted or managed reporting service for agencies who need client-level margin visibility.
+Ease: 8/10. Repeatability: 10/10.
+
+### 18) Business-problem automation, not generic “AI automation”
+Thread: https://www.reddit.com/r/automation/comments/1vk3aig/anyone_here_actually_make_money_doing_ai/
+Recurring signal: small businesses care about hours saved and pain removed, not the technology. The strongest recurring niches are lead intake, scheduling, document handling, CRM updates and reporting.
+Offer: one repetitive process with baseline time/error cost, automation, validation and exception handling.
+Ease: 8/10. Repeatability: 10/10.
+
+### 19) Invoice/data-entry automation
+Thread: https://www.reddit.com/r/automation/comments/1mks28j/whats_the_fastest_way_to_stop_manually_retyping/
+Recurring problem: OCR alone is not enough; businesses still manually move extracted invoice/email data into CRMs and spreadsheets.
+Agent: ingest document/email → structured extraction → validation/duplicate checks → destination → exception queue.
+Ease: 9/10. Repeatability: 10/10.
+
+### 20) n8n → FastAPI/code migration
+Source: https://www.reddit.com/r/n8n/
+A current front-page discussion describes moving stateful application logic out of n8n into FastAPI, leaving n8n for orchestration. This reinforces the direct-customer opportunity to migrate complex deterministic workflow hot paths into tested software.
+Offer: workflow JSON + runtime history → code-worthy section → FastAPI/TypeScript service → tests/logging → migration plan.
+Ease: 8/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. **Run one normalized worker across AgentPact + dealwork + OpenAnt.** Score every task with `EV = payout × P(acceptance) × P(win) − runtime/model/API cost`. Reject unclear payment, stale deadlines, vague acceptance and high competition before spending inference.
+
+2. **Add Complete Codes + Drips Wave to the coding lane.** Complete Codes is structurally attractive because merge is the acceptance gate and funded Sprints settle USDC immediately. Drips Wave has a $75K active pool today, but only participate if all KYC/eligibility requirements are satisfied.
+
+3. **Productize `/workflow-guard` as the direct-customer service.** The strongest recurring external evidence is production teams losing money to retries, hidden premium models, pagination bugs, and poor cost attribution. A launchable offer is: “Send one workflow export + recent executions; receive a pre-deploy cost/reliability report with retry loops, worst-case spend, model/API costs, and kill-switch recommendations.”
+
+Current execution order:
+**AgentPact → dealwork.ai → OpenAnt → Taskmarket $10 build only if competition-adjusted EV works → MoltJobs funded $5 task → selective Opire/Drips → Complete Codes funded Sprints → x402/API distribution only after a capability has already earned directly.**
+
+Important exclusion: TaskBounty is technically one of the strongest new coding-agent marketplaces I found (real GitHub bugs, $10–$100+ bounties, 80% solver share, USDC/ETH/BTC/USD payout), but its primary Terms explicitly require users to be at least 18, so it is not an actionable recommendation here. HYRVE has the same explicit 18+ restriction.

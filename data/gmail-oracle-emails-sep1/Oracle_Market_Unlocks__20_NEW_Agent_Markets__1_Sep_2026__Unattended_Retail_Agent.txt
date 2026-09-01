@@ -1,0 +1,163 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Unattended Retail, Agent-Ready HR & Industrial Apps
+Date: Mon, 31 Aug 2026 18:16:11 -0500
+Message ID: 1a05a1bdec102796
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This pass treats novelty as a hard constraint. I searched the sent Oracle-report corpus in Gmail before selecting the final set and discarded every exact venue already covered. In particular, this report does **not** recycle the recent Deliverect/Paylocity/SiteMinder/Blackbaud batch, Railway/Nuvemshop/Aircall/Paddle batch, Samsara/Microsoft Security/Siemens batch, or the earlier creator/CMS/commerce marketplaces.
+
+**H shorthand:** H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human partner/compliance/subjective approval; H3 = material recurring human production/customer work; H4 = fundamentally human/offline. Legitimate identity, KYC, tax, privacy, IP, safety and accountable legal gates remain human.
+
+**Scoring:** O = expected opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (higher = less crowded); N = novelty/timing. Total /25.
+
+## Ranked 20
+
+| # | Market | O | A | F | C | N | Total | Practical H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | **Nayax App Marketplace** | 5 | 5 | 5 | 4 | 5 | **24** | H1–H2 |
+| 2 | **Deputy Integrations Marketplace** | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 3 | **Deel App Store** | 5 | 5 | 5 | 4 | 5 | **24** | H1–H2 |
+| 4 | **Egnyte App Marketplace** | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 5 | **Factorial Integrations Marketplace** | 5 | 5 | 5 | 4 | 4 | **23** | H2 |
+| 6 | **commercetools Connect Marketplace** | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 7 | **Apaleo Store** | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 8 | **Paycor Marketplace** | 5 | 5 | 4 | 4 | 4 | **22** | H2 |
+| 9 | **isolved Marketplace** | 5 | 5 | 4 | 4 | 4 | **22** | H2 |
+| 10 | **Recharge in-app Marketplace** | 5 | 5 | 5 | 3 | 4 | **22** | H1–H2 |
+| 11 | **Cvent App Marketplace** | 5 | 5 | 4 | 3 | 4 | **21** | H1–H2 |
+| 12 | **Zenoti Marketplace** | 5 | 5 | 4 | 3 | 4 | **21** | H2 |
+| 13 | **Laserfiche Marketplace** | 4 | 5 | 5 | 4 | 3 | **21** | H1–H2 |
+| 14 | **M-Files Solution Catalog** | 4 | 5 | 4 | 4 | 3 | **20** | H2 |
+| 15 | **Bosch Rexroth ctrlX OS Store** | 5 | 5 | 3 | 4 | 3 | **20** | H2 |
+| 16 | **Phoenix Contact PLCnext Store** | 5 | 5 | 3 | 4 | 3 | **20** | H2 |
+| 17 | **Universal Robots UR Marketplace / UR+** | 5 | 4 | 2 | 4 | 4 | **19** | H2–H3 |
+| 18 | **Dentrix Marketplace / Ascend API Exchange** | 5 | 4 | 2 | 3 | 4 | **18** | H2–H3 |
+| 19 | **DriveThruRPG** | 3 | 5 | 4 | 3 | 3 | **18** | H1–H2 |
+| 20 | **Rebrickable Premium MOCs** | 3 | 4 | 3 | 4 | 3 | **17** | H2 |
+
+---
+
+## 1. Nayax App Marketplace — 24/25
+
+**What agents can sell.** Software for vending, unattended retail, micro-markets and EV/payment operations: telemetry reconciliation, cash/card mismatch detection, machine-health diagnostics, replenishment recommendations, failed-vend evidence, age-verification workflow helpers, route optimization, pricing/inventory QA and accounting/export products.
+
+**Autonomous loop.** Oracle mines vending/operator complaints → specialist Worker identifies a recurring machine/payment failure → consumes Nayax APIs/SDKs → UnattendedRetailWorld creates machines, selections, cash/card transactions, inventory and connectivity failures → Harbor verifies totals, duplicate transactions, vend/payment state, device disconnects and recovery → agent compiles privacy/security/listing metadata → human developer/company review → Marketplace listing → operator installs → application telemetry and commercial outcomes feed the Worker → regress against device/firmware/platform changes.
+
+**H-level.** H1–H2. Account/company identity, payments/data compliance and Marketplace approval remain human. Runtime can approach H0 for bounded read/reconcile functions.
+
+**Frontier unlock.** This is exceptionally fresh. Nayax Developer Terms were updated **23 Aug 2026**; Marketplace Listing Terms became effective **19 Aug 2026** and explicitly define eligible products as **code-based or AI-based applications, integrations, automations, plugins or extensions**. Marketplace terms became effective 17 Aug. The platform explicitly supports APIs/SDKs and Marketplace installation/usage data.
+
+**Demand/community.** Vending communities show real 2026 pain: broken onboarding links, reader/device communication failures and operators saying a majority of payments run through Nayax. This is money-state infrastructure, so a small diagnostic/reconciliation product can have obvious ROI.
+
+**Why agents fit.** Payment/vend/inventory systems are event/state machines with hard invariants. Persistent agents can accumulate device/firmware edge cases.
+
+**Moltwork assets.** `NayaxPack`, `UnattendedRetailWorld`, vend/payment-state evaluator, device-compatibility matrix, TelemetrySchool, MarketplaceCertificationProcess, persistent vending-integration Worker.
+
+**Good economics:** one app works across many operators/devices and prevents downtime/revenue leakage. **Bad:** field installation/hardware troubleshooting dominates software value.
+
+Sources: https://www.nayax.com/developer-terms-and-conditions/ ; https://www.nayax.com/nayax-app-marketplace-listing-terms/ ; Reddit r/vending 3 Apr 2026 and other current operator threads.
+
+## 2. Deputy Integrations Marketplace — 24/25
+
+**What agents sell.** Scheduling/payroll/compliance add-ons: break/lunch re-optimization, payroll reconciliation, certification/skill guards, shift exception handling, labor-cost forecasting, workforce↔POS/HRIS adapters and compliance evidence.
+
+**Workflow.** Mine manager complaints → build via Deputy APIs/webhooks → WorkforceWorld generates employees, locations, shifts, PTO, swaps, overtime and payroll exports → evaluator checks labor rules, double-booking, location mapping, payroll totals and late changes → agent generates integration page/demo/setup docs → Deputy Marketplace submission → customer OAuth/install → monitor scheduling/payroll exceptions → Worker learns edge cases and patches.
+
+**H.** H1 for listing/account/customer authorization; H2 only for jurisdiction-specific legal assertions.
+
+**Frontier infrastructure.** Deputy now explicitly tells **AI agents** to use `llms.txt`, Markdown pages and OpenAPI. Its API supports read/write for nearly all objects/actions plus webhooks for dozens of events. Official integration guidance says completed integrations can be submitted for addition to the Deputy Marketplace.
+
+**Demand/community.** A June 24 2026 workforce-management thread describes a 50–60-person contact center still manually moving breaks/lunches around meetings/PTO/training and explicitly says management will pay for a smaller tool. Another 2026 thread describes integrations with payroll as the deciding factor. That is a perfect narrow-agent wedge.
+
+**Agent fit.** Scheduling is constraint optimization plus structured exceptions, exactly where automated simulation is strong.
+
+**Assets.** `DeputyPack`, `WorkforceWorld`, scheduling constraint evaluator, payroll export evaluator, LaborRulesSchool, location-mapping Skill, WorkforceWorker.
+
+**Attractive:** measurable hours saved and portable WorkforceWorld across HR/payroll venues. **Unattractive:** bespoke labor-law consulting per customer.
+
+Sources: https://developer.deputy.com/docs/integration-and-data-availability-options ; https://developer.deputy.com/docs/what-makes-a-good-integration-with-deputy ; Reddit r/workforcemanagement, 24 Jun 2026.
+
+## 3. Deel App Store — 24/25
+
+**What agents sell.** Global workforce operations: worker/contract reconciliation, payroll readiness, document completeness, contractor→employee migration, onboarding/offboarding guards, time/payroll sync, background-screening workflow and HRIS adapters.
+
+**Workflow.** Oracle finds cross-border HR operations pain → Worker builds OAuth2 app → GlobalWorkforceWorld creates contractors/employees/contracts, timesheets, payments and lifecycle events → verify token refresh, worker state, duplicate records, payroll inputs and webhook idempotence → submit from Developer settings → approved listing reaches customers → merchants authorize → external SaaS billing/usage → Worker monitors errors and API changes.
+
+**H.** H1–H2: app review and data/privacy/commercial assertions stay human.
+
+**Infrastructure.** Deel’s stable 2026 developer platform offers full CRUD for contracts/workers, webhooks, HRIS sync, payroll/payments, time tracking and screening. The App Store publishing guide says approved apps can launch to **40,000+ companies**. A fresh **6 Aug 2026** help article introduced direct “Publish On App Store” submission with structured listing/review status.
+
+**Demand.** Global payroll/HR data is fragmented across countries and providers. The platform’s 40k customer figure is useful top-down evidence; the strongest product is not generic HR AI but reconciliation/error prevention around worker/payment state.
+
+**Assets.** `DeelPack`, `GlobalWorkforceWorld`, contract/payroll evaluator, OAuth lifecycle Skill, GlobalHRSchool, listing compiler.
+
+**Economics:** high when errors affect payroll/compliance and one integration serves many employers; poor when country-specific legal review dominates.
+
+Sources: https://developer.deel.com/api/partners/introduction ; https://developer.deel.com/api/partners/publishing-to-app-store ; https://help.letsdeel.com/hc/en-gb/articles/18603247898641-How-to-list-your-app-to-Deel-App-Store
+
+## 4. Egnyte App Marketplace — 23/25
+
+**What agents sell.** Secure-content utilities for AEC, life sciences, finance and professional services: permissions-drift detection, metadata QA, project handover completeness, regulated-document evidence packs, RAG/data-governance tools, file migration and content lifecycle adapters.
+
+**Workflow.** Discover document-governance pain → build OAuth integration → ContentGovernanceWorld seeds projects/folders/users/permissions/metadata/version history → evaluator tests ACL boundaries, retention, duplicate files, lineage and data minimization → sandbox → Marketplace review → customer authorization → external subscription → event/API telemetry → maintain.
+
+**H.** H1–H2 for enterprise/compliance review.
+
+**Infrastructure/demand.** Egnyte’s developer platform currently advertises **23,000+ enterprise customers**, **34 API modules**, sandbox setup, OAuth and direct reach to paying customers through the Egnyte App Marketplace. It also explicitly describes AI-oriented services such as structured metadata, RAG-ready chunks and policy-aware AI.
+
+**Community constraint.** The buyer is regulated enterprise, so distribution is slower than creator stores. But that increases willingness to pay for narrow compliance/content correctness.
+
+**Agent fit.** Content governance is repetitive metadata/permission/event analysis, with excellent synthetic fixtures.
+
+**Assets.** `EgnytePack`, `ContentGovernanceWorld`, ACL evaluator, regulated-document School, RAG governance Skill, enterprise submission process.
+
+**Economics:** high ACV, low marginal service if read-only/governance; bad if every deployment becomes consulting.
+
+Source: https://developers.egnyte.com/
+
+## 5. Factorial Integrations Marketplace — 23/25
+
+**What agents sell.** HR/payroll/time integrations, lifecycle reconciliation, IT-asset/offboarding guards, attendance/payroll adapters and vertical workforce workflows.
+
+**Workflow.** Find repeated HR integration gap → use Factorial public REST/webhooks/sandbox → WorkforceWorld → test hires, contracts, attendance, leave, approvals, payroll and termination → accumulate three pilot customers → agent builds certification evidence → technical/functional review → Marketplace listing → usage/support telemetry → persistent maintenance.
+
+**H.** H2 because certification currently requires market validation and human partner/legal/GTM steps.
+
+**Infrastructure.** Factorial’s current platform is unusually agent-readable: date-versioned REST, public OpenAPI, generated SDKs, 30+ scopes and `llms.txt`. Its partner program says public API/private development is open access, while certified Marketplace integrations undergo a 3–6 week process and need **3 active customers for >2 months** plus quality/support evidence.
+
+**Demand.** Factorial is reported at 16,000+ companies; certification requirements themselves provide a concrete external benchmark for Moltwork.
+
+**Agent fit.** HR state is structured and edge-case-heavy; persistent regression maintenance compounds.
+
+**Assets.** `FactorialPack`, shared WorkforceWorld, certification evaluator, API-version watcher, HRIntegrationSchool.
+
+**Economics:** strong once 3 pilots prove product-market fit; unattractive if getting those pilots requires bespoke services.
+
+Source: https://factorial.fr/integrations-partner-program
+
+## 6. commercetools Connect Marketplace — 23/25
+
+**What agents sell/publish.** Certified commerce connectors: tax, payment, search, merchandising, PIM/ERP, procurement, fulfillment, data quality and agentic-commerce adapters.
+
+**Workflow.** Oracle finds missing source↔commercetools capability → Worker writes Connect application → CommerceConnectorWorld creates products/carts/orders/customers/events → tests schemas, scopes, retries, idempotence and pricing/inventory invariants → **Connect API** publishes/stages connector → certification → Marketplace → merchants deploy → runtime/telemetry → Worker patches.
+
+**H.** H1–H2 for certification/commercial relationship.
+
+**Frontier unlock.** Connect is more machine-operable than a normal marketplace: applications can be developed by anyone; commercetools hosts the runtime; public connectors are certified; **publishing and deployment can be managed through the Connect API**. In Feb 2026 it added programmatic deletion of staged/published connectors, and Connect now spans GCP/AWS-hosted projects. Current 2026 material also positions commercetools around agentic commerce.
+
+**Demand.** Enterprise composable commerce constantly needs integration glue; B2B PunchOut and agentic-commerce changes are creating fresh connector seams.
+
+**Assets.** `CommercetoolsPack`, CommerceConnectorWorld, scope/idempotence evaluator, Connect publishing Skill, CommerceIntegrationSchool.
+
+**Economics:** one connector can reach high-value enterprise buyers and commercetools removes hosting overhead. Bad when integration requires bespoke enterprise mapping.
+
+Sources: https://docs.commercetools.com/connect ; https://docs.commercetools.com/connect/releases
+
+## 7. Apaleo Store — 23/25
+
+**What agents sell.** Hotel micro-SaaS: reservation/folio reconciliation, rate-plan QA, payment evidence, housekeeping/maintenance adapters, migration tools, revenue/marketing actions and specialist hotel agents.
+
+**Workflow.** Find hotel pain → build against open APIs → HotelWorld seeds properties, rates, reservations, folios, payments and webhooks → evaluator checks ARI/reservation/folio invariants → test account → certification → Store listing → properties connect app → external prici

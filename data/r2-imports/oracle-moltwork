@@ -1,0 +1,1822 @@
+Yes. The key change I would make is to stop thinking of these as merely additional “job sources.” They are **trainable economic environments**:
+
+> Oracle finds a market → Moltwork builds/chooses a World for it → persistent worker trains through reproducible trials → verifier measures actual performance → only then does the worker touch the real venue → real economic outcomes feed back into the lab.
+
+That fits the architecture you already wrote almost perfectly. Your own Harbor design already says Harbor should be the default execution layer beneath CGE, with Letta providing persistent identity/memory and Hydra retaining longitudinal evidence.
+
+## First: where Moltwork actually is today
+
+There is an important distinction between **“this market can be H0”** and **“the current `mw` branch can execute it H0 today.”**
+
+The external infrastructure is increasingly ready. Your repo isn't quite there yet. The current ETHOnline branch review still has Harbor mocked/not installed, expired external API credentials, synthetic campaign outcomes, and a deterministic fake YGO experiment. So those YGO BATS numbers are useful as plumbing tests, not evidence that the learning loop works yet.
+
+You nevertheless already have the correct interface. `WorkVenue` gives you:
+
+```text
+discover
+inspect
+submit
+status
+settle
+```
+
+and your autonomy code already prefers:
+
+```text
+official_api
+→ official_openapi
+→ official_mcp
+→ official_webmcp
+→ integrations
+→ browser
+→ human_queue
+```
+
+That should remain the universal abstraction.
+
+My ranking for **actual Moltwork targets** changes slightly when we care about trainability + autonomous execution:
+
+| Market                       | Training signal                     | Production action surface          |                        Operational autonomy | Economic usefulness now |
+| ---------------------------- | ----------------------------------- | ---------------------------------- | ------------------------------------------: | ----------------------: |
+| **Metaculus forecasting**    | Excellent                           | Official API                       |                      **H0** after bootstrap |               **10/10** |
+| **Roblox micro-studio**      | Very good                           | Official MCP + REST APIs           |                                  **H0-ish** |              **9.5/10** |
+| **OSS security patches**     | Excellent                           | Git/GitHub + claim UI              |                         Work H0 / payout H2 |                **9/10** |
+| **Vesuvius progress prizes** | Excellent for technical subproblems | Git + forms/review                 |                         Work H0 / submit H2 |              **8.5/10** |
+| **TCG AI**                   | Exceptional                         | Simulator + Kaggle                 | Benchmark H0; current cash path constrained |              **8.5/10** |
+| **Fortnite micro-studio**    | Good                                | Official UEFN MCP + Creator Portal |                       Build H0 / publish H2 |                **8/10** |
+
+The really important insight is that the first five have something freelancing usually doesn't:
+
+**a machine-readable measure of getting better.**
+
+---
+
+# 1. Metaculus: probably the cleanest Moltwork job on Earth
+
+This should be the first one I'd actually wire.
+
+The current Summer FutureEval tournament closes **September 6, 2026**, has **328 questions and a $50,000 prize pool**. Metaculus also runs roughly $1k automated MiniBench rounds every two weeks and says its seasonal tournaments have 300–500 questions; it even subsidizes participating bots' LLM inference. ([Metaculus][1])
+
+More importantly, Metaculus already provides a bot template that can keep forecasting automatically every ~20 minutes, plus its `forecasting-tools` framework. Its public API has a literal:
+
+```http
+POST /api/questions/forecast/
+```
+
+endpoint. ([GitHub][2])
+
+So this isn't hypothetical agent work.
+
+It is **an existing autonomous-agent labor market**.
+
+## How the agent should get good
+
+Do not train the Letta agent by telling it “forecast better.”
+
+Build a Harbor dataset of historical forecasting episodes.
+
+Each episode becomes:
+
+```text
+Question
+Resolution criteria
+Forecast timestamp T
+Historical information available BEFORE T
+        ↓
+worker
+        ↓
+probability distribution
+        ↓
+hidden future resolution
+        ↓
+proper scoring rule
+```
+
+The absolutely critical constraint is **temporal leakage**.
+
+A question resolved in July cannot let the training worker search today's web. So each Harbor task should provide a timestamped evidence corpus/snapshot or controlled retrieval source.
+
+### Forecasting World
+
+```text
+worlds/forecasting-metaculus/
+├── world.yaml
+├── scenarios/
+│   ├── binary/
+│   ├── numeric/
+│   ├── multiple_choice/
+│   └── conditional/
+├── evidence_snapshots/
+├── verifier/
+│   ├── scoring.py
+│   ├── calibration.py
+│   ├── distribution_validity.py
+│   └── cost.py
+└── hidden/
+    └── future_period/
+```
+
+The reward shouldn't just be “correct/incorrect.”
+
+For a binary question:
+
+```text
+reward =
+    proper_forecast_score
+    - malformed_penalty
+    - excessive_compute_penalty
+```
+
+Across hundreds of questions add:
+
+```text
+calibration error
+Brier/log score
+domain performance
+confidence-bin performance
+forecast stability
+update quality
+cost / forecast
+```
+
+This gives the agent a **real learning curve**.
+
+## Curriculum
+
+Start with base-rate questions where historical reference classes dominate. Then add research-intensive questions, numeric distributions, ambiguous resolution criteria, long-horizon questions and finally **sequential updating**, where the same question gets new evidence over several simulated dates.
+
+A particularly good multi-step Harbor task is:
+
+```text
+T0 → forecast 27%
+T1 → new evidence → forecast
+T2 → contradictory evidence → forecast
+T3 → major event → forecast
+T4 → resolution
+```
+
+You can measure whether the worker:
+
+* updates enough when evidence changes;
+* doesn't overreact to headlines;
+* recognizes stale information;
+* remains calibrated;
+* remembers the actual resolution criterion.
+
+This is exactly where Letta continuity becomes interesting.
+
+## What the worker should learn into memory
+
+Not factual answers like:
+
+> “Candidate X will win election Y.”
+
+Those expire.
+
+It should promote reusable procedural skills:
+
+```text
+forecast-resolution-parsing
+reference-class-selection
+base-rate-estimation
+numeric-tail-calibration
+evidence-independence-check
+source-timestamp-check
+forecast-aggregation
+disagreement-crux-search
+```
+
+And you need held-out validation before a synthesized skill gets promoted.
+
+Your current `SkillSynthesizer` only grabs failure/review strings and deduplicates them; the file explicitly says it is not full Trace2Skill. So don't yet call this “the agent learned a forecasting skill” unless the candidate improves held-out forecast scores.
+
+### The experiment loop I would run
+
+```text
+BASELINE
+Metaculus TemplateBot
+
+A
++ persistent Letta memory
+
+B
++ multi-query independent research
+
+C
++ reference-class stage
+
+D
++ forecast ensemble
+
+E
++ explicit disagreement/crux investigation
+
+F
++ learned forecasting SKILL.md
+
+G
++ BATS dynamically chooses the above
+```
+
+Run hundreds of archived questions.
+
+Then use the **same hidden set** to compare them.
+
+This finally makes your BATS idea meaningful.
+
+## Can Moltwork submit autonomously?
+
+**Yes.**
+
+After the one-time account/token/tournament setup, the production loop can be:
+
+```text
+MetaculusVenue.discover()
+       ↓
+inspect question
+       ↓
+forecast worker
+       ↓
+local sanity verifier
+       ↓
+POST /api/questions/forecast/
+       ↓
+status / later resolution
+       ↓
+attach real score to WorkerRun
+       ↓
+Hydra + skill update
+```
+
+No WebMCP needed.
+
+This is **native API H0**.
+
+And this is important: your definition of H0 should mean **no human per normal execution**. Credential creation/account acceptance can be recorded separately as bootstrap.
+
+---
+
+# 2. TCG AI: probably the best pure “agent school”
+
+This might be even better scientifically than Metaculus.
+
+Pokémon just demonstrated why.
+
+Its 2026 Kaggle competition provided a real simulator whose engine gives the agent:
+
+```text
+game logs
+board state
+legal actions
+```
+
+and receives selected action indices. The same engine was provided locally specifically for debugging and reinforcement learning. Teams could submit up to five agents daily; the ladder used skill-rating updates from actual matches. ([Kaggle][3])
+
+The competition attracted thousands of teams.
+
+And actual competitors used combinations like:
+
+**behavior cloning → RL → MCTS**
+
+and archetype-specific/opponent-belief policies. ([Kaggle][4])
+
+That's extremely useful evidence for how we should structure YGO.
+
+## Kill the fake YGO World
+
+You already have the replacement staring at you.
+
+`sbl1996/ygo-agent` has:
+
+```text
+ygoenv
+    high-performance Yu-Gi-Oh environment
+    envpool + ygopro-core
+    standard Gym interface
+
+ygoai
+    RL agents
+```
+
+with ambitions around self-play, deckbuilding, fast adaptation to new decks and cards, MCTS and league methods. ([GitHub][5])
+
+So I would completely replace the deterministic YGO environment presently used in `mw`.
+
+Not extend it.
+
+Replace it.
+
+## The Harbor/YGO architecture
+
+There are actually two agents.
+
+### Scientist worker
+
+This is your Letta/Moltwork agent.
+
+It can use expensive LLMs, source code, experiments, statistics, Git, memory, etc.
+
+Its job is to **develop the game-playing policy**.
+
+### Match policy
+
+This is the submitted/evaluated program.
+
+It must operate under the simulator's latency/network/runtime restrictions.
+
+So:
+
+```text
+             LETTA SCIENTIST
+                    │
+           proposes experiment
+                    │
+                    ▼
+              Git branch
+                    │
+       ┌────────────┴─────────────┐
+       │                          │
+   policy code                deck config
+       │                          │
+       └────────────┬─────────────┘
+                    ▼
+              YGO Harbor World
+                    │
+             10,000 matches
+                    │
+        ┌───────────┼────────────┐
+        ▼           ▼            ▼
+     baseline    population   holdout-meta
+        │           │            │
+        └───────────┴────────────┘
+                    ▼
+                 score
+                    │
+             experiment result
+                    │
+                  Hydra
+                    │
+             Letta reflection
+```
+
+That's much better than letting an LLM “play Yu-Gi-Oh.”
+
+## Make micro-worlds
+
+Full matches give sparse reward.
+
+Harbor should also generate **saved game-state puzzles**.
+
+For example:
+
+```text
+world: ygo.lethal_detection
+world: ygo.interruption_timing
+world: ygo.resource_preservation
+world: ygo.combo_selection
+world: ygo.go_first
+world: ygo.go_second
+world: ygo.side_deck
+world: ygo.opponent_archetype_identification
+```
+
+Take states from real self-play trajectories and ask:
+
+> Which legal action maximizes expected match win probability?
+
+That gives dense, cheap training.
+
+Then the full-match World verifies whether those improvements transfer.
+
+## League training matters
+
+Don't optimize against one opponent.
+
+Maintain something like:
+
+```text
+population/
+├── frozen_baseline_v1
+├── heuristic_control
+├── historical_best_001
+├── historical_best_002
+├── aggressive_policy
+├── control_policy
+├── current_meta_A
+└── current_meta_B
+```
+
+Then score:
+
+```text
+0.45  weighted meta win rate
+0.20  frozen-baseline win rate
+0.15  held-out deck robustness
+0.10  exploitability / worst matchup
+0.05  runtime
+0.05  legality / crashes
+```
+
+Otherwise the scientist will simply discover exploits against its latest training opponent.
+
+That would give you a **real evolutionary laboratory**.
+
+## Deckbuilding should be a separate genome
+
+Don't merge everything into one blob.
+
+```text
+PolicyGenome
+DeckGenome
+SideDeckGenome
+ExperimentGenome
+```
+
+Then ask BATS:
+
+```text
+Is expected value higher from:
+ - improving policy?
+ - switching archetype?
+ - changing three cards?
+ - opponent-model routing?
+ - adding search?
+```
+
+This gets fascinating when you ingest live tournament results.
+
+Eventually the Oracle can say:
+
+> “New banlist produced a meta shift. Current YGO worker has high transfer score on combo decks but weak performance into control. Expected value of retraining deck family X is highest.”
+
+That's the sort of thing Moltwork should become.
+
+## Autonomous submission?
+
+Pokémon's **Simulation** track is over: final submissions locked on **August 16, 2026**, with games continuing afterward. The Strategy track remains open until September 13, but participation required entering the Simulation track; its entry deadline was August 9. ([Kaggle][3])
+
+For future Kaggle simulation competitions, submission itself is highly automatable—the artifact is just the tournament-defined bundle and Kaggle supports CLI/MCP workflows around competition assets and replays. ([Kaggle][6])
+
+But Yu-Gi-Oh itself currently lacks a comparable official **bot-for-cash API venue**.
+
+So classify it:
+
+```text
+YGO TRAINING     H0
+YGO EVALUATION   H0
+YGO DECK RESEARCH H0
+REAL HUMAN YCS   H3/H4
+FUTURE BOT COMP  potentially H0
+```
+
+Don't lie to Oracle and describe Yu-Gi-Oh prize tournaments as autonomous agent work.
+
+Instead describe YGO as:
+
+```text
+earning_status: speculative/emerging
+training_value: extremely_high
+objective_verifiability: extremely_high
+skill_reusability: high
+```
+
+---
+
+# 3. Roblox: this has become shockingly agent-native
+
+Roblox is probably the most interesting actual **autonomous micro-studio** target.
+
+Roblox Studio now exposes an MCP server. An MCP client can read the game's data model, create/run scripts, edit instances and playtest the place. ([Creator Hub][7])
+
+Even better, Roblox exposes programmable testing primitives.
+
+`StudioTestService` can run multiplayer tests with up to eight simulated clients, add/remove players and programmatically end/test sessions. Roblox also exposes device simulation and virtual mouse/keyboard/pointer input. ([Creator Hub][8])
+
+And production publishing isn't trapped behind a UI: Roblox's **Place Publishing API** lets CI systems upload new versions of existing places by HTTP POST. ([Creator Hub][9])
+
+Open Cloud gives much broader REST automation as well. ([Creator Hub][10])
+
+This is almost the ideal Moltwork environment.
+
+## Build a Roblox School
+
+Don't ask an agent:
+
+> Make a successful Roblox game.
+
+That's hopelessly sparse.
+
+Teach progressively.
+
+### School 0 — atomic Luau mechanics
+
+```text
+door
+inventory
+checkpoint
+currency
+shop
+NPC dialogue
+quest
+leaderboard
+save/load
+matchmaking
+round loop
+```
+
+Deterministic tests.
+
+### School 1 — microgames
+
+Give the worker a tiny brief:
+
+> Four-player arena. First to five points. Respawn in <3 sec. Scoreboard. Mobile compatible.
+
+Verifier runs:
+
+```text
+Luau syntax
+server boot
+4-client session
+join flow
+round starts
+score increments
+winner detected
+restart works
+no errors
+```
+
+### School 2 — UI/onboarding
+
+Use `VirtualInput`.
+
+The evaluator literally simulates:
+
+```text
+launch
+tap play
+move
+open shop
+buy item
+return
+quit
+```
+
+Now you can measure:
+
+```text
+click count
+time-to-first-action
+dead ends
+errors
+mobile compatibility
+```
+
+### School 3 — adversarial multiplayer
+
+Have synthetic clients:
+
+```text
+disconnect mid-round
+join late
+spam button
+zero currency purchase
+simultaneous interaction
+bad network
+small screen
+```
+
+This finds actual production bugs.
+
+### School 4 — economy design
+
+Offline simulation:
+
+```text
+100k synthetic player-days
+sources/sinks
+inflation
+progression curves
+purchase distribution
+```
+
+### School 5 — live experiment
+
+Only now touch the real game.
+
+Deploy:
+
+```text
+version A
+version B
+```
+
+Collect real:
+
+```text
+retention
+session length
+funnel conversion
+revenue
+return rate
+```
+
+Real player telemetry becomes the high-value sparse reward.
+
+## How the persistent worker specializes
+
+This creates a natural reusable Roblox inventory:
+
+```text
+skills/
+  roblox-round-loop/
+  roblox-datastore-safe/
+  roblox-mobile-ui/
+  roblox-obby-movement/
+  roblox-matchmaking/
+  roblox-shop-economy/
+  roblox-multiplayer-race-condition-testing/
+
+assets/
+systems/
+genre_templates/
+validated_components/
+```
+
+This is exactly the “nothing the agent builds goes to waste” direction.
+
+A failed Roblox game may still yield:
+
+```text
+validated inventory system
+tested multiplayer lobby
+mobile UI skill
+working purchase flow
+genre-specific telemetry findings
+```
+
+The next game starts ahead.
+
+## H0?
+
+For an **existing bootstrapped experience**:
+
+```text
+code/build       MCP                 H0
+playtest         Studio APIs/MCP     H0
+multiplayer test StudioTestService   H0
+device testing   Studio APIs         H0
+publish update   REST API            H0*
+monitor          Open Cloud          H0
+iterate          WorkerKit           H0
+```
+
+`*` Roblox documents some asset/instance types that still require Studio publishing rather than the Place Publishing API. ([Creator Hub][9])
+
+So I would call Roblox:
+
+> **H0-compatible once the creator account, API credentials and experience shell exist.**
+
+That's huge.
+
+---
+
+# 4. Fortnite: fantastic agentic build surface, weaker deployment surface
+
+Epic just made this much more interesting on **August 20, 2026**.
+
+UEFN v42 added an embedded **Unreal MCP server** specifically so tools such as Codex, Claude Code and Cursor can interact directly with UEFN. ([Epic Games Developers][11])
+
+So the worker can potentially:
+
+```text
+write Verse
+compile Verse
+edit scene
+place/configure devices
+build UI
+run sessions
+inspect errors
+iterate
+```
+
+That means a Moltwork Fortnite World is now realistic.
+
+## Training environment
+
+Conceptually nearly the same as Roblox:
+
+```text
+Harbor/CGE controller
+       ↓
+persistent UEFN workstation
+       ↓
+official Unreal MCP
+       ↓
+project
+       ↓
+play session
+       ↓
+logs + artifacts + video + metrics
+       ↓
+verifier
+```
+
+I would call this a **Harbor-compatible remote World**, not insist it literally live inside a Docker container.
+
+Harbor should own:
+
+```text
+task definition
+version pins
+worker version
+experiment configuration
+trajectory
+evaluator
+result
+provenance
+```
+
+UEFN owns the actual game runtime.
+
+## Curriculum
+
+Teach:
+
+```text
+Verse correctness
+device orchestration
+round loops
+UI
+player state
+persistence
+multiplayer
+performance/memory
+onboarding
+retention-loop design
+```
+
+Then synthetic player personas:
+
+```text
+novice
+speedrunner
+explorer
+griefer
+economy maximizer
+social player
+```
+
+can repeatedly test builds.
+
+But note the sim-to-real gap.
+
+A synthetic LLM saying:
+
+> “This game is fun: 8.7/10”
+
+is nearly worthless.
+
+The real ultimate verifier must be:
+
+```text
+actual retention
+actual session time
+actual return rate
+actual monetization
+```
+
+## Why Fortnite is not H0 end-to-end
+
+Epic explicitly says you **cannot publish directly from UEFN**. Public releases must go through the Creator Portal and moderation flow. ([Epic Games Developers][12])
+
+I found no official production publishing API analogous to Roblox's Place Publishing API.
+
+So:
+
+```text
+BUILD       official MCP       H0
+TEST        UEFN              H0-ish
+PUBLISH     Creator Portal    H2
+MODERATION  external          external
+LIVE ITERATION               H2 release gate
+```
+
+You could browser-automate it.
+
+I wouldn't classify that as H0.
+
+And I definitely wouldn't use WebMCP unless Epic's Creator Portal actually starts exposing WebMCP tools.
+
+---
+
+# WebMCP: important distinction
+
+This is worth encoding correctly in Oracle.
+
+WebMCP does **not** mean:
+
+> “Any website can now be operated reliably by an agent.”
+
+It means:
+
+> “A website can explicitly expose structured tools to browser agents.”
+
+It's still in Chrome's origin-trial/experimental phase. Sites themselves register imperative tools or annotate forms declaratively. ([Chrome for Developers][13])
+
+Therefore Oracle's rule should be:
+
+```text
+site has HTML form
+    != WebMCP
+
+browser agent can click it
+    != WebMCP
+
+document.modelContext exposes tools
+    = WebMCP
+```
+
+Your discovery browser should actually inspect the page for WebMCP.
+
+Then store:
+
+```yaml
+action_surface:
+  type: webmcp
+  discovered_tools:
+    - submit_entry
+    - get_status
+  mutation: true
+  evidence_url: ...
+  checked_at: ...
+```
+
+This turns WebMCP adoption itself into an Oracle signal.
+
+And it fits the WebMCP work you've already specced in the repo.
+
+---
+
+# 5. Open-source security patching: superb Harbor task family
+
+This is another one I'd add immediately.
+
+Google's current Patch Rewards program pays up to:
+
+```text
+$500
+$2,000
+$7,500
+$15,000
+```
+
+with **2×** bonuses for certain memory-safety work and **3×** for some core parser work through the end of 2026. A qualifying contribution is typically already a merged GitHub PR that can be demonstrated to improve security. ([Google Bug Hunters][14])
+
+That last part matters.
+
+It gives us a beautiful verifier:
+
+**Did the patch actually fix something without breaking the project?**
+
+## Harbor security school
+
+Use historical vulnerabilities in **local, authorized code snapshots**.
+
+A task contains:
+
+```text
+vulnerable Git commit
+build environment
+public project docs
+normal tests
+```
+
+The worker sees those.
+
+The verifier separately owns:
+
+```text
+hidden exploit regression
+hidden edge cases
+existing full test suite
+sanitizers
+fuzzer harness
+performance regression
+```
+
+The agent's output is a Git patch.
+
+Then:
+
+```text
+G0 compiles
+G1 old tests pass
+G2 hidden vulnerability reproduction no longer succeeds
+G3 hidden variants fixed
+G4 sanitizers clean
+G5 no verifier/test tampering
+G6 patch is reasonably minimal
+```
+
+That is a dramatically better agent benchmark than SWE-bench for your purposes because it directly maps to **economic value**.
+
+## Curriculum
+
+Start:
+
+```text
+known bug + obvious failing test
+```
+
+then:
+
+```text
+known CVE + hidden test
+```
+
+then:
+
+```text
+vulnerable commit without location
+```
+
+then:
+
+```text
+generic hardening opportunity
+```
+
+then:
+
+```text
+write fuzz harness
+→ find crash locally
+→ root cause
+→ patch
+→ regression test
+```
+
+Eventually, the production worker monitors only **explicitly permitted/in-scope OSS projects** and searches for proactive hardening opportunities.
+
+That matters for safety as well: the lab deals with local repositories, historical vulnerabilities and authorized scopes—not arbitrary live-system exploitation.
+
+## Skill inventory
+
+Imagine your worker accumulating:
+
+```text
+cpp-parser-hardening
+rust-memory-safety-migration
+integer-overflow-audit
+path-traversal-review
+unsafe-deserialization-audit
+libfuzzer-harness-authoring
+sanitizer-debugging
+patch-regression-design
+```
+
+Each one has measurable historical performance.
+
+Then Oracle can ask:
+
+> Google just increased rewards on memory-safe parser conversions. Which of my workers has actually demonstrated that capability?
+
+That's Moltwork.
+
+## H0?
+
+Internally:
+
+```text
+discover candidate OSS patch   H0
+clone/build                    H0
+investigate                    H0
+patch                          H0
+test                           H0
+open GitHub PR                 H0
+respond to routine CI          H0
+```
+
+The monetary claim/report side is still a web/review process rather than a clean machine marketplace.
+
+I would deliberately retain a human gate there anyway.
+
+So:
+
+```text
+WORK H0
+EXTERNAL SECURITY CLAIM H2
+```
+
+This isn't a weakness. The human gate sits at exactly the high-risk boundary.
+
+---
+
+# 6. Vesuvius: don't attack the $1M goal first
+
+This market gets especially interesting if you look below the headline prize.
+
+There is currently **$2.14M open**, including a **$1M 2027 Grand Prize**, **$500k First Letters**, and **$590k/year in progress prizes**, including **$20k every month for the best open-source contribution**. ([Vesuvius Challenge][15])
+
+The open problems include:
+
+```text
+3D surface segmentation
+meshing
+flattening
+geometry
+ink detection
+domain generalization
+pipeline optimization
+```
+
+([Vesuvius Challenge][15])
+
+For Moltwork, I would prioritize the **monthly progress economy**, not “solve the scroll.”
+
+## Four separate Schools
+
+### `science.vesuvius.surface`
+
+Input:
+
+```text
+CT volume
+known surface fragments
+```
+
+Output:
+
+```text
+surface / segmentation / mesh
+```
+
+Verifier:
+
+```text
+surface continuity
+held-out segmentation agreement
+topological validity
+intersection penalties
+runtime
+memory
+```
+
+### `science.vesuvius.flatten`
+
+Input:
+
+```text
+3D mesh
+```
+
+Output:
+
+```text
+2D mapping
+```
+
+Verifier:
+
+```text
+distortion
+self-intersections
+fiber continuity
+area preservation
+runtime
+```
+
+### `science.vesuvius.ink`
+
+Input:
+
+```text
+CT surface volumes
+```
+
+Output:
+
+```text
+ink probability map
+```
+
+Verifier:
+
+```text
+held-out labels
+precision
+recall
+cross-scroll generalization
+false-positive morphology
+```
+
+### `science.vesuvius.tooling`
+
+This is the one I'd start with.
+
+Tasks like:
+
+```text
+faster IO
+Zarr tooling
+dataset indexing
+viewer improvements
+pipeline integration
+GPU optimization
+VC3D tooling
+metadata validation
+reproducibility
+```
+
+These are ordinary coding-agent tasks wrapped in a scientifically valuable environment.
+
+And because progress prizes explicitly reward useful open-source contributions, it provides a much shorter path from:
+
+```text
+agent capability
+→ contribution
+→ community usage
+→ money
+```
+
+than attempting state-of-the-art ink detection from scratch.
+
+## Compute architecture
+
+Do not download entire multi-terabyte datasets into disposable Harbor containers.
+
+The World should contain:
+
+```text
+dataset manifest
+content-addressed chunks
+streaming Zarr access
+small local fixture
+remote GPU profile
+fixed training budget
+```
+
+Development tests use tiny fixtures.
+
+Real experiments use a remote GPU executor.
+
+Harbor only records:
+
+```text
+dataset version
+code SHA
+GPU type
+random seed
+run config
+artifacts
+metrics
+```
+
+That still gives reproducibility without treating Harbor as a giant storage system.
+
+## H0?
+
+Research loop:
+
+**H0.**
+
+Final prize submission/review:
+
+**H2.**
+
+The scientific judgement and external prize workflow are not machine-native enough for me to call it H0.
+
+---
+
+# The Oracle needs one conceptual extension
+
+Right now Oracle is largely shaped around:
+
+```text
+Market
+    ↓
+Opportunity
+```
+
+That's perfect for:
+
+```text
+$5,000 bounty
+Upwork job
+hackathon
+GitHub issue
+```
+
+But Roblox, Metaculus and Google OSS patching expose something else:
+
+## An `EarningProgram`
+
+For example:
+
+```text
+Market
+Roblox creator economy
+
+Program
+Roblox experience monetization
+
+Opportunities
+individual niches / incentives / contests / market gaps
+```
+
+or:
+
+```text
+Market
+forecasting
+
+Program
+Metaculus FutureEval
+
+Opportunity
+Summer 2026
+MiniBench #57
+Market Pulse
+```
+
+or:
+
+```text
+Market
+OSS security
+
+Program
+Google Patch Rewards
+
+Opportunity
+specific discovered hardening candidate
+```
+
+I would introduce:
+
+```python
+@dataclass
+class EarningProgram:
+    id: str
+    venue: str
+    title: str
+
+    reward_model: str
+    recurring: bool
+
+    eligibility: list[str]
+
+    objective_type: str
+    feedback_latency_seconds: int | None
+
+    action_surfaces: list[ActionSurface]
+
+    simulator_available: bool
+    replayable: bool
+
+    training_allowed: bool | None
+    data_use_notes: str
+
+    source_evidence: dict
+```
+
+This is a major distinction.
+
+Oracle must never make a fake observation like:
+
+> “Roblox adult strategy game — $50,000 opportunity.”
+
+There isn't necessarily such a bounty.
+
+Instead:
+
+```text
+OBSERVED:
+Roblox economic program exists.
+
+OBSERVED:
+specific DevEx / publishing economics.
+
+DERIVED:
+strategy games appear underserved.
+
+HYPOTHESIS:
+worker can economically exploit niche.
+```
+
+Keeping observed fact and derived opportunity hypothesis separate will make Oracle much more credible.
+
+---
+
+# Add an `ObjectiveSpec`
+
+Your current ontology is heavily optimized for submissions like code, reports, content and data.
+
+These markets introduce **stateful performance artifacts**.
+
+Add:
+
+```python
+@dataclass
+class ObjectiveSpec:
+    evaluator_kind: str
+
+    # examples:
+    # proper_score
+    # episodic_simulator
+    # hidden_regression
+    # production_telemetry
+    # heldout_metric
+    # human_panel
+
+    primary_metric: str
+    direction: str  # maximize | minimize
+
+    feedback_latency_seconds: int | None = None
+
+    replayable: bool = False
+    simulator_ref: str | None = None
+
+    verifier_strength: float = 0.0
+    sim_to_real_risk: float = 0.0
+```
+
+Then:
+
+```yaml
+Metaculus:
+  evaluator_kind: delayed_resolution
+  primary_metric: tournament_score
+  replayable: true
+
+YGO:
+  evaluator_kind: episodic_simulator
+  primary_metric: meta_win_rate
+  replayable: true
+
+Roblox:
+  evaluator_kind: production_telemetry
+  primary_metric: retained_player_value
+  replayable: partly
+
+Google OSS:
+  evaluator_kind: hidden_regression
+  primary_metric: patch_acceptance
+  replayable: true
+
+Vesuvius:
+  evaluator_kind: heldout_scientific
+  primary_metric: domain-specific
+  replayable: true
+```
+
+This one addition radically improves Oracle because it tells Moltwork:
+
+> **Can I actually train for this opportunity?**
+
+---
+
+# Add the interface by workflow stage, not opportunity-wide
+
+This is another important change.
+
+“Roblox is MCP” isn't true.
+
+It is:
+
+```text
+BUILD       MCP
+TEST        MCP / Studio API
+PUBLISH     REST API
+MONITOR     REST
+SETTLE      platform
+```
+
+Fortnite is:
+
+```text
+BUILD       MCP
+TEST        MCP/local
+PUBLISH     browser Creator Portal
+STATUS      portal
+SETTLE      platform
+```
+
+Vesuvius:
+
+```text
+DISCOVER    web/Git
+WORK        local/GPU
+SUBMIT      form/email
+STATUS      human review/web
+```
+
+So the right structure is:
+
+```python
+@dataclass
+class ExecutionStep:
+    phase: str
+    actor: str
+
+    interface: str
+    # official_api
+    # official_mcp
+    # official_webmcp
+    # cli
+    # browser
+    # desktop
+    # email
+    # human_queue
+
+    human_dependency: HumanDependency | None
+```
+
+You already have most of this concept in `mw_labkit/oracle.py`.
+
+Extend it instead of inventing another system.
+
+---
+
+# Fix the H0 semantics
+
+There is a subtle ontology problem here.
+
+For economic agents, the useful definition is:
+
+> **H0 = no human involvement on a normal unit of work once provisioning is complete.**
+
+Otherwise almost nothing can ever be H0 because a human once had to create a bank account, API key or accept terms.
+
+Store bootstrap separately:
+
+```yaml
+autonomy_level: H0
+bootstrap_required: true
+
+bootstrap_dependencies:
+  - create_account
+  - accept_terms
+  - create_api_token
+```
+
+Then:
+
+```text
+Metaculus:
+H0 + bootstrap
+
+Roblox existing game:
+H0 + bootstrap
+
+Fortnite:
+H2 because human release action is recurring
+
+OSS patch:
+H2 economic workflow because final security claim is human
+
+Vesuvius:
+H2 because submission/judgement workflow is human
+
+YGO simulator:
+H0
+```
+
+This makes the measure actually useful.
+
+---
+
+# Add these task families
+
+Don't put everything under `GAME_DEV` or `RESEARCH`.
+
+I'd extend the shared ontology to:
+
+```text
+forecasting
+├── binary
+├── numeric
+├── categorical
+├── conditional
+└── sequential_update
+
+game
+├── policy
+├── deck_building
+├── opponent_modeling
+├── selfplay
+├── development
+├── playtesting
+├── retention_optimization
+└── liveops
+
+security
+├── oss_patch
+├── hardening
+├── fuzzing
+└── regression
+
+science
+├── computer_vision
+├── geometry
+├── ml_experiment
+├── optimization
+└── research_tooling
+```
+
+And capabilities:
+
+```text
+probability.calibrate
+probability.aggregate
+research.temporal
+
+game.simulate
+game.policy
+game.deck_optimize
+rl.selfplay
+
+verse.write
+luau.write
+telemetry.analyze
+
+security.fuzz
+security.root_cause
+security.patch
+security.regression
+
+vision.3d
+geometry.mesh
+ml.train
+ml.validate
+compute.optimize
+```
+
+This allows capabilities learned in one market to transfer into another.
+
+---
+
+# Your `WorkVenue` should gain one important behavior
+
+Currently `submit()` effectively returns a submission or nothing.
+
+That's not enough.
+
+Fortnite is not a failure because it can't autonomously publish.
+
+It has reached a **human boundary**.
+
+I'd return:
+
+```python
+SubmissionResult =
+    Submitted
+    | HumanActionRequired
+    | Unsupported
+    | Failed
+```
+
+Example:
+
+```python
+HumanActionRequired(
+    action="Publish private version through Creator Portal",
+    url="...",
+    estimated_minutes=3,
+    resume_token="..."
+)
+```
+
+Then the worker does:
+
+```text
+work autonomously
+        ↓
+verify autonomously
+        ↓
+reach exact boundary
+        ↓
+Human Queue
+        ↓
+human clicks/reviews
+        ↓
+worker resumes
+```
+
+That's much more honest than pretending browser automation magically makes everything H0.
+
+---
+
+# Exact adapters I would build
+
+```text
+venues/
+├── metaculus.py
+├── kaggle.py
+├── roblox.py
+├── epic_fortnite.py
+├── google_oss_patch.py
+└── vesuvius.py
+
+worlds/
+├── forecasting-metaculus/
+├── game-policy-ptcg/
+├── game-policy-ygo/
+├── roblox-microgame/
+├── uefn-microgame/
+├── oss-security-patch/
+└── vesuvius-tooling/
+```
+
+But distinguish **Venue** from **World**:
+
+```text
+MetaculusVenue
+    economic interaction
+
+ForecastingWorld
+    teaches forecasting
+
+RobloxVenue
+    economic interaction
+
+RobloxStudioWorld
+    teaches building/testing
+```
+
+That's essential.
+
+One World can prepare an agent for several venues.
+
+---
+
+# The universal specialization loop
+
+This is what I would make Moltwork's main loop:
+
+```text
+                    ORACLE
+                       │
+         "economic opportunity found"
+                       │
+                       ▼
+             OpportunityProgram
+                       │
+                       ▼
+                WorldSelector
+                       │
+          "what school predicts success?"
+                       │
+                       ▼
+                    HARBOR
+               baseline N trials
+                       │
+                       ▼
+                     CGE
+               experiment design
+                       │
+                 ┌─────┴─────┐
+                 ▼           ▼
+             variant A    variant B
+                 │           │
+                 └─────┬─────┘
+                       ▼
+                 DOMAIN VERIFIER
+                       │
+                       ▼
+                    HYDRA
+                 evidence graph
+                       │
+                       ▼
+                   LETTA
+             trajectory reflection
+                       │
+                       ▼
+              candidate SKILL
+                       │
+                       ▼
+             HELD-OUT HARBOR TEST
+                       │
+              uplift statistically?
+                  /            \
+                no              yes
+                │                │
+             discard          promote
+                                 │
+                                 ▼
+                          WORKVENUE
+                            real job
+                                 │
+                                 ▼
+                           real outcome
+                                 │
+                  ┌──────────────┴───────┐
+                  ▼                      ▼
+               ORACLE                  HYDRA
+            economic stats        learning evidence
+```
+
+**That** is the product.
+
+Not marketplace-first.
+
+Not merely “Letta with jobs.”
+
+It is:
+
+> **An agent identifies an economically valuable skill, constructs a school for itself, demonstrates measurable competence, deploys that competence into the real market, observes economic performance, and compounds what it learned.**
+
+That is much more interesting.
+
+---
+
+# Also change how Oracle ranks opportunities
+
+Prize amount alone is wrong.
+
+The Oracle should care heavily about **learnability**.
+
+I'd add a derived `agent_opportunity_score` based approximately on:
+
+```text
+net EV
+× autonomy
+× verifier quality
+× simulator availability
+× skill reusability
+× parallelizability
+────────────────────────────
+  compute cost
+  human cost
+  feedback-delay penalty
+  sim→real uncertainty
+```
+
+So imagine:
+
+### Generic $5,000 design contest
+
+```text
+Prize                 high
+Objective verifier    terrible
+Feedback              one-off / months
+Reusable training     weak
+H0                     low
+```
+
+### $1,000 Metaculus MiniBench
+
+```text
+Prize                 smaller
+Objective verifier    superb
+Feedback              fast
+Reusable training     superb
+H0                     excellent
+```
+
+Moltwork should often prefer the second.
+
+Because even losing produces information.
+
+This is where your **lab economics** become genuinely different from a job scraper.
+
+---
+
+# What I would implement first
+
+The immediate checkpoint should be:
+
+**1. Make Harbor real.** Remove MockHarbor from the evidence path and fix the current domain-verifier layer. Your current `harbor_adapter.py` even has a concrete bug where a float `reward` is treated as a dict, and the newer Harbor wiring only verifies that `submission.md` exists. Neither is sufficient for these worlds.
+
+**2. Build `MetaculusVenue + ForecastingWorld`.** This gives you the first genuinely H0 economic loop with an objective real-world score.
+
+**3. Replace fake YGO with `ygoenv`.** Use it to prove the persistent Letta → BATS → Harbor → skill promotion loop on thousands of cheap, measurable episodes. ([GitHub][5])
+
+**4. Build Roblox Studio MCP World.** This tests whether a persistent worker can go from mechanic school → complete microgame → automated multiplayer QA → API publish. Roblox now has essentially all the external primitives required. ([Creator Hub][7])
+
+**5. Build OSS Patch School.** Start entirely on historical CVEs and known fixes, with hidden regression tests. Only once the worker beats baseline on held-out repositories let it inspect live in-scope patch opportunities.
+
+**6. Add Vesuvius tooling as the first scientific venue.** Don't train expensive ink models first; give your coding worker open technical contributions where its existing skills transfer.
+
+**7. Add Fortnite after Roblox.** Unreal MCP makes the build side compelling, but Creator Portal remains a recurring human release boundary. ([Epic Games Developers][11])
+
+If those first three work, you will have something much stronger than the current ETHOnline demo: **three radically different economic domains—forecasting, adversarial games and game creation—all feeding the exact same worker/world/evaluator/memory ontology.** That would demonstrate that Moltwork is actually a general economic learning system rather than a collection of agent integrations.
+
+I can monitor these markets for new prize programs and newly available API/MCP/WebMCP submission paths.
+
+[1]: https://www.metaculus.com/tournament/summer-futureeval-2026/?utm_source=chatgpt.com "Summer 2026 FutureEval Bot Tournament"
+[2]: https://github.com/Metaculus/metac-bot-template?utm_source=chatgpt.com "GitHub - Metaculus/metac-bot-template: A simple bot template that you can use to forecast a Metaculus tournament · GitHub"
+[3]: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/overview?utm_source=chatgpt.com "The Pokémon Company - PTCG AI Battle Challenge Simulation | Kaggle"
+[4]: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/735867?utm_source=chatgpt.com "The Pokémon Company - PTCG AI Battle Challenge Simulation | Kaggle"
+[5]: https://github.com/sbl1996/ygo-agent?utm_source=chatgpt.com "GitHub - sbl1996/ygo-agent: AI-driven Yu-Gi-Oh! bot using deep reinforcement learning and LLMs · GitHub"
+[6]: https://www.kaggle.com/code/kiyotah/reinforcement-learning-and-mcts-sample-code/input?utm_source=chatgpt.com "Reinforcement Learning and MCTS sample code"
+[7]: https://create.roblox.com/docs/ai/accelerated-workflows?utm_source=chatgpt.com "AI on Roblox | Documentation - Roblox Creator Hub"
+[8]: https://create.roblox.com/docs/reference/engine/classes/StudioTestService/AddPlayers?utm_source=chatgpt.com "StudioTestService | Documentation - Roblox Creator Hub"
+[9]: https://create.roblox.com/docs/cloud/guides/usage-place-publishing?utm_source=chatgpt.com "Usage guide for place publishing | Documentation - Roblox Creator Hub"
+[10]: https://create.roblox.com/docs/cloud?utm_source=chatgpt.com "Cloud API reference | Documentation - Roblox Creator Hub"
+[11]: https://dev.epicgames.com/documentation/fortnite/42-00-fortnite-ecosystem-updates-and-release-notes?utm_source=chatgpt.com "42.00 Fortnite Ecosystem Updates and Release Notes | Fortnite Documentation | Epic Developer Community"
+[12]: https://dev.epicgames.com/documentation/en-us/fortnite/publishing-projects-in-unreal-editor-for-fortnite?utm_source=chatgpt.com "Publishing Projects in Unreal Editor for Fortnite | Fortnite Documentation | Epic Developer Community"
+[13]: https://developer.chrome.com/blog/ai-webmcp-origin-trial?utm_source=chatgpt.com "Join the WebMCP origin trial  |  Blog  |  Chrome for Developers"
+[14]: https://bughunters.google.com/open-source-security/patch-rewards?utm_source=chatgpt.com "Open Source Security Patch Rewards - Google Bug Hunters"
+[15]: https://vesuviuschallenge.org/ "Vesuvius Challenge — Reading the Herculaneum Scrolls with AI"

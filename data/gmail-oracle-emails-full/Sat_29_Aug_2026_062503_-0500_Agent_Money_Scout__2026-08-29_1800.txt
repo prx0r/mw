@@ -1,0 +1,204 @@
+Subject: Agent Money Scout — 2026-08-29 18:00
+Date: Sat, 29 Aug 2026 06:25:03 -0500
+Message ID: 1a04d4419dfc84c8
+================================================================================
+
+# Agent Money Scout — 2026-08-29 18:00
+
+## NEW THIS RUN
+
+### 1) AgentHire — x402 agent-to-agent marketplace
+URL: https://www.agenthire.app/
+Current signal: platform reports 500+ active agents, 10K+ jobs completed and $50K+ processed volume. Treat these as platform-reported, not independently audited.
+What the agent does: code review, translation, scraping/data collection, text generation, research and other specialist tasks exposed through an API.
+Who pays: humans or other agents, per task in USDC on Solana using x402.
+Advertised pricing examples: code review from $0.05, translation from $0.02, data scraping from $0.03, AI training tasks from $0.10.
+Required: an agent with a REST/API surface and Solana/x402-compatible payment setup.
+Autonomy: 10/10.
+Exact first action: register one narrow capability that is already reliable, then query/match against live demand rather than building a platform-specific generalist.
+Eligibility/constraints: payment/wallet/provider terms must be met normally; do not bypass age, KYC, identity or geographic rules.
+Ease to first $5: 6/10. Repeatability: 9/10.
+
+### 2) AgentBounty — GitHub-native autonomous coding contracts
+URL: https://agentbounty.app/
+Current signal: the live market shows a latest paid $20 contract, but 0 open contracts and 0 active agents at the current crawl.
+What the agent does: bid on a software bounty, modify the repo, submit a GitHub PR, satisfy deterministic acceptance rules.
+Who pays: bounty poster.
+Verified payout: one visible settled $20 contract. No current open bounty, so this is a watchlist rather than an immediate earning route.
+Required: GitHub-capable coding agent with its own compute.
+Autonomy: 9/10.
+Exact first action: poll the marketplace for the next open contract; only engage once a bounty is actually open and funded.
+Eligibility/constraints: GitHub/platform/payment terms apply.
+Ease to first $5 today: 2/10. Repeatability if inventory appears: 8/10.
+
+### 3) Zion — MCP/agent creator marketplace
+URL: https://zionmcp.com/
+Current signal: Zion currently advertises 500+ available superpowers, 1,200+ active agents and 300+ creators; these are platform-reported figures. Creators keep 80%.
+What the agent does: sell reusable MCP tools, PR review packs, vertical enterprise skills or pre-orchestrated agent bundles.
+Who pays: users/agents purchasing usage, subscriptions, one-time products or bounties.
+Pricing: seller-defined; no payout amount should be inferred from the platform counts.
+Required: a working GitHub/MCP-compatible capability.
+Autonomy: 9/10 after listing.
+Exact first action: import one proven utility such as PR verification or structured evidence extraction; do not build a Zion-only product.
+Eligibility/constraints: check creator/payment account terms before listing.
+Ease to first $5: 5/10. Repeatability: 9/10.
+
+### 4) Agentics Task Board — Solana agent-to-agent work receipts
+URL: https://agentics.you/
+Current signal: public company material describes a live task board where agents post tasks, pay on delivery in USDC, and record verified receipts on-chain. Fresh public liquidity numbers were not visible this run.
+What the agent does: accept structured tasks, deliver output, generate a verifiable work receipt.
+Who pays: task-posting agents/users.
+Payout: task-specific; no verified current range found.
+Required: SDK/API/MCP-compatible agent and Solana-compatible settlement.
+Autonomy: 9/10.
+Exact first action: inspect the current task board before writing any adapter; only integrate if funded work exists.
+Ease to first $5: 3/10. Repeatability: 8/10 if liquidity appears.
+
+### 5) WORQ — fully autonomous USDC work protocol
+URL: https://worq.dev/
+Current signal: 95% of escrow goes to the worker, jobs can recursively subcontract up to 10 levels, and SDK/MCP/CLI/OpenAPI integrations exist. But the live page currently shows 0 agents active.
+What the agent does: code, research, write, design, analyze and subcontract pieces to other agents.
+Who pays: agents posting jobs with USDC budgets.
+Minimum job budget: $1 USDC.
+Required: compatible Base wallet plus agent integration.
+Autonomy: 10/10.
+Exact first action: keep it on the poller, but do not spend build time until the feed shows a real funded job.
+Ease to first $5 today: 1/10. Repeatability if liquidity emerges: 8/10.
+
+### 6) Creative play: Automation Watchdog
+Evidence: multiple recent r/n8n threads describe silent workflow failures, missing webhooks, expired credentials, successful executions that produce bad/empty output, and businesses discovering failures only after leads/data stop arriving.
+Customer: n8n/Make/Zapier consultants and SMBs already running production automation.
+Workflow: expected business event -> external heartbeat/canary -> downstream state check -> detect silence/duplicate/schema drift -> evidence + alert + runbook.
+Where to acquire customers: n8n communities, automation agencies, existing workflow freelancers, SMB ops teams.
+How to charge: fixed setup plus monthly monitoring per workflow/client.
+Concrete MVP: import workflow JSON + define expected heartbeat/output + external monitor + alert with last-good execution and likely failure point.
+Ease to first $5: 8/10. Repeatability: 10/10.
+
+### 7) Creative play: PR Verification Agent
+Evidence: current QA discussions keep reporting that AI-assisted development increases code throughput faster than QA capacity, while QA staff still need controlled test design, exploratory testing and decisions about what to test.
+Customer: teams using Claude Code/Codex/Cursor heavily.
+Workflow: PR + requirements -> changed-surface map -> select targeted unit/API/browser tests -> reproduce failures -> evidence packet -> PASS / FAIL / HUMAN REVIEW.
+Where to acquire customers: coding marketplaces, GitHub-heavy startups, dev communities, CI integrations.
+How to charge: per verified PR or monthly CI allowance.
+MVP: GitHub URL + acceptance criteria in, structured verification report out.
+Ease to first $5: 7/10. Repeatability: 10/10.
+
+### 8) Creative play: Production Automation Hardener
+Evidence: recent n8n operators report paying-client environments breaking due to queue contention, growing execution databases, rotated webhook URLs, credential/key failures and large hard-to-debug workflows.
+Customer: agencies and teams that already have automations but need them productionized.
+Workflow: workflow export -> dependency map -> retry/idempotency audit -> credential/webhook checks -> failure injection -> patch -> runbook.
+How to charge: fixed audit/fix package, then optional monitoring retainer.
+MVP offer: 'Send your n8n JSON; receive a failure-mode report plus prioritized fixes.'
+Ease to first $5: 8/10. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 9) dealwork.ai
+URL: https://dealwork.ai/
+Fresh signal: 156 open tasks, 264 completed tasks, about 2.5K workers. The site shows a completed $80 human-to-AI API job and $5 AI-to-AI CSV job. AI-to-AI fee is 3%; other contract types are 10%.
+What the agent does: code, research, data transformations, formatting, analysis and digital deliverables.
+Who pays: humans or other agents through escrow.
+Autonomy: 9/10.
+First action: connect through skill.md and rank only escrow-protected tasks with clear acceptance criteria.
+Ease: 8/10. Repeatability: 9/10.
+
+### 10) Taskmarket
+URL: https://taskmarket.dev/
+Fresh signal: 19 tasks open and 2,380.71 USDC funded volume.
+What the agent does: compete/claim/pitch/benchmark on funded tasks, submit results, receive USDC when accepted.
+Who pays: requester funding escrow.
+Autonomy: 10/10.
+First action: rank live tasks by reward, competition count, execution cost and objective verifiability.
+Ease: 8/10. Repeatability: 9/10.
+
+### 11) WorkProtocol
+URL: https://workprotocol.ai/
+Fresh signal: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled; jobs have a $50 USDC minimum and a visible 90-USDC code job on the public page.
+What the agent does: code, data analysis, research, content or custom structured work.
+Who pays: requester; funds lock in Base-USDC escrow before work begins.
+Autonomy: 9/10.
+First action: inspect live jobs and reproduce acceptance tests before claiming.
+Ease: 8/10. Repeatability: 9/10.
+
+### 12) t2000
+URL: https://t2000.ai/
+Fresh signal: still supports funded open jobs plus reusable services and API sales; public activity exposes actual settled payments. Services take 5% on settlement; API calls currently 0% marketplace fee.
+What the agent does: claim jobs or sell a reusable service/API.
+Who pays: buyers locking USDC.
+Autonomy: 9/10.
+First action: poll funded jobs and cross-list one proven capability as a service.
+Ease: 7/10. Repeatability: 9/10.
+
+### 13) MoltJobs
+URL: https://moltjobs.io/open-jobs
+Fresh signal: four recent 2-USDC jobs remain visible. They require a genuine pre-existing public account and explicit paid/sponsored disclosure for publication tasks, and payment is held in Base escrow.
+What the agent does: API-first structured tasks using CLI/MCP/SDK.
+Who pays: job poster.
+Autonomy: 8/10, but some current jobs require legitimate human-owned public accounts and platform-compliant publication.
+First action: skip promotional/public-post jobs unless every account/disclosure/community requirement is legitimately met; wait for objective coding/research jobs.
+Ease: 4/10. Repeatability: 8/10.
+
+### 14) AgentGigs
+URL: https://www.agentgigs.io/
+Fresh signal: platform remains live with pure-API browsing/applying/delivery after one-time email verification and Stripe Connect bank setup.
+What the agent does: find jobs, propose price/timeline, deliver files, receive escrow payout; independent proofer agents can verify results.
+Who pays: job posters.
+Constraint: Stripe Connect KYC/bank onboarding is a legal/payment requirement; if the account holder does not satisfy its age/identity/geographic rules, this route is not available and those rules must not be bypassed.
+Autonomy after onboarding: 9/10.
+Ease: 3/10 where payment eligibility is not satisfied; otherwise materially higher. Repeatability: 9/10.
+
+### 15) DeskCrew Arena
+URL: https://deskcrew.io/arena
+Fresh signal: the bounty board remains machine-readable through MCP and GET /api/arena/contests; real support tickets carry cash bounties and agents compete to draft the best response.
+What the agent does: read support-ticket context, draft the best resolution, submit, and earn the agent share if chosen.
+Who pays: support-desk bounty sponsor.
+Autonomy: 9/10.
+First action: query list_bounties / the contests endpoint and only enter when expected bounty value exceeds access/submission/inference costs.
+Ease: 5/10. Repeatability: 9/10.
+
+## REDDIT DEMAND SIGNALS
+
+### A) Workflow monitoring / silent failure
+https://www.reddit.com/r/n8n/comments/1vlfoe1/how_are_you_monitoring_n8n_workflows_in_production/
+Pattern: operators worry about successful-looking workflows that produce empty output, dead webhooks, upstream API behavior changes, missing downstream data, and workflows that simply stop executing.
+Commercial implication: monitoring the intended business outcome is more valuable than only watching n8n's error state.
+
+### B) Paying-client n8n reliability pain
+https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/
+Pattern: queue contention, rapidly growing execution databases, rotating webhook URLs and unrecoverable credentials become real problems once multiple paying clients share an installation.
+Commercial implication: sell production hardening + ongoing monitoring, not another workflow template.
+
+### C) QA bottleneck
+https://www.reddit.com/r/softwaretesting/comments/1vstrqv/so_does_anyone_here_also_actually_still_like/
+https://www.reddit.com/r/QualityAssurance/comments/1vsh07o/feeling_exhausted_due_to_ai/
+Pattern: AI speeds scripts/tests/code generation, but planning, test selection, controlled validation, exploratory testing and context switching remain human bottlenecks.
+Commercial implication: the valuable agent is a verifier that reduces QA decision load and produces evidence, not one that blindly generates more tests.
+
+### D) Businesses pay for boring automation
+https://www.reddit.com/r/automation/comments/1r5z5ep/i_went_from_breaking_n8n_workflows_daily_to/
+Pattern: a small workflow built around a real manual process became a paying client project. Recent discussions repeatedly emphasize manual lead movement, follow-ups, data entry and report generation rather than flashy chatbot use cases.
+Commercial implication: scout for a repetitive task that costs hours every week, automate that one outcome, and price the result.
+
+## FILTERED OUT
+
+AgentLux: https://agentlux.ai/bounties — current primary source says no open bounties and no completed payouts yet. Good architecture, no money right now.
+AgentRent: https://agentsonrent.org/ — currently 0 agents, 0 jobs, $0 earnings; waitlist state.
+AI Agent Marketplace: https://ai-agentmarketplace.ai/ — no agents currently listed and providers pay $45/month; not attractive before demand exists.
+MoltMarket: https://www.moltbotmarket.com/ — still shows $5+ bounties but the visible leaderboard remains 0 completed jobs and $0 earned.
+WORQ: kept above only as a new protocol/watchlist; 0 agents active today means it should not receive build time yet.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Put the earning agent on dealwork + Taskmarket + WorkProtocol first. These have the strongest current combination of live inventory, funded/escrowed work and evidence of completed or settled jobs. Normalize all three into one job schema rather than writing separate workers.
+
+Suggested fields: platform, job_id, reward, funded, competition, deadline, acceptance_tests, estimated_cost, P(solve), P(accepted), P(settled), expected_net.
+
+2. Build Automation Watchdog as the first recurring-revenue specialist. The repeated demand signal is now extremely clear: building workflows is increasingly easy; knowing they still accomplish the intended business outcome is not. Start with external heartbeats + downstream-state checks + alerts, then add schema drift, duplicates and runbooks.
+
+3. Turn successful paid procedures into reusable services. A task that the agent wins once should become a tested specialist that can be cross-listed on agent/service marketplaces. Highest-confidence candidates: /verify-pr, /automation-health, /normalize-document, /extract-evidence, /api-health.
+
+Use this ranking model:
+
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) − inference − API/tool costs − payment/network costs − human review.
+
+Only SETTLED/WITHDRAWN value counts as earnings. Platform claims, testnet assets, internal credits, unfunded listings and demo volume stay separate.

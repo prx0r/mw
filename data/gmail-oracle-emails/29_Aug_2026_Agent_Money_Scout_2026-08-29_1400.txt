@@ -1,0 +1,395 @@
+Subject: Agent Money Scout — 2026-08-29 14:00
+Date: Sat, 29 Aug 2026 02:22:46 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a04c6649bf527a1
+================================================================================
+
+# Agent Money Scout — 2026-08-29 14:00
+
+This run deliberately prioritised fresh, funded work and evidence of real settlement over headline marketplace claims.
+
+## NEW THIS RUN
+
+1. WorkProtocol — https://workprotocol.ai/hn
+What the agent does: coding, research, reports and other structured digital jobs; GitHub issues can become jobs automatically.
+Who pays: job posters funding USDC escrow on Base.
+Verified economics: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled; minimum job budget $50 USDC.
+Requirements: API-capable agent, Base/USDC-compatible payout setup, ability to satisfy structured acceptance tests.
+Autonomy: 9/10.
+First action: browse funded open work and only claim tasks with objective acceptance criteria.
+Constraints: payment/account eligibility must be satisfied legitimately.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+2. ClawHunt — https://clawhunt.store/
+What the agent does: data/scraping pipelines, full-stack fixes, research reports, workflow integrations, model evaluation, creative automation.
+Who pays: buyers who accept a bid and fund escrow.
+Verified economics: marketplace states open work exists now; deliveries already shown as escrow released; agent receives 75% and platform takes 25% at settlement.
+Requirements: REST/webhook integration or their agent installer; deliverables require execution evidence.
+Autonomy: 9/10.
+First action: GET the open problem board, submit a concrete plan/price only where the job matches existing capability.
+Constraints: evidence-less deliveries and duplicate submissions are rejected.
+Ease: 6/10. Repeatability: 8/10.
+
+3. MoltMarket — https://www.moltbotmarket.com/
+What the agent does: browse $5+ coding bounties, claim work, submit GitHub PRs.
+Who pays: bounty posters; Stripe payout.
+Verified economics: advertised $5+ bounties and 95% payout share, but the visible top-earner table currently shows 0 completed jobs / $0, so liquidity is unproven.
+Requirements: GitHub-capable coding agent and eligible Stripe payout account.
+Autonomy: 9/10.
+First action: inspect the actual open-job API before registering more infrastructure.
+Constraints: Stripe/age/geographic rules apply; do not bypass them.
+Ease: 3/10. Repeatability: 7/10 if liquidity develops.
+
+4. req402 — https://www.req402.com/
+What the agent does: sell a narrow API per request in USDC.
+Who pays: autonomous callers.
+Verified signal: a weather service is displayed at $0.002/request with 120,485 requests. Settlement is non-custodial on Base.
+Requirements: existing HTTPS API, x402 middleware, Base wallet.
+Autonomy: 10/10.
+First action: wrap one already-useful endpoint rather than building a marketplace-specific product.
+Constraints: only sell data/services you are legally allowed to provide.
+Ease: 6/10. Repeatability: 10/10.
+
+5. A2A Colony — https://www.a2acolony.com/
+What the agent does: sell callable skills or compete for jobs through A2A/MCP.
+Who pays: humans/agents buying skills; Stripe Connect or Base USDC.
+Verified signal: 126 skills, 7 agents, 22 members. Visible listings include web research at £9.99, code review at £10/use, data extraction at £9.99. Most visible skills show little/no acquisition yet.
+Requirements: working API endpoint and validated skill.
+Autonomy: 10/10.
+First action: list one proven specialist and measure real acquisitions.
+Constraints: payment-provider eligibility applies.
+Ease: 4/10. Repeatability: 9/10.
+
+6. HYRVE AI — https://github.com/ertugrulakben/HYRVE-AI
+What the agent does: list services, accept orders, transact A2A.
+Who pays: clients and other agents.
+Verified economics from the project: 85% creator share, 48-hour escrow, Stripe fiat + crypto rails.
+Requirements: registered agent; CashClaw bridge optional.
+Autonomy: 8/10.
+First action: verify current live marketplace demand before investing beyond a thin listing.
+Constraints: Stripe/payment eligibility applies.
+Ease: 4/10. Repeatability: 8/10.
+
+7. Magneto — https://magnetoapp.io/
+What the agent does: sell deployable agents and reusable skills while running on your own cloud.
+Who pays: marketplace users.
+Verified payout: not sufficiently exposed in current public search result, so no payout figure is claimed.
+Requirements: containerised/deployable skill or agent.
+Autonomy: 9/10.
+First action: inspect creator terms and traffic, then cross-list an existing skill only if economics are acceptable.
+Ease: 3/10. Repeatability: 8/10.
+
+8. x402 Bazaar — https://www.x402bazaar.org/
+What the agent does: sell any API as machine-payable endpoint.
+Who pays: agents calling the service.
+Verified economics: 112 listed APIs, 95% revenue share, but current on-chain dashboard showed 0 payments / 0 external providers earning / $0 volume. This is infrastructure, not proven demand today.
+Autonomy: 10/10.
+First action: do not build specifically for this market; cross-list only an already-working service.
+Ease: 1/10. Repeatability: 8/10 if usage emerges.
+
+9. tools402 — https://docs.tools402.dev/
+What the agent does: sell HTTP endpoints paid per call in USDC across Base, Polygon, or Solana.
+Who pays: autonomous API consumers.
+Verified structure: self-custodial settlement, no API keys/accounts for buyers, seller onboarding designed to be very lightweight.
+Payout: provider-set; no current demand figure verified this run.
+Autonomy: 10/10.
+First action: add a seller adapter to a working endpoint only after it proves useful elsewhere.
+Ease: 4/10. Repeatability: 9/10.
+
+10. Agentic Swarm Marketplace — https://www.agentic-swarm-marketplace.com/
+What the agent does: sell machine-paid security/analysis/API SKUs over x402 on XRPL, Base, Celo and Stripe MPP.
+Who pays: agent callers.
+Verified structure: multiple live receive-only seller rails and paid EVM analysis SKUs.
+Payout: not enough current customer/revenue evidence to state realistic earnings.
+Autonomy: 10/10.
+First action: use it as a reference implementation / category map rather than betting on its marketplace traffic.
+Ease: 3/10. Repeatability: 8/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+11. MoltJobs — https://moltjobs.io/
+Fresh today: four jobs were posted about three hours ago, each paying 2 USDC, including tasks around publicly explaining agent work / escrow. All are funded in on-chain escrow according to the open-jobs page.
+Agent flow: discover → bid → deliver → approval → Base USDC payout.
+Economics: 10 free bids/month; 5% success fee.
+Ease: 6/10. Repeatability: 8/10.
+
+12. TaskBounty — https://www.task-bounty.com/for-agents
+Still one of the strongest coding-agent shapes: GitHub issue → reproduce → patch → tests → PR → sandbox verification → payout. Prior checks found $10-to-hundreds bounties and 80% solver share.
+Ease: 8/10. Repeatability: 9/10.
+
+13. dealwork.ai — https://dealwork.ai/
+Still a principal direct-work feed from prior runs because it has shown substantially more actual inventory and completed contracts than many agent-native boards.
+Agent work: coding, research, transformations, structured data and delegated digital tasks.
+Ease: 8/10. Repeatability: 9/10.
+
+14. Taskmarket — https://taskmarket.dev/
+Still valuable because funded task pages expose reward, competitors, submissions and settlement state. Prior live checks showed funded USDC work and public seller earnings.
+Ease: 7/10. Repeatability: 9/10.
+
+15. t2000 — https://t2000.ai/
+Still among the best evidence-backed markets from previous passes because it exposes funded jobs plus public settlement receipts and seller-level settled revenue.
+Ease: 7/10. Repeatability: 9/10.
+
+16. Agent402 — https://agent402.tools/marketplace
+Still useful as a demand-mining dataset because it exposes settled transaction histories and outside-buyer counts, not merely listings.
+Best use: identify services with multiple real buyers but weak/expensive/redundant supply, then build a better specialist.
+Ease: 6/10. Repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+17. QA / PR verification remains the strongest recurring signal.
+Thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+A fresh Aug 27 thread has 1,100+ votes and reports developers generating work faster than QA can validate it. Another r/softwaretesting discussion says enterprise manual testing has become the bottleneck while generic AI-driven tests can be slower/flakier than conventional Playwright.
+Recurring problem: AI made code generation cheap but did not make independent verification cheap.
+MVP: POST /verify-pr → changed surface → relevant tests → failure reproduction → evidence → PASS/FAIL/HUMAN REVIEW.
+Customer acquisition: developer communities, GitHub teams, AI-heavy engineering teams, marketplace coding jobs.
+Charge: per verified PR or recurring CI allowance.
+Ease: 7/10. Repeatability: 10/10.
+
+18. Invoice/AP extraction + reconciliation has unusually strong fresh demand.
+Threads:
+https://www.reddit.com/r/Netsuite/comments/1vgbe91/invoice_volumes_are_increasing_but_our_ap_team_is/
+https://www.reddit.com/r/SideProject/comments/1vxd2xq/i_got_tired_of_manually_copying_pdf_invoice_data/
+https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/
+Current complaints include rising invoice volume without more AP staff, repetitive data entry/PO matching/approval chasing, and custom pricing/discount logic breaking simple QBO+Stripe setups.
+MVP: authorized inbox/folder → parse → validate → PO/customer match → pricing rules → stage invoice/record → exceptions.
+Customer: accounting firms, agencies, e-commerce, property managers, SMB finance teams.
+Charge: fixed setup plus per verified invoice/record.
+Ease: 8/10. Repeatability: 10/10.
+
+19. Cross-system reconciliation is a high-value boring workflow.
+Thread: https://www.reddit.com/r/automation/comments/1vh3ny2/whats_one_automation_you_built_that_people_still/
+A highly upvoted example describes a four-person, one-week monthly reconciliation process reduced to a couple of hours for one person using automated report collection, cleaning, matching and discrepancy bucketing.
+MVP: scheduled exports/APIs → normalize → reconcile bidirectionally → classify variances → human exception queue.
+Customer: finance, operations, enterprise back office.
+Charge: fixed implementation or recurring managed workflow.
+Ease: 6/10. Repeatability: 10/10.
+
+20. Accounting/compliance firms repeatedly need document chasing and deadline follow-up.
+Thread: https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/
+Current pain includes WhatsApp/email routine questions, document collection, compliance deadline reminders, invoice follow-ups and lead qualification.
+Safer MVP: authorized client tracker → missing-document detection → reminder draft/approved send → received? → escalation.
+Keep sensitive outbound actions human-approved unless the customer explicitly authorizes automated sending.
+Ease: 7/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Poll WorkProtocol first. Its $50 minimum funded jobs plus 1,325 USDC already settled gives it better immediate economics than most new agent-native boards. Build only a thin adapter: list jobs, acceptance criteria, reward, claim state and settlement state.
+
+2. Build /verify-pr as the first serious reusable specialist. This is the strongest repeated independent demand signal across multiple runs. The same capability can win coding/QA marketplace jobs and sell as MCP/x402/API usage.
+
+3. Add a settlement-and-buyer-diversity layer to the opportunity oracle. Track funded_open_jobs, reward, competitor_count, accepted_rate, settled_rate, paid_calls_7d/30d, distinct_buyers_30d, repeat_buyers, and net provider revenue. Optimise realized EV rather than advertised bounty value.
+
+realized_EV = reward × P(funded) × P(still open) × P(solve) × P(accepted) × P(settled) - inference - APIs - payment/network costs - expected review cost
+
+Only SETTLED/WITHDRAWN value should count as earnings. Listings, credits, testnet assets and self-reported marketplace volume should remain separate telemetry.
+
+Important eligibility note: marketplaces using Stripe, KYC, banking or other adult-account/payment rails may not be available to users under the provider's minimum age. Those requirements must not be bypassed.
+Agent Money Scout — 2026-08-29 14:00
+<p>This run deliberately prioritised fresh, funded work and evidence of real settlement over headline marketplace claims.</p>
+
+NEW THIS RUN
+<ol>
+<li>
+<p>WorkProtocol — https://workprotocol.ai/hn<br>
+What the agent does: coding, research, reports and other structured digital jobs; GitHub issues can become jobs automatically.<br>
+Who pays: job posters funding USDC escrow on Base.<br>
+Verified economics: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled; minimum job budget $50 USDC.<br>
+Requirements: API-capable agent, Base/USDC-compatible payout setup, ability to satisfy structured acceptance tests.<br>
+Autonomy: 9/10.<br>
+First action: browse funded open work and only claim tasks with objective acceptance criteria.<br>
+Constraints: payment/account eligibility must be satisfied legitimately.<br>
+Ease-to-first-$5: 8/10. Repeatability: 9/10.</p>
+</li>
+<li>
+<p>ClawHunt — https://clawhunt.store/<br>
+What the agent does: data/scraping pipelines, full-stack fixes, research reports, workflow integrations, model evaluation, creative automation.<br>
+Who pays: buyers who accept a bid and fund escrow.<br>
+Verified economics: marketplace states open work exists now; deliveries already shown as escrow released; agent receives 75% and platform takes 25% at settlement.<br>
+Requirements: REST/webhook integration or their agent installer; deliverables require execution evidence.<br>
+Autonomy: 9/10.<br>
+First action: GET the open problem board, submit a concrete plan/price only where the job matches existing capability.<br>
+Constraints: evidence-less deliveries and duplicate submissions are rejected.<br>
+Ease: 6/10. Repeatability: 8/10.</p>
+</li>
+<li>
+<p>MoltMarket — https://www.moltbotmarket.com/<br>
+What the agent does: browse $5+ coding bounties, claim work, submit GitHub PRs.<br>
+Who pays: bounty posters; Stripe payout.<br>
+Verified economics: advertised $5+ bounties and 95% payout share, but the visible top-earner table currently shows 0 completed jobs / $0, so liquidity is unproven.<br>
+Requirements: GitHub-capable coding agent and eligible Stripe payout account.<br>
+Autonomy: 9/10.<br>
+First action: inspect the actual open-job API before registering more infrastructure.<br>
+Constraints: Stripe/age/geographic rules apply; do not bypass them.<br>
+Ease: 3/10. Repeatability: 7/10 if liquidity develops.</p>
+</li>
+<li>
+<p>req402 — https://www.req402.com/<br>
+What the agent does: sell a narrow API per request in USDC.<br>
+Who pays: autonomous callers.<br>
+Verified signal: a weather service is displayed at $0.002/request with 120,485 requests. Settlement is non-custodial on Base.<br>
+Requirements: existing HTTPS API, x402 middleware, Base wallet.<br>
+Autonomy: 10/10.<br>
+First action: wrap one already-useful endpoint rather than building a marketplace-specific product.<br>
+Constraints: only sell data/services you are legally allowed to provide.<br>
+Ease: 6/10. Repeatability: 10/10.</p>
+</li>
+<li>
+<p>A2A Colony — https://www.a2acolony.com/<br>
+What the agent does: sell callable skills or compete for jobs through A2A/MCP.<br>
+Who pays: humans/agents buying skills; Stripe Connect or Base USDC.<br>
+Verified signal: 126 skills, 7 agents, 22 members. Visible listings include web research at £9.99, code review at £10/use, data extraction at £9.99. Most visible skills show little/no acquisition yet.<br>
+Requirements: working API endpoint and validated skill.<br>
+Autonomy: 10/10.<br>
+First action: list one proven specialist and measure real acquisitions.<br>
+Constraints: payment-provider eligibility applies.<br>
+Ease: 4/10. Repeatability: 9/10.</p>
+</li>
+<li>
+<p>HYRVE AI — https://github.com/ertugrulakben/HYRVE-AI<br>
+What the agent does: list services, accept orders, transact A2A.<br>
+Who pays: clients and other agents.<br>
+Verified economics from the project: 85% creator share, 48-hour escrow, Stripe fiat + crypto rails.<br>
+Requirements: registered agent; CashClaw bridge optional.<br>
+Autonomy: 8/10.<br>
+First action: verify current live marketplace demand before investing beyond a thin listing.<br>
+Constraints: Stripe/payment eligibility applies.<br>
+Ease: 4/10. Repeatability: 8/10.</p>
+</li>
+<li>
+<p>Magneto — https://magnetoapp.io/<br>
+What the agent does: sell deployable agents and reusable skills while running on your own cloud.<br>
+Who pays: marketplace users.<br>
+Verified payout: not sufficiently exposed in current public search result, so no payout figure is claimed.<br>
+Requirements: containerised/deployable skill or agent.<br>
+Autonomy: 9/10.<br>
+First action: inspect creator terms and traffic, then cross-list an existing skill only if economics are acceptable.<br>
+Ease: 3/10. Repeatability: 8/10.</p>
+</li>
+<li>
+<p>x402 Bazaar — https://www.x402bazaar.org/<br>
+What the agent does: sell any API as machine-payable endpoint.<br>
+Who pays: agents calling the service.<br>
+Verified economics: 112 listed APIs, 95% revenue share, but current on-chain dashboard showed 0 payments / 0 external providers earning / $0 volume. This is infrastructure, not proven demand today.<br>
+Autonomy: 10/10.<br>
+First action: do not build specifically for this market; cross-list only an already-working service.<br>
+Ease: 1/10. Repeatability: 8/10 if usage emerges.</p>
+</li>
+<li>
+<p>tools402 — https://docs.tools402.dev/<br>
+What the agent does: sell HTTP endpoints paid per call in USDC across Base, Polygon, or Solana.<br>
+Who pays: autonomous API consumers.<br>
+Verified structure: self-custodial settlement, no API keys/accounts for buyers, seller onboarding designed to be very lightweight.<br>
+Payout: provider-set; no current demand figure verified this run.<br>
+Autonomy: 10/10.<br>
+First action: add a seller adapter to a working endpoint only after it proves useful elsewhere.<br>
+Ease: 4/10. Repeatability: 9/10.</p>
+</li>
+<li>
+<p>Agentic Swarm Marketplace — https://www.agentic-swarm-marketplace.com/<br>
+What the agent does: sell machine-paid security/analysis/API SKUs over x402 on XRPL, Base, Celo and Stripe MPP.<br>
+Who pays: agent callers.<br>
+Verified structure: multiple live receive-only seller rails and paid EVM analysis SKUs.<br>
+Payout: not enough current customer/revenue evidence to state realistic earnings.<br>
+Autonomy: 10/10.<br>
+First action: use it as a reference implementation / category map rather than betting on its marketplace traffic.<br>
+Ease: 3/10. Repeatability: 8/10.</p>
+</li>
+</ol>
+
+STILL ACTIVE FROM PRIOR RUNS
+<ol>
+<li>
+<p>MoltJobs — https://moltjobs.io/<br>
+Fresh today: four jobs were posted about three hours ago, each paying 2 USDC, including tasks around publicly explaining agent work / escrow. All are funded in on-chain escrow according to the open-jobs page.<br>
+Agent flow: discover → bid → deliver → approval → Base USDC payout.<br>
+Economics: 10 free bids/month; 5% success fee.<br>
+Ease: 6/10. Repeatability: 8/10.</p>
+</li>
+<li>
+<p>TaskBounty — https://www.task-bounty.com/for-agents<br>
+Still one of the strongest coding-agent shapes: GitHub issue → reproduce → patch → tests → PR → sandbox verification → payout. Prior checks found $10-to-hundreds bounties and 80% solver share.<br>
+Ease: 8/10. Repeatability: 9/10.</p>
+</li>
+<li>
+<p>dealwork.ai — https://dealwork.ai/<br>
+Still a principal direct-work feed from prior runs because it has shown substantially more actual inventory and completed contracts than many agent-native boards.<br>
+Agent work: coding, research, transformations, structured data and delegated digital tasks.<br>
+Ease: 8/10. Repeatability: 9/10.</p>
+</li>
+<li>
+<p>Taskmarket — https://taskmarket.dev/<br>
+Still valuable because funded task pages expose reward, competitors, submissions and settlement state. Prior live checks showed funded USDC work and public seller earnings.<br>
+Ease: 7/10. Repeatability: 9/10.</p>
+</li>
+<li>
+<p>t2000 — https://t2000.ai/<br>
+Still among the best evidence-backed markets from previous passes because it exposes funded jobs plus public settlement receipts and seller-level settled revenue.<br>
+Ease: 7/10. Repeatability: 9/10.</p>
+</li>
+<li>
+<p>Agent402 — https://agent402.tools/marketplace<br>
+Still useful as a demand-mining dataset because it exposes settled transaction histories and outside-buyer counts, not merely listings.<br>
+Best use: identify services with multiple real buyers but weak/expensive/redundant supply, then build a better specialist.<br>
+Ease: 6/10. Repeatability: 10/10.</p>
+</li>
+</ol>
+
+REDDIT DEMAND SIGNALS
+<ol>
+<li>
+<p>QA / PR verification remains the strongest recurring signal.<br>
+Thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/<br>
+A fresh Aug 27 thread has 1,100+ votes and reports developers generating work faster than QA can validate it. Another r/softwaretesting discussion says enterprise manual testing has become the bottleneck while generic AI-driven tests can be slower/flakier than conventional Playwright.<br>
+Recurring problem: AI made code generation cheap but did not make independent verification cheap.<br>
+MVP: POST /verify-pr → changed surface → relevant tests → failure reproduction → evidence → PASS/FAIL/HUMAN REVIEW.<br>
+Customer acquisition: developer communities, GitHub teams, AI-heavy engineering teams, marketplace coding jobs.<br>
+Charge: per verified PR or recurring CI allowance.<br>
+Ease: 7/10. Repeatability: 10/10.</p>
+</li>
+<li>
+<p>Invoice/AP extraction + reconciliation has unusually strong fresh demand.<br>
+Threads:<br>
+https://www.reddit.com/r/Netsuite/comments/1vgbe91/invoice_volumes_are_increasing_but_our_ap_team_is/<br>
+https://www.reddit.com/r/SideProject/comments/1vxd2xq/i_got_tired_of_manually_copying_pdf_invoice_data/<br>
+https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/<br>
+Current complaints include rising invoice volume without more AP staff, repetitive data entry/PO matching/approval chasing, and custom pricing/discount logic breaking simple QBO+Stripe setups.<br>
+MVP: authorized inbox/folder → parse → validate → PO/customer match → pricing rules → stage invoice/record → exceptions.<br>
+Customer: accounting firms, agencies, e-commerce, property managers, SMB finance teams.<br>
+Charge: fixed setup plus per verified invoice/record.<br>
+Ease: 8/10. Repeatability: 10/10.</p>
+</li>
+<li>
+<p>Cross-system reconciliation is a high-value boring workflow.<br>
+Thread: https://www.reddit.com/r/automation/comments/1vh3ny2/whats_one_automation_you_built_that_people_still/<br>
+A highly upvoted example describes a four-person, one-week monthly reconciliation process reduced to a couple of hours for one person using automated report collection, cleaning, matching and discrepancy bucketing.<br>
+MVP: scheduled exports/APIs → normalize → reconcile bidirectionally → classify variances → human exception queue.<br>
+Customer: finance, operations, enterprise back office.<br>
+Charge: fixed implementation or recurring managed workflow.<br>
+Ease: 6/10. Repeatability: 10/10.</p>
+</li>
+<li>
+<p>Accounting/compliance firms repeatedly need document chasing and deadline follow-up.<br>
+Thread: https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/<br>
+Current pain includes WhatsApp/email routine questions, document collection, compliance deadline reminders, invoice follow-ups and lead qualification.<br>
+Safer MVP: authorized client tracker → missing-document detection → reminder draft/approved send → received? → escalation.<br>
+Keep sensitive outbound actions human-approved unless the customer explicitly authorizes automated sending.<br>
+Ease: 7/10. Repeatability: 10/10.</p>
+</li>
+</ol>
+
+BEST 3 ACTIONS TO TRY NOW
+<ol>
+<li>
+<p>Poll WorkProtocol first. Its $50 minimum funded jobs plus 1,325 USDC already settled gives it better immediate economics than most new agent-native boards. Build only a thin adapter: list jobs, acceptance criteria, reward, claim state and settlement state.</p>
+</li>
+<li>
+<p>Build /verify-pr as the first serious reusable specialist. This is the strongest repeated independent demand signal across multiple runs. The same capability can win coding/QA marketplace jobs and sell as MCP/x402/API usage.</p>
+</li>
+<li>
+<p>Add a settlement-and-buyer-diversity layer to the opportunity oracle. Track funded_open_jobs, reward, competitor_count, accepted_rate, settled_rate, paid_calls_7d/30d, distinct_buyers_30d, repeat_buyers, and net provider revenue. Optimise realized EV rather than advertised bounty value.</p>
+</li>
+</ol>
+<p>realized_EV = reward × P(funded) × P(still open) × P(solve) × P(accepted) × P(settled) - inference - APIs - payment/network costs - expected review cost</p>
+<p>Only SETTLED/WITHDRAWN value should count as earnings. Listings, credits, testnet assets and self-reported marketplace volume should remain separate telemetry.</p>
+<p>Important eligibility note: marketplaces using Stripe, KYC, banking or other adult-account/payment rails may not be available to users under the provider’s minimum age. Those requirements must not be bypassed.</p>

@@ -1,0 +1,203 @@
+Subject: Agent Money Scout — 2026-08-30 12:00
+Date: Sun, 30 Aug 2026 05:27:29 +0000
+Message ID: 1a0512316d80420a
+================================================================================
+
+# Agent Money Scout — 2026-08-30 12:00
+
+## Executive signal
+
+This run found a useful new seller rail—Agentic Market—but its own live dashboard currently reports $0.00 1-day payment volume, 0 transactions in 30 days, and 0 buyers/0 sellers in 30 days, so it should be treated as distribution infrastructure rather than near-term income. BotGuild is technically excellent but explicitly a beta playground with $0.10–$0.20 gigs, not a first-$5 channel. The strongest near-term earning surfaces remain dealwork.ai, t2000, Taskmarket, MikroTask, OpenJobs, and MoltJobs when a compatible funded job appears.
+
+## NEW THIS RUN
+
+### 1. Agentic Market — official x402 discovery rail, but zero current measured commerce
+URL: https://agentic.market/
+What the agent does: expose a deterministic paid API/service that other agents can discover and invoke per request.
+Who pays: machine callers using x402/USDC.
+Verified pricing: current listed services span roughly fractions of a cent to several dollars per call; examples include market research bundles around $0.03–$0.04 and IPO-analysis bundles around $0.20–$2.50.
+Current demand signal: live dashboard currently shows $0.00 one-day payment volume, 0 transactions in 30 days, and 0 buyers/0 sellers in 30 days. This makes it a distribution test, not a proven earning source today.
+Requirements: HTTP endpoint with x402 payment support and endpoint metadata.
+Autonomy: 10/10 after deployment.
+First action: only list an endpoint that has already solved a paid problem elsewhere; do not build specifically for this marketplace.
+Eligibility: no useful marketplace-specific age clause surfaced in this run; underlying wallet/payment/provider rules still apply and must not be bypassed.
+Ease to first $5: 2/10. Repeatability: 10/10 if traffic develops.
+
+### 2. BotGuild — real escrow lifecycle, but deliberately penny-priced beta
+URL: https://botguild.ai/
+Live gigs: https://botguild.ai/app/gigs/
+What the agent does: QA, data/ETL, research, content, code or automation tasks through REST/MCP/webhooks.
+Who pays: gig posters through non-custodial USDC escrow.
+Verified pricing: BotGuild's current Terms say the public beta deliberately caps gigs at $0.10–$0.20 USDC. The live board currently exposes about 87 gigs; examples include an in-progress $0.20 logo task and low-value QA/testing gigs.
+Requirements: account, bot profile, wallet/escrow flow, optional BotGuild TypeScript agent framework.
+Autonomy: 8/10; BotGuild intentionally wires human approval into critical contract steps.
+First action: use one or two penny gigs only to prove the full bid→contract→delivery→settlement integration, then stop unless normal pricing launches.
+Eligibility: current Terms reviewed do not state an age minimum, but wallet/legal eligibility still applies.
+Ease to first $5: 1/10. Repeatability: 6/10 after beta pricing ends.
+
+### 3. AgenticInvictus — serious autonomous job architecture, weak low-cost entry economics
+URL: https://www.agenticinvictus.com/
+What the agent does: data extraction, analysis, automation, research and other repeatable digital work; agent owners can enable automatic job scanning/bidding.
+Who pays: marketplace clients via escrow.
+Verified economics: platform minimum paid job budget is $10; platform fee is 15% of agent earnings. However, its free 14-day Agent Internship is for $0-budget jobs. Pro costs $15/month and supports 3 agents; Pro Max costs $45/month.
+Requirements: uploaded agent or connected Hermes/OpenClaw worker; BYOK/local inference supported.
+Autonomy: 9/10.
+First action: do not pay for Pro until the public job inventory shows enough compatible funded work to justify the subscription.
+Eligibility: no clear age clause was found in this run; normal contract/payment rules still apply.
+Ease to first $5: 3/10 because paid participation appears to require non-trivial platform cost. Repeatability: 9/10 if demand is real.
+
+### 4. ClawMolt — free deployment tier, but no current buyer/agent proof
+URL: https://www.clawmolt.ai/
+What the agent does: coding, research, design, data analysis, with escrow and verified outcomes.
+Who pays: bounty posters through Stripe Connect escrow.
+Advertised pricing: ClawMolt says typical bounties are $5–$50. Free Plankton tier takes 20% platform fee; paid tiers lower the fee.
+Current reality check: its live feed currently renders NO_AGENTS_FOUND, and this run did not surface verifiable completed-bounty or seller-income evidence.
+Requirements: supported worker stack such as Hermes, Claude Code, Codex, CrewAI, LangGraph or custom agent.
+Autonomy: 9/10.
+First action: inspect the bounty board for genuinely funded work before deploying anything.
+Eligibility: Stripe/payment-account restrictions may apply; only use where legitimate account eligibility is satisfied.
+Ease to first $5: 2/10. Repeatability: 8/10 if market liquidity appears.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 5. dealwork.ai — strongest broad live inventory
+URL: https://dealwork.ai/
+Current primary-source state: 2.5K workers, 156 open tasks, 264 completed tasks, ~1.1-day typical hire-to-delivery.
+What the agent does: API/code work, research, data transformation, analysis, documentation.
+Who pays: human or AI clients; escrow is funded before work starts.
+Verified example: the platform publicly shows an AI worker completing an $80 production API endpoint with tests.
+Fees: 10% normal contracts; 3% AI→AI.
+Requirements: connect worker via skill.md/API; reliable testable outputs.
+Autonomy: 9/10.
+First action: pull all open tasks and bid only where acceptance criteria can be independently reproduced.
+Eligibility: follow platform/payment-account rules normally.
+Ease to first $5: 8/10. Repeatability: 9/10.
+
+### 6. t2000 — strongest job→service→API progression
+URL: https://t2000.ai/
+Current activity: homepage shows freshly funded jobs arriving minutes apart and public sellers with $57.75, $140.66 and $150 settled. A public receipt verifies a $0.10 job paid $0.095 net after the 5% service fee.
+What the agent does: claim open jobs, sell a fixed-price service, or expose an instant paid API.
+Who pays: buyers who lock USDC before work.
+Fees: services 5% on settlement; API calls 0% marketplace fee.
+Requirements: t2000 Passport/worker connection and Sui settlement wallet infrastructure.
+Autonomy: 9/10.
+First action: scan current funded jobs, but reject tiny jobs unless they buy useful reputation/integration data; aim to graduate successful procedures into services/APIs.
+Eligibility: follow wallet/account rules; do not bypass any age or payment restriction.
+Ease to first $5: 7/10. Repeatability: 10/10.
+
+### 7. Taskmarket — funded, transparent, very competitive
+URL: https://taskmarket.dev/
+Current state: 19 open tasks, ~26.7K agents, 2,380.714419 USDC posted volume.
+Visible examples: 24.2-USDC data bounty with 68 submissions; 0.324-USDC paid-API evaluation task with 70 submissions. A 2-USDC paleoclimate task created Aug 23 has 72 submissions and is already past due despite still rendering as open, showing why freshness/deadline validation is mandatory.
+What the agent does: research, data, coding, evaluation, structured artifacts.
+Who pays: escrow-funded requester.
+Requirements: Base wallet/agent identity and delivery workflow.
+Autonomy: 10/10.
+First action: reject any task whose deadline is expired even if status says open; rank the rest by net reward × estimated win probability.
+Eligibility: normal wallet/platform rules apply.
+Ease to first $5: 6/10 due to competition. Repeatability: 9/10.
+
+### 8. MikroTask — clean £5 floor, agent sellers explicitly supported
+URL: https://mikrotask.com/
+What the agent does: research, drafts, data cleanup, transcription, coding and other bounded digital work.
+Who pays: buyer after approving delivered work.
+Advertised tiers: £5, £10, £25, £50; payouts advertised in USD, USDT or USDC.
+Requirements: seller application/profile and deliverable workflow.
+Autonomy: 8/10.
+First action: prioritize buyer-posted tasks over creating generic seller listings.
+Eligibility: no clear age clause surfaced in the indexed pages; verify payment-account eligibility before participating and do not bypass it.
+Ease to first $5: 8/10. Repeatability: 8/10.
+
+### 9. OpenJobs — strong historical completion ratio
+URL: https://openjobs.bot/
+Current state: 193 AI agents, 159 jobs posted, 138 completed, 9,656 total volume; Solana mainnet.
+What the agent does: research, code, data processing and other verifiable digital deliverables.
+Who pays: job poster through on-chain escrow.
+Payout: task-specific USDC/WAGE; no universal payout range should be invented.
+Requirements: skill.md registration/API key and compatible wallet.
+Autonomy: 10/10.
+First action: query current USDC jobs and only act on fresh funded listings with objective acceptance criteria.
+Eligibility: wallet/platform rules apply normally.
+Ease to first $5: 7/10. Repeatability: 9/10.
+
+### 10. MoltJobs — excellent protocol, current job mix still weak
+URL: https://moltjobs.io/
+What the agent does: discover, bid, complete, validate and settle jobs via REST/CLI/MCP/webhooks.
+Who pays: poster; budget held upfront in Base-USDC escrow.
+Economics: 10 free bids/month, 5% success/escrow fee.
+Current work signal: latest visible inventory remains mostly tiny promotional/public-post tasks rather than high-value coding/research work.
+Requirements: registered agent/API key and wallet.
+Autonomy: 10/10.
+First action: keep polling and wake the worker only for research/code/data tasks that meet a hard EV floor; avoid promotional work unless every destination-platform and disclosure rule is satisfied.
+Eligibility: platform/account rules must be followed normally.
+Ease to first $5 now: 3/10. Repeatability: 8/10.
+
+### 11. PayanAgent — x402 plus bespoke requests and signed receipts
+URL: https://payanagent.com/
+What the agent does: sell APIs/products or bid on bespoke machine-readable work requests.
+Who pays: other agents through Base USDC/x402.
+Evidence: 24,000+ aggregated x402 offers; prior scan found a product seller with a receipt-derived settled balance, which is stronger than catalog size alone.
+Requirements: Base wallet; API/product or service worker; MCP/HTTP supported.
+Autonomy: 10/10.
+First action: list one highly specific, low-marginal-cost product or endpoint and monitor signed receipts rather than impressions.
+Eligibility: current terms did not expose a simple age floor in the sections reviewed; normal wallet/legal rules apply.
+Ease to first $5: 5/10. Repeatability: 10/10.
+
+### 12. AgentBazaar — cheap Solana service cross-listing
+URL: https://www.agentbazaar.dev/
+What the agent does: machine-sized code review, documentation, test generation, research or other specialist work.
+Who pays: other agents/buyers in Solana USDC.
+Economics: free registration; 97% to agent, 3% platform. Example service quotes are cents per task, so they demonstrate architecture—not necessarily strong demand.
+Requirements: dashboard/API/MCP/CLI worker and Solana-compatible payout setup.
+Autonomy: 10/10.
+First action: cross-list an existing specialist only; do not build marketplace-specific capability until external paid work appears.
+Ease to first $5: 4/10. Repeatability: 9/10.
+
+### 13. Clawlancer — keep adapter, impose hard reward floor
+URL: https://www.clawlancer.ai/
+What the agent does: API/MCP registration → discover → claim → deliver → Base-USDC settlement.
+Current economics: most recent scans showed many starter gigs around pennies to ≤$1, so inference can cost more than rewards.
+Who pays: funded bounty poster.
+Autonomy: 10/10.
+First action: set an automatic minimum expected-net filter and ignore penny tasks except one-off integration tests.
+Eligibility: normal wallet/platform requirements apply.
+Ease to first $5: 3/10. Repeatability: 8/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. /verify-pr + /investigate-bug — strongest fresh engineering signal
+Thread: https://www.reddit.com/r/QualityAssurance/comments/1vzso59/qa_roles_has_changed/
+Fresh signal (Aug 27, 2026): QA practitioners describe one SDET orchestrating multiple AI workers; one says a predefined bug-investigator agent found a root cause and the development lead then asked whether it could implement the fix.
+Recurring pain: AI makes generation cheap, but teams still need reproducible failure analysis, test selection, evidence, and judgment.
+Agent workflow: PR/issue → reproduce → changed-surface map → risk-ranked tests → root cause → evidence → PASS/FAIL/REVIEW → optional patch for human approval.
+Customer: engineering teams using coding agents.
+Acquisition: developer agencies, QA consultants, open-source maintainers with commercial products, existing marketplace coding clients.
+Charge: fixed PR/bug audit first; recurring CI/release-check service later.
+MVP: URL/repo + acceptance criteria → evidence-rich markdown report and test artifacts.
+Ease to first $5: 9/10. Repeatability: 10/10.
+
+### 15. /automation-health — detect business failure, not just workflow errors
+Thread: https://www.reddit.com/r/nocode/comments/1ulj3rl/the_most_expensive_automation_failures_ive_seen/
+Pattern: workflows can be green while the useful business result is missing—leads do not arrive, CRM records do not meaningfully update, reports silently lose data, onboarding never advances.
+Agent workflow: expected event + deadline + downstream receipt/state → HEALTHY / FAILED / SILENT.
+Customer: n8n/Make/Zapier agencies and internal operations teams.
+Charge: setup audit + monthly monitoring.
+MVP: expectation store, one downstream verifier, one alert channel.
+Ease to first $5: 9/10. Repeatability: 10/10.
+
+### 16. QA orchestration rather than fully autonomous browser testing
+Thread: https://www.reddit.com/r/QualityAssurance/comments/1tp15zu/what_realworld_qa_use_cases_do_you_have_with_aiai/
+Pattern: teams use agents to pull Jira acceptance criteria, generate high/medium/low test scenarios, execute selected flows via Playwright, and generate smoke/regression suites; practitioners also report autonomous browser execution breaking on real applications.
+Agent workflow: ticket→test-plan→select automation candidates→execute where reliable→collect evidence→human exception.
+Customer: small QA/engineering teams.
+MVP: Jira/issue text + URL → prioritized test matrix + reproducible automated subset.
+Ease to first $5: 8/10. Repeatability: 10/10.
+
+### 17. Production n8n hardener
+Thread: https://www.reddit.com/r/n8n/comments/1s6w4wl/3_things_that_quietly_break_every_n8n_workflow/
+Pattern: poor error handling, treating all errors identically, immediate retries on rate limits, and giant catch-all error branches cause production workflows to fail quietly or waste resources.
+Agent workflow: authorized workflow JSON/config → graph analysis → retry/backoff audit → error-route coverage → observability gaps → prioritized remediation.
+Customer: automation agencies.
+Charge: fixed pre-deploy audit, then monitoring.
+MVP: n8n workflow JSON → lint report with concrete node-level failures and fixes.
+Ease to first $5: 9/10. Repeatability:

@@ -1,0 +1,1156 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Run 11
+Date: Mon, 31 Aug 2026 16:13:15 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a059ab522123926
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This pass treats novelty as a hard constraint. I cross-checked the prior sent Oracle-report corpus before researching candidates and discarded repeats including Civitai, Toast, Stream Deck/Elgato, CurseForge, Superhive/Blender, DAZ, Roll20, Zendesk, Zoho, Pipedrive, Freshworks, Intercom, Ecwid, PrestaShop and the hundreds of other venues already covered. Paddle appears below only because its June 26, 2026 OAuth + marketplace-publisher program is a genuine new unlock; prior reports mentioned Paddle only incidentally as an external billing rail.
+
+**H shorthand:** H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human partner/compliance/subjective approval; H3 = material recurring human production/customer work; H4 = fundamentally human/offline. Legitimate KYC, tax, payout, IP, safety and accountable legal gates should remain human.
+
+**Scoring:** O = opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (higher = less crowded); N = novelty/timing. Total /25.
+
+## Ranked 20
+
+| # | Market | O | A | F | C | N | Total | H |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Railway Template Marketplace / OSS Partner Program | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 2 | Tiendanube / Nuvemshop App Store — AI & Agents | 5 | 5 | 5 | 4 | 5 | **24** | H1–H2 |
+| 3 | Aircall App Marketplace | 5 | 5 | 5 | 3 | 5 | **23** | H1–H2 |
+| 4 | Paddle Apps / Marketplace Publisher Program | 5 | 5 | 5 | 4 | 4 | **23** | H1 |
+| 5 | PointClickCare Marketplace | 5 | 5 | 4 | 4 | 4 | **22** | H2 |
+| 6 | FreshBooks App Store | 5 | 5 | 5 | 3 | 4 | **22** | H1–H2 |
+| 7 | api0.app API Marketplace | 3 | 5 | 5 | 5 | 4 | **22** | H1 |
+| 8 | Mindbody Partner Store | 5 | 5 | 3 | 4 | 4 | **21** | H2 |
+| 9 | Jumpseller App Store | 4 | 5 | 5 | 4 | 3 | **21** | H1 |
+| 10 | Zuora Marketplace | 5 | 5 | 4 | 3 | 4 | **21** | H2 |
+| 11 | Simpro Marketplace | 4 | 5 | 4 | 4 | 4 | **21** | H2 |
+| 12 | Dialpad App Marketplace | 4 | 5 | 5 | 3 | 4 | **21** | H1–H2 |
+| 13 | Constant Contact Marketplace | 4 | 5 | 4 | 3 | 4 | **20** | H1–H2 |
+| 14 | Synology Package Center | 4 | 5 | 4 | 4 | 3 | **20** | H2 |
+| 15 | Merkado AI App Marketplace | 3 | 5 | 5 | 4 | 3 | **20** | H1 |
+| 16 | Cin7 Technology & ISV Partner market | 4 | 5 | 3 | 4 | 3 | **19** | H2 |
+| 17 | Creative Fabrica Creator Marketplace | 4 | 4 | 3 | 3 | 4 | **18** | H2 |
+| 18 | Second Life Marketplace | 3 | 4 | 2 | 4 | 4 | **17** | H2 |
+| 19 | IMVU Creator Catalog | 3 | 4 | 2 | 3 | 4 | **16** | H2 |
+| 20 | Core Games Perks economy | 3 | 4 | 2 | 3 | 3 | **15** | H2–H3 |
+
+---
+
+## 1. Railway Template Marketplace / OSS Partner Program — 24/25
+
+**What agents can sell/perform.** Production-ready deployable stacks: agent gateways, MCP servers, vector/search stacks, inference gateways, webhook workers, observability bundles, self-hosted SaaS, databases plus dashboards, vertical automation backends and hardened open-source services. The product is not a ZIP; it is a deployment recipe that continuously earns from real infrastructure usage.
+
+**Autonomous workflow.** Oracle mines GitHub/Reddit/Railway request patterns and template gaps → Worker selects a maintained OSS project or composes a multi-service stack → generates Railway template variables, health checks, storage, domains and docs → `CloudWorld` deploys disposable copies and tests cold start, persistence, upgrades, secrets, failure recovery and cost → publish template/partner listing → users deploy → Railway usage produces recurring commission → usage/support telemetry feeds Worker → upstream releases trigger regression tests and automatic template patches.
+
+**Human dependency.** H1: partner/payout identity and any initial approval. After that, runtime and maintenance can approach H0.
+
+**Infrastructure/unlock.** Railway’s OSS Partner Program exposes deployment templates as economic assets. Railway says creators can earn **25% commission on deployments** (15% usage + 10% tied to support/community participation depending on program terms), with template metrics and verified marketplace visibility.
+
+**Demand evidence.** Railway reported in December 2025 that it had paid **about $1M** to developers who built templates, including roughly $730k in cash; two contributors had earned over $100k, six over $10k, and thirty over $1k. Railway also advertises 1,800+ templates and roughly 2M developers. This is unusually concrete proof that a small deployable artifact can produce recurring infrastructure revenue.
+
+**Community pain.** General 2026 integration discussions continue to report OAuth refresh failures, rate-limit surprises, dropped webhooks, schema drift and bad sandboxes. That makes maintained templates materially more valuable than one-shot generated deploy buttons.
+
+**Why agents fit.** Deployment artifacts are bounded, declarative, regression-testable and maintenance-heavy. A persistent specialist can own upstream-version drift better than a human who ships once and forgets it.
+
+**Moltwork assets.** `RailwayPack`, `CloudWorld`, deployment-cost evaluator, upgrade/failure-recovery evaluator, `TemplateSchool`, upstream-changelog Skill, persistent `RailwayWorker`.
+
+**Economics.** Attractive when a template has recurring compute/storage usage and low support. Unattractive when the underlying OSS deploy is trivial, zero-usage, or users churn after one experiment.
+
+Sources: https://blog.railway.com/p/1-million-paid-to-developers-who-built-railway-templates ; https://railway.com/partners
+
+---
+
+## 2. Tiendanube / Nuvemshop App Store — AI & Agents — 24/25
+
+**What agents can sell.** Merchant micro-SaaS and agent capabilities for LATAM ecommerce: catalog QA, WhatsApp/order operations, B2B ordering, margin/inventory alerts, product-data cleanup, tax/shipping adapters, returns, seller analytics, merchandising and MCP/Skill-based merchant actions.
+
+**Workflow.** Mine Portuguese/Spanish merchant pain + App Store gaps → specialist generates OAuth app using Tiendanube APIs/NubeSDK → `CommerceWorld` seeds products, orders, customers, coupons and fulfillment states → Harbor checks side effects, idempotence, permissions and language/locale correctness → app homologation → App Store publication and pricing → merchant installs → recurring fee/usage → webhooks + uninstall data feed Worker → regression against API/NubeSDK changes.
+
+**H-level.** H1–H2 because public listing/homologation and commercial identity remain human; operation can be H0 after merchant OAuth.
+
+**Frontier infrastructure.** The developer portal now has an explicit **“AI & Agents”** path for **MCPs, Skills and Connectors**, alongside APIs/SDKs and the App Store. The company says the ecosystem reaches **180,000+ active stores** and 600+ partners. Apps can charge monthly or one-time fees, with the platform supporting commercial distribution.
+
+**2026 unlock.** New apps have had to use **NubeSDK since June 5, 2026**, while older script-based apps are being progressively removed by **October 30, 2026**. That creates migration/compatibility demand right now.
+
+**Demand/community.** LATAM ecommerce is operationally messy: WhatsApp, local payment/shipping methods, multilingual catalogs and merchant back-office work create narrow gaps that global Shopify-first vendors often ignore. Reddit signal is thinner than official ecosystem evidence, so treat merchant forums/App Store reviews as the stronger source rather than inventing Reddit demand.
+
+**Why agents fit.** Commerce workflows are structured and event-driven; many failures have machine-checkable outcomes.
+
+**Moltwork assets.** `NuvemshopPack`, LATAM `CommerceWorld`, Portuguese/Spanish Merchant School, NubeSDK migration Skill, catalog/order evaluator, partner-submission Process.
+
+**Economics.** Attractive if the same Worker serves many merchants with little onboarding. Unattractive if local tax/support obligations turn every account into bespoke consulting.
+
+Sources: https://dev.nuvemshop.com.br/ ; official app-install/homologation docs in the Tiendanube/Nuvemshop developer portal.
+
+---
+
+## 3. Aircall App Marketplace — 23/25
+
+**What agents can sell.** Contact-center workflow products: call qualification, CRM enrichment, compliance evidence, after-call structured extraction, appointment/dispatch actions, vertical call routing, QA, number/user administration, outbound-agent tooling and specialist actions callable by AI voice agents.
+
+**Workflow.** Discover repeated call-ops pain → create OAuth marketplace app → `CallCenterWorld` replays synthetic calls/users/queues/CRM states → verify transcription/action mapping, permissions, retries and high-risk side effects → marketplace review → install → external recurring billing → ingest call/events/analytics → Worker improves policies and keeps API compatibility.
+
+**H-level.** H1–H2: partner/listing review plus customer OAuth. Runtime can be H0 for read/assist actions; consequential outbound actions should retain approvals.
+
+**Frontier unlock.** Aircall’s current developer site explicitly promotes **outbound AI agent calls** and the ability to **give agents actions through MCP**. It also added WhatsApp API and analytics features in June 2026 and outbound AI-agent calls in May 2026. Aircall says marketplace developers can reach **20,000+ businesses**.
+
+**Time-sensitive demand.** Aircall User API V1/webhook consumers face a **September 30, 2026** migration deadline, including changes to user-availability semantics. A compatibility/migration Worker can monetize a temporary but concrete pain spike.
+
+**Community constraints.** Contact-center integrations fail on hidden state, user availability, webhooks, authentication and CRM drift—the kind of repetitive edge cases a persistent Worker can accumulate.
+
+**Moltwork assets.** `AircallPack`, `CallCenterWorld`, call-action evaluator, MCP action Skill, V1→V2 migration Process, `VoiceOpsSchool`.
+
+**Economics.** Attractive when an action saves measurable agent minutes or prevents missed calls/revenue; unattractive when the product is merely generic summarization already bundled by Aircall.
+
+Sources: https://developer.aircall.io/ ; Aircall App Marketplace docs.
+
+---
+
+## 4. Paddle Apps / Marketplace Publisher Program — 23/25
+
+**What agents can sell.** Billing/revenue-stack apps for Paddle merchants: entitlement reconciliation, subscription migration, cancellation/recovery workflows, revenue analytics, tax/accounting exports, pricing experiments, product provisioning, webhook reliability and vertical SaaS operations.
+
+**Workflow.** Mine SaaS billing pain → build scoped OAuth app → `BillingWorld` simulates customers, subscriptions, upgrades, retries, refunds and entitlements → monetary-invariant evaluator → apply to publisher program → app listing/installation → usage/external pricing or app commercial model → observe merchant events/errors → Worker patches automatically.
+
+**H-level.** H1 once publisher/KYC/review is complete. High-impact billing mutations should retain explicit merchant authorization.
+
+**Major 2026 unlock.** On **June 26, 2026**, Paddle released **OAuth apps** and announced it was **opening an app marketplace publisher program**, with a marketplace for merchants to discover/install apps “coming soon.” Existing integrations can migrate toward scoped OAuth instead of bespoke credential handling.
+
+**Demand evidence.** This is a timing bet rather than a mature revenue market. The platform-side unlock is strong; independent marketplace GMV evidence does not yet exist. 2026 SaaS developers still complain broadly about OAuth refresh/token lifecycle and billing-integration complexity, so a good specialist can arrive before the catalog saturates.
+
+**Why agents fit.** Billing products are deterministic enough to test: invoice totals, entitlements, proration, webhook state and reconciliation all have hard invariants.
+
+**Moltwork assets.** `PaddlePack`, `BillingWorld`, monetary evaluator, OAuth lifecycle Skill, MarketplaceSubmissionProcess, `RevenueOpsWorker`.
+
+**Economics.** Attractive because being early can compound distribution and review history. Unattractive if the marketplace launch is delayed or native Paddle absorbs the obvious utilities.
+
+Sources: https://developer.paddle.com/changelog/2026/oauth-apps ; https://developer.paddle.com/build/apps
+
+---
+
+## 5. PointClickCare Marketplace — 22/25
+
+**What agents can sell.** Administrative healthcare products—not clinical decision agents: billing/revenue-cycle QA, census/data reconciliation, family/private-pay operations, documentation completeness, workflow evidence, facility analytics, staff/admin automation and integration monitors.
+
+**Workflow.** Detect repeated long-term-care admin pain → partner/dev account → build via APIs in sandbox → `SeniorCareAdminWorld` seeds residents, facilities, billing/account states and nonclinical workflows → Harbor verifies permissions, PHI minimization, deterministic financial/admin outputs and auditability → marketplace validation → customer installs → subscription/service revenue → monitor API/job outcomes → Worker maintains.
+
+**H-level.** H2 due healthcare compliance, partner status and sensitive data. Do not automate accountable clinical decisions.
+
+**Demand evidence.** PointClickCare says its developer ecosystem reaches **21,000 long-term/post-acute-care customers**; its Marketplace lists **375+ connected partners** across 20+ categories, with integrations used at 14,000+ facilities. In August 2026, Sunbound joined the Marketplace with an AI-heavy private-pay billing/collections workflow—direct evidence that administrative automation is being commercialized here.
+
+**Community constraints.** Long-term-care buyers value reliability/integration far more than flashy AI. The pain is fragmented billing, reconciliation and repetitive family/admin operations; compliance and sales cycles are the main economic drag.
+
+**Why agents fit.** Administrative workflows are high-volume, structured, audit-heavy and expensive to staff.
+
+**Moltwork assets.** `PointClickCarePack`, PHI-safe AdminWorld, audit/evidence evaluator, HealthcareAdminSchool, partner-cert Process, compliance guardrails.
+
+**Economics.** Attractive for narrow high-dollar administrative tasks. Unattractive if clinical liability, procurement time or customer-specific implementation dominates.
+
+Sources: https://developer.pointclickcare.com/ ; https://marketplace.pointclickcare.com/
+
+---
+
+## 6. FreshBooks App Store — 22/25
+
+**What agents can sell.** Freelancer/SMB finance utilities: receipt/invoice QA, project-to-invoice reconciliation, expense categorization review, payment follow-up, client profitability, tax exports, time-billing integrity and migration helpers.
+
+**Workflow.** Mine freelancer/accountant complaints → OAuth2 app → seed `SMBAccountingWorld` → evaluate money/date/customer invariants and least privilege → submit App Store listing → merchants authorize → recurring SaaS/external billing → events/errors/retention → Worker maintains.
+
+**H-level.** H1–H2: developer/listing approval plus financial data handling; mostly H0 after installation for read/reconcile products.
+
+**Infrastructure/demand.** FreshBooks’ developer site explicitly says **“Submit your app, get listed, start earning”** and says more than **30M people have used FreshBooks** across 160+ countries. OAuth2/scopes and Developer Hub make integration structured.
+
+**Community pain.** SMB finance users repeatedly struggle with moving data between invoicing, payment, banking and tax tools. The best wedge is catching money-state mistakes, not generic bookkeeping chat.
+
+**Why agents fit.** Ledger/time/invoice workflows are schema-heavy and machine-verifiable.
+
+**Moltwork assets.** `FreshBooksPack`, AccountingWorld, time→invoice evaluator, migration Skill, FreelancerFinanceSchool.
+
+**Economics.** Attractive if a $10–30/month utility prevents billing leakage. Unattractive if FreshBooks’ native roadmap absorbs it or users demand bespoke bookkeeping.
+
+Sources: https://www.freshbooks.com/api/start ; FreshBooks App Store/developer docs.
+
+---
+
+## 7. api0.app API Marketplace — 22/25
+
+**What agents can sell.** Tiny machine-callable data/transformation APIs: normalization, enrichment, vertical lookup, document transforms, calculation, validation, niche datasets, proxies and wrappers around legal reusable data sources.
+
+**Workflow.** Oracle finds repeated callable capability → Worker generates endpoint/data connector → platform produces OpenAPI 3.1 definition → `APIWorld` checks schema, latency, deterministic golden sets, abuse/rate limits and failure states → one-click list in marketplace → automatic usage billing → calls/revenue/errors → Worker evolves endpoint.
+
+**H-level.** H1 for payout/publisher identity; technically close to H0 afterward.
+
+**Infrastructure.** api0 advertises API creation from Postgres/MySQL/MongoDB/Google Sheets/CSV/REST sources, OpenAPI 3.1, automatic usage billing, marketplace listing and **80% publisher payout**. It also exposes programmatic publishing primitives.
+
+**Demand evidence.** This is a **high-technical-fit / low-market-proof** candidate. The platform is new and independent buyer-volume evidence is weak. Treat its claimed economics as platform-reported until a real test receives external paid calls.
+
+**Why agents fit.** This is nearly the ideal callable-asset loop: machine makes product, machine evaluates product, machine buys product.
+
+**Moltwork assets.** generic `APIPack`, `APIWorld`, latency/schema evaluator, endpoint factory Skill, pricing experiment Process.
+
+**Economics.** Attractive if buyer traffic exists and capability has proprietary data/process; unattractive if it is just a trivial wrapper another model can recreate in minutes.
+
+Source: https://api0.app/
+
+---
+
+## 8. Mindbody Partner Store — 21/25
+
+**What agents can sell.** Wellness-business operations: booking reconciliation, membership/payment QA, lead follow-up, migration verification, schedule/class sync, no-show recovery, staff utilization and cross-platform data integrity.
+
+**Workflow.** Mine studio/gym pain → developer sandbox/API → `WellnessWorld` seeds classes, memberships, bookings, clients and payments → test reconciliation/idempotence → partner approval → Partner Store listing → customer authorization → recurring SaaS → discrepancy telemetry → persistent maintenance.
+
+**H-level.** H2 because partner/API economics and sensitive customer/payment workflows are substantial.
+
+**Demand evidence.** Mindbody advertises access to roughly **50,000 wellness businesses** and millions of consumers; its consumer app has more than **3M active users**. Reddit gives unusually concrete pain: July 2026 users reported ClassPass↔Mindbody bookings failing to sync; other operators complain that API access can be financially painful, and March/July 2026 threads describe migration/outage frustrations and high switching costs.
+
+**Why agents fit.** Reconciliation between booking/payment/membership state is boring, persistent and objectively testable.
+
+**Moltwork assets.** `MindbodyPack`, `WellnessWorld`, booking/payment reconciler, migration evaluator, studio-ops School.
+
+**Economics.** Attractive if integration prevents missed bookings or manual desk work. Unattractive if Mindbody API/partner fees consume margin or onboarding is too bespoke.
+
+Sources: https://developers.mindbodyonline.com/ ; Mindbody Partner Store. Community: r/mindbody / wellness-business discussions, July 2026.
+
+---
+
+## 9. Jumpseller App Store — 21/25
+
+**What agents can sell.** Merchant operations apps for a smaller, less saturated ecommerce base: localized tax/shipping, catalog cleanup, B2B ordering, analytics, cross-border listing, product feeds, post-purchase automation and regional integrations.
+
+**Workflow.** Detect App Store/search gap → build OAuth2 private app → `CommerceWorld` fixtures → scope/HMAC/webhook evaluator → request public publication → merchant installs → external/native commercial model as available → monitor uninstall/events → Worker patches.
+
+**H-level.** H1: publisher/public-app approval and merchant OAuth.
+
+**Infrastructure.** Jumpseller exposes OAuth2, scoped APIs and HMAC-signed uninstall webhooks; private apps can be promoted to public apps by contacting the platform. The developer documentation is current and structured enough for agent generation/testing.
+
+**Demand/community.** Smaller TAM than Shopify is the trade-off, but lower developer attention can create good long-tail regional niches. Treat revenue as hypothesis until App Store search data/merchant interviews confirm a wedge.
+
+**Why agents fit.** Same portable CommerceWorld/Worker can later target other merchant venues.
+
+**Moltwork assets.** `JumpsellerPack`, locale commerce fixtures, webhook evaluator, regional-commerce School.
+
+**Economics.** Attractive as a portability play; unattractive if merchant count/discovery cannot support recurring sales.
+
+Source: https://jumpseller.com/support/apps/
+
+---
+
+## 10. Zuora Marketplace — 21/25
+
+**What agents can sell.** Enterprise subscription/revenue apps: billing migration, entitlement reconciliation, usage-meter QA, revenue operations, provisioning adapters, finance exports and subscription-state anomaly detection.
+
+**Workflow.** Discover recurring revops failure → build extension/integration → `EnterpriseBillingWorld` simulates usage, invoices, amendments and product catalogs → monetary/entitlement evaluator → Marketplace purchase/install flow → enterprise customer setup → usage/support telemetry → Worker maintains against Zuora/API changes.
+
+**H-level.** H2: enterprise contracting/review/customer setup remain meaningful.
+
+**Infrastructure.** Zuora documentation updated in **April–June 2026** describes customers purchasing apps from the **Zuora Marketplace** and installing them into tenants. Marketplace commerce is not fully frictionless—some purchases still complete through Zuora sales/contact—but the artifact is a real commercial extension.
+
+**Demand/community.** Subscription billing errors are high-dollar and machine-checkable. Competitive intensity is higher than in tiny SaaS stores, but narrow migration/QA products can justify enterprise pricing.
+
+**Why agents fit.** Complex state machines reward persistent regression knowledge.
+
+**Moltwork assets.** `ZuoraPack`, EnterpriseBillingWorld, proration/entitlement evaluator, revops School, migration Worker.
+
+**Economics.** Attractive if sold as high-value reliability/compliance; unattractive if every deal becomes months of enterprise services.
+
+Sources: https://knowledgecenter.zuora.com/ ; Zuora Marketplace documentation.
+
+---
+
+## 11. Simpro Marketplace — 21/25
+
+**What agents can sell.** Trade/field-service products: quote/job/invoice reconciliation, inventory and purchase-order QA, technician scheduling intelligence, maintenance-plan ops, accounting sync diagnostics and compliance evidence.
+
+**Workflow.** Mine contractor pain → partner/API access → build app → `FieldServiceWorld` seeds jobs, assets, quotes, inventory and billing → event/idempotency/money evaluator → Marketplace listing → subscription → customer event telemetry → Worker maintenance.
+
+**H-level.** H2 because partner/commercial onboarding remains real.
+
+**Demand/unlock.** Simpro launched a refreshed Marketplace in 2025 with richer listings, ratings, search and integration discovery, making third-party integrations more visible. Field-service software users pay heavily for admin reduction because operational errors directly leak labor and revenue.
+
+**Community constraint.** The hard part is cross-system reliability—accounting, inventory and job state—not generating another dashboard.
+
+**Moltwork assets.** `SimproPack`, portable `FieldServiceWorld`, job/invoice evaluator, inventory sync Skill, trade-ops School.
+
+**Economics.** Attractive if the same product ports to Housecall Pro/ServiceTitan-type venues already mapped; unattractive if partner gating dominates.
+
+Source: https://www.simprogroup.com/marketplace
+
+---
+
+## 12. Dialpad App Marketplace — 21/25
+
+**What agents can sell.** Voice/contact-center utilities: structured call outcomes, CRM actions, QA/compliance evidence, routing, sales/support context, number/user admin, post-call workflows and vertical integrations.
+
+**Workflow.** Mine integration/request pain → build with voice/SMS/user/contact-center/analytics APIs → `CallCenterWorld` → evaluate event ordering, permissions, side effects and dropped-webhook recovery → submit to App Marketplace → customer installs → external subscription → events/analytics → Worker patches.
+
+**H-level.** H1–H2 for publication/customer authorization.
+
+**Infrastructure.** Dialpad’s current developer portal exposes voice, SMS, user-management, analytics and contact-center APIs and explicitly provides a path to **submit finished apps to its App Marketplace**.
+
+**Demand/community.** Contact-center systems produce dense operational event streams, but generic transcription/summary is saturated. Focus on deterministic actions/evidence tied to revenue or compliance.
+
+**Why agents fit.** Structured calls/events + measurable outcomes are strong continuous labels.
+
+**Moltwork assets.** `DialpadPack`, `CallCenterWorld`, webhook-loss evaluator, vertical-call Skill.
+
+**Economics.** Attractive if product replaces real manual after-call work; unattractive if it competes directly with Dialpad’s bundled AI.
+
+Source: https://developers.dialpad.com/
+
+---
+
+## 13. Constant Contact Marketplace — 20/25
+
+**What agents can sell.** SMB marketing integrations: list/data hygiene, ecommerce/event sync, campaign QA, attribution, CRM bridges, compliance checks, segment maintenance and vertical marketing workflows.
+
+**Workflow.** Discover sync pain → OAuth v3 app → `MarketingOpsWorld` seeds contacts/lists/campaigns/events → dedupe/consent/side-effect evaluator → technology-partner/Marketplace listing → merchant OAuth → subscription/referral economics → delivery/usage telemetry → Worker maintenance.
+
+**H-level.** H1–H2 because technology-partner onboarding remains human.
+
+**Infrastructure/economics.** Constant Contact’s current v3 Developer Portal provides OAuth app management. Its technology-partner materials advertise free Marketplace listing and revenue-share opportunities that can reach **up to 40% per month** under partner terms; verify the exact current commercial agreement before committing.
+
+**Demand/community.** Email/CRM sync is mature and competitive, so generic connectors are unattractive. The wedge is narrow data-integrity/compliance/vertical workflow products.
+
+**Why agents fit.** Contact state, consent, campaign and ecommerce sync have explicit schemas and repeatable tests.
+
+**Moltwork assets.** `ConstantContactPack`, MarketingOpsWorld, dedupe/consent evaluator, partner Process.
+
+**Economics.** Attractive when it owns a vertical workflow and can earn recurring/referral revenue; unattractive as another broad “sync everything” product.
+
+Sources: https://v3.developer.constantcontact.com/ ; Constant Contact Technology Partner program.
+
+---
+
+## 14. Synology Package Center — 20/25
+
+**What agents can sell.** NAS/server utilities: backup verification, storage analytics, observability, media automation, AI/MCP gateways, security scanners, sync/indexing, network utilities and vertical self-hosted services.
+
+**Workflow.** Mine r/synology/package gaps → generate SPK/package → `NASWorld` runs DSM/version/architecture matrices → validate install/upgrade/uninstall, persistence, privilege, resource use and recovery → prepare screenshots/manual/test scenario → submit to Synology → paid Package Center release → purchases/bugs → regression Worker maintains across DSM/models.
+
+**H-level.** H2: Synology review is real and hardware/version validation matters; after publication, updates can become highly automated.
+
+**Infrastructure/economics.** Synology explicitly lets third-party developers publish **free or paid packages**. Its developer guide requires SPK validation, screenshots, change logs and test scenarios; Synology verifies scripts/functions across DSM versions/models before release. Package Center legal terms explicitly support purchasing third-party packages.
+
+**Community pain.** 2026 Reddit threads show package-update/download failures and compatibility friction. Older users also complain about third-party package maintenance and features disappearing—exactly the moat for a persistent maintainer.
+
+**Why agents fit.** Packaging and compatibility matrices are mostly deterministic and can run continuously.
+
+**Moltwork assets.** `SynologyPack`, `NASWorld`, multi-architecture/DSM evaluator, package-signing/release Process, persistent NAS Worker.
+
+**Economics.** Attractive for utility software with recurring support value; unattractive if physical-device coverage is too expensive or customers prefer Docker/community packages.
+
+Sources: https://www.synology.com/en-global/support/developer ; https://help.synology.com/developer-guide/publish_package/get_start.html ; https://help.synology.com/developer-guide/publish_package/summit_package_for_approval.html
+
+---
+
+## 15. Merkado AI App Marketplace — 20/25
+
+**What agents can sell.** Launch-ready AI SaaS/apps and specialist agent products packaged with source code, deployment instructions and agent-friendly project metadata.
+
+**Workflow.** Oracle detects demand → Worker builds narrow SaaS → Harbor functional/security/cost evaluation → package source/docs/`AGENTS.md` → seller application → list product → one-time sale → buyer/support feedback → create maintained variants/process assets.
+
+**H-level.** H1 seller/payout approval.
+
+**Infrastructure/economics.** Merkado advertises a curated AI app marketplace, **80% maker share**, source-code sales and built-in `AGENTS.md` conventions. This is structurally agent-friendly because the purchased artifact is itself intended to be continued by coding agents.
+
+**Demand evidence.** Independent market-volume evidence is currently weak. Treat it as a frontier experiment, not proven TAM.
+
+**Why agents fit.** Coding agents can produce, test, document and maintain source-first micro-SaaS cheaply.
+
+**Moltwork assets.** `MerkadoPack`, SaaSWorld, source-quality evaluator, Productization School.
+
+**Economics.** Attractive if marketplace buyer flow materializes; unattractive if it becomes a low-trust template dump. Quality/evidence must be the moat.
+
+Source: https://merkado.ai/
+
+---
+
+## 16. Cin7 Technology & ISV Partner market — 19/25
+
+**What agents can sell.** Inventory/operations integrations: replenishment QA, ecommerce/accounting reconciliation, warehouse sync, SKU/catalog normalization, forecasting adapters and exception-detection products.
+
+**Workflow.** Mine retailer/wholesaler integration pain → ISV/technology partner onboarding → API integration → `InventoryWorld` → stock/order/purchase/sync invariants → partner distribution → SaaS subscription/services → discrepancy telemetry → persistent Worker.
+
+**H-level.** H2: this is a partner-distribution market rather than frictionless native checkout.
+
+**Infrastructure/demand.** Cin7’s Technology & ISV program provides API access and a path to a shared client/revenue pool. Inventory integration is a high-value failure domain because silent sync errors cause overselling, stockouts and finance mismatches.
+
+**Community constraint.** The product needs hard reconciliation guarantees; generic AI forecasting alone is less defensible.
+
+**Why agents fit.** Inventory systems are event/schema-heavy and benefit from continuous exception monitoring.
+
+**Moltwork assets.** `Cin7Pack`, `InventoryWorld`, stock/order reconciler, warehouse/ecommerce Skill.
+
+**Economics.** Attractive if one Worker ports across inventory/accounting venues; unattractive if every installation requires consulting.
+
+Source: https://www.cin7.com/partners/
+
+---
+
+## 17. Creative Fabrica Creator Marketplace — 18/25
+
+**What agents can sell.** Human-approved digital utility products: craft templates, fonts, SVG systems, cut files, presentation/print templates, patterns and coherent design families—not low-quality AI spam.
+
+**Workflow.** Search demand/supply gaps → Worker generates/assembles candidate family → provenance/IP + geometry/font/file validators → human creative gate → upload/store listing → marketplace/subscription downloads → sales/download analytics → generate compatible variants and maintain files.
+
+**H-level.** H2 due originality, rights and subjective creative quality.
+
+**Demand/economics.** Creative Fabrica said in March 2026 it had **1M+ monthly users**. Seller economics include a default **50% share** on marketplace sales, higher attributed referral economics, and subscription/download-based recurring revenue; no exclusivity is required.
+
+**Community signal.** Creator marketplaces are saturated, and older seller commentary flags the 50% cut as high. The attractive Moltwork wedge is technical utility, consistent families, provenance and cross-venue distribution—not generating decorative assets by the thousand.
+
+**Why agents fit.** File production, variant generation, metadata, QA and maintenance are automatable while the creative/authorship gate remains human.
+
+**Moltwork assets.** `CreativeFabricaPack`, file/provenance evaluator, craft geometry World, DesignFamily Process.
+
+**Economics.** Attractive as marginal distribution of already-validated assets; weak as a primary business without organic buyer demand.
+
+Source: https://www.creativefabrica.com/the-artistry/sell-your-designs-on-creative-fabrica/
+
+---
+
+## 18. Second Life Marketplace — 17/25
+
+**What agents can sell.** Scripted virtual-world products: LSL vendor systems, rental/estate tools, HUDs, role-play systems, utilities, building systems, scripted furniture, automation and creator-business tools.
+
+**Workflow.** Mine Marketplace/forum requests → agent writes LSL/scripts/config → `VirtualWorldWorld` tests message/event/payment/permission behavior where simulatable → human in-world visual/interaction gate → package inventory/product → Marketplace listing → L$ sales → reviews/support → Worker maintains against viewer/platform behavior.
+
+**H-level.** H2 because packaging/visual validation and in-world operations remain partly manual/browser/viewer driven.
+
+**Demand evidence.** The live Marketplace still sells sophisticated scripted systems; current 2026 listings show creator-fee vendor products and networked commerce tools. The market is mature but has a long tail of weird operational utilities that generic asset generators ignore.
+
+**Why agents fit.** LSL is constrained, repetitive and suited to specialist code generation/testing. A Worker can accumulate years of permissions/payment/region edge cases.
+
+**Moltwork assets.** `SecondLifePack`, LSL Skill, virtual-commerce evaluator, permissions/payment World, creator-tool Worker.
+
+**Economics.** Attractive for scripted utilities sold repeatedly; unattractive for subjective fashion/art or products requiring constant in-world service.
+
+Source: https://marketplace.secondlife.com/
+
+---
+
+## 19. IMVU Creator Catalog — 16/25
+
+**What agents can sell.** Human-directed avatar/catalog products: texture/mesh derivatives, clothing/accessory variants, room/furniture assets and coherent product families.
+
+**Workflow.** Detect underserved style/search categories → generate variants from licensed/owned bases → geometry/texture/provenance evaluator → human visual gate → Creator upload/catalog → credit sales → cash payout → analytics/reviews → agent maintains variants and metadata.
+
+**H-level.** H2: creative/IP gate and platform creator requirements remain material.
+
+**Economics/infrastructure.** IMVU supports creator products and real-money payout; current support material says creators can cash out product profit through verified payout flows and requires qualifying creator/VIP status. Treat exact per-credit cash rates and membership costs as parameters to verify before launching.
+
+**Community signal.** Creator sentiment is mixed; longstanding creators have criticized forced VIP/pay-to-earn requirements. That increases the fixed-cost hurdle and makes this better as a cross-venue distribution channel than a first experiment.
+
+**Why agents fit.** Variant generation, metadata and technical validation are cheap; authorship/design direction should remain human.
+
+**Moltwork assets.** `IMVUPack`, avatar-fit evaluator, texture provenance Skill, cross-listing Process.
+
+**Economics.** Attractive only for proven style families with repeat sales; unattractive as generic generated catalog spam.
+
+Source: IMVU Creator Program/help center.
+
+---
+
+## 20. Core Games Perks economy — 15/25
+
+**What agents can sell/perform.** Agent-produced and maintained game experiences monetized through in-game **Perks**: permanent upgrades/cosmetics/access, repeatable consumables, and limited-time passes.
+
+**Workflow.** Mine underserved loops → Worker builds Core/Lua game systems → automated functional/playtest proxies → human game-feel/policy gate → publish → acquire users → once eligible, add/test Perks → player purchases → Earned Credits → fiat buyback → retention/purchase telemetry → Worker evolves content.
+
+**H-level.** H2–H3 because getting a fun game to sustained user activity remains creative/distribution-heavy.
+
+**Economics.** Current Core help says creators need an account at least 30 days old and an average **50 DAU over 30 days** to qualify for Perks. Core says creator revenue is a **50/50 split**; 100,000 Earned Credits can be bought back for **$500**, and payouts run through Tipalti.
+
+**Why agents fit.** Agents are well suited to Lua systems, content iteration, event analysis, QA and live maintenance, but not yet to autonomously solve taste/distribution.
+
+**Moltwork assets.** `CoreGamesPack`, Lua Skill, retention/economy evaluator, GameOpsSchool, live-content Worker.
+
+**Economics.** Attractive only after proving user acquisition; unattractive as an H0 money market because the 50-DAU threshold and game quality are substantial human/distribution gates.
+
+Sources: https://support.coregames.com/portal/en/kb/articles/about-the-perks-program ; https://docs.coregames.com/references/perks/program/ ; https://support.coregames.com/portal/en/kb/articles/core-credits
+
+---
+
+# Frontier Unlocks
+
+### 1. Paddle: OAuth turned integration software into a marketplace-ready object
+The **June 26, 2026** OAuth Apps launch is exactly the sort of event Oracle should score as an H-level decrease. Old state: merchant supplies/adapts credentials. New state: scoped OAuth install, connected-app management, publisher program, forthcoming discovery marketplace.
+
+### 2. Tiendanube/Nuvemshop: “AI & Agents” is now a first-class developer category
+This is stronger than a generic REST API. The platform is explicitly organizing **MCPs, Skills and Connectors** as developer artifacts, against a real merchant base, while NubeSDK creates a standardized app runtime/approval path.
+
+### 3. Aircall: agents can call actions through MCP inside a commercial communications ecosystem
+The economically relevant unit becomes the action—e.g. `BookAppointment`, `ValidateWarranty`, `UpdateCRM`, `EscalateClaim`—rather than “an AI chatbot.” These can be evaluated independently and reused by many higher-level agents.
+
+### 4. Railway: deployment templates are already recurring-revenue assets
+This is important because it proves an autonomous agent does not need to sell labor. It can manufacture an **infrastructure object** that other machines/users repeatedly instantiate and that meters revenue as the deployment runs.
+
+### 5. Browser/WebMCP tooling is reducing the residual form-filling H-layer
+Emerging WebMCP-compatible tooling is beginning to turn ordinary web forms into structured agent actions. An Auto WebMCP extension updated **August 30, 2026** demonstrates converting standard HTML forms into tools exposed through `document.modelContext` on newer Chrome builds. Treat this as frontier tooling rather than authoritative proof that every marketplace supports WebMCP today—but it shows how listing/submission surfaces that currently require browser automation can become structured.
+
+### 6. The callable-asset pattern keeps expanding
+Railway templates are deployable assets; Tiendanube Skills/MCPs and Aircall MCP actions are callable assets; api0 APIs are directly metered callable assets. Oracle should apply a **Callable Asset Multiplier** when the thing being sold can itself be invoked by another agent with minimal human handling.
+
+---
+
+# Human Dependency Reduction
+
+The most economically valuable automation target is no longer raw code generation. It is compressing **H2 marketplace entry into one H1 accountable approval**.
+
+## A. PartnerGateCompiler
+
+Input: a validated product. Output:
+
+- OAuth scopes / least-privilege analysis
+- architecture diagram
+- data-flow/privacy map
+- security/threat model
+- sandbox test evidence
+- compatibility matrix
+- reviewer credentials/demo fixture
+- screenshots/video/listing copy
+- pricing/support/SLA answers
+- provenance/IP record
+- release notes/changelog
+- partner questionnaire drafts
+
+HumanQueue then handles only identity, legal attestations, signatures, subjective representations and genuine relationship approval.
+
+This single Process is reusable across Aircall, PointClickCare, Mindbody, Simpro, Cin7, Constant Contact, Zuora and most enterprise venues already discovered.
+
+## B. VenueWorldFactory
+
+The bigger compounding asset is a family of deterministic Worlds rather than one bespoke harness per marketplace:
+
+**CloudWorld** → Railway + DigitalOcean/Heroku/Vercel-type prior venues  
+**CommerceWorld** → Tiendanube + Jumpseller + prior Shopify/SHOPLINE/etc.  
+**BillingWorld** → Paddle + Zuora + prior Chargebee  
+**CallCenterWorld** → Aircall + Dialpad + prior Front/Gorgias/Crisp/Talkdesk/Genesys  
+**FieldServiceWorld** → Simpro + prior ServiceTitan/Housecall Pro  
+**AccountingWorld** → FreshBooks + prior Fortnox/Visma/Exact/Xero  
+**WellnessWorld** → Mindbody  
+**NASWorld** → Synology  
+**VirtualWorldWorld** → Second Life / IMVU / Core
+
+Every new Venue then becomes mostly an adapter and a handful of venue-specific invariants.
+
+## C. OAuth/credential handoff should become a one-action HumanQueue
+
+`Worker requests scope → compiler generates least-privilege rationale → human approves consent once → callback credential self-test → Worker resumes automatically.`
+
+Do not try to remove legitimate consent. Remove everything around it.
+
+## D. Marketplace-submission browser steps are the next WebMCP target
+
+Many remaining H1/H2 steps are not cognitively human; they are just unstructured forms, screenshots, file uploads and review dashboards. WebMCP/structured browser tooling can reduce this dramatically. Prioritize surfaces that repeat across every release: metadata, changelogs, screenshots, scopes, pricing, test credentials and reviewer instructions.
+
+## E. Persistent maintenance is the real specialist moat
+
+General integration pain in 2026 remains remarkably stable: OAuth refresh tokens expire unexpectedly, rate limits differ from docs, webhooks drop, schemas change and sandboxes fail to match production. That means the valuable Moltwork worker is not “agent that can build a connector.” It is:
+
+`specialist owns product forever → watches upstream → detects break → reproduces → patches → Harbor regression → releases → accumulates failure memory.`
+
+After enough jobs, two identical base-model agents cease to be economically identical because one owns a domain’s edge-case history, evaluators, fixtures and proven Processes.
+
+---
+
+# Best experiments from this batch
+
+1. **Railway** — build one useful agent/MCP infrastructure template and test whether autonomous maintenance can generate real recurring deployment revenue. This has the best proven payout evidence.
+2. **Tiendanube/Nuvemshop** — ship a narrow LATAM merchant Action/Skill while the AI & Agents category and NubeSDK transition are fresh.
+3. **Aircall** — build one deterministic action consumed by a voice agent rather than another generic voice agent; exploit the September 30 V1 migration window.
+4. **Paddle** — join the publisher program early and build a billing/reconciliation app before the marketplace catalog fills.
+5. **api0.app** — deliberately use this as a *market validation experiment*: can a Moltwork Worker create a callable API asset, publish it, and receive a payment with almost no human work? Low independent demand is the risk, but the experiment is cheap.
+
+The strongest cross-run conclusion is that Oracle should now score **Economic Callability × Portability × Persistence** rather than raw marketplace TAM. A modest venue can be more valuable than a huge one when its artifact is machine-callable, its World/Worker ports to adjacent venues, and every real job makes the specialist measurably better.
+Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+<p><strong>Research date:</strong> 1 September 2026</p>
+<p>This pass treats novelty as a hard constraint. I cross-checked the prior sent Oracle-report corpus before researching candidates and discarded repeats including Civitai, Toast, Stream Deck/Elgato, CurseForge, Superhive/Blender, DAZ, Roll20, Zendesk, Zoho, Pipedrive, Freshworks, Intercom, Ecwid, PrestaShop and the hundreds of other venues already covered. Paddle appears below only because its June 26, 2026 OAuth + marketplace-publisher program is a genuine new unlock; prior reports mentioned Paddle only incidentally as an external billing rail.</p>
+<p><strong>H shorthand:</strong> H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human partner/compliance/subjective approval; H3 = material recurring human production/customer work; H4 = fundamentally human/offline. Legitimate KYC, tax, payout, IP, safety and accountable legal gates should remain human.</p>
+<p><strong>Scoring:</strong> O = opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (higher = less crowded); N = novelty/timing. Total /25.</p>
+
+Ranked 20
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Market</th>
+<th>O</th>
+<th>A</th>
+<th>F</th>
+<th>C</th>
+<th>N</th>
+<th>Total</th>
+<th>H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Railway Template Marketplace / OSS Partner Program</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td><strong>24</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tiendanube / Nuvemshop App Store — AI &amp; Agents</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td><strong>24</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Aircall App Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td><strong>23</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Paddle Apps / Marketplace Publisher Program</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td><strong>23</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PointClickCare Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td><strong>22</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>FreshBooks App Store</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td><strong>22</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>api0.app API Marketplace</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td><strong>22</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Mindbody Partner Store</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Jumpseller App Store</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td><strong>21</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Zuora Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Simpro Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Dialpad App Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td><strong>21</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Constant Contact Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td><strong>20</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Synology Package Center</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td><strong>20</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Merkado AI App Marketplace</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td><strong>20</strong></td>
+<td>H1</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Cin7 Technology &amp; ISV Partner market</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td><strong>19</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Creative Fabrica Creator Marketplace</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td><strong>18</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Second Life Marketplace</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td><strong>17</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>IMVU Creator Catalog</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td><strong>16</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Core Games Perks economy</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td><strong>15</strong></td>
+<td>H2–H3</td>
+</tr>
+</tbody>
+</table>
+
+
+
+1. Railway Template Marketplace / OSS Partner Program — 24/25
+<p><strong>What agents can sell/perform.</strong> Production-ready deployable stacks: agent gateways, MCP servers, vector/search stacks, inference gateways, webhook workers, observability bundles, self-hosted SaaS, databases plus dashboards, vertical automation backends and hardened open-source services. The product is not a ZIP; it is a deployment recipe that continuously earns from real infrastructure usage.</p>
+<p><strong>Autonomous workflow.</strong> Oracle mines GitHub/Reddit/Railway request patterns and template gaps → Worker selects a maintained OSS project or composes a multi-service stack → generates Railway template variables, health checks, storage, domains and docs → <code>CloudWorld</code> deploys disposable copies and tests cold start, persistence, upgrades, secrets, failure recovery and cost → publish template/partner listing → users deploy → Railway usage produces recurring commission → usage/support telemetry feeds Worker → upstream releases trigger regression tests and automatic template patches.</p>
+<p><strong>Human dependency.</strong> H1: partner/payout identity and any initial approval. After that, runtime and maintenance can approach H0.</p>
+<p><strong>Infrastructure/unlock.</strong> Railway’s OSS Partner Program exposes deployment templates as economic assets. Railway says creators can earn <strong>25% commission on deployments</strong> (15% usage + 10% tied to support/community participation depending on program terms), with template metrics and verified marketplace visibility.</p>
+<p><strong>Demand evidence.</strong> Railway reported in December 2025 that it had paid <strong>about $1M</strong> to developers who built templates, including roughly $730k in cash; two contributors had earned over $100k, six over $10k, and thirty over $1k. Railway also advertises 1,800+ templates and roughly 2M developers. This is unusually concrete proof that a small deployable artifact can produce recurring infrastructure revenue.</p>
+<p><strong>Community pain.</strong> General 2026 integration discussions continue to report OAuth refresh failures, rate-limit surprises, dropped webhooks, schema drift and bad sandboxes. That makes maintained templates materially more valuable than one-shot generated deploy buttons.</p>
+<p><strong>Why agents fit.</strong> Deployment artifacts are bounded, declarative, regression-testable and maintenance-heavy. A persistent specialist can own upstream-version drift better than a human who ships once and forgets it.</p>
+<p><strong>Moltwork assets.</strong> <code>RailwayPack</code>, <code>CloudWorld</code>, deployment-cost evaluator, upgrade/failure-recovery evaluator, <code>TemplateSchool</code>, upstream-changelog Skill, persistent <code>RailwayWorker</code>.</p>
+<p><strong>Economics.</strong> Attractive when a template has recurring compute/storage usage and low support. Unattractive when the underlying OSS deploy is trivial, zero-usage, or users churn after one experiment.</p>
+<p>Sources: https://blog.railway.com/p/1-million-paid-to-developers-who-built-railway-templates ; https://railway.com/partners</p>
+
+
+
+2. Tiendanube / Nuvemshop App Store — AI &amp; Agents — 24/25
+<p><strong>What agents can sell.</strong> Merchant micro-SaaS and agent capabilities for LATAM ecommerce: catalog QA, WhatsApp/order operations, B2B ordering, margin/inventory alerts, product-data cleanup, tax/shipping adapters, returns, seller analytics, merchandising and MCP/Skill-based merchant actions.</p>
+<p><strong>Workflow.</strong> Mine Portuguese/Spanish merchant pain + App Store gaps → specialist generates OAuth app using Tiendanube APIs/NubeSDK → <code>CommerceWorld</code> seeds products, orders, customers, coupons and fulfillment states → Harbor checks side effects, idempotence, permissions and language/locale correctness → app homologation → App Store publication and pricing → merchant installs → recurring fee/usage → webhooks + uninstall data feed Worker → regression against API/NubeSDK changes.</p>
+<p><strong>H-level.</strong> H1–H2 because public listing/homologation and commercial identity remain human; operation can be H0 after merchant OAuth.</p>
+<p><strong>Frontier infrastructure.</strong> The developer portal now has an explicit <strong>“AI &amp; Agents”</strong> path for <strong>MCPs, Skills and Connectors</strong>, alongside APIs/SDKs and the App Store. The company says the ecosystem reaches <strong>180,000+ active stores</strong> and 600+ partners. Apps can charge monthly or one-time fees, with the platform supporting commercial distribution.</p>
+<p><strong>2026 unlock.</strong> New apps have had to use <strong>NubeSDK since June 5, 2026</strong>, while older script-based apps are being progressively removed by <strong>October 30, 2026</strong>. That creates migration/compatibility demand right now.</p>
+<p><strong>Demand/community.</strong> LATAM ecommerce is operationally messy: WhatsApp, local payment/shipping methods, multilingual catalogs and merchant back-office work create narrow gaps that global Shopify-first vendors often ignore. Reddit signal is thinner than official ecosystem evidence, so treat merchant forums/App Store reviews as the stronger source rather than inventing Reddit demand.</p>
+<p><strong>Why agents fit.</strong> Commerce workflows are structured and event-driven; many failures have machine-checkable outcomes.</p>
+<p><strong>Moltwork assets.</strong> <code>NuvemshopPack</code>, LATAM <code>CommerceWorld</code>, Portuguese/Spanish Merchant School, NubeSDK migration Skill, catalog/order evaluator, partner-submission Process.</p>
+<p><strong>Economics.</strong> Attractive if the same Worker serves many merchants with little onboarding. Unattractive if local tax/support obligations turn every account into bespoke consulting.</p>
+<p>Sources: https://dev.nuvemshop.com.br/ ; official app-install/homologation docs in the Tiendanube/Nuvemshop developer portal.</p>
+
+
+
+3. Aircall App Marketplace — 23/25
+<p><strong>What agents can sell.</strong> Contact-center workflow products: call qualification, CRM enrichment, compliance evidence, after-call structured extraction, appointment/dispatch actions, vertical call routing, QA, number/user administration, outbound-agent tooling and specialist actions callable by AI voice agents.</p>
+<p><strong>Workflow.</strong> Discover repeated call-ops pain → create OAuth marketplace app → <code>CallCenterWorld</code> replays synthetic calls/users/queues/CRM states → verify transcription/action mapping, permissions, retries and high-risk side effects → marketplace review → install → external recurring billing → ingest call/events/analytics → Worker improves policies and keeps API compatibility.</p>
+<p><strong>H-level.</strong> H1–H2: partner/listing review plus customer OAuth. Runtime can be H0 for read/assist actions; consequential outbound actions should retain approvals.</p>
+<p><strong>Frontier unlock.</strong> Aircall’s current developer site explicitly promotes <strong>outbound AI agent calls</strong> and the ability to <strong>give agents actions through MCP</strong>. It also added WhatsApp API and analytics features in June 2026 and outbound AI-agent calls in May 2026. Aircall says marketplace developers can reach <strong>20,000+ businesses</strong>.</p>
+<p><strong>Time-sensitive demand.</strong> Aircall User API V1/webhook consumers face a <strong>September 30, 2026</strong> migration deadline, including changes to user-availability semantics. A compatibility/migration Worker can monetize a temporary but concrete pain spike.</p>
+<p><strong>Community constraints.</strong> Contact-center integrations fail on hidden state, user availability, webhooks, authentication and CRM drift—the kind of repetitive edge cases a persistent Worker can accumulate.</p>
+<p><strong>Moltwork assets.</strong> <code>AircallPack</code>, <code>CallCenterWorld</code>, call-action evaluator, MCP action Skill, V1→V2 migration Process, <code>VoiceOpsSchool</code>.</p>
+<p><strong>Economics.</strong> Attractive when an action saves measurable agent minutes or prevents missed calls/revenue; unattractive when the product is merely generic summarization already bundled by Aircall.</p>
+<p>Sources: https://developer.aircall.io/ ; Aircall App Marketplace docs.</p>
+
+
+
+4. Paddle Apps / Marketplace Publisher Program — 23/25
+<p><strong>What agents can sell.</strong> Billing/revenue-stack apps for Paddle merchants: entitlement reconciliation, subscription migration, cancellation/recovery workflows, revenue analytics, tax/accounting exports, pricing experiments, product provisioning, webhook reliability and vertical SaaS operations.</p>
+<p><strong>Workflow.</strong> Mine SaaS billing pain → build scoped OAuth app → <code>BillingWorld</code> simulates customers, subscriptions, upgrades, retries, refunds and entitlements → monetary-invariant evaluator → apply to publisher program → app listing/installation → usage/external pricing or app commercial model → observe merchant events/errors → Worker patches automatically.</p>
+<p><strong>H-level.</strong> H1 once publisher/KYC/review is complete. High-impact billing mutations should retain explicit merchant authorization.</p>
+<p><strong>Major 2026 unlock.</strong> On <strong>June 26, 2026</strong>, Paddle released <strong>OAuth apps</strong> and announced it was <strong>opening an app marketplace publisher program</strong>, with a marketplace for merchants to discover/install apps “coming soon.” Existing integrations can migrate toward scoped OAuth instead of bespoke credential handling.</p>
+<p><strong>Demand evidence.</strong> This is a timing bet rather than a mature revenue market. The platform-side unlock is strong; independent marketplace GMV evidence does not yet exist. 2026 SaaS developers still complain broadly about OAuth refresh/token lifecycle and billing-integration complexity, so a good specialist can arrive before the catalog saturates.</p>
+<p><strong>Why agents fit.</strong> Billing products are deterministic enough to test: invoice totals, entitlements, proration, webhook state and reconciliation all have hard invariants.</p>
+<p><strong>Moltwork assets.</strong> <code>PaddlePack</code>, <code>BillingWorld</code>, monetary evaluator, OAuth lifecycle Skill, MarketplaceSubmissionProcess, <code>RevenueOpsWorker</code>.</p>
+<p><strong>Economics.</strong> Attractive because being early can compound distribution and review history. Unattractive if the marketplace launch is delayed or native Paddle absorbs the obvious utilities.</p>
+<p>Sources: https://developer.paddle.com/changelog/2026/oauth-apps ; https://developer.paddle.com/build/apps</p>
+
+
+
+5. PointClickCare Marketplace — 22/25
+<p><strong>What agents can sell.</strong> Administrative healthcare products—not clinical decision agents: billing/revenue-cycle QA, census/data reconciliation, family/private-pay operations, documentation completeness, workflow evidence, facility analytics, staff/admin automation and integration monitors.</p>
+<p><strong>Workflow.</strong> Detect repeated long-term-care admin pain → partner/dev account → build via APIs in sandbox → <code>SeniorCareAdminWorld</code> seeds residents, facilities, billing/account states and nonclinical workflows → Harbor verifies permissions, PHI minimization, deterministic financial/admin outputs and auditability → marketplace validation → customer installs → subscription/service revenue → monitor API/job outcomes → Worker maintains.</p>
+<p><strong>H-level.</strong> H2 due healthcare compliance, partner status and sensitive data. Do not automate accountable clinical decisions.</p>
+<p><strong>Demand evidence.</strong> PointClickCare says its developer ecosystem reaches <strong>21,000 long-term/post-acute-care customers</strong>; its Marketplace lists <strong>375+ connected partners</strong> across 20+ categories, with integrations used at 14,000+ facilities. In August 2026, Sunbound joined the Marketplace with an AI-heavy private-pay billing/collections workflow—direct evidence that administrative automation is being commercialized here.</p>
+<p><strong>Community constraints.</strong> Long-term-care buyers value reliability/integration far more than flashy AI. The pain is fragmented billing, reconciliation and repetitive family/admin operations; compliance and sales cycles are the main economic drag.</p>
+<p><strong>Why agents fit.</strong> Administrative workflows are high-volume, structured, audit-heavy and expensive to staff.</p>
+<p><strong>Moltwork assets.</strong> <code>PointClickCarePack</code>, PHI-safe AdminWorld, audit/evidence evaluator, HealthcareAdminSchool, partner-cert Process, compliance guardrails.</p>
+<p><strong>Economics.</strong> Attractive for narrow high-dollar administrative tasks. Unattractive if clinical liability, procurement time or customer-specific implementation dominates.</p>
+<p>Sources: https://developer.pointclickcare.com/ ; https://marketplace.pointclickcare.com/</p>
+
+
+
+6. FreshBooks App Store — 22/25
+<p><strong>What agents can sell.</strong> Freelancer/SMB finance utilities: receipt/invoice QA, project-to-invoice reconciliation, expense categorization review, payment follow-up, client profitability, tax exports, time-billing integrity and migration helpers.</p>
+<p><strong>Workflow.</strong> Mine freelancer/accountant complaints → OAuth2 app → seed <code>SMBAccountingWorld</code> → evaluate money/date/customer invariants and least privilege → submit App Store listing → merchants authorize → recurring SaaS/external billing → events/errors/retention → Worker maintains.</p>
+<p><strong>H-level.</strong> H1–H2: developer/listing approval plus financial data handling; mostly H0 after installation for read/reconcile products.</p>
+<p><strong>Infrastructure/demand.</strong> FreshBooks’ developer site explicitly says <strong>“Submit your app, get listed, start earning”</strong> and says more than <strong>30M people have used FreshBooks</strong> across 160+ countries. OAuth2/scopes and Developer Hub make integration structured.</p>
+<p><strong>Community pain.</strong> SMB finance users repeatedly struggle with moving data between invoicing, payment, banking and tax tools. The best wedge is catching money-state mistakes, not generic bookkeeping chat.</p>
+<p><strong>Why agents fit.</strong> Ledger/time/invoice workflows are schema-heavy and machine-verifiable.</p>
+<p><strong>Moltwork assets.</strong> <code>FreshBooksPack</code>, AccountingWorld, time→invoice evaluator, migration Skill, FreelancerFinanceSchool.</p>
+<p><strong>Economics.</strong> Attractive if a $10–30/month utility prevents billing leakage. Unattractive if FreshBooks’ native roadmap absorbs it or users demand bespoke bookkeeping.</p>
+<p>Sources: https://www.freshbooks.com/api/start ; FreshBooks App Store/developer docs.</p>
+
+
+
+7. api0.app API Marketplace — 22/25
+<p><strong>What agents can sell.</strong> Tiny machine-callable data/transformation APIs: normalization, enrichment, vertical lookup, document transforms, calculation, validation, niche datasets, proxies and wrappers around legal reusable data sources.</p>
+<p><strong>Workflow.</strong> Oracle finds repeated callable capability → Worker generates endpoint/data connector → platform produces OpenAPI 3.1 definition → <code>APIWorld</code> checks schema, latency, deterministic golden sets, abuse/rate limits and failure states → one-click list in marketplace → automatic usage billing → calls/revenue/errors → Worker evolves endpoint.</p>
+<p><strong>H-level.</strong> H1 for payout/publisher identity; technically close to H0 afterward.</p>
+<p><strong>Infrastructure.</strong> api0 advertises API creation from Postgres/MySQL/MongoDB/Google Sheets/CSV/REST sources, OpenAPI 3.1, automatic usage billing, marketplace listing and <strong>80% publisher payout</strong>. It also exposes programmatic publishing primitives.</p>
+<p><strong>Demand evidence.</strong> This is a <strong>high-technical-fit / low-market-proof</strong> candidate. The platform is new and independent buyer-volume evidence is weak. Treat its claimed economics as platform-reported until a real test receives external paid calls.</p>
+<p><strong>Why agents fit.</strong> This is nearly the ideal callable-asset loop: machine makes product, machine evaluates product, machine buys product.</p>
+<p><strong>Moltwork assets.</strong> generic <code>APIPack</code>, <code>APIWorld</code>, latency/schema evaluator, endpoint factory Skill, pricing experiment Process.</p>
+<p><strong>Economics.</strong> Attractive if buyer traffic exists and capability has proprietary data/process; unattractive if it is just a trivial wrapper another model can recreate in minutes.</p>
+<p>Source: https://api0.app/</p>
+
+
+
+8. Mindbody Partner Store — 21/25
+<p><strong>What agents can sell.</strong> Wellness-business operations: booking reconciliation, membership/payment QA, lead follow-up, migration verification, schedule/class sync, no-show recovery, staff utilization and cross-platform data integrity.</p>
+<p><strong>Workflow.</strong> Mine studio/gym pain → developer sandbox/API → <code>WellnessWorld</code> seeds classes, memberships, bookings, clients and payments → test reconciliation/idempotence → partner approval → Partner Store listing → customer authorization → recurring SaaS → discrepancy telemetry → persistent maintenance.</p>
+<p><strong>H-level.</strong> H2 because partner/API economics and sensitive customer/payment workflows are substantial.</p>
+<p><strong>Demand evidence.</strong> Mindbody advertises access to roughly <strong>50,000 wellness businesses</strong> and millions of consumers; its consumer app has more than <strong>3M active users</strong>. Reddit gives unusually concrete pain: July 2026 users reported ClassPass↔Mindbody bookings failing to sync; other operators complain that API access can be financially painful, and March/July 2026 threads describe migration/outage frustrations and high switching costs.</p>
+<p><strong>Why agents fit.</strong> Reconciliation between booking/payment/membership state is boring, persistent and objectively testable.</p>
+<p><strong>Moltwork assets.</strong> <code>MindbodyPack</code>, <code>WellnessWorld</code>, booking/payment reconciler, migration evaluator, studio-ops School.</p>
+<p><strong>Economics.</strong> Attractive if integration prevents missed bookings or manual desk work. Unattractive if Mindbody API/partner fees consume margin or onboarding is too bespoke.</p>
+<p>Sources: https://developers.mindbodyonline.com/ ; Mindbody Partner Store. Community: r/mindbody / wellness-business discussions, July 2026.</p>
+
+
+
+9. Jumpseller App Store — 21/25
+<p><strong>What agents can sell.</strong> Merchant operations apps for a smaller, less saturated ecommerce base: localized tax/shipping, catalog cleanup, B2B ordering, analytics, cross-border listing, product feeds, post-purchase automation and regional integrations.</p>
+<p><strong>Workflow.</strong> Detect App Store/search gap → build OAuth2 private app → <code>CommerceWorld</code> fixtures → scope/HMAC/webhook evaluator → request public publication → merchant installs → external/native commercial model as available → monitor uninstall/events → Worker patches.</p>
+<p><strong>H-level.</strong> H1: publisher/public-app approval and merchant OAuth.</p>
+<p><strong>Infrastructure.</strong> Jumpseller exposes OAuth2, scoped APIs and HMAC-signed uninstall webhooks; private apps can be promoted to public apps by contacting the platform. The developer documentation is current and structured enough for agent generation/testing.</p>
+<p><strong>Demand/community.</strong> Smaller TAM than Shopify is the trade-off, but lower developer attention can create good long-tail regional niches. Treat revenue as hypothesis until App Store search data/merchant interviews confirm a wedge.</p>
+<p><strong>Why agents fit.</strong> Same portable CommerceWorld/Worker can later target other merchant venues.</p>
+<p><strong>Moltwork assets.</strong> <code>JumpsellerPack</code>, locale commerce fixtures, webhook evaluator, regional-commerce School.</p>
+<p><strong>Economics.</strong> Attractive as a portability play; unattractive if merchant count/discovery cannot support recurring sales.</p>
+<p>Source: https://jumpseller.com/support/apps/</p>
+
+
+
+10. Zuora Marketplace — 21/25
+<p><strong>What agents can sell.</strong> Enterprise subscription/revenue apps: billing migration, entitlement reconciliation, usage-meter QA, revenue operations, provisioning adapters, finance exports and subscription-state anomaly detection.</p>
+<p><strong>Workflow.</strong> Discover recurring revops failure → build extension/integration → <code>EnterpriseBillingWorld</code> simulates usage, invoices, amendments and product catalogs → monetary/entitlement evaluator → Marketplace purchase/install flow → enterprise customer setup → usage/support telemetry → Worker maintains against Zuora/API changes.</p>
+<p><strong>H-level.</strong> H2: enterprise contracting/review/customer setup remain meaningful.</p>
+<p><strong>Infrastructure.</strong> Zuora documentation updated in <strong>April–June 2026</strong> describes customers purchasing apps from the <strong>Zuora Marketplace</strong> and installing them into tenants. Marketplace commerce is not fully frictionless—some purchases still complete through Zuora sales/contact—but the artifact is a real commercial extension.</p>
+<p><strong>Demand/community.</strong> Subscription billing errors are high-dollar and machine-checkable. Competitive intensity is higher than in tiny SaaS stores, but narrow migration/QA products can justify enterprise pricing.</p>
+<p><strong>Why agents fit.</strong> Complex state machines reward persistent regression knowledge.</p>
+<p><strong>Moltwork assets.</strong> <code>ZuoraPack</code>, EnterpriseBillingWorld, proration/entitlement evaluator, revops School, migration Worker.</p>
+<p><strong>Economics.</strong> Attractive if sold as high-value reliability/compliance; unattractive if every deal becomes months of enterprise services.</p>
+<p>Sources: https://knowledgecenter.zuora.com/ ; Zuora Marketplace documentation.</p>
+
+
+
+11. Simpro Marketplace — 21/25
+<p><strong>What agents can sell.</strong> Trade/field-service products: quote/job/invoice reconciliation, inventory and purchase-order QA, technician scheduling intelligence, maintenance-plan ops, accounting sync diagnostics and compliance evidence.</p>
+<p><strong>Workflow.</strong> Mine contractor pain → partner/API access → build app → <code>FieldServiceWorld</code> seeds jobs, assets, quotes, inventory and billing → event/idempotency/money evaluator → Marketplace listing → subscription → customer event telemetry → Worker maintenance.</p>
+<p><strong>H-level.</strong> H2 because partner/commercial onboarding remains real.</p>
+<p><strong>Demand/unlock.</strong> Simpro launched a refreshed Marketplace in 2025 with richer listings, ratings, search and integration discovery, making third-party integrations more visible. Field-service software users pay heavily for admin reduction because operational errors directly leak labor and revenue.</p>
+<p><strong>Community constraint.</strong> The hard part is cross-system reliability—accounting, inventory and job state—not generating another dashboard.</p>
+<p><strong>Moltwork assets.</strong> <code>SimproPack</code>, portable <code>FieldServiceWorld</code>, job/invoice evaluator, inventory sync Skill, trade-ops School.</p>
+<p><strong>Economics.</strong> Attractive if the same product ports to Housecall Pro/ServiceTitan-type venues already mapped; unattractive if partner gating dominates.</p>
+<p>Source: https://www.simprogroup.com/marketplace</p>
+
+
+
+12. Dialpad App Marketplace — 21/25
+<p><strong>What agents can sell.</strong> Voice/contact-center utilities: structured call outcomes, CRM actions, QA/compliance evidence, routing, sales/support context, number/user admin, post-call workflows and vertical integrations.</p>
+<p><strong>Workflow.</strong> Mine integration/request pain → build with voice/SMS/user/contact-center/analytics APIs → <code>CallCenterWorld</code> → evaluate event ordering, permissions, side effects and dropped-webhook recovery → submit to App Marketplace → customer installs → external subscription → events/analytics → Worker patches.</p>
+<p><strong>H-level.</strong> H1–H2 for publication/customer authorization.</p>
+<p><strong>Infrastructure.</strong> Dialpad’s current developer portal exposes voice, SMS, user-management, analytics and contact-center APIs and explicitly provides a path to <strong>submit finished apps to its App Marketplace</strong>.</p>
+<p><strong>Demand/community.</strong> Contact-center systems produce dense operational event streams, but generic transcription/summary is saturated. Focus on deterministic actions/evidence tied to revenue or compliance.</p>
+<p><strong>Why agents fit.</strong> Structured calls/events + measurable outcomes are strong continuous labels.</p>
+<p><strong>Moltwork assets.</strong> <code>DialpadPack</code>, <code>CallCenterWorld</code>, webhook-loss evaluator, vertical-call Skill.</p>
+<p><strong>Economics.</strong> Attractive if product replaces real manual after-call work; unattractive if it competes directly with Dialpad’s bundled AI.</p>
+<p>Source: https://developers.dialpad.com/</p>
+
+
+
+13. Constant Contact Marketplace — 20/25
+<p><strong>What agents can sell.</strong> SMB marketing integrations: list/data hygiene, ecommerce/event sync, campaign QA, attribution, CRM bridges, compliance checks, segment maintenance and vertical marketing workflows.</p>
+<p><strong>Workflow.</strong> Discover sync pain → OAuth v3 app → <code>MarketingOpsWorld</code> seeds contacts/lists/campaigns/events → dedupe/consent/side-effect evaluator → technology-partner/Marketplace listing → merchant OAuth → subscription/referral economics → delivery/usage telemetry → Worker maintenance.</p>
+<p><strong>H-level.</strong> H1–H2 because technology-partner onboarding remains human.</p>
+<p><strong>Infrastructure/economics.</strong> Constant Contact’s current v3 Developer Portal provides OAuth app management. Its technology-partner materials advertise free Marketplace listing and revenue-share opportunities that can reach <strong>up to 40% per month</strong> under partner terms; verify the exact current commercial agreement before committing.</p>
+<p><strong>Demand/community.</strong> Email/CRM sync is mature and competitive, so generic connectors are unattractive. The wedge is narrow data-integrity/compliance/vertical workflow products.</p>
+<p><strong>Why agents fit.</strong> Contact state, consent, campaign and ecommerce sync have explicit schemas and repeatable tests.</p>
+<p><strong>Moltwork assets.</strong> <code>ConstantContactPack</code>, MarketingOpsWorld, dedupe/consent evaluator, partner Process.</p>
+<p><strong>Economics.</strong> Attractive when it owns a vertical workflow and can earn recurring/referral revenue; unattractive as another broad “sync everything” product.</p>
+<p>Sources: https://v3.developer.constantcontact.com/ ; Constant Contact Technology Partner program.</p>
+
+
+
+14. Synology Package Center — 20/25
+<p><strong>What agents can sell.</strong> NAS/server utilities: backup verification, storage analytics, observability, media automation, AI/MCP gateways, security scanners, sync/indexing, network utilities and vertical self-hosted services.</p>
+<p><strong>Workflow.</strong> Mine r/synology/package gaps → generate SPK/package → <code>NASWorld</code> runs DSM/version/architecture matrices → validate install/upgrade/uninstall, persistence, privilege, resource use and recovery → prepare screenshots/manual/test scenario → submit to Synology → paid Package Center release → purchases/bugs → regression Worker maintains across DSM/models.</p>
+<p><strong>H-level.</strong> H2: Synology review is real and hardware/version validation matters; after publication, updates can become highly automated.</p>
+<p><strong>Infrastructure/economics.</strong> Synology explicitly lets third-party developers publish <strong>free or paid packages</strong>. Its developer guide requires SPK validation, screenshots, change logs and test scenarios; Synology verifies scripts/functions across DSM versions/models before release. Package Center legal terms explicitly support purchasing third-party packages.</p>
+<p><strong>Community pain.</strong> 2026 Reddit threads show package-update/download failures and compatibility friction. Older users also complain about third-party package maintenance and features disappearing—exactly the moat for a persistent maintainer.</p>
+<p><strong>Why agents fit.</strong> Packaging and compatibility matrices are mostly deterministic and can run continuously.</p>
+<p><strong>Moltwork assets.</strong> <code>SynologyPack</code>, <code>NASWorld</code>, multi-architecture/DSM evaluator, package-signing/release Process, persistent NAS Worker.</p>
+<p><strong>Economics.</strong> Attractive for utility software with recurring support value; unattractive if physical-device coverage is too expensive or customers prefer Docker/community packages.</p>
+<p>Sources: https://www.synology.com/en-global/support/developer ; https://help.synology.com/developer-guide/publish_package/get_start.html ; https://help.synology.com/developer-guide/publish_package/summit_package_for_approval.html</p>
+
+
+
+15. Merkado AI App Marketplace — 20/25
+<p><strong>What agents can sell.</strong> Launch-ready AI SaaS/apps and specialist agent products packaged with source code, deployment instructions and agent-friendly project metadata.</p>
+<p><strong>Workflow.</strong> Oracle detects demand → Worker builds narrow SaaS → Harbor functional/security/cost evaluation → package source/docs/<code>AGENTS.md</code> → seller application → list product → one-time sale → buyer/support feedback → create maintained variants/process assets.</p>
+<p><strong>H-level.</strong> H1 seller/payout approval.</p>
+<p><strong>Infrastructure/economics.</strong> Merkado advertises a curated AI app marketplace, <strong>80% maker share</strong>, source-code sales and built-in <code>AGENTS.md</code> conventions. This is structurally agent-friendly because the purchased artifact is itself intended to be continued by coding agents.</p>
+<p><strong>Demand evidence.</strong> Independent market-volume evidence is currently weak. Treat it as a frontier experiment, not proven TAM.</p>
+<p><strong>Why agents fit.</strong> Coding agents can produce, test, document and maintain source-first micro-SaaS cheaply.</p>
+<p><strong>Moltwork assets.</strong> <code>MerkadoPack</code>, SaaSWorld, source-quality evaluator, Productization School.</p>
+<p><strong>Economics.</strong> Attractive if marketplace buyer flow materializes; unattractive if it becomes a low-trust template dump. Quality/evidence must be the moat.</p>
+<p>Source: https://merkado.ai/</p>
+
+
+
+16. Cin7 Technology &amp; ISV Partner market — 19/25
+<p><strong>What agents can sell.</strong> Inventory/operations integrations: replenishment QA, ecommerce/accounting reconciliation, warehouse sync, SKU/catalog normalization, forecasting adapters and exception-detection products.</p>
+<p><strong>Workflow.</strong> Mine retailer/wholesaler integration pain → ISV/technology partner onboarding → API integration → <code>InventoryWorld</code> → stock/order/purchase/sync invariants → partner distribution → SaaS subscription/services → discrepancy telemetry → persistent Worker.</p>
+<p><strong>H-level.</strong> H2: this is a partner-distribution market rather than frictionless native checkout.</p>
+<p><strong>Infrastructure/demand.</strong> Cin7’s Technology &amp; ISV program provides API access and a path to a shared client/revenue pool. Inventory integration is a high-value failure domain because silent sync errors cause overselling, stockouts and finance mismatches.</p>
+<p><strong>Community constraint.</strong> The product needs hard reconciliation guarantees; generic AI forecasting alone is less defensible.</p>
+<p><strong>Why agents fit.</strong> Inventory systems are event/schema-heavy and benefit from continuous exception monitoring.</p>
+<p><strong>Moltwork assets.</strong> <code>Cin7Pack</code>, <code>InventoryWorld</code>, stock/order reconciler, warehouse/ecommerce Skill.</p>
+<p><strong>Economics.</strong> Attractive if one Worker ports across inventory/accounting venues; unattractive if every installation requires consulting.</p>
+<p>Source: https://www.cin7.com/partners/</p>
+
+
+
+17. Creative Fabrica Creator Marketplace — 18/25
+<p><strong>What agents can sell.</strong> Human-approved digital utility products: craft templates, fonts, SVG systems, cut files, presentation/print templates, patterns and coherent design families—not low-quality AI spam.</p>
+<p><strong>Workflow.</strong> Search demand/supply gaps → Worker generates/assembles candidate family → provenance/IP + geometry/font/file validators → human creative gate → upload/store listing → marketplace/subscription downloads → sales/download analytics → generate compatible variants and maintain files.</p>
+<p><strong>H-level.</strong> H2 due originality, rights and subjective creative quality.</p>
+<p><strong>Demand/economics.</strong> Creative Fabrica said in March 2026 it had <strong>1M+ monthly users</strong>. Seller economics include a default <strong>50% share</strong> on marketplace sales, higher attributed referral economics, and subscription/download-based recurring revenue; no exclusivity is required.</p>
+<p><strong>Community signal.</strong> Creator marketplaces are saturated, and older seller commentary flags the 50% cut as high. The attractive Moltwork wedge is technical utility, consistent families, provenance and cross-venue distribution—not generating decorative assets by the thousand.</p>
+<p><strong>Why agents fit.</strong> File production, variant generation, metadata, QA and maintenance are automatable while the creative/authorship gate remains human.</p>
+<p><strong>Moltwork assets.</strong> <code>CreativeFabricaPack</code>, file/provenance evaluator, craft geometry World, DesignFamily Process.</p>
+<p><strong>Economics.</strong> Attractive as marginal distribution of already-validated assets; weak as a primary business without organic buyer demand.</p>
+<p>Source: https://www.creativefabrica.com/the-artistry/sell-your-designs-on-creative-fabrica/</p>
+
+
+
+18. Second Life Marketplace — 17/25
+<p><strong>What agents can sell.</strong> Scripted virtual-world products: LSL vendor systems, rental/estate tools, HUDs, role-play systems, utilities, building systems, scripted furniture, automation and creator-business tools.</p>
+<p><strong>Workflow.</strong> Mine Marketplace/forum requests → agent writes LSL/scripts/config → <code>VirtualWorldWorld</code> tests message/event/payment/permission behavior where simulatable → human in-world visual/interaction gate → package inventory/product → Marketplace listing → L$ sales → reviews/support → Worker maintains against viewer/platform behavior.</p>
+<p><strong>H-level.</strong> H2 because packaging/visual validation and in-world operations remain partly manual/browser/viewer driven.</p>
+<p><strong>Demand evidence.</strong> The live Marketplace still sells sophisticated scripted systems; current 2026 listings show creator-fee vendor products and networked commerce tools. The market is mature but has a long tail of weird operational utilities that generic asset generators ignore.</p>
+<p><strong>Why agents fit.</strong> LSL is constrained, repetitive and suited to specialist code generation/testing. A Worker can accumulate years of permissions/payment/region edge cases.</p>
+<p><strong>Moltwork assets.</strong> <code>SecondLifePack</code>, LSL Skill, virtual-commerce evaluator, permissions/payment World, creator-tool Worker.</p>
+<p><strong>Economics.</strong> Attractive for scripted utilities sold repeatedly; unattractive for subjective fashion/art or products requiring constant in-world service.</p>
+<p>Source: https://marketplace.secondlife.com/</p>
+
+
+
+19. IMVU Creator Catalog — 16/25
+<p><strong>What agents can sell.</strong> Human-directed avatar/catalog products: texture/mesh derivatives, clothing/accessory variants, room/furniture assets and coherent product families.</p>
+<p><strong>Workflow.</strong> Detect underserved style/search categories → generate variants from licensed/owned bases → geometry/texture/provenance evaluator → human visual gate → Creator upload/catalog → credit sales → cash payout → analytics/reviews → agent maintains variants and metadata.</p>
+<p><strong>H-level.</strong> H2: creative/IP gate and platform creator requirements remain material.</p>
+<p><strong>Economics/infrastructure.</strong> IMVU supports creator products and real-money payout; current support material says creators can cash out product profit through verified payout flows and requires qualifying creator/VIP status. Treat exact per-credit cash rates and membership costs as parameters to verify before launching.</p>
+<p><strong>Community signal.</strong> Creator sentiment is mixed; longstanding creators have criticized forced VIP/pay-to-earn requirements. That increases the fixed-cost hurdle and makes this better as a cross-venue distribution channel than a first experiment.</p>
+<p><strong>Why agents fit.</strong> Variant generation, metadata and technical validation are cheap; authorship/design direction should remain human.</p>
+<p><strong>Moltwork assets.</strong> <code>IMVUPack</code>, avatar-fit evaluator, texture provenance Skill, cross-listing Process.</p>
+<p><strong>Economics.</strong> Attractive only for proven style families with repeat sales; unattractive as generic generated catalog spam.</p>
+<p>Source: IMVU Creator Program/help center.</p>
+
+
+
+20. Core Games Perks economy — 15/25
+<p><strong>What agents can sell/perform.</strong> Agent-produced and maintained game experiences monetized through in-game <strong>Perks</strong>: permanent upgrades/cosmetics/access, repeatable consumables, and limited-time passes.</p>
+<p><strong>Workflow.</strong> Mine underserved loops → Worker builds Core/Lua game systems → automated functional/playtest proxies → human game-feel/policy gate → publish → acquire users → once eligible, add/test Perks → player purchases → Earned Credits → fiat buyback → retention/purchase telemetry → Worker evolves content.</p>
+<p><strong>H-level.</strong> H2–H3 because getting a fun game to sustained user activity remains creative/distribution-heavy.</p>
+<p><strong>Economics.</strong> Current Core help says creators need an account at least 30 days old and an average <strong>50 DAU over 30 days</strong> to qualify for Perks. Core says creator revenue is a <strong>50/50 split</strong>; 100,000 Earned Credits can be bought back for <strong>$500</strong>, and payouts run through Tipalti.</p>
+<p><strong>Why agents fit.</strong> Agents are well suited to Lua systems, content iteration, event analysis, QA and live maintenance, but not yet to autonomously solve taste/distribution.</p>
+<p><strong>Moltwork assets.</strong> <code>CoreGamesPack</code>, Lua Skill, retention/economy evaluator, GameOpsSchool, live-content Worker.</p>
+<p><strong>Economics.</strong> Attractive only after proving user acquisition; unattractive as an H0 money market because the 50-DAU threshold and game quality are substantial human/distribution gates.</p>
+<p>Sources: https://support.coregames.com/portal/en/kb/articles/about-the-perks-program ; https://docs.coregames.com/references/perks/program/ ; https://support.coregames.com/portal/en/kb/articles/core-credits</p>
+
+
+
+Frontier Unlocks
+
+1. Paddle: OAuth turned integration software into a marketplace-ready object
+<p>The <strong>June 26, 2026</strong> OAuth Apps launch is exactly the sort of event Oracle should score as an H-level decrease. Old state: merchant supplies/adapts credentials. New state: scoped OAuth install, connected-app management, publisher program, forthcoming discovery marketplace.</p>
+
+2. Tiendanube/Nuvemshop: “AI &amp; Agents” is now a first-class developer category
+<p>This is stronger than a generic REST API. The platform is explicitly organizing <strong>MCPs, Skills and Connectors</strong> as developer artifacts, against a real merchant base, while NubeSDK creates a standardized app runtime/approval path.</p>
+
+3. Aircall: agents can call actions through MCP inside a commercial communications ecosystem
+<p>The economically relevant unit becomes the action—e.g. <code>BookAppointment</code>, <code>ValidateWarranty</code>, <code>UpdateCRM</code>, <code>EscalateClaim</code>—rather than “an AI chatbot.” These can be evaluated independently and reused by many higher-level agents.</p>
+
+4. Railway: deployment templates are already recurring-revenue assets
+<p>This is important because it proves an autonomous agent does not need to sell labor. It can manufacture an <strong>infrastructure object</strong> that other machines/users repeatedly instantiate and that meters revenue as the deployment runs.</p>
+
+5. Browser/WebMCP tooling is reducing the residual form-filling H-layer
+<p>Emerging WebMCP-compatible tooling is beginning to turn ordinary web forms into structured agent actions. An Auto WebMCP extension updated <strong>August 30, 2026</strong> demonstrates converting standard HTML forms into tools exposed through <code>document.modelContext</code> on newer Chrome builds. Treat this as frontier tooling rather than authoritative proof that every marketplace supports WebMCP today—but it shows how listing/submission surfaces that currently require browser automation can become structured.</p>
+
+6. The callable-asset pattern keeps expanding
+<p>Railway templates are deployable assets; Tiendanube Skills/MCPs and Aircall MCP actions are callable assets; api0 APIs are directly metered callable assets. Oracle should apply a <strong>Callable Asset Multiplier</strong> when the thing being sold can itself be invoked by another agent with minimal human handling.</p>
+
+
+
+Human Dependency Reduction
+<p>The most economically valuable automation target is no longer raw code generation. It is compressing <strong>H2 marketplace entry into one H1 accountable approval</strong>.</p>
+
+A. PartnerGateCompiler
+<p>Input: a validated product. Output:</p>
+<ul>
+<li>OAuth scopes / least-privilege analysis</li>
+<li>architecture diagram</li>
+<li>data-flow/privacy map</li>
+<li>security/threat model</li>
+<li>sandbox test evidence</li>
+<li>compatibility matrix</li>
+<li>reviewer credentials/demo fixture</li>
+<li>screenshots/video/listing copy</li>
+<li>pricing/support/SLA answers</li>
+<li>provenance/IP record</li>
+<li>release notes/changelog</li>
+<li>partner questionnaire drafts</li>
+</ul>
+<p>HumanQueue then handles only identity, legal attestations, signatures, subjective representations and genuine relationship approval.</p>
+<p>This single Process is reusable across Aircall, PointClickCare, Mindbody, Simpro, Cin7, Constant Contact, Zuora and most enterprise venues already discovered.</p>
+
+B. VenueWorldFactory
+<p>The bigger compounding asset is a family of deterministic Worlds rather than one bespoke harness per marketplace:</p>
+<p><strong>CloudWorld</strong> → Railway + DigitalOcean/Heroku/Vercel-type prior venues<br>
+<strong>CommerceWorld</strong> → Tiendanube + Jumpseller + prior Shopify/SHOPLINE/etc.<br>
+<strong>BillingWorld</strong> → Paddle + Zuora + prior Chargebee<br>
+<strong>CallCenterWorld</strong> → Aircall + Dialpad + prior Front/Gorgias/Crisp/Talkdesk/Genesys<br>
+<strong>FieldServiceWorld</strong> → Simpro + prior ServiceTitan/Housecall Pro<br>
+<strong>AccountingWorld</strong> → FreshBooks + prior Fortnox/Visma/Exact/Xero<br>
+<strong>WellnessWorld</strong> → Mindbody<br>
+<strong>NASWorld</strong> → Synology<br>
+<strong>VirtualWorldWorld</strong> → Second Life / IMVU / Core</p>
+<p>Every new Venue then becomes mostly an adapter and a handful of venue-specific invariants.</p>
+
+C. OAuth/credential handoff should become a one-action HumanQueue
+<p><code>Worker requests scope → compiler generates least-privilege rationale → human approves consent once → callback credential self-test → Worker resumes automatically.</code></p>
+<p>Do not try to remove legitimate consent. Remove everything around it.</p>
+
+D. Marketplace-submission browser steps are the next WebMCP target
+<p>Many remaining H1/H2 steps are not cognitively human; they are just unstructured forms, screenshots, file uploads and review dashboards. WebMCP/structured browser tooling can reduce this dramatically. Prioritize surfaces that repeat across every release: metadata, changelogs, screenshots, scopes, pricing, test credentials and reviewer instructions.</p>
+
+E. Persistent maintenance is the real specialist moat
+<p>General integration pain in 2026 remains remarkably stable: OAuth refresh tokens expire unexpectedly, rate limits differ from docs, webhooks drop, schemas change and sandboxes fail to match production. That means the valuable Moltwork worker is not “agent that can build a connector.” It is:</p>
+<p><code>specialist owns product forever → watches upstream → detects break → reproduces → patches → Harbor regression → releases → accumulates failure memory.</code></p>
+<p>After enough jobs, two identical base-model agents cease to be economically identical because one owns a domain’s edge-case history, evaluators, fixtures and proven Processes.</p>
+
+
+
+Best experiments from this batch
+<ol>
+<li><strong>Railway</strong> — build one useful agent/MCP infrastructure template and test whether autonomous maintenance can generate real recurring deployment revenue. This has the best proven payout evidence.</li>
+<li><strong>Tiendanube/Nuvemshop</strong> — ship a narrow LATAM merchant Action/Skill while the AI &amp; Agents category and NubeSDK transition are fresh.</li>
+<li><strong>Aircall</strong> — build one deterministic action consumed by a voice agent rather than another generic voice agent; exploit the September 30 V1 migration window.</li>
+<li><strong>Paddle</strong> — join the publisher program early and build a billing/reconciliation app before the marketplace catalog fills.</li>
+<li><strong>api0.app</strong> — deliberately use this as a <em>market validation experiment</em>: can a Moltwork Worker create a callable API asset, publish it, and receive a payment with almost no human work? Low independent demand is the risk, but the experiment is cheap.</li>
+</ol>
+<p>The strongest cross-run conclusion is that Oracle should now score <strong>Economic Callability × Portability × Persistence</strong> rather than raw marketplace TAM. A modest venue can be more valuable than a huge one when its artifact is machine-callable, its World/Worker ports to adjacent venues, and every real job makes the specialist measurably better.</p>

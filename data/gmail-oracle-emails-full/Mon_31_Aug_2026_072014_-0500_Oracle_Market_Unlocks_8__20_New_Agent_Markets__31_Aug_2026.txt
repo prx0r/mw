@@ -1,0 +1,218 @@
+Subject: Oracle Market Unlocks #8 — 20 New Agent Markets — 31 Aug 2026
+Date: Mon, 31 Aug 2026 07:20:14 -0500
+Message ID: 1a057c3572acdfa8
+================================================================================
+
+# Oracle Market Unlocks #8 — 20 genuinely new markets
+
+This scan excludes every market already covered in earlier Oracle reports, including the latest Apify, Vercel AI Agents & Services, Datadog Marketplace, HighLevel, PromptBase Agent Skills, Fireberry, DataBazaar, Nexus Mods, Modrinth, TensorArt, Civitai, Raycast, Datarade, spike.land, Obsidian, Glide, Webstudio, Ghost, Carrd, TensorHub, plus all earlier Autodesk/Grafana/Stripe/Xero/Shopify/Roblox/Notion-adjacent/etc. surfaces.
+
+Scoring: Opportunity Value / Agent Suitability / Automation Feasibility / Competitive Favorability / Novelty, each 1–5; total /25. H0–H4 uses Moltwork’s existing human-dependency model. Recent Reddit searches were run for the developer ecosystems; several niche CMS/POS stores have little useful 2026 Reddit discussion, so I use official marketplace/community-forum evidence where Reddit is sparse rather than inventing sentiment.
+
+## Ranked shortlist
+
+| # | Market | Score | Best wedge | Practical autonomy |
+|---|---|---:|---|---|
+| 1 | Square App Marketplace | 24 | merchant micro-SaaS + operations agents | H1 → near-H0 ops |
+| 2 | Heroku Add-ons Marketplace | 24 | tiny metered developer infrastructure | H1–H2 → H0 service delivery |
+| 3 | Clover App Market | 23 | vertical POS/restaurant/retail utilities | H1–H2 |
+| 4 | Odoo Apps Store | 23 | narrow ERP localization/workflow modules | H1 |
+| 5 | Craft CMS Plugin Store | 23 | professionally maintained commercial plugins | H1 |
+| 6 | Concrete CMS Marketplace | 22 | missing AI/search/workflow add-ons | H1 |
+| 7 | WHMCS Marketplace | 22 | hosting/billing automation modules | H1 |
+| 8 | CS-Cart Marketplace | 22 | commerce integrations + merchant automation | H1 |
+| 9 | Statamic Marketplace | 21 | Laravel-native content/workflow addons | H1 |
+| 10 | October CMS Marketplace | 21 | Laravel business plugins/themes | H1 |
+| 11 | WeChat Mini Programs | 21 | paid service micro-apps for Chinese SMB niches | H2 onboarding, H1 operations |
+| 12 | Alipay Mini Programs | 21 | transaction/service utilities | H2 onboarding, H1 operations |
+| 13 | Codester | 20 | full source-code microproducts | H1 |
+| 14 | SellMyApp | 19 | complete mobile app/source-code products | H1–H2 |
+| 15 | Design Bundles | 19 | validated craft/font/template systems | H2 |
+| 16 | UI8 | 18 | complex UI kits/design systems | H2 |
+| 17 | ArtStation Marketplace | 18 | production assets/tutorial/tool packs | H2 |
+| 18 | RenderHub | 18 | procedural technical 3D asset families | H2 |
+| 19 | Cubebrush | 17 | specialist digital art/3D production packs | H2 |
+| 20 | Pond5 | 17 | rights-clean procedural SFX/video/template assets | H2 |
+
+---
+
+## 1. Square App Marketplace — 24/25
+
+**What an agent can sell:** merchant-facing SaaS for catalog QA, loyalty automation, restaurant ops, inventory alerts, appointment workflows, vertical reporting, shipping, staff workflows, reconciliation helpers, and narrow AI assistants.
+
+**Why now:** Square has public APIs, sandbox, OAuth, webhooks, a self-serve App Marketplace submission flow, App Subscriptions for charging sellers through Square, and an official Square MCP server. A 2026 public platform retrospective states that Square’s APIs process more than $18B annual GPV and that 71% of enterprise sellers use a partner solution, indicating real distribution rather than a decorative directory.
+
+**Autonomous loop:** Oracle mines seller/community pain → worker scaffolds app → Square Sandbox merchant fixture → Harbor replays orders/catalog/customers/webhooks → OAuth/security preflight → self-serve Marketplace submission → App Subscription billing → usage/error telemetry → agent patches against API changes.
+
+**Human dependency:** H1 for seller identity, production OAuth approval, policy/review; ongoing provisioning, service delivery, updates and billing can approach H0.
+
+**Community signal:** Square’s partner ecosystem is large and merchants commonly stack third-party apps; the challenge is distribution and vertical specificity, not whether integrations are used.
+
+**Moltwork assets:** `SquarePack`, merchant World, webhook/idempotence evaluator, billing lifecycle World, OAuth Scope Skill, MarketplaceSubmissionProcess, persistent POS specialist Worker.
+
+**Economically good when:** measurable recurring merchant pain, low-support integration, vertical-specific ROI. **Bad when:** generic analytics, saturated accounting sync, or human support dominates ARR.
+
+Official developer platform: https://developer.squareup.com/
+Marketplace: https://squareup.com/us/en/app-marketplace
+
+---
+
+## 2. Heroku Add-ons Marketplace — 24/25
+
+**What agents sell:** databases/caches, log processors, testing services, monitoring, API utilities, security scanners, data transforms, scheduled jobs, webhook infrastructure, specialist agent services.
+
+**Frontier unlock:** Heroku now has an official MCP Server. Current tooling exposes app creation/deployment, dyno control, logs, pipelines, Postgres operations, and **add-on provisioning** directly to MCP-capable agents. That means the worker building/testing a commercial add-on can also create disposable Heroku worlds and provision dependencies without dashboard work.
+
+**Workflow:** identify recurrent developer pain → build metered service + add-on manifest → create disposable Heroku apps via MCP/CLI → integration and failure-injection World → provider review → Marketplace distribution/native Heroku billing → observe usage/SLOs → autonomous release/capacity maintenance.
+
+**Human dependency:** H1–H2 for provider agreement/company/payment/security review; normal operations can be H0.
+
+**Agent fit:** exceptional. The product is an API/service and the test surface is machines all the way down.
+
+**Moltwork:** `HerokuAddonPack`, provisioning World, SLO/cost evaluator, failure-recovery World, metered-pricing Process, infra-specialist School.
+
+**Good when:** low marginal cost and clear per-app value. **Bad when:** high 24/7 support burden or cloud costs erase margin.
+
+Heroku MCP: https://github.com/heroku/heroku-mcp-server
+Heroku Elements/Add-ons: https://elements.heroku.com/addons
+
+---
+
+## 3. Clover App Market — 23/25
+
+**What agents sell:** restaurant/retail POS utilities, scheduling, staff tools, menu QA, inventory alerts, local compliance workflows, order routing, accounting/export helpers, loyalty and vertical reporting.
+
+**Economics:** Clover’s App Market supports paid merchant apps; current partner-program summaries cite developers receiving roughly 70% of app subscription revenue. Clover exposes REST APIs/SDKs around merchants, orders, inventory, employees and payments.
+
+**Workflow:** mine restaurant/retail pain → create sandbox merchant + sample catalog → build app → replay shifts/orders/refunds/offline edge cases → security/device preflight → App Market review → recurring app subscriptions → monitor merchant events/support → patch.
+
+**H-level:** H1–H2 at production/payment/review; H1 ongoing.
+
+**Demand:** strong because the buyer already lives inside a POS and pays for business software; easier monetization than convincing a random consumer to buy another SaaS.
+
+**Moltwork:** CloverPack, POS World, shift/order invariant evaluator, hardware compatibility matrix, merchant onboarding Skill.
+
+**Bad economics:** features Clover is likely to absorb into core, high hardware-support burden, tiny merchants with high churn.
+
+Marketplace: https://www.clover.com/appmarket
+Developer docs: https://docs.clover.com/
+
+---
+
+## 4. Odoo Apps Store — 23/25
+
+**What agents sell:** ERP modules for country/local tax workflows, vertical manufacturing, import/export, CRM micro-features, document generation, data QA, niche marketplace connectors, migration helpers and Odoo 19/20 compatibility.
+
+**Why agent-suited:** Odoo modules are structured Python/XML packages and the ERP surface can be reproduced with fixture companies, invoices, inventory, purchase orders and manufacturing flows. Odoo’s annual major-release cadence creates continuous paid compatibility labor.
+
+**Workflow:** mine Odoo forum/App Store gaps → scaffold module → disposable Odoo DB → deterministic business-flow World → package/version → listing/review → observe support/reviews → automatically test against next Odoo release and port.
+
+**H-level:** H1 marketplace/payment/account setup; code/testing/maintenance can be H0-ish.
+
+**Demand:** Odoo is reported at 16M+ users globally in 2026; even without trusting that exact third-party number, the paid Apps Store has a mature worldwide ecosystem and many $20–$500+ modules.
+
+**Community intel:** Odoo communities repeatedly revolve around missing vertical workflows and version migration. Oracle should prioritize gaps tied to local regulation or obscure integrations, not generic CRM widgets.
+
+**Moltwork:** OdooPack, ERP World, accounting/inventory evaluator, migration School, version-matrix Process.
+
+Store: https://apps.odoo.com/
+
+---
+
+## 5. Craft CMS Plugin Store — 23/25
+
+**What agents sell:** commercial plugins for content workflows, SEO/data QA, integrations, forms, ecommerce operations, developer tooling and AI/content governance.
+
+**Hard economics:** Craft’s current terms explicitly allow developers to sell plugins; Craft deducts **20%**, handles transaction fees/tax, and generally pays developers through linked Stripe. Commercial plugins use Craft’s licensing system and must live in a public GitHub repo.
+
+**Workflow:** detect missing professional CMS capability → generate/scaffold Composer plugin → DDEV fixtures across Craft versions → Harbor install/update/uninstall + security + content-state tests → public GitHub → Plugin Store submission → sales/license telemetry → version maintenance.
+
+**H-level:** H1. Seller/Stripe/review is human; almost everything else can automate.
+
+**Why attractive:** buyers expect to pay for reliable, maintained plugins; local dev trials are free, making automated QA easy. Commercial support and compatibility are part of the value proposition.
+
+**Moltwork:** CraftPack, CMS fixture World, migration/security evaluator, Composer release Skill, plugin-maintainer Worker.
+
+Official terms: https://craftcms.com/terms-of-service
+
+---
+
+## 6. Concrete CMS Marketplace — 22/25
+
+**What agents sell:** search, A/B testing, recommendation, workflow, ecommerce integration, AI governance, content operations and headless tooling add-ons.
+
+**Why now:** Concrete 9.5.x has continued active 2026 releases. A current independent platform audit finds the Marketplace still active with 2026 additions and identifies obvious capability gaps: no native A/B testing, weak advanced search, no recommendation engine and little agentic automation. More interestingly, there is now a community `concretecms-mcp-server` built over Concrete’s REST/OpenAPI surface with content read/write and file-upload capabilities.
+
+**Workflow:** Oracle turns an explicit capability gap into a package → fixture Concrete instance → tests installs/content mutations/permissions → Marketplace listing → monitor installs/reviews → patch against core releases.
+
+**H-level:** H1.
+
+**Community signal:** smaller than WordPress, which is a feature here: less competition, but smaller TAM. Marketplace pricing can be meaningful because buyers are business/government sites.
+
+**Moltwork:** ConcretePack, CMS World, OpenAPI/MCP adapter, role/permission evaluator, package boilerplate Skill.
+
+Marketplace: https://market.concretecms.com/
+
+---
+
+## 7. WHMCS Marketplace — 22/25
+
+**What agents sell:** hosting/billing modules, client-area utilities, provisioning adapters, domain/registrar integrations, invoicing tools, notifications, support automation and admin workflows.
+
+**Demand evidence:** the live Marketplace contains paid modules with current 2026 reviews; one small `Client Notifications` module is $29.99 and has 60+ five-star reviews, while many integration/automation modules sell for materially more.
+
+**Workflow:** mine hosting-company complaints → generate module → fixture WHMCS install with fake products/clients/invoices → lifecycle tests → Marketplace listing → license/payment path → monitor WHMCS releases/support → patch.
+
+**H-level:** H1.
+
+**Why agents fit:** PHP modules have deterministic hooks/API contracts, and hosting businesses will pay to remove repetitive operations. Persistent maintenance is more important than clever generation.
+
+**Moltwork:** WHMCSPack, billing/provisioning World, invoice evaluator, upgrade matrix, hosting-specialist Worker.
+
+Marketplace: https://marketplace.whmcs.com/
+
+---
+
+## 8. CS-Cart Marketplace — 22/25
+
+**What agents sell:** ecommerce/multi-vendor integrations, feed import/export, logistics, payment gateways, accounting connectors, vendor tooling and compliance modules.
+
+**Current market evidence:** the Marketplace is active in 2026. Current listings include an Amazon Connector at $159, import/export products from $25 to hundreds of dollars, and a Site Management category with hundreds of add-ons. A current marketplace page shows 858 Site Management items and 92 Import/Export products — real depth but still much smaller than Shopify.
+
+**Workflow:** discover regional/marketplace connector gap → sandbox CS-Cart store → agent builds add-on → order/catalog/vendor test World → packaging/license checks → Marketplace listing → track reviews/support → maintain upstream API and CS-Cart compatibility.
+
+**H-level:** H1.
+
+**Community:** official CS-Cart forums repeatedly emphasize post-sale support and compatibility; that favors persistent worker ownership.
+
+**Moltwork:** CSCartPack, multi-vendor World, catalog/order-sync evaluator, external-API change monitor.
+
+Marketplace: https://marketplace.cs-cart.com/
+
+---
+
+## 9. Statamic Marketplace — 21/25
+
+**What agents sell:** Laravel-native addons and themes: content migration, exports, workflow, media processing, integrations, editorial QA and vertical publishing tools.
+
+**Evidence:** Statamic’s official partner pages directly surface creators’ Marketplace products. The ecosystem is only a few hundred addons in 2026, meaning far lower competition than WordPress while still reaching agencies willing to buy software.
+
+**Automation:** Composer/Laravel + Git-backed Statamic content makes this unusually compatible with coding agents and Harbor fixtures.
+
+**Workflow:** mine Statamic Discord/forum/agency needs → Laravel addon → fixture site → Pest/PHPUnit + browser tests → Marketplace submission → monitor installs/issues → version releases.
+
+**H-level:** H1.
+
+**Moltwork:** StatamicPack, Git-content World, migration evaluator, Laravel addon Skill, agency-focused Worker.
+
+Marketplace: https://statamic.com/addons
+
+---
+
+## 10. October CMS Marketplace — 21/25
+
+**What agents sell:** Laravel-based backend plugins, business workflows, forms/integrations, ecommerce utilities and themes.
+
+**Demand:** October remains an established Laravel CMS with an official Marketplace in 2026. The ecosystem is much smaller than WordPress, which raises discovery odds for narrow missing business capabilities.
+
+**Workflow:** find gap

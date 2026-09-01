@@ -1,0 +1,930 @@
+Subject: Oracle Market Unlocks — 20 New Agent Markets — 31 Aug 2026
+Date: Mon, 31 Aug 2026 06:32:04 +0000
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a056849728b9ed8
+================================================================================
+
+# Oracle Market Unlocks — 20 NEW Agent Markets
+**31 August 2026**
+
+This run deliberately excludes the markets already covered in the previous report: Atlassian Forge, monday.com Marketplace, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow templates, Miro apps, WooCommerce extensions, HubSpot apps, JetBrains plugins, Fab, Unity Asset Store, Fortnite UEFN, Canva Creator templates, Creative Market, Minecraft Marketplace, Adobe Stock, Envato/Placeit, and Gumroad. It also avoids the already-obvious Notion-template and Roblox-asset examples.
+
+## Ranking method
+Composite score /100 weights: expected economic value 30%, agent technical fit 25%, automation feasibility 20%, novelty/timing 15%, competitive favorability 10%. “Competition” below is described directly; high competition is bad even when demand is large.
+
+---
+
+## 1. Telegram Mini Apps — paid micro-utilities and vertical tools
+**Score: 91/100 | Demand: Very high | Agent fit: 9/10 | Automation: 9/10 | H-level: H1**
+
+**What agents sell:** tiny paid utilities inside Telegram: document transforms, channel research tools, creator analytics, language utilities, data lookups, workflow helpers, community admin tools, niche calculators, file processors, content-production helpers, and specialized information services. Payment can be per-use or packaged into paid features via Telegram Stars.
+
+**Why this is interesting now:** Telegram states that more than **500 million of its 950 million users interact with Mini Apps every month**. Digital goods/services can be sold through Stars, bot owners get revenue statistics and balance data, and Telegram also exposes affiliate programs where other users/bots/channels can earn commissions for referring buyers. Bot API / Mini App APIs have continued receiving 2026 updates.
+
+**Autonomous loop:** Oracle finds repeated Telegram-community pain → agent generates/benchmarks a narrow Mini App → creates bot/web app code → deterministic tests → deploys backend → human performs one-time Telegram account/BotFather/payout setup → agent updates metadata/content → app accepts Stars → API observes purchases/refunds/revenue → Hydra correlates features/pricing with conversion → worker iterates.
+
+**Human dependencies:** account ownership, payout/KYC where applicable, initial BotFather actions, policy disputes/customer support edge cases. Normal operation can approach H0 after provisioning; classify initial deployment H1.
+
+**Infrastructure:** Bot API, Mini Apps JavaScript API, Stars payment APIs, revenue stats, refund methods, affiliate/referral APIs. This is almost a native WorkVenue already.
+
+**Community signal / pain:** developers repeatedly ask how to monetize Telegram bots and Mini Apps; the key opportunity is not “another chatbot” but transaction-shaped micro-tools that fit existing chat workflows.
+
+**Moltwork assets:** `TelegramMiniAppPack`, Stars billing Venue, Mini-App Harbor World, conversion evaluator, bot publishing Skill, Telegram niche-discovery School, specialist `telegram-product-worker`.
+
+**Economically attractive when:** utility is called repeatedly, marginal serving cost is tiny, and distribution happens inside existing channels. **Bad when:** it depends on generic AI chat, high moderation/support cost, or functionality Telegram itself is likely to absorb.
+
+Official evidence:
+- https://core.telegram.org/bots/features
+- https://core.telegram.org/bots/payments-stars
+- https://core.telegram.org/api/stars
+- https://core.telegram.org/api/bots/referrals
+
+---
+
+## 2. VRChat Avatar Marketplace — autonomous avatar/product studio
+**Score: 89/100 | Demand: High | Agent fit: 8/10 | Automation: 7/10 | H-level: H1–H2**
+
+**What agents sell:** original avatars, optimized variants, avatar clothing/accessories, styles, configuration variants, and eventually world-linked products. Focus on technically clean, original, performance-tested assets rather than mass-generated low-quality content.
+
+**Why now:** VRChat now has a **first-party Avatar Marketplace inside VRChat** rather than forcing discovery through third-party stores. Users can try avatars before purchase and buy them with VRChat Credits. VRChat says its Creator Economy gives creators 50%, that its avatar marketplace is growing, and it recently reported nearly **160,000 concurrent users**. Seller onboarding is still selective, which makes an early high-quality lab valuable.
+
+**Autonomous loop:** Oracle mines avatar search/category gaps and creator-community requests → Blender/Unity worker creates original candidate → automated geometry/material/performance checks → VRChat SDK build → Harbor world launches Unity validation + screenshot/style judge → agent generates listing copy/variants → seller submits for review → marketplace analytics/sales become external outcome → School evolves toward styles/technical specs that sell.
+
+**Human dependencies:** Creator Economy seller approval, marketplace review, occasional artistic judgment and IP review. Production itself can become mostly autonomous. H1 for technically constrained products; H2 where subjective art direction is essential.
+
+**Infrastructure:** Unity + VRChat SDK, structured avatar build flow, direct marketplace listing/review. This is unusually evaluation-friendly: polygon count, mobile compatibility, materials, animation, broken references and performance can all be tested.
+
+**Community signal:** VRChat users have long complained about the friction of external avatar purchase/upload flows; community discussion anticipated the in-client “Purchased Avatars” shift before the marketplace became prominent.
+
+**Moltwork assets:** VRChat Pack, Unity/SDK Venue, avatar-performance World, originality/IP gates, style School, compatibility evaluator, avatar publishing process, specialist avatar worker.
+
+Official/current evidence:
+- https://hello.vrchat.com/avatar-marketplace
+- https://hello.vrchat.com/
+- https://hello.vrchat.com/legal/economy
+Community signal: https://www.reddit.com/r/VRchat/comments/1k7vrdf
+
+---
+
+## 3. WordPress MCP-ready SaaS plugins — sell the agent-control layer for the web
+**Score: 88/100 | Demand: Very high | Agent fit: 10/10 | Automation: 9/10 | H-level: H1**
+
+**What agents sell:** narrow WordPress SaaS plugins that expose useful, typed site abilities to AI agents: inventory/reporting, editorial workflows, site audits, content operations, form processing, CRM bridges, product/catalog administration, accessibility assistance, migration helpers, and vertical business operations.
+
+**Why this is a frontier unlock:** in February 2026 WordPress introduced an **MCP Adapter** on top of the WordPress 6.9 Abilities API. Abilities are standardized, discoverable, typed, executable functions; the adapter lets AI clients discover and call them as MCP tools. WordPress.org explicitly permits plugins that interface with substantial paid SaaS services, though trialware/local feature-locking rules matter.
+
+This means a Moltwork agent can now build products whose **customer is itself an agent**. Instead of making a UI-heavy plugin, it can create one well-scoped Ability and make it usable from Claude/Cursor/etc.
+
+**Autonomous loop:** Oracle mines plugin/support/forums for repetitive business operations → checks whether an Ability exists → agent scaffolds plugin → unit/integration/security tests → local WordPress Harbor World → generate docs/readme/assets → human performs one-time plugin-directory account/review → free connector drives paid SaaS usage → telemetry/reviews become outcomes → automatically maintain compatibility.
+
+**Human dependencies:** initial WordPress.org review, SaaS/payment setup, high-risk security decisions. H1. Updates can become H0-ish.
+
+**Infrastructure:** WordPress REST API, `@wordpress/create-block`, new build tooling, Abilities API, 2026 MCP Adapter, SVN publishing flow.
+
+**Market moat:** Oracle can systematically discover **missing abilities** across popular plugins/verticals and produce the MCP-enabled complement before incumbents do.
+
+Official evidence:
+- https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/
+- https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/
+- https://developer.wordpress.org/plugins/wordpress-org/
+
+---
+
+## 4. Zoom App Marketplace — meeting-native paid micro-SaaS
+**Score: 86/100 | Demand: High | Agent fit: 9/10 | Automation: 8/10 | H-level: H1**
+
+**What agents sell:** tiny meeting-native products: structured action-item extraction, regulated meeting checklists, domain-specific note formats, sales-call QA, interview workflows, tutoring/session tools, meeting follow-up automation, accessibility utilities, and vertical administrative assistants.
+
+**Economics:** Zoom now supports native Marketplace monetization. Developers can offer up to four plans; a free plan is mandatory and paid subscriptions start at $0.99. Zoom handles transactions, taxes and revenue share; monetization APIs expose user entitlements and webhooks, and the dashboard exposes customers, licenses and earnings. Zoom Client 6.4+ even supports in-meeting upgrade requests.
+
+**Autonomous loop:** mine Zoom/community support pain → build app → test via five test licenses → publish/review → observe subscriptions/licenses through entitlements/webhooks → agent handles feature provisioning/support triage → iterate.
+
+**Human dependencies:** payment-account onboarding, Marketplace review, OAuth consent/security. H1.
+
+**Why agents fit:** narrow workflow apps have explicit inputs/outputs, testable meeting state, standardized APIs and recurring subscription economics.
+
+**Moltwork assets:** Zoom Pack/Venue, meeting-event World, entitlement simulator, review-readiness evaluator, Zoom app Skill.
+
+Official evidence:
+- https://developers.zoom.us/docs/distribute/monetization/pricing-plans/
+- https://developers.zoom.us/docs/distribute/monetization/provisioning/
+- https://developers.zoom.us/docs/distribute/monetization/monetization-dashboard/
+
+---
+
+## 5. Microsoft Teams Store / AppSource — tiny transactable enterprise apps
+**Score: 85/100 | Demand: Very high | Agent fit: 9/10 | Automation: 7/10 | H-level: H1–H2**
+
+**What agents sell:** narrow SaaS helpers embedded in Teams: operational checklists, internal approval helpers, project/status automation, vertical compliance workflows, meeting-to-ticket utilities, data-query assistants, departmental bots, structured report generation.
+
+**Economic structure:** Microsoft supports **transactable SaaS offers** linked directly to Teams Store apps. Subscription plans can be purchased in Teams, Microsoft can handle licenses, and offers support trials/test drives/in-app upgrades. New channel-enabled Teams Store submissions must use manifest schema 1.25+ from July 2026 — a current migration/modernization niche.
+
+**Autonomous workflow:** Oracle finds repeated Teams workflow pain → agent generates app + SaaS backend → manifest/compiler/tests → Partner Center preview validation → human handles publisher/account/legal setup and final certification → publish → entitlement/license API tracks customers → WorkerKit records subscription outcome.
+
+**Human dependencies:** Partner Center publisher verification and certification; enterprise privacy/security review. H1/H2.
+
+**Moltwork assets:** Teams Pack, manifest generator, certification World, Graph/API Skills, SaaS-offer Venue, enterprise-review School.
+
+Official evidence:
+- https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/prepare/monetize-overview
+- https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/prepare/publish-saas-offer-app
+
+---
+
+## 6. Discord Premium Apps — server-specific paid utilities
+**Score: 84/100 | Demand: Very high | Agent fit: 9/10 | Automation: 8/10 | H-level: H1**
+
+**What agents sell:** server automation, paid workflow commands, role/community utilities, moderation analysis, event/community management, specialized information tools, creator-community services, and integrations tailored to specific high-value server types.
+
+**Economics:** Discord supports Premium App subscriptions and one-time purchases. Current terms show a 15% Growth Tier platform fee until a developer team’s Premium Apps collectively reach $1M in total payments, then 30%, plus payment processing. Apps must be verified and in good standing.
+
+**Community signal:** a May 2026 Discord bot developer thread confirms the practical split: simply having a bot in servers does not pay; successful bots use premium versions/support. Older developer complaints center on Discord’s marketplace/payment cut, so margins matter.
+
+**Autonomous loop:** discover server admin pain → build bot/app → integration tests → staging server → human verifies developer/payment account → publish → subscriptions + command usage observed → auto-support/feature prioritization.
+
+**Human dependencies:** app verification, 2FA/payment onboarding, policy issues. H1.
+
+**Moltwork assets:** Discord Pack, guild simulator World, premium entitlement evaluator, bot template Skill, vertical-server School.
+
+Evidence:
+- https://support.discord.com/hc/en-us/articles/5330075836311-Monetization-Terms
+- https://support.discord.com/hc/en-us/articles/10575066024983-Monetization-Policy
+- https://www.reddit.com/r/discordbots/comments/1tdgbh8/do_discord_bot_developers_make_money/
+
+---
+
+## 7. Google Workspace Marketplace add-ons — newly MCP-accelerated business microtools
+**Score: 84/100 | Demand: Very high | Agent fit: 10/10 | Automation: 9/10 | H-level: H1**
+
+**What agents sell:** Sheets admin utilities, document QA, bulk Workspace administration, structured report generators, workflow extensions, data-cleaning tools, Drive/Docs automation, niche industry add-ons.
+
+**Huge new unlock:** in late August 2026 Google published official configuration for **Google Workspace MCP servers** covering Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and People. This dramatically reduces the effort required for an agent to understand/test real Workspace workflows while building add-ons.
+
+**Demand evidence:** a June 2026 r/GoogleAppsScript developer reported **102,000 Workspace Marketplace installs in 45 days** for an admin-focused Sheets add-on. They emphasize that installs do not equal revenue, but it demonstrates distribution can be enormous. Other developers complain about weak Marketplace discovery and OAuth/publishing friction — exactly where an Oracle + automated listing/SEO/testing pipeline helps.
+
+**Autonomous loop:** mine repetitive spreadsheet/admin pain → reproduce through official MCP/API → generate add-on → integration eval in test Workspace → OAuth/scope minimization → human verification/publishing → telemetry/licenses from external SaaS billing → auto-maintain.
+
+**Human dependencies:** OAuth verification/domain/payment configuration. H1.
+
+**Moltwork assets:** Workspace Pack, official-MCP Venue, OAuth-scope evaluator, add-on Harbor World, Sheets/Admin Schools.
+
+Evidence:
+- https://developers.google.com/workspace/guides/configure-mcp-servers
+- https://developers.google.com/workspace/marketplace/manage-app-listing
+- https://www.reddit.com/r/GoogleAppsScript/comments/1tvrs4s/we_crossed_102000_installs_on_google_workspace/
+
+---
+
+## 8. Slack Marketplace modernization — replace classic apps before Nov. 16, 2026
+**Score: 82/100 | Demand: High/urgent | Agent fit: 10/10 | Automation: 8/10 | H-level: H1**
+
+**What agents sell:** replacement apps and migration services for classic Slack integrations, plus narrow modern apps using granular scopes/events. Money is generally external SaaS/services rather than native Slack marketplace billing.
+
+**Why this is unusually time-sensitive:** Slack will discontinue classic apps on **November 16, 2026**. API calls/events will stop and classic apps must migrate to modern Slack apps. This creates a finite forced-migration market over the next ~11 weeks.
+
+**Autonomous workflow:** Oracle searches public repos/docs/companies for classic integration patterns → agent maps old scopes/RTM behavior to granular scopes + Events API → generates replacement app → test workspace simulator → emits migration report/diff → human customer authorizes installation → managed subscription/service continues.
+
+**Human dependencies:** workspace/customer OAuth authorization and marketplace review if publicly distributed. H1.
+
+**Why Moltwork can win:** this is ideal agent work: repetitive API migration with deterministic compatibility checks and a deadline. The reusable asset is a Slack Classic→Modern migration School/evaluator, not just one app.
+
+Official evidence:
+- https://api.slack.com/changelog/2024-09-legacy-custom-bots-classic-apps-deprecation
+
+---
+
+## 9. Elgato Marketplace — Stream Deck plugins/profiles as agent-made digital products
+**Score: 81/100 | Demand: High niche | Agent fit: 9/10 | Automation: 8/10 | H-level: H1**
+
+**What agents sell:** Stream Deck plugins and profiles for particular applications/workflows, icon packs, screensavers, Wave Link audio effects/EQ presets, Camera Hub LUTs/backgrounds, OBS scene collections, and 3D-print files.
+
+**Economics:** Elgato explicitly invites Makers to “set your own price” and reach millions of customers. Paid products use a 70/30 revenue split and Stripe Connect. Maker Console supports submission/update management for key product types.
+
+**Why agents fit:** a profile/plugin has a crisp target app, finite action set, screenshots and deterministic package validation. Oracle can mine “I wish Stream Deck could do X in app Y” posts and manufacture highly targeted packs.
+
+**Autonomous loop:** discover app/workflow gaps → build plugin/profile → automated package/interface testing → generate icons/docs → human signs Maker agreement/Stripe once → submit/review → sales/reviews → iterate.
+
+**Human dependencies:** organization agreement, Stripe onboarding, review. H1.
+
+**Moltwork assets:** Elgato Pack/Venue, Stream Deck simulator World, manifest evaluator, app-specific workflow Schools.
+
+Evidence:
+- https://docs.elgato.com/marketplace/become-a-maker/
+- https://docs.elgato.com/maker-console/submitting-products/
+- https://docs.elgato.com/monetization/revenue-share/
+
+---
+
+## 10. Poe Creator Platform — metered specialist agents/apps
+**Score: 80/100 | Demand: High | Agent fit: 10/10 | Automation: 10/10 | H-level: H1**
+
+**What agents sell:** domain-specific paid bots and canvas apps where price maps to actual computation: data extraction, structured transformation, document QA, coding utilities, specialized reasoning, image/document workflows, external API wrappers.
+
+**Frontier unlock:** Poe’s Bot Monetization API now supports **variable pricing** with authorize/capture, letting a bot charge according to input length/output/computation rather than a fixed message price. Community discussion shows Canvas/App creators were frustrated about monetization in 2025; in January 2026 Poe pointed them to the new `captureCost` mechanism.
+
+**Autonomous loop:** mine Poe queries/gaps → agent creates specialist bot → benchmark quality/cost → generate rate card → publish → API dynamically prices calls → usage/revenue provides immediate objective signal → evolve prompts/tools/routing.
+
+**Human dependencies:** creator/payout account setup and policy appeals. H1.
+
+**Moltwork assets:** Poe Venue, price-optimization evaluator, cost-vs-quality School, specialist-bot factory.
+
+Evidence:
+- https://creator.poe.com/docs/server-bots/poe-bot-monetization-api-documentation
+- https://www.reddit.com/r/PoeAI/comments/1nwm0u1/when_will_app_creators_got_monetized/
+
+---
+
+## 11. RapidAPI Hub — autonomous micro-API portfolio
+**Score: 80/100 | Demand: Very high | Agent fit: 10/10 | Automation: 10/10 | H-level: H1→H0**
+
+**What agents sell:** tiny reliable APIs built from open data, transformations, verification, format conversion, metadata enrichment, domain-specific lookups, legacy-to-modern adapters, and combinations of existing tools that remove setup cost for developers.
+
+**Demand/economics:** Rapid calls itself the world’s largest API hub with **5M+ developers**. Providers can charge subscription, freemium, pay-per-use or paid plans. Since Nov. 15, 2025 the marketplace fee is 25%; a $100 sale produces $75 to the provider.
+
+**Autonomous workflow:** Oracle identifies repeated API requests/tool gaps → agent builds endpoint → tests contract/load/error handling → publishes docs/OpenAPI/pricing → usage analytics detect demand → autonomously fix failures/adjust plans → receive marketplace payouts.
+
+This is exceptionally compatible with Moltwork’s existing x402/API thesis, but it is a *different venue*: demand already exists inside a mainstream developer marketplace.
+
+**Human dependencies:** provider/payout identity and initial marketplace account. H1 setup; production can be H0.
+
+**Moltwork assets:** RapidAPI Venue, OpenAPI contract World, reliability assessor, API factory Process, pricing School.
+
+Evidence:
+- https://docs.rapidapi.com/docs/what-is-rapidapi
+- https://docs.rapidapi.com/docs/monetizing-your-api-on-rapidapicom
+- https://docs.rapidapi.com/docs/payouts-and-finance
+
+---
+
+## 12. Bubble Marketplace — paid templates and plugins generated from observed SaaS demand
+**Score: 79/100 | Demand: High | Agent fit: 9/10 | Automation: 7/10 | H-level: H1**
+
+**What agents sell:** industry-specific app templates, backend workflow modules, database patterns, API plugins, UI components, checkout/marketplace logic, and integration plugins.
+
+**Economics:** Bubble explicitly allows paid Marketplace templates/plugins. Current price ranges include $3–$500 for individual commercial templates, $10–$5,000 for developer template licenses, $3–$300 one-time plugins, and $1–$100/month plugin subscriptions. Bubble keeps 25%; seller payouts go via Stripe.
+
+**Autonomous loop:** Oracle mines Bubble forum/request pain → agent builds template/plugin in Bubble → browser/API tests → demo app → marketplace QA → human Stripe/seller onboarding → publish → reviews/sales/support requests feed Lab → agent maintains compatibility.
+
+**Community signal:** sellers emphasize that complex templates win when they solve database/performance/workflow details that generic clones miss. That is ideal for a School trained on Bubble best-practice evaluations.
+
+**Human dependencies:** Stripe/seller profile and marketplace review/support. H1.
+
+**Moltwork assets:** Bubble Pack, browser Venue, workload/performance evaluator, template School, marketplace-plugin Skill.
+
+Evidence:
+- https://manual.bubble.io/account-and-marketplace/marketplace-policies
+- https://manual.bubble.io/account-and-marketplace/building-templates
+- https://www.reddit.com/r/Bubbleio/comments/1l4239p
+
+---
+
+## 13. CGTrader — original 3D assets plus new enterprise licensing
+**Score: 77/100 | Demand: High | Agent fit: 8/10 | Automation: 8/10 | H-level: H1–H2**
+
+**What agents sell:** original low-poly/environment/product visualization models, architecture props, industrial objects, simulation assets, generic game props, 3D-printable utility designs.
+
+**Why now:** CGTrader’s April/May 2026 changes introduced **Custom Enterprise Deals**. CGTrader can negotiate bulk/time-limited/custom licenses with large studios/companies and automatically include eligible seller models; those deals split revenue 50/50. Ordinary sales historically pay sellers roughly 70–80% depending on royalty rate. CGTrader also now may convert uploaded models to additional file formats for buyers while sellers retain ownership.
+
+**Agent workflow:** Oracle uses CGTrader analytics/search-gap data → 3D worker produces original model → geometry/topology/UV/render World → descriptions/tags/previews → browser upload → sales/reviews/enterprise inclusion → evolve categories.
+
+**Human dependencies:** originality/art quality review, payout setup, occasional customer support. H1/H2.
+
+**Important constraint:** only original/fully rights-owned models. This market punishes indiscriminate generative spam; originality/licensing evaluator is mandatory.
+
+Evidence:
+- https://help.cgtrader.com/hc/en-us/articles/46191760965137-What-is-a-Custom-Enterprise-Deal-and-how-does-it-affect-my-earnings-as-a-seller
+- https://help.cgtrader.com/hc/en-us/articles/360015139237-How-to-publish-3D-models
+- https://help.cgtrader.com/hc/en-us/articles/46191345789073-CGTrader-is-converting-my-files-into-other-formats-do-I-still-own-them
+
+---
+
+## 14. Superhive (formerly Blender Market) — Blender add-ons and workflow assets
+**Score: 77/100 | Demand: High niche | Agent fit: 9/10 | Automation: 8/10 | H-level: H1**
+
+**What agents sell:** Blender add-ons, modifier setups, render setups, procedural geometry tools, materials, workflow automation and original models.
+
+**Economics/demand:** Superhive says it reaches thousands of Blender customers and its August 2026 summer sale covered **tens of thousands of eligible products**. Free creator tier pays 70% commission; paid creator tiers can raise this to 80–90%. Every product is reviewed for compatibility/licensing/quality/support.
+
+**New 2026 factor:** as of June 18, creators can offer a 12-month Support Period requiring response within three business days, ongoing updates and current Blender LTS compatibility. That makes a persistent autonomous maintenance worker especially valuable: humans struggle with maintenance overhead; a WorkerVersion can own it continuously.
+
+**Autonomous loop:** mine Blender workflow friction → create add-on → test against LTS matrix → benchmark → docs/demo generation → human creator approval → submit/review → support bot triages issues → auto-test updates against new Blender releases.
+
+**Human dependencies:** creator application, subjective product review, support edge cases. H1.
+
+Evidence:
+- https://superhivemarket.com/
+- https://superhivemarket.com/pricing
+- https://superhivemarket.com/posts/support-periods-purchases-on-superhive-now-served-with-a-side-of-confidence
+
+---
+
+## 15. BOOTH.pm VRChat/Unity asset shops — compatibility matrices as a product factory
+**Score: 76/100 | Demand: High niche | Agent fit: 8/10 | Automation: 7/10 | H-level: H1–H2**
+
+**What agents sell:** original VRChat world prefabs, Unity tools, effects, shaders, accessories, environment pieces, clothing fitted to multiple compatible avatar bases, setup tools and optimized variants.
+
+**Current evidence:** 2026 BOOTH listings show ordinary digital VRChat assets selling around ¥400–¥6,500+, including world prefabs, effects, clothing and avatars. One May 2026 dress listing sells compatibility variants for numerous avatar bases — exactly the repetitive production pattern an agent lab can industrialize.
+
+**Autonomous loop:** Oracle searches BOOTH/VRChat categories for compatibility gaps → worker creates original base asset → automated per-avatar fitting/build matrix → Unity/VRChat tests → multilingual docs/listing copy → human handles shop/payout setup → publish → support/issues/sales feed compatibility School.
+
+**Human dependencies:** store/payout setup, strong IP/originality review, subjective art QA. H1/H2.
+
+**Moat:** not “AI art spam”; build a compatibility/evaluation factory. A new avatar base becomes an opportunity event and the worker rapidly ports validated assets to it.
+
+Evidence examples:
+- https://booth.pm/en/items/8388450
+- https://booth.pm/en/items/7965558
+- https://onecoin50.booth.pm/items
+
+---
+
+## 16. itch.io game-asset/tool market — agent-built production accelerators, not generic art packs
+**Score: 74/100 | Demand: Medium-high | Agent fit: 8/10 | Automation: 9/10 | H-level: H1**
+
+**What agents sell:** Godot/indie-game starter systems, UI packs, shader/tool packs, procedural generators, audio utilities, compatible icon/UI systems, small code frameworks, and carefully curated original game assets.
+
+**Demand evidence:** itch.io’s **2026 Summer Sale had 30,000+ projects on sale, including 14,000+ game assets**. The platform supports paid items, bundles, analytics and open revenue sharing (seller chooses platform share; default example 10%).
+
+**Reddit reality check:** a February 2026 seller reported only $230 over two years, though 60% came in the last three months. Another 2025 post got ~2,937 visits but only ~$56 revenue. Buyers say assets save time but often require palette/style changes. A May 2026 thread complains major stores are flooded with inconsistent low-quality AI assets.
+
+**Conclusion:** generic generated sprites are a BAD opportunity. The agent edge is **tested, coherent, engine-ready systems** with clear licensing and examples.
+
+**Autonomous loop:** mine game-dev complaints → generate code/asset system → deterministic Godot/Unity demo world → publish through itch tooling/browser → sales/download analytics → iterate bundles.
+
+**Human dependencies:** payout/tax setup and originality/art QA. H1.
+
+Evidence:
+- https://itch.io/blog/1564191/the-itchio-summer-sale-2026-is-live
+- https://itch.io/docs/creators/payments
+- https://www.reddit.com/r/itchio/comments/1quydev/i_tried_to_go_from_hobby_game_dev_to_selling/
+- https://www.reddit.com/r/gamedev/comments/1tojddg/where_can_you_even_find_human_made_2d_game_assets/
+
+---
+
+## 17. Wix App Market — narrow recurring commerce/site utilities
+**Score: 73/100 | Demand: High | Agent fit: 9/10 | Automation: 7/10 | H-level: H1**
+
+**What agents sell:** merchant operations, catalog manipulation, local-business workflows, analytics, bookings helpers, SEO/metadata operations, migration and niche integrations.
+
+**Evidence:** Wix has explicit paid-app pricing plans, subscriptions and marketplace distribution. Its pricing docs were updated Feb. 15, 2026; apps can update pricing for new subscriptions. Wix actively promotes App Market sale collections, showing platform-level distribution support.
+
+**Community opportunity:** in May 2026 Wix users reported several apps being discontinued and replacement apps feeling worse. That is exactly an Oracle signal: discontinued/deprecated apps create measurable replacement demand.
+
+**Autonomous loop:** monitor Wix deprecations + user complaints → clone *functionality category*, not proprietary code → agent builds replacement via Wix APIs → test site fixtures → submit/review → subscriptions/reviews → maintain.
+
+**Human dependencies:** seller/payment onboarding and marketplace review. H1.
+
+**Moltwork assets:** Wix Pack, deprecation scanner, Wix test-site World, app-review evaluator, migration Skill.
+
+Evidence:
+- https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/change-app-pricing
+- https://www.reddit.com/r/WIX/comments/1t6kc3c/wix_discontinuing_many_apps/
+
+---
+
+## 18. Salesforce AppExchange — micro-enterprise apps where the moat is passing review cheaply
+**Score: 71/100 | Demand: Very high | Agent fit: 9/10 | Automation: 6/10 | H-level: H2**
+
+**What agents sell:** tiny Salesforce workflow packages: data hygiene, admin automation, industry-specific objects/reports, validation tooling, integrations and operational utilities.
+
+**Why agents may have a special advantage:** the biggest barrier is not writing Apex; it is the expensive, tedious security/package/review process. Salesforce’s Code Analyzer includes AppExchange-specific rules designed to prepare managed packages for review. That is perfect for Harbor: encode review classes into a World and evolve until packages repeatedly pass.
+
+**Community evidence:** an AppExchange team reported spending roughly six months to build a small app, another three months preparing for review, failing the first attempt, and paying roughly $1,000 twice. Salesforce’s own older guidance confirms paid-app review is charged per attempt and reviews can be lengthy; current fees should always be rechecked before committing cash.
+
+**Autonomous loop:** identify narrow admin pain → generate 2GP package → Code Analyzer/AppExchange rules → security World → sandbox tests → human partner submission → review feedback becomes training data → resubmit → paid license/customer outcome.
+
+**Human dependencies:** partner relationship, legal, security review, enterprise sales. H2.
+
+**Moltwork asset with highest value:** an AppExchange Security Review School/evaluator that makes every later product cheaper.
+
+Evidence:
+- https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/code-analyzer.html
+- https://www.reddit.com/r/salesforce/comments/1g0bzzn
+
+---
+
+## 19. Squarespace Extensions / Apps — commerce operations for SMB sites
+**Score: 69/100 | Demand: Medium-high | Agent fit: 9/10 | Automation: 8/10 | H-level: H1–H2**
+
+**What agents sell:** inventory/order automation, catalog synchronization, domain/site reselling workflows, specialized ecommerce utilities, migration tools and vertical integrations.
+
+**Why it belongs in Oracle:** Squarespace now explicitly markets its developer platform as APIs + Apps + Docs with a **marketplace to reach its global customer base**. It exposes commerce management, webhooks, custom code and even describes its docs as AI-compatible for direct integration into Claude/ChatGPT.
+
+**Autonomous loop:** monitor merchant pain → API-first product generation → fixture store → webhook/order tests → app listing → external SaaS billing/lead conversion → outcome tracking.
+
+**Human dependencies:** app/merchant authorization, marketplace/business onboarding, external payments. H1/H2 depending on listing route.
+
+**Weakness:** less transparent native marketplace monetization than Zoom/Bubble/Discord, so score it below markets with first-party payment rails.
+
+Evidence:
+- https://developers.squarespace.com/
+
+---
+
+## 20. Second Life Marketplace — scripts + virtual utility assets as a legacy but highly structured economy
+**Score: 66/100 | Demand: Medium | Agent fit: 8/10 | Automation: 6/10 | H-level: H1–H2**
+
+**What agents sell:** original furniture/environment objects, scripted utilities, vendor systems, UI gadgets, building components and event/roleplay infrastructure that are appropriate for general audiences.
+
+**Why it is interesting:** Second Life has an old but still active marketplace denominated in L$, and Linden Lab exposes an official **Marketplace API for viewers** including merchant/listing operations. Current 2026 Marketplace listings demonstrate active digital-goods sales.
+
+**Autonomous loop:** Oracle identifies requests/search gaps → Blender/LSL worker creates original product → simulator/permission tests → package in Second Life inventory → Marketplace listing → sales/reviews → maintain versions.
+
+**Human dependencies:** account/merchant setup, in-world asset upload/inspection, payout/account requirements. H1/H2.
+
+**Why lower-ranked:** smaller/older market, unusual runtime and currency, and a larger amount of viewer/in-world automation work. But the same weirdness means fewer modern autonomous entrants.
+
+Evidence:
+- https://wiki.secondlife.com/wiki/Linden_Lab_Official%3AViewer_Managed_Marketplace/Marketplace_API_for_Viewers
+- https://marketplace.secondlife.com/
+
+---
+
+# Frontier Unlocks this run
+
+### 1. Google Workspace official MCP servers are the biggest fresh technical unlock
+Google published first-party MCP server configuration for Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and People in late August 2026. This is significant because a Workspace product-building agent no longer needs custom wrappers merely to operate against the customer workflow during research/evaluation. It shortens `human/browser → agent/tool` for a huge business surface.
+
+### 2. WordPress MCP Adapter turns plugin functionality into machine-discoverable abilities
+The 2026 Abilities API + MCP Adapter is strategically larger than “WordPress supports AI.” It makes the WordPress ecosystem a **tool market for agents**. Oracle should crawl major plugin categories and ask: which economically useful operation is still UI-only and could be exposed as an Ability/MCP tool?
+
+### 3. VRChat internal Avatar Marketplace removes the old external-store→manual-upload funnel
+Previously an avatar sale often ended with a user handling files and Unity. The first-party marketplace lets buyers discover, try and purchase avatars in VRChat, reducing distribution friction and giving creators a direct outcome loop.
+
+### 4. Slack classic-app shutdown creates a temporary forced migration market
+November 16, 2026 is a concrete deadline. Oracle should immediately enumerate open-source/popular classic app patterns and companies still documenting them, then rank replacements by install base / pain / implementation difficulty.
+
+### 5. Poe variable-cost monetization makes tiny computational products viable
+Authorize/capture pricing lets a bot charge according to actual work. That is much closer to x402 economics than conventional SaaS subscriptions and should be treated as a strong experiment venue for Moltwork workers.
+
+### 6. CGTrader enterprise licensing converts passive asset inventory into B2B exposure
+The 2026 Custom Enterprise Deals change means an autonomous asset lab can potentially earn not only individual consumer sales but inclusion in bulk corporate licensing without negotiating every contract itself.
+
+---
+
+# Human Dependency Reduction — highest-value targets
+
+## A. Marketplace onboarding / seller identity — one-time H1 across almost every venue
+The recurring pattern is not that humans must do the work; humans must initially establish the legal/account/payment identity. Moltwork should normalize these as:
+- `human.account_create`
+- `human.identity_verify`
+- `human.tax_payout_setup`
+- `human.marketplace_agreement`
+- `human.oauth_consent`
+
+These should *not* make repeated work H2. Record recurrence=`once` and make the Human Queue surface a checklist.
+
+## B. Marketplace review submission
+Zoom, VRChat, Teams, Salesforce, Elgato, Wix and others still contain human review. The next useful abstraction is not bypassing review; it is **predicting review**. Build Harbor Worlds from public acceptance criteria plus every rejection/approval receipt. Over time Moltwork’s moat is a `P(pass | artifact, venue, version)` estimate and automated preflight.
+
+## C. Browser-only upload/listing forms
+BOOTH, CGTrader, Bubble and several creator venues remain much less API-native at the seller-publishing edge. This is where WebMCP will matter disproportionately. Oracle should periodically rescan their create/edit listing pages for WebMCP exposure; until then use compliant browser automation and keep the final irreversible publish behind CommitGate if needed.
+
+## D. Creative/artistic approval
+3D/avatar markets should remain H1/H2 until the lab has strong evaluators. The valuable automation is not “remove the human artist immediately”; it is build objective worlds for topology, compatibility, originality, render quality, mobile performance, missing textures and license provenance, shrinking the human review to the few genuinely subjective dimensions.
+
+## E. Customer support
+Several marketplaces explicitly require seller support (Superhive, Bubble, Telegram payment disputes, etc.). This is a hidden economic killer. Turn support into structured tasks: diagnose automatically, reproduce in a World, propose patch, escalate only unclear/refund/legal cases. A market becomes much more attractive when support hours/order approach zero.
+
+---
+
+# Oracle implementation implications
+
+Do **not** add another agentability taxonomy. Preserve H0–H4. For each opportunity/market Pack, emit granular `ExecutionStep`s and normalized `HumanDependency`s, then run an automation resolver in this order:
+
+`official API → official MCP/WebMCP → official CLI/OpenAPI → approved integration platform → compliant browser automation → HumanQueue`.
+
+The more interesting Oracle metric is now:
+
+**Blocked Economic Value by Human Dependency**
+
+For example, if 200 candidate products across five marketplaces are blocked only by `human.manual_publish`, and a new WebMCP/API removes that step, Oracle should surface it as a frontier unlock immediately.
+
+Also track two different forms of market value:
+1. **Direct transaction venues** — Telegram, VRChat, Zoom, Teams, Discord, Elgato, Poe, RapidAPI, Bubble, CGTrader, Superhive, BOOTH, itch.io, Wix.
+2. **Distribution/lead venues** — WordPress.org SaaS plugins, Google Workspace add-ons, Slack Marketplace, Salesforce, Squarespace, Second Life depending on exact billing setup.
+
+That distinction will stop Oracle from treating “huge install surface” as equivalent to “easy revenue.”
+
+# Best five to prototype first
+
+1. **RapidAPI micro-API portfolio** — closest to existing Moltwork/x402 capabilities; nearly closed-loop and objectively measurable.
+2. **Telegram Mini Apps** — enormous distribution + native microtransactions + referral rails.
+3. **WordPress MCP-ready plugin/SaaS** — massive frontier shift in 2026 and perfect fit for agent-native products.
+4. **Elgato Stream Deck micro-products** — small, testable, paid assets with manageable product scope.
+5. **Bubble plugins/templates** — explicit pricing, payouts and highly reproducible structured products.
+
+VRChat is potentially larger than #4/#5 but needs the 3D evaluation pipeline before autonomous production quality is credible.
+
+— Oracle Market Unlock research report
+Oracle Market Unlocks — 20 NEW Agent Markets
+<p><strong>31 August 2026</strong></p>
+<p>This run deliberately excludes the markets already covered in the previous report: Atlassian Forge, monday.com Marketplace, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow templates, Miro apps, WooCommerce extensions, HubSpot apps, JetBrains plugins, Fab, Unity Asset Store, Fortnite UEFN, Canva Creator templates, Creative Market, Minecraft Marketplace, Adobe Stock, Envato/Placeit, and Gumroad. It also avoids the already-obvious Notion-template and Roblox-asset examples.</p>
+
+Ranking method
+<p>Composite score /100 weights: expected economic value 30%, agent technical fit 25%, automation feasibility 20%, novelty/timing 15%, competitive favorability 10%. “Competition” below is described directly; high competition is bad even when demand is large.</p>
+
+
+
+1. Telegram Mini Apps — paid micro-utilities and vertical tools
+<p><strong>Score: 91/100 | Demand: Very high | Agent fit: 9/10 | Automation: 9/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> tiny paid utilities inside Telegram: document transforms, channel research tools, creator analytics, language utilities, data lookups, workflow helpers, community admin tools, niche calculators, file processors, content-production helpers, and specialized information services. Payment can be per-use or packaged into paid features via Telegram Stars.</p>
+<p><strong>Why this is interesting now:</strong> Telegram states that more than <strong>500 million of its 950 million users interact with Mini Apps every month</strong>. Digital goods/services can be sold through Stars, bot owners get revenue statistics and balance data, and Telegram also exposes affiliate programs where other users/bots/channels can earn commissions for referring buyers. Bot API / Mini App APIs have continued receiving 2026 updates.</p>
+<p><strong>Autonomous loop:</strong> Oracle finds repeated Telegram-community pain → agent generates/benchmarks a narrow Mini App → creates bot/web app code → deterministic tests → deploys backend → human performs one-time Telegram account/BotFather/payout setup → agent updates metadata/content → app accepts Stars → API observes purchases/refunds/revenue → Hydra correlates features/pricing with conversion → worker iterates.</p>
+<p><strong>Human dependencies:</strong> account ownership, payout/KYC where applicable, initial BotFather actions, policy disputes/customer support edge cases. Normal operation can approach H0 after provisioning; classify initial deployment H1.</p>
+<p><strong>Infrastructure:</strong> Bot API, Mini Apps JavaScript API, Stars payment APIs, revenue stats, refund methods, affiliate/referral APIs. This is almost a native WorkVenue already.</p>
+<p><strong>Community signal / pain:</strong> developers repeatedly ask how to monetize Telegram bots and Mini Apps; the key opportunity is not “another chatbot” but transaction-shaped micro-tools that fit existing chat workflows.</p>
+<p><strong>Moltwork assets:</strong> <code>TelegramMiniAppPack</code>, Stars billing Venue, Mini-App Harbor World, conversion evaluator, bot publishing Skill, Telegram niche-discovery School, specialist <code>telegram-product-worker</code>.</p>
+<p><strong>Economically attractive when:</strong> utility is called repeatedly, marginal serving cost is tiny, and distribution happens inside existing channels. <strong>Bad when:</strong> it depends on generic AI chat, high moderation/support cost, or functionality Telegram itself is likely to absorb.</p>
+<p>Official evidence:</p>
+<ul>
+<li>https://core.telegram.org/bots/features</li>
+<li>https://core.telegram.org/bots/payments-stars</li>
+<li>https://core.telegram.org/api/stars</li>
+<li>https://core.telegram.org/api/bots/referrals</li>
+</ul>
+
+
+
+2. VRChat Avatar Marketplace — autonomous avatar/product studio
+<p><strong>Score: 89/100 | Demand: High | Agent fit: 8/10 | Automation: 7/10 | H-level: H1–H2</strong></p>
+<p><strong>What agents sell:</strong> original avatars, optimized variants, avatar clothing/accessories, styles, configuration variants, and eventually world-linked products. Focus on technically clean, original, performance-tested assets rather than mass-generated low-quality content.</p>
+<p><strong>Why now:</strong> VRChat now has a <strong>first-party Avatar Marketplace inside VRChat</strong> rather than forcing discovery through third-party stores. Users can try avatars before purchase and buy them with VRChat Credits. VRChat says its Creator Economy gives creators 50%, that its avatar marketplace is growing, and it recently reported nearly <strong>160,000 concurrent users</strong>. Seller onboarding is still selective, which makes an early high-quality lab valuable.</p>
+<p><strong>Autonomous loop:</strong> Oracle mines avatar search/category gaps and creator-community requests → Blender/Unity worker creates original candidate → automated geometry/material/performance checks → VRChat SDK build → Harbor world launches Unity validation + screenshot/style judge → agent generates listing copy/variants → seller submits for review → marketplace analytics/sales become external outcome → School evolves toward styles/technical specs that sell.</p>
+<p><strong>Human dependencies:</strong> Creator Economy seller approval, marketplace review, occasional artistic judgment and IP review. Production itself can become mostly autonomous. H1 for technically constrained products; H2 where subjective art direction is essential.</p>
+<p><strong>Infrastructure:</strong> Unity + VRChat SDK, structured avatar build flow, direct marketplace listing/review. This is unusually evaluation-friendly: polygon count, mobile compatibility, materials, animation, broken references and performance can all be tested.</p>
+<p><strong>Community signal:</strong> VRChat users have long complained about the friction of external avatar purchase/upload flows; community discussion anticipated the in-client “Purchased Avatars” shift before the marketplace became prominent.</p>
+<p><strong>Moltwork assets:</strong> VRChat Pack, Unity/SDK Venue, avatar-performance World, originality/IP gates, style School, compatibility evaluator, avatar publishing process, specialist avatar worker.</p>
+<p>Official/current evidence:</p>
+<ul>
+<li>https://hello.vrchat.com/avatar-marketplace</li>
+<li>https://hello.vrchat.com/</li>
+<li>https://hello.vrchat.com/legal/economy<br>
+Community signal: https://www.reddit.com/r/VRchat/comments/1k7vrdf</li>
+</ul>
+
+
+
+3. WordPress MCP-ready SaaS plugins — sell the agent-control layer for the web
+<p><strong>Score: 88/100 | Demand: Very high | Agent fit: 10/10 | Automation: 9/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> narrow WordPress SaaS plugins that expose useful, typed site abilities to AI agents: inventory/reporting, editorial workflows, site audits, content operations, form processing, CRM bridges, product/catalog administration, accessibility assistance, migration helpers, and vertical business operations.</p>
+<p><strong>Why this is a frontier unlock:</strong> in February 2026 WordPress introduced an <strong>MCP Adapter</strong> on top of the WordPress 6.9 Abilities API. Abilities are standardized, discoverable, typed, executable functions; the adapter lets AI clients discover and call them as MCP tools. WordPress.org explicitly permits plugins that interface with substantial paid SaaS services, though trialware/local feature-locking rules matter.</p>
+<p>This means a Moltwork agent can now build products whose <strong>customer is itself an agent</strong>. Instead of making a UI-heavy plugin, it can create one well-scoped Ability and make it usable from Claude/Cursor/etc.</p>
+<p><strong>Autonomous loop:</strong> Oracle mines plugin/support/forums for repetitive business operations → checks whether an Ability exists → agent scaffolds plugin → unit/integration/security tests → local WordPress Harbor World → generate docs/readme/assets → human performs one-time plugin-directory account/review → free connector drives paid SaaS usage → telemetry/reviews become outcomes → automatically maintain compatibility.</p>
+<p><strong>Human dependencies:</strong> initial WordPress.org review, SaaS/payment setup, high-risk security decisions. H1. Updates can become H0-ish.</p>
+<p><strong>Infrastructure:</strong> WordPress REST API, <code>@wordpress/create-block</code>, new build tooling, Abilities API, 2026 MCP Adapter, SVN publishing flow.</p>
+<p><strong>Market moat:</strong> Oracle can systematically discover <strong>missing abilities</strong> across popular plugins/verticals and produce the MCP-enabled complement before incumbents do.</p>
+<p>Official evidence:</p>
+<ul>
+<li>https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/</li>
+<li>https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/</li>
+<li>https://developer.wordpress.org/plugins/wordpress-org/</li>
+</ul>
+
+
+
+4. Zoom App Marketplace — meeting-native paid micro-SaaS
+<p><strong>Score: 86/100 | Demand: High | Agent fit: 9/10 | Automation: 8/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> tiny meeting-native products: structured action-item extraction, regulated meeting checklists, domain-specific note formats, sales-call QA, interview workflows, tutoring/session tools, meeting follow-up automation, accessibility utilities, and vertical administrative assistants.</p>
+<p><strong>Economics:</strong> Zoom now supports native Marketplace monetization. Developers can offer up to four plans; a free plan is mandatory and paid subscriptions start at $0.99. Zoom handles transactions, taxes and revenue share; monetization APIs expose user entitlements and webhooks, and the dashboard exposes customers, licenses and earnings. Zoom Client 6.4+ even supports in-meeting upgrade requests.</p>
+<p><strong>Autonomous loop:</strong> mine Zoom/community support pain → build app → test via five test licenses → publish/review → observe subscriptions/licenses through entitlements/webhooks → agent handles feature provisioning/support triage → iterate.</p>
+<p><strong>Human dependencies:</strong> payment-account onboarding, Marketplace review, OAuth consent/security. H1.</p>
+<p><strong>Why agents fit:</strong> narrow workflow apps have explicit inputs/outputs, testable meeting state, standardized APIs and recurring subscription economics.</p>
+<p><strong>Moltwork assets:</strong> Zoom Pack/Venue, meeting-event World, entitlement simulator, review-readiness evaluator, Zoom app Skill.</p>
+<p>Official evidence:</p>
+<ul>
+<li>https://developers.zoom.us/docs/distribute/monetization/pricing-plans/</li>
+<li>https://developers.zoom.us/docs/distribute/monetization/provisioning/</li>
+<li>https://developers.zoom.us/docs/distribute/monetization/monetization-dashboard/</li>
+</ul>
+
+
+
+5. Microsoft Teams Store / AppSource — tiny transactable enterprise apps
+<p><strong>Score: 85/100 | Demand: Very high | Agent fit: 9/10 | Automation: 7/10 | H-level: H1–H2</strong></p>
+<p><strong>What agents sell:</strong> narrow SaaS helpers embedded in Teams: operational checklists, internal approval helpers, project/status automation, vertical compliance workflows, meeting-to-ticket utilities, data-query assistants, departmental bots, structured report generation.</p>
+<p><strong>Economic structure:</strong> Microsoft supports <strong>transactable SaaS offers</strong> linked directly to Teams Store apps. Subscription plans can be purchased in Teams, Microsoft can handle licenses, and offers support trials/test drives/in-app upgrades. New channel-enabled Teams Store submissions must use manifest schema 1.25+ from July 2026 — a current migration/modernization niche.</p>
+<p><strong>Autonomous workflow:</strong> Oracle finds repeated Teams workflow pain → agent generates app + SaaS backend → manifest/compiler/tests → Partner Center preview validation → human handles publisher/account/legal setup and final certification → publish → entitlement/license API tracks customers → WorkerKit records subscription outcome.</p>
+<p><strong>Human dependencies:</strong> Partner Center publisher verification and certification; enterprise privacy/security review. H1/H2.</p>
+<p><strong>Moltwork assets:</strong> Teams Pack, manifest generator, certification World, Graph/API Skills, SaaS-offer Venue, enterprise-review School.</p>
+<p>Official evidence:</p>
+<ul>
+<li>https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/prepare/monetize-overview</li>
+<li>https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/appsource/prepare/publish-saas-offer-app</li>
+</ul>
+
+
+
+6. Discord Premium Apps — server-specific paid utilities
+<p><strong>Score: 84/100 | Demand: Very high | Agent fit: 9/10 | Automation: 8/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> server automation, paid workflow commands, role/community utilities, moderation analysis, event/community management, specialized information tools, creator-community services, and integrations tailored to specific high-value server types.</p>
+<p><strong>Economics:</strong> Discord supports Premium App subscriptions and one-time purchases. Current terms show a 15% Growth Tier platform fee until a developer team’s Premium Apps collectively reach $1M in total payments, then 30%, plus payment processing. Apps must be verified and in good standing.</p>
+<p><strong>Community signal:</strong> a May 2026 Discord bot developer thread confirms the practical split: simply having a bot in servers does not pay; successful bots use premium versions/support. Older developer complaints center on Discord’s marketplace/payment cut, so margins matter.</p>
+<p><strong>Autonomous loop:</strong> discover server admin pain → build bot/app → integration tests → staging server → human verifies developer/payment account → publish → subscriptions + command usage observed → auto-support/feature prioritization.</p>
+<p><strong>Human dependencies:</strong> app verification, 2FA/payment onboarding, policy issues. H1.</p>
+<p><strong>Moltwork assets:</strong> Discord Pack, guild simulator World, premium entitlement evaluator, bot template Skill, vertical-server School.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://support.discord.com/hc/en-us/articles/5330075836311-Monetization-Terms</li>
+<li>https://support.discord.com/hc/en-us/articles/10575066024983-Monetization-Policy</li>
+<li>https://www.reddit.com/r/discordbots/comments/1tdgbh8/do_discord_bot_developers_make_money/</li>
+</ul>
+
+
+
+7. Google Workspace Marketplace add-ons — newly MCP-accelerated business microtools
+<p><strong>Score: 84/100 | Demand: Very high | Agent fit: 10/10 | Automation: 9/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> Sheets admin utilities, document QA, bulk Workspace administration, structured report generators, workflow extensions, data-cleaning tools, Drive/Docs automation, niche industry add-ons.</p>
+<p><strong>Huge new unlock:</strong> in late August 2026 Google published official configuration for <strong>Google Workspace MCP servers</strong> covering Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and People. This dramatically reduces the effort required for an agent to understand/test real Workspace workflows while building add-ons.</p>
+<p><strong>Demand evidence:</strong> a June 2026 r/GoogleAppsScript developer reported <strong>102,000 Workspace Marketplace installs in 45 days</strong> for an admin-focused Sheets add-on. They emphasize that installs do not equal revenue, but it demonstrates distribution can be enormous. Other developers complain about weak Marketplace discovery and OAuth/publishing friction — exactly where an Oracle + automated listing/SEO/testing pipeline helps.</p>
+<p><strong>Autonomous loop:</strong> mine repetitive spreadsheet/admin pain → reproduce through official MCP/API → generate add-on → integration eval in test Workspace → OAuth/scope minimization → human verification/publishing → telemetry/licenses from external SaaS billing → auto-maintain.</p>
+<p><strong>Human dependencies:</strong> OAuth verification/domain/payment configuration. H1.</p>
+<p><strong>Moltwork assets:</strong> Workspace Pack, official-MCP Venue, OAuth-scope evaluator, add-on Harbor World, Sheets/Admin Schools.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://developers.google.com/workspace/guides/configure-mcp-servers</li>
+<li>https://developers.google.com/workspace/marketplace/manage-app-listing</li>
+<li>https://www.reddit.com/r/GoogleAppsScript/comments/1tvrs4s/we_crossed_102000_installs_on_google_workspace/</li>
+</ul>
+
+
+
+8. Slack Marketplace modernization — replace classic apps before Nov. 16, 2026
+<p><strong>Score: 82/100 | Demand: High/urgent | Agent fit: 10/10 | Automation: 8/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> replacement apps and migration services for classic Slack integrations, plus narrow modern apps using granular scopes/events. Money is generally external SaaS/services rather than native Slack marketplace billing.</p>
+<p><strong>Why this is unusually time-sensitive:</strong> Slack will discontinue classic apps on <strong>November 16, 2026</strong>. API calls/events will stop and classic apps must migrate to modern Slack apps. This creates a finite forced-migration market over the next ~11 weeks.</p>
+<p><strong>Autonomous workflow:</strong> Oracle searches public repos/docs/companies for classic integration patterns → agent maps old scopes/RTM behavior to granular scopes + Events API → generates replacement app → test workspace simulator → emits migration report/diff → human customer authorizes installation → managed subscription/service continues.</p>
+<p><strong>Human dependencies:</strong> workspace/customer OAuth authorization and marketplace review if publicly distributed. H1.</p>
+<p><strong>Why Moltwork can win:</strong> this is ideal agent work: repetitive API migration with deterministic compatibility checks and a deadline. The reusable asset is a Slack Classic→Modern migration School/evaluator, not just one app.</p>
+<p>Official evidence:</p>
+<ul>
+<li>https://api.slack.com/changelog/2024-09-legacy-custom-bots-classic-apps-deprecation</li>
+</ul>
+
+
+
+9. Elgato Marketplace — Stream Deck plugins/profiles as agent-made digital products
+<p><strong>Score: 81/100 | Demand: High niche | Agent fit: 9/10 | Automation: 8/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> Stream Deck plugins and profiles for particular applications/workflows, icon packs, screensavers, Wave Link audio effects/EQ presets, Camera Hub LUTs/backgrounds, OBS scene collections, and 3D-print files.</p>
+<p><strong>Economics:</strong> Elgato explicitly invites Makers to “set your own price” and reach millions of customers. Paid products use a 70/30 revenue split and Stripe Connect. Maker Console supports submission/update management for key product types.</p>
+<p><strong>Why agents fit:</strong> a profile/plugin has a crisp target app, finite action set, screenshots and deterministic package validation. Oracle can mine “I wish Stream Deck could do X in app Y” posts and manufacture highly targeted packs.</p>
+<p><strong>Autonomous loop:</strong> discover app/workflow gaps → build plugin/profile → automated package/interface testing → generate icons/docs → human signs Maker agreement/Stripe once → submit/review → sales/reviews → iterate.</p>
+<p><strong>Human dependencies:</strong> organization agreement, Stripe onboarding, review. H1.</p>
+<p><strong>Moltwork assets:</strong> Elgato Pack/Venue, Stream Deck simulator World, manifest evaluator, app-specific workflow Schools.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://docs.elgato.com/marketplace/become-a-maker/</li>
+<li>https://docs.elgato.com/maker-console/submitting-products/</li>
+<li>https://docs.elgato.com/monetization/revenue-share/</li>
+</ul>
+
+
+
+10. Poe Creator Platform — metered specialist agents/apps
+<p><strong>Score: 80/100 | Demand: High | Agent fit: 10/10 | Automation: 10/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> domain-specific paid bots and canvas apps where price maps to actual computation: data extraction, structured transformation, document QA, coding utilities, specialized reasoning, image/document workflows, external API wrappers.</p>
+<p><strong>Frontier unlock:</strong> Poe’s Bot Monetization API now supports <strong>variable pricing</strong> with authorize/capture, letting a bot charge according to input length/output/computation rather than a fixed message price. Community discussion shows Canvas/App creators were frustrated about monetization in 2025; in January 2026 Poe pointed them to the new <code>captureCost</code> mechanism.</p>
+<p><strong>Autonomous loop:</strong> mine Poe queries/gaps → agent creates specialist bot → benchmark quality/cost → generate rate card → publish → API dynamically prices calls → usage/revenue provides immediate objective signal → evolve prompts/tools/routing.</p>
+<p><strong>Human dependencies:</strong> creator/payout account setup and policy appeals. H1.</p>
+<p><strong>Moltwork assets:</strong> Poe Venue, price-optimization evaluator, cost-vs-quality School, specialist-bot factory.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://creator.poe.com/docs/server-bots/poe-bot-monetization-api-documentation</li>
+<li>https://www.reddit.com/r/PoeAI/comments/1nwm0u1/when_will_app_creators_got_monetized/</li>
+</ul>
+
+
+
+11. RapidAPI Hub — autonomous micro-API portfolio
+<p><strong>Score: 80/100 | Demand: Very high | Agent fit: 10/10 | Automation: 10/10 | H-level: H1→H0</strong></p>
+<p><strong>What agents sell:</strong> tiny reliable APIs built from open data, transformations, verification, format conversion, metadata enrichment, domain-specific lookups, legacy-to-modern adapters, and combinations of existing tools that remove setup cost for developers.</p>
+<p><strong>Demand/economics:</strong> Rapid calls itself the world’s largest API hub with <strong>5M+ developers</strong>. Providers can charge subscription, freemium, pay-per-use or paid plans. Since Nov. 15, 2025 the marketplace fee is 25%; a $100 sale produces $75 to the provider.</p>
+<p><strong>Autonomous workflow:</strong> Oracle identifies repeated API requests/tool gaps → agent builds endpoint → tests contract/load/error handling → publishes docs/OpenAPI/pricing → usage analytics detect demand → autonomously fix failures/adjust plans → receive marketplace payouts.</p>
+<p>This is exceptionally compatible with Moltwork’s existing x402/API thesis, but it is a <em>different venue</em>: demand already exists inside a mainstream developer marketplace.</p>
+<p><strong>Human dependencies:</strong> provider/payout identity and initial marketplace account. H1 setup; production can be H0.</p>
+<p><strong>Moltwork assets:</strong> RapidAPI Venue, OpenAPI contract World, reliability assessor, API factory Process, pricing School.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://docs.rapidapi.com/docs/what-is-rapidapi</li>
+<li>https://docs.rapidapi.com/docs/monetizing-your-api-on-rapidapicom</li>
+<li>https://docs.rapidapi.com/docs/payouts-and-finance</li>
+</ul>
+
+
+
+12. Bubble Marketplace — paid templates and plugins generated from observed SaaS demand
+<p><strong>Score: 79/100 | Demand: High | Agent fit: 9/10 | Automation: 7/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> industry-specific app templates, backend workflow modules, database patterns, API plugins, UI components, checkout/marketplace logic, and integration plugins.</p>
+<p><strong>Economics:</strong> Bubble explicitly allows paid Marketplace templates/plugins. Current price ranges include $3–$500 for individual commercial templates, $10–$5,000 for developer template licenses, $3–$300 one-time plugins, and $1–$100/month plugin subscriptions. Bubble keeps 25%; seller payouts go via Stripe.</p>
+<p><strong>Autonomous loop:</strong> Oracle mines Bubble forum/request pain → agent builds template/plugin in Bubble → browser/API tests → demo app → marketplace QA → human Stripe/seller onboarding → publish → reviews/sales/support requests feed Lab → agent maintains compatibility.</p>
+<p><strong>Community signal:</strong> sellers emphasize that complex templates win when they solve database/performance/workflow details that generic clones miss. That is ideal for a School trained on Bubble best-practice evaluations.</p>
+<p><strong>Human dependencies:</strong> Stripe/seller profile and marketplace review/support. H1.</p>
+<p><strong>Moltwork assets:</strong> Bubble Pack, browser Venue, workload/performance evaluator, template School, marketplace-plugin Skill.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://manual.bubble.io/account-and-marketplace/marketplace-policies</li>
+<li>https://manual.bubble.io/account-and-marketplace/building-templates</li>
+<li>https://www.reddit.com/r/Bubbleio/comments/1l4239p</li>
+</ul>
+
+
+
+13. CGTrader — original 3D assets plus new enterprise licensing
+<p><strong>Score: 77/100 | Demand: High | Agent fit: 8/10 | Automation: 8/10 | H-level: H1–H2</strong></p>
+<p><strong>What agents sell:</strong> original low-poly/environment/product visualization models, architecture props, industrial objects, simulation assets, generic game props, 3D-printable utility designs.</p>
+<p><strong>Why now:</strong> CGTrader’s April/May 2026 changes introduced <strong>Custom Enterprise Deals</strong>. CGTrader can negotiate bulk/time-limited/custom licenses with large studios/companies and automatically include eligible seller models; those deals split revenue 50/50. Ordinary sales historically pay sellers roughly 70–80% depending on royalty rate. CGTrader also now may convert uploaded models to additional file formats for buyers while sellers retain ownership.</p>
+<p><strong>Agent workflow:</strong> Oracle uses CGTrader analytics/search-gap data → 3D worker produces original model → geometry/topology/UV/render World → descriptions/tags/previews → browser upload → sales/reviews/enterprise inclusion → evolve categories.</p>
+<p><strong>Human dependencies:</strong> originality/art quality review, payout setup, occasional customer support. H1/H2.</p>
+<p><strong>Important constraint:</strong> only original/fully rights-owned models. This market punishes indiscriminate generative spam; originality/licensing evaluator is mandatory.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://help.cgtrader.com/hc/en-us/articles/46191760965137-What-is-a-Custom-Enterprise-Deal-and-how-does-it-affect-my-earnings-as-a-seller</li>
+<li>https://help.cgtrader.com/hc/en-us/articles/360015139237-How-to-publish-3D-models</li>
+<li>https://help.cgtrader.com/hc/en-us/articles/46191345789073-CGTrader-is-converting-my-files-into-other-formats-do-I-still-own-them</li>
+</ul>
+
+
+
+14. Superhive (formerly Blender Market) — Blender add-ons and workflow assets
+<p><strong>Score: 77/100 | Demand: High niche | Agent fit: 9/10 | Automation: 8/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> Blender add-ons, modifier setups, render setups, procedural geometry tools, materials, workflow automation and original models.</p>
+<p><strong>Economics/demand:</strong> Superhive says it reaches thousands of Blender customers and its August 2026 summer sale covered <strong>tens of thousands of eligible products</strong>. Free creator tier pays 70% commission; paid creator tiers can raise this to 80–90%. Every product is reviewed for compatibility/licensing/quality/support.</p>
+<p><strong>New 2026 factor:</strong> as of June 18, creators can offer a 12-month Support Period requiring response within three business days, ongoing updates and current Blender LTS compatibility. That makes a persistent autonomous maintenance worker especially valuable: humans struggle with maintenance overhead; a WorkerVersion can own it continuously.</p>
+<p><strong>Autonomous loop:</strong> mine Blender workflow friction → create add-on → test against LTS matrix → benchmark → docs/demo generation → human creator approval → submit/review → support bot triages issues → auto-test updates against new Blender releases.</p>
+<p><strong>Human dependencies:</strong> creator application, subjective product review, support edge cases. H1.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://superhivemarket.com/</li>
+<li>https://superhivemarket.com/pricing</li>
+<li>https://superhivemarket.com/posts/support-periods-purchases-on-superhive-now-served-with-a-side-of-confidence</li>
+</ul>
+
+
+
+15. BOOTH.pm VRChat/Unity asset shops — compatibility matrices as a product factory
+<p><strong>Score: 76/100 | Demand: High niche | Agent fit: 8/10 | Automation: 7/10 | H-level: H1–H2</strong></p>
+<p><strong>What agents sell:</strong> original VRChat world prefabs, Unity tools, effects, shaders, accessories, environment pieces, clothing fitted to multiple compatible avatar bases, setup tools and optimized variants.</p>
+<p><strong>Current evidence:</strong> 2026 BOOTH listings show ordinary digital VRChat assets selling around ¥400–¥6,500+, including world prefabs, effects, clothing and avatars. One May 2026 dress listing sells compatibility variants for numerous avatar bases — exactly the repetitive production pattern an agent lab can industrialize.</p>
+<p><strong>Autonomous loop:</strong> Oracle searches BOOTH/VRChat categories for compatibility gaps → worker creates original base asset → automated per-avatar fitting/build matrix → Unity/VRChat tests → multilingual docs/listing copy → human handles shop/payout setup → publish → support/issues/sales feed compatibility School.</p>
+<p><strong>Human dependencies:</strong> store/payout setup, strong IP/originality review, subjective art QA. H1/H2.</p>
+<p><strong>Moat:</strong> not “AI art spam”; build a compatibility/evaluation factory. A new avatar base becomes an opportunity event and the worker rapidly ports validated assets to it.</p>
+<p>Evidence examples:</p>
+<ul>
+<li>https://booth.pm/en/items/8388450</li>
+<li>https://booth.pm/en/items/7965558</li>
+<li>https://onecoin50.booth.pm/items</li>
+</ul>
+
+
+
+16. itch.io game-asset/tool market — agent-built production accelerators, not generic art packs
+<p><strong>Score: 74/100 | Demand: Medium-high | Agent fit: 8/10 | Automation: 9/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> Godot/indie-game starter systems, UI packs, shader/tool packs, procedural generators, audio utilities, compatible icon/UI systems, small code frameworks, and carefully curated original game assets.</p>
+<p><strong>Demand evidence:</strong> itch.io’s <strong>2026 Summer Sale had 30,000+ projects on sale, including 14,000+ game assets</strong>. The platform supports paid items, bundles, analytics and open revenue sharing (seller chooses platform share; default example 10%).</p>
+<p><strong>Reddit reality check:</strong> a February 2026 seller reported only $230 over two years, though 60% came in the last three months. Another 2025 post got ~2,937 visits but only ~$56 revenue. Buyers say assets save time but often require palette/style changes. A May 2026 thread complains major stores are flooded with inconsistent low-quality AI assets.</p>
+<p><strong>Conclusion:</strong> generic generated sprites are a BAD opportunity. The agent edge is <strong>tested, coherent, engine-ready systems</strong> with clear licensing and examples.</p>
+<p><strong>Autonomous loop:</strong> mine game-dev complaints → generate code/asset system → deterministic Godot/Unity demo world → publish through itch tooling/browser → sales/download analytics → iterate bundles.</p>
+<p><strong>Human dependencies:</strong> payout/tax setup and originality/art QA. H1.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://itch.io/blog/1564191/the-itchio-summer-sale-2026-is-live</li>
+<li>https://itch.io/docs/creators/payments</li>
+<li>https://www.reddit.com/r/itchio/comments/1quydev/i_tried_to_go_from_hobby_game_dev_to_selling/</li>
+<li>https://www.reddit.com/r/gamedev/comments/1tojddg/where_can_you_even_find_human_made_2d_game_assets/</li>
+</ul>
+
+
+
+17. Wix App Market — narrow recurring commerce/site utilities
+<p><strong>Score: 73/100 | Demand: High | Agent fit: 9/10 | Automation: 7/10 | H-level: H1</strong></p>
+<p><strong>What agents sell:</strong> merchant operations, catalog manipulation, local-business workflows, analytics, bookings helpers, SEO/metadata operations, migration and niche integrations.</p>
+<p><strong>Evidence:</strong> Wix has explicit paid-app pricing plans, subscriptions and marketplace distribution. Its pricing docs were updated Feb. 15, 2026; apps can update pricing for new subscriptions. Wix actively promotes App Market sale collections, showing platform-level distribution support.</p>
+<p><strong>Community opportunity:</strong> in May 2026 Wix users reported several apps being discontinued and replacement apps feeling worse. That is exactly an Oracle signal: discontinued/deprecated apps create measurable replacement demand.</p>
+<p><strong>Autonomous loop:</strong> monitor Wix deprecations + user complaints → clone <em>functionality category</em>, not proprietary code → agent builds replacement via Wix APIs → test site fixtures → submit/review → subscriptions/reviews → maintain.</p>
+<p><strong>Human dependencies:</strong> seller/payment onboarding and marketplace review. H1.</p>
+<p><strong>Moltwork assets:</strong> Wix Pack, deprecation scanner, Wix test-site World, app-review evaluator, migration Skill.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/change-app-pricing</li>
+<li>https://www.reddit.com/r/WIX/comments/1t6kc3c/wix_discontinuing_many_apps/</li>
+</ul>
+
+
+
+18. Salesforce AppExchange — micro-enterprise apps where the moat is passing review cheaply
+<p><strong>Score: 71/100 | Demand: Very high | Agent fit: 9/10 | Automation: 6/10 | H-level: H2</strong></p>
+<p><strong>What agents sell:</strong> tiny Salesforce workflow packages: data hygiene, admin automation, industry-specific objects/reports, validation tooling, integrations and operational utilities.</p>
+<p><strong>Why agents may have a special advantage:</strong> the biggest barrier is not writing Apex; it is the expensive, tedious security/package/review process. Salesforce’s Code Analyzer includes AppExchange-specific rules designed to prepare managed packages for review. That is perfect for Harbor: encode review classes into a World and evolve until packages repeatedly pass.</p>
+<p><strong>Community evidence:</strong> an AppExchange team reported spending roughly six months to build a small app, another three months preparing for review, failing the first attempt, and paying roughly $1,000 twice. Salesforce’s own older guidance confirms paid-app review is charged per attempt and reviews can be lengthy; current fees should always be rechecked before committing cash.</p>
+<p><strong>Autonomous loop:</strong> identify narrow admin pain → generate 2GP package → Code Analyzer/AppExchange rules → security World → sandbox tests → human partner submission → review feedback becomes training data → resubmit → paid license/customer outcome.</p>
+<p><strong>Human dependencies:</strong> partner relationship, legal, security review, enterprise sales. H2.</p>
+<p><strong>Moltwork asset with highest value:</strong> an AppExchange Security Review School/evaluator that makes every later product cheaper.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/code-analyzer.html</li>
+<li>https://www.reddit.com/r/salesforce/comments/1g0bzzn</li>
+</ul>
+
+
+
+19. Squarespace Extensions / Apps — commerce operations for SMB sites
+<p><strong>Score: 69/100 | Demand: Medium-high | Agent fit: 9/10 | Automation: 8/10 | H-level: H1–H2</strong></p>
+<p><strong>What agents sell:</strong> inventory/order automation, catalog synchronization, domain/site reselling workflows, specialized ecommerce utilities, migration tools and vertical integrations.</p>
+<p><strong>Why it belongs in Oracle:</strong> Squarespace now explicitly markets its developer platform as APIs + Apps + Docs with a <strong>marketplace to reach its global customer base</strong>. It exposes commerce management, webhooks, custom code and even describes its docs as AI-compatible for direct integration into Claude/ChatGPT.</p>
+<p><strong>Autonomous loop:</strong> monitor merchant pain → API-first product generation → fixture store → webhook/order tests → app listing → external SaaS billing/lead conversion → outcome tracking.</p>
+<p><strong>Human dependencies:</strong> app/merchant authorization, marketplace/business onboarding, external payments. H1/H2 depending on listing route.</p>
+<p><strong>Weakness:</strong> less transparent native marketplace monetization than Zoom/Bubble/Discord, so score it below markets with first-party payment rails.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://developers.squarespace.com/</li>
+</ul>
+
+
+
+20. Second Life Marketplace — scripts + virtual utility assets as a legacy but highly structured economy
+<p><strong>Score: 66/100 | Demand: Medium | Agent fit: 8/10 | Automation: 6/10 | H-level: H1–H2</strong></p>
+<p><strong>What agents sell:</strong> original furniture/environment objects, scripted utilities, vendor systems, UI gadgets, building components and event/roleplay infrastructure that are appropriate for general audiences.</p>
+<p><strong>Why it is interesting:</strong> Second Life has an old but still active marketplace denominated in L$, and Linden Lab exposes an official <strong>Marketplace API for viewers</strong> including merchant/listing operations. Current 2026 Marketplace listings demonstrate active digital-goods sales.</p>
+<p><strong>Autonomous loop:</strong> Oracle identifies requests/search gaps → Blender/LSL worker creates original product → simulator/permission tests → package in Second Life inventory → Marketplace listing → sales/reviews → maintain versions.</p>
+<p><strong>Human dependencies:</strong> account/merchant setup, in-world asset upload/inspection, payout/account requirements. H1/H2.</p>
+<p><strong>Why lower-ranked:</strong> smaller/older market, unusual runtime and currency, and a larger amount of viewer/in-world automation work. But the same weirdness means fewer modern autonomous entrants.</p>
+<p>Evidence:</p>
+<ul>
+<li>https://wiki.secondlife.com/wiki/Linden_Lab_Official%3AViewer_Managed_Marketplace/Marketplace_API_for_Viewers</li>
+<li>https://marketplace.secondlife.com/</li>
+</ul>
+
+
+
+Frontier Unlocks this run
+
+1. Google Workspace official MCP servers are the biggest fresh technical unlock
+<p>Google published first-party MCP server configuration for Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and People in late August 2026. This is significant because a Workspace product-building agent no longer needs custom wrappers merely to operate against the customer workflow during research/evaluation. It shortens <code>human/browser → agent/tool</code> for a huge business surface.</p>
+
+2. WordPress MCP Adapter turns plugin functionality into machine-discoverable abilities
+<p>The 2026 Abilities API + MCP Adapter is strategically larger than “WordPress supports AI.” It makes the WordPress ecosystem a <strong>tool market for agents</strong>. Oracle should crawl major plugin categories and ask: which economically useful operation is still UI-only and could be exposed as an Ability/MCP tool?</p>
+
+3. VRChat internal Avatar Marketplace removes the old external-store→manual-upload funnel
+<p>Previously an avatar sale often ended with a user handling files and Unity. The first-party marketplace lets buyers discover, try and purchase avatars in VRChat, reducing distribution friction and giving creators a direct outcome loop.</p>
+
+4. Slack classic-app shutdown creates a temporary forced migration market
+<p>November 16, 2026 is a concrete deadline. Oracle should immediately enumerate open-source/popular classic app patterns and companies still documenting them, then rank replacements by install base / pain / implementation difficulty.</p>
+
+5. Poe variable-cost monetization makes tiny computational products viable
+<p>Authorize/capture pricing lets a bot charge according to actual work. That is much closer to x402 economics than conventional SaaS subscriptions and should be treated as a strong experiment venue for Moltwork workers.</p>
+
+6. CGTrader enterprise licensing converts passive asset inventory into B2B exposure
+<p>The 2026 Custom Enterprise Deals change means an autonomous asset lab can potentially earn not only individual consumer sales but inclusion in bulk corporate licensing without negotiating every contract itself.</p>
+
+
+
+Human Dependency Reduction — highest-value targets
+
+A. Marketplace onboarding / seller identity — one-time H1 across almost every venue
+<p>The recurring pattern is not that humans must do the work; humans must initially establish the legal/account/payment identity. Moltwork should normalize these as:</p>
+<ul>
+<li><code>human.account_create</code></li>
+<li><code>human.identity_verify</code></li>
+<li><code>human.tax_payout_setup</code></li>
+<li><code>human.marketplace_agreement</code></li>
+<li><code>human.oauth_consent</code></li>
+</ul>
+<p>These should <em>not</em> make repeated work H2. Record recurrence=<code>once</code> and make the Human Queue surface a checklist.</p>
+
+B. Marketplace review submission
+<p>Zoom, VRChat, Teams, Salesforce, Elgato, Wix and others still contain human review. The next useful abstraction is not bypassing review; it is <strong>predicting review</strong>. Build Harbor Worlds from public acceptance criteria plus every rejection/approval receipt. Over time Moltwork’s moat is a <code>P(pass | artifact, venue, version)</code> estimate and automated preflight.</p>
+
+C. Browser-only upload/listing forms
+<p>BOOTH, CGTrader, Bubble and several creator venues remain much less API-native at the seller-publishing edge. This is where WebMCP will matter disproportionately. Oracle should periodically rescan their create/edit listing pages for WebMCP exposure; until then use compliant browser automation and keep the final irreversible publish behind CommitGate if needed.</p>
+
+D. Creative/artistic approval
+<p>3D/avatar markets should remain H1/H2 until the lab has strong evaluators. The valuable automation is not “remove the human artist immediately”; it is build objective worlds for topology, compatibility, originality, render quality, mobile performance, missing textures and license provenance, shrinking the human review to the few genuinely subjective dimensions.</p>
+
+E. Customer support
+<p>Several marketplaces explicitly require seller support (Superhive, Bubble, Telegram payment disputes, etc.). This is a hidden economic killer. Turn support into structured tasks: diagnose automatically, reproduce in a World, propose patch, escalate only unclear/refund/legal cases. A market becomes much more attractive when support hours/order approach zero.</p>
+
+
+
+Oracle implementation implications
+<p>Do <strong>not</strong> add another agentability taxonomy. Preserve H0–H4. For each opportunity/market Pack, emit granular <code>ExecutionStep</code>s and normalized <code>HumanDependency</code>s, then run an automation resolver in this order:</p>
+<p><code>official API → official MCP/WebMCP → official CLI/OpenAPI → approved integration platform → compliant browser automation → HumanQueue</code>.</p>
+<p>The more interesting Oracle metric is now:</p>
+<p><strong>Blocked Economic Value by Human Dependency</strong></p>
+<p>For example, if 200 candidate products across five marketplaces are blocked only by <code>human.manual_publish</code>, and a new WebMCP/API removes that step, Oracle should surface it as a frontier unlock immediately.</p>
+<p>Also track two different forms of market value:</p>
+<ol>
+<li><strong>Direct transaction venues</strong> — Telegram, VRChat, Zoom, Teams, Discord, Elgato, Poe, RapidAPI, Bubble, CGTrader, Superhive, BOOTH, itch.io, Wix.</li>
+<li><strong>Distribution/lead venues</strong> — WordPress.org SaaS plugins, Google Workspace add-ons, Slack Marketplace, Salesforce, Squarespace, Second Life depending on exact billing setup.</li>
+</ol>
+<p>That distinction will stop Oracle from treating “huge install surface” as equivalent to “easy revenue.”</p>
+
+Best five to prototype first
+<ol>
+<li><strong>RapidAPI micro-API portfolio</strong> — closest to existing Moltwork/x402 capabilities; nearly closed-loop and objectively measurable.</li>
+<li><strong>Telegram Mini Apps</strong> — enormous distribution + native microtransactions + referral rails.</li>
+<li><strong>WordPress MCP-ready plugin/SaaS</strong> — massive frontier shift in 2026 and perfect fit for agent-native products.</li>
+<li><strong>Elgato Stream Deck micro-products</strong> — small, testable, paid assets with manageable product scope.</li>
+<li><strong>Bubble plugins/templates</strong> — explicit pricing, payouts and highly reproducible structured products.</li>
+</ol>
+<p>VRChat is potentially larger than #4/#5 but needs the 3D evaluation pipeline before autonomous production quality is credible.</p>
+<p>— Oracle Market Unlock research report</p>

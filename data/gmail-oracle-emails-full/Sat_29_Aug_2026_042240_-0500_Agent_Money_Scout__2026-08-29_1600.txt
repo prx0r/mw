@@ -1,0 +1,159 @@
+Subject: Agent Money Scout — 2026-08-29 16:00
+Date: Sat, 29 Aug 2026 04:22:40 -0500
+Message ID: 1a04cd40f022160e
+================================================================================
+
+Agent Money Scout — 2026-08-29 16:00
+
+NEW THIS RUN
+
+1) Bankr x402 Cloud — https://docs.bankr.bot/x402-cloud/overview/
+What the agent does: turns a TypeScript Request→Response handler into a paid API endpoint; Bankr handles hosting, x402 payment verification, Base settlement, logs and discovery.
+Who pays: agents/developers invoking the endpoint.
+Verified economics: first 1,000 settled requests/month are free with 0% platform fee; after that Pro charges 5%; earnings settle directly to the wallet in USDC by default. No monthly fee.
+Required: useful API function, TypeScript/CLI, Base-compatible wallet/payment eligibility.
+Autonomy: 10/10.
+First action: package one existing reliable worker primitive (e.g. release verification, structured evidence extraction, document normalization) and deploy it as a single endpoint rather than building a new product.
+Constraints: normal wallet/payment/account rules apply; do not bypass age/KYC/geography requirements.
+Ease-to-first-$5: 6/10. Repeatability: 10/10.
+
+2) pay.sh provider catalog — https://pay.sh/
+What the agent does: sells an existing API to autonomous agents through x402/MPP; provider runs pay server in front of the API and publishes it to the catalog.
+Who pays: agents buying per-request API calls.
+Verified current market: 74 catalog services. Visible prices include QuickNode at $0.001–$1/request, Nansen $0.01–$7.50, and Vybe $0.012–$0.03. Settlement is on Solana and supports stablecoins including USDC/USDT.
+Required: useful API, provider integration, compatible settlement setup.
+Autonomy: 10/10.
+First action: inspect the 74-service catalog for categories with buyer need but weak/sparse supply, then cross-list an existing endpoint.
+Constraints: payment/account eligibility and provider data/API licenses must be respected.
+Ease: 6/10. Repeatability: 10/10.
+
+3) Sigrix — https://sigrix.io/sell
+What the agent does: package and sell prompts, personas, assistants, crews and agent products.
+Who pays: marketplace buyers.
+Verified economics: creators keep up to 85% as founding sellers (15% commission); standard commission is 20%. Marketplace reports 63 live listings and 6 verified creators; founding seller seats remain limited.
+Required: original working AI product; human review before listing.
+Autonomy: 7/10 (sales can be passive after listing, but onboarding/review is human).
+First action: publish a narrow proven worker artifact rather than a general agent.
+Constraints: marketplace/payment terms and age/account requirements apply.
+Ease: 5/10. Repeatability: 8/10.
+
+4) AI Builders Hackathon — https://ai-builders-hackathon-2026.devpost.com/
+What the agent does: build/test much of an AI-powered submission, with the operator handling eligibility/account/submission obligations.
+Who pays: hackathon sponsor if the project wins.
+Verified: global online hackathon, deadline Sep 15, 2026; current Devpost listing shows $33,900 in prizes and ~2.3K participants.
+Required: original project, demo/submission, Devpost account.
+Autonomy: 7/10 for building; competition entry itself requires a legitimate eligible entrant.
+First action: reuse an existing agent reliability/verification product rather than starting from zero; map it directly to judging criteria before coding.
+Constraints: check full official eligibility; do not bypass any age, location or identity rule.
+Ease-to-first-$5: 2/10 (prize competition). Repeatability: 3/10.
+
+5) Agents for Humans Hackathon — https://agentsforhumans.devpost.com/
+Verified: online; $40,000 cash; deadline Sep 14, 2026; 5.7K+ participants. Theme explicitly rewards agents that handle repetitive human tasks using Strands Agents.
+Important eligibility: official rules require entrants to be at least the age of majority where they reside. Therefore this is NOT an available earning route for a minor entrant and should be skipped unless the entrant independently satisfies the rules.
+Score for an eligible entrant: ease 2/10; repeatability 3/10.
+
+6) Bankr / x402 demand-gap play
+Customer/problem: autonomous agents need small paid utilities without API keys/accounts.
+Evidence: Bankr automatically indexes approved endpoints for agent discovery, while pay.sh already catalogs 74 machine-buyable APIs.
+Workflow: detect high-frequency machine tasks → implement deterministic endpoint → x402-paywall → discovery catalog → monitor paid calls/repeat buyers.
+Where customers come from: Bankr discovery, pay.sh, other x402 indexes.
+How to charge: per request, usually fractions of a cent to cents depending on cost/value.
+Concrete MVP: /verify-release or /structured-evidence with JSON schema + provenance.
+Ease: 6/10. Repeatability: 10/10.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7) Taskmarket — https://taskmarket.dev/
+Current primary page: 19 tasks open, 2,380.71 USDC funded volume. Buyers fund escrow; agents compete and accepted results settle in USDC.
+Agent work: research, coding, data, benchmarks, structured deliverables.
+First action: rank by funded reward, submissions/competition, objective acceptance and estimated execution cost.
+Autonomy: 9/10. Ease: 8/10. Repeatability: 9/10.
+
+8) dealwork.ai — https://dealwork.ai/
+Current primary page: 155 open tasks, 264 completed, 2.5K workers. It shows concrete completed examples including an $80 human→AI API endpoint and a $5 AI→AI CSV formatting task. Fees: 3% AI→AI, 10% otherwise.
+First action: connect one worker through skill.md and bid only on tasks with deterministic acceptance criteria.
+Autonomy: 9/10. Ease: 8/10. Repeatability: 9/10.
+
+9) WorkProtocol — https://workprotocol.ai/
+Current stats: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled; $50 minimum job budget. USDC is locked in Base escrow before work begins.
+Agent work: code, data, research, content, custom structured jobs.
+First action: poll funded open jobs; prioritize testable coding/research tasks.
+Autonomy: 9/10. Ease: 8/10. Repeatability: 9/10.
+
+10) MoltJobs — https://moltjobs.io/open-jobs
+Current board still shows fresh 2-USDC tasks. Platform is API/MCP/CLI-native, provides 10 free bids/month, charges 5% success fee and settles Base USDC.
+Caution: several current tasks require publishing promotional posts. Only take those when the account/platform rules permit it and the disclosure requirements can be met; avoid spam or deceptive promotion.
+Autonomy: 8/10. Ease: 5/10. Repeatability: 8/10.
+
+11) t2000 — https://t2000.ai/
+Still supports funded jobs plus reusable service listings. USDC locks at posting; services charge a 5% settlement fee and API calls 0%. Public pages continue showing settled activity/provider revenue.
+Autonomy: 9/10. Ease: 7/10. Repeatability: 9/10.
+
+12) Apify Store/x402 — https://apify.com/partners/actor-developers and https://blog.apify.com/introducing-x402-agentic-payments/
+Still one of the best recurring-revenue rails. Apify says roughly $1.5M/month is paid to community developers, and 20,000+ Actors are purchasable by agents over x402.
+Agent work: narrow data extraction/monitoring/automation Actor.
+First action: build one deterministic Actor around permitted public/authorized data with pay-per-event pricing.
+Autonomy: 10/10. Ease: 7/10. Repeatability: 10/10.
+
+FILTERED OUT
+
+JobChain (https://www.jobchain.rest/) shows impressive activity metrics but explicitly says they are Arc TESTNET and mainnet is still on the roadmap. Do not count those figures as cash earnings.
+ClawJobs (https://clawjobs.com/) currently shows 0 agents, $0 paid out, 0 jobs and example jobs worth $0 USDC. Not money today.
+MoltMarket (https://www.moltbotmarket.com/) still advertises $5+ bounties but its leaderboard remains at $0 earned / 0 completed for the visible top agent. Poll only; do not prioritize.
+
+REDDIT DEMAND SIGNALS
+
+A) Automation reliability / watchdog
+https://www.reddit.com/r/MarketingAutomation/comments/1vtuete/we_automated_too_much/
+Fresh Aug 20 thread: teams automated many small workflows, then experienced wrong routing, duplicate actions and unknown breakages. The recurring pain is not creating automations; it is understanding when they silently drift.
+Sellable offer: workflow watchdog — heartbeat, duplicate detection, schema drift, failed-run clustering, dependency change alerts, rollback/runbook.
+MVP: n8n/Zapier workflow export + execution logs → risk graph → alerts + weekly reliability report.
+Acquisition: n8n/Zapier consultants, agencies and operations teams.
+Charge: fixed setup + monthly monitoring.
+Repeatability: 10/10.
+
+B) Accounting/document chasing
+https://www.reddit.com/r/n8n_ai_agents/comments/1vvf0h2/built_a_full_ca_firms_automation_suite_on_n8n/
+Aug 22 thread with ~89 votes identifies document chasing, deadline reminders, invoice follow-ups, routine WhatsApp/email questions and lead qualification as persistent manual work.
+MVP: authorized client tracker → missing-doc detection → reminder queue → received-status update → exception/escalation.
+Charge: fixed implementation + recurring support/monitoring.
+Repeatability: 10/10.
+
+C) Invoice extraction remains stubbornly repetitive
+https://www.reddit.com/r/u_n8n_automations/comments/1vzs12y/i_built_a_workflow_that_automatically_extracts/
+Aug 27 example: invoice attachment → OCR/AI fields → Google Sheet → Slack notification; the poster says manual copying is slow/error-prone and the workflow now runs hands-off.
+Related technical discussion flags schema drift across vendors and partial failures as the real production problems.
+Sell: VERIFIED invoice rows + exception queue, not “AI OCR”.
+Workflow: PDF → native parsing/OCR fallback → fixed schema → validation → duplicate/anomaly checks → row or exception.
+Repeatability: 10/10.
+
+D) Law-firm intake/document workflow
+https://www.reddit.com/r/n8n/comments/1vywta1/built_a_full_ai_automation_system_for_a_law_firm/
+Aug 26 thread (~111 votes) highlights incoming client messages, unread documents, spreadsheet-tracked deadlines and forgotten follow-ups.
+Safe product boundary: intake classification, document summarization, calendar/status syncing and draft follow-ups, with legal judgment and sensitive decisions left to qualified humans.
+Repeatability: 9/10.
+
+E) Freelancers are being pushed toward outcome bundles
+https://www.reddit.com/r/freelance/comments/1vy1khu/ai_has_completely_changed_freelance_work_and/
+Aug 25 thread (~185 votes) reports clients expecting one person to deliver what several people previously did because AI should accelerate execution.
+Commercial implication: sell completed outputs such as “tested integration”, “verified dataset”, “working automation”, or “QA evidence packet” rather than hourly prompting.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) SHIP ONE PAID ENDPOINT, NOT ANOTHER MARKETPLACE ADAPTER.
+Bankr x402 Cloud is the best fresh path this run because it combines hosting + payment + discovery and lets the first 1,000 monthly settled calls keep 100% of revenue. Deploy an existing reliable capability such as /verify-release, /structured-evidence or /normalize-document.
+
+2) KEEP TASKMARKET + DEALWORK + WORKPROTOCOL AS THE DIRECT-WORK ROUTER.
+They currently have the strongest combination of funded/live inventory and real settlement evidence. Normalize all three to one schema:
+platform, job_id, reward, escrow_funded, deadline, competition, acceptance_tests, estimated_cost, expected_net, settlement_status.
+Rank on expected realized profit, not advertised reward.
+
+3) BUILD AN AUTOMATION-WATCHDOG SPECIALIST.
+The most interesting NEW Reddit demand this run is not “build me another n8n workflow”; it is “my automations now break silently and nobody understands the system.” A watchdog can itself win freelance/agent jobs and then become a recurring API/MCP/x402 product.
+
+Recommended metric:
+realized_EV = reward × P(funded) × P(open) × P(solve) × P(accepted) × P(settled) − inference − APIs − payment/network − human review.
+
+Only SETTLED/WITHDRAWN counts as earnings. Testnet volume, internal credits, unfunded bounty cards, self-reported GMV and zero-dollar demo jobs stay outside revenue.
+
+Eligibility note: any platform using Stripe, banking, crypto wallets, KYC, or hackathon prize verification can impose age/geographic requirements. Use only services for which the operator legitimately satisfies those requirements; do not bypass them.

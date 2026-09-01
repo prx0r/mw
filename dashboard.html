@@ -83,6 +83,21 @@ const MARKETS = [
   {id:"vesuvius",name:"Vesuvius Challenge",category:"moonshot_challenge",skill_family:"F15",h_level:"H0/H2",reward:"$20K/month + $1M",status:"blocked",blocker:"Need research setup",deadline:"rolling",api:"Git + forms"},
   {id:"toku",name:"toku.agency",category:"job_market",skill_family:"F9",h_level:"H0",reward:"$5-$25/task",status:"blocked",blocker:"Need API signup",deadline:"ongoing",api:"toku.agency/api"},
   {id:"complete_codes",name:"Complete Codes",category:"job_market",skill_family:"F7",h_level:"H0",reward:"USDC per sprint",status:"live",blocker:"0 active sprints",deadline:"ongoing",api:"api.complete.codes/v1"},
+  // ─── Security Lab Markets ─────────────────────────────────────────
+  {id:"bitsec",name:"Bitsec SN60",category:"security_code_contest",skill_family:"F11",h_level:"H0",reward:"TAO emissions",status:"live",blocker:null,deadline:"ongoing",api:"bittensor subnet 60",school:"code-audit"},
+  {id:"sn61_redteam",name:"RedTeam SN61",category:"security_adversarial_challenge",skill_family:"F11",h_level:"H0",reward:"TAO emissions",status:"live",blocker:null,deadline:"ongoing",api:"bittensor subnet 61",school:"adversarial-systems"},
+  {id:"immunefi_comp",name:"Immunefi Competitions",category:"security_code_contest",skill_family:"F11",h_level:"H0/H2",reward:"$10K-$500K+",status:"live",blocker:null,deadline:"rolling",api:"immunefi.com",school:"code-audit"},
+  {id:"immunefi_bounty",name:"Immunefi Bounties",category:"security_live_bounty",skill_family:"F11",h_level:"H0/H2",reward:"$1K-$10M+",status:"live",blocker:null,deadline:"rolling",api:"immunefi.com/bounty",school:"code-audit",programs:184},
+  {id:"cantina_comp",name:"Cantina Competitions",category:"security_code_contest",skill_family:"F11",h_level:"H0/H2",reward:"$10K-$500K+",status:"live",blocker:null,deadline:"rolling",api:"cantina.xyz",school:"code-audit",live_opps:44},
+  {id:"cantina_bounty",name:"Cantina Bounties",category:"security_live_bounty",skill_family:"F11",h_level:"H0/H2",reward:"$1K-$500K+",status:"live",blocker:null,deadline:"rolling",api:"cantina.xyz",school:"code-audit"},
+  {id:"sherlock_comp",name:"Sherlock Contests",category:"security_code_contest",skill_family:"F11",h_level:"H0/H2",reward:"$10K-$500K+",status:"live",blocker:null,deadline:"rolling",api:"sherlock.xyz",school:"code-audit"},
+  {id:"sherlock_bounty",name:"Sherlock Bounties",category:"security_live_bounty",skill_family:"F11",h_level:"H0/H2",reward:"$1K-$100K+",status:"live",blocker:null,deadline:"rolling",api:"sherlock.xyz",school:"code-audit"},
+  {id:"huntr",name:"Huntr AI Challenges",category:"security_ai_redteam",skill_family:"F11",h_level:"H0",reward:"$5K-$50K+",status:"live",blocker:null,deadline:"rolling",api:"huntr.com",school:"ai-redteam"},
+  {id:"hackerone_ai",name:"HackerOne AI Programs",category:"security_ai_redteam",skill_family:"F11",h_level:"H0",reward:"$500-$50K+",status:"live",blocker:null,deadline:"rolling",api:"hackerone.com",school:"ai-redteam"},
+  {id:"hackerone_gen",name:"HackerOne General",category:"security_triage",skill_family:"F11",h_level:"H0",reward:"$100-$50K+",status:"live",blocker:null,deadline:"rolling",api:"hackerone.com",school:"code-audit"},
+  {id:"hackenproof",name:"HackenProof",category:"security_live_bounty",skill_family:"F11",h_level:"H0",reward:"$100-$100K+",status:"live",blocker:null,deadline:"rolling",api:"hackenproof.com",school:"code-audit"},
+  {id:"intigriti",name:"Intigriti",category:"security_live_bounty",skill_family:"F11",h_level:"H0",reward:"$50-$25K+",status:"live",blocker:null,deadline:"rolling",api:"intigriti.com",school:"code-audit"},
+  {id:"google_oss_vrp",name:"Google OSS VRP",category:"security_oss_reward",skill_family:"F11",h_level:"H0/H2",reward:"$100-$31K",status:"live",blocker:null,deadline:"rolling",api:"bughunters.google.com",school:"code-audit"},
 ];
 
 const SKILL_FAMILIES = [
@@ -97,7 +112,7 @@ const SKILL_FAMILIES = [
   {id:"F8",name:"Web Scraping",markets:10,verifier:"data_validation",training_env:"scraping_world"},
   {id:"F9",name:"Research/Analysis",markets:20,verifier:"sourced_claims",training_env:"research_world"},
   {id:"F10",name:"Forecasting",markets:3,verifier:"proper_scoring",training_env:"forecasting_world"},
-  {id:"F11",name:"Security",markets:5,verifier:"test_suite",training_env:"cve_world"},
+  {id:"F11",name:"Security / Audit",markets:14,verifier:"test_suite + reproducibility",training_env:"bitsec + cve_world",pool:"security",schools:["code-audit","ai-redteam","adversarial-systems"]},
   {id:"F12",name:"Content/Template",markets:8,verifier:"screenshot_qa",training_env:"template_world"},
   {id:"F13",name:"Workflow Automation",markets:10,verifier:"deterministic",training_env:"automation_world"},
   {id:"F14",name:"3D/Creative",markets:10,verifier:"geometry_validate",training_env:"3d_world"},

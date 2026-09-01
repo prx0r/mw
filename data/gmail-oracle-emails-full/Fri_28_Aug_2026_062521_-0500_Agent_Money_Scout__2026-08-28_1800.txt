@@ -1,0 +1,130 @@
+Subject: Agent Money Scout — 2026-08-28 18:00
+Date: Fri, 28 Aug 2026 06:25:21 -0500
+Message ID: 1a0481e029ad8e7a
+================================================================================
+
+# Agent Money Scout — 28 Aug 2026, 18:00
+
+## NEW THIS RUN
+
+1. PROXIES.SX Service Marketplace — https://www.proxies.sx/x402-service-marketplace
+What: Build scraping bots/APIs/automation services using its proxy/browser infrastructure, then sell them per request over x402. It also has a developer bounty board.
+Verified economics: 14 bounties totaling $1,150; individual bounties $50–$200 in $SX. Live service example: Google Maps Lead Generator at $0.005/record; the marketplace example shows $0.005/query revenue with ~$0.001 underlying cost, leaving ~$0.004 margin. x402 protocol fee is stated as 0%.
+Skills/tools: HTTP/API, scraping, TypeScript/JS useful, x402, proxies/browser automation.
+Autonomy: 10/10 once deployed.
+First action: choose one still-open bounty such as mobile SERP tracker, price/stock monitor, review monitor, ad verification or job-intel service and build it against their infrastructure.
+Eligibility: no registration advertised for service submission; crypto/payment eligibility still depends on applicable wallet/platform rules.
+First-$5: 8/10. Repeatability: 10/10.
+
+2. AgenticTrade — https://agentictrade.io/
+What: Turn an API, prompt, scraper, research tool or developer tool into an MCP-discoverable service that other agents pay to call.
+Verified economics: site currently reports 194+ services, 4,815 service calls and 1,169 active agents. USDC payouts. 0% provider commission month 1, 5% months 2–3, capped at 10%. Starting prices can be $0.001/call.
+Skills/tools: existing API or even prompt-as-API; MCP/API integration.
+Autonomy: 10/10.
+First action: expose one narrow research/evidence endpoint and register it.
+First-$5: 6/10. Repeatability: 10/10.
+
+3. the402 — https://the402.ai/
+What: Sell data APIs, automated services, human services, subscriptions or digital products to agents. Providers can receive jobs by webhook and get USDC on Base.
+Verified economics: pay-per-request USDC; automated/human services use on-chain escrow. Catalog and discovery are machine-readable. Registration can be done for $0.01, though core purchases do not require registration.
+Skills/tools: HTTP endpoint, webhook, x402/Base.
+Autonomy: 10/10.
+First action: publish a service with explicit input/output schema, e.g. /verify-company or /api-due-diligence.
+First-$5: 5/10. Repeatability: 10/10.
+
+4. Circle Agent Marketplace — https://agents.circle.com
+What: Publish/use agentic services inside Circle's Agent Stack; agents can discover services and transact programmatically.
+Verified economics: Circle launched Agent Marketplace and Nanopayments on May 11, 2026. Nanopayments support gas-free USDC transfers as small as $0.000001.
+Skills/tools: API/service endpoint, Circle agent stack/wallets.
+Autonomy: 10/10.
+First action: inspect provider onboarding and package one existing machine-callable capability.
+First-$5: 4/10 because marketplace demand is still emerging. Repeatability: 10/10.
+
+5. APIHub x402 Marketplace — https://apihub.io/marketplace
+What: List/pay-per-call APIs. Current catalog includes x402 services with visible transaction counts and uptime.
+Verified demand examples: weather endpoint shown with 63 transactions; Aubr AI longevity service with 21 transactions; OpenWeb Ninja advertises 40+ web/SERP/e-commerce/real-estate/finance APIs mostly around $0.003/call; M2MCent indexes 1,069 monetized MCP nodes.
+Skills/tools: reliable HTTP API, x402.
+Autonomy: 10/10.
+First action: inspect the live catalog for under-served categories, then ship a differentiated endpoint rather than another generic wrapper.
+First-$5: 5/10. Repeatability: 10/10.
+
+6. Superteam Earn Agent API — https://earn.superteam.fun/
+What: AI agents can register, discover AGENT_ALLOWED/AGENT_ONLY Solana bounties, submit work programmatically, then hand a claim code to the human operator for payout onboarding.
+Verified economics: historical platform GDP $1.7M+; typical bounty around 1,500 USDC according to the verified agent guide; observed agent-toolkit listings $500–$5,000.
+Skills/tools: usually development, research, ecosystem tooling, Solana.
+Autonomy: 8/10; payout still requires a human claimant/profile/KYC where applicable.
+First action: register through the Agent API and query only AGENT_ALLOWED/AGENT_ONLY live listings.
+First-$5: 6/10; Repeatability: 8/10.
+
+7. Stacker News / paid bounty & rewards surface — https://stacker.news/
+What: Produce high-quality technical/research posts and answer bounty/AMA threads for Bitcoin Lightning sats. This is not fully autonomous client work, but a research/writing agent can do most of the production with human oversight.
+Verified evidence: an agent-operator field report found paid tasks in the 1,000–5,000 sat range; separate observed AMA comments received 1,243–1,715 sats. Stacker News also funds GitHub bounties historically.
+Skills/tools: research/writing, Lightning-compatible payout account where eligible.
+Autonomy: 7/10.
+First action: scan open need/bounty threads for topics the agent can answer with primary-source evidence.
+First-$5: 5/10. Repeatability: 7/10.
+
+8. The Colony — https://thecolony.cc/
+What: Agent-native community with Lightning-sat rewards for posts/comments and paid tasks.
+Verified operator report: 1,000–5,000 sats per paid task during a 48+ hour autonomous run. Important caveat: treat only actually withdrawn sats as income; another operator reported some platforms credit balances that later fail withdrawal.
+Skills/tools: API access, research/writing.
+Autonomy: 9/10.
+First action: inspect the current paid-task feed and only claim tasks with explicit sat rewards.
+First-$5: 5/10. Repeatability: 7/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+9. SporeAgent — https://sporeagent.com/ — still one of the clearest task-shaped markets. Prior live examples: ~$45 scraping/data extraction, $80 FastAPI tests, $120 technical translation. First-$5 9/10; Repeat 9/10.
+
+10. Clawlancer — https://clawlancer.ai/ — research/code/writing/analysis bounties, Base USDC, MCP/REST, low advertised fees. First-$5 8/10; Repeat 8/10.
+
+11. MoltJobs — https://molt-jobs.com/ — REST/CLI/MCP/webhooks; research, scraping, fact checking, code review and APIs; Base USDC. First-$5 7/10; Repeat 8/10.
+
+12. ClawGig — https://clawgig.ai/ — agent can browse gigs, propose, communicate and deliver through API. Platform advertises 90% to agent. First-$5 8/10; Repeat 8/10.
+
+13. TaskForce — https://www.task-force.app/ — API-first discover/bid/deliver workflow with milestone USDC escrow. First-$5 8/10; Repeat 8/10.
+
+14. AgentBazaar — https://www.agentbazaar.dev/ — passive capability sales; published split 97% worker / 3% platform. Best treated as an API-sales surface when job boards are quiet. First-$5 5/10; Repeat 10/10.
+
+15. x402 Arena — https://x402arena.gg/ — still valuable mainly as market-intelligence because it reveals what machine-payable endpoints are receiving paid calls. Prior live categories included package health, API readiness, vendor due diligence, competitor comparison and structured-data checks. First-$5 6/10; Repeat 10/10.
+
+16. AgentPay Store — https://agentpaystore.com/ — list arbitrary HTTP endpoints and collect paid calls. Prior published share: 82% of each paid call. First-$5 6/10; Repeat 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+17. QA / testing bottleneck agent.
+Fresh signal: a highly upvoted Aug 27 developersIndia thread reports AI-assisted developers finishing work so quickly that QA became the bottleneck; comments describe developers idling while QA/manual testing cannot keep pace. This is an immediate product niche: repo/PR -> requirements extraction -> generated test plan -> deterministic/unit/E2E tests -> browser/API execution -> failure evidence -> QA review queue.
+Customer: software teams using coding agents heavily.
+Acquisition: engineering communities, indie SaaS, agencies, GitHub projects — not unsolicited spam.
+Charging: per PR tested, per test run, or monthly CI allowance.
+MVP: GitHub app that comments with executable test evidence and only escalates ambiguous failures.
+First-$5: 8/10. Repeatability: 10/10.
+
+18. Invoice-to-ledger agent.
+Recurring Reddit pattern from earlier runs: businesses manually copy invoice/PDF/email fields into spreadsheets/accounting systems for hours each week.
+Workflow: authorized inbox/Drive -> OCR/extract -> validate totals/vendor/date -> structured record -> duplicate detection -> accounting export -> exception queue.
+Charge: per processed document or monthly volume.
+First-$5: 8/10. Repeatability: 10/10.
+
+19. Lead follow-up / booking operator.
+Recurring Reddit pattern: missed lead follow-ups, multi-message scheduling and CRM updates are repeatedly described as high-friction work.
+Workflow: authorized lead source -> enrichment -> qualification -> permitted follow-up -> booking -> CRM update -> human escalation on uncertainty.
+Charge: per qualified booking or monthly workflow fee.
+First-$5: 8/10. Repeatability: 10/10.
+
+20. AI-generated-code verification service.
+Fresh Reddit evidence overlaps with #17: teams report code generation accelerating while testing capacity and product knowledge lag behind. Rather than selling more code generation, sell verification.
+Workflow: PR -> diff understanding -> risk map -> tests -> static checks -> dependency/security/config checks -> repro artifacts -> pass/fail confidence.
+Where to acquire customers: teams already using Claude Code/Codex/OpenCode, developer agencies, AI-native startups.
+Charge: e.g. fixed per PR or API-call metering; exact price should be tested rather than assumed.
+First-$5: 8/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Claim a PROXIES.SX bounty before building another general agent. It is the best new direct-money surface in this run because the board publicly shows 14 bounties totaling $1,150 and several clearly specified $50–$200 service builds.
+
+2. Turn one successful bounty capability into three paid listings: AgenticTrade + the402 + APIHub. Use one endpoint and one codebase. Best initial capability: verified company/API due diligence or job-intelligence scraping, because those overlap with current paid x402 demand categories.
+
+3. Build a QA-verification worker as the second specialist. The freshest demand evidence today is not 'companies need more code agents'; it is that code agents are creating a testing bottleneck. A worker that independently validates AI-generated code may have better immediate willingness-to-pay than another coding agent.
+
+Important filter: do not count internal balances, testnet rewards, mock payments, platform points, or unwithdrawn credits as income. Count only settled/withdrawable value. Also obey each platform's account, identity, age, geography and payment-provider eligibility rules.

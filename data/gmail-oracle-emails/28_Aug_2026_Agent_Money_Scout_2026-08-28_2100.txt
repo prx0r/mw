@@ -1,0 +1,271 @@
+Subject: Agent Money Scout — 2026-08-28 21:00
+Date: Fri, 28 Aug 2026 09:22:26 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a048c022ced922a
+================================================================================
+
+# Agent Money Scout — 2026-08-28 21:00
+
+## NEW THIS RUN
+
+### 1. Toku.agency — strongest fresh direct-work marketplace
+URL: https://www.toku.agency/
+What the agent does: registers through one API call, lists specialist services, bids on open jobs, gets hired by humans or other agents, completes the work, and can itself subcontract other agents.
+Who pays: marketplace customers; settlement is real USD through Stripe Connect.
+Verified economics: Toku currently shows 125+ open jobs, 1,620+ listed agents, and an 85% worker / 15% platform split. Visible jobs include a $5 technical blog-post job and a $5 governance/research job; public agent services range from a few dollars to hundreds or more.
+Tools/skills: REST/API integration, specialist work capability; Stripe Connect is needed for withdrawal.
+Autonomy: 9/10 after operator onboarding.
+First action: register one narrow agent and list a $5–$10 research/code-review/scraping service, then ingest the open-jobs endpoint.
+Constraints: Stripe identity/age/geography rules apply; do not bypass them.
+Ease first $5: 9/10. Repeatability: 9/10.
+Source: https://www.toku.agency/
+
+### 2. PayTheAgent.ai — actual companies advertising roles for AI agents
+URL: https://www.paytheagent.ai/
+What the agent does: applies to explicitly agent-designated jobs such as developer advocacy, Agile process optimization, partnership research, travel planning, lead qualification, and automated product/content operations.
+Who pays: the hiring company.
+Verified economics: the board currently shows 11 agent roles and 11 companies. The headline RevenueCat Agentic AI Developer Advocate role advertises $10,000/month for a six-month remote contract. BrightApps advertises $15–$25/hour for an Agile Process Optimizer. Other listings show $100/month, $200–$1,000/month, $1,000–$4,999/month, or undisclosed compensation.
+Tools/skills: varies by role; common requirements include web/API access, GitHub/Jira/Slack, research, structured JSON/CSV output, cloud runtime and human operator oversight.
+Autonomy: 6–9/10 depending on role.
+First action: browse GET /api/jobs and shortlist roles whose required integrations are already available.
+Constraints: many roles require a human operator, interviews, background checks or legal contracting eligibility. Use only where legitimately eligible.
+Ease first $5: 5/10. Repeatability: 9/10 if hired.
+Sources: https://www.paytheagent.ai/ and https://www.paytheagent.ai/jobs/revenuecat-agentic-ai-developer-advocate
+
+### 3. BountyBook — technically excellent, but currently zero open bounties
+URL: https://www.bountybook.ai/
+What the agent does: reads machine-readable bounties over MCP/API, completes them, and an AI oracle checks acceptance criteria before escrow pays USDC on Base.
+Who pays: bounty posters.
+Verified economics: 4% success fee; agent needs only tiny Base gas. However the live page currently reports 0 open bounties.
+Tools/skills: MCP/API-compatible worker, Base address.
+Autonomy: 10/10.
+First action: add a zero-cost poller, but do not allocate build time until funded jobs appear.
+Constraints: explicitly early beta; do not treat it as liquid income today.
+Ease first $5: 1/10 today. Repeatability: 8/10 if liquidity appears.
+Sources: https://www.bountybook.ai/ and https://www.bountybook.ai/docs
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 4. Daydreams TaskMarket
+URL: https://market.daydreams.systems/
+Agent work: submit to bounty/claim/pitch/benchmark/auction tasks; Base USDC settlement.
+Current signal: recent reporting says roughly 373 tasks, 16,640 submissions, 399 settlements and 177 worker agents paid as of August 2026, indicating actual activity but significant competition.
+Autonomy: 10/10. First $5: 6/10. Repeatability: 8/10.
+
+### 5. Clustly
+URL: https://www.clustly.ai/
+Agent work: publish a service, receive directed hires, execute and submit work; buyer releases Solana USDC escrow.
+Current mechanics: service price and acceptance criteria are fixed before execution; 4% fee shown in current settlement examples. MCP/poll integration is live.
+Autonomy: 9/10. First $5: 7/10. Repeatability: 9/10.
+
+### 6. NEAR AI Agent Market
+URL: https://market.near.ai/
+Agent work: bid on development/research/automation jobs or list fixed-price services.
+Verified public examples: MCP Server 20 USDC, NEAR smart-contract work 24 USDC, Telegram/Discord bot 16 USDC, LangChain Tool 12 USDC; gigs.sh reports ~3.8K jobs and ~$24.9K historical volume.
+Autonomy: 8/10. First $5: 6/10. Repeatability: 8/10.
+
+### 7. BotBounty
+URL: https://www.botbounty.ai/
+Agent work: browse API bounties in code, research, data, scraping and automation; claim, submit and receive ETH on Base after approval.
+Current signal: agent quick-start remains live and no browser signup is required for API participation.
+Autonomy: 10/10. First $5: 7/10. Repeatability: 8/10.
+
+### 8. x402 Arena
+URL: https://x402arena.gg/
+Agent work: expose a paid x402 endpoint and receive real USDC calls.
+Current live stats: 322 agents, $109.32 revenue, 10,790 paid queries and 72 buyers. Valuable because it reveals categories that receive real calls.
+Autonomy: 10/10. First $5: 5/10. Repeatability: 10/10.
+
+### 9. PayanAgent
+URL: https://payanagent.com/
+Agent work: sell one of 24,000+ aggregated x402 services or respond to bespoke requests; machine buyers purchase over one route.
+Economics: 0 marketplace fee advertised; USDC/x402.
+Autonomy: 10/10. First $5: 5/10. Repeatability: 10/10.
+
+### 10. Superteam Earn Agent API
+URL: https://earn.superteam.fun/
+Agent work: discover AGENT_ALLOWED/AGENT_ONLY Solana bounties and submit programmatically.
+Economics: historical platform distributions exceed $1.7M; agent-compatible opportunities can be hundreds or thousands of USDC, but competition and human claim/payment steps make first revenue slower.
+Autonomy: 7/10. First $5: 4/10. Repeatability: 8/10.
+
+### 11. gigs.sh discovery layer
+URL: https://gigs.sh/
+Use: machine-readable index of 46 verified agent earning platforms. This is best used as an upstream feed, not counted as a marketplace itself.
+First action: ingest it into the scout and diff changes rather than browsing the same sources every run.
+
+### 12. ClawTasks — explicitly NOT an earning target right now
+URL: https://clawtasks.com/
+Current status: free-task-only while the platform hardens reliability and winds down paid bounties. Keep out of the money router until paid bounties return.
+
+## REDDIT DEMAND SIGNALS
+
+### A. Accounts-receivable automation has current buyer intent
+Thread: https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/
+An August 3 business user says their QBO + Stripe workflow still requires substantial manual entry and explicitly asks for help staging invoice drafts while handling tiered usage and custom discounts. The recurring technical pain in replies is separating pricing-rule logic from orchestration, keeping retries idempotent, versioning billing rules, and retaining human review for exceptions.
+Concrete offer: “We stage verified invoice drafts from usage data and keep QBO/Stripe synchronized; you approve exceptions only.” Charge per active client/month or per invoice processed.
+
+### B. Invoice chasing is repetitive and easy to validate
+Thread: https://www.reddit.com/r/u_vishwas2001/comments/1vjm642/i_automated_the_job_nobody_wants_chasing_unpaid/
+An August 9 workflow describes reading invoice status from Sheets, sending staged reminders, preventing duplicates and producing a daily receivables report with zero routine intervention.
+Concrete offer: receivables follow-up agent with an immutable reminder log and approval gate for unusual cases.
+
+### C. Reporting still burns agency hours
+Thread: https://www.reddit.com/r/AiAutomations/comments/1vo7dvr/i_automated_our_monthly_client_reports_with_an_ai/
+An August 14 agency strategist reports roughly six hours/week saved by automating data gathering, cleanup, month-over-month calculations and report drafting. They warn that causal interpretation still needs human review.
+Concrete offer: data ingestion + verified variance summary + draft report, explicitly leaving causal claims for approval.
+
+### D. Real-world messy spreadsheets are the moat
+Thread: https://www.reddit.com/r/AiAutomations/comments/1vuhwxi/how_i_automated_weekly_reporting_for_a_client_who/
+An August 21 operator describes a distribution business manually compiling weekly status reports from 4–5 inconsistent spreadsheets. The difficult part was defensive normalization of malformed dates, mixed text/numbers and irregular sheets.
+Concrete offer: “messy spreadsheet → normalized operational report,” priced monthly.
+
+### E. Businesses are already paying humans for AI automation work
+Thread: https://www.reddit.com/r/buhaydigital/comments/1veph26/client_wants_fulltime_ea_custom_ai_automations/
+An August 3 freelancer describes a client offering $1,000/month for full-time EA work plus custom Claude/API/Google Apps Script automation, demonstrating direct willingness to pay for workflow automation even outside agent-native marketplaces.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Toku first. It is the clearest fresh source this run because it combines 125+ visible open jobs with real USD/Stripe payout. List one narrow $5–$10 service: research report, code review, web scraping or structured competitive analysis. Add the job feed to the universal router.
+
+2. Build a PayTheAgent adapter. This should score longer-running agent roles separately from micro-gigs: compensation, operator requirements, integrations, geographic eligibility, interview friction and expected monthly value. The RevenueCat $10k/month listing demonstrates that the ceiling is far above micro-bounties.
+
+3. Build the first business-facing specialist around billing/reporting verification. Fresh Reddit demand keeps pointing to the same operation: messy business data → normalize → apply deterministic rules → produce a draft/record → human approves exceptions. That capability can earn through direct customers, Toku jobs, traditional freelance work and x402 endpoints.
+
+Core ranking architecture:
+source → normalize task/service → verify actual payment rail → estimate success probability → subtract compute/API/payment costs → execute only positive-EV work → record SETTLED/WITHDRAWN revenue, not platform credits.
+
+Important eligibility note: some platforms rely on Stripe Connect, background checks, financial accounts, wallets or jurisdiction-specific rules. Only use them where the operator legitimately meets all age, identity and geography requirements; do not bypass platform controls.
+Agent Money Scout — 2026-08-28 21:00
+
+NEW THIS RUN
+
+1. Toku.agency — strongest fresh direct-work marketplace
+<p>URL: https://www.toku.agency/<br>
+What the agent does: registers through one API call, lists specialist services, bids on open jobs, gets hired by humans or other agents, completes the work, and can itself subcontract other agents.<br>
+Who pays: marketplace customers; settlement is real USD through Stripe Connect.<br>
+Verified economics: Toku currently shows 125+ open jobs, 1,620+ listed agents, and an 85% worker / 15% platform split. Visible jobs include a $5 technical blog-post job and a $5 governance/research job; public agent services range from a few dollars to hundreds or more.<br>
+Tools/skills: REST/API integration, specialist work capability; Stripe Connect is needed for withdrawal.<br>
+Autonomy: 9/10 after operator onboarding.<br>
+First action: register one narrow agent and list a $5–$10 research/code-review/scraping service, then ingest the open-jobs endpoint.<br>
+Constraints: Stripe identity/age/geography rules apply; do not bypass them.<br>
+Ease first $5: 9/10. Repeatability: 9/10.<br>
+Source: https://www.toku.agency/</p>
+
+2. PayTheAgent.ai — actual companies advertising roles for AI agents
+<p>URL: https://www.paytheagent.ai/<br>
+What the agent does: applies to explicitly agent-designated jobs such as developer advocacy, Agile process optimization, partnership research, travel planning, lead qualification, and automated product/content operations.<br>
+Who pays: the hiring company.<br>
+Verified economics: the board currently shows 11 agent roles and 11 companies. The headline RevenueCat Agentic AI Developer Advocate role advertises $10,000/month for a six-month remote contract. BrightApps advertises $15–$25/hour for an Agile Process Optimizer. Other listings show $100/month, $200–$1,000/month, $1,000–$4,999/month, or undisclosed compensation.<br>
+Tools/skills: varies by role; common requirements include web/API access, GitHub/Jira/Slack, research, structured JSON/CSV output, cloud runtime and human operator oversight.<br>
+Autonomy: 6–9/10 depending on role.<br>
+First action: browse GET /api/jobs and shortlist roles whose required integrations are already available.<br>
+Constraints: many roles require a human operator, interviews, background checks or legal contracting eligibility. Use only where legitimately eligible.<br>
+Ease first $5: 5/10. Repeatability: 9/10 if hired.<br>
+Sources: https://www.paytheagent.ai/ and https://www.paytheagent.ai/jobs/revenuecat-agentic-ai-developer-advocate</p>
+
+3. BountyBook — technically excellent, but currently zero open bounties
+<p>URL: https://www.bountybook.ai/<br>
+What the agent does: reads machine-readable bounties over MCP/API, completes them, and an AI oracle checks acceptance criteria before escrow pays USDC on Base.<br>
+Who pays: bounty posters.<br>
+Verified economics: 4% success fee; agent needs only tiny Base gas. However the live page currently reports 0 open bounties.<br>
+Tools/skills: MCP/API-compatible worker, Base address.<br>
+Autonomy: 10/10.<br>
+First action: add a zero-cost poller, but do not allocate build time until funded jobs appear.<br>
+Constraints: explicitly early beta; do not treat it as liquid income today.<br>
+Ease first $5: 1/10 today. Repeatability: 8/10 if liquidity appears.<br>
+Sources: https://www.bountybook.ai/ and https://www.bountybook.ai/docs</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+4. Daydreams TaskMarket
+<p>URL: https://market.daydreams.systems/<br>
+Agent work: submit to bounty/claim/pitch/benchmark/auction tasks; Base USDC settlement.<br>
+Current signal: recent reporting says roughly 373 tasks, 16,640 submissions, 399 settlements and 177 worker agents paid as of August 2026, indicating actual activity but significant competition.<br>
+Autonomy: 10/10. First $5: 6/10. Repeatability: 8/10.</p>
+
+5. Clustly
+<p>URL: https://www.clustly.ai/<br>
+Agent work: publish a service, receive directed hires, execute and submit work; buyer releases Solana USDC escrow.<br>
+Current mechanics: service price and acceptance criteria are fixed before execution; 4% fee shown in current settlement examples. MCP/poll integration is live.<br>
+Autonomy: 9/10. First $5: 7/10. Repeatability: 9/10.</p>
+
+6. NEAR AI Agent Market
+<p>URL: https://market.near.ai/<br>
+Agent work: bid on development/research/automation jobs or list fixed-price services.<br>
+Verified public examples: MCP Server 20 USDC, NEAR smart-contract work 24 USDC, Telegram/Discord bot 16 USDC, LangChain Tool 12 USDC; gigs.sh reports ~3.8K jobs and ~$24.9K historical volume.<br>
+Autonomy: 8/10. First $5: 6/10. Repeatability: 8/10.</p>
+
+7. BotBounty
+<p>URL: https://www.botbounty.ai/<br>
+Agent work: browse API bounties in code, research, data, scraping and automation; claim, submit and receive ETH on Base after approval.<br>
+Current signal: agent quick-start remains live and no browser signup is required for API participation.<br>
+Autonomy: 10/10. First $5: 7/10. Repeatability: 8/10.</p>
+
+8. x402 Arena
+<p>URL: https://x402arena.gg/<br>
+Agent work: expose a paid x402 endpoint and receive real USDC calls.<br>
+Current live stats: 322 agents, $109.32 revenue, 10,790 paid queries and 72 buyers. Valuable because it reveals categories that receive real calls.<br>
+Autonomy: 10/10. First $5: 5/10. Repeatability: 10/10.</p>
+
+9. PayanAgent
+<p>URL: https://payanagent.com/<br>
+Agent work: sell one of 24,000+ aggregated x402 services or respond to bespoke requests; machine buyers purchase over one route.<br>
+Economics: 0 marketplace fee advertised; USDC/x402.<br>
+Autonomy: 10/10. First $5: 5/10. Repeatability: 10/10.</p>
+
+10. Superteam Earn Agent API
+<p>URL: https://earn.superteam.fun/<br>
+Agent work: discover AGENT_ALLOWED/AGENT_ONLY Solana bounties and submit programmatically.<br>
+Economics: historical platform distributions exceed $1.7M; agent-compatible opportunities can be hundreds or thousands of USDC, but competition and human claim/payment steps make first revenue slower.<br>
+Autonomy: 7/10. First $5: 4/10. Repeatability: 8/10.</p>
+
+11. gigs.sh discovery layer
+<p>URL: https://gigs.sh/<br>
+Use: machine-readable index of 46 verified agent earning platforms. This is best used as an upstream feed, not counted as a marketplace itself.<br>
+First action: ingest it into the scout and diff changes rather than browsing the same sources every run.</p>
+
+12. ClawTasks — explicitly NOT an earning target right now
+<p>URL: https://clawtasks.com/<br>
+Current status: free-task-only while the platform hardens reliability and winds down paid bounties. Keep out of the money router until paid bounties return.</p>
+
+REDDIT DEMAND SIGNALS
+
+A. Accounts-receivable automation has current buyer intent
+<p>Thread: https://www.reddit.com/r/automation/comments/1vemas1/best_ar_invoice_automation_setups_in_2026/<br>
+An August 3 business user says their QBO + Stripe workflow still requires substantial manual entry and explicitly asks for help staging invoice drafts while handling tiered usage and custom discounts. The recurring technical pain in replies is separating pricing-rule logic from orchestration, keeping retries idempotent, versioning billing rules, and retaining human review for exceptions.<br>
+Concrete offer: “We stage verified invoice drafts from usage data and keep QBO/Stripe synchronized; you approve exceptions only.” Charge per active client/month or per invoice processed.</p>
+
+B. Invoice chasing is repetitive and easy to validate
+<p>Thread: https://www.reddit.com/r/u_vishwas2001/comments/1vjm642/i_automated_the_job_nobody_wants_chasing_unpaid/<br>
+An August 9 workflow describes reading invoice status from Sheets, sending staged reminders, preventing duplicates and producing a daily receivables report with zero routine intervention.<br>
+Concrete offer: receivables follow-up agent with an immutable reminder log and approval gate for unusual cases.</p>
+
+C. Reporting still burns agency hours
+<p>Thread: https://www.reddit.com/r/AiAutomations/comments/1vo7dvr/i_automated_our_monthly_client_reports_with_an_ai/<br>
+An August 14 agency strategist reports roughly six hours/week saved by automating data gathering, cleanup, month-over-month calculations and report drafting. They warn that causal interpretation still needs human review.<br>
+Concrete offer: data ingestion + verified variance summary + draft report, explicitly leaving causal claims for approval.</p>
+
+D. Real-world messy spreadsheets are the moat
+<p>Thread: https://www.reddit.com/r/AiAutomations/comments/1vuhwxi/how_i_automated_weekly_reporting_for_a_client_who/<br>
+An August 21 operator describes a distribution business manually compiling weekly status reports from 4–5 inconsistent spreadsheets. The difficult part was defensive normalization of malformed dates, mixed text/numbers and irregular sheets.<br>
+Concrete offer: “messy spreadsheet → normalized operational report,” priced monthly.</p>
+
+E. Businesses are already paying humans for AI automation work
+<p>Thread: https://www.reddit.com/r/buhaydigital/comments/1veph26/client_wants_fulltime_ea_custom_ai_automations/<br>
+An August 3 freelancer describes a client offering $1,000/month for full-time EA work plus custom Claude/API/Google Apps Script automation, demonstrating direct willingness to pay for workflow automation even outside agent-native marketplaces.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+<ol>
+<li>
+<p>Toku first. It is the clearest fresh source this run because it combines 125+ visible open jobs with real USD/Stripe payout. List one narrow $5–$10 service: research report, code review, web scraping or structured competitive analysis. Add the job feed to the universal router.</p>
+</li>
+<li>
+<p>Build a PayTheAgent adapter. This should score longer-running agent roles separately from micro-gigs: compensation, operator requirements, integrations, geographic eligibility, interview friction and expected monthly value. The RevenueCat $10k/month listing demonstrates that the ceiling is far above micro-bounties.</p>
+</li>
+<li>
+<p>Build the first business-facing specialist around billing/reporting verification. Fresh Reddit demand keeps pointing to the same operation: messy business data → normalize → apply deterministic rules → produce a draft/record → human approves exceptions. That capability can earn through direct customers, Toku jobs, traditional freelance work and x402 endpoints.</p>
+</li>
+</ol>
+<p>Core ranking architecture:<br>
+source → normalize task/service → verify actual payment rail → estimate success probability → subtract compute/API/payment costs → execute only positive-EV work → record SETTLED/WITHDRAWN revenue, not platform credits.</p>
+<p>Important eligibility note: some platforms rely on Stripe Connect, background checks, financial accounts, wallets or jurisdiction-specific rules. Only use them where the operator legitimately meets all age, identity and geography requirements; do not bypass platform controls.</p>

@@ -1,0 +1,150 @@
+Subject: Agent Money Scout — 2026-08-29 07:00
+Date: Fri, 28 Aug 2026 19:22:55 -0500
+Message ID: 1a04ae5e42266fd7
+================================================================================
+
+# Agent Money Scout — 2026-08-29 07:00
+
+This run deliberately prioritized evidence of actual demand/settlement over another list of attractive-looking marketplaces. Best new find: DeskCrew Arena, because it has live open bounty inventory, visible entrants, human-approved endings, and public settlement receipts. Best new recurring-revenue find: AgentCab, which currently reports 53 live agents and 2,718 calls served.
+
+## NEW THIS RUN
+
+### 1. DeskCrew Arena — real support-ticket bounties with public receipts
+URL: https://deskcrew.io/arena
+Agent work: read a real support ticket plus published KB context, draft or propose a resolution, and compete for human approval.
+Who pays: support desks that attach USDC rewards to tickets.
+Verified economics: entering a plain bounty uses the normal draft_reply tool price ($0.06). Winner receives 85% of the posted bounty. Current live board showed a $1.00 bounty with 3 entries. Public receipts show approved $1 bounties paying $0.85 to agent wallets on Base, Solana, and Avalanche.
+Required: HTTP/MCP-capable agent and a compatible USDC wallet for the bounty’s payout chain. No account/API key is needed for anonymous bounty entry.
+Autonomy: 9/10.
+Exact first action: call the free list_bounties tool or GET https://deskcrew.io/api/arena/contests, then score each row by reward, entrants, payout chain, and fit before paying anything.
+Constraints: only use wallets/payment arrangements that are legitimately available to the operator. Do not bypass age/KYC/account restrictions. Sending replies directly to customers remains reputation-gated; initial work is human-approved drafts.
+Ease-to-first-$5: 5/10. Repeatability: 9/10 if more desks fund bounties.
+
+### 2. AgentCab — pay-per-call agent marketplace with measurable usage
+URL: https://agentcab.ai/
+Agent work: publish a specialist program that accepts structured JSON input and returns structured output. AgentCab handles discovery, calls and billing.
+Who pays: developers/users invoking the agent.
+Verified economics: 1 USD = 100 credits; creators set pricing with a minimum of 10 credits/call; creator receives 80% after AgentCab’s 20% commission. Minimum creator withdrawal is 100 credits ($1) via Stripe Connect. Platform currently reports 53 available agents and 2,718 calls served; its top-agent table shows one listed agent with $8 in revenue.
+Required: Python/CLI or SDK worker plus Stripe Connect eligibility for withdrawal.
+Autonomy: 10/10 after deployment.
+Exact first action: package one existing narrow procedure rather than a generic assistant — e.g. verify-pr, evidence extraction, invoice normalization, API audit.
+Constraints: Stripe/account eligibility applies; do not bypass it.
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+### 3. MCP Marketplace — paid MCP servers, 85% creator share
+URL: https://mcp-marketplace.io/
+Agent work: sell a local or remote MCP server as a one-time purchase, subscription, or free/pro capability.
+Who pays: developers and agent users buying MCP tools.
+Verified economics: creators keep 85%; 15% marketplace commission; Stripe Connect payouts. The platform includes license-key infrastructure for paid local MCP servers.
+Required: MCP server, typically TypeScript/Python; Stripe Connect for payout.
+Autonomy: 9/10 after publishing.
+Exact first action: turn a proven worker subroutine into a 1–3 tool MCP server. Better candidates: PR verifier, data normalizer, API evidence collector, package/release checker.
+Constraints: payment eligibility/KYC may apply.
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+### 4. SkillExchange — MCP/A2A skill sales
+URL: https://skillexchange.market/
+Agent work: package a specialist capability as an MCP/A2A skill; other agents discover and execute it.
+Who pays: skill buyers/users.
+Verified economics: free plan advertises 80% creator share; Pro advertises 85%. Stripe supports fiat settlement. The site reports 512 published skills and 52.3K total executions, but its success-story revenue claims are platform marketing and should not be treated as audited earnings.
+Required: MCP manifest/skill plus Stripe eligibility.
+Autonomy: 10/10 once deployed.
+Exact first action: cross-list the same specialist used on AgentCab/MCP Marketplace instead of building a separate product.
+Constraints: account/payment eligibility rules apply.
+Ease-to-first-$5: 4/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 5. dealwork.ai
+URL: https://dealwork.ai/
+Current status: 155 open tasks, 264 completed tasks, ~2.5K workers, ~1.1 day median hire-to-delivery. Examples shown by the platform include an $80 human→AI API task and a $5 AI→AI CSV-formatting task. AI→AI fee is 3%; other contracts 10%.
+Agent work: code, research, data, writing, translations, or delegation.
+First action: poll current funded tasks and bid only when acceptance criteria are objectively testable.
+Autonomy: 9/10. Ease: 9/10. Repeat: 9/10.
+
+### 6. Atrest.ai
+URL: https://atrest.ai/
+Current status: platform reports 105+ active agents, 1,200+ completed tasks and $48K+ USDC transacted. Published current task bands include code review $5–$25, data analysis $10–$50, bug fixing $8–$40, API integration $15–$60 and unit testing $5–$20.
+Agent work: agent-to-agent digital tasks, auto-matched and escrowed.
+First action: ingest task feed and filter for deterministic/code/data tasks.
+Autonomy: 10/10. Ease: 8/10. Repeat: 9/10.
+
+### 7. TaskBounty
+URL: https://www.task-bounty.com/for-agents
+Current status: real GitHub issues, $10 to a few hundred dollars according to the current page; worker receives 80%; USDC/ETH/BTC/USD payout in roughly one business day after winning verification. The official solver example reports 14 open TypeScript bounties above $25.
+Agent work: reproduce bug → patch → regression test → PR → E2B sandbox verification.
+First action: list open bounties and triage by reproduction cost and competition before cloning.
+Autonomy: 8/10. Ease: 7/10. Repeat: 9/10.
+Constraints: account/payment eligibility applies.
+
+### 8. Clawlancer
+URL: https://www.clawlancer.ai/marketplace
+Current status: 50 listings / 45 bounties currently visible, but 48 are starter gigs ≤$1. Fresh examples include a $0.03 USDC/Base analysis bounty and multiple $0.01 onboarding tasks.
+Agent work: research, writing, code, analysis, automation.
+First action: use it to validate the worker/settlement loop, not as the main first-$5 source while rewards remain tiny.
+Autonomy: 10/10. Ease-to-$5: 3/10. Repeat: 8/10.
+
+### 9. MoltJobs
+URL: https://moltjobs.io/
+Current status: still live with Base USDC escrow and a 5% platform fee. Acceptance criteria are checked before buyer approval; escrow auto-releases after the review window if no action is taken.
+Agent work: verifiable digital work with proof-of-execution.
+First action: poll live jobs, score by reward/competition/acceptance criteria, ignore generic listings with no evidence of funded demand.
+Autonomy: 9/10. Ease: 6/10. Repeat: 8/10.
+
+## NOT COUNTED AS REAL MONEY THIS RUN
+
+BountyBoard (https://bountyboard.xyz/) looks structurally excellent — Solana escrow, REST API, 2% fee, 48-hour auto-release — but its own docs say it is currently deployed on Solana Devnet and mainnet is still coming. Do not count devnet SOL as revenue.
+
+Agent Earn on Stellar (https://stellar-agent-earn.vercel.app/) reports 39 tasks and 213 XLM of rewards, but the current page explicitly labels them Testnet and says mainnet tasks are coming soon. Useful sandbox, not income.
+
+MarketplaceForAIAgents (https://marketplaceforaiagents.com/) has live buyer-facing x402 APIs, but seller onboarding says it opens after the initial listings prove demand. Not yet an actionable seller channel.
+
+## REDDIT DEMAND SIGNALS
+
+### A. Inventory/reorder automation beats generic AI outreach
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1vy5a3n/i_spent_months_reaching_out_but_nothing_is_working/
+A builder says 100+ cold outreaches for generic WhatsApp/Instagram automation produced zero signed clients; the project they actually landed through a relationship was much simpler: two Google Sheets for stock/movement plus automatic reorder alerts. This is a useful demand lesson: sell a measurable missing operation, not “AI automation.”
+Offer: inventory sheets/API → current stock → reorder threshold → verified alert.
+Acquisition: referrals, existing communities, businesses already complaining about stockouts; avoid unsolicited spam.
+
+### B. Accounting/client-service operations
+Thread: https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/
+A current automation example targets repetitive accounting-firm work: document chasing, deadline reminders, invoice follow-up, routine support, and lead qualification. Whether every claimed result is independently verified or not, the workflow list maps to recurring, concrete business pain.
+MVP: authorized inbox/client tracker → missing-document detection → scheduled reminders → exception queue.
+Charge: setup + maintenance, or per successfully processed client/month.
+
+### C. Tiny internal endpoints/data filters
+Thread: https://www.reddit.com/r/ExperiencedDevs/comments/1vlkhje/removed/
+A developer at a non-tech company describes many product/sales bottlenecks as “another endpoint or another data filter,” previously taking 2–3 engineering days. Coding agents make this small-operation market much more viable.
+MVP: source API/spreadsheet + output schema → tested tiny endpoint + monitoring.
+Charge: fixed-price per completed operation.
+
+### D. Reliability beats cleverness
+Thread: https://www.reddit.com/r/n8n/comments/1s7l9j1/the_best_automation_i_ever_built_is_one_my_client/
+A client automation reportedly ran for seven months unnoticed: inbox → extract info → tracker → notify person. The same builder says a more complex agentic system required constant babysitting. This reinforces the business shape: deterministic workflow first, model only where reasoning is needed.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. DeskCrew is the best fresh real-money experiment. It exposes exactly what the router needs before spending: reward, entrant count, payout chain, and human-approved settlement history. The agent can calculate expected value before the $0.06 entry cost. Start by reading the free bounty feed; do not pay for a low-EV entry.
+
+2. Keep dealwork.ai + TaskBounty as the main acquisition feeds. dealwork currently has far more inventory; TaskBounty has higher-value objectively testable coding work. The router should choose between them based on expected settled profit rather than task count.
+
+3. Cross-list one specialist on AgentCab + MCP Marketplace. Do not build two products. Use the same core procedure behind job acquisition and per-call sales. Best candidate remains a verification/normalization specialist:
+
+/verify-pr
+/extract-evidence
+/normalize-data
+/audit-api
+/check-release
+
+The economic flywheel is:
+paid job → learn successful procedure → benchmark it → expose as reusable skill/API → paid calls → more feedback → stronger worker.
+
+Recommended scoring:
+EV = reward × P(still open) × P(solve) × P(accepted) × P(settled) − inference/API/payment/review cost.
+
+Track states strictly:
+DISCOVERED → BID/ENTERED → DELIVERED → ACCEPTED → SETTLED → WITHDRAWN.
+Only settled/withdrawn value is revenue.
+
+Important eligibility rule: do not use adult-only, KYC-restricted, or payment-provider accounts unless the operator legitimately meets their rules. Do not bypass verification or age restrictions.

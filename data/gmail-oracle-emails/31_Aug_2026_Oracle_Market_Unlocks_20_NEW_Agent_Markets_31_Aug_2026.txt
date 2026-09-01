@@ -1,0 +1,1035 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 31 Aug 2026
+Date: Mon, 31 Aug 2026 11:21:57 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a058a0a2d82a86e
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+**Research date: 31 August 2026**
+
+This scan treats novelty as a hard constraint. I cross-checked the prior Oracle Market Unlocks reports in Gmail and excluded every venue previously covered, including the most recent enterprise batch (Procore, ADP, Trimble, ServiceTitan, NetSuite SuiteApp.AI, Genesys, VTEX, Mews, Cloudbeds, Appian, Talkdesk, Clio, Jobber, Workday, Five9, NiCE, Acumatica, Docusign, Toast and Infor).
+
+**H-level shorthand:** H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent step; H2 = recurring human subjective/compliance approval; H3 = material recurring human production; H4 = fundamentally human/offline. Mandatory identity, legal, tax, payment, security and age checks are legitimate human gates, not targets to bypass.
+
+**Scoring:** O = opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (5 = less saturated); N = novelty. Total /25.
+
+| # | Market / marketplace | O | A | F | C | N | Total | Post-setup H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | Samsara App Marketplace | 5 | 5 | 5 | 4 | 5 | **24** | H1–H2 |
+| 2 | Microsoft Security Store | 5 | 5 | 5 | 3 | 5 | **23** | H1–H2 |
+| 3 | Siemens Xcelerator Marketplace | 5 | 5 | 4 | 4 | 5 | **23** | H2 |
+| 4 | AppFolio Stack Marketplace | 4 | 5 | 4 | 4 | 5 | **22** | H1–H2 |
+| 5 | Geotab Marketplace | 4 | 5 | 5 | 3 | 5 | **22** | H1–H2 |
+| 6 | Motive App Marketplace | 4 | 5 | 5 | 3 | 5 | **22** | H1–H2 |
+| 7 | Boomi Marketplace | 4 | 5 | 5 | 3 | 5 | **22** | H1–H2 |
+| 8 | athenahealth Marketplace | 5 | 5 | 3 | 3 | 5 | **21** | H2 |
+| 9 | Coupa App Marketplace | 5 | 5 | 3 | 3 | 5 | **21** | H2 |
+| 10 | CrowdStrike Marketplace | 5 | 5 | 4 | 2 | 5 | **21** | H2 |
+| 11 | Rippling App Shop | 4 | 5 | 4 | 3 | 5 | **21** | H1–H2 |
+| 12 | Jamf Marketplace | 4 | 5 | 4 | 3 | 5 | **21** | H1–H2 |
+| 13 | Cisco Networking App Marketplace | 4 | 5 | 4 | 3 | 5 | **21** | H1–H2 |
+| 14 | RealPage Exchange (RPX) | 4 | 5 | 3 | 4 | 5 | **21** | H2 |
+| 15 | HashiCorp Terraform Registry — Partner/Premier provider ecosystem | 4 | 5 | 5 | 2 | 5 | **21** | H0–H1 |
+| 16 | Cortex XSOAR Marketplace | 4 | 5 | 4 | 2 | 5 | **20** | H1–H2 |
+| 17 | Celigo integrator.io Marketplace | 4 | 5 | 4 | 2 | 5 | **20** | H1–H2 |
+| 18 | Buildium Marketplace | 4 | 5 | 3 | 3 | 5 | **20** | H2 |
+| 19 | Instructure EdTech Collective Marketplace / Canvas Apps | 4 | 5 | 3 | 3 | 5 | **20** | H2 |
+| 20 | D2L Brightspace IntegrationHub | 3 | 5 | 3 | 4 | 5 | **20** | H2 |
+
+---
+
+## 1. Samsara App Marketplace — fleet/physical-operations micro-SaaS
+
+**What an agent can sell.** Fleet-compliance and physical-operations products: IFTA/fuel reconciliation, maintenance exception detection, route/stop QA, inspection completeness, driver-event evidence packets, equipment utilization, cold-chain exception reporting, or ERP/TMS connectors.
+
+**Autonomous workflow.** Oracle mines Samsara community/API changelogs and the existing App Marketplace for repeated gaps → specialist worker selects a narrow measurable pain point → creates an OAuth app in Partner Developer Portal → seeds Samsara sandbox with vehicles, drivers, routes and events → Harbor FleetWorld replays telematics/webhook cases, rate limits, token rotation, duplicate events and regional deployment → worker produces listing/security/privacy/demo materials → human partner/certification review where required → publish → ingest install/support/API telemetry → regression-test API changes and continuously patch.
+
+**Human dependency.** H1–H2: partner admission and Marketplace certification remain human/company gates. Once accepted, drafting, sandbox testing, app lifecycle/versioning and monitoring are highly structured.
+
+**Frontier infrastructure.** Samsara’s current developer portal explicitly publishes `llms.txt`, Markdown versions of docs and OpenAPI endpoints **for AI agents**, alongside REST APIs, webhooks, streaming, sandbox organizations and an App Publisher lifecycle.
+
+**Demand/community.** Samsara’s partner program advertises access to 10,000+ customers. The interesting demand is not another fleet dashboard; it is exception handling between telematics and finance/compliance systems, where small correctness failures create recurrent manual work.
+
+**Why agents fit.** Fleet data is time-series/event data. Most value can be verified with deterministic invariants rather than subjective taste.
+
+**Reusable Moltwork assets.** `SamsaraPack`, `FleetWorld`, telematics-event replay evaluator, OAuth/region Skill, MarketplaceSubmissionProcess, fleet-ops specialist Worker.
+
+**Economics.** Attractive if the product prevents compliance mistakes or removes recurring dispatcher/fleet-manager reconciliation. Unattractive if it requires custom hardware installation or per-customer field services.
+
+Official: https://developers.samsara.com/docs/partner-developer-portal  
+Partner program: https://www.samsara.com/company/partners/technology
+
+## 2. Microsoft Security Store — security agents with built-in commerce
+
+**What agents can sell.** Microsoft Security Copilot agents, Sentinel/Defender connectors and content, incident-triage agents, enrichment/remediation agents, compliance evidence products, attack-surface micro-SaaS, and narrowly scoped security services.
+
+**Autonomous workflow.** Mine Defender/Sentinel/SOC pain → generate agent manifest + skills/connectors → provision synthetic tenant/log/incident fixtures → Harbor SecurityWorld injects benign simulated incidents and validates permissions, evidence fidelity, false-positive behavior, idempotence and rollback → generate security/privacy/listing package → partner validation → Security Store publication → Microsoft commerce handles billing/entitlement/private offers/MACC → deployment/usage/support telemetry → automatic regression against Microsoft API/model changes.
+
+**Human dependency.** H1–H2. Security review, partner identity and claims about security efficacy need accountable human approval; normal execution/maintenance can approach H1 after publication.
+
+**Frontier unlock.** Microsoft’s Security Store documentation, updated **28 May 2026**, explicitly describes a store where organizations can *find, buy and deploy partner-built security solutions and agents*. It provides a managed commerce lifecycle—billing and entitlement included—and agent manifests deploy across Security Copilot, Sentinel, Defender, Entra, Purview and Intune.
+
+**Demand/community.** Security buyers already have budget and procurement rails. Current CrowdStrike community threads illustrate the adjacent pain: API endpoint migrations breaking alert pipelines and teams seeking native ways to ingest missing third-party APIs. The same long-tail connector/automation demand exists across SOC platforms.
+
+**Why agents fit.** Security content consists heavily of structured rules, transforms, enrichment, playbooks and testable event pipelines.
+
+**Moltwork assets.** `MicrosoftSecurityPack`, incident simulation World, least-privilege evaluator, evidence-quality evaluator, SOC School, certification Process.
+
+**Economics.** High if the agent eliminates analyst toil while producing auditable evidence. Bad if it makes high-stakes autonomous remediation decisions that cannot be safely bounded/evaluated.
+
+Official: https://learn.microsoft.com/en-us/security/store/what-is-security-store  
+Store: https://securitystore.microsoft.com/
+
+## 3. Siemens Xcelerator Marketplace — industrial API products and operational micro-apps
+
+**What agents can sell.** Industrial data adapters, plant-energy anomaly tools, maintenance/availability monitors, engineering-data validators, product-information helpers, Edge apps and subscription/API products built on the Siemens Xcelerator ecosystem.
+
+**Autonomous workflow.** Oracle mines Siemens community/Marketplace/API catalog for missing cross-system workflows → worker uses the developer portal MCP to discover the exact industrial APIs and SDKs → builds adapter/app → tests against preview/simulated equipment datasets → Harbor IndustrialWorld validates units, timestamp/order semantics, failure recovery, permissions and data integrity → cybersecurity/seller preflight → human seller approval → Marketplace/API World listing → usage/revenue telemetry → compatibility maintenance.
+
+**Human dependency.** H2. Industrial cybersecurity and seller governance are meaningful recurring gates; anything touching real machinery needs bounded scope and human deployment oversight.
+
+**Frontier infrastructure.** Siemens’ current Xcelerator Developer Portal exposes an official **MCP Server** specifically for AI-powered documentation, product and API discovery. The portal also exposes preview environments, SDKs, playgrounds, an API catalog and explicit seller-governance/cybersecurity guidance.
+
+**Demand.** Siemens positions Xcelerator as an open/connected industrial ecosystem and commercial Marketplace. The economic wedge is long-tail integration and data-quality work around installed industrial systems, not autonomous control of machinery.
+
+**Why agents fit.** Industrial integration is schema-heavy and repetitive; synthetic plant telemetry makes large portions testable before human deployment.
+
+**Assets.** `SiemensXceleratorPack`, IndustrialTelemetryWorld, unit/schema evaluator, MCP-discovery Skill, cybersecurity certification Process, industrial-integration Worker.
+
+**Economics.** Attractive for read-only monitoring, evidence, reconciliation and engineering-data products with repeated buyers. Unattractive for safety-critical control loops or bespoke onsite integration.
+
+Official developer portal/MCP: https://developer.siemens.com/  
+Marketplace: https://xcelerator.siemens.com/
+
+## 4. AppFolio Stack Marketplace — property-management micro-products
+
+**What agents can sell.** Owner-statement reconciliation, lease/work-order QA, vendor-document completeness, accounting/reporting corrections, resident communications helpers, inspection evidence, security-deposit workflows and vertical property-management adapters.
+
+**Autonomous workflow.** Mine AppFolio operator complaints → encode a narrow property/accounting pain → develop against AppFolio API → seed sandbox with properties, units, leases, charges, vendors and work orders → Harbor PropertyWorld checks accounting/state invariants and edge cases → security questionnaire/listing package → partner review → publish → observe installs/support/outcome metrics → patch.
+
+**Human dependency.** H1–H2 for partner/security review. Routine operation is API-driven.
+
+**Infrastructure.** AppFolio Stack offers APIs, sandbox access and a formal integration-partner/Marketplace path. AppFolio advertises 20,000+ customers and millions of managed units.
+
+**Demand/community.** A 27 April 2026 AppFolio Reddit user described being unable to get an accurate report of what owners were owed and needing custom workflow logic. This is the ideal “last 10%” enterprise-app gap: small in feature scope, financially meaningful, repeatable.
+
+**Why agents fit.** Property workflows are structured records and state transitions. Accounting outputs can be checked against known fixtures.
+
+**Assets.** `AppFolioPack`, shared `PropertyWorld`, owner-ledger evaluator, work-order lifecycle evaluator, property-ops School.
+
+**Economics.** Strong if it removes recurring accountant/property-manager labor. Weak for local regulatory workflows requiring human legal judgment each time.
+
+Official: https://www.appfolio.com/stack/partner-program  
+Community signal: https://www.reddit.com/r/AppFolio/
+
+## 5. Geotab Marketplace — long-tail connected-vehicle Add-Ins
+
+**What agents can sell.** Fuel/EV-cost analysis, maintenance triggers, driver safety/compliance, route/zone analytics, custom Add-Ins, sensor integrations and data connectors.
+
+**Autonomous workflow.** Mine fleet forums and Marketplace gaps → build with MyGeotab SDK/API → create synthetic fleet/database → Harbor FleetWorld exercises pagination, Rules/Zones, telematics bursts, device churn and API limits → package Add-In/integration → Marketplace partner review → publish/distribute → measure installs/API errors → maintain.
+
+**Human dependency.** H1–H2 for partner/commercial listing; development itself can approach H0.
+
+**Infrastructure.** Geotab says third-party developers can build using its freely accessible SDK; its Marketplace has 250+ partners globally and supports Add-Ins/integrated solutions.
+
+**Community pain.** A developer described Geotab Rules/Zones as difficult to paginate correctly due large object collections and differing API limits. That is exactly the sort of integration detail a persistent specialist learns once and reuses across products.
+
+**Why agents fit.** Same `FleetWorld` can support Samsara, Geotab and Motive, compounding expertise.
+
+**Assets.** `GeotabPack`, API-pagination Skill, shared FleetWorld, zone/rule evaluator, cross-fleet-porting Process.
+
+**Economics.** Attractive when one fleet utility ports across providers. Less attractive if a solution depends on proprietary hardware deployment.
+
+Official: https://marketplace.geotab.com/  
+Partner: https://www.geotab.com/marketplace/partners/
+
+## 6. Motive App Marketplace — fleet operations and compliance adapters
+
+**What agents can sell.** HOS/inspection exception tools, maintenance workflows, fuel/IFTA products, dispatch/route adapters, safety evidence, payroll/TMS connectors and operational reporting.
+
+**Autonomous workflow.** Discover recurring fleet workflow → free developer account → build against Motive Open API/webhooks → seed dev fixture → shared FleetWorld validates vehicle/driver/job/event state and webhook retry behavior → partner technical/security review → listing inside Motive dashboard → external/native commercial arrangement as applicable → monitor installations/errors → patch.
+
+**Human dependency.** H1–H2 for partner/listing review.
+
+**Infrastructure.** Motive provides Open APIs, webhooks, developer accounts and App Marketplace publishing. Its January 2026 partner overview cited 250+ prebuilt integrations; June 2026 documentation describes the review/listing process.
+
+**Demand.** The market is operationally repetitive and customers routinely need data to cross TMS, payroll, maintenance and compliance boundaries. Competition exists, so Oracle should target missing edge cases rather than broad fleet management.
+
+**Why agents fit.** Structured event pipelines; reusable FleetWorld and connector skills.
+
+**Assets.** `MotivePack`, FleetWorld, HOS/inspection evaluator, webhook Skill, fleet connector specialist.
+
+**Economics.** Good for low-support recurring connectors; bad if carrier-by-carrier onboarding becomes consulting.
+
+Official: https://developer.gomotive.com/  
+Marketplace/partner docs: https://gomotive.com/partners/
+
+## 7. Boomi Marketplace — connectors, recipes and AI agents
+
+**What agents can sell/distribute.** Long-tail connectors, reusable integration recipes, packaged solutions and AI agents operating in enterprise integration workflows.
+
+**Autonomous workflow.** Oracle identifies an unsupported source↔destination pair or brittle existing recipe → worker scaffolds Boomi connector/agent → synthetic API pair + fixtures → Harbor IntegrationWorld checks schema mapping, retries, rate limits, idempotence, secrets and error recovery → Marketplace package → partner review → publish → license/service revenue according to partner model → telemetry/support → versioned maintenance.
+
+**Human dependency.** H1–H2 for partner/commercial approval; technical lifecycle is highly machine-operable.
+
+**Infrastructure/frontier.** Boomi’s partner program explicitly invites partners to build and publish **AI agents and integrated solutions** on Boomi Marketplace and cites 300K+ connected endpoints and 100K+ users. Marketplace content and recipes remain actively updated in 2026.
+
+**Demand.** Enterprise integration debt never ends: SaaS APIs change, field mappings drift and existing connectors lag edge cases. Agents are better suited to continuous compatibility work than one-time consulting.
+
+**Why agents fit.** Connector engineering is compositional, testable and repetitive.
+
+**Assets.** `BoomiPack`, generic IntegrationWorld, mapping evaluator, connector School, API-change watcher.
+
+**Economics.** Strong if one connector reaches many customers or drives paid implementation/support. Weak when each enterprise has irreducibly bespoke mapping.
+
+Official: https://boomi.com/partners/technology/  
+Marketplace: https://discover.boomi.com/
+
+## 8. athenahealth Marketplace — healthcare workflow integrations
+
+**What agents can sell.** Scheduling/admin tools, revenue-cycle reconciliation, patient-communication infrastructure, claims/document routing, referral workflow, interoperability QA and analytics.
+
+**Autonomous workflow.** Mine practice/admin complaints → select non-clinical/revenue-cycle use case → develop against athena APIs → synthetic patient/practice tenant → Harbor HealthcareOpsWorld validates authorization, auditability, duplicates, coding/data integrity and failure handling → security/compliance package → Marketplace partner review → deploy to pilot/customer → monitor operational outcomes → patch.
+
+**Human dependency.** H2. Healthcare privacy/security/compliance and customer contracting stay human. Avoid autonomous diagnosis/treatment; focus on administrative/interoperability work.
+
+**Infrastructure.** athenahealth’s developer portal exposes 800+ API endpoints plus HL7/C-CDA and SQL-oriented data access. Marketplace material cites 240+ partner solutions.
+
+**Demand.** Healthcare integration is expensive because workflows span scheduling, billing, documents, claims and external systems. Even small reductions in denial/admin/reconciliation work have high willingness to pay.
+
+**Why agents fit.** Administrative healthcare data transforms are structured and can be tested with synthetic data; privacy requires strong boundary controls.
+
+**Assets.** `AthenaPack`, synthetic-practice World, PHI/privacy evaluator, claims/admin workflow School, compliance Process.
+
+**Economics.** High ACV where a product demonstrably cuts administrative work. Poor if it depends on subjective clinical judgment or per-site custom integrations.
+
+Official: https://docs.athenahealth.com/  
+Marketplace partner: https://www.athenahealth.com/solutions/marketplace-program
+
+## 9. Coupa App Marketplace — procurement/finance operations apps
+
+**What agents can sell.** Supplier-data QA, invoice reconciliation, catalog integrity, approval routing, spend/compliance evidence, ERP connectors and procurement exception handling.
+
+**Autonomous workflow.** Mine Coupa buyer/admin pain → build embedded app/API connector → synthetic procurement tenant → Harbor ProcureWorld creates requisitions, POs, receipts, invoices and supplier records → checks matching, approvals, duplicate prevention and least-privilege OAuth → certification package → Marketplace review → distribution/commercial arrangement → telemetry → maintenance.
+
+**Human dependency.** H2 because enterprise certification, sensitive finance data and customer security reviews matter.
+
+**Infrastructure.** Coupa documentation updated **17 July 2026** describes certified Marketplace apps across embedded apps, API connectors, custom API integrations and OAuth clients.
+
+**Demand.** The value is in preventing costly exception work between procure-to-pay systems and ERP/supplier data, where rules are structured but edge cases are numerous.
+
+**Why agents fit.** Three-way match, approval and supplier-record workflows are deterministic enough for scenario replay.
+
+**Assets.** `CoupaPack`, ProcureWorld, invoice/PO evaluator, OAuth-scope Skill, procurement specialist Worker.
+
+**Economics.** High where exceptions are frequent and expensive. Weak if every buyer requires months of custom services.
+
+Official: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api
+
+## 10. CrowdStrike Marketplace — security apps, Foundry integrations and agentic operations
+
+**What agents can sell.** Foundry apps, data ingestion connectors, incident enrichment, exposure/asset workflows, response automation and narrow security operations products.
+
+**Autonomous workflow.** Detect missing integration or API migration pain → build Foundry/app/API workflow → synthetic Falcon tenant + event fixtures → Harbor SecurityWorld validates permissions, event fidelity, limits, failure isolation and rollback → Marketplace/security review → commercial listing/private offer as applicable → usage/support telemetry → automatically follow endpoint deprecations and patch.
+
+**Human dependency.** H2. Security review and production actions must stay tightly permissioned.
+
+**Infrastructure/frontier.** CrowdStrike’s current Developer Center exposes Falcon SDKs and **Falcon MCP**. Marketplace supports commercial purchasing/private offers.
+
+**Community demand.** April 2026: a developer wanted a more native way to pull a third-party REST API into Next-Gen SIEM; February 2026: the Incidents→Cases endpoint transition broke a custom alerting pipeline; August 2026: users reported API 500/429 issues and asked for better API observability. These are valuable integration/compatibility surfaces.
+
+**Why agents fit.** Persistent workers excel at following deprecations, testing event schemas and repairing integrations quickly.
+
+**Assets.** `CrowdStrikePack`, SecurityWorld, API-deprecation detector, rate-limit evaluator, Foundry specialist School.
+
+**Economics.** Strong for high-value connectors/ops tooling. High support and security liability make generic autonomous remediation unattractive.
+
+Official: https://marketplace.crowdstrike.com/  
+Developer: https://developer.crowdstrike.com/  
+Community: https://www.reddit.com/r/crowdstrike/comments/1sqzed0/ingest_from_thirdparty_rest_api/
+
+## 11. Rippling App Shop — standardized HR/IT integrations
+
+**What agents can monetize.** SSO/user lifecycle connectors, HR/payroll sync, time data adapters, provisioning and identity data-quality products. App Shop is distribution; billing is typically external.
+
+**Autonomous workflow.** Mine unsupported SaaS/app requests → extract target system auth/user schema → build direct Rippling integration → dedicated test company seeded with simulated users → Harbor WorkforceWorld exercises hire/change/terminate, group/role changes, duplicates, failed provisioning and token rotation → App Shop submission → customer install/OAuth → external SaaS billing → observe sync/support telemetry → patch.
+
+**Human dependency.** H1–H2 for partner approval/security. Customer authorization is a legitimate human consent step.
+
+**Infrastructure.** Rippling supplies partner APIs, a seeded test company and an App Shop listing/review path. It says the ecosystem serves 20,000+ companies. Listing itself has no fee; monetization can remain with the developer.
+
+**Community pain.** On 13 August 2026, a customer described a business-critical Time API integration with fragmented support threads and repeatedly lost context. That suggests a separate opportunity for integration observability/evidence packets as well as connectors.
+
+**Why agents fit.** Joiner/mover/leaver lifecycle testing is deterministic and standardized.
+
+**Assets.** `RipplingPack`, WorkforceWorld, SCIM/provisioning evaluator, support-context Pack, IAM/HR specialist.
+
+**Economics.** Good if one connector serves many customers; partner gate and security obligations reduce speed.
+
+Official: https://developer.rippling.com/  
+Community: https://www.reddit.com/r/rippling/comments/1vn13n6/rippling_needs_to_improve_their_support_stream/
+
+## 12. Jamf Marketplace — Apple fleet management utilities
+
+**What agents can sell.** Device-compliance/config drift, inventory/export, app deployment diagnostics, identity/OIDC helpers, migration QA and security integrations for Jamf Pro.
+
+**Autonomous workflow.** Mine Jamf admin pain → build API integration → sandbox/test Jamf instance + virtual/simulated device-state fixtures → Harbor AppleFleetWorld checks enrollment/config profiles/inventory/API permissions and failure recovery → partner/Marketplace listing → external license → monitor API/platform releases → compatibility worker patches.
+
+**Human dependency.** H1–H2; partner API/sandbox access can be a bottleneck.
+
+**Infrastructure/demand.** Jamf’s developer material says 26,000 customers integrate using APIs and the Marketplace has hundreds of listings/partners. February 2026 community discussion complained that partner API/sandbox access could be slow, while another reported DDM/OIDC group-membership pain—evidence of real operational whitespace and of the human gate Moltwork cannot remove itself.
+
+**Why agents fit.** MDM configuration and inventory state can be diffed and regression-tested continuously.
+
+**Assets.** `JamfPack`, AppleFleetWorld, configuration-drift evaluator, OIDC/DDM Skill, API compatibility worker.
+
+**Economics.** Strong for admin reliability and migration tools; weak for products that require physical-device testing across a huge hardware matrix without an economical fixture strategy.
+
+Official: https://developer.jamf.com/  
+Marketplace: https://marketplace.jamf.com/  
+Community: https://www.reddit.com/r/jamf/
+
+## 13. Cisco Networking App Marketplace — network operations micro-products
+
+**What agents can monetize.** Configuration backup/restore, drift detection, deployment QA, inventory normalization, SD-WAN/ThousandEyes reporting, incident evidence and narrow network automation products.
+
+**Autonomous workflow.** Mine Meraki/Catalyst/ThousandEyes admin complaints → implement against Cisco APIs → virtual/sandbox network fixtures → Harbor NetworkWorld checks config diffs, idempotence, rollout order, rate limits and rollback → Marketplace listing/lead generation → external subscription → telemetry → API/deployment compatibility maintenance.
+
+**Human dependency.** H1–H2. Marketplace is primarily a discovery/lead channel; production network changes need explicit customer authorization.
+
+**Infrastructure.** The former Meraki Marketplace expanded into Cisco Networking App Marketplace, covering broader networking products and APIs. Cisco’s current August 2026 application material promotes marketplace lead generation and API integrations.
+
+**Community pain.** May 2026: an admin said APIs provide building blocks but admins should not have to write Python just to get backup/restore. July 2026: users complained about deployment complexity; January 2026: API source-IP behavior caused unexpected 403s. These are directly productizable pains.
+
+**Why agents fit.** Network configs and rollout plans are machine-readable, and virtual topology fixtures can evaluate safety before production.
+
+**Assets.** `CiscoNetworkPack`, NetworkWorld, config-diff/rollback evaluator, API-error diagnostic Skill, network-ops specialist.
+
+**Economics.** High if it reduces outages/admin time. Avoid autonomous high-impact network changes without staged validation/human approval.
+
+Official: https://developer.cisco.com/  
+Marketplace application: https://www.cisco.com/site/us/en/partners/connect/marketplace.html  
+Community: https://www.reddit.com/r/meraki/
+
+## 14. RealPage Exchange (RPX) — property-tech integration marketplace
+
+**What agents can sell.** Leasing/resident/payment/work-order/accounting adapters, data reconciliation, collections evidence and property operations integrations.
+
+**Autonomous workflow.** Oracle mines RealPage customer/integration gaps → map source/target entities → build standardized API/event integration → synthetic multifamily portfolio → shared PropertyWorld tests residents, leases, charges, payments, work orders and event ordering → partner onboarding/security review → RPX distribution → usage/support → update.
+
+**Human dependency.** H2 due enterprise proptech partner contracts and customer access.
+
+**Infrastructure.** RealPage Exchange is explicitly an integration marketplace with standardized APIs and a streamlined contracting/onboarding program; RealPage has also described moving toward event-based, near-real-time integration.
+
+**Demand.** Multifamily stacks routinely combine PMS, payments, screening, maintenance, CRM and accounting vendors. Integration quality is the economic product.
+
+**Why agents fit.** Same PropertyWorld can support AppFolio, Buildium and RealPage, making each new venue cheaper.
+
+**Assets.** `RealPagePack`, PropertyWorld, event-order evaluator, lease/payment schema School, cross-proptech porting Process.
+
+**Economics.** Attractive if an adapter is reusable across portfolios. Poor if partner admission or each customer’s schema becomes bespoke consulting.
+
+Official: https://www.realpage.com/partners/realpage-exchange/
+
+## 15. HashiCorp Terraform Registry — provider ecosystem as a distribution market
+
+**What agents can monetize.** Providers/modules themselves are usually free distribution artifacts, but they can drive paid hosted APIs, infrastructure SaaS, premium support, enterprise controls and implementation. The economic artifact is a provider that makes a paid service effortlessly agent/DevOps-callable.
+
+**Autonomous workflow.** Oracle finds an API/service with Terraform demand but weak provider coverage → worker builds provider using current Plugin Framework → generates schema/docs/examples → ephemeral cloud fixture → Harbor IaCWorld runs create/read/update/delete/import/drift/upgrade tests nightly → GitHub/Registry publish → monitor downloads/issues/provider telemetry → sell the managed backend/support → persistent compatibility worker follows API/Terraform changes.
+
+**Human dependency.** H0 for many community Registry publishing flows; H1 for verified partner/Premier status and commercial account setup.
+
+**Frontier unlock.** HashiCorp announced a new **Partner Premier** tier on **30 April 2026**. Premier providers must support newer capabilities including Terraform search/actions and ephemeral resources. Partner requirements explicitly emphasize current Plugin Framework and automated nightly tests via GitHub Actions—almost a blueprint for an autonomous maintainer.
+
+**Demand/community.** Terraform’s value is distribution into existing infrastructure workflows. Competition is high for major clouds but long-tail APIs/services remain attractive.
+
+**Why agents fit.** Provider code is schema-derived, repetitive and has excellent black-box lifecycle tests.
+
+**Assets.** `TerraformProviderPack`, IaCWorld, CRUD/import/drift evaluator, API→provider generator Skill, compatibility School.
+
+**Economics.** Excellent when the provider is customer acquisition for a paid API/SaaS; unattractive if it produces only uncompensated maintenance with no monetization path.
+
+Official unlock: https://www.hashicorp.com/en/blog/announcing-the-new-partner-premier-tier-for-the-terraform-registry  
+Registry: https://registry.terraform.io/
+
+## 16. Palo Alto Networks Cortex XSOAR Marketplace — content packs and maintained integrations
+
+**What agents can sell/distribute.** Content Packs containing integrations, playbooks, dashboards, incident types, scripts and subscription-backed services.
+
+**Autonomous workflow.** Watch vendor API/auth changes + XSOAR issue reports → select broken/missing integration → generate/update content pack → synthetic incidents and mock vendor APIs → Harbor SOARWorld tests authentication, parsing, pagination, playbook branches and rollback → package/review → Marketplace → external/subscription monetization where applicable → watch upstream versions → patch before customers break.
+
+**Human dependency.** H1–H2 depending partner/commercial arrangement and security claims.
+
+**Infrastructure.** Cortex XSOAR Marketplace has 850+ product integrations and a content-pack model well suited to versioned machine generation.
+
+**Community pain.** XSOAR users report integrations suddenly failing when upstream authentication/API versions change; the natural moat is not writing version one, but maintaining compatibility faster than vendors.
+
+**Why agents fit.** Playbooks and integration tests are deterministic and upstream API changes are machine-detectable.
+
+**Assets.** `XSOARPack`, SOARWorld, auth-change detector, playbook coverage evaluator, security-integration maintainer.
+
+**Economics.** Strong for high-value vendor connectors and paid services; weak where the Marketplace expects free community content without a capture mechanism.
+
+Official: https://xsoar.pan.dev/marketplace/
+
+## 17. Celigo integrator.io Marketplace — managed integration apps and AI agents
+
+**What agents can sell/distribute.** Fully managed Integration Apps, reusable templates and AI Agents; monetization can be through partner licensing/services rather than assuming every listing has native Marketplace checkout.
+
+**Autonomous workflow.** Discover repeated cross-SaaS workflow → generate integration graph/mappings → seed paired SaaS fixtures → Harbor IntegrationWorld tests mapping, retries, duplicate handling, partial failure and reconciliation → package versioned Integration App/template/agent → Marketplace publication → external commercial relationship → support/telemetry → versioned revisions.
+
+**Human dependency.** H1–H2 for partner/commercial approval.
+
+**Infrastructure/frontier.** Celigo’s current documentation describes Integration Apps as fully managed products built by Celigo or partners; Marketplace supports templates, integration apps and **AI Agents**. Current 2026 docs also describe embedded AI for mappings/summaries/error handling and a revision lifecycle.
+
+**Demand.** The target is narrow, durable business-system bridges—not generic “connect anything” automation already handled by iPaaS.
+
+**Why agents fit.** Shared IntegrationWorld/connector skills from Boomi and Coupa transfer directly.
+
+**Assets.** `CeligoPack`, IntegrationWorld, mapping/reconciliation evaluator, revision-release Process, iPaaS specialist Worker.
+
+**Economics.** Attractive if one managed integration has repeated customers; unattractive if listing drives no commercial capture.
+
+Official: https://docs.celigo.com/  
+Marketplace: https://integrator.io/marketplace
+
+## 18. Buildium Marketplace — property-management partner products
+
+**What agents can sell.** Maintenance coordination, lease/document QA, resident communications, inspections, security-deposit workflows, owner accounting/reporting and narrow operational assistants.
+
+**Autonomous workflow.** Mine Buildium operator pain → build partner integration → synthetic portfolio → shared PropertyWorld replays lease/payment/work-order/accounting cases → Marketplace partner review → customer installs/integration billing → monitor support/outcomes → continuously patch.
+
+**Human dependency.** H2 for partner onboarding/security and some customer workflows.
+
+**Infrastructure/demand.** Buildium advertises 50+ Marketplace integrations and customers can buy integrations they use. A current Marketplace listing for **Inspectr** explicitly markets an AI agent for property inspections—direct evidence that agent-native products are already legible to Buildium buyers.
+
+**Why agents fit.** Repetitive admin workflows, high data structure, and strong World reuse across AppFolio/RealPage.
+
+**Assets.** `BuildiumPack`, PropertyWorld, inspection evaluator, lease/work-order School, proptech specialist Worker.
+
+**Economics.** Good for recurring operational utilities; buyer base is smaller than enterprise proptech, but partner competition may also be lower.
+
+Official: https://www.buildium.com/marketplace/
+
+## 19. Instructure EdTech Collective Marketplace / Canvas Apps — LTI micro-products
+
+**What agents can monetize.** LTI 1.3 tools for gradebook/admin QA, assignment workflow, accessibility checking, course analytics, content transformation, rubric utilities and institutional operations. Marketplace/Canvas Apps are discovery/install surfaces; commercial billing is generally external.
+
+**Autonomous workflow.** Mine Canvas educator/admin pain → build LTI tool → synthetic course/roster/assignment fixtures → Harbor LMSWorld checks launch/OIDC, roles, deep links, grades, roster/privacy boundaries and uninstall behavior → EdTech Collective/Canvas Apps listing → institution installs → external subscription/license → telemetry → version maintenance.
+
+**Human dependency.** H2 because institutional privacy/procurement and student-data review matter.
+
+**Infrastructure.** Instructure says its EdTech Collective has 1,000+ partners and reaches 30M+ educators/students. Current Canvas Apps is becoming a central discovery/install/configuration hub for LTI tools, with usage visibility.
+
+**Demand.** Schools already assemble many external tools; the pain is compatibility, permissions, grade sync and administrative overhead, all more machine-testable than pedagogical judgment.
+
+**Why agents fit.** LTI is a standard protocol and course fixtures can regression-test most integration behavior.
+
+**Assets.** `CanvasPack`, LMSWorld, LTI launch/grade evaluator, FERPA/privacy preflight Process, EdTech integration School.
+
+**Economics.** Attractive for admin/accessibility/reliability products sold institution-wide. Avoid products that replace educator judgment or depend on low-value student-content generation.
+
+Official partners: https://www.instructure.com/partners  
+Canvas Apps: https://www.instructure.com/canvas/apps
+
+## 20. D2L Brightspace IntegrationHub — LTI tools for a smaller enterprise education ecosystem
+
+**What agents can monetize.** Brightspace LTI tools and partner applications for assessment/admin QA, reporting, accessibility, content workflows and integration reliability, typically via external license.
+
+**Autonomous workflow.** Detect Brightspace-specific gap → build LTI/API app → synthetic courses/users/enrollments → reuse LMSWorld → test roles, launch, deep link, grade return, course copy and privacy boundaries → partner listing in IntegrationHub → institution procurement → external payment → support telemetry → compatibility releases.
+
+**Human dependency.** H2 due education procurement/privacy; engineering itself can be H1.
+
+**Infrastructure.** Brightspace IntegrationHub is D2L’s integrated application catalog; partner integrations use standards such as LTI and service-provider programs.
+
+**Demand.** Smaller total market than Canvas, but lower developer attention can create better whitespace for specific enterprise workflows. Treat this as a cross-venue port after proving a Canvas LTI rather than as a first build.
+
+**Why agents fit.** Cross-LMS portability is high; the same evaluator/fixtures expose vendor-specific compatibility differences.
+
+**Assets.** `BrightspacePack`, shared LMSWorld, cross-LMS porting Process, LTI compatibility matrix, education integration Worker.
+
+**Economics.** Attractive as a second venue with low marginal porting cost; unattractive as a standalone build if institutional sales cycles dominate.
+
+Official: https://www.d2l.com/partners/integrationhub/
+
+---
+
+# Frontier Unlocks
+
+The highest-signal changes in this scan are not “AI can code better”; they are **economic surfaces becoming machine-legible**:
+
+1. **Samsara now documents directly for AI agents.** Its developer portal advertises `llms.txt`, Markdown docs and OpenAPI endpoints, while also providing sandbox + App Publisher lifecycle. This is close to an agent-native Venue integration.
+2. **Microsoft Security Store is explicitly an agent store.** Microsoft’s May 28, 2026 docs say partners can sell AI agents with built-in commerce, billing and entitlement, and buyers can find/buy/deploy them across Microsoft Security products.
+3. **Siemens has a first-party Xcelerator Developer Portal MCP Server.** The MCP lets agents discover industrial APIs/docs/resources without bespoke documentation scraping.
+4. **CrowdStrike exposes Falcon MCP** alongside SDK/API surfaces, while its marketplace already supports commercial procurement. That compresses discovery/implementation around security products.
+5. **Terraform Registry Partner Premier launched April 30, 2026.** The new tier specifically rewards providers adopting newer machine-oriented Terraform capabilities such as search/actions and ephemeral resources, with automated testing already part of partner expectations.
+6. **Celigo Marketplace now treats AI Agents as marketplace artifacts**, alongside managed integration apps/templates.
+7. **Canvas Apps is evolving toward a tighter discover/install/configure surface for LTI tools**, making standard-protocol education apps more portable and measurable.
+
+A useful Oracle field is therefore:
+
+`EconomicCallability = machine-operable(discover + build + test + publish + transact + observe + update)`
+
+Samsara and Microsoft Security Store score unusually high because tooling and distribution are converging, not merely because they expose APIs.
+
+# Human Dependency Reduction
+
+The most valuable remaining H-step to automate next is **certification evidence generation**. Across Microsoft Security Store, Samsara, Siemens, CrowdStrike, Coupa, athenahealth, Jamf and enterprise partner ecosystems, the agent can increasingly build the artifact; the bottleneck is assembling trustworthy review evidence. Moltwork should turn this into a reusable process:
+
+`artifact → permission inventory → least-privilege analysis → threat model → privacy/data-flow map → test evidence → screenshots/demo tenant → compatibility matrix → reviewer guide → HumanQueue for accountable assertions → submission`
+
+Second is **declarative test-tenant provisioning**. A reusable world factory should create and reset deterministic tenants:
+- `FleetWorld`: Samsara ↔ Geotab ↔ Motive
+- `PropertyWorld`: AppFolio ↔ RealPage ↔ Buildium
+- `SecurityWorld`: Microsoft ↔ CrowdStrike ↔ XSOAR ↔ Cisco/Jamf adjacent
+- `IntegrationWorld`: Boomi ↔ Celigo ↔ Coupa ↔ Rippling
+- `LMSWorld`: Canvas ↔ Brightspace
+
+This creates a compounding advantage: the second venue in a vertical is dramatically cheaper than the first.
+
+Third is **partner-gate prediction**. Before a Worker spends days building, Oracle should estimate admission probability from seller requirements, security prerequisites, required existing customers, pilot requirements and review latency. A technically H1 venue with opaque partner admission can be economically worse than an H2 venue with deterministic certification.
+
+Fourth is **external-revenue attribution**. Many valuable catalogs (Rippling, Cisco, Instructure, Terraform) are distribution rather than native checkout. Hydra therefore needs an attribution bridge:
+
+`listing/install/referral → tenant activation → external Stripe/license event → retained usage → support cost → WorkerVersion/Process attribution`
+
+Without this, Oracle will systematically undervalue distribution markets or overvalue vanity installs.
+
+Fifth is **continuous compatibility maintenance**. Watch every upstream API/changelog/auth/schema release, run all affected Worlds immediately, patch failures, and submit revisions before customer tickets arrive. CrowdStrike’s 2026 Incidents→Cases breakage and the recurring XSOAR auth/version failures show why a persistent agent can be structurally better than a human-maintained connector.
+
+# Recommended experiments
+
+**1. Samsara first.** It is the cleanest new end-to-end Venue: AI-readable docs/OpenAPI, sandbox, OAuth, App Publisher, Marketplace and high-value structured fleet data. Build one tiny exception/reconciliation product, not a dashboard.
+
+**2. Microsoft Security Store second.** Build a bounded read-only triage/enrichment agent or connector with strong evidence, not an autonomous remediation system. The Store’s built-in agent commerce is strategically important.
+
+**3. AppFolio → Buildium → RealPage as a vertical porting experiment.** Build one owner-ledger/work-order QA capability once and measure how much of the Worker/World/evaluator transfers across three property ecosystems.
+
+**4. Boomi → Celigo as an integration-worker experiment.** Find one under-served SaaS pair, produce the connector/integration app, then quantify cross-iPaaS portability.
+
+**5. Terraform provider as the fastest low-gate experiment.** Pick a paid API/service with obvious IaC demand and weak provider coverage. A provider can be tested/published almost entirely autonomously and used as distribution for the paid service.
+
+The strongest strategic conclusion this run is that Moltwork should begin thinking in **vertical market families**, not independent marketplaces. A durable Fleet Worker, Property Worker, Security Worker or Integration Worker that accumulates API edge cases, certification knowledge, fixtures and customer outcomes becomes a distinct economic asset. The next marketplace is then not a new business from scratch; it is another distribution endpoint for a specialist that already knows the domain.
+Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+<p><strong>Research date: 31 August 2026</strong></p>
+<p>This scan treats novelty as a hard constraint. I cross-checked the prior Oracle Market Unlocks reports in Gmail and excluded every venue previously covered, including the most recent enterprise batch (Procore, ADP, Trimble, ServiceTitan, NetSuite SuiteApp.AI, Genesys, VTEX, Mews, Cloudbeds, Appian, Talkdesk, Clio, Jobber, Workday, Five9, NiCE, Acumatica, Docusign, Toast and Infor).</p>
+<p><strong>H-level shorthand:</strong> H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent step; H2 = recurring human subjective/compliance approval; H3 = material recurring human production; H4 = fundamentally human/offline. Mandatory identity, legal, tax, payment, security and age checks are legitimate human gates, not targets to bypass.</p>
+<p><strong>Scoring:</strong> O = opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (5 = less saturated); N = novelty. Total /25.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Market / marketplace</th>
+<th>O</th>
+<th>A</th>
+<th>F</th>
+<th>C</th>
+<th>N</th>
+<th>Total</th>
+<th>Post-setup H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Samsara App Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td><strong>24</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Microsoft Security Store</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td><strong>23</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Siemens Xcelerator Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td><strong>23</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AppFolio Stack Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td><strong>22</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Geotab Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td><strong>22</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Motive App Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td><strong>22</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Boomi Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td><strong>22</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>athenahealth Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Coupa App Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>CrowdStrike Marketplace</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Rippling App Shop</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Jamf Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Cisco Networking App Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>14</td>
+<td>RealPage Exchange (RPX)</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>HashiCorp Terraform Registry — Partner/Premier provider ecosystem</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td><strong>21</strong></td>
+<td>H0–H1</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Cortex XSOAR Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td><strong>20</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Celigo integrator.io Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td><strong>20</strong></td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Buildium Marketplace</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td><strong>20</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Instructure EdTech Collective Marketplace / Canvas Apps</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td><strong>20</strong></td>
+<td>H2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>D2L Brightspace IntegrationHub</td>
+<td>3</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td><strong>20</strong></td>
+<td>H2</td>
+</tr>
+</tbody>
+</table>
+
+
+
+1. Samsara App Marketplace — fleet/physical-operations micro-SaaS
+<p><strong>What an agent can sell.</strong> Fleet-compliance and physical-operations products: IFTA/fuel reconciliation, maintenance exception detection, route/stop QA, inspection completeness, driver-event evidence packets, equipment utilization, cold-chain exception reporting, or ERP/TMS connectors.</p>
+<p><strong>Autonomous workflow.</strong> Oracle mines Samsara community/API changelogs and the existing App Marketplace for repeated gaps → specialist worker selects a narrow measurable pain point → creates an OAuth app in Partner Developer Portal → seeds Samsara sandbox with vehicles, drivers, routes and events → Harbor FleetWorld replays telematics/webhook cases, rate limits, token rotation, duplicate events and regional deployment → worker produces listing/security/privacy/demo materials → human partner/certification review where required → publish → ingest install/support/API telemetry → regression-test API changes and continuously patch.</p>
+<p><strong>Human dependency.</strong> H1–H2: partner admission and Marketplace certification remain human/company gates. Once accepted, drafting, sandbox testing, app lifecycle/versioning and monitoring are highly structured.</p>
+<p><strong>Frontier infrastructure.</strong> Samsara’s current developer portal explicitly publishes <code>llms.txt</code>, Markdown versions of docs and OpenAPI endpoints <strong>for AI agents</strong>, alongside REST APIs, webhooks, streaming, sandbox organizations and an App Publisher lifecycle.</p>
+<p><strong>Demand/community.</strong> Samsara’s partner program advertises access to 10,000+ customers. The interesting demand is not another fleet dashboard; it is exception handling between telematics and finance/compliance systems, where small correctness failures create recurrent manual work.</p>
+<p><strong>Why agents fit.</strong> Fleet data is time-series/event data. Most value can be verified with deterministic invariants rather than subjective taste.</p>
+<p><strong>Reusable Moltwork assets.</strong> <code>SamsaraPack</code>, <code>FleetWorld</code>, telematics-event replay evaluator, OAuth/region Skill, MarketplaceSubmissionProcess, fleet-ops specialist Worker.</p>
+<p><strong>Economics.</strong> Attractive if the product prevents compliance mistakes or removes recurring dispatcher/fleet-manager reconciliation. Unattractive if it requires custom hardware installation or per-customer field services.</p>
+<p>Official: https://developers.samsara.com/docs/partner-developer-portal<br>
+Partner program: https://www.samsara.com/company/partners/technology</p>
+
+2. Microsoft Security Store — security agents with built-in commerce
+<p><strong>What agents can sell.</strong> Microsoft Security Copilot agents, Sentinel/Defender connectors and content, incident-triage agents, enrichment/remediation agents, compliance evidence products, attack-surface micro-SaaS, and narrowly scoped security services.</p>
+<p><strong>Autonomous workflow.</strong> Mine Defender/Sentinel/SOC pain → generate agent manifest + skills/connectors → provision synthetic tenant/log/incident fixtures → Harbor SecurityWorld injects benign simulated incidents and validates permissions, evidence fidelity, false-positive behavior, idempotence and rollback → generate security/privacy/listing package → partner validation → Security Store publication → Microsoft commerce handles billing/entitlement/private offers/MACC → deployment/usage/support telemetry → automatic regression against Microsoft API/model changes.</p>
+<p><strong>Human dependency.</strong> H1–H2. Security review, partner identity and claims about security efficacy need accountable human approval; normal execution/maintenance can approach H1 after publication.</p>
+<p><strong>Frontier unlock.</strong> Microsoft’s Security Store documentation, updated <strong>28 May 2026</strong>, explicitly describes a store where organizations can <em>find, buy and deploy partner-built security solutions and agents</em>. It provides a managed commerce lifecycle—billing and entitlement included—and agent manifests deploy across Security Copilot, Sentinel, Defender, Entra, Purview and Intune.</p>
+<p><strong>Demand/community.</strong> Security buyers already have budget and procurement rails. Current CrowdStrike community threads illustrate the adjacent pain: API endpoint migrations breaking alert pipelines and teams seeking native ways to ingest missing third-party APIs. The same long-tail connector/automation demand exists across SOC platforms.</p>
+<p><strong>Why agents fit.</strong> Security content consists heavily of structured rules, transforms, enrichment, playbooks and testable event pipelines.</p>
+<p><strong>Moltwork assets.</strong> <code>MicrosoftSecurityPack</code>, incident simulation World, least-privilege evaluator, evidence-quality evaluator, SOC School, certification Process.</p>
+<p><strong>Economics.</strong> High if the agent eliminates analyst toil while producing auditable evidence. Bad if it makes high-stakes autonomous remediation decisions that cannot be safely bounded/evaluated.</p>
+<p>Official: https://learn.microsoft.com/en-us/security/store/what-is-security-store<br>
+Store: https://securitystore.microsoft.com/</p>
+
+3. Siemens Xcelerator Marketplace — industrial API products and operational micro-apps
+<p><strong>What agents can sell.</strong> Industrial data adapters, plant-energy anomaly tools, maintenance/availability monitors, engineering-data validators, product-information helpers, Edge apps and subscription/API products built on the Siemens Xcelerator ecosystem.</p>
+<p><strong>Autonomous workflow.</strong> Oracle mines Siemens community/Marketplace/API catalog for missing cross-system workflows → worker uses the developer portal MCP to discover the exact industrial APIs and SDKs → builds adapter/app → tests against preview/simulated equipment datasets → Harbor IndustrialWorld validates units, timestamp/order semantics, failure recovery, permissions and data integrity → cybersecurity/seller preflight → human seller approval → Marketplace/API World listing → usage/revenue telemetry → compatibility maintenance.</p>
+<p><strong>Human dependency.</strong> H2. Industrial cybersecurity and seller governance are meaningful recurring gates; anything touching real machinery needs bounded scope and human deployment oversight.</p>
+<p><strong>Frontier infrastructure.</strong> Siemens’ current Xcelerator Developer Portal exposes an official <strong>MCP Server</strong> specifically for AI-powered documentation, product and API discovery. The portal also exposes preview environments, SDKs, playgrounds, an API catalog and explicit seller-governance/cybersecurity guidance.</p>
+<p><strong>Demand.</strong> Siemens positions Xcelerator as an open/connected industrial ecosystem and commercial Marketplace. The economic wedge is long-tail integration and data-quality work around installed industrial systems, not autonomous control of machinery.</p>
+<p><strong>Why agents fit.</strong> Industrial integration is schema-heavy and repetitive; synthetic plant telemetry makes large portions testable before human deployment.</p>
+<p><strong>Assets.</strong> <code>SiemensXceleratorPack</code>, IndustrialTelemetryWorld, unit/schema evaluator, MCP-discovery Skill, cybersecurity certification Process, industrial-integration Worker.</p>
+<p><strong>Economics.</strong> Attractive for read-only monitoring, evidence, reconciliation and engineering-data products with repeated buyers. Unattractive for safety-critical control loops or bespoke onsite integration.</p>
+<p>Official developer portal/MCP: https://developer.siemens.com/<br>
+Marketplace: https://xcelerator.siemens.com/</p>
+
+4. AppFolio Stack Marketplace — property-management micro-products
+<p><strong>What agents can sell.</strong> Owner-statement reconciliation, lease/work-order QA, vendor-document completeness, accounting/reporting corrections, resident communications helpers, inspection evidence, security-deposit workflows and vertical property-management adapters.</p>
+<p><strong>Autonomous workflow.</strong> Mine AppFolio operator complaints → encode a narrow property/accounting pain → develop against AppFolio API → seed sandbox with properties, units, leases, charges, vendors and work orders → Harbor PropertyWorld checks accounting/state invariants and edge cases → security questionnaire/listing package → partner review → publish → observe installs/support/outcome metrics → patch.</p>
+<p><strong>Human dependency.</strong> H1–H2 for partner/security review. Routine operation is API-driven.</p>
+<p><strong>Infrastructure.</strong> AppFolio Stack offers APIs, sandbox access and a formal integration-partner/Marketplace path. AppFolio advertises 20,000+ customers and millions of managed units.</p>
+<p><strong>Demand/community.</strong> A 27 April 2026 AppFolio Reddit user described being unable to get an accurate report of what owners were owed and needing custom workflow logic. This is the ideal “last 10%” enterprise-app gap: small in feature scope, financially meaningful, repeatable.</p>
+<p><strong>Why agents fit.</strong> Property workflows are structured records and state transitions. Accounting outputs can be checked against known fixtures.</p>
+<p><strong>Assets.</strong> <code>AppFolioPack</code>, shared <code>PropertyWorld</code>, owner-ledger evaluator, work-order lifecycle evaluator, property-ops School.</p>
+<p><strong>Economics.</strong> Strong if it removes recurring accountant/property-manager labor. Weak for local regulatory workflows requiring human legal judgment each time.</p>
+<p>Official: https://www.appfolio.com/stack/partner-program<br>
+Community signal: https://www.reddit.com/r/AppFolio/</p>
+
+5. Geotab Marketplace — long-tail connected-vehicle Add-Ins
+<p><strong>What agents can sell.</strong> Fuel/EV-cost analysis, maintenance triggers, driver safety/compliance, route/zone analytics, custom Add-Ins, sensor integrations and data connectors.</p>
+<p><strong>Autonomous workflow.</strong> Mine fleet forums and Marketplace gaps → build with MyGeotab SDK/API → create synthetic fleet/database → Harbor FleetWorld exercises pagination, Rules/Zones, telematics bursts, device churn and API limits → package Add-In/integration → Marketplace partner review → publish/distribute → measure installs/API errors → maintain.</p>
+<p><strong>Human dependency.</strong> H1–H2 for partner/commercial listing; development itself can approach H0.</p>
+<p><strong>Infrastructure.</strong> Geotab says third-party developers can build using its freely accessible SDK; its Marketplace has 250+ partners globally and supports Add-Ins/integrated solutions.</p>
+<p><strong>Community pain.</strong> A developer described Geotab Rules/Zones as difficult to paginate correctly due large object collections and differing API limits. That is exactly the sort of integration detail a persistent specialist learns once and reuses across products.</p>
+<p><strong>Why agents fit.</strong> Same <code>FleetWorld</code> can support Samsara, Geotab and Motive, compounding expertise.</p>
+<p><strong>Assets.</strong> <code>GeotabPack</code>, API-pagination Skill, shared FleetWorld, zone/rule evaluator, cross-fleet-porting Process.</p>
+<p><strong>Economics.</strong> Attractive when one fleet utility ports across providers. Less attractive if a solution depends on proprietary hardware deployment.</p>
+<p>Official: https://marketplace.geotab.com/<br>
+Partner: https://www.geotab.com/marketplace/partners/</p>
+
+6. Motive App Marketplace — fleet operations and compliance adapters
+<p><strong>What agents can sell.</strong> HOS/inspection exception tools, maintenance workflows, fuel/IFTA products, dispatch/route adapters, safety evidence, payroll/TMS connectors and operational reporting.</p>
+<p><strong>Autonomous workflow.</strong> Discover recurring fleet workflow → free developer account → build against Motive Open API/webhooks → seed dev fixture → shared FleetWorld validates vehicle/driver/job/event state and webhook retry behavior → partner technical/security review → listing inside Motive dashboard → external/native commercial arrangement as applicable → monitor installations/errors → patch.</p>
+<p><strong>Human dependency.</strong> H1–H2 for partner/listing review.</p>
+<p><strong>Infrastructure.</strong> Motive provides Open APIs, webhooks, developer accounts and App Marketplace publishing. Its January 2026 partner overview cited 250+ prebuilt integrations; June 2026 documentation describes the review/listing process.</p>
+<p><strong>Demand.</strong> The market is operationally repetitive and customers routinely need data to cross TMS, payroll, maintenance and compliance boundaries. Competition exists, so Oracle should target missing edge cases rather than broad fleet management.</p>
+<p><strong>Why agents fit.</strong> Structured event pipelines; reusable FleetWorld and connector skills.</p>
+<p><strong>Assets.</strong> <code>MotivePack</code>, FleetWorld, HOS/inspection evaluator, webhook Skill, fleet connector specialist.</p>
+<p><strong>Economics.</strong> Good for low-support recurring connectors; bad if carrier-by-carrier onboarding becomes consulting.</p>
+<p>Official: https://developer.gomotive.com/<br>
+Marketplace/partner docs: https://gomotive.com/partners/</p>
+
+7. Boomi Marketplace — connectors, recipes and AI agents
+<p><strong>What agents can sell/distribute.</strong> Long-tail connectors, reusable integration recipes, packaged solutions and AI agents operating in enterprise integration workflows.</p>
+<p><strong>Autonomous workflow.</strong> Oracle identifies an unsupported source↔destination pair or brittle existing recipe → worker scaffolds Boomi connector/agent → synthetic API pair + fixtures → Harbor IntegrationWorld checks schema mapping, retries, rate limits, idempotence, secrets and error recovery → Marketplace package → partner review → publish → license/service revenue according to partner model → telemetry/support → versioned maintenance.</p>
+<p><strong>Human dependency.</strong> H1–H2 for partner/commercial approval; technical lifecycle is highly machine-operable.</p>
+<p><strong>Infrastructure/frontier.</strong> Boomi’s partner program explicitly invites partners to build and publish <strong>AI agents and integrated solutions</strong> on Boomi Marketplace and cites 300K+ connected endpoints and 100K+ users. Marketplace content and recipes remain actively updated in 2026.</p>
+<p><strong>Demand.</strong> Enterprise integration debt never ends: SaaS APIs change, field mappings drift and existing connectors lag edge cases. Agents are better suited to continuous compatibility work than one-time consulting.</p>
+<p><strong>Why agents fit.</strong> Connector engineering is compositional, testable and repetitive.</p>
+<p><strong>Assets.</strong> <code>BoomiPack</code>, generic IntegrationWorld, mapping evaluator, connector School, API-change watcher.</p>
+<p><strong>Economics.</strong> Strong if one connector reaches many customers or drives paid implementation/support. Weak when each enterprise has irreducibly bespoke mapping.</p>
+<p>Official: https://boomi.com/partners/technology/<br>
+Marketplace: https://discover.boomi.com/</p>
+
+8. athenahealth Marketplace — healthcare workflow integrations
+<p><strong>What agents can sell.</strong> Scheduling/admin tools, revenue-cycle reconciliation, patient-communication infrastructure, claims/document routing, referral workflow, interoperability QA and analytics.</p>
+<p><strong>Autonomous workflow.</strong> Mine practice/admin complaints → select non-clinical/revenue-cycle use case → develop against athena APIs → synthetic patient/practice tenant → Harbor HealthcareOpsWorld validates authorization, auditability, duplicates, coding/data integrity and failure handling → security/compliance package → Marketplace partner review → deploy to pilot/customer → monitor operational outcomes → patch.</p>
+<p><strong>Human dependency.</strong> H2. Healthcare privacy/security/compliance and customer contracting stay human. Avoid autonomous diagnosis/treatment; focus on administrative/interoperability work.</p>
+<p><strong>Infrastructure.</strong> athenahealth’s developer portal exposes 800+ API endpoints plus HL7/C-CDA and SQL-oriented data access. Marketplace material cites 240+ partner solutions.</p>
+<p><strong>Demand.</strong> Healthcare integration is expensive because workflows span scheduling, billing, documents, claims and external systems. Even small reductions in denial/admin/reconciliation work have high willingness to pay.</p>
+<p><strong>Why agents fit.</strong> Administrative healthcare data transforms are structured and can be tested with synthetic data; privacy requires strong boundary controls.</p>
+<p><strong>Assets.</strong> <code>AthenaPack</code>, synthetic-practice World, PHI/privacy evaluator, claims/admin workflow School, compliance Process.</p>
+<p><strong>Economics.</strong> High ACV where a product demonstrably cuts administrative work. Poor if it depends on subjective clinical judgment or per-site custom integrations.</p>
+<p>Official: https://docs.athenahealth.com/<br>
+Marketplace partner: https://www.athenahealth.com/solutions/marketplace-program</p>
+
+9. Coupa App Marketplace — procurement/finance operations apps
+<p><strong>What agents can sell.</strong> Supplier-data QA, invoice reconciliation, catalog integrity, approval routing, spend/compliance evidence, ERP connectors and procurement exception handling.</p>
+<p><strong>Autonomous workflow.</strong> Mine Coupa buyer/admin pain → build embedded app/API connector → synthetic procurement tenant → Harbor ProcureWorld creates requisitions, POs, receipts, invoices and supplier records → checks matching, approvals, duplicate prevention and least-privilege OAuth → certification package → Marketplace review → distribution/commercial arrangement → telemetry → maintenance.</p>
+<p><strong>Human dependency.</strong> H2 because enterprise certification, sensitive finance data and customer security reviews matter.</p>
+<p><strong>Infrastructure.</strong> Coupa documentation updated <strong>17 July 2026</strong> describes certified Marketplace apps across embedded apps, API connectors, custom API integrations and OAuth clients.</p>
+<p><strong>Demand.</strong> The value is in preventing costly exception work between procure-to-pay systems and ERP/supplier data, where rules are structured but edge cases are numerous.</p>
+<p><strong>Why agents fit.</strong> Three-way match, approval and supplier-record workflows are deterministic enough for scenario replay.</p>
+<p><strong>Assets.</strong> <code>CoupaPack</code>, ProcureWorld, invoice/PO evaluator, OAuth-scope Skill, procurement specialist Worker.</p>
+<p><strong>Economics.</strong> High where exceptions are frequent and expensive. Weak if every buyer requires months of custom services.</p>
+<p>Official: https://compass.coupa.com/en-us/products/product-documentation/integration-technical-documentation/the-coupa-core-api</p>
+
+10. CrowdStrike Marketplace — security apps, Foundry integrations and agentic operations
+<p><strong>What agents can sell.</strong> Foundry apps, data ingestion connectors, incident enrichment, exposure/asset workflows, response automation and narrow security operations products.</p>
+<p><strong>Autonomous workflow.</strong> Detect missing integration or API migration pain → build Foundry/app/API workflow → synthetic Falcon tenant + event fixtures → Harbor SecurityWorld validates permissions, event fidelity, limits, failure isolation and rollback → Marketplace/security review → commercial listing/private offer as applicable → usage/support telemetry → automatically follow endpoint deprecations and patch.</p>
+<p><strong>Human dependency.</strong> H2. Security review and production actions must stay tightly permissioned.</p>
+<p><strong>Infrastructure/frontier.</strong> CrowdStrike’s current Developer Center exposes Falcon SDKs and <strong>Falcon MCP</strong>. Marketplace supports commercial purchasing/private offers.</p>
+<p><strong>Community demand.</strong> April 2026: a developer wanted a more native way to pull a third-party REST API into Next-Gen SIEM; February 2026: the Incidents→Cases endpoint transition broke a custom alerting pipeline; August 2026: users reported API 500/429 issues and asked for better API observability. These are valuable integration/compatibility surfaces.</p>
+<p><strong>Why agents fit.</strong> Persistent workers excel at following deprecations, testing event schemas and repairing integrations quickly.</p>
+<p><strong>Assets.</strong> <code>CrowdStrikePack</code>, SecurityWorld, API-deprecation detector, rate-limit evaluator, Foundry specialist School.</p>
+<p><strong>Economics.</strong> Strong for high-value connectors/ops tooling. High support and security liability make generic autonomous remediation unattractive.</p>
+<p>Official: https://marketplace.crowdstrike.com/<br>
+Developer: https://developer.crowdstrike.com/<br>
+Community: https://www.reddit.com/r/crowdstrike/comments/1sqzed0/ingest_from_thirdparty_rest_api/</p>
+
+11. Rippling App Shop — standardized HR/IT integrations
+<p><strong>What agents can monetize.</strong> SSO/user lifecycle connectors, HR/payroll sync, time data adapters, provisioning and identity data-quality products. App Shop is distribution; billing is typically external.</p>
+<p><strong>Autonomous workflow.</strong> Mine unsupported SaaS/app requests → extract target system auth/user schema → build direct Rippling integration → dedicated test company seeded with simulated users → Harbor WorkforceWorld exercises hire/change/terminate, group/role changes, duplicates, failed provisioning and token rotation → App Shop submission → customer install/OAuth → external SaaS billing → observe sync/support telemetry → patch.</p>
+<p><strong>Human dependency.</strong> H1–H2 for partner approval/security. Customer authorization is a legitimate human consent step.</p>
+<p><strong>Infrastructure.</strong> Rippling supplies partner APIs, a seeded test company and an App Shop listing/review path. It says the ecosystem serves 20,000+ companies. Listing itself has no fee; monetization can remain with the developer.</p>
+<p><strong>Community pain.</strong> On 13 August 2026, a customer described a business-critical Time API integration with fragmented support threads and repeatedly lost context. That suggests a separate opportunity for integration observability/evidence packets as well as connectors.</p>
+<p><strong>Why agents fit.</strong> Joiner/mover/leaver lifecycle testing is deterministic and standardized.</p>
+<p><strong>Assets.</strong> <code>RipplingPack</code>, WorkforceWorld, SCIM/provisioning evaluator, support-context Pack, IAM/HR specialist.</p>
+<p><strong>Economics.</strong> Good if one connector serves many customers; partner gate and security obligations reduce speed.</p>
+<p>Official: https://developer.rippling.com/<br>
+Community: https://www.reddit.com/r/rippling/comments/1vn13n6/rippling_needs_to_improve_their_support_stream/</p>
+
+12. Jamf Marketplace — Apple fleet management utilities
+<p><strong>What agents can sell.</strong> Device-compliance/config drift, inventory/export, app deployment diagnostics, identity/OIDC helpers, migration QA and security integrations for Jamf Pro.</p>
+<p><strong>Autonomous workflow.</strong> Mine Jamf admin pain → build API integration → sandbox/test Jamf instance + virtual/simulated device-state fixtures → Harbor AppleFleetWorld checks enrollment/config profiles/inventory/API permissions and failure recovery → partner/Marketplace listing → external license → monitor API/platform releases → compatibility worker patches.</p>
+<p><strong>Human dependency.</strong> H1–H2; partner API/sandbox access can be a bottleneck.</p>
+<p><strong>Infrastructure/demand.</strong> Jamf’s developer material says 26,000 customers integrate using APIs and the Marketplace has hundreds of listings/partners. February 2026 community discussion complained that partner API/sandbox access could be slow, while another reported DDM/OIDC group-membership pain—evidence of real operational whitespace and of the human gate Moltwork cannot remove itself.</p>
+<p><strong>Why agents fit.</strong> MDM configuration and inventory state can be diffed and regression-tested continuously.</p>
+<p><strong>Assets.</strong> <code>JamfPack</code>, AppleFleetWorld, configuration-drift evaluator, OIDC/DDM Skill, API compatibility worker.</p>
+<p><strong>Economics.</strong> Strong for admin reliability and migration tools; weak for products that require physical-device testing across a huge hardware matrix without an economical fixture strategy.</p>
+<p>Official: https://developer.jamf.com/<br>
+Marketplace: https://marketplace.jamf.com/<br>
+Community: https://www.reddit.com/r/jamf/</p>
+
+13. Cisco Networking App Marketplace — network operations micro-products
+<p><strong>What agents can monetize.</strong> Configuration backup/restore, drift detection, deployment QA, inventory normalization, SD-WAN/ThousandEyes reporting, incident evidence and narrow network automation products.</p>
+<p><strong>Autonomous workflow.</strong> Mine Meraki/Catalyst/ThousandEyes admin complaints → implement against Cisco APIs → virtual/sandbox network fixtures → Harbor NetworkWorld checks config diffs, idempotence, rollout order, rate limits and rollback → Marketplace listing/lead generation → external subscription → telemetry → API/deployment compatibility maintenance.</p>
+<p><strong>Human dependency.</strong> H1–H2. Marketplace is primarily a discovery/lead channel; production network changes need explicit customer authorization.</p>
+<p><strong>Infrastructure.</strong> The former Meraki Marketplace expanded into Cisco Networking App Marketplace, covering broader networking products and APIs. Cisco’s current August 2026 application material promotes marketplace lead generation and API integrations.</p>
+<p><strong>Community pain.</strong> May 2026: an admin said APIs provide building blocks but admins should not have to write Python just to get backup/restore. July 2026: users complained about deployment complexity; January 2026: API source-IP behavior caused unexpected 403s. These are directly productizable pains.</p>
+<p><strong>Why agents fit.</strong> Network configs and rollout plans are machine-readable, and virtual topology fixtures can evaluate safety before production.</p>
+<p><strong>Assets.</strong> <code>CiscoNetworkPack</code>, NetworkWorld, config-diff/rollback evaluator, API-error diagnostic Skill, network-ops specialist.</p>
+<p><strong>Economics.</strong> High if it reduces outages/admin time. Avoid autonomous high-impact network changes without staged validation/human approval.</p>
+<p>Official: https://developer.cisco.com/<br>
+Marketplace application: https://www.cisco.com/site/us/en/partners/connect/marketplace.html<br>
+Community: https://www.reddit.com/r/meraki/</p>
+
+14. RealPage Exchange (RPX) — property-tech integration marketplace
+<p><strong>What agents can sell.</strong> Leasing/resident/payment/work-order/accounting adapters, data reconciliation, collections evidence and property operations integrations.</p>
+<p><strong>Autonomous workflow.</strong> Oracle mines RealPage customer/integration gaps → map source/target entities → build standardized API/event integration → synthetic multifamily portfolio → shared PropertyWorld tests residents, leases, charges, payments, work orders and event ordering → partner onboarding/security review → RPX distribution → usage/support → update.</p>
+<p><strong>Human dependency.</strong> H2 due enterprise proptech partner contracts and customer access.</p>
+<p><strong>Infrastructure.</strong> RealPage Exchange is explicitly an integration marketplace with standardized APIs and a streamlined contracting/onboarding program; RealPage has also described moving toward event-based, near-real-time integration.</p>
+<p><strong>Demand.</strong> Multifamily stacks routinely combine PMS, payments, screening, maintenance, CRM and accounting vendors. Integration quality is the economic product.</p>
+<p><strong>Why agents fit.</strong> Same PropertyWorld can support AppFolio, Buildium and RealPage, making each new venue cheaper.</p>
+<p><strong>Assets.</strong> <code>RealPagePack</code>, PropertyWorld, event-order evaluator, lease/payment schema School, cross-proptech porting Process.</p>
+<p><strong>Economics.</strong> Attractive if an adapter is reusable across portfolios. Poor if partner admission or each customer’s schema becomes bespoke consulting.</p>
+<p>Official: https://www.realpage.com/partners/realpage-exchange/</p>
+
+15. HashiCorp Terraform Registry — provider ecosystem as a distribution market
+<p><strong>What agents can monetize.</strong> Providers/modules themselves are usually free distribution artifacts, but they can drive paid hosted APIs, infrastructure SaaS, premium support, enterprise controls and implementation. The economic artifact is a provider that makes a paid service effortlessly agent/DevOps-callable.</p>
+<p><strong>Autonomous workflow.</strong> Oracle finds an API/service with Terraform demand but weak provider coverage → worker builds provider using current Plugin Framework → generates schema/docs/examples → ephemeral cloud fixture → Harbor IaCWorld runs create/read/update/delete/import/drift/upgrade tests nightly → GitHub/Registry publish → monitor downloads/issues/provider telemetry → sell the managed backend/support → persistent compatibility worker follows API/Terraform changes.</p>
+<p><strong>Human dependency.</strong> H0 for many community Registry publishing flows; H1 for verified partner/Premier status and commercial account setup.</p>
+<p><strong>Frontier unlock.</strong> HashiCorp announced a new <strong>Partner Premier</strong> tier on <strong>30 April 2026</strong>. Premier providers must support newer capabilities including Terraform search/actions and ephemeral resources. Partner requirements explicitly emphasize current Plugin Framework and automated nightly tests via GitHub Actions—almost a blueprint for an autonomous maintainer.</p>
+<p><strong>Demand/community.</strong> Terraform’s value is distribution into existing infrastructure workflows. Competition is high for major clouds but long-tail APIs/services remain attractive.</p>
+<p><strong>Why agents fit.</strong> Provider code is schema-derived, repetitive and has excellent black-box lifecycle tests.</p>
+<p><strong>Assets.</strong> <code>TerraformProviderPack</code>, IaCWorld, CRUD/import/drift evaluator, API→provider generator Skill, compatibility School.</p>
+<p><strong>Economics.</strong> Excellent when the provider is customer acquisition for a paid API/SaaS; unattractive if it produces only uncompensated maintenance with no monetization path.</p>
+<p>Official unlock: https://www.hashicorp.com/en/blog/announcing-the-new-partner-premier-tier-for-the-terraform-registry<br>
+Registry: https://registry.terraform.io/</p>
+
+16. Palo Alto Networks Cortex XSOAR Marketplace — content packs and maintained integrations
+<p><strong>What agents can sell/distribute.</strong> Content Packs containing integrations, playbooks, dashboards, incident types, scripts and subscription-backed services.</p>
+<p><strong>Autonomous workflow.</strong> Watch vendor API/auth changes + XSOAR issue reports → select broken/missing integration → generate/update content pack → synthetic incidents and mock vendor APIs → Harbor SOARWorld tests authentication, parsing, pagination, playbook branches and rollback → package/review → Marketplace → external/subscription monetization where applicable → watch upstream versions → patch before customers break.</p>
+<p><strong>Human dependency.</strong> H1–H2 depending partner/commercial arrangement and security claims.</p>
+<p><strong>Infrastructure.</strong> Cortex XSOAR Marketplace has 850+ product integrations and a content-pack model well suited to versioned machine generation.</p>
+<p><strong>Community pain.</strong> XSOAR users report integrations suddenly failing when upstream authentication/API versions change; the natural moat is not writing version one, but maintaining compatibility faster than vendors.</p>
+<p><strong>Why agents fit.</strong> Playbooks and integration tests are deterministic and upstream API changes are machine-detectable.</p>
+<p><strong>Assets.</strong> <code>XSOARPack</code>, SOARWorld, auth-change detector, playbook coverage evaluator, security-integration maintainer.</p>
+<p><strong>Economics.</strong> Strong for high-value vendor connectors and paid services; weak where the Marketplace expects free community content without a capture mechanism.</p>
+<p>Official: https://xsoar.pan.dev/marketplace/</p>
+
+17. Celigo integrator.io Marketplace — managed integration apps and AI agents
+<p><strong>What agents can sell/distribute.</strong> Fully managed Integration Apps, reusable templates and AI Agents; monetization can be through partner licensing/services rather than assuming every listing has native Marketplace checkout.</p>
+<p><strong>Autonomous workflow.</strong> Discover repeated cross-SaaS workflow → generate integration graph/mappings → seed paired SaaS fixtures → Harbor IntegrationWorld tests mapping, retries, duplicate handling, partial failure and reconciliation → package versioned Integration App/template/agent → Marketplace publication → external commercial relationship → support/telemetry → versioned revisions.</p>
+<p><strong>Human dependency.</strong> H1–H2 for partner/commercial approval.</p>
+<p><strong>Infrastructure/frontier.</strong> Celigo’s current documentation describes Integration Apps as fully managed products built by Celigo or partners; Marketplace supports templates, integration apps and <strong>AI Agents</strong>. Current 2026 docs also describe embedded AI for mappings/summaries/error handling and a revision lifecycle.</p>
+<p><strong>Demand.</strong> The target is narrow, durable business-system bridges—not generic “connect anything” automation already handled by iPaaS.</p>
+<p><strong>Why agents fit.</strong> Shared IntegrationWorld/connector skills from Boomi and Coupa transfer directly.</p>
+<p><strong>Assets.</strong> <code>CeligoPack</code>, IntegrationWorld, mapping/reconciliation evaluator, revision-release Process, iPaaS specialist Worker.</p>
+<p><strong>Economics.</strong> Attractive if one managed integration has repeated customers; unattractive if listing drives no commercial capture.</p>
+<p>Official: https://docs.celigo.com/<br>
+Marketplace: https://integrator.io/marketplace</p>
+
+18. Buildium Marketplace — property-management partner products
+<p><strong>What agents can sell.</strong> Maintenance coordination, lease/document QA, resident communications, inspections, security-deposit workflows, owner accounting/reporting and narrow operational assistants.</p>
+<p><strong>Autonomous workflow.</strong> Mine Buildium operator pain → build partner integration → synthetic portfolio → shared PropertyWorld replays lease/payment/work-order/accounting cases → Marketplace partner review → customer installs/integration billing → monitor support/outcomes → continuously patch.</p>
+<p><strong>Human dependency.</strong> H2 for partner onboarding/security and some customer workflows.</p>
+<p><strong>Infrastructure/demand.</strong> Buildium advertises 50+ Marketplace integrations and customers can buy integrations they use. A current Marketplace listing for <strong>Inspectr</strong> explicitly markets an AI agent for property inspections—direct evidence that agent-native products are already legible to Buildium buyers.</p>
+<p><strong>Why agents fit.</strong> Repetitive admin workflows, high data structure, and strong World reuse across AppFolio/RealPage.</p>
+<p><strong>Assets.</strong> <code>BuildiumPack</code>, PropertyWorld, inspection evaluator, lease/work-order School, proptech specialist Worker.</p>
+<p><strong>Economics.</strong> Good for recurring operational utilities; buyer base is smaller than enterprise proptech, but partner competition may also be lower.</p>
+<p>Official: https://www.buildium.com/marketplace/</p>
+
+19. Instructure EdTech Collective Marketplace / Canvas Apps — LTI micro-products
+<p><strong>What agents can monetize.</strong> LTI 1.3 tools for gradebook/admin QA, assignment workflow, accessibility checking, course analytics, content transformation, rubric utilities and institutional operations. Marketplace/Canvas Apps are discovery/install surfaces; commercial billing is generally external.</p>
+<p><strong>Autonomous workflow.</strong> Mine Canvas educator/admin pain → build LTI tool → synthetic course/roster/assignment fixtures → Harbor LMSWorld checks launch/OIDC, roles, deep links, grades, roster/privacy boundaries and uninstall behavior → EdTech Collective/Canvas Apps listing → institution installs → external subscription/license → telemetry → version maintenance.</p>
+<p><strong>Human dependency.</strong> H2 because institutional privacy/procurement and student-data review matter.</p>
+<p><strong>Infrastructure.</strong> Instructure says its EdTech Collective has 1,000+ partners and reaches 30M+ educators/students. Current Canvas Apps is becoming a central discovery/install/configuration hub for LTI tools, with usage visibility.</p>
+<p><strong>Demand.</strong> Schools already assemble many external tools; the pain is compatibility, permissions, grade sync and administrative overhead, all more machine-testable than pedagogical judgment.</p>
+<p><strong>Why agents fit.</strong> LTI is a standard protocol and course fixtures can regression-test most integration behavior.</p>
+<p><strong>Assets.</strong> <code>CanvasPack</code>, LMSWorld, LTI launch/grade evaluator, FERPA/privacy preflight Process, EdTech integration School.</p>
+<p><strong>Economics.</strong> Attractive for admin/accessibility/reliability products sold institution-wide. Avoid products that replace educator judgment or depend on low-value student-content generation.</p>
+<p>Official partners: https://www.instructure.com/partners<br>
+Canvas Apps: https://www.instructure.com/canvas/apps</p>
+
+20. D2L Brightspace IntegrationHub — LTI tools for a smaller enterprise education ecosystem
+<p><strong>What agents can monetize.</strong> Brightspace LTI tools and partner applications for assessment/admin QA, reporting, accessibility, content workflows and integration reliability, typically via external license.</p>
+<p><strong>Autonomous workflow.</strong> Detect Brightspace-specific gap → build LTI/API app → synthetic courses/users/enrollments → reuse LMSWorld → test roles, launch, deep link, grade return, course copy and privacy boundaries → partner listing in IntegrationHub → institution procurement → external payment → support telemetry → compatibility releases.</p>
+<p><strong>Human dependency.</strong> H2 due education procurement/privacy; engineering itself can be H1.</p>
+<p><strong>Infrastructure.</strong> Brightspace IntegrationHub is D2L’s integrated application catalog; partner integrations use standards such as LTI and service-provider programs.</p>
+<p><strong>Demand.</strong> Smaller total market than Canvas, but lower developer attention can create better whitespace for specific enterprise workflows. Treat this as a cross-venue port after proving a Canvas LTI rather than as a first build.</p>
+<p><strong>Why agents fit.</strong> Cross-LMS portability is high; the same evaluator/fixtures expose vendor-specific compatibility differences.</p>
+<p><strong>Assets.</strong> <code>BrightspacePack</code>, shared LMSWorld, cross-LMS porting Process, LTI compatibility matrix, education integration Worker.</p>
+<p><strong>Economics.</strong> Attractive as a second venue with low marginal porting cost; unattractive as a standalone build if institutional sales cycles dominate.</p>
+<p>Official: https://www.d2l.com/partners/integrationhub/</p>
+
+
+
+Frontier Unlocks
+<p>The highest-signal changes in this scan are not “AI can code better”; they are <strong>economic surfaces becoming machine-legible</strong>:</p>
+<ol>
+<li><strong>Samsara now documents directly for AI agents.</strong> Its developer portal advertises <code>llms.txt</code>, Markdown docs and OpenAPI endpoints, while also providing sandbox + App Publisher lifecycle. This is close to an agent-native Venue integration.</li>
+<li><strong>Microsoft Security Store is explicitly an agent store.</strong> Microsoft’s May 28, 2026 docs say partners can sell AI agents with built-in commerce, billing and entitlement, and buyers can find/buy/deploy them across Microsoft Security products.</li>
+<li><strong>Siemens has a first-party Xcelerator Developer Portal MCP Server.</strong> The MCP lets agents discover industrial APIs/docs/resources without bespoke documentation scraping.</li>
+<li><strong>CrowdStrike exposes Falcon MCP</strong> alongside SDK/API surfaces, while its marketplace already supports commercial procurement. That compresses discovery/implementation around security products.</li>
+<li><strong>Terraform Registry Partner Premier launched April 30, 2026.</strong> The new tier specifically rewards providers adopting newer machine-oriented Terraform capabilities such as search/actions and ephemeral resources, with automated testing already part of partner expectations.</li>
+<li><strong>Celigo Marketplace now treats AI Agents as marketplace artifacts</strong>, alongside managed integration apps/templates.</li>
+<li><strong>Canvas Apps is evolving toward a tighter discover/install/configure surface for LTI tools</strong>, making standard-protocol education apps more portable and measurable.</li>
+</ol>
+<p>A useful Oracle field is therefore:</p>
+<p><code>EconomicCallability = machine-operable(discover + build + test + publish + transact + observe + update)</code></p>
+<p>Samsara and Microsoft Security Store score unusually high because tooling and distribution are converging, not merely because they expose APIs.</p>
+
+Human Dependency Reduction
+<p>The most valuable remaining H-step to automate next is <strong>certification evidence generation</strong>. Across Microsoft Security Store, Samsara, Siemens, CrowdStrike, Coupa, athenahealth, Jamf and enterprise partner ecosystems, the agent can increasingly build the artifact; the bottleneck is assembling trustworthy review evidence. Moltwork should turn this into a reusable process:</p>
+<p><code>artifact → permission inventory → least-privilege analysis → threat model → privacy/data-flow map → test evidence → screenshots/demo tenant → compatibility matrix → reviewer guide → HumanQueue for accountable assertions → submission</code></p>
+<p>Second is <strong>declarative test-tenant provisioning</strong>. A reusable world factory should create and reset deterministic tenants:</p>
+<ul>
+<li><code>FleetWorld</code>: Samsara ↔ Geotab ↔ Motive</li>
+<li><code>PropertyWorld</code>: AppFolio ↔ RealPage ↔ Buildium</li>
+<li><code>SecurityWorld</code>: Microsoft ↔ CrowdStrike ↔ XSOAR ↔ Cisco/Jamf adjacent</li>
+<li><code>IntegrationWorld</code>: Boomi ↔ Celigo ↔ Coupa ↔ Rippling</li>
+<li><code>LMSWorld</code>: Canvas ↔ Brightspace</li>
+</ul>
+<p>This creates a compounding advantage: the second venue in a vertical is dramatically cheaper than the first.</p>
+<p>Third is <strong>partner-gate prediction</strong>. Before a Worker spends days building, Oracle should estimate admission probability from seller requirements, security prerequisites, required existing customers, pilot requirements and review latency. A technically H1 venue with opaque partner admission can be economically worse than an H2 venue with deterministic certification.</p>
+<p>Fourth is <strong>external-revenue attribution</strong>. Many valuable catalogs (Rippling, Cisco, Instructure, Terraform) are distribution rather than native checkout. Hydra therefore needs an attribution bridge:</p>
+<p><code>listing/install/referral → tenant activation → external Stripe/license event → retained usage → support cost → WorkerVersion/Process attribution</code></p>
+<p>Without this, Oracle will systematically undervalue distribution markets or overvalue vanity installs.</p>
+<p>Fifth is <strong>continuous compatibility maintenance</strong>. Watch every upstream API/changelog/auth/schema release, run all affected Worlds immediately, patch failures, and submit revisions before customer tickets arrive. CrowdStrike’s 2026 Incidents→Cases breakage and the recurring XSOAR auth/version failures show why a persistent agent can be structurally better than a human-maintained connector.</p>
+
+Recommended experiments
+<p><strong>1. Samsara first.</strong> It is the cleanest new end-to-end Venue: AI-readable docs/OpenAPI, sandbox, OAuth, App Publisher, Marketplace and high-value structured fleet data. Build one tiny exception/reconciliation product, not a dashboard.</p>
+<p><strong>2. Microsoft Security Store second.</strong> Build a bounded read-only triage/enrichment agent or connector with strong evidence, not an autonomous remediation system. The Store’s built-in agent commerce is strategically important.</p>
+<p><strong>3. AppFolio → Buildium → RealPage as a vertical porting experiment.</strong> Build one owner-ledger/work-order QA capability once and measure how much of the Worker/World/evaluator transfers across three property ecosystems.</p>
+<p><strong>4. Boomi → Celigo as an integration-worker experiment.</strong> Find one under-served SaaS pair, produce the connector/integration app, then quantify cross-iPaaS portability.</p>
+<p><strong>5. Terraform provider as the fastest low-gate experiment.</strong> Pick a paid API/service with obvious IaC demand and weak provider coverage. A provider can be tested/published almost entirely autonomously and used as distribution for the paid service.</p>
+<p>The strongest strategic conclusion this run is that Moltwork should begin thinking in <strong>vertical market families</strong>, not independent marketplaces. A durable Fleet Worker, Property Worker, Security Worker or Integration Worker that accumulates API edge cases, certification knowledge, fixtures and customer outcomes becomes a distinct economic asset. The next marketplace is then not a new business from scratch; it is another distribution endpoint for a specialist that already knows the domain.</p>

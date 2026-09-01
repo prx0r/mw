@@ -1,0 +1,229 @@
+Subject: Agent Money Scout — 2026-08-30 06:00
+Date: Sat, 29 Aug 2026 23:25:44 +0000
+Message ID: 1a04fd7e6de28bd4
+================================================================================
+
+# Agent Money Scout — 2026-08-30 06:00
+
+## Executive summary
+
+The strongest genuinely new direct-work discoveries this run are Hudle and Claw Jobs. Hudle has 11 completed USDC gigs and a public top earner at 67 USDC. Claw Jobs currently shows 17 open gigs and 40,500 sats already paid, including real open research/code/documentation tasks around 8,000–12,000 sats. Apify Store is the strongest new productization channel: it reports $1.5M paid out monthly to creators, 3,900 community developers, and 65,068 tools/automations, with creators generally receiving 80% of revenue before applicable platform usage costs.
+
+For immediate autonomous job execution, Taskmarket + dealwork.ai + t2000 remain the strongest core queue. Taskmarket currently has 17 funded tasks and 2,382.947764 USDC posted volume; dealwork.ai has 156 open tasks and 264 completed; t2000 continues to show real settled receipts and active sellers.
+
+## NEW THIS RUN
+
+### 1) Hudle — real USDC agent gigs with public earnings
+URL: https://hudle.io/
+
+What the agent does: coding, research, technical writing, data analysis, design, translation, protocol specs, audits.
+Who pays: gig posters funding work on Hudle.
+Verified activity: 11 gigs completed, 1 under review, 17 agents. Public top earner javierai shows 67 USDC earned. Completed examples visible on the homepage include 25 USDC for an agent-collaboration protocol spec, 20 USDC for an onboarding guide, 25 USDC for a research/data-analysis task, 15 USDC for a technical comparison, and 25 USDC for a security audit.
+Payment: USDC on Base L2, smart-contract backed. First 50 gigs are advertised fee-free; 11/50 have been used.
+Required: an agent able to follow Hudle's skill.md/API flow and a compatible payout wallet.
+Autonomy: 10/10.
+Exact first action: read https://hudle.io/skill.md, register one narrow research/code worker, then poll for newly funded gigs. Do not spend time building Hudle-specific functionality before a suitable funded task exists.
+Constraints: no explicit age rule was located in the current public material; any wallet/account requirements still need to be satisfied legitimately.
+Ease to first $5: 8/10. Repeatability: 8/10.
+
+### 2) Claw Jobs — live Lightning-paid AI-agent gigs
+URL: https://claw-jobs.com/
+FAQ: https://claw-jobs.com/faq
+
+What the agent does: research, scraping/structured datasets, code review, API documentation and other digital gigs.
+Who pays: human or agent gig posters who pre-fund escrow.
+Verified live state: 17 open gigs, 8 completed, 321 users, 40,500 sats paid.
+Current real-money listings shown publicly include:
+- 12,000 sats (~$12 shown by platform): compile a JSON dataset of 50+ AI-agent projects.
+- 10,000 sats (~$10): review TypeScript API routes for security/best-practice/bugs.
+- 8,000 sats (~$8): write an API integration guide for Claw Jobs.
+Payment: Bitcoin Lightning; 1% platform fee. Testnet gigs are separately labelled and should not count as income.
+Required: agent API/SDK access plus a legitimate Lightning receiving address.
+Autonomy: 9/10.
+Exact first action: inspect https://claw-jobs.com/ for the 8k–12k sat gigs and apply only where the agent can produce objectively checkable output.
+Constraints: FAQ says AI agents and humans can participate and advertises no KYC. No explicit age clause surfaced in the pages checked; do not bypass any wallet-provider rules.
+Ease to first $5: 8/10. Repeatability: 8/10.
+
+### 3) Apify Store — strongest new reusable-tool monetization channel
+URL: https://apify.com/partners/actor-developers
+Monetization docs: https://help.apify.com/en/articles/8684010-make-money-publishing-your-actors-on-apify-store
+
+What the agent does: build and operate a reusable scraper, browser automation, data extractor, API wrapper, monitoring tool or AI utility ('Actor').
+Who pays: Apify users and agents invoking the Actor via web, API, or MCP.
+Verified platform scale: Apify currently advertises $1.5M paid out monthly, 3,900 community developers, 65,068 tools/automations, and 10k+ developer signups/day.
+Pricing/payout: pay-per-event, pay-per-result, usage, or rental. Official docs say creators generally earn 80% of revenue, with platform usage costs deducted where applicable. Apify says some independent creators exceed $10,000 MRR and many exceed $1,000/month; these are platform-reported creator aggregates, not a guarantee.
+Required: Python/JavaScript Actor plus reliable tests. Publishing is designed to expose Actors over API/MCP automatically.
+Autonomy: 10/10 after publishing.
+Exact first action: package one proven paid-worker procedure as a pay-per-event Actor—for example `/website-audit`, `/structured-evidence`, `/release-check`, or `/seo-audit-normalize`—and set pricing above actual compute/proxy cost.
+Constraints: rights to scrape/use/resell data must be respected. Account/payout eligibility must be satisfied normally.
+Ease to first $5: 6/10. Repeatability: 10/10.
+
+### 4) AgentJob — pay-per-message agent services
+URL: https://agent-job.ai/
+
+What the agent does: expose a specialist that customers chat with or invoke for paid tasks/messages.
+Who pays: human or agent users; x402 settles USDC per message on Base.
+Current signal: the platform advertises 10,000+ agents already earning USDC, a Task Square, REST API/MCP, gas-covered Base smart-wallet settlement, and per-message payments. I could not verify a useful current earnings distribution or live task payout range, so the 10,000+ figure should be treated as a platform claim.
+Required: agent integration via REST/MCP and compatible Base payment setup.
+Autonomy: 10/10.
+Exact first action: register one existing narrow specialist and test whether external paid conversations arrive. Do not build a new product solely for this market.
+Constraints: no explicit age/geography provision surfaced in the pages checked; verify account/payment eligibility before use.
+Ease to first $5: 4/10. Repeatability: 9/10 if buyer liquidity is real.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 5) Taskmarket — best visible funded machine-work queue
+URL: https://taskmarket.dev/
+
+Current verified state: 17 open tasks, 26.9K registered agents, 2,382.947764 USDC posted/funded volume. Every accepted result settles on-chain in Base USDC.
+Current listings include a 24.2 USDC data-visualisation task with 101 submissions, a 1.297426 USDC bounty with 144 submissions, and a 0.327 USDC task-board research bounty with 145 submissions.
+Leaderboard evidence: top visible workers show 120.776268 and 78.624908 USDC earned.
+What agent does: research, coding, data, structured artifacts, benchmarks.
+Who pays: task requester funding escrow.
+Required: Taskmarket skill package/wallet.
+Autonomy: 10/10.
+Exact first action: calculate reward × probability of acceptance before executing. Avoid highly crowded bounty modes unless there is a clear quality advantage.
+Ease: 8/10. Repeatability: 9/10.
+
+### 6) dealwork.ai — broadest live mixed marketplace
+URL: https://dealwork.ai/
+
+Current verified state: 2.5K workers, 156 open tasks, 264 completed tasks, ~1.1-day typical hire-to-delivery.
+Concrete examples shown by the platform: $80 human→AI production API endpoint with tests; $5 AI→AI CSV-formatting job. AI→AI fee is 3%; standard contracts 10%. Funds are escrowed before work begins.
+What agent does: coding/APIs, research, analysis, transformations, documentation.
+Who pays: human or AI clients.
+Required: read skill.md, connect agent, bid/claim, deliver.
+Autonomy: 9/10.
+Exact first action: connect one narrow specialist and bid only where acceptance can be independently tested.
+Ease: 8/10. Repeatability: 9/10.
+
+### 7) t2000 — strongest job → service → API progression
+URL: https://t2000.ai/
+
+Current activity shows freshly funded/delivered jobs plus individual sellers with $57.75, $138.66 and $150 settled. Public job receipts demonstrate real settlement; for example a $0.01 job paid $0.0095 after the 5% service fee.
+What agent does: claim open jobs, list fixed-price services, or expose paid APIs.
+Who pays: job posters/service buyers/API callers.
+Fees: services 5% on settlement; API calls 0% marketplace fee.
+Autonomy: 9/10.
+Exact first action: use tiny tasks only when useful for reputation/integration, then move a proven capability into a fixed service/API.
+Ease: 7/10. Repeatability: 9/10.
+
+### 8) agentsbay — real settlement count, but noisy open inventory
+URL: https://www.agentsbay.ai/
+
+Current verified page: 27 registered agents, 774 jobs settled, ~$1.5K USDC in escrow, ~6-minute average verification. The catalogue offers examples such as a $19 PR/code reviewer and $27 competitor-intelligence digest.
+Caution: several current open-job titles look like junk/noise, so don't equate huge posted budgets with genuine demand.
+What agent does: development, research, content/data tasks or fixed services.
+Who pays: humans or agents using Polygon USDC escrow.
+Autonomy: 9/10.
+Exact first action: ignore obviously malformed listings; list a reliable fixed service and only bid on coherent funded tasks.
+Ease: 5/10. Repeatability: 9/10.
+
+### 9) Clawlancer — excellent machine interface, weak current economics
+URL: https://clawlancer.ai/marketplace
+
+Current state: 50 listings, 44 starter gigs at $1 or below; visible fresh jobs include many $0.01 seed tasks. API/MCP flow is excellent: register → browse → claim → deliver → Base-USDC settlement. Platform advertises 1–2.5% fees.
+What agent does: research, writing, coding, analysis.
+Exact first action: monitor for externally funded $5+ work; use penny gigs only for integration tests.
+Ease: 4/10. Repeatability: 8/10.
+
+### 10) MoltJobs — keep polling, current inventory still weak
+URL: https://moltjobs.io/open-jobs
+
+MoltJobs remains API/MCP/CLI-first with Base-USDC escrow. Current public promotional jobs pay 2 USDC and can require public-account/follower/disclosure conditions plus a 120-hour hold before payment.
+What agent does: in principle coding/research/data work, but recent live inventory is mostly promotional.
+Exact first action: poll the job feed and only act on coding/research/data tasks whose rules can be satisfied without spam or policy violations.
+Ease now: 3/10. Repeatability: 8/10.
+
+### 11) req402 — paid API distribution with visible usage
+URL: https://www.req402.com/
+
+Current strongest signal remains a weather API advertised at $0.002/request with 120,485 requests. Providers wrap an API, set a USDC price, and receive Base payments automatically.
+What agent does: sell reusable per-call functionality.
+Who pays: consuming agents/developers.
+Autonomy: 10/10.
+Exact first action: cross-list an already-working endpoint; measure real external calls before adding bespoke features.
+Ease: 6/10. Repeatability: 10/10.
+
+### 12) PayAPI Market — settlement-verified x402 catalogue
+URL: https://payapi.market/
+
+Current state: 91 live APIs, 588 endpoints, 74 settlement-verified listings; providers keep 100% of settlement value. 'Settlement verified' means PayAPI itself paid and received working output.
+What agent does: expose data/tools over x402.
+Who pays: agents calling the API.
+Exact first action: list only an endpoint with a proven customer problem, not another generic utility.
+Ease: 6/10. Repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 13) Automation outcome watchdog — strongest repeated unmet need
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+Fresh August 29 discussion: a workflow can show green while the actual downstream action never happened because of dead credentials, rejected templates or broken webhooks. The important assertion is the business receipt/state, not the workflow HTTP status.
+
+Product:
+expected event + deadline + downstream receipt/state → HEALTHY / FAILED / SILENT
+
+Customer: n8n/Make/Zapier agencies and businesses.
+Acquisition: automation consultants, agency communities, existing users—not mass spam.
+How to charge: initial setup plus recurring monitoring per workflow/client.
+MVP: external heartbeat store + one downstream receipt verifier + Slack/email alert.
+Ease: 8/10. Repeatability: 10/10.
+
+### 14) API-cost anomaly watchdog
+Thread: https://www.reddit.com/r/SideProject/comments/1w0ju81/stackpilot_a_tiny_tool_that_pings_me_before_my/
+
+A current operator reports a client n8n workflow looping while technically succeeding and burning about $80 in API calls in one day. Normal failure alerts would not have caught it.
+
+Product:
+execution → model/API cost estimate → rolling baseline → loop/cost anomaly → evidence alert
+
+Customer: automation agencies and AI workflow operators.
+MVP: HTTP reporting hook + per-run estimated cost + threshold/anomaly rule.
+Ease: 8/10. Repeatability: 10/10.
+
+### 15) WhatsApp/Meta automation health
+Thread: https://www.reddit.com/r/n8n/comments/1w0r31n/everything_that_broke_while_i_was_building_a/
+
+Fresh report: account-level restrictions and expiring Meta access tokens can silently break a workflow even when the n8n graph itself is fine.
+
+Product:
+credential expiry + Meta account status + webhook heartbeat + delivery receipt → channel-health report/alert
+
+Customer: agencies operating WhatsApp automations for legitimate businesses.
+MVP: read-only health monitor; human controls account changes.
+Ease: 7/10. Repeatability: 9/10.
+
+### 16) SEO audit normalizer
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1w1edcv/meet_my_new_project_sitescan_ai/
+
+Fresh August 29 pain signal: manually combining Screaming Frog exports, PageSpeed data and duplicate/meta analysis is time-consuming.
+
+Product:
+Screaming Frog CSV / sitemap → normalize URLs → PageSpeed/live diagnostics → duplicate/cannibalization analysis → structured Sheet/report
+
+Customer: SEO consultants and migration agencies.
+MVP: analysis + suggested fixes; keep publishing changes human-reviewed.
+Ease: 7/10. Repeatability: 9/10.
+
+### 17) `/verify-pr` / QA investigator
+Current QA discussions repeatedly show that AI accelerates test/script generation but leaves expensive work in deciding what to test, reproducing failures and proving acceptance.
+
+Product:
+PR + requirements → changed-surface map → risk-ranked tests → execute → reproduce failures → evidence packet → PASS / FAIL / REVIEW
+
+Customer: teams using coding agents heavily.
+MVP: GitHub PR URL + acceptance criteria → reproducible verification report.
+Ease: 8/10. Repeatability: 10/10.
+
+## FILTERED OUT
+
+ClawGig (https://clawgig.ai/) has excellent-looking live inventory—examples displayed include $25 research, $15 API integration and $5 content gigs—but its Terms explicitly require users to be at least 18, so it is not included as an actionable route here.
+
+AuraGate remains explicitly a testnet demo; its displayed payments are not real income.
+
+ClawTrust labels itself testnet-only, so its displayed $50/$6,500 gigs do not count as current real-money work.
+
+AgentWork currently shows 0 open gigs / $0 earned, so it is not worth integration time yet.
+
+Anything involving spam, deceptive promotion, prohibited scraping/access, credential resale, adult-only onboarding

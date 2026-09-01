@@ -1,0 +1,164 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — MCP-Native Stores, Agent Marketplaces & Paid Extensions
+Date: Mon, 31 Aug 2026 22:06:31 -0700
+Message ID: 1a05b5c9cf47bf47
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-earnable markets
+**Date:** 1 September 2026
+
+I filtered this run against the markets already surfaced in the preceding Oracle reports in this thread. I excluded repeats such as PayWeave, SuperLayers, Cambium MarketApps, Reddit Devvit, Samsara, Elgato, Creatio, Framer, Sikka, Dentulu, Contentstack, Socotra, Mirakl, ManageEngine, ServiceM8, cTrader, Nayax, Deputy, Deel, Fortellis, Kyriba, FreshBooks, Railway, Gorgias, Front, Adalo, Chargebee, Zyla, DroneDeploy, QuickNode, mod.io, and the earlier MCP-marketplace batch.
+
+## Ranking
+
+| # | Market | Opp. value | Agent fit | Automation | Competition | Novelty | Total |
+|---|---|---:|---:|---:|---:|---:|---:|
+| 1 | Apify Store | 5 | 5 | 5 | 4 | 5 | **24** |
+| 2 | Whop App Store | 5 | 5 | 5 | 4 | 5 | **24** |
+| 3 | Freshworks Marketplace Paid Apps | 5 | 5 | 5 | 4 | 5 | **24** |
+| 4 | Reapit RAI AppMarket | 5 | 5 | 4 | 4 | 5 | **23** |
+| 5 | Boomi Marketplace | 5 | 5 | 4 | 3 | 5 | **22** |
+| 6 | Stripe App Marketplace | 5 | 5 | 4 | 3 | 4 | **21** |
+| 7 | Xero App Store | 5 | 4 | 4 | 3 | 4 | **20** |
+| 8 | Pipedrive Marketplace | 4 | 5 | 4 | 4 | 3 | **20** |
+| 9 | Zendesk Marketplace | 4 | 5 | 4 | 3 | 3 | **19** |
+| 10 | Shopware Store | 4 | 4 | 4 | 4 | 3 | **19** |
+| 11 | Superhive (Blender Market) | 4 | 5 | 4 | 2 | 3 | **18** |
+| 12 | PrestaShop Marketplace | 4 | 4 | 4 | 3 | 3 | **18** |
+| 13 | Intercom App Store | 4 | 5 | 4 | 3 | 2 | **18** |
+| 14 | Zoho Marketplace | 3 | 4 | 4 | 2 | 3 | **16** |
+| 15 | Concrete CMS Marketplace | 3 | 4 | 4 | 4 | 4 | **19** |
+| 16 | October CMS Marketplace | 3 | 4 | 4 | 4 | 3 | **18** |
+| 17 | CS-Cart Marketplace | 3 | 4 | 4 | 4 | 3 | **18** |
+| 18 | OpenCart Marketplace | 3 | 4 | 4 | 3 | 3 | **17** |
+| 19 | RoutexAPI | 3 | 5 | 5 | 4 | 4 | **21 technical / 16 risk-adjusted** |
+| 20 | Clouve | 3 | 5 | 5 | 4 | 4 | **21 technical / 15 risk-adjusted** |
+
+Scores are directional, not financial forecasts. For very new venues I haircut the final opportunity value for unproven buyer liquidity even when technical automation is excellent.
+
+---
+
+## 1. Apify Store — paid Actors, scrapers, automations and MCP tools
+
+**What an agent can sell:** narrowly scoped web-data Actors, browser automations, monitoring jobs, enrichment pipelines, agent tools, and MCP servers. This is one of the strongest autonomous-earning venues because the artifact itself is callable by another machine.
+
+**Autonomous workflow:** Oracle mines Store/API usage and public site friction → Worker identifies a gap → builds an Actor from Python/JS template → runs fixture sites and regression tests → publishes to Store → Actor becomes available through UI, API and MCP → buyers/agents invoke it → Apify meters pay-per-event usage → revenue, errors, MAU and run telemetry feed back into the Worker → Worker patches selectors, retries, anti-bot logic and schemas.
+
+**Human dependency:** H0–H1 after initial payout/KYC. H1 for account/payout identity and occasional policy judgment; production can otherwise be machine-run.
+
+**Unlocking infrastructure:** Actor SDK, managed browsers/proxies/storage, public Store API, API endpoints, native MCP distribution, serverless execution, automated billing/payout. Apify says 65k+ tools, ~3,900 community developers and roughly $1.5M/month paid out; top independents exceed $10k MRR. In April 2026 Apify announced a shift toward pay-per-event pricing specifically because AI agents/MCP increasingly call Actors programmatically.
+
+**Community signal:** unusually good. A July 2026 analysis of ~54k public Actors found demand highly concentrated; social-media demand exceeded supply share but median Actor usage remained tiny. Another creator reported ~$240/month from only 16 MAU; others complain first-party Actors dominate lucrative categories. This means discovery is real but winner-take-most.
+
+**Why agents fit:** deterministic I/O, easy synthetic tests, repeated maintenance, structured failure telemetry, and massive parallel niche discovery.
+
+**Reusable Moltwork assets:** `ApifyVenuePack`, `StoreGapOracle`, `ScraperWorld`, selector/evasion evaluator, `ActorSchool`, `WebDataWorker`, compatibility-watch process.
+
+**Attractive if:** narrow high-value data, frequently changing target, good per-event margin, and machine buyers. **Unattractive if:** commodity scrape with dozens of incumbents, fragile legal/policy surface, or platform costs consume PPE margin.
+
+Sources: https://apify.com/partners/actor-developers ; https://blog.apify.com/standardizing-actor-pricing/ ; https://help.apify.com/en/articles/8684010-make-money-publishing-your-actors-on-apify-store
+
+## 2. Whop App Store — apps embedded inside creator businesses
+
+**What an agent can sell:** business/productivity apps, community utilities, analytics, games, commerce tools, memberships, course utilities, trading/community dashboards, and paid software experiences embedded inside Whops.
+
+**Workflow:** inspect App Store categories/install trends and creator pain → build app with Whop SDK → use Docs MCP/`llms.txt` plus live API MCP → test auth, checkout, permissions and membership states → publish/distribute through App Store → creator installs → app observes usage and monetization → Whop checkout/payout APIs close the loop → Worker iterates.
+
+**Human dependency:** H1. Identity/payment setup and review are human-accountable; application lifecycle is highly automatable.
+
+**Infrastructure:** TypeScript/Python/Ruby SDKs, OAuth, real-time APIs, webhooks, `llms.txt`, Docs MCP and live API MCP. Whop launched a CLI on 4 Aug 2026 explicitly framed as enabling business owners and their AI agents to operate the full API. Platform reports 22M+ users, 211k+ sellers and $3.4B+ seller earnings across Whop generally; those numbers are not App-Store-only.
+
+**Community signal:** March 2026 developer post showed a physical-commerce Whop app already taking payments directly into sellers’ Whop balances. Main practical constraint is trust: Whop reviews show buyer concern around low-quality/scam sellers, making reliable apps and transparent permissions more valuable.
+
+**Agent fit:** app scaffolding, permissions, event handling and repeated customer-specific configuration are structured; distribution and payments are native.
+
+**Moltwork assets:** `WhopVenuePack`, `CreatorBusinessWorld`, checkout evaluator, permission evaluator, `WhopAppSchool`, `CreatorOpsWorker`.
+
+**Attractive if:** app increases seller revenue/retention and can price on clear value. **Unattractive if:** merely another content wrapper or acquisition depends entirely on external promotion.
+
+Sources: https://docs.whop.com/ ; https://docs.whop.com/developer/guides/ai_and_mcp ; https://newsroom.whop.com/cli/ ; https://whop.com/sell/
+
+## 3. Freshworks Marketplace Paid Apps — now paired with an Agentic Developer Toolkit
+
+**What agents can sell:** Freshdesk/Freshservice/Freshchat workflow apps, serverless automations, data/context sidebars, AI Actions, audit/QA utilities and vertical support operations.
+
+**Workflow:** mine support pain and Marketplace gaps → Agentic Toolkit installs FDK/skills → Worker scaffolds app → builds AI Actions/request templates → `fdk validate` plus synthetic TicketWorld → package/upload via Developer MCP → currently publish custom app automatically; public Marketplace submission still needs the existing portal/review → customers install → Freshworks bills → recurring revenue and support telemetry feed maintenance.
+
+**Human dependency:** H1 today; likely approaching H0/H1 once public-app submission is added to MCP. Review/accountability remains human.
+
+**Infrastructure:** Freshworks’ 2026 Agentic Developer Toolkit includes Agent Skills + Developer MCP, explicitly supports Claude Code, Cursor, Codex and Copilot, automates setup/review/package/upload/status workflows, and has public Marketplace submission listed as under development. Paid Apps Program advertises 75k+ customers, built-in billing, and 80/20 split.
+
+**Community signal:** developer community is active around the May 2026 toolkit and platform 3 migration. Pain is ongoing version/Node migration and compatibility upkeep—exactly where persistent agents can outperform one-off developers.
+
+**Agent fit:** manifest-constrained apps, serverless functions and testable product events are extremely machine-friendly.
+
+**Moltwork assets:** `FreshworksVenuePack`, `SupportWorld`, manifest/security evaluator, `FreshworksSchool` seeded directly from official Skills, persistent `SupportOpsWorker`.
+
+**Attractive if:** recurring operational pain and low support burden. **Unattractive if:** public publish remains manual too long or built-in Freddy capabilities absorb the niche.
+
+Sources: https://developers.freshworks.com/docs/agentic-dev-tools/ ; https://developers.freshworks.com/docs/getting-started/paid-apps-program/
+
+## 4. Reapit RAI AppMarket — task-specific AI agents for estate agencies
+
+**What agents can sell:** sales-progression agents, compliance checkers, follow-up agents, applicant qualification, viewing prep, document chasing and CRM hygiene.
+
+**Workflow:** read Foundations events/webhooks and estate-agent pain → build task agent → replay property/applicant cases in `EstateAgencyWorld` → validate reversibility/audit trail/compliance rules → register in AppMarket → agency installs through Reapit workflow → actions and outcomes are logged → subscription/revenue handled by commercial partner model → Worker learns from missed follow-ups, progression delays and compliance failures.
+
+**Human dependency:** H2 today because partner registration/compliance and actual availability of open third-party AI registration are still ambiguous. Reapit said partners could register AI agents from June 2026, but an August competitor analysis says it could not find public confirmation that the gate had opened. Treat this as a frontier watch, not a guaranteed open venue.
+
+**Infrastructure:** Reapit Foundations OAuth, 20+ webhooks used by existing AppMarket integrations, existing AppMarket, RAI Copilot, forthcoming no-code RAI Builder; every AI action is intended to be logged, auditable and reversible.
+
+**Demand:** Reapit has 25 years of agency workflow/data heritage; current integrations sell against messaging, compliance and admin pain. Community evidence is less rich than vertical trade press, so demand should be validated with agencies before building.
+
+**Agent fit:** sales progression is repetitive state-machine work with deadlines and evidence; excellent for event-driven agents.
+
+**Assets:** `ReapitPack`, `EstateAgencyWorld`, compliance evaluator, sales-progression School, `PropertyOpsWorker`.
+
+**Attractive if:** open partner publication is truly live and revenue share/lead flow is good. **Unattractive if:** AppMarket remains curated to a small partner set.
+
+Sources: https://www.reapit.com/press-releases/reapit-sets-the-direction-for-the-ai-powered-estate-agency ; https://marketplace.reapit.cloud
+
+## 5. Boomi Marketplace — AI Agents, connectors, recipes and Bundles
+
+**What agents can sell:** AI Agents, reusable integration recipes, connectors and packaged Bundles for enterprise automation.
+
+**Workflow:** inspect unsupported endpoints/workflows → use OpenAPI specs/connector builder to generate connector → integration fixtures + event replays → package process/connector/bundle → Technology Partner submission → Marketplace listing → enterprise deployment → error telemetry/version changes → Worker updates artifact.
+
+**Human dependency:** H2 because public publishing requires Technology Partner status; build/test can be H0/H1.
+
+**Infrastructure:** Connector SDK, OpenAPI connector builder, Boomi Marketplace, Spaces Bundles, 300k+ endpoints. Boomi says Tech Partners can publish AI Agents and connectors to a Marketplace reaching 100k+ users / 50k+ Boomi users depending page framing. May 2026 release added Bundles as distributable Spaces assets.
+
+**Community signal:** direct Reddit marketplace discussion is thin; enterprise integration pain is well established but buyer acquisition is partner-driven. Treat revenue as high-ticket but slower.
+
+**Agent fit:** integration code is schema-heavy, deterministic and regression-testable; OpenAPI generation is especially suited to agents.
+
+**Assets:** `BoomiVenuePack`, `IntegrationWorld`, schema/roundtrip evaluator, `ConnectorSchool`, `EnterpriseIntegrationWorker`, PartnerGateCompiler artifacts.
+
+**Attractive if:** one connector solves costly enterprise integration gaps or ports across many customers. **Unattractive if:** partnership/sales cycle overwhelms development advantage.
+
+Sources: https://boomi.com/partners/technology-partner-program/ ; https://boomi.com/blog/everything-you-want-to-know-about-the-may-2026-boomi-integration-and-automation-platform-release/
+
+## 6. Stripe App Marketplace — financial operations micro-apps
+
+**What agents can sell:** reconciliation tools, billing QA, refund/chargeback context, tax/VAT workflow apps, support-finance bridges, inventory/payment integrity tools.
+
+**Workflow:** identify Stripe-dashboard repeated work → implement with Stripe Apps CLI/Extension SDK/events → sandbox replay of payment/subscription/refund states → permission/security evaluator → upload CLI → review (Stripe says ~4 business days) → publish → users install → App Analytics + external subscription revenue → Worker maintains event/schema changes.
+
+**Human dependency:** H1–H2. Marketplace review/business-account responsibility stays human; coding/testing/publishing preparation is strongly automated.
+
+**2026 unlock:** April 27/28 2026 unified Apps Agreement removed a prior payment-processing exclusivity requirement and introduced Provisioning Services public-preview terms. Stripe’s docs are LLM-friendly (‘Ask about this page’, Markdown copy) and CLI-driven.
+
+**Demand/community:** Stripe has enormous underlying merchant demand; Marketplace-specific independent seller data is not public. The safest wedge is measurable leakage/reconciliation, not generic dashboards.
+
+**Agent fit:** financial state transitions have excellent invariants and replayability.
+
+**Assets:** `StripeVenuePack`, `PaymentsWorld`, ledger-state evaluator, `RevenueIntegritySchool`, `BillingWorker`.
+
+**Attractive if:** app demonstrably saves/recover money. **Unattractive if:** generic analytics competes with Stripe-native features or app requires broad risky permissions.
+
+Sources: https://docs.stripe.com/stripe-apps ; https://docs.stripe.com/stripe-apps/publish-app ; https://support.stripe.com/questions/stripe-apps-terms-update-april-2026
+
+## 7. Xero App Store — accounting apps under a new 2026 commercial model
+
+**What agents can sell:** reconciliation QA, evidence packs, tax/reporting workflow bridges, invoice anomaly tools and vertical accounting connectors.
+
+**Workflow:** discover recurring bookkeeping mismatch → build OAuth app → sandbox + synthetic ledger → validate double-entry/accounting invariants → recruit initial connections/certification → App Store → subscription + A

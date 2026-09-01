@@ -1,0 +1,217 @@
+Subject: Agent Money Scout — 2026-08-31 12:00
+Date: Mon, 31 Aug 2026 00:25:32 -0500
+Message ID: 1a05647ad640deb8
+================================================================================
+
+# Agent Money Scout — 2026-08-31 12:00
+
+Immediate ranking: **AgentPact → dealwork.ai → OpenAnt → SporeAgent → MoltJobs → selective Opire/Taskmarket**.
+
+The biggest genuinely new find is **SporeAgent**: its live public page shows three concrete open tasks — **$45** for structuring 500 product listings, **$80** for a FastAPI pytest suite, and **$120** for translating 25 pages of technical documentation — alongside platform-reported **$48,210 paid out**. Its Terms say the marketplace charges a **15% fee**, uses Stripe for payouts, and bans malware/exploit work, deceptive content and other abusive tasks. Account/payment eligibility still has to be satisfied; do not work around provider or age restrictions.
+
+A second useful new lane is **Agrenting**. It lets autonomous agents publish fixed-price capabilities, keeps **95% of completed-task revenue**, uses escrow, and supports stablecoin payouts. However, its visible examples are explicitly illustrative and it does not prove meaningful buyer liquidity yet, so treat it as a free cross-listing experiment rather than a primary earning queue.
+
+## NEW THIS RUN
+
+### 1. SporeAgent — strongest new live queue
+URL: https://www.sporeagent.com/
+
+**Agent work:** web scraping/data extraction, Python/pytest generation, translation/documentation, and other bounded digital work.  
+**Who pays:** task posters.  
+**Verified/advertised payouts:** live page shows **$45**, **$80**, and **$120** open tasks. Platform reports **$48,210 paid out**.  
+**Requirements:** MCP-compatible agent (`npx sporeagent-mcp`) or custom integration; own model/API infrastructure; Stripe-supported payout setup.  
+**Autonomy:** 9/10.  
+**First action:** inspect the $80 FastAPI pytest task first; reproduce the target API locally, generate tests, run them, and only bid if the acceptance criteria are objectively achievable.  
+**Constraints:** SporeAgent requires one accountable human owner per account; task operators are responsible for provider-TOS compliance. Stripe/account eligibility applies. The platform explicitly bans malware/exploits, deceptive content, harassment and other abusive work.  
+**Ease first $5:** 8/10 if payout-eligible. **Repeatability:** 9/10.
+
+### 2. Opire — live OSS bounties remain concrete
+URL: https://app.opire.dev/
+
+A currently open **Deno** issue pays **$70** for adding test-coverage visibility in the editor. The issue is open and the reward is marked available; four solvers are currently trying it. Another open Strapi database issue has **$70** total available rewards.  
+**Agent work:** inspect GitHub issue/repo, reproduce bug/feature gap, implement patch, run tests, submit PR.  
+**Who pays:** bounty sponsors through Opire.  
+**Requirements:** GitHub, repo language/toolchain, local test execution.  
+**Autonomy:** 8/10, with human review before external PR submission advisable.  
+**First action:** for the Deno task, verify repository activity, issue scope, existing PRs and test reproducibility before writing code.  
+**Constraints:** obey repository contribution rules and platform/account eligibility. Do not submit low-quality AI-generated PR spam.  
+**Ease:** 6/10. **Repeatability:** 8/10.
+
+### 3. Agrenting — 95% revenue storefront
+URL: https://agrenting.com/
+
+**Agent work:** publish code-review, research, summarization, scheduled automation or another narrow capability.  
+**Who pays:** hirers; every hire is pre-funded in escrow.  
+**Pricing:** provider chooses per-task price. Platform keeps 5%; provider receives **95%**. Templates can pay a 70% ongoing split.  
+**Requirements:** REST/WebSocket or provider-MCP integration; stablecoin payout setup via NOWPayments.  
+**Autonomy:** 10/10 once deployed.  
+**First action:** register one free fixed-price `/api-sanity` or `/data-quality` capability at about $5–$10, then wait for a genuine outside buyer before adding more.  
+**Constraints:** visible marketplace examples are explicitly illustrative, so do not mistake them for current demand. Account/payment/geography eligibility applies.  
+**Ease:** 3/10. **Repeatability:** 9/10 if buyer liquidity develops.
+
+### 4. Code Bounty — GitHub-native auto-payout rail
+URL: https://www.codebounty.org/
+
+**Agent work:** solve funded GitHub issues and submit merged PRs.  
+**Who pays:** maintainers/sponsors who escrow ETH/ERC20 rewards.  
+**Payout:** bounty-specific; payout is automatically triggered after a qualifying PR merge.  
+**Requirements:** GitHub, wallet, relevant repo toolchain.  
+**Autonomy:** 8/10.  
+**First action:** use its bounty browser only for issues showing an explicit non-zero reward and then verify the underlying GitHub issue is still active.  
+**Constraints:** no useful aggregate live-bounty value was exposed in the primary page checked, so treat it as a discovery source until specific funded issues are verified.  
+**Ease:** 4/10. **Repeatability:** 8/10.
+
+### 5. x402 demand intelligence — do not build random endpoints
+URL: https://x402stats.io/reports/2026-08
+
+August data shows **$503K organic 30-day x402 volume**, but only **124 businesses** cleared the report's organic threshold; the median seller made **$0.01** and the top 10 wallets held **71% of volume**. This is crucial: x402 is real, but the long tail is mostly dust.
+
+**Money play:** use live marketplace jobs to discover procedures customers already pay for, then expose those procedures as x402 endpoints.  
+**MVP:** `/verify-pr`, `/api-sanity`, `/data-quality`, or `/workflow-health` after direct demand is proven.  
+**Acquisition:** existing x402 directories/marketplaces after validation.  
+**Ease:** 3/10. **Repeatability:** 10/10 if capability demand is proven.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. AgentPact — still #1 immediate queue
+URL: https://agentpact.xyz/needs
+
+Recent live checks continue to show **5–25 USDC** work around Python review, API automation, authorized code/security review, web scraping automation, data analysis and visualization. The board also contains large amounts of sub-dollar noise.  
+**First action:** hard-filter `reward >= 5 + fresh + objective acceptance criteria + settleable`. Prioritize API automation, code review and data analysis.  
+**Autonomy:** 10/10. **Ease:** 9/10. **Repeatability:** 9/10.
+
+### 7. dealwork.ai — 156 open tasks
+URL: https://dealwork.ai/
+
+Current primary page reports **2.5K workers, 156 open tasks and 264 completed tasks**. It documents an **$80 production API** delivered by an AI worker and a **$5 autonomous AI-to-AI task**. Funds are escrowed.  
+**First action:** ingest all open tasks and bid only where the worker can independently reproduce acceptance.  
+**Autonomy:** 9/10. **Ease:** 9/10. **Repeatability:** 9/10.
+
+### 8. OpenAnt — strongest verified scale
+URL: https://openant.ai/
+
+Primary page currently shows **12.8K total tasks, 1.2K open, 420 in progress and 11.3K completed**. A visible remote task asks for SKU-sales analysis with five insights plus a chart. Payments settle in USDC.  
+**First action:** filter `remote + digital + explicit reward + objective deliverable`; exclude physical/photo/GPS work.  
+**Autonomy:** 10/10. **Ease:** 8/10. **Repeatability:** 9/10.
+
+### 9. MoltJobs — concrete funded job remains
+URL: https://moltjobs.io/open-jobs
+
+A live **5 USDC** job asks the worker to transform three live job posts into ready-to-fund MoltJobs specs and contact the buyers. It is funded in USDC escrow. A separate 2-USDC promotional job exists but requires an established public account and a five-day proof hold, so it is not attractive for first revenue.  
+**First action:** inspect the 5-USDC task only if any external contact can be done individually, transparently and in compliance with the target platform's rules.  
+**Autonomy:** 8/10. **Ease:** 7/10. **Repeatability:** 8/10.
+
+### 10. Taskmarket — real settlement, poor EV
+URL: https://taskmarket.dev/
+
+Current primary page reports **17 open tasks, 26.9K registered agents and 2,382.95 USDC funded volume**. Its winner-take-all format produces heavy competition.  
+**First action:** calculate `EV = reward × P(win) − execution cost`; avoid crowded tasks unless the agent has a measurable edge.  
+**Autonomy:** 10/10. **Ease:** 4/10. **Repeatability:** 9/10.
+
+### 11. WorkProtocol — credible but wait for inventory
+URL: https://workprotocol.ai/
+
+Primary page reports **734 agents, 35 jobs posted, 12 completed and 1,325 USDC settled**. Jobs have structured acceptance criteria, Base escrow and can be auto-verified through tests/builds; minimum job budget is **50 USDC**.  
+**First action:** monitor the live queue; execute only when a funded job appears.  
+**Autonomy:** 10/10. **Ease today:** 3/10. **Repeatability:** 9/10.
+
+### 12. ClawTasks — remove from earning queue
+URL: https://clawtasks.com/
+
+The platform now explicitly says it is **free-task only** while it winds down paid bounties.  
+**First action:** none for revenue; keep only as an ecosystem monitor.  
+**Ease first $5:** 0/10. **Repeatability:** 0/10 until paid tasks return.
+
+### 13. gigs.sh — useful discovery, not live truth
+URL: https://gigs.sh/
+
+Use it as a source-discovery oracle, then independently verify every surfaced marketplace and current task on the primary site.  
+**Direct earning:** 1/10. **Scouting repeatability:** 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. n8n workflow-to-code migration
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1w3298g/at_what_point_does_an_n8n_workflow_become_harder/
+
+A fresh Aug 31 post describes a workflow that grew from Google Trends → news → parsing → filtering → scoring → research → AI processing → publishing, then became harder to debug than ordinary code. The specific pain is transformation logic scattered across nodes and expressions.
+
+**Offer:** `workflow JSON + requirements → identify code-worthy sections → TypeScript/Python service + tests + logging + rollback plan`.  
+**Customer:** n8n agencies and builders with 30–50+ node workflows.  
+**MVP:** migrate one deterministic section, not the entire system.  
+**Charge:** fixed pilot, then maintenance.  
+**Ease:** 9/10. **Repeatability:** 10/10.
+
+### 15. Automation-debt audit
+Thread: https://www.reddit.com/r/MarketingAutomation/comments/1vtd951/half_my_workflows_shouldnt_have_existed/
+
+One operator audited **40+ active workflows** and found only about **15** had regular use. The rest had become maintenance liabilities.
+
+**Agent:** workflow inventory + run history + dependencies → `KEEP / CONSOLIDATE / RETIRE / REVIEW`.  
+**Customer:** agencies/SMBs with mature n8n/Zapier/Make estates.  
+**MVP:** read-only audit; deletion remains human-approved.  
+**Ease:** 9/10. **Repeatability:** 10/10.
+
+### 16. Weekly SEO triage
+Thread: https://www.reddit.com/r/WebsiteSEO/comments/1vz54h5/what_is_the_most_repetitive_part_of_your_seo/
+
+Current operators repeatedly identify weekly reporting, pages losing traffic, internal-link discovery and backlink qualification as repetitive. They automate discovery but retain human judgment.
+
+**Agent:** authorized GSC + crawl → winners/losers → anomalies → internal-link/backlink candidate scores → review queue.  
+**Customer:** SEO agencies and multi-site operators.  
+**MVP:** one-site weekly diagnostic.  
+**Ease:** 9/10. **Repeatability:** 10/10.
+
+### 17. August Google-update evidence pack
+Thread: https://www.reddit.com/r/SEO/comments/1vzw2tl/august_2026_google_update_hit_my_site_hard_what/
+
+A site owner has before/after Search Console data, backlinks and indexing data but wants to determine what changed before touching the site. Another Aug 29 report describes roughly **99% organic traffic loss** on important pages while they remain indexed.
+
+**Agent:** GSC before/after + crawl/indexing + backlinks + deploy timeline → change points → affected clusters → evidence-ranked hypotheses.  
+**Customer:** publishers, ecommerce and SEO agencies.  
+**MVP:** fixed incident evidence pack; no ranking guarantees.  
+**Ease:** 8/10. **Repeatability:** 9/10.
+
+### 18. QA requirements/acceptance-criteria critic
+Thread: https://www.reddit.com/r/QualityAssurance/comments/1vw1f5i/ai_will_make_qas_actually_be_qas/
+
+A current QA discussion argues that AI is already removing the grunt work of test coding, leaving higher-value work in examining requirements, acceptance criteria and designs before implementation.
+
+**Agent:** ticket/spec + repo context → ambiguous ACs → missing edge cases → testable acceptance criteria → human QA review.  
+**Customer:** engineering teams using coding agents.  
+**MVP:** PR/ticket preflight report.  
+**Ease:** 9/10. **Repeatability:** 10/10.
+
+### 19. Repetitive small-business operations worker
+Thread: https://www.reddit.com/r/n8n/comments/1u879s4/i_mapped_every_repetitive_task_in_my_business_for/
+
+One operator mapped **23 recurring tasks**; clean wins included lead routing, inbox triage, content reformatting and weekly reporting. Lead routing reportedly saved about four minutes per lead across 15–20 leads/week.
+
+**Offer:** automate one bounded recurring process with logging and exceptions.  
+**Customer:** SMBs.  
+**MVP:** weekly reporting, lead routing or inbox action queue.  
+**Ease:** 9/10. **Repeatability:** 10/10.
+
+### 20. Paid one-process automation contracts
+Thread: https://www.reddit.com/r/n8n/comments/1vev45x/how_n8n_helped_me_move_from_a_nontech_internship/
+
+A builder reports starting with one repetitive process and later landing a **30-hour/month automation contract**. The useful skills were APIs, JavaScript, data processing, debugging, documentation and error handling.
+
+**Offer:** `one repetitive process → automate → instrument → prove before/after`.  
+**Customer acquisition:** referrals and communities/marketplaces where service offers are allowed; avoid unsolicited bulk outreach.  
+**Ease:** 8/10. **Repeatability:** 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+**1. Add SporeAgent to the worker immediately.** Its current $80 pytest task is almost exactly the kind of bounded, objectively verifiable coding work an autonomous coding agent should target. The $45 scraping task is also useful if the source permits automated access.
+
+**2. Run one normalized opportunity router over AgentPact + dealwork + OpenAnt + SporeAgent + MoltJobs + Opire.** Score every task as:
+
+`EV = payout × acceptance_probability × win_probability − model/API/runtime cost`
+
+and reject work that is stale, non-settleable, overly competitive or vague.
+
+**3. Specialize the worker around `/verify-pr + /api-sanity + /workflow-migrate`.** `/verify-pr` and `/api-sanity` map directly to current paid coding/data queues. `/workflow-migrate` is the strongest new direct-customer product because fresh n8n users are explicitly hitting the point where complex visual workflows are harder to reason about than code.
+
+Current execution order: **AgentPact → dealwork.ai → OpenAnt remote/digital → SporeAgent objectively testable tasks → MoltJobs concrete funded work → selective Opire → selective Taskmarket → WorkProtocol when inventory appears → Agrenting/x402 only after direct validation.**
+
+Accounting r

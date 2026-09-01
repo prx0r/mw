@@ -1,0 +1,397 @@
+Subject: Agent Money Scout — 2026-08-31 08:00
+Date: Sun, 30 Aug 2026 20:23:04 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a05569b16d92c36
+================================================================================
+
+# Agent Money Scout — 2026-08-31 08:00
+
+## Executive ranking
+
+Best immediate queues this run: **1) AgentPact, 2) dealwork.ai, 3) OpenAnt, 4) Toku.agency, 5) MoltJobs**. The best genuinely new discovery is **Toku.agency**, because it currently exposes 130+ open jobs and real USD/Stripe settlement. **AgentGigs** has unusually strong proof of a $465 agent payout, but its public jobs page currently shows 0 open jobs, so it is a monitor rather than an execution target today. **t2000 is downgraded sharply: 57 open records but 0 claimable jobs right now.**
+
+I deliberately excluded gambling/prediction-market work, spammy outreach, unsafe security activity, and anything that would require bypassing age/KYC/contract restrictions.
+
+# NEW THIS RUN
+
+## 1. Toku.agency — strongest new live job board
+URL: https://www.toku.agency/
+
+Current primary-source state: **130+ open jobs** and **1,640+ listed agents**. Visible live jobs include “Write a Technical Blog Post About Agent-to-Agent Commerce” at **$5** with 123 bids. Toku says agents receive **85%** of completed-job value and withdraw real USD via **Stripe Connect**.
+
+What the agent would do: research, code review, automation, web/data extraction, technical writing, data analysis, or other defined digital services. Who pays: human or agent buyer. Required: API-connected agent; Stripe Connect for cash withdrawal. Autonomy: **9/10** after account/payment setup. Exact first action: query the open-jobs feed and filter for `$5+`, low bid count, deterministic deliverable, and no prohibited outreach. Constraints: Stripe/payment eligibility and local contract/age rules apply; do not bypass them. Heavy competition is already visible on popular jobs.
+
+Ease-to-first-$5: **7/10 if payment-eligible**. Repeatability: **9/10**.
+
+## 2. AgentGigs — strongest verified single payout, but no work available now
+URL: https://www.agentgigs.io/
+Jobs: https://www.agentgigs.io/jobs
+
+The primary site displays a research job with a **$300–$750 budget** and a **$465 payment released to an agent**, plus quality verification scores. The agent workflow is fully API-native: browse, apply, deliver, receive independent proofing, and get paid. Free-tier commission is 10%. Service providers must connect a bank account through **Stripe Connect**; payout can have a 1–10 business-day cooldown depending on account age.
+
+Critical live-state check: the public jobs page currently reports **0 open jobs**. So the payment proof is meaningful, but this is not an immediate queue today.
+
+Exact first action: add `https://www.agentgigs.io/api/agent/jobs/available` to monitoring and only integrate further when genuine work appears. Autonomy: **10/10 after one-time human email/bank setup**. Constraints: Stripe/KYC/account eligibility applies.
+
+Ease today: **2/10**. Repeatability if inventory returns: **9/10**.
+
+## 3. AgentMarket — 18 open tasks, including high-value credits
+URL: https://www.agentmarket.space/
+Tasks: https://www.agentmarket.space/tasks
+
+Primary page reports **89 registered agents, 18 open tasks, $0.01 per credit, 10% platform fee**. Current visible tasks include 7,500 credits for 30 days of B2B LinkedIn posts, 12,000 credits for a SaaS financial model, and 20,000 credits for an authorized smart-contract code review; smaller translation/test tasks also exist.
+
+What the agent does: content, research, coding/review, translation. Who pays: task poster. Autonomy: **10/10** via SDK. Exact first action: verify that earned credits are actually withdrawable to money before doing any work; the public pages clearly price credits but did not give me enough primary evidence on cash-out mechanics. Treat credits as **$0 earnings until withdrawal is proven**.
+
+Ease: **3/10**. Repeatability: **7/10** if cash-out proves real.
+
+## 4. Clustly — live Solana-USDC agent marketplace with unusually transparent terms
+URL: https://clustly.ai/
+Docs: https://www.clustly.ai/docs
+
+Clustly’s marketplace is live on Solana mainnet. Buyers lock USDC in escrow; the acceptance criteria are hashed on-chain; an AI verifier provides an advisory verdict; the buyer’s approval releases payment. Sellers pay a **4% protocol fee**. It supports MCP, SDK/CLI, REST and hosted agents.
+
+Eligibility is unusually explicit: users must be **at least 16 and old enough in their own country to enter a binding contract**; sanctions/geography restrictions apply and Clustly explicitly prohibits disguising location with a VPN/proxy to evade availability rules. Its terms also disclose that the escrow program is early software and not independently audited.
+
+Exact first action: only list a proven service if the operator satisfies the contract/age/legal requirements; otherwise skip it. I did not find enough current marketplace liquidity to outrank direct job boards.
+
+Autonomy: **9/10**. Ease: **3/10**. Repeatability: **9/10 potential**.
+
+## 5. Moltify — pay-per-task storefront for agents
+URL: https://moltify.ai/
+
+Moltify is in beta. Builders connect an agent by webhook, choose pricing, and receive **88% of approved task value**; the standard platform fee is 12%. It advertises buyer task prices from **$2 to $100+**, escrow protection, and on-demand withdrawal / automatic payout above $100 through Stripe.
+
+What the agent does: contract review, code analysis, research, content and data processing. Who pays: marketplace buyers. Autonomy: **9/10** after listing. Exact first action: apply/list only one already-proven narrow service, then wait for an outside purchase before investing more engineering.
+
+Constraints: Stripe/payment and contract eligibility apply. No trustworthy live demand volume was visible.
+
+Ease: **3/10**. Repeatability: **9/10 potential**.
+
+## 6. EXVIV x402 Radar — concrete evidence of what machine buyers are actually paying for
+URL: https://exviv.com/x402
+
+This is not a job board; it is a high-value demand oracle for x402 services. EXVIV currently indexes **14.8K endpoints, 43 providers in view and 21 active businesses**. Examples with observed recent demand include:
+- X402atlas flight/trend API: **1.3K 30-day calls, 17 payer observations**, $0.05/call.
+- Vaaya Exa search: **312 calls, 25 payer observations**, $0.01/call.
+- Apify prepaid web-data access: **142 calls, 32 payer observations**, $1/call.
+- MiroShark social simulation: **37 calls, 15 payer observations**, $1/call.
+
+The opportunity: use this as product intelligence. Build/cross-list capabilities that already have buyer evidence — search/data transformation, scraping, upload/hosting utilities, verification — rather than arbitrary novelty APIs.
+
+Exact first action: identify a category with multiple payer observations, then expose an already-working capability at comparable pricing. Autonomy: **10/10**. Ease: **4/10**. Repeatability: **10/10** if you find organic buyers.
+
+# STILL ACTIVE FROM PRIOR RUNS
+
+## 7. AgentPact — still #1 for first-dollar probability
+URL: https://agentpact.xyz/needs
+
+Current board: **200 Needs**. High-signal live work includes Python code review **5–10 USDC**, API automation **10–25**, Python security/code review **10–25**, web-scraping automation **10–25**, and data analysis/visualization **10–25**. There is substantial sub-dollar test noise.
+
+What the agent does: bounded Python/API/data work. Who pays: Need/deal buyer. Exact first action: enforce `reward >= 5`, fresh, objective acceptance criteria, and settleable funding; attack API automation → code/security review → data analysis. For security work, only act on code/systems explicitly supplied or authorized by the customer.
+
+Autonomy: **10/10**. Ease: **9/10**. Repeatability: **9/10**.
+
+## 8. dealwork.ai — broadest useful queue
+URL: https://dealwork.ai/
+
+Fresh primary metrics: **2.5K workers, 157 open tasks, 264 completed tasks, ~1.1-day typical delivery**. The site documents a real **$80 AI-delivered production API endpoint with tests** and a **$5 AI-to-AI job**. Funds are escrowed before work starts; AI-to-AI fee is 3%.
+
+Exact first action: ingest all 157 tasks and bid only when acceptance can be independently reproduced. Strong fit: APIs, code fixes, data transforms, research and documentation.
+
+Autonomy: **9/10**. Ease: **9/10**. Repeatability: **9/10**.
+
+## 9. OpenAnt — strongest verified scale
+URL: https://openant.ai/
+
+Fresh primary metrics: **12.8K total, 1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out, $128K posted**. Current remote examples include SKU-sales analysis with five insights + chart and a promo-video production task. Beta fee is 0%.
+
+Exact first action: filter `remote + digital + explicit reward + objective proof`; exclude GPS/photo/physical tasks.
+
+Autonomy: **10/10**. Ease: **8/10**. Repeatability: **9/10**.
+
+## 10. MoltJobs — one concrete funded $5 job remains
+URL: https://moltjobs.io/open-jobs
+
+Current board still shows **5 USDC** for turning three live job postings into ready-to-fund MoltJobs specs and contacting the buyers, with about five days remaining. Each listed job is described as funded in on-chain USDC escrow.
+
+Exact first action: inspect the job requirements and only perform individualized, permitted contact — no mass unsolicited outreach.
+
+Autonomy: **8/10**. Ease: **7/10**. Repeatability: **8/10**.
+
+## 11. Taskmarket — real money, terrible expected value on crowded tasks
+URL: https://taskmarket.dev/
+
+Fresh state: **14 open tasks, 26.9K agents, 2,382.947764 USDC funded volume**. Current examples include **24.2 USDC with 143 submissions**, **1.297426 USDC with 178 submissions**, and **0.327 USDC with 190 submissions**.
+
+Exact first action: calculate `EV = reward × P(win) − execution cost` and prefer claim/pitch/benchmark mechanics or unusually low competition. Do not blindly enter 100+ submission winner-take-all races.
+
+Autonomy: **10/10**. Ease: **4/10**. Repeatability: **9/10**.
+
+## 12. t2000 — real settlement, but zero claimable work right now
+URL: https://t2000.ai/jobs
+
+Fresh dashboard: **57 open records, 1,284 settled, $994.51 settled USDC — but 0 claimable jobs right now**. Public receipts independently show actual settlement, e.g. a $0.01 task paying $0.0095 after the 5% seller fee.
+
+This remains useful as a productization rail (`job → proven procedure → service → API`) but should be removed from the immediate execution queue until claimable work reappears.
+
+Ease today: **1/10**. Repeatability architecture: **10/10**.
+
+## 13. gigs.sh — still the discovery oracle, not live truth
+URL: https://gigs.sh/
+
+It catalogs 46 agent-native platforms, including AgentPact, AgentHire, BountyBook, NEAR, Toku and API monetization surfaces. But its last verification date remains **2026-05-18**, so every candidate needs live re-verification before execution.
+
+I could not verify a current primary marketplace matching the generic “Taskmaster” name strongly enough to include it; I am not inventing a platform from an ambiguous name.
+
+Direct earning: **1/10**. Scouting repeatability: **10/10**.
+
+# REDDIT DEMAND SIGNALS
+
+## 14. Silent-workflow outcome monitor
+Thread: https://www.reddit.com/r/n8n/comments/1u163v6/what_is_the_worst_silent_failure_you_have_shipped/
+
+A real client’s weekly-reporting workflow silently stopped after credential rotation; nothing errored and the client noticed only **nine days later**. Similar reports cite green runs with empty data and triggers that silently stop firing.
+
+Customer/problem: agencies running n8n/Make/Zapier workflows for paying clients. Agent workflow: `expected output + expected cadence + downstream receipt → HEALTHY / SILENT / FAILED / REVIEW`. Acquisition: automation agencies, referrals, communities where service offers are allowed. Charge: fixed setup + recurring monitoring. MVP: heartbeat + expected-result assertion + daily exception digest.
+
+Ease: **9/10**. Repeatability: **10/10**.
+
+## 15. Data-integrity verifier for automations
+Thread: https://www.reddit.com/r/n8n/comments/1uonmvb/found_a_bug_in_my_production_workflow_that_never/
+
+A production lead-capture pipeline ran “successfully” for weeks while a field-mapping error wrote the wrong value into every CRM phone field. The execution system could not flag it because the node technically succeeded.
+
+Agent offer: `sample raw events + workflow output + destination records → schema/semantic assertions → discrepancy report`. Customer: B2B ops teams and automation agencies. MVP: 20-row sampled reconciliation with machine-readable PASS/FAIL evidence.
+
+Ease: **9/10**. Repeatability: **10/10**.
+
+## 16. n8n production-hardening audit
+Thread: https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/
+
+A practitioner running six paying clients describes queue contention, **11 GB of execution logs**, webhook failures after restarts and encryption-key recovery risk. This is direct evidence that “the workflow works” is not enough once agencies have multiple paying clients.
+
+Agent offer: deployment/workflow metadata → queue/concurrency checks → log-retention risk → webhook/credential/backup checks → prioritized hardening report. No destructive changes without human approval.
+
+Ease: **8/10**. Repeatability: **10/10**.
+
+## 17. Weekly SEO traffic-loss + internal-link triage
+Thread: https://www.reddit.com/r/WebsiteSEO/comments/1vz54h5/what_is_the_most_repetitive_part_of_your_seo/
+
+Fresh August 26 discussion identifies repetitive weekly reporting, pages losing traffic, internal-link discovery on large old sites and backlink qualification. Operators explicitly say automation helps discovery/filtering but they retain human review.
+
+Agent workflow: authorized GSC/crawl → winners/losers → internal-link candidates → anchor/relevance checks → human-review queue. Customer: SEO agencies and multi-site businesses. Charge: setup + weekly recurring report.
+
+Ease: **9/10**. Repeatability: **10/10**.
+
+## 18. Google August-2026 incident evidence pack
+Thread: https://www.reddit.com/r/SEO/comments/1vzw2tl/august_2026_google_update_hit_my_site_hard_what/
+
+A site owner has before/after GSC, backlink and indexing data after a major visibility decline and wants to distinguish content/sitewide/backlink/architecture/intent/technical causes **before making changes**. Another current thread reports roughly 99% organic loss on key pages during the August spam update.
+
+Agent workflow: GSC before/after + crawl/indexing + backlinks + deploy timeline → change points → page/query clusters → evidence-ranked hypotheses → human review. Do not promise ranking recovery or automate risky site changes.
+
+Ease: **8/10**. Repeatability: **9/10**.
+
+## 19. Customer-support deflection with evidence + escalation
+Thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/
+
+A hardware business says a KB-connected assistant now handles roughly **70–80% of repetitive support emails**, including customer-uploaded photos, while harder cases stay with humans.
+
+Agent offer: `question/photo + approved KB → evidence retrieval → grounded draft → unsupported-claim check → confidence gate → human exception`. Customer: hardware/e-commerce/SaaS support teams. MVP: top 20 FAQs + escalation queue.
+
+Ease: **8/10**. Repeatability: **10/10**.
+
+## 20. Dental/appointment booking QA worker
+Thread: https://www.reddit.com/r/n8n/comments/1vm1ybv/i_just_created_my_first_n8n_automation_and_im/
+
+A fresh n8n builder created a dental booking chatbot but explicitly had not tested the failure branch where two clients choose the same date. That highlights a common paid need: workflow builders ship the happy path but lack systematic adversarial/edge-case testing.
+
+Agent offer: workflow export/spec → generate edge cases → replay safe test data → verify double-booking/race/error paths → evidence report. Keep actual patient data out unless properly authorized and protected; do not make medical decisions.
+
+Ease: **8/10**. Repeatability: **10/10**.
+
+# BEST 3 ACTIONS TO TRY NOW
+
+### 1. Attack AgentPact + dealwork first
+They are still the highest-EV combination of explicit budget, machine-executable output and low integration friction. Current AgentPact $10–$25 API/code/data work is especially aligned with an autonomous coding/QA worker.
+
+### 2. Add Toku to the scanner today
+Unlike many new marketplaces, Toku has **130+ live jobs** and direct USD settlement. Do not chase 100-bid generic jobs; rank by `reward × P(win) / execution_cost` and target low-competition, deterministic technical work. If Stripe/account eligibility is unavailable, skip it rather than trying to work around the restriction.
+
+### 3. Productize `/verify-pr + /api-sanity + /workflow-outcome-check`
+This single worker maps onto current marketplace demand and the strongest independent Reddit pain. The core loop is:
+
+`requirements → reproduce → assertions/tests → evidence → PASS / FAIL / REVIEW`
+
+Once a procedure earns directly, expose the exact proven primitive through an x402 endpoint; EXVIV’s payer-observation data can guide which machine-buyable utilities already have real demand.
+
+## Current routing priority
+
+**AgentPact → dealwork.ai → OpenAnt remote/digital → Toku low-competition eligible jobs → MoltJobs funded $5 task → selective Taskmarket → AgentGigs when inventory returns → x402 distribution only after direct validation.**
+
+## Accounting rule
+
+Only **settled or genuinely withdrawable money** counts as earnings. Internal credits, advertised service prices, marketplace GMV, test funds, illustrative jobs and submitted-but-unpaid work remain **$0** until real settlement/withdrawal is verified.
+Agent Money Scout — 2026-08-31 08:00
+
+Executive ranking
+<p>Best immediate queues this run: <strong>1) AgentPact, 2) dealwork.ai, 3) OpenAnt, 4) Toku.agency, 5) MoltJobs</strong>. The best genuinely new discovery is <strong>Toku.agency</strong>, because it currently exposes 130+ open jobs and real USD/Stripe settlement. <strong>AgentGigs</strong> has unusually strong proof of a $465 agent payout, but its public jobs page currently shows 0 open jobs, so it is a monitor rather than an execution target today. <strong>t2000 is downgraded sharply: 57 open records but 0 claimable jobs right now.</strong></p>
+<p>I deliberately excluded gambling/prediction-market work, spammy outreach, unsafe security activity, and anything that would require bypassing age/KYC/contract restrictions.</p>
+
+NEW THIS RUN
+
+1. Toku.agency — strongest new live job board
+<p>URL: https://www.toku.agency/</p>
+<p>Current primary-source state: <strong>130+ open jobs</strong> and <strong>1,640+ listed agents</strong>. Visible live jobs include “Write a Technical Blog Post About Agent-to-Agent Commerce” at <strong>$5</strong> with 123 bids. Toku says agents receive <strong>85%</strong> of completed-job value and withdraw real USD via <strong>Stripe Connect</strong>.</p>
+<p>What the agent would do: research, code review, automation, web/data extraction, technical writing, data analysis, or other defined digital services. Who pays: human or agent buyer. Required: API-connected agent; Stripe Connect for cash withdrawal. Autonomy: <strong>9/10</strong> after account/payment setup. Exact first action: query the open-jobs feed and filter for <code>$5+</code>, low bid count, deterministic deliverable, and no prohibited outreach. Constraints: Stripe/payment eligibility and local contract/age rules apply; do not bypass them. Heavy competition is already visible on popular jobs.</p>
+<p>Ease-to-first-$5: <strong>7/10 if payment-eligible</strong>. Repeatability: <strong>9/10</strong>.</p>
+
+2. AgentGigs — strongest verified single payout, but no work available now
+<p>URL: https://www.agentgigs.io/<br>
+Jobs: https://www.agentgigs.io/jobs</p>
+<p>The primary site displays a research job with a <strong>$300–$750 budget</strong> and a <strong>$465 payment released to an agent</strong>, plus quality verification scores. The agent workflow is fully API-native: browse, apply, deliver, receive independent proofing, and get paid. Free-tier commission is 10%. Service providers must connect a bank account through <strong>Stripe Connect</strong>; payout can have a 1–10 business-day cooldown depending on account age.</p>
+<p>Critical live-state check: the public jobs page currently reports <strong>0 open jobs</strong>. So the payment proof is meaningful, but this is not an immediate queue today.</p>
+<p>Exact first action: add <code>https://www.agentgigs.io/api/agent/jobs/available</code> to monitoring and only integrate further when genuine work appears. Autonomy: <strong>10/10 after one-time human email/bank setup</strong>. Constraints: Stripe/KYC/account eligibility applies.</p>
+<p>Ease today: <strong>2/10</strong>. Repeatability if inventory returns: <strong>9/10</strong>.</p>
+
+3. AgentMarket — 18 open tasks, including high-value credits
+<p>URL: https://www.agentmarket.space/<br>
+Tasks: https://www.agentmarket.space/tasks</p>
+<p>Primary page reports <strong>89 registered agents, 18 open tasks, $0.01 per credit, 10% platform fee</strong>. Current visible tasks include 7,500 credits for 30 days of B2B LinkedIn posts, 12,000 credits for a SaaS financial model, and 20,000 credits for an authorized smart-contract code review; smaller translation/test tasks also exist.</p>
+<p>What the agent does: content, research, coding/review, translation. Who pays: task poster. Autonomy: <strong>10/10</strong> via SDK. Exact first action: verify that earned credits are actually withdrawable to money before doing any work; the public pages clearly price credits but did not give me enough primary evidence on cash-out mechanics. Treat credits as <strong>$0 earnings until withdrawal is proven</strong>.</p>
+<p>Ease: <strong>3/10</strong>. Repeatability: <strong>7/10</strong> if cash-out proves real.</p>
+
+4. Clustly — live Solana-USDC agent marketplace with unusually transparent terms
+<p>URL: https://clustly.ai/<br>
+Docs: https://www.clustly.ai/docs</p>
+<p>Clustly’s marketplace is live on Solana mainnet. Buyers lock USDC in escrow; the acceptance criteria are hashed on-chain; an AI verifier provides an advisory verdict; the buyer’s approval releases payment. Sellers pay a <strong>4% protocol fee</strong>. It supports MCP, SDK/CLI, REST and hosted agents.</p>
+<p>Eligibility is unusually explicit: users must be <strong>at least 16 and old enough in their own country to enter a binding contract</strong>; sanctions/geography restrictions apply and Clustly explicitly prohibits disguising location with a VPN/proxy to evade availability rules. Its terms also disclose that the escrow program is early software and not independently audited.</p>
+<p>Exact first action: only list a proven service if the operator satisfies the contract/age/legal requirements; otherwise skip it. I did not find enough current marketplace liquidity to outrank direct job boards.</p>
+<p>Autonomy: <strong>9/10</strong>. Ease: <strong>3/10</strong>. Repeatability: <strong>9/10 potential</strong>.</p>
+
+5. Moltify — pay-per-task storefront for agents
+<p>URL: https://moltify.ai/</p>
+<p>Moltify is in beta. Builders connect an agent by webhook, choose pricing, and receive <strong>88% of approved task value</strong>; the standard platform fee is 12%. It advertises buyer task prices from <strong>$2 to $100+</strong>, escrow protection, and on-demand withdrawal / automatic payout above $100 through Stripe.</p>
+<p>What the agent does: contract review, code analysis, research, content and data processing. Who pays: marketplace buyers. Autonomy: <strong>9/10</strong> after listing. Exact first action: apply/list only one already-proven narrow service, then wait for an outside purchase before investing more engineering.</p>
+<p>Constraints: Stripe/payment and contract eligibility apply. No trustworthy live demand volume was visible.</p>
+<p>Ease: <strong>3/10</strong>. Repeatability: <strong>9/10 potential</strong>.</p>
+
+6. EXVIV x402 Radar — concrete evidence of what machine buyers are actually paying for
+<p>URL: https://exviv.com/x402</p>
+<p>This is not a job board; it is a high-value demand oracle for x402 services. EXVIV currently indexes <strong>14.8K endpoints, 43 providers in view and 21 active businesses</strong>. Examples with observed recent demand include:</p>
+<ul>
+<li>X402atlas flight/trend API: <strong>1.3K 30-day calls, 17 payer observations</strong>, $0.05/call.</li>
+<li>Vaaya Exa search: <strong>312 calls, 25 payer observations</strong>, $0.01/call.</li>
+<li>Apify prepaid web-data access: <strong>142 calls, 32 payer observations</strong>, $1/call.</li>
+<li>MiroShark social simulation: <strong>37 calls, 15 payer observations</strong>, $1/call.</li>
+</ul>
+<p>The opportunity: use this as product intelligence. Build/cross-list capabilities that already have buyer evidence — search/data transformation, scraping, upload/hosting utilities, verification — rather than arbitrary novelty APIs.</p>
+<p>Exact first action: identify a category with multiple payer observations, then expose an already-working capability at comparable pricing. Autonomy: <strong>10/10</strong>. Ease: <strong>4/10</strong>. Repeatability: <strong>10/10</strong> if you find organic buyers.</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7. AgentPact — still #1 for first-dollar probability
+<p>URL: https://agentpact.xyz/needs</p>
+<p>Current board: <strong>200 Needs</strong>. High-signal live work includes Python code review <strong>5–10 USDC</strong>, API automation <strong>10–25</strong>, Python security/code review <strong>10–25</strong>, web-scraping automation <strong>10–25</strong>, and data analysis/visualization <strong>10–25</strong>. There is substantial sub-dollar test noise.</p>
+<p>What the agent does: bounded Python/API/data work. Who pays: Need/deal buyer. Exact first action: enforce <code>reward &gt;= 5</code>, fresh, objective acceptance criteria, and settleable funding; attack API automation → code/security review → data analysis. For security work, only act on code/systems explicitly supplied or authorized by the customer.</p>
+<p>Autonomy: <strong>10/10</strong>. Ease: <strong>9/10</strong>. Repeatability: <strong>9/10</strong>.</p>
+
+8. dealwork.ai — broadest useful queue
+<p>URL: https://dealwork.ai/</p>
+<p>Fresh primary metrics: <strong>2.5K workers, 157 open tasks, 264 completed tasks, ~1.1-day typical delivery</strong>. The site documents a real <strong>$80 AI-delivered production API endpoint with tests</strong> and a <strong>$5 AI-to-AI job</strong>. Funds are escrowed before work starts; AI-to-AI fee is 3%.</p>
+<p>Exact first action: ingest all 157 tasks and bid only when acceptance can be independently reproduced. Strong fit: APIs, code fixes, data transforms, research and documentation.</p>
+<p>Autonomy: <strong>9/10</strong>. Ease: <strong>9/10</strong>. Repeatability: <strong>9/10</strong>.</p>
+
+9. OpenAnt — strongest verified scale
+<p>URL: https://openant.ai/</p>
+<p>Fresh primary metrics: <strong>12.8K total, 1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out, $128K posted</strong>. Current remote examples include SKU-sales analysis with five insights + chart and a promo-video production task. Beta fee is 0%.</p>
+<p>Exact first action: filter <code>remote + digital + explicit reward + objective proof</code>; exclude GPS/photo/physical tasks.</p>
+<p>Autonomy: <strong>10/10</strong>. Ease: <strong>8/10</strong>. Repeatability: <strong>9/10</strong>.</p>
+
+10. MoltJobs — one concrete funded $5 job remains
+<p>URL: https://moltjobs.io/open-jobs</p>
+<p>Current board still shows <strong>5 USDC</strong> for turning three live job postings into ready-to-fund MoltJobs specs and contacting the buyers, with about five days remaining. Each listed job is described as funded in on-chain USDC escrow.</p>
+<p>Exact first action: inspect the job requirements and only perform individualized, permitted contact — no mass unsolicited outreach.</p>
+<p>Autonomy: <strong>8/10</strong>. Ease: <strong>7/10</strong>. Repeatability: <strong>8/10</strong>.</p>
+
+11. Taskmarket — real money, terrible expected value on crowded tasks
+<p>URL: https://taskmarket.dev/</p>
+<p>Fresh state: <strong>14 open tasks, 26.9K agents, 2,382.947764 USDC funded volume</strong>. Current examples include <strong>24.2 USDC with 143 submissions</strong>, <strong>1.297426 USDC with 178 submissions</strong>, and <strong>0.327 USDC with 190 submissions</strong>.</p>
+<p>Exact first action: calculate <code>EV = reward × P(win) − execution cost</code> and prefer claim/pitch/benchmark mechanics or unusually low competition. Do not blindly enter 100+ submission winner-take-all races.</p>
+<p>Autonomy: <strong>10/10</strong>. Ease: <strong>4/10</strong>. Repeatability: <strong>9/10</strong>.</p>
+
+12. t2000 — real settlement, but zero claimable work right now
+<p>URL: https://t2000.ai/jobs</p>
+<p>Fresh dashboard: <strong>57 open records, 1,284 settled, $994.51 settled USDC — but 0 claimable jobs right now</strong>. Public receipts independently show actual settlement, e.g. a $0.01 task paying $0.0095 after the 5% seller fee.</p>
+<p>This remains useful as a productization rail (<code>job → proven procedure → service → API</code>) but should be removed from the immediate execution queue until claimable work reappears.</p>
+<p>Ease today: <strong>1/10</strong>. Repeatability architecture: <strong>10/10</strong>.</p>
+
+13. gigs.sh — still the discovery oracle, not live truth
+<p>URL: https://gigs.sh/</p>
+<p>It catalogs 46 agent-native platforms, including AgentPact, AgentHire, BountyBook, NEAR, Toku and API monetization surfaces. But its last verification date remains <strong>2026-05-18</strong>, so every candidate needs live re-verification before execution.</p>
+<p>I could not verify a current primary marketplace matching the generic “Taskmaster” name strongly enough to include it; I am not inventing a platform from an ambiguous name.</p>
+<p>Direct earning: <strong>1/10</strong>. Scouting repeatability: <strong>10/10</strong>.</p>
+
+REDDIT DEMAND SIGNALS
+
+14. Silent-workflow outcome monitor
+<p>Thread: https://www.reddit.com/r/n8n/comments/1u163v6/what_is_the_worst_silent_failure_you_have_shipped/</p>
+<p>A real client’s weekly-reporting workflow silently stopped after credential rotation; nothing errored and the client noticed only <strong>nine days later</strong>. Similar reports cite green runs with empty data and triggers that silently stop firing.</p>
+<p>Customer/problem: agencies running n8n/Make/Zapier workflows for paying clients. Agent workflow: <code>expected output + expected cadence + downstream receipt → HEALTHY / SILENT / FAILED / REVIEW</code>. Acquisition: automation agencies, referrals, communities where service offers are allowed. Charge: fixed setup + recurring monitoring. MVP: heartbeat + expected-result assertion + daily exception digest.</p>
+<p>Ease: <strong>9/10</strong>. Repeatability: <strong>10/10</strong>.</p>
+
+15. Data-integrity verifier for automations
+<p>Thread: https://www.reddit.com/r/n8n/comments/1uonmvb/found_a_bug_in_my_production_workflow_that_never/</p>
+<p>A production lead-capture pipeline ran “successfully” for weeks while a field-mapping error wrote the wrong value into every CRM phone field. The execution system could not flag it because the node technically succeeded.</p>
+<p>Agent offer: <code>sample raw events + workflow output + destination records → schema/semantic assertions → discrepancy report</code>. Customer: B2B ops teams and automation agencies. MVP: 20-row sampled reconciliation with machine-readable PASS/FAIL evidence.</p>
+<p>Ease: <strong>9/10</strong>. Repeatability: <strong>10/10</strong>.</p>
+
+16. n8n production-hardening audit
+<p>Thread: https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/</p>
+<p>A practitioner running six paying clients describes queue contention, <strong>11 GB of execution logs</strong>, webhook failures after restarts and encryption-key recovery risk. This is direct evidence that “the workflow works” is not enough once agencies have multiple paying clients.</p>
+<p>Agent offer: deployment/workflow metadata → queue/concurrency checks → log-retention risk → webhook/credential/backup checks → prioritized hardening report. No destructive changes without human approval.</p>
+<p>Ease: <strong>8/10</strong>. Repeatability: <strong>10/10</strong>.</p>
+
+17. Weekly SEO traffic-loss + internal-link triage
+<p>Thread: https://www.reddit.com/r/WebsiteSEO/comments/1vz54h5/what_is_the_most_repetitive_part_of_your_seo/</p>
+<p>Fresh August 26 discussion identifies repetitive weekly reporting, pages losing traffic, internal-link discovery on large old sites and backlink qualification. Operators explicitly say automation helps discovery/filtering but they retain human review.</p>
+<p>Agent workflow: authorized GSC/crawl → winners/losers → internal-link candidates → anchor/relevance checks → human-review queue. Customer: SEO agencies and multi-site businesses. Charge: setup + weekly recurring report.</p>
+<p>Ease: <strong>9/10</strong>. Repeatability: <strong>10/10</strong>.</p>
+
+18. Google August-2026 incident evidence pack
+<p>Thread: https://www.reddit.com/r/SEO/comments/1vzw2tl/august_2026_google_update_hit_my_site_hard_what/</p>
+<p>A site owner has before/after GSC, backlink and indexing data after a major visibility decline and wants to distinguish content/sitewide/backlink/architecture/intent/technical causes <strong>before making changes</strong>. Another current thread reports roughly 99% organic loss on key pages during the August spam update.</p>
+<p>Agent workflow: GSC before/after + crawl/indexing + backlinks + deploy timeline → change points → page/query clusters → evidence-ranked hypotheses → human review. Do not promise ranking recovery or automate risky site changes.</p>
+<p>Ease: <strong>8/10</strong>. Repeatability: <strong>9/10</strong>.</p>
+
+19. Customer-support deflection with evidence + escalation
+<p>Thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/</p>
+<p>A hardware business says a KB-connected assistant now handles roughly <strong>70–80% of repetitive support emails</strong>, including customer-uploaded photos, while harder cases stay with humans.</p>
+<p>Agent offer: <code>question/photo + approved KB → evidence retrieval → grounded draft → unsupported-claim check → confidence gate → human exception</code>. Customer: hardware/e-commerce/SaaS support teams. MVP: top 20 FAQs + escalation queue.</p>
+<p>Ease: <strong>8/10</strong>. Repeatability: <strong>10/10</strong>.</p>
+
+20. Dental/appointment booking QA worker
+<p>Thread: https://www.reddit.com/r/n8n/comments/1vm1ybv/i_just_created_my_first_n8n_automation_and_im/</p>
+<p>A fresh n8n builder created a dental booking chatbot but explicitly had not tested the failure branch where two clients choose the same date. That highlights a common paid need: workflow builders ship the happy path but lack systematic adversarial/edge-case testing.</p>
+<p>Agent offer: workflow export/spec → generate edge cases → replay safe test data → verify double-booking/race/error paths → evidence report. Keep actual patient data out unless properly authorized and protected; do not make medical decisions.</p>
+<p>Ease: <strong>8/10</strong>. Repeatability: <strong>10/10</strong>.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+
+1. Attack AgentPact + dealwork first
+<p>They are still the highest-EV combination of explicit budget, machine-executable output and low integration friction. Current AgentPact $10–$25 API/code/data work is especially aligned with an autonomous coding/QA worker.</p>
+
+2. Add Toku to the scanner today
+<p>Unlike many new marketplaces, Toku has <strong>130+ live jobs</strong> and direct USD settlement. Do not chase 100-bid generic jobs; rank by <code>reward × P(win) / execution_cost</code> and target low-competition, deterministic technical work. If Stripe/account eligibility is unavailable, skip it rather than trying to work around the restriction.</p>
+
+3. Productize <code>/verify-pr + /api-sanity + /workflow-outcome-check</code>
+<p>This single worker maps onto current marketplace demand and the strongest independent Reddit pain. The core loop is:</p>
+<p><code>requirements → reproduce → assertions/tests → evidence → PASS / FAIL / REVIEW</code></p>
+<p>Once a procedure earns directly, expose the exact proven primitive through an x402 endpoint; EXVIV’s payer-observation data can guide which machine-buyable utilities already have real demand.</p>
+
+Current routing priority
+<p><strong>AgentPact → dealwork.ai → OpenAnt remote/digital → Toku low-competition eligible jobs → MoltJobs funded $5 task → selective Taskmarket → AgentGigs when inventory returns → x402 distribution only after direct validation.</strong></p>
+
+Accounting rule
+<p>Only <strong>settled or genuinely withdrawable money</strong> counts as earnings. Internal credits, advertised service prices, marketplace GMV, test funds, illustrative jobs and submitted-but-unpaid work remain <strong>$0</strong> until real settlement/withdrawal is verified.</p>

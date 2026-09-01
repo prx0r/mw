@@ -1,0 +1,167 @@
+Subject: Oracle Market Unlocks #6 — 20 New Agent Markets — 31 Aug 2026
+Date: Mon, 31 Aug 2026 05:14:22 -0500
+Message ID: 1a0575018dc88f65
+================================================================================
+
+# Oracle Market Unlocks #6 — 31 Aug 2026
+
+This scan excludes the markets covered in prior reports (Atlassian, monday, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, Miro, WooCommerce, HubSpot, JetBrains, Fab, Unity, UEFN, Canva, Creative Market, Minecraft, Adobe Stock, Envato/Placeit, Gumroad, Telegram Mini Apps, VRChat, WordPress, Zoom, Teams, Google Workspace, Slack, Poe, CGTrader, Salesforce AgentExchange, ServiceNow, LINE MINI Apps, Databricks Marketplace, Wix, Shopify, RapidAPI, AWS Data Exchange, Snowflake, Google Cloud Marketplace, AWS Marketplace, Discord Premium Apps, Bubble, FlutterFlow, Coda, Figma, VS Code, Edge, Firefox, BigCommerce, Stream Deck, Overwolf, Hytale/BuiltByBit, CurseForge, Superhive, MyMiniFactory/Cults/Thangs, Teachers Pay Teachers, Xero, Zendesk, Zoho, Pipedrive, Foundry VTT, QuickBooks, Intercom, Freshworks, Cfx/Tebex, itch.io, GmodStore, Fantasy Grounds, MyFonts, DAZ, Roll20, IMVU, Second Life, Creative Fabrica, TurboSquid, Airtable).
+
+Scoring: Opportunity Value / Agent Suitability / Automation Feasibility / Competition (higher = less crowded) / Novelty, each 1–5, total /25.
+
+## Ranking
+
+| # | Market | Score | Best agent wedge | H-level after onboarding |
+|---|---|---:|---|---|
+| 1 | Autodesk Design and Make Marketplace | 24 | MCP servers + Revit/AutoCAD/Inventor workflow agents | H1 |
+| 2 | Grafana Marketplace | 24 | Paid observability plugins/data sources/reporting | H1 |
+| 3 | Stripe App Marketplace | 23 | Narrow finance-ops/reconciliation SaaS inside Stripe | H1 |
+| 4 | Adobe Creative Cloud Marketplace | 23 | Premiere/Photoshop production plugins | H1–H2 |
+| 5 | Microsoft AppSource — Power BI visuals | 22 | Domain-specific licensed visuals | H1–H2 |
+| 6 | Whop App Store | 22 | Creator-business software sold per install/subscription/rev-share | H1 |
+| 7 | Autodesk/SketchUp Extension Warehouse | 21 | Architecture/interior automation plugins | H1 |
+| 8 | Adobe Commerce Marketplace | 21 | Merchant workflow/compliance/migration extensions | H1 |
+| 9 | Garmin Connect IQ Store | 20 | Paid specialist watch apps/data fields | H1–H2 |
+| 10 | Ecwid App Market | 20 | Merchant micro-SaaS with native billing | H1 |
+| 11 | PrestaShop Marketplace | 19 | PrestaShop 9 merchant modules + maintenance | H1 |
+| 12 | Shopware Store | 19 | Subscription extensions for Shopware 6 | H1 |
+| 13 | Samsung Galaxy Store | 19 | Samsung-specific paid utilities/subscriptions | H1–H2 |
+| 14 | Alexa Skills Store | 18 | Paid professional information/utilities | H1–H2 |
+| 15 | SAP Store | 18 | Narrow BTP enterprise extensions/integration kits | H2 |
+| 16 | OpenCart Marketplace | 18 | Version-maintained ecommerce modules | H1 |
+| 17 | Reallusion Marketplace / Content Store | 17 | Procedural motion/material/utility packs | H2 |
+| 18 | Joomla Extensions Directory | 16 | Maintained commercial Joomla 6 extensions | H1 |
+| 19 | Oracle Marketplace | 15 | Narrow OCI/SaaS enterprise products | H2 |
+| 20 | Splunkbase | 15 | Maintained data-source/add-on products, BYOL monetization | H1–H2 |
+
+---
+
+## 1. Autodesk Design and Make Marketplace — 24/25
+
+**Why this is the biggest frontier unlock this run:** Autodesk launched the Design and Make Marketplace on **May 11, 2026** specifically for the era of agentic workflows. Autodesk's current Publisher Center says developers can publish an **app, plugin, or MCP server**, and the Marketplace itself says it reaches millions of users with “apps, agents, MCP servers, and more.” The publishing guide has a dedicated MCP publisher path and supports monetization for paid products.
+
+**What agents sell:** Revit model QA MCP servers; AutoCAD drawing validators; Inventor BOM/standards agents; Forma site-analysis tools; batch parameter-fix agents; compliance/specification checkers; automated documentation/export workflows.
+
+**Autonomous loop:** Oracle mines Autodesk forums/App Ideas Exchange → agent reproduces the workflow gap using sample models → builds APS/MCP/desktop plugin → Harbor World runs fixture models and verifies outputs → package/sign → generate privacy policy, quick-start and listing → submit → monitor usage/analytics → automatically regression-test against annual Autodesk releases → patch/re-submit.
+
+**Human dependencies:** H1 after one-time publisher/payment/privacy setup. Review and some product-specific certification remain human/platform gates. Autodesk-compatible file fixtures and software licensing are required for testing.
+
+**Demand:** Autodesk previously reported roughly 2M App Store downloads/year for its extension ecosystem. Current June 2026 Revit discussions show professionals using AI to build their own small daily automation scripts because they still need niche productivity tools.
+
+**Moltwork assets:** `AutodeskPack`, `RevitAutomationWorld`, MCP manifest validator, multi-version compatibility matrix, CAD/BIM artifact evaluator, specialist AEC worker.
+
+**Economics:** Excellent because enterprise users will pay for small time savings. Avoid generic “AI CAD assistant”; target repetitive, objectively testable workflows.
+
+Sources: Autodesk Platform Services, “Design and Make Marketplace: Where Your Solutions Meet Industry Agentic AI Workflows,” May 11 2026; Marketplace Publisher Center; Reddit r/Revit, June 10 2026.
+
+## 2. Grafana Marketplace — 24/25
+
+**New unlock:** Grafana added native paid-plugin monetization in **April 2026**. Commercial plugins can now be proprietary and sold through the Grafana plugin catalog.
+
+**What agents sell:** missing data sources, branded scheduled-report generators, domain dashboards with workflow actions, SOC/compliance reporting, specialized alert/routing panels, compatibility-maintained connectors.
+
+**Autonomous loop:** Oracle searches Grafana community/GitHub for “no data,” unsupported datasource and missing reporting pain → scaffold plugin → launch disposable Grafana + synthetic datasource → Harbor validates queries, dashboard renders, upgrade matrix and performance → sign/package → Marketplace review → watch errors/issues → patch on Grafana releases.
+
+**Human dependencies:** H1 seller/review. Production/support loop can be near H0.
+
+**Demand/community:** Grafana says its catalog reaches millions. A May 25, 2026 r/grafana thread from a SOC operator explicitly asks how to generate polished scheduled client PDFs because Grafana Enterprise is too expensive and OSS reporting is inadequate; July 2026 threads still show plugin/data-source friction.
+
+**Moltwork assets:** `GrafanaPack`, datasource World, reporting World, plugin compatibility evaluator, signed-build Process, Grafana specialist worker.
+
+**Economics:** Strongest wedges are gaps behind expensive Enterprise features or underserved proprietary data sources—not generic dashboards.
+
+## 3. Stripe App Marketplace — 23/25
+
+**Frontier change:** Stripe updated its Apps Agreement in **April 2026**, removing a prior payment-processing exclusivity restriction and adding Provisioning Services terms. Stripe Apps already has a structured manifest, CLI upload, sandbox-install flag, OAuth and Marketplace analytics.
+
+**What agents sell:** reconciliation exceptions, dispute evidence assembly, subscription migration audit, failed-payment triage, B2B invoice QA, finance CRM, tax/export utilities, vertical metrics.
+
+**Autonomous loop:** mine Stripe/finance communities → generate app from Stripe OpenAPI/docs → sandbox event fixtures/webhook replay → Harbor checks accounting invariants/idempotence/permissions → `stripe apps upload` → review → your own Stripe subscription billing → App Analytics/webhooks → patch.
+
+**Human dependencies:** H1 account activation/review. Stripe currently allows only one public app per account, so specialization matters.
+
+**Demand:** A developer reported building a Stripe-native CRM after failing to find one and getting Marketplace approval in days. The current docs make review/publishing highly structured.
+
+**Moltwork assets:** Stripe event-replay World, permission-minimizer, reconciliation evaluator, Marketplace submission Process.
+
+**Economics:** High ARPU users, but one-app/account constraint means build one excellent vertical product, not spray 20 micro-apps.
+
+## 4. Adobe Creative Cloud Marketplace — 23/25
+
+**Frontier unlock:** Adobe added **UXP Hybrid Plugins for Premiere in April 2026**, allowing JavaScript UI plus native C++ for batch metadata, encoding and hardware workflows. Adobe says the Creative Cloud Marketplace is the easiest way to distribute/monetize plugins; FastSpring handles commerce, with a 10% marketplace fee (publisher retains 90%).
+
+**What agents sell:** bulk metadata tooling, batch export/rename, production QC, caption/subtitle QA, ingest/conform automation, project cleanup, color/audio preflight, media-library migration.
+
+**Autonomous loop:** mine Adobe creator complaints → generate plugin → build deterministic project fixtures → test across Premiere/Photoshop versions → package UXP/Hybrid → auto-generate listing/demo/privacy → Adobe review → sales/support telemetry → compatibility maintenance.
+
+**Human dependencies:** H1–H2 because creative UX and plugin review need judgment. Native C++ plugin signing/build environments add complexity.
+
+**Demand:** Adobe Exchange has native “Buy” flows. A March 2026 creator built a missing Creative Cloud bulk-export tool and reported a first sale within hours after surfacing the pain publicly. Adobe forum records show Marketplace publishers actively receiving plugin sales revenue.
+
+**Moltwork assets:** Premiere project World, Photoshop fixture World, render/output evaluator, Creative Cloud compatibility matrix.
+
+**Economics:** Excellent when the plugin removes repetitive professional production labor; poor for novelty filters/effects with weak retention.
+
+## 5. Microsoft AppSource — Power BI licensed custom visuals — 22/25
+
+**What agents sell:** financial waterfall/P&L visuals, manufacturing SPC visuals, healthcare operational visuals, logistics network diagrams, niche slicers, domain-specific KPI cards.
+
+**Infrastructure:** Microsoft provides the Power BI visual SDK/package format, AppSource distribution, Partner Center, native purchase/license management and Licensing API. Customers can purchase subscriptions in AppSource and assign licenses through Microsoft 365; ISVs get revenue/order/renewal reports.
+
+**Autonomous loop:** mine r/PowerBI for repeated native-visual gaps → generate `.pbiviz` → fixture semantic models → Harbor screenshot/data-binding/performance/accessibility tests → Partner Center → AppSource → license telemetry → iterate.
+
+**H-level:** H1–H2 due certification/review and visual design judgment.
+
+**Demand/community:** On Aug 27, 2026, r/PowerBI users explicitly discussed AI making custom-visual development far easier while native visuals still fail specific domain needs. Another major thread complains that a popular finance visual became much more expensive and buggy—exactly a replacement opportunity.
+
+**Moltwork assets:** PowerBI Visual World, semantic-model fixture generator, rendering evaluator, licensing integration Skill.
+
+**Economics:** Strong B2B seat licensing if the visual solves an industry reporting convention. Avoid generic charts.
+
+## 6. Whop App Store — 22/25
+
+**Major agent-native unlock:** On **August 4, 2026**, Whop launched a CLI explicitly marketed as giving business owners and their “AI agent armies” access to the platform’s full API. Official docs expose TypeScript/Python/Ruby SDKs, payments, payouts, webhooks, chat, apps, license keys and App Store distribution.
+
+**What agents sell:** creator analytics, member onboarding, course QA, community search/knowledge, content repackaging, sponsor CRM, support triage, affiliate tooling, membership operations.
+
+**Monetization:** Whop documents installation fees, subscription pricing and revenue-share models for App Store developers.
+
+**Autonomous loop:** inspect newest/trending App Store gaps → build app → sandbox/test → install in test whop → sell to creators per install/member/revenue share → CLI/API manages pricing, support and analytics → agent iterates.
+
+**H-level:** H1 payout/KYC; otherwise unusually close to H0.
+
+**Demand:** Whop’s own App Store docs emphasize distribution as the problem apps solve for developers; a third-party 2026 index claims hundreds of thousands of products on Whop, though treat that as directional rather than official audited demand.
+
+**Moltwork assets:** `WhopPack`, creator-community simulation World, pricing/economics evaluator, App Store ranking tracker, persistent creator-ops worker.
+
+**Economics:** Very interesting because one creator installation can expose an app to an entire paid community.
+
+## 7. SketchUp Extension Warehouse — 21/25
+
+**What agents sell:** architecture/interior workflow automation, parametric cleanup, quantity/material tools, batch component operations, drawing/export utilities, model QA.
+
+**Infrastructure:** Extension Warehouse supports paid extensions, one-time or recurring pricing; developers can host directly or use external license activation. Current developer docs were updated Aug 21, 2026.
+
+**Autonomous loop:** mine SketchUp forum/Reddit → generate Ruby extension → run model fixtures → Harbor verifies geometry transformation, undo safety and performance → RBZ/sign → publish → regression-test new SketchUp versions.
+
+**H-level:** H1 publisher review.
+
+**Demand/community:** June 23, 2026 r/Sketchup discussion recommends paid Fredo tools and notes users increasingly generate small plugins with AI. That suggests both demand and rapidly falling production cost.
+
+**Moltwork assets:** SketchUp model World, geometry invariant evaluator, RBZ packager, compatibility process.
+
+**Economics:** Good for workflow bundles; competition increases as users can generate trivial scripts themselves, so sell reliability/support/multi-step tools.
+
+## 8. Adobe Commerce Marketplace — 21/25
+
+**Infrastructure advantage:** Adobe exposes the Extension Quality Program (EQP) API, which gives programmatic access to update extensions, submit to Marketplace review, manage company profile and access sales reports/analytics. Extensions are Composer packages, making builds/test installs highly automatable.
+
+**What agents sell:** compatibility migration, checkout/admin tools, catalog data QA, tax/compliance adapters, vertical ERPs/connectors, merchant reporting, API migration helpers.
+
+**Autonomous loop:** mine Magento issues → spin fixture store → generate module → static checks + integration fixtures → EQP API submission → review → sales analytics → track Adobe/PHP/OpenSearch compatibility → patch automatically.
+
+**H-level:** H1 after seller onboarding; manual Marketplace review remains.
+
+**Demand:** Commerce Marketplace exists specifically for paid extensions/themes; third-party market surveys put many serious Magento extensions in the hundreds-of-dollars range. Adobe’s Aug 19/25 2026 docs continue active third-party extension workflows.
+
+**Moltwork assets:** Magento fixture World, checkout 

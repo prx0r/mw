@@ -1,0 +1,155 @@
+Subject: Agent Money Scout — 2026-08-30 19:00
+Date: Sun, 30 Aug 2026 07:28:17 -0500
+Message ID: 1a052a45b22d0dbb
+================================================================================
+
+# Agent Money Scout — 2026-08-30 19:00
+
+## NEW THIS RUN
+
+### 1. Toku.agency — strongest new direct marketplace
+URL: https://www.toku.agency/
+
+Current primary page shows 130+ open jobs and 1,630+ listed agents. Visible jobs include a $5 technical blog post and a $25 crypto-project due-diligence/analysis job; other open research jobs do not expose a payout on the homepage. The platform says agents register through one API call, humans or agents can hire them, 85% of completed-job value is credited to the agent, and withdrawals use Stripe Connect in real USD.
+
+Agent work: research, technical writing, code review, automation, web development and data analysis. Who pays: human or agent clients. Payout: visible examples $5 and $25; service listings commonly $5-$100+, but listing prices are not proof of sales. Requirements: API registration, service definition, job delivery; Stripe Connect/KYC for bank withdrawal. Autonomy: 9/10. Exact first action: query the 130+ open-job board and target jobs with explicit budgets and objective deliverables. Eligibility: Stripe/payment-provider rules apply; do not bypass age, KYC or geography restrictions. Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+Sources: https://www.toku.agency/ and https://www.toku.agency/hire
+
+### 2. Opire — live $308 GitHub bounty
+URL: https://app.opire.dev/issues/01HWT26R3S59MS778MAE9786YG
+
+A live Opire page currently shows an open Storybook issue with up to $308 in rewards, eight available rewards, and five solvers trying/claiming it. Opire pays developers 100% of the advertised reward; creators cover Opire/Stripe fees. Payment is sent through Stripe after a valid PR solves the issue.
+
+Agent work: reproduce a software bug, implement a fix, tests, open a PR. Who pays: bounty sponsors. Advertised payout: up to $308 for this issue. Requirements: GitHub, coding/test harness, Opire account and a Stripe-supported payout setup. Autonomy: 8/10. Exact first action: reproduce Storybook issue #12641 locally and inspect competing PRs before coding. Eligibility: Stripe payout rules and country support apply; Opire does not explicitly prohibit countries itself. Ease-to-first-$5: 6/10. Repeatability: 7/10.
+
+Sources: https://app.opire.dev/issues/01HWT26R3S59MS778MAE9786YG and https://docs.opire.dev/faq
+
+### 3. Superteam Earn — Build and Demo a Mermail Agent Skill
+URL: https://superteam.fun/earn/bounties/
+
+The current Superteam bounty board lists “Build and Demo a Mermail Agent Skill” for 500 USDC, due in about 30 days. The same board currently exposes multiple other live bounties in the hundreds or thousands of USDC/USDG. This is human-judged competition rather than guaranteed task payment, but it is highly agent-compatible.
+
+Agent work: build a reusable agent skill, demo it, produce the submission artifacts. Who pays: bounty sponsor through Superteam Earn. Advertised prize pool: 500 USDC for the Mermail skill listing. Requirements: Superteam profile, project/submission artifacts. Autonomy: 6/10 because final judging/submission is human-facing. Exact first action: open the live listing from the bounty board, extract judging criteria, and build only if the expected-value versus submission count is sensible. Eligibility: Superteam Terms allow ages 14-17 only with parent/legal-guardian consent; individual listings can impose stricter rules, including crypto/jurisdiction restrictions. Ease-to-first-$5: 4/10. Repeatability: 7/10.
+
+Sources: https://superteam.fun/earn/bounties/ and https://superteam.fun/earn/terms-of-use.pdf
+
+### 4. Agent Hansa — agent-native USDC quest system
+URL: https://www.agenthansa.com/forum
+
+Agent Hansa remains one of the few systems designed explicitly for autonomous agents: agents register, browse quests, compete in alliances/tournaments and earn USDC. It publishes machine-readable instructions and has an MCP package. I could verify the current platform is alive, but not a fresh public dollar amount for individual quests in this run.
+
+Agent work: quest-specific research/creation/technical outputs. Who pays: Agent Hansa quest pools/sponsors. Payout: USDC, amount not freshly verified this run. Requirements: agent registration/MCP or API integration. Autonomy: 10/10. Exact first action: fetch the live quest feed and reject anything without a clearly valued reward. Eligibility: follow any wallet/platform rules; do not treat unverified pool values as earnings. Ease-to-first-$5: 4/10. Repeatability: 8/10.
+
+Sources: https://www.agenthansa.com/forum and https://gigs.sh/p/agent-hansa
+
+### 5. AgenticTrade — monetize a callable service
+URL: https://agentictrade.io/docs/getting-started
+
+AgenticTrade lets providers list an API/AI capability and earn USDC when agents call it. Current docs advertise 37+ discoverable AI services. The older gigs.sh verification snapshot reported thousands of calls, but I did not re-verify a fresh current payment-volume figure, so this is a distribution experiment rather than a top direct-income target.
+
+Agent work: expose a deterministic API such as PR verification, structured evidence, document normalization or workflow health checks. Who pays: consuming agents. Payout: seller-defined per-call USDC. Requirements: provider account, API key, hosted endpoint. Autonomy: 10/10. Exact first action: list an endpoint that already solved a paid problem elsewhere. Eligibility: normal wallet/provider rules apply. Ease-to-first-$5: 4/10. Repeatability: 10/10 if demand develops.
+
+Source: https://agentictrade.io/docs/getting-started
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. AgentPact
+URL: https://agentpact.xyz/needs
+
+Still the best first-dollar target from recent runs. The prior live feed exposed multiple 5-25 USDC Python, API, security-review, data-analysis and validation Needs alongside large amounts of sub-dollar noise. AgentPact supports offers, needs, matching and Base-USDC escrow via agent-native APIs.
+
+Agent work: Python/API QA, code review, data processing, analysis. Who pays: buyer posting the Need. Payout: commonly 5-25 USDC in the high-signal cluster previously verified. Requirements: API registration and compatible wallet for settlement. Autonomy: 10/10. Exact first action: query fresh Needs and hard-filter reward >=5 USDC, fresh timestamp, explicit acceptance criteria. Eligibility: wallet/legal rules apply. Ease: 9/10. Repeatability: 9/10.
+
+### 7. dealwork.ai
+URL: https://dealwork.ai/
+
+Recent primary checks showed roughly 157 open tasks and 264 completed tasks, including a public $80 AI-delivered production API example and a $5 AI-to-AI contract. Escrow is funded before work; AI-to-AI fees are lower than standard jobs.
+
+Agent work: code, APIs, research, data and documentation. Who pays: humans or agents. Payout: task-specific; verified examples include $5 and $80. Requirements: agent integration and reproducible delivery. Autonomy: 9/10. Exact first action: ingest the full task feed and bid only where acceptance can be independently tested. Ease: 9/10. Repeatability: 9/10.
+
+### 8. Daydreams TaskMarket
+URL: https://taskmarket.dev/
+
+TaskMarket runs USDC escrow on Base and supports bounty, claim, pitch, benchmark and auction modes. A recent August 24 report counted 373 tasks, 16,640+ submissions, 399 settlements and 177 paid worker agents; this confirms real settlement but also very high competition.
+
+Agent work: coding, benchmarks, datasets, research. Who pays: escrow-funded requester. Payout: task-specific USDC. Requirements: Base wallet/ERC-8004/TaskMarket tooling. Autonomy: 10/10. Exact first action: use status=open AND due_at>now AND funded=true, then compute reward x P(win) - execution cost. Ease: 6/10. Repeatability: 9/10.
+
+Sources: https://taskmarket.dev/ and https://cryptobriefing.com/daydreams-taskmarket-agent-economy-outsourcing/
+
+### 9. T2000
+URL: https://t2000.ai/jobs
+
+Still active with real settlement receipts and a useful job -> service -> paid API progression. Recent inventories contained substantial sub-dollar ecosystem/bootstrap work, so raw open-job counts overstate real demand.
+
+Agent work: research, code, microtasks and fixed services. Who pays: job/service buyers. Payout: task-specific USDC. Requirements: agent integration and wallet. Autonomy: 10/10. Exact first action: reject referral/bootstrap loops unless strategically useful; prioritize external jobs above the EV threshold. Ease: 6/10. Repeatability: 10/10.
+
+### 10. MikroTask
+URL: https://mikrotask.com/
+
+Explicitly supports AI-agent sellers. Fixed tiers are £5/£10/£25/£50 and recent live inventory has included a £5 writing task, plus agent storefronts for transcription, research and Python/data automation.
+
+Agent work: research, transcription, writing, data cleanup and code. Who pays: buyer. Payout: buyer-listed or tier price after approval; payout rails advertised include USD/USDT/USDC. Requirements: seller profile and deliverable workflow. Autonomy: 8/10. Exact first action: prioritize buyer-posted jobs over creating a generic listing. Eligibility: verify seller/payment eligibility before use. Ease: 8/10. Repeatability: 8/10.
+
+### 11. MoltJobs
+URL: https://moltjobs.io/open-jobs
+
+Still technically strong: REST, CLI, MCP, webhooks and Base-USDC escrow. Recent inventory included one genuine 5-USDC structured-research/spec task, but much of the surrounding inventory has been 2-USDC promotional work.
+
+Agent work: research, specs, code/data when available. Who pays: job poster. Payout: job-specific USDC. Requirements: agent evaluation/bid, wallet. Autonomy: 9/10. Exact first action: leave it in the scanner; execute only fresh research/code/data work >=5 USDC with permitted outreach requirements. Ease: 5/10. Repeatability: 8/10.
+
+### 12. gigs.sh
+URL: https://gigs.sh/
+
+gigs.sh remains useful as a discovery layer rather than a payer. It currently catalogs 46 verified earning platforms spanning agent task markets, developer bounties, security programs, API monetization and competitions. Its platform verification timestamp remains May 18, so every surfaced platform must be rechecked against primary sources.
+
+Agent work: opportunity discovery/routing. Who pays: downstream platform. Payout: none directly. Requirements: web/MCP access. Autonomy: 10/10 for scouting. Exact first action: use it only to discover unseen platforms, then verify live inventory, payout and eligibility on the official page. Ease-to-first-$5 directly: 2/10. Repeatability as discovery: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 13. Outcome-based automation monitoring
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+Fresh August 29-30 discussion: operators report that green workflow runs can still fail the business promise. One operator says manual monitoring stopped scaling at roughly four systems; another reports that customer-friendly reports work better when expressed as business units (“orders processed / human interventions”) rather than uptime percentages.
+
+Offer: expected event + deadline + downstream receipt + normal-volume baseline -> HEALTHY / FAILED / SILENT / REVIEW. Customer: n8n/Make/Zapier agencies. Acquisition: automation consultants, existing agency communities, referrals. Charge: setup/audit then recurring monitoring. MVP: monitor one critical promised outcome for one client. Ease: 9/10. Repeatability: 10/10.
+
+### 14. Pre-deploy workflow cost/risk linter
+Thread: https://www.reddit.com/r/automation/comments/1w21d6b/how_do_you_prevent_runaway_automation_costs/
+
+A current production operator reports one bad condition causing 47,000 runs in six hours, ~$2.5K in direct costs and a client-churn risk. Their fixes include hard execution caps, budget guards, static analysis and canary runs.
+
+Offer: workflow JSON -> loop/retry analysis -> API/model spend exposure -> dangerous writes -> circuit breakers -> dry-run plan. Customer: automation agencies and AI ops teams. Charge: fixed audit first. MVP: `workflow-lint` report with the five highest-risk paths. Ease: 9/10. Repeatability: 10/10.
+
+### 15. Workflow-to-FastAPI migration auditor
+Thread: https://www.reddit.com/r/n8n/comments/1w2brse/i_ended_up_moving_part_of_my_n8n_workflow_into/
+
+Fresh August 30 discussion shows builders discovering that persistence/state/application logic often belongs in a conventional backend while n8n is better retained as orchestration.
+
+Offer: workflow + requirements -> classify orchestration vs application logic -> migration plan -> FastAPI scaffold/tests. Customer: teams whose no-code workflows have become accidental applications. Acquisition: n8n/Make communities and agencies. Charge: fixed migration audit + implementation. Ease: 8/10. Repeatability: 9/10.
+
+### 16. WhatsApp automation reliability specialist
+Thread: https://www.reddit.com/r/n8n/comments/1w0r31n/everything_that_broke_while_i_was_building_a/
+
+Fresh reports include Meta account restrictions, access-token expiry, retry storms and silent model fallback. One commenter reports 500 retry calls in ten minutes and a bill moving from $12 to $847 overnight.
+
+Offer: credential expiry + account-status checks + webhook heartbeat + delivery receipts + retry/circuit-breaker audit. Customer: legitimate WhatsApp Business operators and agencies. Sensitive account changes remain human-controlled. Charge: setup audit + monitoring. Ease: 8/10. Repeatability: 9/10.
+
+### 17. Hybrid AI workflow verification
+Thread: https://www.reddit.com/r/n8n/comments/1w2cpfx/unpopular_opinion_90_of_fully_automated_ai/
+
+A fresh August 30 discussion argues that production systems fail on malformed/unstructured inputs and shifting APIs; another example describes a bank-statement flow returning an empty successful response and silently failing to mark payments. The recurring need is data validation plus explicit human review for uncertain edge cases.
+
+Offer: input schema validation + output assertions + confidence/risk gates + human exception queue. Customer: teams using AI in real business workflows. Charge: fixed hardening audit or recurring QA layer. MVP: add assertions/exception routing to one production workflow. Ease: 9/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Add Toku to the live execution router, but treat payout eligibility as a hard gate
+The current page gives unusually concrete demand evidence: 130+ open jobs, including visible $5 and $25 tasks. Route order for this run:
+
+AgentPact -> dealwork.ai -> Toku (only when payout/account eligibility is independently satisfied) -> TaskMarket when EV works -> MikroTask -> MoltJobs -> t2000 filtered external jobs.
+
+Use: expected_net = reward x P(still_open) x P(funded) x P(solve) x P(accepted/win) x P(settled) - model/API/tool/review costs.
+
+### 2. Add Opire/OSS bounty scanning
+The $308 Storybook bounty demonstrates that open-source issue markets can have far better ticket sizes than agent-native microtask boards. Build a GitHub-bounty adapter that checks Opire, Algora, boss.dev and direct sponsored issues, then verifies issue status, competing PRs, tests, payout rail and eli

@@ -1,0 +1,182 @@
+Subject: Agent Money Scout — 2026-08-29 12:00
+Date: Sat, 29 Aug 2026 00:20:56 -0500
+Message ID: 1a04bf6bc9def670
+================================================================================
+
+# Agent Money Scout — 2026-08-29 12:00
+
+This run prioritized new, primary-source-verified markets with actual funded work or settlement evidence. The strongest fresh discovery is t2000: it currently shows funded open jobs, public settlement receipts, named sellers, and seller-level settled revenue. Several newer boards look technically credible but still lack demonstrated liquidity, so they are scored lower.
+
+## NEW THIS RUN
+
+### 1) t2000 — strongest fresh live-money surface
+URL: https://t2000.ai/
+
+What the agent does: claim funded open jobs, deliver digital work, or list a fixed-price service/API.
+Who pays: marketplace buyers funding jobs in advance.
+Verified economics: jobs settle in USDC on Sui; services pay a 5% marketplace fee on settlement, API calls 0%. The live homepage currently shows a $1.00 funded research brief and a $0.25 funded marketplace-loop task. Public settled receipts include $0.01, $0.08 and $0.30 jobs, and seller profiles currently show examples with $57.75, $128.66 and $100.00 settled.
+Required: t2000 Passport/Google sign-in, compatible agent client or API/MCP workflow, Sui/USDC payment setup.
+Autonomy: 9/10.
+Exact first action: open the live jobs feed, filter to FUNDED jobs, and claim only tasks with objective deliverables and enough reward to cover execution cost.
+Constraints: platform/payment/account rules apply; do not bypass eligibility or identity requirements.
+Ease-to-first-$5: 7/10.
+Repeatability: 9/10.
+
+### 2) BARD — funded bounties + portable agent reputation
+URL: https://bard-six.vercel.app/
+
+What the agent does: browse first-come or proposal bounties, publish skills, submit proposals and deliverables, and collaborate with other agents.
+Who pays: humans or other agents funding USDC bounties.
+Verified economics: approved work pays in USDC; first-come bounties are funded before claim. BARD also supports staked reputation/vouching.
+Required: MCP-capable agent and BARD-managed or connected wallet.
+Autonomy: 9/10.
+Exact first action: query funded opportunities and reject anything without visible funding/status evidence.
+Constraints: payment/account eligibility applies.
+Ease-to-first-$5: 4/10 because public liquidity is not yet proven.
+Repeatability: 8/10 if inventory grows.
+
+### 3) MoltGuild — agent-native USDC bounty flow on Solana
+URL: https://moltguild.com/
+Reference skill: https://mcp.directory/skills/moltguild
+
+What the agent does: GET open jobs, claim/apply, complete work, submit deliverables, then receive USDC after approval.
+Who pays: bounty posters.
+Verified economics: docs describe USDC escrow and payout to the worker wallet after approval; jobs can be claimed or applied to by proposal.
+Required: wallet, API key, MCP/REST integration.
+Autonomy: 10/10.
+Exact first action: GET the open job feed and inspect live reward inventory before integrating anything beyond a thin adapter.
+Constraints: wallet/payment eligibility applies.
+Ease-to-first-$5: 4/10 pending verified current inventory.
+Repeatability: 8/10.
+
+### 4) ClawMolt — deploy an agent or compete for escrowed bounties
+URL: https://www.clawmolt.ai/
+
+What the agent does: claim coding, research, design, and data-analysis bounties, or expose a specialist for direct paid work.
+Who pays: bounty posters and service buyers.
+Advertised economics: bounties are described as typically $5-$50; Stripe Connect escrow releases payment after buyer approval. A free tier supports one agent.
+Required: deployable agent endpoint and Stripe/payment setup.
+Autonomy: 8/10.
+Exact first action: inspect the bounty board for a specific funded listing before deploying.
+Constraints: Stripe/account eligibility applies.
+Ease-to-first-$5: 4/10 because current funded inventory was not independently verified this run.
+Repeatability: 8/10.
+
+### 5) BotBounty.ai — zero-signup agent bounty API
+URL: https://www.botbounty.ai/
+
+What the agent does: browse bounties through API, claim a task, complete it, submit the solution, and receive payment.
+Who pays: bounty posters.
+Advertised economics: payout in ETH on Base L2; homepage advertises a $10 minimum bounty while also saying posting starts at $1, so treat pricing copy cautiously until inspecting a specific live listing.
+Required: API-capable agent and compatible payment wallet.
+Autonomy: 10/10.
+Exact first action: call the live bounty endpoint and verify there is a funded task worth attempting.
+Constraints: payment/account rules apply.
+Ease-to-first-$5: 4/10 pending visible funded inventory.
+Repeatability: 8/10.
+
+### 6) Proxies.sx x402 Marketplace — build and sell paid scraping/data APIs
+URL: https://www.proxies.sx/x402-service-marketplace
+
+What the agent does: build a narrow scraper/monitor/API and expose it through x402 pay-per-request settlement.
+Who pays: users and autonomous agents invoking the service.
+Verified economics: marketplace examples show a $0.005/query service paying $0.001/query in infrastructure cost for $0.004 gross margin; the marketplace has previously posted $200 builder bounties for specific scraping services.
+Required: API service, browser/proxy tooling, x402 endpoint.
+Autonomy: 10/10 after deployment.
+Exact first action: inspect currently missing or weak marketplace categories and build one deterministic endpoint rather than a general agent.
+Constraints: respect target-site terms, robots rules, privacy, and data licensing.
+Ease-to-first-$5: 5/10.
+Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7) Taskmarket
+URL: https://taskmarket.dev/
+Current update: the homepage now shows 6 open tasks and 2,338.52 USDC funded volume, down from the 19 open tasks seen in the prior run. This is useful liquidity telemetry, not a negative by itself.
+What the agent does: compete on funded research/code/data tasks and earn USDC for accepted output.
+Exact first action: poll the live feed, prioritize low-competition funded tasks, and record time-to-fill.
+Ease-to-first-$5: 8/10.
+Repeatability: 9/10.
+
+### 8) TaskBounty
+URL: https://www.task-bounty.com/for-agents
+Current economics: official page says bounties range from $10 to a few hundred dollars; solver gets 80%. It currently gives an example of 14 open TypeScript bounties above $25. Payout can be USDC on Base/Solana, ETH, BTC, or eligible bank transfer.
+What the agent does: reproduce GitHub issue -> patch -> regression test -> PR -> sandbox verification.
+Ease-to-first-$5: 7/10.
+Repeatability: 9/10.
+
+### 9) MoltJobs
+URL: https://moltjobs.io/
+Current update: still API/MCP/CLI-native, 10 free bids/month, 5% fee, USDC on Base. A fresh Aug 27 listing paid 2 USDC for a structured public-post task and explicitly described the platform as new and small with very few completed jobs so far.
+What the agent does: discover -> bid -> deliver -> validation -> settlement.
+Ease-to-first-$5: 5/10 because current liquidity is still thin.
+Repeatability: 8/10.
+
+### 10) BTNOMB
+URL: https://bounty.btnomb.com/
+Current update: still shows 11 open bounties and $3,000 headline bounty value, but prior primary-source checks found no executed payout yet and some listings are demo/unfunded. Keep it in watch mode, not top priority.
+Ease-to-first-$5: 3/10.
+Repeatability: 6/10 if real payouts begin.
+
+### 11) gigs.sh
+URL: https://gigs.sh/
+Still useful as a discovery index of 46 agent-compatible platforms, but its broad verification snapshot dates to May 18, 2026. Every candidate still needs a fresh liquidity check before entering the router.
+
+## REDDIT DEMAND SIGNALS
+
+### 12) Boring recurring operations beat flashy automation
+Thread: https://www.reddit.com/r/MarketingAutomation/comments/1vtd951/half_my_workflows_shouldnt_have_existed/
+Signal: a current automation operator found 40+ workflows but only ~15 in regular use. The survivors were simple recurring tasks like enriching a record, recalculating a score, and sending an alert.
+Product: sell one durable operation disappearing, not a custom agent stack.
+MVP: event/source -> deterministic transformation -> alert/update -> exception queue.
+Where to acquire customers: existing SaaS/n8n/operations communities, referrals, local professional-service businesses.
+How to charge: setup fee + small maintenance plan.
+
+### 13) Inventory/reorder automation has real-world pull
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1vy5a3n/i_spent_months_reaching_out_but_nothing_is_working/
+Signal: a builder contacted 100+ businesses for generic AI automation and signed zero; the one real project came via a relationship and was a simple inventory + movement-log + reorder-alert system.
+Product: Google Sheets/API inventory monitor.
+MVP: stock table + movement log -> current stock -> reorder threshold -> email/Slack alert.
+Customer: small retailers, repair shops, parts businesses, contractors.
+How to charge: fixed setup rather than selling 'AI'.
+
+### 14) Accounting/document-chasing operations are highly repetitive
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1vvf0h2/built_a_full_ca_firms_automation_suite_on_n8n/
+Signal: recurring pain clusters include document chasing, deadline reminders, invoice follow-ups, lead qualification, and routine client questions.
+Product: document-status and reminder agent.
+MVP: client tracker -> missing document detection -> scheduled reminder -> receipt update -> escalation to human.
+Important constraint: sensitive outbound actions should stay approval-controlled unless explicitly authorized.
+
+### 15) Reliability is itself a product advantage
+Thread: https://www.reddit.com/r/n8n/comments/1s7l9j1/the_best_automation_i_ever_built_is_one_my_client/
+Signal: a very simple inbox -> extract -> tracker -> notify workflow reportedly ran for 7 months unnoticed, while a complex multi-agent system required repeated babysitting.
+Product thesis: deterministic code first, LLM only where ambiguity exists, explicit validation, exception queue.
+This should be the default architecture for anything intended to earn autonomously.
+
+### 16) QA remains the strongest recurring software pain
+Thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+Signal: an Aug 27 post with 1,100+ votes reports AI-assisted dev throughput outrunning QA capacity. Separate current QA discussions report the same shift: generation accelerates, validation does not.
+Product: PR-verification specialist.
+MVP: PR + acceptance criteria -> changed-surface analysis -> targeted tests -> failure reproduction -> evidence -> PASS / FAIL / HUMAN REVIEW.
+Where to acquire customers: AI-heavy engineering teams, GitHub projects, coding-agent communities.
+How to charge: per verified PR or recurring CI subscription.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Integrate t2000 as the next first-class money adapter. It has what most new markets lack: currently funded jobs, explicit settlement state, public on-chain receipts, and seller-level settled revenue. Record funded reward, claim state, delivery state, settle tx, buyer identity, seller identity, and actual net payment.
+
+2. Keep Taskmarket + TaskBounty as the main job-acquisition rails. Taskmarket gives live funded USDC work and TaskBounty gives higher-value objectively verifiable coding work. Do not chase every new marketplace; make new adapters thin until they demonstrate paid liquidity.
+
+3. Build the reusable verification/operations specialist once and sell it across both job and per-call markets. Best first capabilities remain:
+- /verify-pr
+- /normalize-document
+- /extract-evidence
+- /audit-api
+- /sync-record
+
+Economic scoring should be:
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) - inference - API costs - payment/network costs - expected review cost.
+
+Track every opportunity as DISCOVERED -> FUNDED -> CLAIMED/BID -> DELIVERED -> ACCEPTED -> SETTLED -> WITHDRAWN. Only SETTLED/WITHDRAWN counts as earned money.
+
+Eligibility note: any platform/payment-provider age, identity, geography, KYC, or account rules must be satisfied legitimately; they should not be bypassed.

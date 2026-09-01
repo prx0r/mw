@@ -1,0 +1,645 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — Scan 4 — 31 Aug 2026
+Date: Mon, 31 Aug 2026 04:10:45 -0400
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a056deef4b136f5
+================================================================================
+
+# Oracle Market Unlocks — Scan 4
+31 August 2026
+
+This scan excludes the markets already covered in the first three reports, including Atlassian Forge, monday.com Marketplace, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow templates, Miro apps, WooCommerce, HubSpot, JetBrains, Fab, Unity Asset Store, Fortnite UEFN, Canva Creator, Creative Market, Minecraft Marketplace, Adobe Stock, Envato/Placeit, Gumroad, Telegram Mini Apps, VRChat Avatar Marketplace, WordPress MCP-enabled plugins, Zoom Marketplace, Microsoft Teams, Slack, Poe, CGTrader, Salesforce AgentExchange, ServiceNow Store, LINE MINI Apps, Databricks Marketplace, Wix App Market, Shopify App Store, RapidAPI, AWS Data Exchange, Snowflake Marketplace, Google Cloud Marketplace, AWS Marketplace, Discord Premium Apps, Bubble Marketplace, FlutterFlow Marketplace, Coda Packs, Figma Community, VS Code Marketplace, Edge Add-ons, Firefox Add-ons, and BigCommerce App Marketplace.
+
+Scoring /100 weights: economic value 30%, agent technical fit 25%, automation feasibility 20%, novelty/timing 15%, competitive favorability 10%. H0-H4 follows Moltwork's existing human-involvement taxonomy; one-time tax/KYC/account setup is treated as bounded H1 provisioning rather than recurring human execution.
+
+## 1. Elgato Stream Deck Marketplace — plugins, profiles, icon packs, OBS scene collections
+**Score: 91/100 | H1 after Maker onboarding**
+
+**Money:** sell paid plugins/profiles/icon packs and maintain them as apps change. The strongest niches are broken or abandoned integrations, vertical workflow packs, creative-app controls, local AI controls, and one-button multi-app procedures.
+
+**Autonomous loop:** monitor Stream Deck/Elgato Reddit + plugin reviews + API changelogs → identify broken/high-friction workflows → generate TypeScript plugin from Stream Deck SDK → run CLI validation and local fixtures → generate metadata/gallery assets → package `.streamDeckPlugin` → submit through Maker Console → monitor version/review signals → patch on upstream API changes.
+
+**Infrastructure:** official Stream Deck SDK + CLI already gives machine-verifiable packaging (`validate`, `pack`) and a structured Maker Console publishing workflow. Marketplace distribution reaches “millions of Stream Deck users.” The 2026 Reddit signal is unusually strong: OBS/Discord/Streamlabs integrations repeatedly break after updates, and users describe the device becoming unusable when a core plugin fails.
+
+**Human dependencies:** H1 Maker/payment onboarding; review approval is external, not human labor from the Lab. Browser submission remains the main automatable step; WebMCP/browser tooling could collapse it further.
+
+**Moltwork assets:** `StreamDeckPack`, SDK Skill, plugin-template Process, compatibility Harbor World, API-breakage evaluator, regression School, specialist `streamdeck-maintainer` Worker.
+
+**Attractive if:** agent focuses on boring, high-value integrations and compatibility maintenance. **Unattractive if:** generic novelty plugins or geography-dependent paid-item availability dominates.
+
+Official: https://docs.elgato.com/streamdeck/sdk/introduction/distribution/ ; https://docs.elgato.com/marketplace/become-a-maker/
+Community: https://www.reddit.com/r/elgato/comments/1tu968o/
+
+## 2. Overwolf Appstore — game companion apps
+**Score: 89/100 | H1-H2**
+
+**Money:** build game-specific overlays, stat helpers, maps, match review, build planners, inventory assistants, creator utilities; monetize through official Overwolf ads and subscriptions.
+
+**Autonomous loop:** scan game communities for repetitive overlay/data pain → inspect available game-event APIs → generate Electron/Overwolf app → replay game telemetry fixtures → evaluate performance/UX → publish → monitor usage/ad/subscription revenue → prioritize patches from telemetry and reviews.
+
+**Infrastructure:** Overwolf provides developer APIs plus first-party ad and subscription monetization. Their docs state that monetized apps must use Overwolf ads/subscriptions rather than arbitrary third-party monetization, which makes the economic surface predictable.
+
+**Demand:** large installed gamer ecosystem; current Reddit complaints show users actively rely on Overwolf apps such as game maps, while Appstore reliability itself creates opportunities for better-maintained replacements.
+
+**Human dependencies:** onboarding/review H1; some game approvals/licensing can make a title H2.
+
+**Moltwork assets:** game-event Venue adapters, telemetry Worlds, compatibility evaluator, monetization Process, specialist workers per game.
+
+**Attractive if:** chosen game has rich structured telemetry and an under-served companion niche. **Unattractive if:** anti-cheat/API restrictions prevent legitimate instrumentation.
+
+Official: https://dev.overwolf.com/ow-native/monetization/overview/
+
+## 3. BuiltByBit Hytale resources — plugins, models, server setups, worlds/prefabs
+**Score: 88/100 | H1**
+
+**Why now:** BuiltByBit opened paid Hytale publishing on January 15, 2026 and explicitly positioned itself as the first marketplace for paid Hytale content. Categories include plugins, models, server setups, worlds and prefabs.
+
+**Money:** agent-generated server plugins, admin tools, economy systems, starter server packs, prefab libraries, testing utilities and ported/reworked Minecraft concepts.
+
+**Autonomous loop:** scan Hytale community/server-owner pain → generate plugin/prefab → run local/server tests → produce docs/demo → submit marketplace resource → watch reviews/support → auto-triage compatibility failures → release versions.
+
+**Infrastructure:** Git/versioned resources, increasingly structured Hytale modding tooling, conversion tools from Minecraft, marketplace versioning. This is early enough that a Moltwork specialist Lab can accumulate capability before incumbents become entrenched.
+
+**Human dependencies:** H1 seller/payment setup and review. Technical work is highly H0-compatible once APIs stabilize.
+
+**Assets:** `HytalePack`, plugin scaffolds, server World, compatibility School, performance evaluator, migration Skills.
+
+**Attractive if:** early ecosystem demand grows. **Unattractive if:** Hytale tooling/API churn remains too high.
+
+Official/current marketplace announcement: https://builtbybit.com/threads/hytale-publishing-open-and-january-improvements.740736/
+
+## 4. CurseForge Premium Mods — paid UGC inside supported games
+**Score: 87/100 | H1-H2**
+
+**Money:** sell premium mods in games whose studios enable CurseForge UGC monetization. Particularly good for quality-of-life systems, content packs, server/admin tools and replayable game extensions.
+
+**New unlock:** CurseForge for Studios now documents premium-mod APIs where the storefront owns pricing/discount metadata, purchase flow and signed entitlement checks. That is much more machine-operable than old donation-driven mod ecosystems.
+
+**Autonomous loop:** discover unmet mod demand → build against game SDK → test deterministic scenarios → package → publish → entitlement-aware release → observe installs/sales/reviews → patch.
+
+**Human dependencies:** game-specific approval and creator/payment onboarding H1/H2. Some games will remain inaccessible if premium mods are not enabled.
+
+**Assets:** game-specific Pack, entitlement Skill, mod regression World, balance/performance evaluator, specialist Worker.
+
+**Attractive if:** official monetization exists for a game with large active community. **Unattractive if:** game studio keeps premium UGC closed.
+
+Official: https://docs.curseforge.com/docs/game-integration/unreal/monetization/
+
+## 5. Superhive (Blender Market) — Blender add-ons, materials, models and tools
+**Score: 86/100 | H1**
+
+**Money:** procedural Blender add-ons, batch-cleanup tools, exporters/importers, geometry utilities, render workflow tools, reusable materials and niche production assets.
+
+**Demand evidence:** Superhive currently reports 6,206 creators, 68,715 products, 5.64M items sold, 1.11M customers and over **$51.5M paid to creators**. Creators can earn up to 90% per sale.
+
+**Autonomous loop:** mine Blender forums/issues → build Python add-on → execute Blender headless fixture suite → benchmark file compatibility → generate demo blend/screenshots/docs → submit → monitor reviews/version failures → auto-release compatibility updates.
+
+**Agent fit:** exceptionally high because Blender is scriptable/headless and outputs can be tested deterministically before humans ever see them.
+
+**Human dependencies:** H1 creator/payout approval plus marketplace QA review.
+
+**Assets:** Blender Skill, headless Harbor World, geometry correctness evaluator, compatibility matrix School, productization Process.
+
+**Attractive if:** focus is tooling rather than commodity AI-generated models. **Unattractive if:** competing on generic asset volume.
+
+Official: https://superhivemarket.com/market-stats ; https://superhivemarket.com/become-a-creator/
+
+## 6. Twitch Extensions Directory — interactive monetized stream apps
+**Score: 85/100 | H1**
+
+**Money:** Bits-enabled interactive overlays/products, prediction-free audience games, stream utilities, subscriber features, game integrations and channel interaction tools. Revenue from Bits used in Extensions is shared between broadcaster and extension developer.
+
+**2026 unlock:** Twitch broadened monetization features to eligible streamers globally in May 2026, increasing the addressable broadcaster base for Bits/emotes/subs; Extension reviews have resumed.
+
+**Autonomous loop:** identify broadcaster pain → build web Extension + EBS → simulate Twitch context/events → test moderation and Bits flags → publish/review → monitor installs/Bits/product usage → generate variants for winning stream categories.
+
+**Infrastructure:** Twitch Extensions SDK, Extension Manager lifecycle, Bits product catalog, APIs, structured review state.
+
+**Human dependencies:** legal/tax onboarding H1 (Twitch explicitly supports under-18 developers with guardian agreement), directory review; broadcaster adoption is external demand rather than Lab labor.
+
+**Assets:** TwitchPack, Bits Skill, stream-event World, install/conversion evaluator, moderation test School.
+
+**Attractive if:** utility creates recurring viewer interaction. **Unattractive if:** it is just decorative overlayware.
+
+Official: https://dev.twitch.tv/docs/extensions/monetization/ ; https://dev.twitch.tv/docs/extensions/life-cycle/
+
+## 7. Shopify Theme Store — commercial storefront themes
+**Score: 84/100 | H1-H2**
+
+**Money:** sell narrow, high-quality themes aimed at a merchant vertical rather than another generic multipurpose theme. Shopify takes 15% revenue share; there is no submission fee.
+
+**Why agents fit:** themes have unusually explicit requirements, automated linting/testing possibilities, benchmarkable performance/accessibility, structured sample stores, and repetitive compatibility maintenance.
+
+**2026 signal:** on July 30, 2026 Shopify made the new `shopify-account` component mandatory for all new/updated Theme Store submissions. Continuous platform requirements create a maintenance moat for Labs that automatically track and patch themes.
+
+**Workflow:** mine merchant complaints → derive vertical UX requirements → generate theme → run Theme Check/performance/accessibility fixtures → populate demo store → generate listing → submit → monitor reviews/compatibility → auto-patch on changelog.
+
+**Human dependencies:** Partner/payment setup and human review H1; design taste keeps best-in-class products H2 during final QA.
+
+**Assets:** ShopifyThemePack, merchant-vertical Worlds, Lighthouse/accessibility evaluator, changelog watcher, visual regression School.
+
+**Demand:** Shopify merchants repeatedly complain about difficult customization and theme updates after custom code.
+
+Official: https://shopify.dev/docs/storefronts/themes/store ; https://shopify.dev/docs/storefronts/themes/store/revenue-share
+
+## 8. MyMiniFactory — premium printable STL stores, Tribes and campaigns
+**Score: 83/100 | H1-H2**
+
+**Money:** functional printable designs, tabletop terrain/accessories, storage systems, organizers, replacement parts, parametric families; sell files or recurring Tribe memberships. Premium creators advertise up to 90% of sales and access to millions of makers.
+
+**Autonomous loop:** mine maker requests → generate parametric CAD → mesh validation/manifold checks → slice simulations across printer profiles → generate renders/instructions → publish → monitor downloads/ratings → evolve families from successful geometries.
+
+**Agent fit:** strong when focused on functional/parametric designs with deterministic geometry tests; weaker for high-art character sculpture.
+
+**Human dependencies:** creator/payment onboarding H1; physical print validation can be H2 initially, potentially delegated through HumanQueue/print farms.
+
+**Assets:** Printability World, mesh evaluator, CAD Skill, slicing Process, product-family Worker.
+
+Official: https://creator.myminifactory.com/become-a-premium-creator
+
+## 9. Thangs Marketplace — 3D files, memberships, Bundle and Print Store
+**Score: 82/100 | H1-H2**
+
+**Money:** individual model sales, recurring memberships, bundle revenue and physical Print Store products. Current fees vary: memberships 14% platform fee; individual sales 15–30% depending on price; Bundle pays participating designers from subscription revenue.
+
+**Workflow:** demand mining → CAD generation → geometry/slicer tests → publish model + commercial-license tier → track downloads/membership conversion → produce variations based on search/download data.
+
+**Human dependencies:** onboarding H1, optional physical QA H2.
+
+**Moltwork moat:** automatically test that every file is actually printable before publishing—marketplaces suffer from low-quality/unprintable files.
+
+**Assets:** same 3D manufacturing School can transfer across MMF/Cults/Thangs, creating cross-market specialization.
+
+Official: https://thangs.com/resources/getting-started-for-designers ; https://thangs.com/resources/help-center-articles/how-do-i-get-started-selling-on-thangs
+
+## 10. Cults3D — paid STL/CAD/laser/CNC files
+**Score: 81/100 | H1-H2**
+
+**Money:** sell STL, OBJ, CAD, 3MF, CNC/laser and related files; creators receive 80% of net selling price and pay no fixed listing subscription.
+
+**Demand signal:** a May 2026 creator reported 25 designs, ~1.7K downloads and 64 sales in five months; other 2026 sellers report meaningful but volatile passive income and summer traffic slumps. There are also buyer complaints about paid files being non-manifold/unprintable—exactly where a rigorous agent Lab can differentiate.
+
+**Workflow:** scan searches/community → generate functional niche model → manifold/clearance/slicer test → publish renders/files/instructions → track sales → clone winning design families, not copyrighted objects.
+
+**Human dependencies:** H1 payout setup; print validation H2 until simulation proves predictive.
+
+**Assets:** CultsPack, geometry evaluator, printability Harbor World, pricing experiment Process.
+
+Official: https://cults3d.com/en/upload
+Community: https://www.reddit.com/r/cults3d/comments/1tdnylq/
+
+## 11. Teachers Pay Teachers — structured educational resources
+**Score: 80/100 | H2**
+
+**Money:** curriculum-aligned worksheets, assessment packs, differentiated practice, classroom management resources, teacher-facing spreadsheets and highly specific lesson bundles. Current official seller terms: Basic $29 once / 55% payout; Premium $59.95/year / 80% payout.
+
+**Why this is interesting:** education resources are naturally benchmarkable against curricula, answer-key correctness, reading level and classroom usability. A Moltwork School could outperform low-quality AI slop by requiring deterministic answer validation and educator review samples.
+
+**Community pain:** teachers in 2026 explicitly complain that TPT has been flooded with obvious, low-quality AI-generated material. That is a warning against mass-generation but also a moat for evidence-backed resources that pass a strict World.
+
+**Workflow:** discover curriculum/search gap → build resource → validate answers/standards/readability → render PDF/slides → educator HumanQueue review for new task families → list → track reviews/sales → update.
+
+**Human dependencies:** H2 because instructional judgment and final QA matter; seller/payment setup H1.
+
+**Assets:** curriculum ontology, worksheet generator Skill, answer-key evaluator, educator-review Queue, grade/subject specialist Workers.
+
+Official: https://help.teacherspayteachers.com/hc/en-us/articles/360044219891-Seller-Fees-and-Payout-Rates
+Community: https://www.reddit.com/r/Teachers/comments/1r2c9v7/
+
+## 12. Roll20 Marketplace — maps, tokens, adventures and play aids
+**Score: 79/100 | H1-H2**
+
+**Money:** encounter-map packs, token sets, procedural dungeon kits, macros/play aids, original adventures and complete Roll20 game conversions.
+
+**Workflow:** discover GM pain → generate original content → run grid/dynamic-lighting/token fixture checks → construct Roll20 game/module → create previews → submit marketplace package → monitor ratings/support → version.
+
+**Infrastructure:** Roll20 Marketplace has a formal creator application and structured product categories. Applications for game content are reviewed using an in-progress Roll20 Game so pages, handouts, characters and macros can be verified.
+
+**Agent fit:** maps/macros/play aids are especially machine-testable; narrative adventures need stronger human/evaluator judgment.
+
+**Human dependencies:** creator approval H1; final art/narrative QA H2.
+
+**Assets:** Roll20Pack, VTT World, grid/light evaluator, adventure-schema School, macro Skill.
+
+Official: https://roll20partners.zendesk.com/hc/en-us/articles/10849171519511-Applying-to-Sell-on-the-Roll20-Marketplace
+
+## 13. Modrinth — mods, modpacks, plugins and resource packs
+**Score: 78/100 | H1**
+
+**Money:** projects earn creator payouts from platform revenue; mods, modpacks, plugins and resource packs are all eligible. Build high-utility Minecraft server/client tools rather than one-off cosmetics.
+
+**Workflow:** mine issues/search → generate Fabric/Forge/Paper project → CI across game loader/version matrix → publish through Modrinth tooling/API → observe downloads → maintain automatically when Minecraft updates.
+
+**Agent fit:** superb for compatibility-heavy plugin/mod code because version matrices and regression tests become reusable Lab assets.
+
+**Human dependencies:** payout/account setup H1; otherwise close to H0 for existing project updates.
+
+**Assets:** Modrinth Venue adapter, Minecraft version World, compatibility evaluator, migration Skill, update worker.
+
+Official: https://modrinth.com/news/article/creator-monetization/
+
+## 14. GameDev Market — 2D/3D/audio/UI game-asset marketplace
+**Score: 77/100 | H1-H2**
+
+**Demand:** current homepage reports roughly **196,000 members and 34,000+ assets**, with 13K+ 2D assets, 4.6K+ 3D assets, 13.5K+ audio assets and 2.2K+ GUI/UI kits.
+
+**Money:** sell polished game-ready UI systems, icon sets, shaders/materials, procedural props, low-poly environment families and prototyping kits.
+
+**Workflow:** inspect category/search gaps → generate asset family → import-test in target engines → validate naming/scales/textures/licenses → produce previews → submit for manual review → monitor sales → expand winning family.
+
+**Human dependencies:** H1 seller/review; H2 aesthetics for flagship art packs.
+
+**Assets:** cross-engine asset World, import evaluator, style-consistency School, packager Process.
+
+Official: https://gamedevmarket.net/
+
+## 15. Creative Fabrica — fonts, graphics and craft files
+**Score: 76/100 | H2**
+
+**Demand:** Creative Fabrica says it has over **1 million monthly users**. Designers can earn from direct sales and subscription downloads; current help pages advertise up to 75% on certain sales.
+
+**Money:** useful SVG/cut-file systems, editable templates, original fonts, craft bundles and production-ready design families. Avoid generic image spam.
+
+**Workflow:** detect seasonal/craft-tool search demand → generate vector family → validate paths/layers/cutability/font tables → make previews → publish → track downloads → build coherent bundles.
+
+**Human dependencies:** H1 seller/payment setup; H2 visual/IP quality review.
+
+**Moltwork assets:** vector integrity evaluator, cutter compatibility World, original-IP checker, typography School.
+
+Official: https://help.creativefabrica.com/hc/en-us/articles/4401898664722-Why-should-I-open-a-store-on-Creative-Fabrica
+
+## 16. EKG.gg — streamer overlays and interactive widgets with SDK
+**Score: 75/100 | H1-H2**
+
+**Money:** sell overlays, alerts and interactive widgets directly to streamers. EKG explicitly offers creators a widget SDK, marketplace publishing, creator-controlled pricing and Stripe payouts.
+
+**Why agents fit:** unlike static overlay shops, SDK widgets can be generated/tested as software: event fixtures, state transitions, responsiveness and installation can all be evaluated.
+
+**Workflow:** scan streamer requests → create event-driven widget → replay Twitch/YouTube events → visual regression → publish → observe sales/support → create category-specific variants.
+
+**Human dependencies:** creator/payment setup H1; final aesthetic QA H2.
+
+**Assets:** streaming-event World, widget Skill, visual evaluator, niche-streamer specialist workers.
+
+Current marketplace: https://ekg.gg/
+
+## 17. Hye.gg — new Minecraft creator marketplace
+**Score: 74/100 | H1**
+
+**Money:** plugins, mods, packs, shaders, builds and one-click server products. Hye is early and explicitly markets paid creator publishing; its catalog is “just opening.”
+
+**Interesting unlock:** buyers can spin up temporary Minecraft servers with plugins pre-loaded before buying. That creates a natural automated evaluation surface: Moltwork can test the exact trial experience and optimize conversion/quality.
+
+**Workflow:** discover server-owner need → build Paper/Fabric asset → auto-provision test server → regression/latency/security checks → publish → track trials/sales → update.
+
+**Human dependencies:** H1 store/payment setup.
+
+**Assets:** `HyeVenue`, ephemeral-server Harbor World, plugin quality evaluator, security tests.
+
+Current marketplace: https://hye.gg/
+
+## 18. AutomationWorkflows.io — paid n8n/Make/Zapier/agent templates
+**Score: 73/100 | H1**
+
+**Money:** sell tested vertical automation workflows; sellers keep 85% according to the marketplace. Cross-platform packs are possible.
+
+**Workflow:** mine Reddit/support forums for repeated automation requests → build flow from MCP/API primitives → execute with synthetic fixtures → redact credentials → generate setup docs → list → monitor refunds/support → patch upstream node/API changes.
+
+**Community warning:** there is strong backlash against $49-$299 “templates” that are just 10 obvious nodes. This makes generic template spam unattractive but creates room for genuinely difficult vertical flows with real evals, retries, observability and migration support.
+
+**Human dependencies:** H1 seller/payment setup; API auth is per buyer rather than creator.
+
+**Assets:** workflow portability School, credential-redaction evaluator, API-change watcher, industry Packs.
+
+Marketplace: https://automationworkflows.io/
+Community: https://www.reddit.com/r/n8n/comments/1phy3by/
+
+## 19. Neura Market — n8n/Make/Zapier/Activepieces/Pipedream template marketplace
+**Score: 72/100 | H1**
+
+**Money:** sell automation templates with a stated 90% seller share. The marketplace specifically promotes cross-platform packs, vertical solutions and migration kits; it says it has 27,000+ curated workflows feeding search traffic.
+
+**Agent edge:** one successful business process can be transpiled into multiple automation runtimes, creating a reusable cross-platform asset graph rather than writing every product from scratch.
+
+**Workflow:** discover valuable process → canonical Moltwork workflow graph → compile to n8n/Make/Zapier/Activepieces/Pipedream → integration fixtures → publish variants → compare sales/error/support by runtime.
+
+**Human dependencies:** H1 seller/payment onboarding.
+
+**Assets:** canonical workflow IR, transpiler Skills, connector test World, migration evaluator.
+
+Marketplace: https://www.neura.market/sell-automation-templates
+
+## 20. Krast — game-development asset + freelancer marketplace
+**Score: 70/100 | H2**
+
+**Money:** sell engine-ready assets or bid on tightly scoped development jobs. Krast currently states creators keep 92% of asset sales, with no listing fee, and supports milestone-protected freelance projects.
+
+**Why useful to Moltwork:** one venue contains both reusable asset sales and commissioned work. A Lab can discover a recurring commissioned need, solve it, then productize the reusable component as a marketplace asset—exactly the “work creates inventory” thesis.
+
+**Workflow:** discover project → scope against capability evidence → produce in Git → engine/import tests → submit milestone → harvest reusable asset → list asset → track sales/job outcome.
+
+**Human dependencies:** H2 for subjective client communications/acceptance; asset side closer to H1.
+
+**Assets:** KrastPack, bid evaluator, game asset World, commission-to-product Harvest Process.
+
+Current marketplace: https://krast.io/
+
+# Frontier Unlocks
+
+### 1. Hytale is becoming a real paid mod economy in 2026
+The most interesting timing signal is the number of Hytale-specific marketplaces appearing simultaneously. BuiltByBit opened paid Hytale categories in January 2026; Hymods advertises fixed-price/pay-what-you-want paid mods with 90% creator revenue; BlockyMarketplace combines a server commerce layer and plugin marketplace. Oracle should create one `Hytale` market family and track which venues actually develop liquidity rather than prematurely hard-coding one winner.
+
+### 2. Paid UGC is gaining proper entitlement APIs
+CurseForge’s Premium Mods interface now handles storefront metadata, purchase flow and server-signed ownership. This is much more agent-operable than informal Patreon/Discord mod selling and creates a clean Venue lifecycle: build → publish → entitlement → update → revenue.
+
+### 3. Stream Deck is unusually machine-buildable
+Elgato’s official SDK + CLI give us deterministic creation/validation/packaging, while 2026 Reddit is full of real integration breakage. This is nearly an ideal first non-hackathon market experiment for WorkerKit because success can be measured with compatibility fixtures before marketplace review.
+
+### 4. Twitch expanded the monetizable creator surface in May 2026
+With more eligible channels getting Bits/subs/emotes/points, the pool of broadcasters capable of using monetized interactive experiences expands. The Extension product catalog and explicit lifecycle are already structured.
+
+### 5. Shopify themes now have continuously changing machine-readable requirements
+The July 30, 2026 mandatory `shopify-account` component is exactly the kind of “market rule changed → incumbent products need updates” event Oracle should detect. Maintenance work can become a repeatable opportunity signal.
+
+### 6. 3D-print marketplaces are a natural Harbor benchmark domain
+MMF/Thangs/Cults contain a large economic market where quality has objective subdimensions: manifold geometry, clearances, overhangs, wall thickness, slicer success, file integrity, orientation and material assumptions. A rigorous Lab could outperform human-only creators on functional, parametric niches without competing on artistic taste.
+
+# Human Dependency Reduction
+
+The highest-value human steps to eliminate next are not KYC/tax/legal acceptance; those should remain human. They are recurring mechanical steps:
+
+1. **Marketplace listing submission** — metadata, screenshots, package upload, pricing and version notes. Build WebMCP/browser adapters around Maker Console / marketplace forms where policy allows.
+2. **Cross-version compatibility QA** — Blender versions, Minecraft loaders/game versions, Shopify Theme requirements, Stream Deck releases. Harbor matrix Worlds can make this H0.
+3. **Physical validation for 3D-print files** — start H2 through HumanQueue/print service; collect enough simulation→physical outcome pairs to learn when slicer/geometry checks predict real success.
+4. **Visual QA** — automate screenshot generation and objective layout checks, escalate only borderline aesthetic decisions.
+5. **Support triage** — map reviews/issues to reproducible fixtures; let the worker autonomously create a failing test before changing a product.
+6. **Credential isolation** — marketplace/API credentials should be injected through a secret broker/tool boundary; never stored in worker memory or Git.
+7. **Porting one capability across venues** — canonical product representation → adapters for multiple marketplaces. The same Hytale plugin, automation workflow, 3D model or streamer widget can often be sold/distributed across several surfaces.
+
+# Recommended experiments for Moltwork
+
+**Experiment A — Stream Deck plugin:** find one currently broken/abandoned integration from 2026 Reddit, build a minimal replacement, test via SDK/CLI, submit. This gives a short software loop with visible external outcome.
+
+**Experiment B — functional 3D-print product family:** choose a boring niche (organizers, holders, adapters—not branded/copyrighted characters), generate 5 parametric designs, use geometry+slicer World, send one or two to HumanQueue for physical confirmation, publish to one marketplace. This tests whether Harbor evaluations predict real purchases/refunds.
+
+**Experiment C — Hytale plugin:** build an Hytale admin/server utility on BuiltByBit while the ecosystem is still young. The key measurement is not first sales but how quickly the Lab accumulates reusable compatibility knowledge versus new entrants.
+
+**Experiment D — cross-platform automation pack:** take one high-value vertical workflow and compile/test it across n8n/Make/Activepieces/Pipedream rather than selling a trivial single-platform template. Measure support burden and conversion across runtimes.
+
+# Oracle schema implication
+
+No new autonomy taxonomy is needed. For every Pack, persist `execution_steps` + structured `human_dependencies`; then a frontier scanner repeatedly asks whether an official SDK/API/MCP/WebMCP/CLI or approved browser flow now resolves each dependency. The useful Oracle signal is not “new marketplace exists” but:
+
+`human.manual_submission -> resolved_by(StreamDeck CLI + Maker Console automation)`
+
+or
+
+`human.compatibility_testing -> resolved_by(Harbor version-matrix World)`
+
+which then changes the opportunity's derived H-level and expected net EV.
+Oracle Market Unlocks — Scan 4
+<p>31 August 2026</p>
+<p>This scan excludes the markets already covered in the first three reports, including Atlassian Forge, monday.com Marketplace, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow templates, Miro apps, WooCommerce, HubSpot, JetBrains, Fab, Unity Asset Store, Fortnite UEFN, Canva Creator, Creative Market, Minecraft Marketplace, Adobe Stock, Envato/Placeit, Gumroad, Telegram Mini Apps, VRChat Avatar Marketplace, WordPress MCP-enabled plugins, Zoom Marketplace, Microsoft Teams, Slack, Poe, CGTrader, Salesforce AgentExchange, ServiceNow Store, LINE MINI Apps, Databricks Marketplace, Wix App Market, Shopify App Store, RapidAPI, AWS Data Exchange, Snowflake Marketplace, Google Cloud Marketplace, AWS Marketplace, Discord Premium Apps, Bubble Marketplace, FlutterFlow Marketplace, Coda Packs, Figma Community, VS Code Marketplace, Edge Add-ons, Firefox Add-ons, and BigCommerce App Marketplace.</p>
+<p>Scoring /100 weights: economic value 30%, agent technical fit 25%, automation feasibility 20%, novelty/timing 15%, competitive favorability 10%. H0-H4 follows Moltwork’s existing human-involvement taxonomy; one-time tax/KYC/account setup is treated as bounded H1 provisioning rather than recurring human execution.</p>
+
+1. Elgato Stream Deck Marketplace — plugins, profiles, icon packs, OBS scene collections
+<p><strong>Score: 91/100 | H1 after Maker onboarding</strong></p>
+<p><strong>Money:</strong> sell paid plugins/profiles/icon packs and maintain them as apps change. The strongest niches are broken or abandoned integrations, vertical workflow packs, creative-app controls, local AI controls, and one-button multi-app procedures.</p>
+<p><strong>Autonomous loop:</strong> monitor Stream Deck/Elgato Reddit + plugin reviews + API changelogs → identify broken/high-friction workflows → generate TypeScript plugin from Stream Deck SDK → run CLI validation and local fixtures → generate metadata/gallery assets → package <code>.streamDeckPlugin</code> → submit through Maker Console → monitor version/review signals → patch on upstream API changes.</p>
+<p><strong>Infrastructure:</strong> official Stream Deck SDK + CLI already gives machine-verifiable packaging (<code>validate</code>, <code>pack</code>) and a structured Maker Console publishing workflow. Marketplace distribution reaches “millions of Stream Deck users.” The 2026 Reddit signal is unusually strong: OBS/Discord/Streamlabs integrations repeatedly break after updates, and users describe the device becoming unusable when a core plugin fails.</p>
+<p><strong>Human dependencies:</strong> H1 Maker/payment onboarding; review approval is external, not human labor from the Lab. Browser submission remains the main automatable step; WebMCP/browser tooling could collapse it further.</p>
+<p><strong>Moltwork assets:</strong> <code>StreamDeckPack</code>, SDK Skill, plugin-template Process, compatibility Harbor World, API-breakage evaluator, regression School, specialist <code>streamdeck-maintainer</code> Worker.</p>
+<p><strong>Attractive if:</strong> agent focuses on boring, high-value integrations and compatibility maintenance. <strong>Unattractive if:</strong> generic novelty plugins or geography-dependent paid-item availability dominates.</p>
+<p>Official: https://docs.elgato.com/streamdeck/sdk/introduction/distribution/ ; https://docs.elgato.com/marketplace/become-a-maker/<br>
+Community: https://www.reddit.com/r/elgato/comments/1tu968o/</p>
+
+2. Overwolf Appstore — game companion apps
+<p><strong>Score: 89/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> build game-specific overlays, stat helpers, maps, match review, build planners, inventory assistants, creator utilities; monetize through official Overwolf ads and subscriptions.</p>
+<p><strong>Autonomous loop:</strong> scan game communities for repetitive overlay/data pain → inspect available game-event APIs → generate Electron/Overwolf app → replay game telemetry fixtures → evaluate performance/UX → publish → monitor usage/ad/subscription revenue → prioritize patches from telemetry and reviews.</p>
+<p><strong>Infrastructure:</strong> Overwolf provides developer APIs plus first-party ad and subscription monetization. Their docs state that monetized apps must use Overwolf ads/subscriptions rather than arbitrary third-party monetization, which makes the economic surface predictable.</p>
+<p><strong>Demand:</strong> large installed gamer ecosystem; current Reddit complaints show users actively rely on Overwolf apps such as game maps, while Appstore reliability itself creates opportunities for better-maintained replacements.</p>
+<p><strong>Human dependencies:</strong> onboarding/review H1; some game approvals/licensing can make a title H2.</p>
+<p><strong>Moltwork assets:</strong> game-event Venue adapters, telemetry Worlds, compatibility evaluator, monetization Process, specialist workers per game.</p>
+<p><strong>Attractive if:</strong> chosen game has rich structured telemetry and an under-served companion niche. <strong>Unattractive if:</strong> anti-cheat/API restrictions prevent legitimate instrumentation.</p>
+<p>Official: https://dev.overwolf.com/ow-native/monetization/overview/</p>
+
+3. BuiltByBit Hytale resources — plugins, models, server setups, worlds/prefabs
+<p><strong>Score: 88/100 | H1</strong></p>
+<p><strong>Why now:</strong> BuiltByBit opened paid Hytale publishing on January 15, 2026 and explicitly positioned itself as the first marketplace for paid Hytale content. Categories include plugins, models, server setups, worlds and prefabs.</p>
+<p><strong>Money:</strong> agent-generated server plugins, admin tools, economy systems, starter server packs, prefab libraries, testing utilities and ported/reworked Minecraft concepts.</p>
+<p><strong>Autonomous loop:</strong> scan Hytale community/server-owner pain → generate plugin/prefab → run local/server tests → produce docs/demo → submit marketplace resource → watch reviews/support → auto-triage compatibility failures → release versions.</p>
+<p><strong>Infrastructure:</strong> Git/versioned resources, increasingly structured Hytale modding tooling, conversion tools from Minecraft, marketplace versioning. This is early enough that a Moltwork specialist Lab can accumulate capability before incumbents become entrenched.</p>
+<p><strong>Human dependencies:</strong> H1 seller/payment setup and review. Technical work is highly H0-compatible once APIs stabilize.</p>
+<p><strong>Assets:</strong> <code>HytalePack</code>, plugin scaffolds, server World, compatibility School, performance evaluator, migration Skills.</p>
+<p><strong>Attractive if:</strong> early ecosystem demand grows. <strong>Unattractive if:</strong> Hytale tooling/API churn remains too high.</p>
+<p>Official/current marketplace announcement: https://builtbybit.com/threads/hytale-publishing-open-and-january-improvements.740736/</p>
+
+4. CurseForge Premium Mods — paid UGC inside supported games
+<p><strong>Score: 87/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> sell premium mods in games whose studios enable CurseForge UGC monetization. Particularly good for quality-of-life systems, content packs, server/admin tools and replayable game extensions.</p>
+<p><strong>New unlock:</strong> CurseForge for Studios now documents premium-mod APIs where the storefront owns pricing/discount metadata, purchase flow and signed entitlement checks. That is much more machine-operable than old donation-driven mod ecosystems.</p>
+<p><strong>Autonomous loop:</strong> discover unmet mod demand → build against game SDK → test deterministic scenarios → package → publish → entitlement-aware release → observe installs/sales/reviews → patch.</p>
+<p><strong>Human dependencies:</strong> game-specific approval and creator/payment onboarding H1/H2. Some games will remain inaccessible if premium mods are not enabled.</p>
+<p><strong>Assets:</strong> game-specific Pack, entitlement Skill, mod regression World, balance/performance evaluator, specialist Worker.</p>
+<p><strong>Attractive if:</strong> official monetization exists for a game with large active community. <strong>Unattractive if:</strong> game studio keeps premium UGC closed.</p>
+<p>Official: https://docs.curseforge.com/docs/game-integration/unreal/monetization/</p>
+
+5. Superhive (Blender Market) — Blender add-ons, materials, models and tools
+<p><strong>Score: 86/100 | H1</strong></p>
+<p><strong>Money:</strong> procedural Blender add-ons, batch-cleanup tools, exporters/importers, geometry utilities, render workflow tools, reusable materials and niche production assets.</p>
+<p><strong>Demand evidence:</strong> Superhive currently reports 6,206 creators, 68,715 products, 5.64M items sold, 1.11M customers and over <strong>$51.5M paid to creators</strong>. Creators can earn up to 90% per sale.</p>
+<p><strong>Autonomous loop:</strong> mine Blender forums/issues → build Python add-on → execute Blender headless fixture suite → benchmark file compatibility → generate demo blend/screenshots/docs → submit → monitor reviews/version failures → auto-release compatibility updates.</p>
+<p><strong>Agent fit:</strong> exceptionally high because Blender is scriptable/headless and outputs can be tested deterministically before humans ever see them.</p>
+<p><strong>Human dependencies:</strong> H1 creator/payout approval plus marketplace QA review.</p>
+<p><strong>Assets:</strong> Blender Skill, headless Harbor World, geometry correctness evaluator, compatibility matrix School, productization Process.</p>
+<p><strong>Attractive if:</strong> focus is tooling rather than commodity AI-generated models. <strong>Unattractive if:</strong> competing on generic asset volume.</p>
+<p>Official: https://superhivemarket.com/market-stats ; https://superhivemarket.com/become-a-creator/</p>
+
+6. Twitch Extensions Directory — interactive monetized stream apps
+<p><strong>Score: 85/100 | H1</strong></p>
+<p><strong>Money:</strong> Bits-enabled interactive overlays/products, prediction-free audience games, stream utilities, subscriber features, game integrations and channel interaction tools. Revenue from Bits used in Extensions is shared between broadcaster and extension developer.</p>
+<p><strong>2026 unlock:</strong> Twitch broadened monetization features to eligible streamers globally in May 2026, increasing the addressable broadcaster base for Bits/emotes/subs; Extension reviews have resumed.</p>
+<p><strong>Autonomous loop:</strong> identify broadcaster pain → build web Extension + EBS → simulate Twitch context/events → test moderation and Bits flags → publish/review → monitor installs/Bits/product usage → generate variants for winning stream categories.</p>
+<p><strong>Infrastructure:</strong> Twitch Extensions SDK, Extension Manager lifecycle, Bits product catalog, APIs, structured review state.</p>
+<p><strong>Human dependencies:</strong> legal/tax onboarding H1 (Twitch explicitly supports under-18 developers with guardian agreement), directory review; broadcaster adoption is external demand rather than Lab labor.</p>
+<p><strong>Assets:</strong> TwitchPack, Bits Skill, stream-event World, install/conversion evaluator, moderation test School.</p>
+<p><strong>Attractive if:</strong> utility creates recurring viewer interaction. <strong>Unattractive if:</strong> it is just decorative overlayware.</p>
+<p>Official: https://dev.twitch.tv/docs/extensions/monetization/ ; https://dev.twitch.tv/docs/extensions/life-cycle/</p>
+
+7. Shopify Theme Store — commercial storefront themes
+<p><strong>Score: 84/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> sell narrow, high-quality themes aimed at a merchant vertical rather than another generic multipurpose theme. Shopify takes 15% revenue share; there is no submission fee.</p>
+<p><strong>Why agents fit:</strong> themes have unusually explicit requirements, automated linting/testing possibilities, benchmarkable performance/accessibility, structured sample stores, and repetitive compatibility maintenance.</p>
+<p><strong>2026 signal:</strong> on July 30, 2026 Shopify made the new <code>shopify-account</code> component mandatory for all new/updated Theme Store submissions. Continuous platform requirements create a maintenance moat for Labs that automatically track and patch themes.</p>
+<p><strong>Workflow:</strong> mine merchant complaints → derive vertical UX requirements → generate theme → run Theme Check/performance/accessibility fixtures → populate demo store → generate listing → submit → monitor reviews/compatibility → auto-patch on changelog.</p>
+<p><strong>Human dependencies:</strong> Partner/payment setup and human review H1; design taste keeps best-in-class products H2 during final QA.</p>
+<p><strong>Assets:</strong> ShopifyThemePack, merchant-vertical Worlds, Lighthouse/accessibility evaluator, changelog watcher, visual regression School.</p>
+<p><strong>Demand:</strong> Shopify merchants repeatedly complain about difficult customization and theme updates after custom code.</p>
+<p>Official: https://shopify.dev/docs/storefronts/themes/store ; https://shopify.dev/docs/storefronts/themes/store/revenue-share</p>
+
+8. MyMiniFactory — premium printable STL stores, Tribes and campaigns
+<p><strong>Score: 83/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> functional printable designs, tabletop terrain/accessories, storage systems, organizers, replacement parts, parametric families; sell files or recurring Tribe memberships. Premium creators advertise up to 90% of sales and access to millions of makers.</p>
+<p><strong>Autonomous loop:</strong> mine maker requests → generate parametric CAD → mesh validation/manifold checks → slice simulations across printer profiles → generate renders/instructions → publish → monitor downloads/ratings → evolve families from successful geometries.</p>
+<p><strong>Agent fit:</strong> strong when focused on functional/parametric designs with deterministic geometry tests; weaker for high-art character sculpture.</p>
+<p><strong>Human dependencies:</strong> creator/payment onboarding H1; physical print validation can be H2 initially, potentially delegated through HumanQueue/print farms.</p>
+<p><strong>Assets:</strong> Printability World, mesh evaluator, CAD Skill, slicing Process, product-family Worker.</p>
+<p>Official: https://creator.myminifactory.com/become-a-premium-creator</p>
+
+9. Thangs Marketplace — 3D files, memberships, Bundle and Print Store
+<p><strong>Score: 82/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> individual model sales, recurring memberships, bundle revenue and physical Print Store products. Current fees vary: memberships 14% platform fee; individual sales 15–30% depending on price; Bundle pays participating designers from subscription revenue.</p>
+<p><strong>Workflow:</strong> demand mining → CAD generation → geometry/slicer tests → publish model + commercial-license tier → track downloads/membership conversion → produce variations based on search/download data.</p>
+<p><strong>Human dependencies:</strong> onboarding H1, optional physical QA H2.</p>
+<p><strong>Moltwork moat:</strong> automatically test that every file is actually printable before publishing—marketplaces suffer from low-quality/unprintable files.</p>
+<p><strong>Assets:</strong> same 3D manufacturing School can transfer across MMF/Cults/Thangs, creating cross-market specialization.</p>
+<p>Official: https://thangs.com/resources/getting-started-for-designers ; https://thangs.com/resources/help-center-articles/how-do-i-get-started-selling-on-thangs</p>
+
+10. Cults3D — paid STL/CAD/laser/CNC files
+<p><strong>Score: 81/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> sell STL, OBJ, CAD, 3MF, CNC/laser and related files; creators receive 80% of net selling price and pay no fixed listing subscription.</p>
+<p><strong>Demand signal:</strong> a May 2026 creator reported 25 designs, ~1.7K downloads and 64 sales in five months; other 2026 sellers report meaningful but volatile passive income and summer traffic slumps. There are also buyer complaints about paid files being non-manifold/unprintable—exactly where a rigorous agent Lab can differentiate.</p>
+<p><strong>Workflow:</strong> scan searches/community → generate functional niche model → manifold/clearance/slicer test → publish renders/files/instructions → track sales → clone winning design families, not copyrighted objects.</p>
+<p><strong>Human dependencies:</strong> H1 payout setup; print validation H2 until simulation proves predictive.</p>
+<p><strong>Assets:</strong> CultsPack, geometry evaluator, printability Harbor World, pricing experiment Process.</p>
+<p>Official: https://cults3d.com/en/upload<br>
+Community: https://www.reddit.com/r/cults3d/comments/1tdnylq/</p>
+
+11. Teachers Pay Teachers — structured educational resources
+<p><strong>Score: 80/100 | H2</strong></p>
+<p><strong>Money:</strong> curriculum-aligned worksheets, assessment packs, differentiated practice, classroom management resources, teacher-facing spreadsheets and highly specific lesson bundles. Current official seller terms: Basic $29 once / 55% payout; Premium $59.95/year / 80% payout.</p>
+<p><strong>Why this is interesting:</strong> education resources are naturally benchmarkable against curricula, answer-key correctness, reading level and classroom usability. A Moltwork School could outperform low-quality AI slop by requiring deterministic answer validation and educator review samples.</p>
+<p><strong>Community pain:</strong> teachers in 2026 explicitly complain that TPT has been flooded with obvious, low-quality AI-generated material. That is a warning against mass-generation but also a moat for evidence-backed resources that pass a strict World.</p>
+<p><strong>Workflow:</strong> discover curriculum/search gap → build resource → validate answers/standards/readability → render PDF/slides → educator HumanQueue review for new task families → list → track reviews/sales → update.</p>
+<p><strong>Human dependencies:</strong> H2 because instructional judgment and final QA matter; seller/payment setup H1.</p>
+<p><strong>Assets:</strong> curriculum ontology, worksheet generator Skill, answer-key evaluator, educator-review Queue, grade/subject specialist Workers.</p>
+<p>Official: https://help.teacherspayteachers.com/hc/en-us/articles/360044219891-Seller-Fees-and-Payout-Rates<br>
+Community: https://www.reddit.com/r/Teachers/comments/1r2c9v7/</p>
+
+12. Roll20 Marketplace — maps, tokens, adventures and play aids
+<p><strong>Score: 79/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> encounter-map packs, token sets, procedural dungeon kits, macros/play aids, original adventures and complete Roll20 game conversions.</p>
+<p><strong>Workflow:</strong> discover GM pain → generate original content → run grid/dynamic-lighting/token fixture checks → construct Roll20 game/module → create previews → submit marketplace package → monitor ratings/support → version.</p>
+<p><strong>Infrastructure:</strong> Roll20 Marketplace has a formal creator application and structured product categories. Applications for game content are reviewed using an in-progress Roll20 Game so pages, handouts, characters and macros can be verified.</p>
+<p><strong>Agent fit:</strong> maps/macros/play aids are especially machine-testable; narrative adventures need stronger human/evaluator judgment.</p>
+<p><strong>Human dependencies:</strong> creator approval H1; final art/narrative QA H2.</p>
+<p><strong>Assets:</strong> Roll20Pack, VTT World, grid/light evaluator, adventure-schema School, macro Skill.</p>
+<p>Official: https://roll20partners.zendesk.com/hc/en-us/articles/10849171519511-Applying-to-Sell-on-the-Roll20-Marketplace</p>
+
+13. Modrinth — mods, modpacks, plugins and resource packs
+<p><strong>Score: 78/100 | H1</strong></p>
+<p><strong>Money:</strong> projects earn creator payouts from platform revenue; mods, modpacks, plugins and resource packs are all eligible. Build high-utility Minecraft server/client tools rather than one-off cosmetics.</p>
+<p><strong>Workflow:</strong> mine issues/search → generate Fabric/Forge/Paper project → CI across game loader/version matrix → publish through Modrinth tooling/API → observe downloads → maintain automatically when Minecraft updates.</p>
+<p><strong>Agent fit:</strong> superb for compatibility-heavy plugin/mod code because version matrices and regression tests become reusable Lab assets.</p>
+<p><strong>Human dependencies:</strong> payout/account setup H1; otherwise close to H0 for existing project updates.</p>
+<p><strong>Assets:</strong> Modrinth Venue adapter, Minecraft version World, compatibility evaluator, migration Skill, update worker.</p>
+<p>Official: https://modrinth.com/news/article/creator-monetization/</p>
+
+14. GameDev Market — 2D/3D/audio/UI game-asset marketplace
+<p><strong>Score: 77/100 | H1-H2</strong></p>
+<p><strong>Demand:</strong> current homepage reports roughly <strong>196,000 members and 34,000+ assets</strong>, with 13K+ 2D assets, 4.6K+ 3D assets, 13.5K+ audio assets and 2.2K+ GUI/UI kits.</p>
+<p><strong>Money:</strong> sell polished game-ready UI systems, icon sets, shaders/materials, procedural props, low-poly environment families and prototyping kits.</p>
+<p><strong>Workflow:</strong> inspect category/search gaps → generate asset family → import-test in target engines → validate naming/scales/textures/licenses → produce previews → submit for manual review → monitor sales → expand winning family.</p>
+<p><strong>Human dependencies:</strong> H1 seller/review; H2 aesthetics for flagship art packs.</p>
+<p><strong>Assets:</strong> cross-engine asset World, import evaluator, style-consistency School, packager Process.</p>
+<p>Official: https://gamedevmarket.net/</p>
+
+15. Creative Fabrica — fonts, graphics and craft files
+<p><strong>Score: 76/100 | H2</strong></p>
+<p><strong>Demand:</strong> Creative Fabrica says it has over <strong>1 million monthly users</strong>. Designers can earn from direct sales and subscription downloads; current help pages advertise up to 75% on certain sales.</p>
+<p><strong>Money:</strong> useful SVG/cut-file systems, editable templates, original fonts, craft bundles and production-ready design families. Avoid generic image spam.</p>
+<p><strong>Workflow:</strong> detect seasonal/craft-tool search demand → generate vector family → validate paths/layers/cutability/font tables → make previews → publish → track downloads → build coherent bundles.</p>
+<p><strong>Human dependencies:</strong> H1 seller/payment setup; H2 visual/IP quality review.</p>
+<p><strong>Moltwork assets:</strong> vector integrity evaluator, cutter compatibility World, original-IP checker, typography School.</p>
+<p>Official: https://help.creativefabrica.com/hc/en-us/articles/4401898664722-Why-should-I-open-a-store-on-Creative-Fabrica</p>
+
+16. EKG.gg — streamer overlays and interactive widgets with SDK
+<p><strong>Score: 75/100 | H1-H2</strong></p>
+<p><strong>Money:</strong> sell overlays, alerts and interactive widgets directly to streamers. EKG explicitly offers creators a widget SDK, marketplace publishing, creator-controlled pricing and Stripe payouts.</p>
+<p><strong>Why agents fit:</strong> unlike static overlay shops, SDK widgets can be generated/tested as software: event fixtures, state transitions, responsiveness and installation can all be evaluated.</p>
+<p><strong>Workflow:</strong> scan streamer requests → create event-driven widget → replay Twitch/YouTube events → visual regression → publish → observe sales/support → create category-specific variants.</p>
+<p><strong>Human dependencies:</strong> creator/payment setup H1; final aesthetic QA H2.</p>
+<p><strong>Assets:</strong> streaming-event World, widget Skill, visual evaluator, niche-streamer specialist workers.</p>
+<p>Current marketplace: https://ekg.gg/</p>
+
+17. Hye.gg — new Minecraft creator marketplace
+<p><strong>Score: 74/100 | H1</strong></p>
+<p><strong>Money:</strong> plugins, mods, packs, shaders, builds and one-click server products. Hye is early and explicitly markets paid creator publishing; its catalog is “just opening.”</p>
+<p><strong>Interesting unlock:</strong> buyers can spin up temporary Minecraft servers with plugins pre-loaded before buying. That creates a natural automated evaluation surface: Moltwork can test the exact trial experience and optimize conversion/quality.</p>
+<p><strong>Workflow:</strong> discover server-owner need → build Paper/Fabric asset → auto-provision test server → regression/latency/security checks → publish → track trials/sales → update.</p>
+<p><strong>Human dependencies:</strong> H1 store/payment setup.</p>
+<p><strong>Assets:</strong> <code>HyeVenue</code>, ephemeral-server Harbor World, plugin quality evaluator, security tests.</p>
+<p>Current marketplace: https://hye.gg/</p>
+
+18. AutomationWorkflows.io — paid n8n/Make/Zapier/agent templates
+<p><strong>Score: 73/100 | H1</strong></p>
+<p><strong>Money:</strong> sell tested vertical automation workflows; sellers keep 85% according to the marketplace. Cross-platform packs are possible.</p>
+<p><strong>Workflow:</strong> mine Reddit/support forums for repeated automation requests → build flow from MCP/API primitives → execute with synthetic fixtures → redact credentials → generate setup docs → list → monitor refunds/support → patch upstream node/API changes.</p>
+<p><strong>Community warning:</strong> there is strong backlash against $49-$299 “templates” that are just 10 obvious nodes. This makes generic template spam unattractive but creates room for genuinely difficult vertical flows with real evals, retries, observability and migration support.</p>
+<p><strong>Human dependencies:</strong> H1 seller/payment setup; API auth is per buyer rather than creator.</p>
+<p><strong>Assets:</strong> workflow portability School, credential-redaction evaluator, API-change watcher, industry Packs.</p>
+<p>Marketplace: https://automationworkflows.io/<br>
+Community: https://www.reddit.com/r/n8n/comments/1phy3by/</p>
+
+19. Neura Market — n8n/Make/Zapier/Activepieces/Pipedream template marketplace
+<p><strong>Score: 72/100 | H1</strong></p>
+<p><strong>Money:</strong> sell automation templates with a stated 90% seller share. The marketplace specifically promotes cross-platform packs, vertical solutions and migration kits; it says it has 27,000+ curated workflows feeding search traffic.</p>
+<p><strong>Agent edge:</strong> one successful business process can be transpiled into multiple automation runtimes, creating a reusable cross-platform asset graph rather than writing every product from scratch.</p>
+<p><strong>Workflow:</strong> discover valuable process → canonical Moltwork workflow graph → compile to n8n/Make/Zapier/Activepieces/Pipedream → integration fixtures → publish variants → compare sales/error/support by runtime.</p>
+<p><strong>Human dependencies:</strong> H1 seller/payment onboarding.</p>
+<p><strong>Assets:</strong> canonical workflow IR, transpiler Skills, connector test World, migration evaluator.</p>
+<p>Marketplace: https://www.neura.market/sell-automation-templates</p>
+
+20. Krast — game-development asset + freelancer marketplace
+<p><strong>Score: 70/100 | H2</strong></p>
+<p><strong>Money:</strong> sell engine-ready assets or bid on tightly scoped development jobs. Krast currently states creators keep 92% of asset sales, with no listing fee, and supports milestone-protected freelance projects.</p>
+<p><strong>Why useful to Moltwork:</strong> one venue contains both reusable asset sales and commissioned work. A Lab can discover a recurring commissioned need, solve it, then productize the reusable component as a marketplace asset—exactly the “work creates inventory” thesis.</p>
+<p><strong>Workflow:</strong> discover project → scope against capability evidence → produce in Git → engine/import tests → submit milestone → harvest reusable asset → list asset → track sales/job outcome.</p>
+<p><strong>Human dependencies:</strong> H2 for subjective client communications/acceptance; asset side closer to H1.</p>
+<p><strong>Assets:</strong> KrastPack, bid evaluator, game asset World, commission-to-product Harvest Process.</p>
+<p>Current marketplace: https://krast.io/</p>
+
+Frontier Unlocks
+
+1. Hytale is becoming a real paid mod economy in 2026
+<p>The most interesting timing signal is the number of Hytale-specific marketplaces appearing simultaneously. BuiltByBit opened paid Hytale categories in January 2026; Hymods advertises fixed-price/pay-what-you-want paid mods with 90% creator revenue; BlockyMarketplace combines a server commerce layer and plugin marketplace. Oracle should create one <code>Hytale</code> market family and track which venues actually develop liquidity rather than prematurely hard-coding one winner.</p>
+
+2. Paid UGC is gaining proper entitlement APIs
+<p>CurseForge’s Premium Mods interface now handles storefront metadata, purchase flow and server-signed ownership. This is much more agent-operable than informal Patreon/Discord mod selling and creates a clean Venue lifecycle: build → publish → entitlement → update → revenue.</p>
+
+3. Stream Deck is unusually machine-buildable
+<p>Elgato’s official SDK + CLI give us deterministic creation/validation/packaging, while 2026 Reddit is full of real integration breakage. This is nearly an ideal first non-hackathon market experiment for WorkerKit because success can be measured with compatibility fixtures before marketplace review.</p>
+
+4. Twitch expanded the monetizable creator surface in May 2026
+<p>With more eligible channels getting Bits/subs/emotes/points, the pool of broadcasters capable of using monetized interactive experiences expands. The Extension product catalog and explicit lifecycle are already structured.</p>
+
+5. Shopify themes now have continuously changing machine-readable requirements
+<p>The July 30, 2026 mandatory <code>shopify-account</code> component is exactly the kind of “market rule changed → incumbent products need updates” event Oracle should detect. Maintenance work can become a repeatable opportunity signal.</p>
+
+6. 3D-print marketplaces are a natural Harbor benchmark domain
+<p>MMF/Thangs/Cults contain a large economic market where quality has objective subdimensions: manifold geometry, clearances, overhangs, wall thickness, slicer success, file integrity, orientation and material assumptions. A rigorous Lab could outperform human-only creators on functional, parametric niches without competing on artistic taste.</p>
+
+Human Dependency Reduction
+<p>The highest-value human steps to eliminate next are not KYC/tax/legal acceptance; those should remain human. They are recurring mechanical steps:</p>
+<ol>
+<li><strong>Marketplace listing submission</strong> — metadata, screenshots, package upload, pricing and version notes. Build WebMCP/browser adapters around Maker Console / marketplace forms where policy allows.</li>
+<li><strong>Cross-version compatibility QA</strong> — Blender versions, Minecraft loaders/game versions, Shopify Theme requirements, Stream Deck releases. Harbor matrix Worlds can make this H0.</li>
+<li><strong>Physical validation for 3D-print files</strong> — start H2 through HumanQueue/print service; collect enough simulation→physical outcome pairs to learn when slicer/geometry checks predict real success.</li>
+<li><strong>Visual QA</strong> — automate screenshot generation and objective layout checks, escalate only borderline aesthetic decisions.</li>
+<li><strong>Support triage</strong> — map reviews/issues to reproducible fixtures; let the worker autonomously create a failing test before changing a product.</li>
+<li><strong>Credential isolation</strong> — marketplace/API credentials should be injected through a secret broker/tool boundary; never stored in worker memory or Git.</li>
+<li><strong>Porting one capability across venues</strong> — canonical product representation → adapters for multiple marketplaces. The same Hytale plugin, automation workflow, 3D model or streamer widget can often be sold/distributed across several surfaces.</li>
+</ol>
+
+Recommended experiments for Moltwork
+<p><strong>Experiment A — Stream Deck plugin:</strong> find one currently broken/abandoned integration from 2026 Reddit, build a minimal replacement, test via SDK/CLI, submit. This gives a short software loop with visible external outcome.</p>
+<p><strong>Experiment B — functional 3D-print product family:</strong> choose a boring niche (organizers, holders, adapters—not branded/copyrighted characters), generate 5 parametric designs, use geometry+slicer World, send one or two to HumanQueue for physical confirmation, publish to one marketplace. This tests whether Harbor evaluations predict real purchases/refunds.</p>
+<p><strong>Experiment C — Hytale plugin:</strong> build an Hytale admin/server utility on BuiltByBit while the ecosystem is still young. The key measurement is not first sales but how quickly the Lab accumulates reusable compatibility knowledge versus new entrants.</p>
+<p><strong>Experiment D — cross-platform automation pack:</strong> take one high-value vertical workflow and compile/test it across n8n/Make/Activepieces/Pipedream rather than selling a trivial single-platform template. Measure support burden and conversion across runtimes.</p>
+
+Oracle schema implication
+<p>No new autonomy taxonomy is needed. For every Pack, persist <code>execution_steps</code> + structured <code>human_dependencies</code>; then a frontier scanner repeatedly asks whether an official SDK/API/MCP/WebMCP/CLI or approved browser flow now resolves each dependency. The useful Oracle signal is not “new marketplace exists” but:</p>
+<p><code>human.manual_submission -&gt; resolved_by(StreamDeck CLI + Maker Console automation)</code></p>
+<p>or</p>
+<p><code>human.compatibility_testing -&gt; resolved_by(Harbor version-matrix World)</code></p>
+<p>which then changes the opportunity’s derived H-level and expected net EV.</p>

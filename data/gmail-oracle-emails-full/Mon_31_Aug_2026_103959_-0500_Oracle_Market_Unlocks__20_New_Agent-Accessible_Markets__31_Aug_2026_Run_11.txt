@@ -1,0 +1,182 @@
+Subject: Oracle Market Unlocks — 20 New Agent-Accessible Markets — 31 Aug 2026 (Run 11)
+Date: Mon, 31 Aug 2026 10:39:59 -0500
+Message ID: 1a0587a367fe4caf
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new markets
+**Date:** 31 Aug 2026
+
+This scan treats novelty as a hard constraint. I cross-checked the candidate set against the prior Oracle Market Unlocks emails and found no prior report containing any of the 20 venues below. I also excluded ArcGIS Marketplace after discovering its public storefront was retired in March 2026; that is a negative frontier signal rather than a market to enter.
+
+## Ranking
+
+| # | Market / marketplace | Opportunity | Agent suitability | Automation | Competition | Novelty | Total /25 | Post-setup H-level |
+|---:|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | Procore App Marketplace | 5 | 5 | 5 | 3 | 5 | **23** | H1-H2 |
+| 2 | ADP Marketplace | 5 | 5 | 5 | 3 | 5 | **23** | H1-H2 |
+| 3 | Trimble Marketplace / App Xchange | 5 | 5 | 5 | 3 | 5 | **23** | H1-H2 |
+| 4 | ServiceTitan App Marketplace | 5 | 5 | 4 | 3 | 5 | **22** | H2 |
+| 5 | NetSuite SuiteApp.AI Marketplace | 5 | 5 | 4 | 3 | 5 | **22** | H2 |
+| 6 | Genesys AppFoundry | 5 | 5 | 4 | 3 | 5 | **22** | H2 |
+| 7 | VTEX App Store | 4 | 5 | 5 | 3 | 5 | **22** | H1-H2 |
+| 8 | Mews Marketplace | 4 | 5 | 5 | 3 | 5 | **22** | H1-H2 |
+| 9 | Cloudbeds Marketplace | 4 | 5 | 5 | 3 | 5 | **22** | H1-H2 |
+| 10 | Appian AppMarket | 4 | 5 | 4 | 3 | 5 | **21** | H1-H2 |
+| 11 | Talkdesk AppConnect | 4 | 5 | 4 | 3 | 5 | **21** | H2 |
+| 12 | Clio App Directory | 4 | 5 | 4 | 3 | 5 | **21** | H2 |
+| 13 | Jobber App Marketplace | 4 | 5 | 4 | 3 | 5 | **21** | H1-H2 |
+| 14 | Workday Marketplace / Built on Workday | 5 | 4 | 3 | 3 | 5 | **20** | H2-H3 |
+| 15 | Five9 CX Marketplace | 4 | 5 | 3 | 3 | 5 | **20** | H2 |
+| 16 | NiCE CXexchange / DEVone | 4 | 5 | 3 | 3 | 5 | **20** | H2 |
+| 17 | Acumatica Marketplace | 4 | 5 | 3 | 3 | 5 | **20** | H2 |
+| 18 | Docusign App Center | 4 | 5 | 4 | 2 | 5 | **20** | H2 |
+| 19 | Toast Partner Ecosystem | 5 | 5 | 2 | 3 | 5 | **20** | H2-H3 |
+| 20 | Infor Marketplace | 4 | 4 | 3 | 3 | 5 | **19** | H2-H3 |
+
+Scoring favors economic value, repeatable machine-verifiable work, structured APIs/sandboxes, and low dependence on subjective creation. Competition scores are higher where there appears to be more whitespace; enterprise partner gates reduce automation scores even when the engineering itself is agent-friendly.
+
+---
+
+## 1. Procore App Marketplace — construction workflow micro-apps
+
+**What agents can sell.** Narrow construction utilities: civil inspection workflows, drawing/RFI integrity checks, subcontractor document QA, project-closeout completeness, drone/map data adapters, ERP/accounting sync diagnostics, or compliance evidence packs.
+
+**Autonomous workflow.** Oracle mines Procore community complaints and Marketplace gaps → Worker turns one pain point into an API integration → provisions Procore sandbox + synthetic project → Harbor replays drawings/RFIs/submittals/inspections and failure cases → generates listing/security/demo package → human partner approval if required → publish → ingest Marketplace visits/installations/engagement → patch against API/platform releases.
+
+**Human dependency.** Engineering can be H0/H1; partner-program acceptance and customer/security approvals keep first publication at H1-H2. Procore says the partner program is invitation-only based on demand/strategic alignment.
+
+**Infrastructure.** Production REST APIs, sandboxes, Marketplace analytics, and — importantly — Procore says “Agentic APIs for AI agents” are coming in 2026.
+
+**Demand.** Procore states 3M+ active users, 17,850 customers across 160+ countries and $1T+ annual construction volume; 95%+ of customers use at least one integration and 50%+ use five or more. A July 2026 r/Construction user specifically described civil inspection/location workflows as workarounds and asked for an embedded-app solution.
+
+**Why agents fit.** Construction systems generate structured, repetitive documents and state transitions; correctness can be evaluated with invariants rather than taste.
+
+**Moltwork assets.** `ProcorePack`, `ConstructionProjectWorld`, drawing/RFI evaluator, compatibility School, MarketplaceSubmissionProcess, persistent construction-integration worker.
+
+**Economics.** Attractive if a narrow workflow saves project-manager hours or prevents expensive data errors. Unattractive if it requires deep onsite sensing/custom services per customer.
+
+Sources: https://developers.procore.com/partner ; Reddit discussion surfaced 20 Jul 2026 in r/Construction.
+
+## 2. ADP Marketplace — payroll/HR integration micro-products
+
+**What agents can sell.** Payroll auditing, provisioning, employee-data normalization, onboarding state reconciliation, HRIS-to-ERP adapters, reporting/export products, or integration observability.
+
+**Autonomous workflow.** Mine ADP/Workday integration complaints → select a repeatable schema mismatch → generate connector → synthetic workforce fixtures → Harbor checks pagination, token refresh, idempotency, onboarding state and payroll-period boundaries → package for ADP Marketplace → customer OAuth/API assignment → monitor sync drift/errors → automatically repair mappings when schemas change.
+
+**Human dependency.** Partner/Marketplace onboarding and sensitive HR-data security review are H2. Once a customer grants access, normal sync/maintenance can approach H1.
+
+**Infrastructure / frontier unlock.** On **21 Jul 2026**, ADP launched ADP Assist for API Central: natural-language API discovery/activation/troubleshooting, generated code samples and API performance visibility. This materially reduces integration discovery work.
+
+**Demand/community.** February 2026 Reddit developers described ADP’s token refresh, pagination and boilerplate as painful enough to justify a new SDK. An Aug 2026 Workday thread described ADP API onboarding as painful and highlighted real sync windows where data can diverge. Another June 2026 enterprise user discussed a $3,000 API-access fee, evidence that the buyers are economically serious.
+
+**Why agents fit.** Schema mapping, delta reconciliation, audit reporting and regression testing are ideal deterministic workloads.
+
+**Moltwork assets.** `ADPPack`, workforce-event World, schema-drift evaluator, OAuth/API scope Skill, payroll-integration School.
+
+**Economics.** Excellent where a connector replaces consulting/manual reconciliation; weaker for one-off company-specific mappings.
+
+Sources: https://mediacenter.adp.com/adp-api-central-just-got-smarter ; Reddit r/ADP 26 Feb 2026 and r/workday 3 Aug 2026.
+
+## 3. Trimble Marketplace / App Xchange — sell construction dataflows
+
+**What agents can sell.** Ready-to-use integrations between Trimble systems and accounting, estimating, BIM, workforce, field capture and project-management tools.
+
+**Autonomous workflow.** Mine contractor data-flow pain → choose source/target pair → construct App Xchange flow/API adapter → seed synthetic project/model/financial data → Harbor validates mappings, duplicate handling and change propagation → publish Marketplace listing → observe customer requests/usage → maintain compatibility.
+
+**Human dependency.** Marketplace Partner onboarding is H1-H2; implementation can be close to H0 once credentials exist.
+
+**Infrastructure.** Trimble says App Xchange is a low-code integration environment, and Marketplace is explicitly a commercialization channel. Current Trimble Connect docs modified **21 Aug 2026** expose Marketplace directly inside the browser product.
+
+**Demand.** Trimble launched Marketplace with 100+ integrations and describes access to a large qualified construction customer base. This is especially compelling because integration is itself the paid artifact, not merely a lead magnet.
+
+**Why agents fit.** Dataflow generation is highly compositional: mapping tables, retry policies, test fixtures and deployment manifests can be produced and tested automatically.
+
+**Moltwork assets.** `TrimblePack`, AppXchange Skill, cross-system mapping evaluator, ConstructionIntegrationWorld, cross-venue Procore↔Trimble worker.
+
+**Economics.** Strong if one integration can sell repeatedly; poor if every contractor requires bespoke field mapping.
+
+Sources: https://developer.trimble.com/docs/marketplace ; https://www.trimble.com/en/developer ; https://help.trimble.com/doc/trimble-connect/trimble-connect/connect-for-browser/projects/project-settings/marketplace
+
+## 4. ServiceTitan App Marketplace — certified home-services operations apps
+
+**What agents can sell.** Dispatch QA, job-closeout validation, reporting corrections, review/messaging replacements, inventory/pricebook checks, marketing attribution, technician workflow helpers.
+
+**Autonomous workflow.** Watch ServiceTitan complaints/integration sunsets → reproduce workflow → build in Integration Environment → Harbor home-services fixture with jobs/techs/invoices/messages → certification evidence → Marketplace submission → monitor failures and integration deprecations → patch.
+
+**Human dependency.** H2 because Certified Apps face formal security/reliability/performance review and partner access is curated.
+
+**Infrastructure / unlock.** ServiceTitan refreshed its App Marketplace and certification program in 2026; its April 23/June 25 documentation defines Certified Apps vs Customer-Built Apps and supported integration paths.
+
+**Demand/community.** 2026 Reddit complaints include outages, cumbersome workflows, weak permissions, high cost, and — importantly — an August 2026 report that a Podium integration was being shut down on short notice. That creates a replacement-market detector opportunity.
+
+**Why agents fit.** Field-service workflows are state machines: scheduled→dispatched→arrived→completed→invoiced. Easy to replay and evaluate.
+
+**Moltwork assets.** `ServiceTitanPack`, FSM World, integration-sunset detector, certification evaluator, persistent maintainer worker.
+
+**Economics.** Attractive for “small missing layer” products inside an expensive incumbent stack; unattractive when certification gate blocks entry before evidence of demand.
+
+Sources: https://help.servicetitan.com/docs/understand-approved-integration-paths-in-servicetitan ; https://www.servicetitan.com/blog/app-marketplace-certified-apps
+
+## 5. NetSuite SuiteApp.AI Marketplace — vertical AI ERP extensions
+
+**What agents can sell.** AR/deposit workflow fixes, inventory exceptions, vertical reconciliation, SuiteAnalytics products, AI assistants operating on NetSuite records, audit/control utilities.
+
+**Autonomous workflow.** Mine NetSuite operational pain → map records/workflows → generate SuiteApp/SuiteScript → synthetic ERP company → Harbor posts transactions and verifies GL/AR/inventory invariants → privacy/security/performance preflight → SuiteApp.AI listing → observe support/usage → patch.
+
+**Human dependency.** H2 due SuiteCloud Developer Network and Built for NetSuite validation.
+
+**Frontier unlock.** NetSuite announced **SuiteApp.AI Marketplace** in Oct 2025 and expanded AI-specific privacy/security/performance badges, explicitly positioning it as a revenue channel to **43,000+ customers**.
+
+**Demand/community.** A May 2026 NetSuite thread shows a specific unresolved accounting workflow around customer deposits vs AR aging; February 2026 posts were hiring integration specialists for multi-week projects. This is high-value boring enterprise work.
+
+**Why agents fit.** ERP regression fixtures and accounting invariants are unusually measurable.
+
+**Moltwork assets.** `NetSuitePack`, ERP ledger World, SuiteScript Skill, financial-invariant evaluator, SuiteApp certification Process.
+
+**Economics.** Excellent if an app removes recurring consultant work; poor if every deployment needs large bespoke implementation.
+
+Source: https://www.oracle.com/apac/news/announcement/sw25-netsuite-expands-partner-program-accelerate-ai-innovation-2025-10-06/
+
+## 6. Genesys AppFoundry — CX operational micro-apps
+
+**What agents can sell.** QA/evidence, routing diagnostics, agent handoff fidelity, post-call documentation, compliance workflows, niche connectors, contact-center observability.
+
+**Autonomous workflow.** Analyze CX operator pain → implement against Genesys APIs/SDKs → synthetic call/event streams → Harbor checks routing, state, event loss, handoff context and latency → AppFoundry validation → premium app/free trial → Genesys handles customer lifecycle/billing/subscriptions/global currency → telemetry-driven updates.
+
+**Human dependency.** H2: company/compliance review and Ascend/AppFoundry partnership are meaningful gates.
+
+**Infrastructure.** AppFoundry offers APIs/SDKs and premium apps with direct purchase/free trials. Genesys states **about one-third of Genesys Cloud customers use at least one AppFoundry app**, and it handles billing/subscriptions for premium apps.
+
+**Community signal.** Contact-center users in 2026 continue complaining about vendor support and oddball integration failures; the opportunity is not generic voice AI but narrow reliability/operations layers.
+
+**Why agents fit.** Event streams and routing rules can be stress-tested at high volume automatically.
+
+**Moltwork assets.** `GenesysPack`, ContactCenterWorld, handoff evaluator, call-event replay Skill, CX specialist worker.
+
+**Economics.** High contract value + native commercialization; downside is partner gate and enterprise sales cycle.
+
+Source: https://www.genesys.com/partners/appfoundry
+
+## 7. VTEX App Store — paid commerce apps with first-party billing model
+
+**What agents can sell.** Merchant back-office utilities, marketplace/channel connectors, tax/privacy/logistics helpers, catalog QA, analytics, review/notification tools.
+
+**Autonomous workflow.** Mine merchant pain → build VTEX IO app → developer account fixture → Harbor checks install/uninstall, storefront/admin behavior, webhooks and performance → configure billing model → homologation → App Store → observe installs/support → release updates.
+
+**Human dependency.** H1-H2. Seller agreement and homologation are human gates, but distribution and billing are structured afterward.
+
+**Infrastructure.** VTEX explicitly supports free or paid public apps, Commerce APIs, VTEX IO and a formal App Store billing model. Homologation evaluates business, UX, security and performance and can take up to 45 days.
+
+**Demand.** Existing App Store categories span finance/tax, logistics, marketplace channels, privacy/security, reviews and analytics. This is a mature commerce base but appears less indie-saturated than Shopify.
+
+**Why agents fit.** Commerce events/catalog records are structured and regression-friendly.
+
+**Moltwork assets.** `VTEXPack`, CommerceWorld, homologation evaluator, billing-model Skill, cross-commerce worker.
+
+**Economics.** Attractive if a narrow app repeats across many merchants; certification latency is the main negative.
+
+Sources: https://developers.vtex.com/docs/guides/vtex-app-store ; https://developers.vtex.com/docs/guides/vtex-io-documentation-submitting-your-app-in-the-vtex-app-store
+
+## 8. Mews Marketplace — hotel operations integrations
+
+**What agents can se

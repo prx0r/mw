@@ -1,0 +1,238 @@
+Subject: Agent Money Scout — 2026-08-30 16:00
+Date: Sun, 30 Aug 2026 04:24:47 -0500
+Message ID: 1a051fc5bcd20f23
+================================================================================
+
+# Agent Money Scout — 2026-08-30 16:00
+
+## Executive signal
+
+This run found three worthwhile NEW surfaces: Daydreams TaskMarket, FiatDock, and BTNOMB. The strongest actual earning queue remains AgentPact → dealwork.ai → t2000 → Taskmarket (only when EV works) → MikroTask. MoltJobs improved this hour: its public board now shows a fresh 5 USDC job posted five days ago rather than only low-value promotional work.
+
+## NEW THIS RUN
+
+### 1. Daydreams TaskMarket
+URL: https://taskmarket.dev/
+
+What the agent does: research, coding, data work, benchmark tasks, claim-style solo jobs, or competitive bounties.
+Who pays: requester funding USDC escrow.
+Verified economics: current public Taskmarket state shows 17 open tasks, 26.9K registered agents, and 2,382.947764 USDC posted volume. It supports bounty, claim, pitch, benchmark, and auction modes.
+Requirements: install the Daydreams Taskmarket skill, register the agent, use a compatible Base wallet.
+Autonomy: 10/10.
+First action: install the Taskmarket skill and score only fresh funded jobs whose submission count does not destroy expected value.
+Constraints: wallet/payment eligibility applies; do not bypass provider restrictions.
+Ease first $5: 6/10. Repeatability: 9/10.
+
+This is technically not a brand-new protocol, but its public rollout and current traction make it newly worth treating as a first-class autonomous labor market rather than just another directory.
+
+### 2. FiatDock MCP Marketplace
+URL: https://fiatdock.com/mcp-marketplace.html
+
+What the agent does: sell an MCP service/API per call.
+Who pays: other agents, directly in USDC over x402 on Base.
+Verified pricing: seller keeps 100% for first 30 days, then 99%; free listing. FiatDock explicitly states that, as of Aug 13, no external buyer had yet paid for a third-party listing, so this is distribution infrastructure rather than proven demand.
+Requirements: working MCP/HTTP service and seller wallet.
+Autonomy: 10/10.
+First action: list a service that has already earned money elsewhere; do not build specifically for FiatDock.
+Constraints: restricted jurisdictions and wallet/payment rules apply.
+Ease first $5: 3/10. Repeatability: 10/10 if demand appears.
+
+### 3. BTNOMB Bounty Board
+URL: https://bounty.btnomb.com/
+
+What the agent does: software/backend/automation builds from funded briefs.
+Who pays: bounty poster, with USDC on Base.
+Verified board: 11 open bounties, $3,000 total bounty value, 29 listings. Visible examples include an MCP server for Postgres and an AI code-review tool, each with a current lowest bid of $200. BTNOMB takes 5% on payout.
+Requirements: unlock brief ($0.10), then claim/bid; machine API available.
+Autonomy: 9/10.
+First action: inspect creation dates before paying to unlock. Most visible cards are from March/April, so treat freshness as the gating condition.
+Constraints: ordinary wallet/account eligibility applies.
+Ease first $5: 4/10 because inventory appears stale. Repeatability: 8/10 if fresh buyers return.
+
+### 4. Agent Bounties
+URL: https://agentbounties.app/
+
+What the agent does: verifier-ready code/data tasks with canonical Base-USDC settlement.
+Who pays: bounty creator.
+Verified economics: protocol docs advertise a 3 USDC daily solver-leaderboard prize and 26 USDC weekly prize, with eligibility requiring at least a 2 USDC solver reward. Historical GitHub issues show fully funded 1.99–2 USDC solver bounties.
+Requirements: Base wallet and refundable claim bond on some tasks; MCP/CLI available.
+Autonomy: 10/10.
+First action: do nothing until the ready-to-earn feed displays canonical live inventory; the public homepage currently says marketplace evidence is temporarily unavailable.
+Constraints: never treat a signature/claim/PR as payment—only canonical settlement counts.
+Ease first $5: 2/10 right now. Repeatability: 9/10 if live inventory stabilizes.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 5. AgentPact
+URL: https://agentpact.xyz/needs
+
+Current live feed shows 200 needs. High-signal examples include API automation pipeline setup at 10–25 USDC, Python code review + security review at 10–25 USDC, data analysis + visualization at 10–25 USDC, Python code review at 5–10 USDC, and multiple 5–15 USDC validation/transcription/SEO/data tasks.
+
+Agent does: Python, APIs, QA, data transforms, research, SEO audits, transcription.
+Who pays: buyer posting the Need / negotiating a deal.
+Requirements: AgentPact identity/API plus optional Base-USDC settlement.
+Autonomy: 10/10.
+First action: target the 5–25 USDC API/code/data needs and ignore the huge amount of 0–$0.10 test traffic.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 6. dealwork.ai
+URL: https://dealwork.ai/
+
+Fresh page: 2.5K workers, 156 open tasks, 264 completed, ~1.1-day typical delivery. Funds are escrowed before work. The platform still shows a concrete $80 human→AI API implementation and a $5 AI→AI contract.
+
+Agent does: code, APIs, research, analysis, transforms, documentation.
+Who pays: human or agent clients.
+Fees: 10% normally, 3% AI→AI.
+Autonomy: 9/10.
+First action: connect through skill.md and bid only where acceptance can be independently tested.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 7. t2000
+URL: https://t2000.ai/jobs
+
+Fresh state: 127 jobs open, 64 in progress, 1,220 settled, $977.63 settled USDC. Current inventory remains dominated by ecosystem/referral/payment-loop work at $0.25–$1, so raw open-job count overstates useful demand.
+
+Agent does: marketplace jobs, then can turn successful procedures into fixed services and instant APIs.
+Who pays: buyers with locked budgets.
+Fees: 5% on service settlement; API calls currently 0% marketplace fee.
+Autonomy: 10/10.
+First action: filter out bootstrapping/referral jobs and rank only external work by net EV.
+Ease first $5: 7/10. Repeatability: 10/10.
+
+### 8. Taskmarket
+URL: https://taskmarket.dev/
+
+Fresh state: 17 open tasks, 26.9K agents, 2,382.947764 USDC posted volume. Competition remains the issue: the 24.2-USDC task has 113 submissions; a 1.297426-USDC research task has 158; a 0.327-USDC board-discovery task has 167. Top earners currently show 120.776268 and 78.624908 USDC.
+
+First action: use EV = reward × P(win) − execution cost, and reject stale/expired tasks even if status says open.
+Ease first $5: 6/10. Repeatability: 9/10.
+
+### 9. MoltJobs — improved this run
+URL: https://moltjobs.io/open-jobs
+
+The live board now shows a 5 USDC job posted five days ago: turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer; it ends in five days. This is meaningfully better than the recent 2-USDC promo-only queue.
+
+Agent does: structured job-spec conversion + one legitimate buyer contact.
+Who pays: job poster via on-chain USDC escrow.
+Requirements: MoltJobs agent integration; comply with destination/community communication rules.
+Autonomy: 8/10 because outbound contact should remain bounded and non-spammy.
+First action: inspect the job details and only contact the specified buyer once through an allowed channel.
+Ease first $5: 7/10. Repeatability: 8/10.
+
+### 10. MikroTask
+URL: https://mikrotask.com/
+
+AI agents are explicitly supported. Fixed tiers are £5 / £10 / £25 / £50 and payout can be USD, USDT, or USDC after approval. AI-agent work is explicitly framed around research, drafts, and data cleanup.
+
+Agent does: repeatable digital work.
+Who pays: buyer after review.
+Autonomy: 8/10.
+First action: focus on buyer-posted work and narrow offers rather than a generic AI-agent gig.
+Constraints: verify seller/payment eligibility.
+Ease first $5: 8/10. Repeatability: 8/10.
+
+### 11. OpenJobs
+URL: https://openjobs.bot/jobs
+
+The current live job page shows multiple open 10-WAGE coding/testing jobs, including fixing Autobahn test failures, RichLog scrollbar behavior, and pygments compatibility. USDC and WAGE are supported by the platform, but the visible jobs currently use WAGE and I could not verify a USD conversion, so I do not count them as first-$5 opportunities yet.
+
+Agent does: GitHub bug fixes and tests.
+Autonomy: 10/10.
+First action: prefer USDC jobs when they appear; otherwise treat WAGE tasks as reputation/experimental work unless token value is independently established.
+Ease first $5: 4/10. Repeatability: 9/10.
+
+### 12. BotBounty.ai — downgrade
+URL: https://www.botbounty.ai/bounties
+
+The homepage advertises a $10 minimum bounty and no-signup agent API, but the live bounties page currently renders Live (0) and Completed (0). Therefore it is not an earning source this hour.
+
+First action: monitor only; no integration work until a funded bounty appears.
+Ease first $5: 1/10. Repeatability potential: 8/10.
+
+### 13. OpenPod
+URL: https://openpod.work/
+
+Still strategically interesting for persistent software teams: agents can apply to projects, take tickets, use project knowledge, work with GitHub and submit PRs. Current web fetch returned an internal error, so I could not re-verify fresh funded project inventory this run.
+
+First action: keep in scanner, but do not count it in the hot queue until fresh funded work is visible.
+Ease first $5: 3/10 currently. Repeatability potential: 9/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. Automation outcome watchdog
+URL: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+Fresh Aug 29 problem: n8n can show success while the actual message/business action never happened. Dead tokens, rejected templates and dead webhooks can remain silent.
+
+Offer: expected event + deadline + downstream receipt/state → HEALTHY / FAILED / SILENT.
+Customer: n8n/Make/Zapier agencies.
+MVP: external canary expectation store + one downstream receipt verifier.
+How to charge: fixed setup/audit, then recurring monitoring.
+Ease first $5: 9/10. Repeatability: 10/10.
+
+### 15. n8n ↔ FastAPI boundary audit
+URL: https://www.reddit.com/r/n8n/comments/1w2brse/i_ended_up_moving_part_of_my_n8n_workflow_into/
+
+Fresh Aug 30 signal: a builder moved stateful application logic out of n8n into FastAPI while leaving orchestration in n8n. This maps to a sellable architecture audit.
+
+Offer: workflow export + requirements → classify each component as app logic vs orchestration → produce migration plan and starter FastAPI service.
+Customer: n8n builders whose workflows have grown into stateful apps.
+MVP: fixed-price 'n8n architecture audit'.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 16. WhatsApp automation reliability specialist
+URL: https://www.reddit.com/r/n8n/comments/1w0r31n/everything_that_broke_while_i_was_building_a/
+
+Fresh Aug 28 pain: account-level Meta restrictions and expiring access tokens can look like workflow bugs or fail without obvious alerts.
+
+Offer: authorized account/token/webhook/delivery health checks + human escalation.
+Customer: legitimate WhatsApp Business automation operators.
+MVP: token-expiry check + webhook heartbeat + delivery receipt monitor.
+Keep account changes and sensitive approvals human-controlled.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 17. Boring reliable automation maintenance
+URL: https://www.reddit.com/r/AI_Agents/comments/1s7lcqk/the_best_automation_i_ever_built_is_one_my_client/
+
+Pattern: simple inbox→tracker→notification workflow reportedly ran seven months unattended, while a more complex agent system needed frequent babysitting.
+
+Offer: harden one repetitive business workflow for reliability rather than selling 'AI agent magic'.
+Customer: SMBs and agencies.
+MVP: one workflow, idempotency, retries, receipts, monitoring, runbook.
+Ease first $5: 8/10. Repeatability: 10/10.
+
+## FILTERED / NOT ACTIONABLE
+
+Proxies.sx has $50–$200 developer bounties and 14 listed bounties totaling $1,150, but parts of its current bounty board explicitly involve account creation/warming and anti-detection workflows. Because this scout excludes deceptive/ToS-risk work, I am not putting the platform in the actionable queue. Safe-looking data-monitoring bounties would still need target-site permission/ToS verification before use.
+
+upClaw currently shows 0 open bounties, $0 rewards and 0 registered agents, so it is not useful today.
+
+FiatDock is honest that third-party sellers have not yet received an external paid call; that makes it a distribution experiment, not an income source.
+
+Agent Bounties currently cannot display live canonical marketplace inventory, so advertised leaderboard prizes do not make it immediately actionable.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Execute on AgentPact first
+The highest-quality current needs are already in the exact specialist areas an autonomous coding worker can handle: API automation, Python code review/security review, data analysis, and 5–15 USDC validation tasks. Ignore the large amount of test traffic below $1.
+
+Current hot queue:
+AgentPact → dealwork.ai → t2000 filtered for external work → Taskmarket only when EV is good → MikroTask → MoltJobs 5-USDC job.
+
+### 2. Build `/verify-pr` + `/api-sanity` as one worker
+One specialist can cover AgentPact's 5–25 USDC code/API needs, dealwork coding tasks, OpenJobs issue fixes, and eventually sell as a fixed service/API.
+
+Workflow:
+repo/PR + issue → reproduce → changed-surface map → tests → root cause → evidence → PASS / FAIL / REVIEW.
+
+### 3. Build `/automation-health` as the recurring product
+Fresh Reddit demand keeps validating the same pain: a workflow being 'green' does not prove the business outcome happened.
+
+MVP:
+expected event + deadline + downstream receipt/state + cost → HEALTHY / FAILED / SILENT / COST ANOMALY.
+
+Sell it first as a fixed audit/setup, then recurring monitoring. Only after it earns real money should it be cross-listed to x402/MCP marketplaces such as FiatDock.
+
+## Core rule
+
+Count only settled/withdrawn real-money value as earnings. Do not count testnet funds, internal credits, token values without a verifiable market value, illustrative cards, platform GMV claims, stale jobs, or merely claimed/submitted work.

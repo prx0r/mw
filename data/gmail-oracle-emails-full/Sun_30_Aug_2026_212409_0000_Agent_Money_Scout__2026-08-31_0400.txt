@@ -1,0 +1,175 @@
+Subject: Agent Money Scout — 2026-08-31 04:00
+Date: Sun, 30 Aug 2026 21:24:09 +0000
+Message ID: 1a0548ef5f2b5380
+================================================================================
+
+Agent Money Scout — 2026-08-31 04:00
+
+NEW THIS RUN
+
+1) Clawlancer — https://www.clawlancer.ai/
+What it is: agent-native bounty marketplace on Base. The primary site says agents can register, browse bounty listings, claim work, submit delivery, and receive USDC automatically; fees are advertised at 1–2.5%. It also says a “welcome bounty” is waiting after registration, but does not publish a verified payout amount on the page I checked.
+What the agent does: research, coding, writing, analysis, bounded digital tasks.
+Who pays: bounty poster through escrow.
+Payout: job-specific USDC; no payout amount for the welcome bounty verified.
+Tools: REST API or npx clawlancer-mcp; Base wallet/on-chain identity generated during onboarding.
+Autonomy: 10/10.
+First action: query GET /api/listings?listing_type=BOUNTY and only claim funded, non-zero bounties with objective acceptance criteria.
+Constraints: follow wallet/account/age/geography rules; do not bypass any verification.
+Ease first $5: 7/10. Repeatability: 9/10.
+
+2) AgentBazaar — https://www.agentbazaar.dev/
+What it is: Solana agent marketplace with REST, MCP, SDK, A2A, Telegram and dashboard interfaces. Sellers keep 97%; platform fee is 3%.
+What the agent does: callable specialist services such as code audit, docs, testing, summarization, data/QA.
+Who pays: other agents/humans hiring a registered service.
+Payout/pricing: seller-defined; examples on the primary page include code auditor $0.05, doc writer $0.03 and test generation $0.04.
+Tools: webhook/WebSocket agent, Solana wallet, MCP/SDK optional.
+Autonomy: 10/10.
+Critical liquidity check: its primary Jobs table currently says “No jobs found.”
+First action: do not build something specifically for AgentBazaar. Cross-list a proven endpoint and monitor for first organic paid job.
+Ease: 2/10 today. Repeatability: 10/10 if demand arrives.
+
+3) WORQ — https://worq.dev/
+What it is: Base-USDC agent-to-agent jobs with recursive subcontracting, 95% to worker, 2.5% protocol, 2.5% treasury/grants.
+What the agent does: code, research, design, analysis and digital work.
+Who pays: hiring agent.
+Payout: job-specific; minimum job budget advertised at $1 USDC.
+Tools: SDK, MCP, CLI, OpenAPI, compatible wallet.
+Autonomy: 10/10.
+Liquidity: primary page currently shows 0 agents active; no real job volume was verifiable this run.
+First action: monitor only; do not spend integration effort until funded jobs appear.
+Ease: 1/10. Repeatability potential: 9/10.
+
+4) BotHire — https://www.bothire.io/
+What it is: machine-first Base marketplace with ownerless escrow and autonomous negotiation.
+What the agent does: machine-to-machine specialist work.
+Who pays: hiring bot.
+Payout: USDC on Base.
+Tools: agent protocol + Base wallet.
+Autonomy: 10/10.
+Liquidity: primary page currently shows 0 bots registered, $0 settled and 0 hires completed.
+First action: skip for earnings today; add to scanner only.
+Ease: 0/10. Repeatability potential: 8/10.
+
+5) Augmi Agent Marketplace — https://augmi.world/blog/augmi-marketplace-tutorial
+What it is: ERC-8004 agent marketplace on Base where agents can browse/claim bounties and earn USDC.
+What the agent does: bounty-defined digital work.
+Who pays: bounty poster.
+Payout: bounty-specific USDC; this run did not verify a high-signal live bounty amount.
+Tools: Augmi account/deployed agent + Base-compatible wallet.
+Autonomy: 9/10.
+First action: inspect the live bounty board and only proceed when a current funded bounty is visible.
+Ease: 3/10. Repeatability: 8/10 potential.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+6) AgentPact — https://agentpact.xyz/needs
+Current board: 200 Needs. Fresh visible tasks include Python code review 5–10 USDC; API automation pipeline 10–25; Python security/code review 10–25; web scraping automation 10–25; data analysis + visualization 10–25; infographic/chart 5–10; technical SEO 5; Python/data execution 5; OHLCV validation 5–15; transcription 7–14; BTC analysis 10–20; technical summary 5–25; BTC data compilation 5–25. The board also contains a huge amount of sub-dollar test traffic.
+Agent work: Python/API QA, security review, data analysis, scraping where permitted, transcription, SEO analysis.
+Who pays: Need/deal buyer.
+Autonomy: 10/10.
+First action: hard-filter reward >=5 USDC, fresh timestamp, objective acceptance criteria, then target API automation/security/data.
+Ease: 9/10. Repeatability: 9/10.
+
+7) dealwork.ai — https://dealwork.ai/
+Fresh primary metrics: 2.5K workers, 264 completed tasks, 158 open tasks, ~1.1-day typical delivery. Public examples include an $80 production API delivered by an AI agent with tests and a $5 AI-to-AI CSV-formatting task. Funds are escrowed before work. Standard fee 10%; AI-to-AI 3%.
+Agent work: code, APIs, research, transformations, documentation.
+Who pays: humans or agents posting tasks.
+Autonomy: 9/10.
+First action: ingest all 158 open tasks and bid only where acceptance can be reproduced before submission.
+Ease: 9/10. Repeatability: 9/10.
+
+8) OpenAnt — https://openant.ai/
+Fresh primary metrics: 12.8K total tasks, 1.2K open, 420 in progress, 11.3K completed. Visible remote example: analyze SKU sales and output five insights + chart. Payments settle in USDC on Solana/Base.
+Agent work: remote analysis/data/digital tasks.
+Who pays: task poster via escrow.
+Autonomy: 10/10 for remote digital tasks.
+First action: filter remote + digital + explicit reward + objective proof. Exclude physical/photo/GPS jobs.
+Ease: 8/10. Repeatability: 9/10.
+
+9) MoltJobs — https://moltjobs.io/open-jobs
+Current concrete job: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer; about five days remain. All listed jobs are described as funded in on-chain USDC escrow.
+Agent work: research/specification/outreach for this task.
+Who pays: poster.
+Tools: REST/MCP/CLI worker.
+Autonomy: 8/10.
+First action: inspect the 5-USDC job; any contact must be individual, relevant, permitted and non-spammy.
+Ease: 7/10. Repeatability: 8/10.
+
+10) Taskmarket — https://taskmarket.dev/
+Fresh state: 16 open tasks, 26.9K registered agents, 2,382.947764 USDC posted volume. Current visible competition is harsh: a 24.2-USDC task has 134 submissions; a 1.297426-USDC task has 171; a 0.327-USDC task has 182.
+Agent work: research, data, coding, artifacts depending on task.
+Who pays: requester from escrow.
+Autonomy: 10/10.
+First action: calculate EV = reward × P(win) − execution cost and avoid crowded winner-take-all bounties unless you have an edge.
+Ease: 5/10. Repeatability: 9/10.
+
+11) t2000 — https://t2000.ai/jobs
+Fresh state: 76 open, 75 in progress, 1,266 settled, $988.80 settled USDC. Current visible inventory remains heavy on $0.10–$1 ecosystem/referral/job-loop tasks.
+Agent work: jobs, fixed services and API calls.
+Who pays: marketplace buyer.
+Economics: services 5% on settlement; API calls 0% marketplace fee.
+First action: reject bootstrap/referral loops unless they create genuine reusable capability/reputation. Focus on externally useful jobs.
+Ease today: 5/10. Repeatability architecture: 10/10.
+
+12) gigs.sh — https://gigs.sh/
+Use as discovery infrastructure, not source-of-truth. It is valuable for finding obscure agent-job and bounty platforms, but every listing should be re-verified on the underlying primary source before execution.
+First action: feed newly discovered domains into your scanner, dedupe against prior-run history, then validate live liquidity.
+Ease direct income: 1/10. Repeatability scouting: 10/10.
+
+REDDIT DEMAND SIGNALS
+
+13) Weekly SEO traffic-loss / internal-link triage
+Thread: https://www.reddit.com/r/WebsiteSEO/comments/1vz54h5/what_is_the_most_repetitive_part_of_your_seo/
+Current users name SEO reporting, finding pages losing traffic, internal linking on large old sites, and backlink qualification as repetitive weekly work. They commonly automate discovery/filtering but still want human review before changes/outreach.
+Customer: SEO agencies / multi-site operators.
+Agent workflow: authorized GSC/site crawl data -> winners/losers -> internal-link candidates -> relevance/anchor checks -> prioritized review queue.
+Acquisition: agencies, referrals, communities where offers are permitted.
+Charge: setup + recurring weekly report.
+MVP: one site, weekly traffic-loss + internal-link diagnostic.
+Ease: 9/10. Repeatability: 10/10.
+
+14) Freelancer admin worker
+Thread: https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+Recurring pain: proposals, contracts, invoice reminders, onboarding, weekly updates and testimonial requests.
+Customer: freelancers/small agencies.
+Agent workflow: authorized project/client data -> draft/status workflow -> human review for consequential outbound content -> send/update.
+MVP: invoice reminder + weekly client status update, not a giant suite.
+Charge: fixed setup + monthly support.
+Ease: 8/10. Repeatability: 9/10.
+
+15) “Find the one repetitive task eating 3 hours/day” automation audit
+Thread: https://www.reddit.com/r/n8n/comments/1r9q0kd/i_have_built_n8n_automations_for_a_dozen_startups/
+A practitioner doing paid automation work for startups says the highest-value work is finding the single repetitive process quietly consuming hours, and warns that giant 15+ node workflows become debugging nightmares.
+Customer: startups/SMBs.
+Agent workflow: process inventory + logs + interviews/notes -> frequency × time × failure cost -> top automation candidate -> small modular workflow.
+MVP: one workflow audit with quantified ROI and a prototype.
+Ease: 9/10. Repeatability: 10/10.
+
+16) Support deflection with evidence + human escalation
+Thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/
+A hardware business reports automating roughly 70–80% of repetitive support emails with a knowledge-grounded assistant while leaving hard cases to humans.
+Customer: hardware/e-commerce/SaaS support teams.
+Agent workflow: question/photo + approved KB -> grounded answer -> unsupported-claim check -> confidence gate -> human exception.
+MVP: top 20 FAQs + escalation queue.
+Ease: 8/10. Repeatability: 10/10.
+
+17) Internal-link / backlink qualification assistant
+Same current SEO thread shows two distinct repetitive jobs: finding relevant internal-link opportunities on large sites and screening backlink prospects for relevance/traffic/link quality before human review.
+Customer: SEO agencies.
+Agent workflow: crawl/search data -> candidate generation -> scoring -> duplicate/anchor checks -> review queue. Keep final outreach/manual site changes human-approved.
+MVP: CSV of 20 ranked internal-link opportunities for one site.
+Ease: 8/10. Repeatability: 10/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) AgentPact first. The live 10–25 USDC API automation, Python security/code-review, scraping and data-analysis tasks remain the cleanest path to first real money. Ignore test/penny traffic.
+
+2) Add Clawlancer cheaply to the scanner. It has the right autonomous loop and a live bounty API. Query funded listings first; do not overbuild an integration until you see non-zero real bounties and settlement.
+
+3) Standardize one specialist worker around /verify-pr + /api-sanity + /data-quality. That maps directly to current AgentPact jobs, dealwork software/data tasks, and the recurring Reddit demand for reliable automation. Once the worker earns directly, cross-list the proven capability on x402/API marketplaces rather than guessing what buyers want.
+
+Current routing priority:
+AgentPact -> dealwork.ai -> OpenAnt remote digital -> Clawlancer funded bounties -> MoltJobs -> selective Taskmarket -> externally useful t2000 work.
+
+Accounting rule: only settled or genuinely withdrawable money counts as earnings. Marketplace GMV, illustrative examples, test funds, unpriced tokens, internal credits and submitted-but-unpaid work count as $0.

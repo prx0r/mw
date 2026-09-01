@@ -1,0 +1,201 @@
+Subject: Agent Money Scout — 2026-08-30 02:00
+Date: Sat, 29 Aug 2026 12:23:33 -0700
+Message ID: 1a04efa2f075858e
+================================================================================
+
+Agent Money Scout — 2026-08-30 02:00
+
+NEW THIS RUN
+
+1) req402 — x402 API monetization with visible request volume
+URL: https://www.req402.com/
+What the agent does: exposes a narrow API/tool as a pay-per-request x402 service. Good examples are verified data extraction, API QA, release/package health, workflow-health checks, or source-backed research transforms.
+Who pays: autonomous agents/developers consuming the API.
+Verified pricing/evidence: the primary site currently shows a live weather API at $0.002/request with 120,485 requests. That is platform-displayed usage, not independently audited provider income, but it is stronger demand evidence than a directory with zero calls.
+Requirements: HTTP API, req402 middleware, Base-compatible USDC receiving address, permission to sell/resell any underlying data or API output.
+Autonomy: 10/10 after deployment.
+Exact first action: wrap one already-working endpoint rather than building a new product specifically for req402; publish at a low probe price and measure external paid calls.
+Constraints: use only data/services you are authorized to monetize; comply with any wallet/account eligibility rules. I did not verify an explicit age clause in this scan.
+Ease to first $5: 6/10. Repeatability: 10/10.
+
+2) IndieHash — no-platform-cut paid agent/API market on Solana
+URL: https://www.indiehash.com/
+What the agent does: lists an agent, paid API, research output, or gated content; humans or agents call it via x402.
+Who pays: humans or autonomous agents.
+Verified economics: IndieHash says every call pays USDC directly to the provider wallet with no platform cut or payout cycle. It exposes run counts and transaction history per agent, although I did not find a trustworthy aggregate buyer-volume figure in this run.
+Requirements: working endpoint or gated digital output, Solana wallet, lawful rights to the content/data.
+Autonomy: 10/10.
+Exact first action: list an existing narrow capability and use the marketplace’s run count to test demand before investing further.
+Eligibility: the currently indexed IndieHash terms say users must be at least 13, but those terms date to 2024 and describe an older educational-content product; confirm the current agent-market terms before relying on that clause.
+Ease: 5/10. Repeatability: 10/10.
+
+3) Atelier — live agent-services + bounty + x402 marketplace
+URLs: https://useatelier.ai/ and https://useatelier.ai/docs
+What the agent does: sells fixed-price or subscription services such as code review, SEO audit, research, automation, analytics, image/video production, or other bounded outcomes; agents can also claim bounties.
+Who pays: human clients or other agents.
+Verified economics: official docs say agents keep 90% of completed orders and the platform takes 10%; settlement is USDC on Solana or Base. The current site says median deliverables run under $10, but its live-stat counters were not rendering reliably in the crawl, so I am not claiming buyer count or GMV.
+Requirements: register an agent and expose the four required endpoints/profile-service execution flow, or use its SDK/MCP.
+Autonomy: 9/10.
+Exact first action: list one outcome-oriented service already proven elsewhere, e.g. API QA or workflow-health audit. Do not engage with unrelated speculative/trading features.
+Constraints: normal account/wallet rules apply; verify current age/geography terms before onboarding.
+Ease: 5/10. Repeatability: 9/10.
+
+4) Wenrwa / HiveOp — GitHub-native Solana bounty infrastructure
+URLs: https://www.wenrwa.com/ and https://hiveop.io/
+What the agent does: reads real GitHub repos, bids on USDC bounties, proposes diffs, writes tests, and ships PRs. Wenrwa also has a general agent marketplace with DAG task dependencies.
+Who pays: bounty posters/project owners.
+Verified economics: official Wenrwa material confirms USDC rewards and on-chain escrow, plus TypeScript/Python SDKs, MCP and CLI. I could not verify enough open funded bounty inventory to attach a payout range today.
+Requirements: GitHub/code agent, Solana-compatible settlement, SDK/API access.
+Autonomy: 9/10.
+Exact first action: query the live bounty API and only integrate further if a funded coding task matches an existing worker capability.
+Constraints: comply with current account/wallet eligibility; do not perform unauthorized repository/security work.
+Ease: 3/10 today. Repeatability: 9/10 if liquidity is present.
+
+5) MarketplaceForAIAgents — machine-paid API storefront on Base
+URL: https://marketplaceforaiagents.com/
+What the agent does: sells per-call APIs to other agents over x402.
+Who pays: agents/developers.
+Verified economics: primary site is live on Base mainnet and shows a YouTube transcript endpoint at $0.005/call after 3 free probe calls. Seller onboarding is described as opening as initial listings prove demand, so this is not yet as frictionless as req402/IndieHash.
+Requirements: HTTP API, x402 compatibility, Base-USDC receiving address.
+Autonomy: 10/10.
+Exact first action: watch seller onboarding and prepare one proven endpoint; do not build specifically for the marketplace until external demand appears.
+Constraints: only monetize data/content in ways permitted by source-platform and copyright terms.
+Ease: 3/10. Repeatability: 9/10.
+
+6) AgentsMarketplace on X Layer
+URL: https://www.agentsmarketplace.app/
+What the agent does: registers an endpoint with capabilities and pricing; consumers pay via x402 in USDC/USDT/USDG and receive results in real time.
+Who pays: agents/users calling the service.
+Verified economics: primary site confirms X Layer mainnet, zero-gas x402 settlement and configurable service pricing. No trustworthy provider-income or buyer-volume figure was found this run.
+Requirements: endpoint URL, wallet, agent registration.
+Autonomy: 10/10.
+Exact first action: cross-list an existing API only if onboarding is free/near-free; track paid calls before adding custom work.
+Constraints: account/payment eligibility and lawful API/data usage.
+Ease: 3/10. Repeatability: 8/10.
+
+7) Vibes-Coded — skill/API + affiliate marketplace
+URL: https://vibes-coded.com/
+What the agent does: sells skills or x402 pay-per-call APIs; registered agents can also earn referral share when a linked listing/API sells.
+Who pays: buyers of the skill/API.
+Verified payout: USDC/Solana x402 is advertised, but I found no reliable seller-income or demand volume in this run, so no revenue claim.
+Requirements: skill or API, marketplace account/wallet for payouts.
+Autonomy: 9/10.
+Exact first action: cross-list one proven capability; do not use spammy affiliate distribution.
+Constraints: referrals must be transparent and comply with destination-community/platform rules; verify current age/account eligibility.
+Ease: 3/10. Repeatability: 8/10.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+8) Taskmarket
+URL: https://taskmarket.dev/
+Current evidence: 19 open tasks, 26.7K agents, and 2,380.714419 USDC posted/funded volume. A 24.2-USDC bounty currently shows 68 submissions.
+What the agent does: research, coding, data work, visualization and structured artifacts.
+Who pays: escrow-funded requester.
+Requirements: Taskmarket-compatible agent/wallet.
+Autonomy: 10/10.
+Exact first action: compute net reward × probability of winning before spending tokens; avoid crowded low-EV races.
+Ease: 8/10. Repeatability: 9/10.
+
+9) dealwork.ai
+URL: https://dealwork.ai/
+Current evidence: 2.5K marketplace workers, 264 tasks completed, 156 open tasks, ~1.1-day median hire-to-delivery. Public example: $80 human-to-AI API job. Fees are 10% normally and 3% AI-to-AI.
+What the agent does: coding, research, transformations, documentation, structured data.
+Who pays: humans or agents funding escrow.
+Requirements: connect through skill.md/API and have a responsible eligible human/legal owner where required by the terms.
+Autonomy: 9/10.
+Exact first action: poll jobs and bid only on tasks whose acceptance criteria can be independently reproduced/tested.
+Ease: 8/10. Repeatability: 9/10.
+
+10) t2000
+URL: https://t2000.ai/
+Current evidence: continues to expose public settled activity and supports open jobs, fixed services, and paid APIs. Services charge 5% on settlement; API calls currently charge 0% marketplace fee.
+What the agent does: claim jobs or sell repeatable services/APIs.
+Who pays: job posters and API customers.
+Requirements: t2000 Passport/wallet and eligible account setup.
+Autonomy: 9/10.
+Exact first action: use small jobs only to establish integration/reputation, then target externally useful higher-value work/services.
+Ease: 7/10. Repeatability: 9/10.
+
+11) WorkProtocol
+URL: https://workprotocol.ai/
+Current evidence: 734 agents, 35 jobs posted and 1,325 USDC settled on the current public page; jobs use Base-USDC escrow. Detailed official material gives a $50 minimum job budget. Inventory is much thinner than Taskmarket/dealwork.
+What the agent does: bug fixes/features, code review, ETL, research and structured work.
+Who pays: requester funding escrow.
+Requirements: agent registration/API/MCP; appropriate wallet/account eligibility.
+Autonomy: 9/10.
+Exact first action: subscribe to its feed and execute only when a task’s acceptance tests are reproducible.
+Ease: 4/10 currently. Repeatability: 9/10.
+
+12) MoltJobs
+URL: https://moltjobs.io/open-jobs
+Current evidence: four recent 2-USDC jobs are visible, but all are publication/promotional work. The platform itself explicitly describes MoltJobs as new/small with very few completed jobs. Base-USDC escrow, 10 free bids/month and 5% success fee remain active.
+What the agent does: can technically discover, bid, deliver and settle over API/CLI/MCP.
+Who pays: job poster.
+Requirements: API key/agent; some jobs require verified Google account and destination-account history.
+Autonomy: 9/10.
+Exact first action: keep polling for code/research/data work; skip the current public-post tasks unless all account, disclosure and community rules are legitimately satisfied.
+Ease currently: 3/10. Repeatability: 8/10.
+
+13) Clawlancer
+URL: https://clawlancer.ai/
+Current evidence: API-first Base-USDC bounty loop remains live; platform advertises 1–2.5% fees and automatic ERC-8004 identity. Most recently observed board inventory was dominated by penny-level seed tasks plus occasional higher-value external work.
+What the agent does: coding, research, writing, analysis.
+Who pays: bounty poster.
+Requirements: MCP/REST integration and Base wallet.
+Autonomy: 10/10.
+Exact first action: ignore cent-level tasks except for integration testing and alert only on worthwhile externally funded listings.
+Ease: 5/10. Repeatability: 8/10.
+
+14) AgentHire
+URL: https://www.agenthire.app/
+Current platform-reported figures: 500+ active agents, 10K+ jobs completed and $50K+ volume processed. Advertised capability floors include code review from $0.05, translation from $0.02 and data scraping from $0.03.
+What the agent does: sells task-level capabilities through x402 on Solana.
+Who pays: humans/agents.
+Requirements: REST/SDK integration and eligible wallet/account.
+Autonomy: 10/10.
+Exact first action: register only an existing narrow capability and independently measure external paid demand; treat aggregate figures as platform claims.
+Ease: 6/10. Repeatability: 9/10.
+
+15) Agrenting
+URL: https://agrenting.com/
+Current evidence: marketplace still says $0 monthly fees and 95% provider share on completed task revenue, with OpenClaw/CoPaw/NanoClaw/ZeroClaw/Hermes/custom-agent support and stablecoin settlement. Visible service cards remain illustrative, not proof of liquidity.
+What the agent does: receives and completes escrow-funded tasks or sells repeatable templates.
+Who pays: hirers.
+Requirements: REST/WebSocket provider integration and eligible payment setup.
+Autonomy: 9/10.
+Exact first action: cross-list an existing worker; invest no bespoke engineering until an external paid task arrives.
+Ease: 4/10. Repeatability: 9/10 if liquidity develops.
+
+REDDIT DEMAND SIGNALS
+
+16) Automation outcome monitoring / Automation Health
+Fresh/recent threads: https://www.reddit.com/r/n8n/comments/1vlfoe1/how_are_you_monitoring_n8n_workflows_in_production/ and https://www.reddit.com/r/n8n/comments/1usj4g7/how_do_you_monitor_n8n_workflows_in_production/
+Pattern: operators report workflows that execute successfully but return bad/empty output, webhooks that stop receiving events, upstream API behavior changes, downstream systems that stop receiving data, and workflows going quiet without errors. Another self-hosted operator reports losing three days of leads after webhook URLs silently changed on restart.
+Customer: automation agencies and companies with production n8n/Make/Zapier workflows.
+Workflow: expected event + actual execution + downstream state/receipt + timing/cost baseline -> missing/late/duplicate/malformed anomaly -> evidence-rich alert.
+Acquisition: automation consultants and existing workflow operators; avoid unsolicited spam.
+Charge: setup + recurring monitoring. No universal price is invented here.
+MVP: monitor one workflow family with external heartbeat and downstream receipt verification.
+Ease: 8/10. Repeatability: 10/10.
+
+17) QA bug investigator / PR verifier
+Fresh thread: https://www.reddit.com/r/QualityAssurance/comments/1vzso59/qa_roles_has_changed/
+Pattern: current QA discussion says one QA/SDET increasingly orchestrates agents rather than manually writing every script. A practitioner describes a predefined bug-investigator agent finding root cause, after which the dev lead asked whether it could implement the fix as well.
+Customer: AI-heavy software teams/agencies.
+Workflow: issue/PR + requirements -> reproduce -> changed-surface analysis -> targeted tests -> root-cause isolation -> evidence packet -> optional patch -> human approval.
+Where to acquire: software agencies, GitHub-native communities, existing bounty markets.
+MVP: /investigate-bug or /verify-pr returning reproducible evidence and PASS/FAIL/REVIEW.
+Ease: 8/10. Repeatability: 10/10.
+
+18) Production n8n hardener
+Evidence thread: https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/
+Pattern: a production operator serving six paying clients reports queue contention, 11GB execution databases, webhook URL rotation causing lost leads, and encryption-key recovery risk. These are operational failures businesses will pay to avoid.
+Customer: automation agencies/self-hosted n8n operators.
+Workflow: workflow export + deployment config + logs -> queue/concurrency audit -> retention/database audit -> webhook/credential checks -> failure scenarios -> prioritized fixes/runbook.
+MVP: one-command production-readiness report for an authorized n8n instance/export.
+Ease: 7/10. Repeatability: 9/10.
+
+19) Accounting/document follow-up worker
+Evidence pattern: recent automation discussions repeatedly center on document chasing, invoice follow-ups, routine client questions, missing-document tracking and status synchronization.
+Customer: bookkeeping/accounting firms.
+Workflow: authorized client r

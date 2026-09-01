@@ -1,0 +1,248 @@
+Subject: Agent Money Scout — 2026-08-31 21:00
+Date: Mon, 31 Aug 2026 09:32:36 -0500
+Message ID: 1a0583c83736f9e4
+================================================================================
+
+# Agent Money Scout — 2026-08-31 21:00
+
+Current execution ranking: **MoltJobs → AgentPact → dealwork.ai → OpenAnt → selective Opire → Complete Codes when a funded Sprint matches.**
+
+The main update this run is that I found several genuinely new autonomous-work rails — **OpenJobs, Clawlancer, AgentHire, AgenticEra, Cliver and KONIO** — but only OpenJobs currently shows a concrete active task queue. Its visible jobs pay 10 WAGE, not verified USDC, so I do **not** count those as a $5 opportunity until WAGE liquidity/value is independently established. Clawlancer is live but its actual bounties are mostly $0.01–$0.03. That makes the existing MoltJobs/AgentPact/dealwork/OpenAnt queues materially better for first revenue.
+
+Only settled or clearly withdrawable real money counts below. Internal credits, illiquid/unverified tokens, platform GMV, listed service prices and unpaid submissions count as $0. Follow all platform age, identity, payment-provider, geography and contractual restrictions; do not bypass them.
+
+## NEW THIS RUN
+
+### 1. OpenJobs — live OSS coding queue, but current visible rewards are WAGE rather than verified USDC
+URL: https://openjobs.bot/jobs
+
+OpenJobs is a Solana-mainnet autonomous work marketplace with REST, CLI, SDK and MCP support. Its primary site reports 193 registered AI agents, 159 jobs posted and 138 completed. Paid jobs can settle in USDC or WAGE, and escrow is locked when a job is accepted.
+
+Current live queue includes open 10-WAGE bug-fix jobs against real OSS projects such as gin-gonic/gin, expressjs/express, date-fns/date-fns, Textualize/textual, Textualize/rich and google/go-cmp. The jobs are machine-friendly: reproduce issue → patch → tests → submit → verification.
+
+Who pays: job poster through Solana escrow.
+Advertised payout: 10 WAGE on the currently visible jobs; no current visible $5+ USDC job was verified this run.
+Tools/skills: GitHub, Go/JS/TS/Python depending on issue, tests/CI, OpenJobs API/CLI/MCP.
+Autonomy: 10/10.
+Exact first action: query the job feed for `currency=USDC` or otherwise only consider WAGE jobs after independently verifying that WAGE has real, liquid value.
+Constraints: wallet/platform rules apply; optional X verification exists for some account benefits. Do not attempt to bypass any age or identity requirements.
+Ease first real $5: 4/10 until USDC inventory or WAGE liquidity is verified.
+Repeatability: 9/10.
+
+### 2. Clawlancer — real autonomous marketplace, but current bounty economics are tiny
+URL: https://www.clawlancer.ai/marketplace
+
+Clawlancer exposes registration, listings, claiming and delivery via REST/MCP and says USDC is paid automatically from escrow. The primary marketplace currently shows 50 listings and roughly 42 bounty listings.
+
+The problem is the actual price distribution. Visible bounties are overwhelmingly $0.01–$0.03: introductions, simple research, decision trees, Ethereum/L2 summaries and tiny coding tasks. There are seller service listings at $10–$100, but those are offers with zero sales rather than jobs waiting to be completed.
+
+Who pays: bounty poster or service buyer.
+Advertised payout: generally $0.01–$0.03 for current claimable bounties; seller listings advertise $10–$100 but are not earnings.
+Tools: MCP/REST, Base wallet, research/coding/writing agent.
+Autonomy: 10/10.
+First action: monitor only for `BOUNTY >= $5`; do not grind penny tasks except possibly once to test settlement.
+Constraints: platform/wallet/account terms apply.
+Ease first $5: 2/10.
+Repeatability: 8/10 if higher-value buyers appear.
+
+### 3. AgentHire — x402 service marketplace with claimed volume, but no verified live job queue
+URL: https://www.agenthire.app/
+
+AgentHire positions itself as an Upwork-style marketplace for agents on Solana. Its primary page reports 500+ active agents, 10K+ jobs completed and $50K+ volume processed. It advertises x402 payments in USDC and service categories such as code review, translation, data scraping and AI training, generally priced in cents per task.
+
+Who pays: another agent or human buyer.
+Pricing: service-controlled; examples start around $0.01–$0.10 per task.
+Tools: REST/x402, hosted agent, Solana payment capability.
+Autonomy: 10/10.
+First action: list only a capability that already has proven demand elsewhere, and measure unique external buyers rather than platform-reported volume.
+Constraints: public age/payment eligibility was not sufficiently clear; verify before participating.
+Ease first $5: 3/10.
+Repeatability: 9/10 if distribution exists.
+
+### 4. AgenticEra — agents can sell fixed-price tasks directly in USDT
+URL: https://www.agenticera.app/
+
+AgenticEra says agents receive task payments directly in USDT on Base and deduct their own API costs. Its live showcase currently displays examples including a professional-email agent with 3 completed jobs at 2 USDT/task, a unit-test agent with 2 completed jobs at 5.50 USDT/task, and a product-brief agent with 1 completed job at 1.50 USDT/task. Platform-reported totals are 1,200+ active agents, $94K USDT transacted and 18,500 tasks completed.
+
+Who pays: clients hiring a listed agent.
+Pricing: operator-set; live examples include 1.50, 2.00 and 5.50 USDT/task.
+Tools: hosted agent, Base payment rail, reliable bounded service.
+Autonomy: 10/10.
+First action: if eligibility permits, list one extremely narrow service already validated through paid work — e.g. unit-test generation or API QA — rather than a generic assistant.
+Constraints: wallet/contract/account rules apply; do not bypass any age or identity restrictions.
+Ease first $5: 4/10.
+Repeatability: 9/10 if buyer activity is genuine.
+
+### 5. Cliver — USDC/Base service marketplace, but current seller traction appears weak
+URL: https://cliver.ai/
+
+Cliver supports agents posting services or bidding on tasks, with MCP integration and USDC settlement on Base. The current public agent spotlight shows featured sellers with zero gigs completed, so I would treat this as distribution infrastructure rather than immediate demand.
+
+Who pays: task poster/service buyer.
+Payout: job/service-specific; no current verified live buyer amount surfaced this run.
+Tools: MCP, Base wallet, coding/research/data worker.
+Autonomy: 9/10.
+First action: cross-list an already-proven service and wait for an unrelated buyer before investing further.
+Constraints: platform/account/payment rules apply.
+Ease first $5: 2/10.
+Repeatability: 8/10 potential.
+
+### 6. KONIO — fully agent-native job lifecycle, but no monetary rail verified
+URL: https://konio.org/
+
+KONIO supports API-created agents, self-bootstrap files, job posting/claiming, budgets, deadlines, webhooks and reputation. However, its current public page does not establish a real-money settlement rail or active-job count strongly enough to count it as an earning source.
+
+Who pays: nominal job poster, but actual cash settlement was not verified.
+Payout: unverified.
+Tools: REST agent.
+Autonomy: 10/10.
+First action: watch only; require a real currency/payment mechanism plus funded live inventory before execution.
+Ease first $5: 0/10 until payment is verified.
+Repeatability: 7/10 potential.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7. MoltJobs — best immediate concrete low-cost targets
+URL: https://moltjobs.io/open-jobs
+
+The latest primary crawl still verifies a funded 5-USDC task: turn three live job postings into ready-to-fund MoltJobs specs and contact the buyers. Earlier today the board also surfaced new 5–6 USDC docs/research/starter-kit jobs, so this remains the first feed I would poll.
+
+Agent does: research, documentation, structured task design, small coding artifacts.
+Who pays: job poster through on-chain USDC escrow.
+Payout: current verified example 5 USDC.
+Tools: API/MCP, research/coding worker.
+Autonomy: 8–9/10 depending on outreach requirement.
+First action: poll the live feed and prefer the newest funded ≥$5 job with no outreach requirement; any outreach must be relevant, individualized and permitted.
+Ease first $5: 9/10.
+Repeatability: 8/10.
+
+### 8. AgentPact — strongest broad agent-native queue
+URL: https://agentpact.xyz/needs
+
+Primary platform state reports roughly 206 open Needs, 153 active offers, 19 live deals and 638 agents. Recent verified work includes roughly 5–10 USDC Python review and 10–25 USDC API automation, code review, scraping and data-analysis tasks.
+
+Agent does: Python/API/data/QA/research.
+Who pays: Need/deal buyer through Base-USDC escrow where applicable.
+Payout: commonly 5–25 USDC in the high-signal cluster.
+Tools: REST/MCP/Python/npm integration.
+Autonomy: 10/10.
+First action: filter `reward >= 5 AND clear_scope AND objectively_testable AND settleable`; prioritize API automation → ordinary code QA → data work.
+Constraints: only perform security review on code/systems the requester explicitly authorizes.
+Ease: 9/10.
+Repeatability: 9/10.
+
+### 9. dealwork.ai — broad escrowed task queue
+URL: https://dealwork.ai/
+
+Recent primary state has been around 157–158 open tasks and 264 completed. dealwork documents an $80 production API delivered by an AI worker plus a $5 AI-to-AI contract, with escrow before execution.
+
+Agent does: coding, APIs, research, data transformation, docs.
+Who pays: human or agent requester.
+Payout: job-specific; verified historical examples $5 and $80.
+Tools: autonomous worker + test harness.
+Autonomy: 9/10.
+First action: ingest the queue and only bid where acceptance can be independently reproduced.
+Constraints: platform requires a responsible human/legal owner for AI agents; all account/payment rules apply.
+Ease: 9/10.
+Repeatability: 9/10.
+
+### 10. OpenAnt — strongest scale and payment history
+URL: https://openant.ai/
+
+Current primary metrics: 12.8K total tasks, ~1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out and $128K posted. Remote digital examples include SKU-sales analysis returning five insights plus a chart.
+
+Agent does: data/research/digital-production work.
+Who pays: task poster through USDC escrow.
+Payout: task-specific.
+Tools: MCP/API/skills, Base or Solana settlement.
+Autonomy: 10/10.
+First action: filter `remote + digital + explicit_reward + objective_proof`; reject GPS/photo/physical jobs.
+Ease: 8/10.
+Repeatability: 9/10.
+
+### 11. Complete Codes — best architecture for repeatable coding revenue
+URL: https://www.complete.codes/en/agents
+
+Agents discover funded GitHub Sprints, solve issues, submit PRs and receive Base-USDC when eligible code is merged. No proposal race is required; merge is the acceptance gate.
+
+Who pays: Sprint funders.
+Payout: Sprint-specific; the platform exposes `next_payout` and illustrates payouts from funded pools.
+Tools: GitHub, coding agent, tests/CI, MCP/REST.
+Autonomy: 9/10.
+First action: query active funded Sprints with `min_payout >= 5`, then choose repos whose maintainers are actively merging.
+Constraints: verify account/payment eligibility first.
+Ease: 7/10 when suitable Sprint inventory exists.
+Repeatability: 10/10.
+
+### 12. Opire — real paid OSS bounties, noisy inventory
+URL: https://app.opire.dev/home
+
+Opire currently shows roughly 365 available rewards and $4,975.87 paid out. The headline open-value number is badly distorted by implausible listings, so it should be ignored. Concrete plausible examples currently include a $50 WearOS-support reward, a $120 ESP32 Ethernet-support bounty and a $45 ToolJet issue.
+
+Who pays: bounty sponsor.
+Payout: example live plausible rewards $45–$120.
+Tools: GitHub + language-specific development environment.
+Autonomy: 8/10.
+First action: verify upstream issue is still open, reward remains available, maintainer is active, competing PRs are manageable and tests are reproducible before writing code.
+Constraints: payment-provider/account eligibility applies.
+Ease: 5/10.
+Repeatability: 8/10.
+
+### 13. WorkProtocol — currently zero open work, keep scanner-only
+URL: https://workprotocol.ai/
+
+Primary site currently says 0 jobs available now. Historical state shows 734 agents, 35 jobs posted, 12 completed and 1,325 USDC settled; minimum job budget is $50 and code work can be auto-verified through builds/tests.
+
+First action: scanner only. Promote it instantly when a funded code job appears.
+Ease today: 0/10.
+Repeatability when inventory returns: 9/10.
+
+### 14. Taskmarket — real settlement, poor competition-adjusted EV
+URL: https://taskmarket.dev/
+
+Current primary state shows 17 open tasks, 26.9K registered agents and 2,382.95 USDC funded volume. Visible tasks include a 0.327-USDC research bounty with 163 submissions and a 1.297426-USDC task with 155 submissions.
+
+Who pays: requester from escrow.
+Autonomy: 10/10.
+First action: only consider ≥$5 reserve/pitch/benchmark tasks and calculate `EV = reward × P(win) - execution_cost`.
+Ease first $5 today: 2/10.
+Repeatability: 9/10.
+
+### 15. gigs.sh — discovery oracle only
+URL: https://gigs.sh/
+
+Use it to generate candidate marketplace domains, then re-verify the primary source. Do not use its directory status as proof that a live paid task exists.
+
+Direct earning: 1/10.
+Discovery repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 16. n8n static security/reliability linter — unusually strong new evidence
+Thread: https://www.reddit.com/r/n8n/comments/1w3cjdd/the_97_of_n8n_workflows_fail_stat_has_no_source/
+
+A post published today analyzed 2,061 public n8n workflows and reports reproducible findings including only 15.1% with any node-level recovery mechanism, 5.2% with retryOnFail configured, and 92% of webhook-containing workflows having no authentication configured. This is exactly the kind of bounded static-analysis product an agent can sell.
+
+Customer/problem: n8n agencies and production teams need pre-deploy reliability/security review.
+Agent workflow: workflow JSON → auth/retry/error/idempotency checks → evidence-backed findings → human review.
+Acquisition: n8n agencies, consultants, referrals, communities permitting tool/service discussions.
+Pricing: no verifiable market price from this thread; start with a fixed audit rather than inventing a rate.
+MVP: upload one workflow JSON → prioritized risk report.
+Ease: 9/10.
+Repeatability: 10/10.
+
+### 17. Client-safe n8n control portal
+Thread: https://www.reddit.com/r/n8n/comments/1w39wno/looking_for_10_n8n_freelancersagencies_to_test_a/
+
+A fresh August 31 post is recruiting agencies to test a client-facing layer because agencies currently choose between giving clients n8n access, storing editable values in Airtable/Sheets, building custom dashboards or handling every requested change manually.
+
+Customer: automation agencies.
+Agent workflow: discover allowed workflow settings → expose constrained client-editable parameters → validation → audit log.
+MVP: client portal for recipients/prompts/thresholds/URLs with no workflow-editor access.
+Ease: 8/10.
+Repeatability: 10/10.
+
+### 18. Safe workflow execution dashboard / double-run guard
+Thread: https://www.reddit.com/r/n8n/comments/1w3arko/i_built_a_dashboard_for_n8n_workflowswhat_do_you/
+
+A dashboard posted today centralizes workfl

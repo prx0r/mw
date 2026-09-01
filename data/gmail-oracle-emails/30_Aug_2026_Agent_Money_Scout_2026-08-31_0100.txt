@@ -1,0 +1,399 @@
+Subject: Agent Money Scout — 2026-08-31 01:00
+Date: Sun, 30 Aug 2026 18:23:52 +0000
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a053e9e5d9ffd29
+================================================================================
+
+# Agent Money Scout — 2026-08-31 01:00
+
+Fresh verification keeps AgentPact and dealwork.ai at the top for immediate software/data work. OpenAnt remains the largest agent-native task network I can verify directly. The best genuinely new discovery is Bounty Bureau: it currently reports 111 GitHub bounties inspected, 52 open for claim, and $2,934 on offer. New API-distribution surfaces include 402Bazaar and GetAgentic, but they should be treated as distribution experiments rather than proven demand.
+
+## NEW THIS RUN
+
+### 1. Bounty Bureau — verified OSS bounty oracle
+https://bountybureau.com/
+
+What the agent does: scans verified GitHub issues, reproduces the issue, writes a fix/tests, submits a PR, and collects from the underlying bounty platform. Who pays: the IssueHunt/Gitcoin/other sponsor attached to the GitHub issue. Verified current signal: 111 inspected; 52 open for claim; $2,934 on offer; 21 certified. Required: GitHub-capable coding agent; payout account depends on the underlying bounty provider. Autonomy: 8/10.
+
+Exact first action: pull the JSON/live feed, discard anything marked Taken/under-review-without-sum, and rank only open, unassigned, explicitly funded issues by reward × P(merge) − engineering cost.
+
+Constraints: each underlying platform has its own payout, identity and geography rules. Do not treat the aggregator as the payer.
+
+Ease first $5: 7/10. Repeatability: 9/10.
+
+### 2. 402Bazaar — paid API/data marketplace
+https://402bazaar.com/
+
+What the agent does: expose a deterministic API/data/tool endpoint and receive USDC per invocation. Who pays: other agents/humans calling the service. Advertised pricing: services from $0.001/call; seller listing costs $0.10; platform fee 2.5%. Current site shows settled examples including web scraping, PDF parsing, OCR, screenshots, code sandbox, data feeds and knowledge datasets.
+
+Required: hosted endpoint + Base-compatible USDC wallet + x402 support. Autonomy: 10/10. Exact first action: cross-list one already-proven endpoint such as API sanity check, PR verification, CSV cleanup, or document normalization. Do not build a 402Bazaar-only product until an outside buyer appears.
+
+Ease: 4/10. Repeatability: 10/10 if organic demand develops.
+
+### 3. ClawMolt — autonomous bounty board
+https://www.clawmolt.ai/
+
+What the agent does: claims coding/research/design/data bounties, executes in a sandbox, submits deliverables, and receives USD/USDC after approval. Who pays: bounty poster through Stripe Connect escrow. Advertised bounty range: typically $5–$50. Free tier supports one agent.
+
+Required: deployable agent; Stripe/payment eligibility for payout. Autonomy: 9/10. Exact first action: inspect the actual live bounty board before doing any integration. The primary page currently showed no verified agents in its live feed, so liquidity is not demonstrated.
+
+Ease: 3/10. Repeatability: 8/10 potential.
+
+### 4. GetAgentic — on-chain agent services/jobs
+https://getagentic.io/
+
+What the agent does: list a specialized service and complete jobs paid in Base-USDC. Who pays: buyers hiring the listed agent. Pricing model: under $100 uses x402 with 0% platform fee; $100+ uses escrow with 2% fee. Seller keeps 100% on x402 and 98% on escrow.
+
+Required: seller identity verification via Sumsub and compatible wallet. Autonomy: 10/10 after onboarding. Exact first action: only proceed if the account holder is legally eligible for the seller/KYC flow; otherwise treat this as a market to watch, not something to bypass.
+
+Important caveat: the homepage's large transaction/volume examples are platform-reported. Beta is invite-only.
+
+Ease: 2/10 today. Repeatability: 9/10 potential.
+
+### 5. IssueHunt — established GitHub issue bounty rail
+https://oss.issuehunt.io/
+
+What the agent does: solve funded GitHub issues and submit a mergeable PR. Who pays: project/backers. IssueHunt is still live and explicitly says contributors can solve issues for rewards.
+
+Required: GitHub and the IssueHunt payout flow. Autonomy: 7/10. Exact first action: use Bounty Bureau as the discovery/filter layer, then verify the individual IssueHunt issue directly before coding.
+
+Current activity is sparse, so do not browse manually as the main strategy.
+
+Ease: 5/10. Repeatability: 7/10.
+
+### 6. BountyOS — bounty discovery/scoring surface
+https://bountyos.rovidev.com/en/
+
+What it does: scans Algora, Opire and IssueHunt, scores bounty freshness/competition and surfaces likely profitable issues. It currently illustrates feeds such as a $300 TypeORM issue with zero competitors and $150–$200 OSS issues.
+
+Who pays: not BountyOS; the underlying bounty sponsor does. Exact first action: use it only as an oracle, then verify each result on the primary bounty page and GitHub repository. Autonomy: 10/10 as a discovery component.
+
+Ease as direct income: 1/10. Repeatability as scouting: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7. AgentPact — still #1 immediate target
+https://agentpact.xyz/needs
+
+The marketplace remains structured around Offers, Needs, negotiated deals, milestones and Base-USDC settlement. Recent live scans repeatedly exposed 5–25 USDC Python/API/security/data jobs among a lot of sub-dollar test noise.
+
+Agent work: Python review, API automation, code/security review, data analysis, validation, technical summaries. Who pays: buyer posting the Need/deal. Required: AgentPact API/MCP/npm/Python integration. Autonomy: 10/10.
+
+Exact first action: hard-filter reward >= 5 USDC, fresh timestamp, objective acceptance criteria, and funded/settleable status. Target API automation and code/security review first.
+
+Ease: 9/10. Repeatability: 9/10.
+
+### 8. dealwork.ai — broadest attractive queue
+https://dealwork.ai/
+
+Current primary page: 2.5K workers, 156 open tasks, 264 completed. Funds are escrowed before work. Public examples include an $80 production API delivered by an AI worker with tests and a $5 AI-to-AI job. AI-to-AI fee: 3%; standard: 10%.
+
+Agent work: coding, APIs, research, data transformations and documentation. Autonomy: 9/10.
+
+Exact first action: ingest every open task and bid only where the worker can independently reproduce the acceptance criteria.
+
+Ease: 9/10. Repeatability: 9/10.
+
+### 9. OpenAnt — strongest verified scale
+https://openant.ai/
+https://openant.ai/tasks
+
+Current primary figures: 12.8K total tasks, 1.2K open, 11.3K completed, 646 settled, $34.4K paid out and $128K posted. USDC is escrowed on Solana/Base. Visible remote work includes SKU-sales analysis and short-form asset production.
+
+Agent work: remote analysis/data/digital production. Required: Skill/API/MCP-compatible agent + eligible wallet. Autonomy: 10/10 for remote digital tasks.
+
+Exact first action: filter remote + digital + explicit reward + objective proof. Ignore physical/GPS tasks.
+
+Ease: 8/10. Repeatability: 9/10.
+
+### 10. DeskCrew — support/research bounty loop
+https://deskcrew.io/bounties
+
+Agents read public bounties for free, pay a small per-attempt fee to submit, and receive 85% of the reward in USDC if approved. Rewards can start at $0.25. Supported payout chains include Base, Polygon, Sei, Avalanche and Solana.
+
+Agent work: grounded support answers, research, reviews and other written tasks. Who pays: bounty-board owner. Autonomy: 10/10.
+
+Exact first action: GET https://deskcrew.io/api/arena/contests and rank by reward, entrant count, payout chain and acceptance rule before spending an entry fee.
+
+Ease: 6/10. Repeatability: 9/10.
+
+### 11. MoltJobs — one concrete $5 task still visible
+https://moltjobs.io/open-jobs
+
+Current primary listing: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer. Jobs use Base-USDC escrow; agents receive 10 free bids/month and the platform takes a 5% success fee.
+
+Required: API/MCP/CLI worker; protected jobs can require certification. Autonomy: 8/10.
+
+Exact first action: inspect the $5 job. Any contact must be specific, legitimate, permitted and non-spammy.
+
+Ease: 7/10. Repeatability: 8/10.
+
+### 12. Taskmarket — real settlement, high competition
+https://taskmarket.dev/
+
+A current 20-USDC app-building bounty has 72 submissions and about a day remaining. Historical task pages expose on-chain escrow and exact settlement—for example a 5-USDC bounty settled 4.625 USDC net after the 7.5% fee.
+
+Agent work: code, research, datasets, creative assets and benchmarks. Autonomy: 10/10.
+
+Exact first action: score every task as EV = reward × P(win) − execution cost. Prefer claim/pitch/benchmark modes or low-submission tasks; skip crowded generic bounties.
+
+Ease: 6/10. Repeatability: 9/10.
+
+### 13. t2000 — strong job-to-product architecture
+https://t2000.ai/jobs
+
+Prior runs verified real settlements and seller totals; current inventory has been shrinking and contains many tiny ecosystem/bootstrap jobs. Its useful structure remains: paid job → reusable procedure → fixed service → paid API.
+
+Exact first action: reject referral/payment-loop work and keep only tasks that create externally useful evidence or a reusable capability.
+
+Ease today: 5/10. Repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. Automation portfolio cleanup / dead-workflow auditor
+https://www.reddit.com/r/MarketingAutomation/comments/1vtd951/half_my_workflows_shouldnt_have_existed/
+
+Fresh signal: an operator found 40+ active n8n workflows but only ~15 receiving regular use; many were one-off automations that had become maintenance debt.
+
+Customer/problem: automation agencies and ops teams carrying dead workflows. Agent workflow: ingest workflow inventory + execution history → usage frequency → business owner/dependency map → KEEP / CONSOLIDATE / RETIRE / REVIEW. Acquire customers through legitimate automation consultants/communities and existing ops teams. Charge fixed audit first.
+
+MVP: n8n export + run history → a ranked deletion/consolidation report.
+
+Ease: 9/10. Repeatability: 10/10.
+
+### 15. Law-firm intake/document ops — bounded, human-reviewed
+https://www.reddit.com/r/n8n/comments/1vywta1/built_a_full_ai_automation_system_for_a_law_firm/
+
+Fresh August 26 discussion describes recurring manual load from client intake, unread documents, spreadsheet-tracked deadlines and follow-ups.
+
+Safe bounded offer: authorized intake → classify/routing metadata → document summary → appointment-prep packet → human professional review. Do not automate legal judgment.
+
+MVP: intake + document organizer + summary packet, not legal advice.
+
+Ease: 7/10. Repeatability: 9/10.
+
+### 16. Accounting-firm document chasing
+https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/
+
+Recurring problem: client WhatsApp/email messages, document chasing, deadline reminders and invoice follow-ups.
+
+Agent workflow: authorized client → missing document/status → approved reminder → receipt → exception queue. Professional accounting/tax/compliance decisions remain human.
+
+MVP: document-chasing + status dashboard.
+
+Ease: 8/10. Repeatability: 10/10.
+
+### 17. Production n8n hardening
+https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/
+
+Operator running six paying clients reports queue contention, 11GB execution logs, silent webhook failures after restart and credential-recovery risk.
+
+Offer: deployment + workflow exports → queue/concurrency audit → log retention → webhook checks → retry/idempotency → backup/recovery checks.
+
+MVP: one automated health report with the top production-risk findings.
+
+Ease: 8/10. Repeatability: 10/10.
+
+### 18. Hybrid-workflow verification
+https://www.reddit.com/r/n8n/comments/1w2cpfx/unpopular_opinion_90_of_fully_automated_ai/
+
+Current discussion emphasizes failures from unstructured data, shifting API schemas and context drift. The useful commercial product is validation + precise human exceptions, not a claim of 100% hands-off autonomy.
+
+MVP: input checks → execution → output assertions → confidence/risk gate → human exception.
+
+Ease: 9/10. Repeatability: 10/10.
+
+### 19. Code-first migration from overgrown automation
+https://www.reddit.com/r/AgentsOfAI/comments/1w2296c/is_n8n_actually_finished/
+
+Today's high-engagement thread says improved coding agents are causing teams to reconsider point-and-click workflows and move deterministic logic into code.
+
+Offer: workflow export + requirements → orchestration/deterministic split → Python/FastAPI/GitHub Actions scaffold → tests/logging/retries.
+
+MVP: migrate one scheduled workflow into a tested script.
+
+Ease: 8/10. Repeatability: 9/10.
+
+### 20. Outcome-based automation monitoring
+https://www.reddit.com/r/nocode/comments/1ulj3rl/the_most_expensive_automation_failures_ive_seen/
+
+Recurring problem: Zap/Make/n8n can report a successful run while the useful downstream outcome is missing. Examples include leads routed but never reaching the owner, CRM syncs that change nothing, reports silently losing one client's data, and onboarding that never advances.
+
+Product: expected business outcome + deadline + downstream receipt + baseline → HEALTHY / FAILED / SILENT / REVIEW.
+
+MVP: one external expectation store + one receipt/state check + daily exception report.
+
+Ease: 9/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Execute AgentPact and dealwork before building more marketplace plumbing. They still give the best intersection of real budgets, bounded software/data deliverables and low integration cost. Use a hard $5 floor and require objective acceptance criteria.
+
+2. Add Bounty Bureau as the OSS bounty oracle. It currently shows 52 open-for-claim items and $2,934 on offer. Feed those through a second verifier: issue still open? unassigned? payout explicit? repo active? competing PRs? tests reproducible? expected net positive? Then send the coding worker only the survivors.
+
+3. Standardize one worker around /verify-pr + /api-sanity + /automation-health. That maps onto current marketplace work and the strongest Reddit demand signal. Once a procedure earns directly, cross-list it on x402 markets such as 402Bazaar instead of inventing a new endpoint first.
+
+Current routing order:
+AgentPact → dealwork.ai → OpenAnt remote digital → Bounty Bureau/OSS bounties → DeskCrew high-EV bounties → Taskmarket only when EV is positive → MoltJobs → t2000 filtered external work.
+
+Only settled or genuinely withdrawable real-money value should count as earnings. Testnet balances, internal credits, unpriced tokens, marketplace GMV claims, illustrative cards and submitted-but-unpaid work remain $0.
+Agent Money Scout — 2026-08-31 01:00
+<p>Fresh verification keeps AgentPact and dealwork.ai at the top for immediate software/data work. OpenAnt remains the largest agent-native task network I can verify directly. The best genuinely new discovery is Bounty Bureau: it currently reports 111 GitHub bounties inspected, 52 open for claim, and $2,934 on offer. New API-distribution surfaces include 402Bazaar and GetAgentic, but they should be treated as distribution experiments rather than proven demand.</p>
+
+NEW THIS RUN
+
+1. Bounty Bureau — verified OSS bounty oracle
+<p>https://bountybureau.com/</p>
+<p>What the agent does: scans verified GitHub issues, reproduces the issue, writes a fix/tests, submits a PR, and collects from the underlying bounty platform. Who pays: the IssueHunt/Gitcoin/other sponsor attached to the GitHub issue. Verified current signal: 111 inspected; 52 open for claim; $2,934 on offer; 21 certified. Required: GitHub-capable coding agent; payout account depends on the underlying bounty provider. Autonomy: 8/10.</p>
+<p>Exact first action: pull the JSON/live feed, discard anything marked Taken/under-review-without-sum, and rank only open, unassigned, explicitly funded issues by reward × P(merge) − engineering cost.</p>
+<p>Constraints: each underlying platform has its own payout, identity and geography rules. Do not treat the aggregator as the payer.</p>
+<p>Ease first $5: 7/10. Repeatability: 9/10.</p>
+
+2. 402Bazaar — paid API/data marketplace
+<p>https://402bazaar.com/</p>
+<p>What the agent does: expose a deterministic API/data/tool endpoint and receive USDC per invocation. Who pays: other agents/humans calling the service. Advertised pricing: services from $0.001/call; seller listing costs $0.10; platform fee 2.5%. Current site shows settled examples including web scraping, PDF parsing, OCR, screenshots, code sandbox, data feeds and knowledge datasets.</p>
+<p>Required: hosted endpoint + Base-compatible USDC wallet + x402 support. Autonomy: 10/10. Exact first action: cross-list one already-proven endpoint such as API sanity check, PR verification, CSV cleanup, or document normalization. Do not build a 402Bazaar-only product until an outside buyer appears.</p>
+<p>Ease: 4/10. Repeatability: 10/10 if organic demand develops.</p>
+
+3. ClawMolt — autonomous bounty board
+<p>https://www.clawmolt.ai/</p>
+<p>What the agent does: claims coding/research/design/data bounties, executes in a sandbox, submits deliverables, and receives USD/USDC after approval. Who pays: bounty poster through Stripe Connect escrow. Advertised bounty range: typically $5–$50. Free tier supports one agent.</p>
+<p>Required: deployable agent; Stripe/payment eligibility for payout. Autonomy: 9/10. Exact first action: inspect the actual live bounty board before doing any integration. The primary page currently showed no verified agents in its live feed, so liquidity is not demonstrated.</p>
+<p>Ease: 3/10. Repeatability: 8/10 potential.</p>
+
+4. GetAgentic — on-chain agent services/jobs
+<p>https://getagentic.io/</p>
+<p>What the agent does: list a specialized service and complete jobs paid in Base-USDC. Who pays: buyers hiring the listed agent. Pricing model: under $100 uses x402 with 0% platform fee; $100+ uses escrow with 2% fee. Seller keeps 100% on x402 and 98% on escrow.</p>
+<p>Required: seller identity verification via Sumsub and compatible wallet. Autonomy: 10/10 after onboarding. Exact first action: only proceed if the account holder is legally eligible for the seller/KYC flow; otherwise treat this as a market to watch, not something to bypass.</p>
+<p>Important caveat: the homepage’s large transaction/volume examples are platform-reported. Beta is invite-only.</p>
+<p>Ease: 2/10 today. Repeatability: 9/10 potential.</p>
+
+5. IssueHunt — established GitHub issue bounty rail
+<p>https://oss.issuehunt.io/</p>
+<p>What the agent does: solve funded GitHub issues and submit a mergeable PR. Who pays: project/backers. IssueHunt is still live and explicitly says contributors can solve issues for rewards.</p>
+<p>Required: GitHub and the IssueHunt payout flow. Autonomy: 7/10. Exact first action: use Bounty Bureau as the discovery/filter layer, then verify the individual IssueHunt issue directly before coding.</p>
+<p>Current activity is sparse, so do not browse manually as the main strategy.</p>
+<p>Ease: 5/10. Repeatability: 7/10.</p>
+
+6. BountyOS — bounty discovery/scoring surface
+<p>https://bountyos.rovidev.com/en/</p>
+<p>What it does: scans Algora, Opire and IssueHunt, scores bounty freshness/competition and surfaces likely profitable issues. It currently illustrates feeds such as a $300 TypeORM issue with zero competitors and $150–$200 OSS issues.</p>
+<p>Who pays: not BountyOS; the underlying bounty sponsor does. Exact first action: use it only as an oracle, then verify each result on the primary bounty page and GitHub repository. Autonomy: 10/10 as a discovery component.</p>
+<p>Ease as direct income: 1/10. Repeatability as scouting: 10/10.</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7. AgentPact — still #1 immediate target
+<p>https://agentpact.xyz/needs</p>
+<p>The marketplace remains structured around Offers, Needs, negotiated deals, milestones and Base-USDC settlement. Recent live scans repeatedly exposed 5–25 USDC Python/API/security/data jobs among a lot of sub-dollar test noise.</p>
+<p>Agent work: Python review, API automation, code/security review, data analysis, validation, technical summaries. Who pays: buyer posting the Need/deal. Required: AgentPact API/MCP/npm/Python integration. Autonomy: 10/10.</p>
+<p>Exact first action: hard-filter reward &gt;= 5 USDC, fresh timestamp, objective acceptance criteria, and funded/settleable status. Target API automation and code/security review first.</p>
+<p>Ease: 9/10. Repeatability: 9/10.</p>
+
+8. dealwork.ai — broadest attractive queue
+<p>https://dealwork.ai/</p>
+<p>Current primary page: 2.5K workers, 156 open tasks, 264 completed. Funds are escrowed before work. Public examples include an $80 production API delivered by an AI worker with tests and a $5 AI-to-AI job. AI-to-AI fee: 3%; standard: 10%.</p>
+<p>Agent work: coding, APIs, research, data transformations and documentation. Autonomy: 9/10.</p>
+<p>Exact first action: ingest every open task and bid only where the worker can independently reproduce the acceptance criteria.</p>
+<p>Ease: 9/10. Repeatability: 9/10.</p>
+
+9. OpenAnt — strongest verified scale
+<p>https://openant.ai/<br>
+https://openant.ai/tasks</p>
+<p>Current primary figures: 12.8K total tasks, 1.2K open, 11.3K completed, 646 settled, $34.4K paid out and $128K posted. USDC is escrowed on Solana/Base. Visible remote work includes SKU-sales analysis and short-form asset production.</p>
+<p>Agent work: remote analysis/data/digital production. Required: Skill/API/MCP-compatible agent + eligible wallet. Autonomy: 10/10 for remote digital tasks.</p>
+<p>Exact first action: filter remote + digital + explicit reward + objective proof. Ignore physical/GPS tasks.</p>
+<p>Ease: 8/10. Repeatability: 9/10.</p>
+
+10. DeskCrew — support/research bounty loop
+<p>https://deskcrew.io/bounties</p>
+<p>Agents read public bounties for free, pay a small per-attempt fee to submit, and receive 85% of the reward in USDC if approved. Rewards can start at $0.25. Supported payout chains include Base, Polygon, Sei, Avalanche and Solana.</p>
+<p>Agent work: grounded support answers, research, reviews and other written tasks. Who pays: bounty-board owner. Autonomy: 10/10.</p>
+<p>Exact first action: GET https://deskcrew.io/api/arena/contests and rank by reward, entrant count, payout chain and acceptance rule before spending an entry fee.</p>
+<p>Ease: 6/10. Repeatability: 9/10.</p>
+
+11. MoltJobs — one concrete $5 task still visible
+<p>https://moltjobs.io/open-jobs</p>
+<p>Current primary listing: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer. Jobs use Base-USDC escrow; agents receive 10 free bids/month and the platform takes a 5% success fee.</p>
+<p>Required: API/MCP/CLI worker; protected jobs can require certification. Autonomy: 8/10.</p>
+<p>Exact first action: inspect the $5 job. Any contact must be specific, legitimate, permitted and non-spammy.</p>
+<p>Ease: 7/10. Repeatability: 8/10.</p>
+
+12. Taskmarket — real settlement, high competition
+<p>https://taskmarket.dev/</p>
+<p>A current 20-USDC app-building bounty has 72 submissions and about a day remaining. Historical task pages expose on-chain escrow and exact settlement—for example a 5-USDC bounty settled 4.625 USDC net after the 7.5% fee.</p>
+<p>Agent work: code, research, datasets, creative assets and benchmarks. Autonomy: 10/10.</p>
+<p>Exact first action: score every task as EV = reward × P(win) − execution cost. Prefer claim/pitch/benchmark modes or low-submission tasks; skip crowded generic bounties.</p>
+<p>Ease: 6/10. Repeatability: 9/10.</p>
+
+13. t2000 — strong job-to-product architecture
+<p>https://t2000.ai/jobs</p>
+<p>Prior runs verified real settlements and seller totals; current inventory has been shrinking and contains many tiny ecosystem/bootstrap jobs. Its useful structure remains: paid job → reusable procedure → fixed service → paid API.</p>
+<p>Exact first action: reject referral/payment-loop work and keep only tasks that create externally useful evidence or a reusable capability.</p>
+<p>Ease today: 5/10. Repeatability: 10/10.</p>
+
+REDDIT DEMAND SIGNALS
+
+14. Automation portfolio cleanup / dead-workflow auditor
+<p>https://www.reddit.com/r/MarketingAutomation/comments/1vtd951/half_my_workflows_shouldnt_have_existed/</p>
+<p>Fresh signal: an operator found 40+ active n8n workflows but only ~15 receiving regular use; many were one-off automations that had become maintenance debt.</p>
+<p>Customer/problem: automation agencies and ops teams carrying dead workflows. Agent workflow: ingest workflow inventory + execution history → usage frequency → business owner/dependency map → KEEP / CONSOLIDATE / RETIRE / REVIEW. Acquire customers through legitimate automation consultants/communities and existing ops teams. Charge fixed audit first.</p>
+<p>MVP: n8n export + run history → a ranked deletion/consolidation report.</p>
+<p>Ease: 9/10. Repeatability: 10/10.</p>
+
+15. Law-firm intake/document ops — bounded, human-reviewed
+<p>https://www.reddit.com/r/n8n/comments/1vywta1/built_a_full_ai_automation_system_for_a_law_firm/</p>
+<p>Fresh August 26 discussion describes recurring manual load from client intake, unread documents, spreadsheet-tracked deadlines and follow-ups.</p>
+<p>Safe bounded offer: authorized intake → classify/routing metadata → document summary → appointment-prep packet → human professional review. Do not automate legal judgment.</p>
+<p>MVP: intake + document organizer + summary packet, not legal advice.</p>
+<p>Ease: 7/10. Repeatability: 9/10.</p>
+
+16. Accounting-firm document chasing
+<p>https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/</p>
+<p>Recurring problem: client WhatsApp/email messages, document chasing, deadline reminders and invoice follow-ups.</p>
+<p>Agent workflow: authorized client → missing document/status → approved reminder → receipt → exception queue. Professional accounting/tax/compliance decisions remain human.</p>
+<p>MVP: document-chasing + status dashboard.</p>
+<p>Ease: 8/10. Repeatability: 10/10.</p>
+
+17. Production n8n hardening
+<p>https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/</p>
+<p>Operator running six paying clients reports queue contention, 11GB execution logs, silent webhook failures after restart and credential-recovery risk.</p>
+<p>Offer: deployment + workflow exports → queue/concurrency audit → log retention → webhook checks → retry/idempotency → backup/recovery checks.</p>
+<p>MVP: one automated health report with the top production-risk findings.</p>
+<p>Ease: 8/10. Repeatability: 10/10.</p>
+
+18. Hybrid-workflow verification
+<p>https://www.reddit.com/r/n8n/comments/1w2cpfx/unpopular_opinion_90_of_fully_automated_ai/</p>
+<p>Current discussion emphasizes failures from unstructured data, shifting API schemas and context drift. The useful commercial product is validation + precise human exceptions, not a claim of 100% hands-off autonomy.</p>
+<p>MVP: input checks → execution → output assertions → confidence/risk gate → human exception.</p>
+<p>Ease: 9/10. Repeatability: 10/10.</p>
+
+19. Code-first migration from overgrown automation
+<p>https://www.reddit.com/r/AgentsOfAI/comments/1w2296c/is_n8n_actually_finished/</p>
+<p>Today’s high-engagement thread says improved coding agents are causing teams to reconsider point-and-click workflows and move deterministic logic into code.</p>
+<p>Offer: workflow export + requirements → orchestration/deterministic split → Python/FastAPI/GitHub Actions scaffold → tests/logging/retries.</p>
+<p>MVP: migrate one scheduled workflow into a tested script.</p>
+<p>Ease: 8/10. Repeatability: 9/10.</p>
+
+20. Outcome-based automation monitoring
+<p>https://www.reddit.com/r/nocode/comments/1ulj3rl/the_most_expensive_automation_failures_ive_seen/</p>
+<p>Recurring problem: Zap/Make/n8n can report a successful run while the useful downstream outcome is missing. Examples include leads routed but never reaching the owner, CRM syncs that change nothing, reports silently losing one client’s data, and onboarding that never advances.</p>
+<p>Product: expected business outcome + deadline + downstream receipt + baseline → HEALTHY / FAILED / SILENT / REVIEW.</p>
+<p>MVP: one external expectation store + one receipt/state check + daily exception report.</p>
+<p>Ease: 9/10. Repeatability: 10/10.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+<ol>
+<li>
+<p>Execute AgentPact and dealwork before building more marketplace plumbing. They still give the best intersection of real budgets, bounded software/data deliverables and low integration cost. Use a hard $5 floor and require objective acceptance criteria.</p>
+</li>
+<li>
+<p>Add Bounty Bureau as the OSS bounty oracle. It currently shows 52 open-for-claim items and $2,934 on offer. Feed those through a second verifier: issue still open? unassigned? payout explicit? repo active? competing PRs? tests reproducible? expected net positive? Then send the coding worker only the survivors.</p>
+</li>
+<li>
+<p>Standardize one worker around /verify-pr + /api-sanity + /automation-health. That maps onto current marketplace work and the strongest Reddit demand signal. Once a procedure earns directly, cross-list it on x402 markets such as 402Bazaar instead of inventing a new endpoint first.</p>
+</li>
+</ol>
+<p>Current routing order:<br>
+AgentPact → dealwork.ai → OpenAnt remote digital → Bounty Bureau/OSS bounties → DeskCrew high-EV bounties → Taskmarket only when EV is positive → MoltJobs → t2000 filtered external work.</p>
+<p>Only settled or genuinely withdrawable real-money value should count as earnings. Testnet balances, internal credits, unpriced tokens, marketplace GMV claims, illustrative cards and submitted-but-unpaid work remain $0.</p>

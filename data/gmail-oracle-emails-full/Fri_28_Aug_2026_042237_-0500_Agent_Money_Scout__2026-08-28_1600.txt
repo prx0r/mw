@@ -1,0 +1,70 @@
+Subject: Agent Money Scout — 2026-08-28 16:00
+Date: Fri, 28 Aug 2026 04:22:37 -0500
+Message ID: 1a047ada5ee68fbc
+================================================================================
+
+Agent Money Scout — 28 Aug 2026, 16:00
+
+NEW THIS RUN
+
+1) ClawGig — https://clawgig.ai/
+AI-agent freelance marketplace. Agents can programmatically browse gigs, propose, communicate and deliver. Platform says agents keep 90% of approved payments and uses escrow. First step: register an agent and inspect the live gig feed. Follow all platform age, identity and payment requirements. First-$5 8/10; repeatability 8/10.
+
+2) Agent402 Marketplace — https://marketplace.agent402.app/
+List a useful HTTP service for pay-per-call discovery. The marketplace says registration is free, supports multiple networks and indexes 17k+ services. Best use: publish an already-working specialist endpoint rather than build something new just for the marketplace. First-$5 6/10; repeatability 10/10.
+
+3) PayanAgent — https://payanagent.com/
+Agent/SaaS marketplace combining pay-per-call offers and bespoke work requests. It advertises 24k+ live offers, $0 platform fees, MCP/REST access and signed transaction receipts. First step: publish one narrow service offer. Follow any applicable age/payment-provider requirements. First-$5 6/10; repeatability 10/10.
+
+4) ClawFreelance — https://www.clawfreelance.com/en
+Autonomous-agent marketplace for open-source issues, bounties and project work. The site currently displays task examples including a $500 auth bug and $250 DB optimization and claims 847 open bounties; these are platform-published figures, not independently audited. First-$5 7/10; repeatability 8/10.
+
+5) Molt4Hire — https://molt4hire.com/
+Protocol-native MCP/A2A marketplace where agents can hire other agents or humans and agents can list themselves for work. Public payout/liquidity data is limited, so use a thin integration rather than investing heavily. First-$5 5/10; repeatability 8/10.
+
+6) AgentsMarketplace — https://agentsmarketplace.app/
+Marketplace for paid AI-agent API services on X Layer. Sellers publish priced endpoints; callers pay per use. Suitable for a reusable research, extraction, verification or code-review capability. Follow all external provider eligibility requirements. First-$5 5/10; repeatability 9/10.
+
+7) MarketplaceForAIAgents — https://marketplaceforaiagents.com/
+Machine-payable API marketplace. One current public listing is a YouTube-transcript endpoint priced at $0.005/call after a small free tier. Seller onboarding appears limited/early, so monitor rather than prioritize. First-$5 4/10; repeatability 9/10.
+
+8) Nervix — https://nervix.ai/
+Hermes-oriented agent federation and task marketplace. It says agents can accept paid work, but the public site emphasizes credits and does not provide enough verifiable cash-liquidity detail. Experimental only. First-$5 3/10; repeatability 7/10.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+9) SporeAgent — https://sporeagent.com/ — concrete public examples remain: $45 scraping, $80 FastAPI testing, $120 translation. MCP-native. First-$5 9/10; repeatability 9/10.
+
+10) Clawlancer — https://clawlancer.ai/ — machine-readable research/coding/writing/analysis work; advertised 1–2.5% fees. First-$5 8/10; repeatability 8/10.
+
+11) MoltJobs — https://molt-jobs.com/ — MCP/CLI/REST/webhook job market. First-$5 7/10; repeatability 8/10.
+
+12) BotBounty — https://www.botbounty.ai/ — agent-friendly code/research/data/automation bounty flow. First-$5 7/10; repeatability 7/10.
+
+13) AgentHire — https://www.agenthire.app/ — API-first agent-to-agent and human job market; platform advertises 500+ agents and 10K+ jobs completed. First-$5 7/10; repeatability 8/10.
+
+14) Agent Bazaar — https://www.agent-bazaar.com/marketplace — sell specialist skills/APIs per use. First-$5 5/10; repeatability 10/10.
+
+15) AgentPay Store — https://agentpaystore.com/ — another pay-per-use capability surface. First-$5 5/10; repeatability 10/10.
+
+16) ClawMolt — https://www.clawmolt.ai/ — coding/research/design/data bounties; platform advertises typical $5–$50 task sizes. First-$5 7/10; repeatability 8/10.
+
+REDDIT DEMAND SIGNALS
+
+17) Invoice capture/logging agent. Recent small-business posts describe hours spent entering invoices manually; a separate accounting-firm report describes 200+ invoices/month and around 15 hours/week of manual handling before automation. Product: authorized inbox/Drive -> parse -> validate -> structured record -> exception queue. Best buyers: bookkeeping/accounting firms and operations-heavy SMEs. Charge by document or monthly volume. First-$5 8/10; repeatability 10/10.
+
+18) Lead follow-up agent. A July 2026 small-business discussion identifies lead follow-up, appointment reminders, invoice/payment nudges and moving data between CRM/Sheets/email as fast-payoff automations. Product: inbound lead -> enrich -> qualify -> permitted follow-up -> CRM -> schedule -> human escalation. First-$5 8/10; repeatability 10/10.
+
+19) Client onboarding/reporting worker. A March 2026 onboarding case claims roughly six hours saved per new client; another May 2026 workflow report describes onboarding dropping from three hours to 25 minutes and weekly reporting from 3–4 hours to about 20 minutes of review. Product: intake + file collection + reminders + project setup + KPI packet. First-$5 7/10; repeatability 9/10.
+
+20) API/vendor due-diligence endpoint. Product: URL/company/package -> pricing/API surface/auth/webhook/security/DNS/recent changes/evidence/confidence. Sell the same capability across multiple pay-per-use agent marketplaces. First-$5 6/10; repeatability 10/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) Use one specialist worker across ClawGig, ClawFreelance, Clawlancer and SporeAgent. Start with research/evidence/structured-output work, plus code/test work where the agent is competent.
+
+2) Publish the same capability on Agent402, PayanAgent and Agent Bazaar. That creates two revenue modes: actively competing for gigs and passively selling a specialist service per call.
+
+3) Build a liquidity-weighted opportunity router. Score payout × probability job is still available × probability of acceptance, then subtract compute/API costs. Marketplace existence is not enough; deprioritize surfaces with no verifiable jobs or only internal credits/test environments.
+
+Core thesis: gigs generate experience and reputation; reusable paid capabilities monetize that experience repeatedly.

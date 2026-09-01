@@ -1,0 +1,394 @@
+Subject: Agent Money Scout — 2026-08-30 03:00
+Date: Sat, 29 Aug 2026 15:26:27 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a04f33c474713ff
+================================================================================
+
+# Agent Money Scout — 2026-08-30 03:00
+
+## NEW THIS RUN
+
+### 1) run.pay — paid API distribution via Stripe-style per-call billing
+URL: https://getrunpay.com/
+What the agent does: expose a deterministic API capability and fulfill calls automatically.
+Who pays: AI-agent developers consuming the API.
+Verified economics: 205 services live; vendors keep 98% of each successful call; 2% platform commission; provider-selected pricing; weekly payouts; no minimum payout. Public pricing examples are mostly $0.005–$0.10/call.
+Required: working HTTP endpoint, vendor account, Stripe Connect eligibility, Python/JS or plain HTTP.
+Autonomy: 10/10 after deployment.
+Exact first action: publish an already-proven endpoint such as /automation-health, /verify-pr, /api-qa, or /structured-evidence; do not build a new product specifically for this rail.
+Constraints: Stripe Connect identity/geography/age requirements apply. Do not bypass them; if the account holder is not eligible, use another permitted rail.
+Ease-to-first-$5: 4/10. Repeatability: 10/10.
+Primary: https://getrunpay.com/pricing
+
+### 2) Agent402 Marketplace — free x402 listing, multi-chain discovery
+URL: https://marketplace.agent402.app/
+What the agent does: sells API/model/oracle/tool calls via x402.
+Who pays: agents/humans invoking the endpoint.
+Verified signal: 77,279 discoverable services, 18 verified sellers, but the current marketplace shows 0 calls in the last 24h. Registration is advertised as free and non-custodial.
+Required: live HTTP endpoint and compatible wallet/payment setup.
+Autonomy: 10/10.
+Exact first action: cross-list an existing endpoint only; spend effectively zero custom engineering until external calls appear.
+Constraints: wallet/payment eligibility applies; no age/geography clause was verified in this run.
+Ease-to-first-$5: 2/10. Repeatability: 9/10 if demand appears.
+Primary: https://marketplace.agent402.app/marketplace
+
+### 3) the402 — automated services priced from $5+
+URL: https://api.the402.ai/
+What the agent does: sell automated site audits, scans, research/data work, or other async digital services; the catalog also supports data APIs.
+Who pays: x402-compatible agents in USDC on Base.
+Verified advertised pricing: data APIs $0.001+; automated services $5+; examples include a $5 site audit and $10 security patch. Human-service examples are $25+ but those are not autonomous-agent work.
+Required: provider endpoint/webhook, deliverable-verification path, x402-compatible settlement.
+Autonomy: 9/10 for automated services.
+Exact first action: list a bounded, objectively verifiable service such as API QA, release verification, or site-health analysis.
+Constraints: no verified external seller-revenue figures surfaced; provider eligibility terms should be checked before onboarding.
+Ease-to-first-$5: 5/10. Repeatability: 9/10.
+Primary: https://api.the402.ai/
+
+### 4) Delegare Market — useful distribution index, not first-dollar demand
+URL: https://market.delegare.dev/
+What the agent does: expose agent-native x402/MPP services that can be discovered by other agents.
+Who pays: machine buyers using crypto/card rails.
+Verified signal: 311 services indexed; 189 x402, 131 MPP, 9 dual-protocol. Visible prices range from free probes to $1+ per call.
+Required: existing paid endpoint or compatible service.
+Autonomy: 10/10.
+Exact first action: ensure a proven endpoint is indexed/discoverable; do not treat the directory itself as proof of sales.
+Constraints: many listings are aggregated from other markets, so buyer demand and provider onboarding must be verified per source.
+Ease-to-first-$5: 3/10. Repeatability: 8/10.
+Primary: https://market.delegare.dev/
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 5) Taskmarket — strongest current funded agent-work feed
+URL: https://taskmarket.dev/
+Current signal: 18 tasks open, 26.9K registered agents, 2,382.947764 USDC posted volume. Top-earning agent shows 120.776268 USDC earned.
+Visible work: 24.2-USDC “BRYAN'S HARD DATA” task currently has 93 submissions; a 1.297426-USDC bounty-board research task has 134 submissions.
+What the agent does: research, coding, data, analysis, structured artifacts.
+Who pays: requester funds USDC escrow before work starts.
+Required: Taskmarket skill/API and payment wallet.
+Autonomy: 10/10.
+Exact first action: rank open tasks by expected net value before execution; high submission counts sharply reduce win probability.
+Constraints: applicable wallet/account eligibility rules.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 6) dealwork.ai — broadest serious inventory
+URL: https://dealwork.ai/
+Current signal: 155–156 open tasks, 2.5K workers, 264 completed tasks, about 1.1-day median delivery.
+Verified example: $80 human→AI production API task. Fees: 10% standard, 3% AI→AI.
+What the agent does: code, research, data transformations, documentation, structured deliverables.
+Who pays: human or agent client through escrow.
+Required: skill.md/API connection; responsible human/legal owner under platform terms.
+Autonomy: 9/10.
+Exact first action: connect one specialist and bid only where acceptance criteria are objective.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 7) t2000 — settlement activity continues
+URL: https://t2000.ai/jobs
+Fresh status: 18 open, 90 in progress, 1,149 settled, $952.23 settled USDC.
+Current claimable inventory includes $1, $0.50 and $0.25 proof/integration jobs; these are useful to test the work loop but should not be confused with strong organic buyer demand.
+What the agent does: open jobs, fixed services, or paid API calls.
+Who pays: job posters/API consumers.
+Fees: services 5% on settlement; API calls 0% marketplace fee.
+Autonomy: 9/10.
+Exact first action: use a tiny proof task only if useful for reputation/integration, then prioritize externally useful services.
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+### 8) WorkProtocol — real settlement history, thin current inventory
+URL: https://workprotocol.ai/
+Current signal: 734 agents, 35 jobs posted, 1,325 USDC settled. A GitHub Actions log-parser job was delivered about 13h before this run; earlier coding jobs paid 85 and 90 USDC.
+What the agent does: code, ETL, research, data, documentation.
+Who pays: requester; USDC escrow locks before execution.
+Required: agent registration; REST/A2A/MCP-compatible worker.
+Autonomy: 9/10.
+Exact first action: subscribe to the feed and act only when a job has automatically reproducible acceptance criteria.
+Ease-to-first-$5 now: 4/10. Repeatability: 9/10.
+
+### 9) MoltJobs — new $5 listing, but current board still promotion-heavy
+URL: https://moltjobs.io/open-jobs
+Fresh board: four 2-USDC public-posting tasks ending in ~13h plus one 5-USDC lead-gen/spec task ending in 6 days.
+What the agent does: machine-readable jobs via API/MCP/CLI, delivery and USDC settlement.
+Who pays: escrow-funded poster.
+Requirements: agent registration, relevant certification where required, Base-USDC settlement.
+Autonomy: 9/10.
+Exact first action: skip promotional public-post tasks unless all destination-platform rules and disclosure requirements are genuinely satisfied; inspect the $5 task carefully before attempting because it includes buyer contact.
+Constraints: no spam, deceptive engagement, or bypass of account/community requirements.
+Ease-to-first-$5: 4/10. Repeatability: 8/10.
+
+### 10) Clawlancer — machine-native feed remains live
+URL: https://clawlancer.ai/
+What the agent does: browse/claim/execute/deliver bounties through API/MCP and settle in USDC on Base.
+Who pays: bounty poster.
+Verified signal: platform is live today; recent inventory has been dominated by tiny platform-seeded jobs, so headline activity is not equal to strong buyer demand.
+Required: API/MCP-compatible worker; Base payment rail.
+Autonomy: 10/10.
+Exact first action: alert only on meaningful externally funded bounties rather than burning compute on penny tasks.
+Ease-to-first-$5: 5/10. Repeatability: 8/10.
+
+### 11) BotWork — still active as an agent-freelance channel
+URL: https://www.botwork.network/
+Current signal: 46 AI agents for hire; worker receives 90%, relay 5%, platform 5%.
+What the agent does: research, code, design, copy, data or ops tasks through SDK/webhook/A2A.
+Who pays: users submitting jobs via web/Telegram.
+Required: working agent endpoint/SDK integration and eligible settlement setup.
+Autonomy: 9/10.
+Exact first action: register one existing specialist and measure actual paid task arrival; no custom build until demand proves itself.
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+## REDDIT DEMAND SIGNALS
+
+### A) Automation outcome monitoring — strongest fresh recurring pain
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+Posted Aug 29, 2026. The core complaint: an n8n execution can be green while the actual message/business action never happened. Dead tokens, rejected templates, or broken webhooks can fail silently.
+Recurring pattern: workflow status != business outcome.
+Immediate offer: `/automation-health` — external expectation/canary + downstream receipt/state check + evidence-rich alert.
+Customer: automation agencies and companies running production n8n/Make/Zapier.
+MVP: expected event + deadline + downstream receipt -> HEALTHY / FAILED / SILENT.
+Suggested model: setup + recurring monitoring; no universal price claimed because no reliable price was verified.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### B) Meta/WhatsApp automation reliability
+Thread: https://www.reddit.com/r/n8n/comments/1w0r31n/everything_that_broke_while_i_was_building_a/
+Posted Aug 28. Operator reports Meta-side account restrictions and expiring tokens causing workflows to fail or appear healthy even when messages do not send.
+Recurring pattern: upstream account/API state is outside the workflow engine and needs independent monitoring.
+Immediate offer: `/channel-health` for authorized WhatsApp/Meta integrations — token-expiry warning, account-state probe, delivery-receipt test, runbook.
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+### C) QA orchestration / verification remains valuable
+Threads:
+https://www.reddit.com/r/QualityAssurance/comments/1vsh07o/feeling_exhausted_due_to_ai/
+https://www.reddit.com/r/QualityAssurance/comments/1vw1f5i/ai_will_make_qas_actually_be_qas/
+Current August discussions say AI makes scripts/tests almost instant, but QA workloads shift toward deciding what to test, planning, exploratory testing and validating requirements.
+Recurring problem: code/test generation is cheap; trustworthy verification and prioritization are not.
+Immediate offer: `/verify-pr` — changed-surface map -> risk-ranked tests -> execution -> failure reproduction -> evidence -> PASS/FAIL/REVIEW.
+Customer: AI-heavy software teams and agencies.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### D) Simple integration work can beat “AI agent” pitches
+Thread: https://www.reddit.com/r/u_Actual-Struggle9480/comments/1vhxx3q/client_paid_us_to_build_an_ai_agent_we_killed_the/
+Aug 7 self-report: client requested an AI onboarding agent, but the provider discovered three people duplicating data entry across three tools; a Make.com + Slack integration reportedly saved 15 hours/week and the client still paid the invoice.
+Recurring problem: duplicate entry and cross-system synchronization are often higher-value and lower-risk than open-ended autonomy.
+Immediate offer: authorized `intake -> validate -> CRM/system A + system B -> exception queue` integration.
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+## FILTERED / WATCHLIST
+
+- APIHub: technically strong x402 provider marketplace, but prior checks found explicit adult/legal-majority eligibility; do not bypass.
+- TaskBounty: attractive coding bounties, but prior terms check showed an 18+ requirement; do not bypass.
+- AuraGate: still explicitly an Arc Testnet demo; testnet revenue is not earnings.
+- QuestBoard: 0 active bounties / 0 agents earning in the current indexed snapshot.
+- x402 Bazaar: 112 APIs and 95% provider share but previously reported zero external provider revenue; watch only.
+- Agent402: new this run but 0 calls/24h, so keep it nearly zero-effort.
+- micro1 $80–$100/hour STEM AI Agent Research Specialist: current remote listing exists, but this is conventional employment/expert work with vetting rather than autonomous agent income, and employment eligibility must be satisfied; not ranked as an agent marketplace opportunity.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1) Keep execution concentrated on Taskmarket + dealwork + t2000
+These have the best combination this run of funded work, completed/settled history, and machine-operable workflows. Normalize every task to:
+`expected_net = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) - execution/tool/review costs`
+Taskmarket's 24.2-USDC bounty already has 93 submissions, demonstrating why headline reward alone is misleading.
+
+### 2) Build `/automation-health` before another generic agent
+Fresh Reddit evidence again says the painful layer is six months after handover: expected run, actual run, downstream business outcome, token/account state, and cost anomaly. Minimal MVP:
+`expected event + deadline + actual downstream receipt => HEALTHY / FAILED / SILENT`
+Then add API/account-state probes and cost baselines.
+
+### 3) Turn every successful paid procedure into a callable product
+Productization ladder:
+`paid job -> proven procedure -> tests/failure cases -> stable endpoint -> list across permitted rails`
+This run's new rails are run.pay, the402 and Agent402; use them only as near-zero-cost distribution, not as substitutes for proven demand.
+Highest-confidence SKUs: `/automation-health`, `/verify-pr`, `/api-qa`, `/structured-evidence`, `/normalize-document`, `/release-check`.
+
+Accounting rule: only SETTLED/WITHDRAWN real-money value counts as earnings. Testnet balances, credits, illustrative examples, claimed GMV and unfunded jobs remain separate.
+Agent Money Scout — 2026-08-30 03:00
+
+NEW THIS RUN
+
+1) run.pay — paid API distribution via Stripe-style per-call billing
+<p>URL: https://getrunpay.com/<br>
+What the agent does: expose a deterministic API capability and fulfill calls automatically.<br>
+Who pays: AI-agent developers consuming the API.<br>
+Verified economics: 205 services live; vendors keep 98% of each successful call; 2% platform commission; provider-selected pricing; weekly payouts; no minimum payout. Public pricing examples are mostly $0.005–$0.10/call.<br>
+Required: working HTTP endpoint, vendor account, Stripe Connect eligibility, Python/JS or plain HTTP.<br>
+Autonomy: 10/10 after deployment.<br>
+Exact first action: publish an already-proven endpoint such as /automation-health, /verify-pr, /api-qa, or /structured-evidence; do not build a new product specifically for this rail.<br>
+Constraints: Stripe Connect identity/geography/age requirements apply. Do not bypass them; if the account holder is not eligible, use another permitted rail.<br>
+Ease-to-first-$5: 4/10. Repeatability: 10/10.<br>
+Primary: https://getrunpay.com/pricing</p>
+
+2) Agent402 Marketplace — free x402 listing, multi-chain discovery
+<p>URL: https://marketplace.agent402.app/<br>
+What the agent does: sells API/model/oracle/tool calls via x402.<br>
+Who pays: agents/humans invoking the endpoint.<br>
+Verified signal: 77,279 discoverable services, 18 verified sellers, but the current marketplace shows 0 calls in the last 24h. Registration is advertised as free and non-custodial.<br>
+Required: live HTTP endpoint and compatible wallet/payment setup.<br>
+Autonomy: 10/10.<br>
+Exact first action: cross-list an existing endpoint only; spend effectively zero custom engineering until external calls appear.<br>
+Constraints: wallet/payment eligibility applies; no age/geography clause was verified in this run.<br>
+Ease-to-first-$5: 2/10. Repeatability: 9/10 if demand appears.<br>
+Primary: https://marketplace.agent402.app/marketplace</p>
+
+3) the402 — automated services priced from $5+
+<p>URL: https://api.the402.ai/<br>
+What the agent does: sell automated site audits, scans, research/data work, or other async digital services; the catalog also supports data APIs.<br>
+Who pays: x402-compatible agents in USDC on Base.<br>
+Verified advertised pricing: data APIs $0.001+; automated services $5+; examples include a $5 site audit and $10 security patch. Human-service examples are $25+ but those are not autonomous-agent work.<br>
+Required: provider endpoint/webhook, deliverable-verification path, x402-compatible settlement.<br>
+Autonomy: 9/10 for automated services.<br>
+Exact first action: list a bounded, objectively verifiable service such as API QA, release verification, or site-health analysis.<br>
+Constraints: no verified external seller-revenue figures surfaced; provider eligibility terms should be checked before onboarding.<br>
+Ease-to-first-$5: 5/10. Repeatability: 9/10.<br>
+Primary: https://api.the402.ai/</p>
+
+4) Delegare Market — useful distribution index, not first-dollar demand
+<p>URL: https://market.delegare.dev/<br>
+What the agent does: expose agent-native x402/MPP services that can be discovered by other agents.<br>
+Who pays: machine buyers using crypto/card rails.<br>
+Verified signal: 311 services indexed; 189 x402, 131 MPP, 9 dual-protocol. Visible prices range from free probes to $1+ per call.<br>
+Required: existing paid endpoint or compatible service.<br>
+Autonomy: 10/10.<br>
+Exact first action: ensure a proven endpoint is indexed/discoverable; do not treat the directory itself as proof of sales.<br>
+Constraints: many listings are aggregated from other markets, so buyer demand and provider onboarding must be verified per source.<br>
+Ease-to-first-$5: 3/10. Repeatability: 8/10.<br>
+Primary: https://market.delegare.dev/</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+5) Taskmarket — strongest current funded agent-work feed
+<p>URL: https://taskmarket.dev/<br>
+Current signal: 18 tasks open, 26.9K registered agents, 2,382.947764 USDC posted volume. Top-earning agent shows 120.776268 USDC earned.<br>
+Visible work: 24.2-USDC “BRYAN’S HARD DATA” task currently has 93 submissions; a 1.297426-USDC bounty-board research task has 134 submissions.<br>
+What the agent does: research, coding, data, analysis, structured artifacts.<br>
+Who pays: requester funds USDC escrow before work starts.<br>
+Required: Taskmarket skill/API and payment wallet.<br>
+Autonomy: 10/10.<br>
+Exact first action: rank open tasks by expected net value before execution; high submission counts sharply reduce win probability.<br>
+Constraints: applicable wallet/account eligibility rules.<br>
+Ease-to-first-$5: 8/10. Repeatability: 9/10.</p>
+
+6) dealwork.ai — broadest serious inventory
+<p>URL: https://dealwork.ai/<br>
+Current signal: 155–156 open tasks, 2.5K workers, 264 completed tasks, about 1.1-day median delivery.<br>
+Verified example: $80 human→AI production API task. Fees: 10% standard, 3% AI→AI.<br>
+What the agent does: code, research, data transformations, documentation, structured deliverables.<br>
+Who pays: human or agent client through escrow.<br>
+Required: skill.md/API connection; responsible human/legal owner under platform terms.<br>
+Autonomy: 9/10.<br>
+Exact first action: connect one specialist and bid only where acceptance criteria are objective.<br>
+Ease-to-first-$5: 8/10. Repeatability: 9/10.</p>
+
+7) t2000 — settlement activity continues
+<p>URL: https://t2000.ai/jobs<br>
+Fresh status: 18 open, 90 in progress, 1,149 settled, $952.23 settled USDC.<br>
+Current claimable inventory includes $1, $0.50 and $0.25 proof/integration jobs; these are useful to test the work loop but should not be confused with strong organic buyer demand.<br>
+What the agent does: open jobs, fixed services, or paid API calls.<br>
+Who pays: job posters/API consumers.<br>
+Fees: services 5% on settlement; API calls 0% marketplace fee.<br>
+Autonomy: 9/10.<br>
+Exact first action: use a tiny proof task only if useful for reputation/integration, then prioritize externally useful services.<br>
+Ease-to-first-$5: 6/10. Repeatability: 9/10.</p>
+
+8) WorkProtocol — real settlement history, thin current inventory
+<p>URL: https://workprotocol.ai/<br>
+Current signal: 734 agents, 35 jobs posted, 1,325 USDC settled. A GitHub Actions log-parser job was delivered about 13h before this run; earlier coding jobs paid 85 and 90 USDC.<br>
+What the agent does: code, ETL, research, data, documentation.<br>
+Who pays: requester; USDC escrow locks before execution.<br>
+Required: agent registration; REST/A2A/MCP-compatible worker.<br>
+Autonomy: 9/10.<br>
+Exact first action: subscribe to the feed and act only when a job has automatically reproducible acceptance criteria.<br>
+Ease-to-first-$5 now: 4/10. Repeatability: 9/10.</p>
+
+9) MoltJobs — new $5 listing, but current board still promotion-heavy
+<p>URL: https://moltjobs.io/open-jobs<br>
+Fresh board: four 2-USDC public-posting tasks ending in ~13h plus one 5-USDC lead-gen/spec task ending in 6 days.<br>
+What the agent does: machine-readable jobs via API/MCP/CLI, delivery and USDC settlement.<br>
+Who pays: escrow-funded poster.<br>
+Requirements: agent registration, relevant certification where required, Base-USDC settlement.<br>
+Autonomy: 9/10.<br>
+Exact first action: skip promotional public-post tasks unless all destination-platform rules and disclosure requirements are genuinely satisfied; inspect the $5 task carefully before attempting because it includes buyer contact.<br>
+Constraints: no spam, deceptive engagement, or bypass of account/community requirements.<br>
+Ease-to-first-$5: 4/10. Repeatability: 8/10.</p>
+
+10) Clawlancer — machine-native feed remains live
+<p>URL: https://clawlancer.ai/<br>
+What the agent does: browse/claim/execute/deliver bounties through API/MCP and settle in USDC on Base.<br>
+Who pays: bounty poster.<br>
+Verified signal: platform is live today; recent inventory has been dominated by tiny platform-seeded jobs, so headline activity is not equal to strong buyer demand.<br>
+Required: API/MCP-compatible worker; Base payment rail.<br>
+Autonomy: 10/10.<br>
+Exact first action: alert only on meaningful externally funded bounties rather than burning compute on penny tasks.<br>
+Ease-to-first-$5: 5/10. Repeatability: 8/10.</p>
+
+11) BotWork — still active as an agent-freelance channel
+<p>URL: https://www.botwork.network/<br>
+Current signal: 46 AI agents for hire; worker receives 90%, relay 5%, platform 5%.<br>
+What the agent does: research, code, design, copy, data or ops tasks through SDK/webhook/A2A.<br>
+Who pays: users submitting jobs via web/Telegram.<br>
+Required: working agent endpoint/SDK integration and eligible settlement setup.<br>
+Autonomy: 9/10.<br>
+Exact first action: register one existing specialist and measure actual paid task arrival; no custom build until demand proves itself.<br>
+Ease-to-first-$5: 6/10. Repeatability: 9/10.</p>
+
+REDDIT DEMAND SIGNALS
+
+A) Automation outcome monitoring — strongest fresh recurring pain
+<p>Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/<br>
+Posted Aug 29, 2026. The core complaint: an n8n execution can be green while the actual message/business action never happened. Dead tokens, rejected templates, or broken webhooks can fail silently.<br>
+Recurring pattern: workflow status != business outcome.<br>
+Immediate offer: <code>/automation-health</code> — external expectation/canary + downstream receipt/state check + evidence-rich alert.<br>
+Customer: automation agencies and companies running production n8n/Make/Zapier.<br>
+MVP: expected event + deadline + downstream receipt -&gt; HEALTHY / FAILED / SILENT.<br>
+Suggested model: setup + recurring monitoring; no universal price claimed because no reliable price was verified.<br>
+Ease-to-first-$5: 8/10. Repeatability: 10/10.</p>
+
+B) Meta/WhatsApp automation reliability
+<p>Thread: https://www.reddit.com/r/n8n/comments/1w0r31n/everything_that_broke_while_i_was_building_a/<br>
+Posted Aug 28. Operator reports Meta-side account restrictions and expiring tokens causing workflows to fail or appear healthy even when messages do not send.<br>
+Recurring pattern: upstream account/API state is outside the workflow engine and needs independent monitoring.<br>
+Immediate offer: <code>/channel-health</code> for authorized WhatsApp/Meta integrations — token-expiry warning, account-state probe, delivery-receipt test, runbook.<br>
+Ease-to-first-$5: 7/10. Repeatability: 9/10.</p>
+
+C) QA orchestration / verification remains valuable
+<p>Threads:<br>
+https://www.reddit.com/r/QualityAssurance/comments/1vsh07o/feeling_exhausted_due_to_ai/<br>
+https://www.reddit.com/r/QualityAssurance/comments/1vw1f5i/ai_will_make_qas_actually_be_qas/<br>
+Current August discussions say AI makes scripts/tests almost instant, but QA workloads shift toward deciding what to test, planning, exploratory testing and validating requirements.<br>
+Recurring problem: code/test generation is cheap; trustworthy verification and prioritization are not.<br>
+Immediate offer: <code>/verify-pr</code> — changed-surface map -&gt; risk-ranked tests -&gt; execution -&gt; failure reproduction -&gt; evidence -&gt; PASS/FAIL/REVIEW.<br>
+Customer: AI-heavy software teams and agencies.<br>
+Ease-to-first-$5: 8/10. Repeatability: 10/10.</p>
+
+D) Simple integration work can beat “AI agent” pitches
+<p>Thread: https://www.reddit.com/r/u_Actual-Struggle9480/comments/1vhxx3q/client_paid_us_to_build_an_ai_agent_we_killed_the/<br>
+Aug 7 self-report: client requested an AI onboarding agent, but the provider discovered three people duplicating data entry across three tools; a Make.com + Slack integration reportedly saved 15 hours/week and the client still paid the invoice.<br>
+Recurring problem: duplicate entry and cross-system synchronization are often higher-value and lower-risk than open-ended autonomy.<br>
+Immediate offer: authorized <code>intake -&gt; validate -&gt; CRM/system A + system B -&gt; exception queue</code> integration.<br>
+Ease-to-first-$5: 7/10. Repeatability: 9/10.</p>
+
+FILTERED / WATCHLIST
+<ul>
+<li>APIHub: technically strong x402 provider marketplace, but prior checks found explicit adult/legal-majority eligibility; do not bypass.</li>
+<li>TaskBounty: attractive coding bounties, but prior terms check showed an 18+ requirement; do not bypass.</li>
+<li>AuraGate: still explicitly an Arc Testnet demo; testnet revenue is not earnings.</li>
+<li>QuestBoard: 0 active bounties / 0 agents earning in the current indexed snapshot.</li>
+<li>x402 Bazaar: 112 APIs and 95% provider share but previously reported zero external provider revenue; watch only.</li>
+<li>Agent402: new this run but 0 calls/24h, so keep it nearly zero-effort.</li>
+<li>micro1 $80–$100/hour STEM AI Agent Research Specialist: current remote listing exists, but this is conventional employment/expert work with vetting rather than autonomous agent income, and employment eligibility must be satisfied; not ranked as an agent marketplace opportunity.</li>
+</ul>
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) Keep execution concentrated on Taskmarket + dealwork + t2000
+<p>These have the best combination this run of funded work, completed/settled history, and machine-operable workflows. Normalize every task to:<br>
+<code>expected_net = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) - execution/tool/review costs</code><br>
+Taskmarket’s 24.2-USDC bounty already has 93 submissions, demonstrating why headline reward alone is misleading.</p>
+
+2) Build <code>/automation-health</code> before another generic agent
+<p>Fresh Reddit evidence again says the painful layer is six months after handover: expected run, actual run, downstream business outcome, token/account state, and cost anomaly. Minimal MVP:<br>
+<code>expected event + deadline + actual downstream receipt =&gt; HEALTHY / FAILED / SILENT</code><br>
+Then add API/account-state probes and cost baselines.</p>
+
+3) Turn every successful paid procedure into a callable product
+<p>Productization ladder:<br>
+<code>paid job -&gt; proven procedure -&gt; tests/failure cases -&gt; stable endpoint -&gt; list across permitted rails</code><br>
+This run’s new rails are run.pay, the402 and Agent402; use them only as near-zero-cost distribution, not as substitutes for proven demand.<br>
+Highest-confidence SKUs: <code>/automation-health</code>, <code>/verify-pr</code>, <code>/api-qa</code>, <code>/structured-evidence</code>, <code>/normalize-document</code>, <code>/release-check</code>.</p>
+<p>Accounting rule: only SETTLED/WITHDRAWN real-money value counts as earnings. Testnet balances, credits, illustrative examples, claimed GMV and unfunded jobs remain separate.</p>

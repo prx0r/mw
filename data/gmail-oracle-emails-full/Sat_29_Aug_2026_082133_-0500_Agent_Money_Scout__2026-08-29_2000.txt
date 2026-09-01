@@ -1,0 +1,187 @@
+Subject: Agent Money Scout — 2026-08-29 20:00
+Date: Sat, 29 Aug 2026 08:21:33 -0500
+Message ID: 1a04daec2ec00e92
+================================================================================
+
+# Agent Money Scout — 2026-08-29 20:00
+
+The strongest fresh finding this run is Clawlancer: its live marketplace currently has a real $15 bounty posted about 8 hours ago, plus many tiny $0.01–$0.03 bounties that prove the claim/deliver/payment loop is active. The best mature direct-work sources are still dealwork, Taskmarket, WorkProtocol and t2000. A second major signal is that reliability/verification work around n8n and AI-generated software keeps producing fresh demand evidence.
+
+## NEW THIS RUN
+
+### 1) Clawlancer — live $15 bounty plus autonomous claim/deliver API
+URL: https://www.clawlancer.ai/marketplace
+
+Primary-source status: the current marketplace shows a $15 runnable-script bounty posted about 8 hours ago, plus many live $0.01–$0.03 research/coding/writing bounties. Examples include recent-EIP research, Base gas-price analysis, an API rate limiter, and a price-feed aggregator. The platform exposes register, list-bounties, claim, deliver and notification endpoints and says payments settle in USDC on Base. During beta its terms say there are currently no platform fees; normal on-chain gas still applies.
+
+What the agent does: bounded coding, public-source research, structured writing, data analysis.
+Who pays: bounty posters or buyers of fixed-price skills.
+Payout: currently visible live bounty up to $15; many platform-seeded bounties are only $0.01–$0.03, so do not confuse activity with attractive economics.
+Required: API-capable agent; wallet/payment setup where applicable.
+Autonomy: 10/10 technically.
+Exact first action: query the marketplace and attempt only the $15-class or higher externally funded work; ignore cent-level seed bounties except as an integration test.
+Constraints: platform terms prohibit illegal/fraudulent activity. I did not find an explicit age clause in the current terms; only use the payment/account layer if its current terms and applicable law permit you to do so.
+Ease first $5: 6/10. Repeatability: 8/10.
+
+### 2) Molted — peer-to-peer Base-USDC agent jobs
+URL: https://molted.work/
+
+Molted is a new agent-to-agent marketplace where autonomous agents post jobs, bid, coordinate and pay directly in USDC on Base. It is deliberately non-custodial/no-middleman rather than classic escrow.
+
+What the agent does: digital tasks posted by other agents.
+Who pays: posting agents.
+Payout: buyer-defined; I could not verify enough live funded inventory to state a legitimate range.
+Required: compatible agent plus permitted Base/USDC payment setup.
+Autonomy: 10/10.
+Exact first action: inspect current jobs before writing more than a thin adapter.
+Constraints: payment/wallet/account rules and local eligibility apply; do not bypass them.
+Ease first $5: 3/10 pending liquidity. Repeatability: 8/10 if the market fills.
+
+### 3) XDC AI provider marketplace — list paid APIs over x402
+URL: https://xdcai.tech/
+
+XDC AI provides an x402 service marketplace where an API can be paid per call in USDC on XDC. It supports Claude, ChatGPT, Codex, Cursor, Hermes and related clients.
+
+What the agent sells: a narrow API such as structured extraction, release checking, evidence normalization or API-health checks.
+Who pays: agents consuming the endpoint.
+Payout/pricing: provider-set per call; no verified provider-revenue figure surfaced this run.
+Required: hosted API + x402 listing/integration.
+Autonomy: 10/10 after deployment.
+Exact first action: treat it as a cross-listing rail for an already useful endpoint, not a reason to build a new product.
+Constraints: its own terms warn that the wallet/payment layer is experimental and transactions are generally irreversible; only use it where current eligibility rules permit.
+Ease first $5: 3/10. Repeatability: 9/10 if buyer liquidity grows.
+
+### 4) AgentBazaar.dev — technically strong but currently zero public jobs
+URL: https://www.agentbazaar.dev/
+
+This is distinct from the previously seen Agent Bazaar site. It supports Solana USDC, x402, A2A v1.0, MCP, SDKs and recurring agent calls. However, the live jobs table currently says “No jobs found.”
+
+What the agent does: sells a machine-callable service per invocation/session.
+Who pays: other agents or human buyers.
+Pricing examples shown by the platform include tiny per-service amounts, but there is no current public job activity to validate demand.
+Exact first action: do not build for it; at most cross-list an existing endpoint and measure external calls.
+Autonomy: 10/10. Ease first $5: 1/10 today. Repeatability: 8/10 if liquidity appears.
+
+### 5) SEO audit/repair specialist — fresh problem evidence today
+Demand evidence: https://www.reddit.com/r/n8n_ai_agents/comments/1w1edcv/meet_my_new_project_sitescan_ai/
+
+A fresh August 29 post describes the pain of manually combining Screaming Frog CSVs, PageSpeed results and duplicate/meta-tag analysis. The author built an n8n pipeline because cross-referencing these sources manually was time-consuming.
+
+Customer/problem: SEO agencies and site owners performing large audits or migrations.
+Agent workflow: ingest permitted crawl/export data -> normalize URLs -> PageSpeed/live diagnostics -> duplicate/cannibalization checks -> suggested fixes -> structured Sheet/JSON -> human approval for publishing.
+Where to acquire customers: SEO consultants, web-migration agencies, existing Screaming Frog users.
+How to charge: fixed price per audit or recurring monitoring. Do not automate unsolicited outreach.
+Concrete MVP: “Send Screaming Frog export + sitemap; receive prioritized technical SEO issue table and ready-to-review metadata fixes.”
+Ease first $5: 7/10. Repeatability: 9/10.
+
+### 6) Automation outcome watchdog — demand evidence got even stronger today
+Demand evidence: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+Today’s post makes the key distinction explicit: a green n8n execution only proves the graph ran, not that the business outcome happened. Dead tokens, rejected templates and silent webhook failures can leave everything “successful” while the downstream message never arrives.
+
+Customer/problem: agencies and companies running n8n/Make/Zapier in production.
+Agent workflow: expected event -> independent canary/heartbeat -> verify downstream receipt/state -> timeout/duplicate/schema-drift detection -> evidence + alert + runbook.
+Acquisition: automation consultants and existing client-workflow operators.
+Charge: setup fee + recurring per-workflow monitoring.
+MVP: HTTP heartbeat + expected-deadline store + downstream receipt verifier + Slack/email alert.
+Ease first $5: 8/10. Repeatability: 10/10.
+
+### 7) API-cost anomaly watchdog
+Demand evidence: https://www.reddit.com/r/SideProject/comments/1w0ju81/stackpilot_a_tiny_tool_that_pings_me_before_my/
+
+A current operator reports a looping client automation burning about $80 in API calls in one day while technically succeeding. This is a different failure mode from normal error monitoring.
+
+Offer: “I monitor automation cost per successful business outcome and alert on loops/runaway spend.”
+Workflow: execution telemetry -> per-run model/API cost -> rolling baseline -> anomaly/loop detection -> hard budget threshold -> alert.
+Customer: AI automation agencies and small teams with many model/API integrations.
+Charge: recurring monitoring; easiest MVP is cost/event monitoring rather than full observability.
+Ease first $5: 7/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 8) dealwork.ai — 156 tasks open
+URL: https://dealwork.ai/
+Current primary source shows ~2.5K workers, 264 completed tasks and 156 open tasks. Public examples include an $80 human-to-AI API job and a $5 AI-to-AI task.
+Agent work: coding, research, structured data, transformations.
+First action: poll open work and rank escrow-protected jobs by expected value.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 9) Taskmarket — 19 funded tasks, 2,380.71 USDC posted volume
+URL: https://taskmarket.dev/
+Current live feed: 19 open tasks, 26.7K agents and 2,380.714419 USDC posted volume. “BRYAN'S HARD DATA” currently advertises 24.2 USDC.
+Agent work: competitive research/data/coding deliverables.
+First action: prioritize funded jobs with explicit acceptance criteria and low effective competition.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 10) WorkProtocol — 734 agents, 1,325 USDC settled
+URL: https://workprotocol.ai/
+Fresh primary source: 734 agents, 35 jobs posted and 1,325 USDC settled; jobs use Base-USDC escrow. The public site still exposes a completed 90-USDC git-history analyzer job as settlement evidence.
+Agent work: code, content, data, research, design and custom structured jobs.
+First action: query current open jobs and only claim when the acceptance tests can be reproduced before expensive execution.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 11) t2000 — liquidity has increased materially
+URL: https://t2000.ai/jobs
+Fresh primary source now reports 40 jobs open, 77 in progress, 1,141 settled and $940.38 settled USDC. This is substantially stronger than earlier runs. Public agent pages show individual sellers with $10.58, $9.90, $8.44, $6.16, $5.77 and $5.63 settled, while the marketplace also has an $80/job deep software-testing service.
+Agent work: claimable jobs plus reusable services/API calls.
+Who pays: buyers funding jobs or hiring listed services.
+Fees: 5% on service settlement, 0% on API calls.
+Exact first action: this now deserves first-tier polling alongside dealwork/Taskmarket/WorkProtocol.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+### 12) MoltJobs
+URL: https://moltjobs.io/
+Still provides the strongest normalized agent-job interface: REST/MCP/CLI, 10 free bids/month, 5% success fee and Base-USDC escrow. Current public inventory recently skewed toward promotional-post tasks, so filter aggressively and reject anything that would be spam, deceptive, or violate the destination platform's rules.
+Ease first $5: 4/10 on the current inventory. Repeatability: 8/10.
+
+### 13) gigs.sh
+URL: https://gigs.sh/
+Still useful as a discovery index rather than an execution source. Continue using it to find new markets, but verify each market’s current funded inventory and eligibility separately before routing work there.
+
+## REDDIT DEMAND SIGNALS
+
+### A) Outcome monitoring, not workflow monitoring
+https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+Fresh today. Recurring problem: workflow status != business outcome. This is the strongest signal for an Automation Watchdog product.
+
+### B) API-cost/runaway-loop monitoring
+https://www.reddit.com/r/SideProject/comments/1w0ju81/stackpilot_a_tiny_tool_that_pings_me_before_my/
+Fresh August 28. $80 reportedly burned in a day by a workflow that was technically succeeding. Recurring problem: cost anomalies are invisible to ordinary failure alerts.
+
+### C) SEO audit normalization
+https://www.reddit.com/r/n8n_ai_agents/comments/1w1edcv/meet_my_new_project_sitescan_ai/
+Fresh today. Recurring problem: agencies manually combine crawler exports, PageSpeed and metadata analysis. Strong bounded data-work opportunity.
+
+### D) Law/professional-service orchestration
+https://www.reddit.com/r/n8n/comments/1vywta1/built_a_full_ai_automation_system_for_a_law_firm/
+Current high-engagement example shows the recurring pattern: intake, unread docs, deadlines, status synchronization and follow-ups. The safe commercial version keeps professional judgment and sensitive client-facing outputs behind qualified human approval.
+
+### E) Boring automations retain clients longer
+https://www.reddit.com/r/microsaas/comments/1vo28g3/the_client_automations_still_running_six_months/
+An automation-agency operator says the workflows still running six months later tend to be boring low-cost transformations/data moves, while giant “agent that handles everything” systems get switched off after confusing failures. This reinforces the product-selection rule: high-frequency, low-ambiguity, cheap, observable outputs.
+
+## FILTERED OUT / WATCHLIST
+
+APIHub (https://apihub.io/) is technically one of the best new paid-API marketplaces found: 256 services, 230 external, $0.001–$10+ pricing, automatic daily USDC provider settlement and a 90% provider share. However, its current Terms explicitly require users to be at least 18 or the legal age of majority. Do not use it if that eligibility requirement is not met.
+
+AgentBazaar.dev currently shows no jobs, so it is distribution infrastructure rather than money today.
+
+QuestBoard currently shows 0 active bounties and 0 agents earning.
+
+MoltMarket still advertises $5+ bounties but its public leaderboard shows the top agent at 0 jobs and $0 earned.
+
+SeekClaw remains credit-denominated rather than verified cash earnings, so its internal CLAW Credits are not counted as revenue.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Upgrade t2000 into the first-tier polling set. The fresh jump to 40 open / 77 in-progress / 1,141 settled jobs and $940.38 settled USDC makes it much more credible than earlier runs. Poll dealwork + Taskmarket + WorkProtocol + t2000 behind one normalized adapter.
+
+2. Build Automation Watchdog before another general-purpose agent. Today’s new evidence sharpens the value proposition: verify the actual downstream business outcome and cost, not whether the workflow node returned HTTP 200. Start with canary/heartbeat + delivery receipt + runaway-cost detection.
+
+3. Turn successful job procedures into narrow paid services. Best candidates remain `/verify-pr`, `/automation-health`, `/normalize-document`, `/extract-evidence`, `/api-health`, plus a new `/seo-audit-normalize` candidate. The path should be: paid job -> recorded procedure/tests/failure modes -> reusable specialist -> fixed-price service/MCP/eligible machine-payment API.
+
+Continue ranking every job by:
+
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) − inference/API/payment/review costs
+
+Only SETTLED/WITHDRAWN value counts as earnings; credits, testnet balances, unfunded bounty totals and marketplace marketing volume stay separate.

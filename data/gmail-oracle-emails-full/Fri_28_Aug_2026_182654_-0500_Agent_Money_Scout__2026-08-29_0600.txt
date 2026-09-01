@@ -1,0 +1,162 @@
+Subject: Agent Money Scout — 2026-08-29 06:00
+Date: Fri, 28 Aug 2026 18:26:54 -0500
+Message ID: 1a04ab29c469adfd
+================================================================================
+
+# Agent Money Scout — 2026-08-29 06:00
+
+This run deliberately rotated away from the previously repeated agent-job boards. The strongest new finds are: (1) two just-posted x402 integration bounties on Monetize Your Agent with zero responses when crawled, (2) a live $100 Algora GitHub bounty, and (3) MCPize, a real marketplace where MCP creators keep 80% and payouts are handled via Stripe Connect. I also checked several flashy agent markets that currently have zero paid inventory and excluded them from the earning ranking.
+
+## NEW THIS RUN
+
+### 1) Monetize Your Agent / Pyrimid — $25 USDC x402 integration bounty
+URL: https://www.monetizeyouragent.fun/
+What the agent does: Add a real paid x402 endpoint to an existing agent/API and route the first verified non-self transaction through Pyrimid.
+Who pays: Pyrimid Protocol.
+Verified payout: $25 USDC after the first real transaction. The listing showed 0 responses when crawled.
+Required: existing API/agent/service, x402/HTTP endpoint, Base-compatible payout setup where legally/contractually eligible.
+Autonomy: 9/10 after initial setup.
+Exact first action: inspect the bounty, confirm eligibility/payment terms, then choose an existing endpoint rather than building a fresh app.
+Constraints: follow wallet/payment-provider and platform eligibility rules; no self-transactions or fabricated demand.
+Ease-to-first-$5: 8/10. Repeatability: 7/10.
+Primary source evidence: Monetize Your Agent jobs section, current listing.
+
+### 2) Monetize Your Agent / Pyrimid — $15 USDC buyer-agent bounty
+URL: https://www.monetizeyouragent.fun/
+What the agent does: Build a small Python/TypeScript agent that discovers a Pyrimid-enabled endpoint, handles the HTTP 402 flow, purchases a result, and returns it.
+Who pays: Pyrimid Protocol.
+Verified payout: $15 USDC after verified purchase; listing showed 0 responses when crawled.
+Required: Python or TypeScript, tool-calling workflow, compatible payment setup where eligible.
+Autonomy: 9/10.
+Exact first action: inspect the listing and reproduce the protocol against a low-cost permitted endpoint using a controlled test budget only if eligible.
+Constraints: do not bypass payment/account/age rules; reward requires a verifiable purchase.
+Ease-to-first-$5: 7/10. Repeatability: 6/10.
+Source: https://www.monetizeyouragent.fun/
+
+### 3) Algora — live $100 Meteor/Vite/Svelte coding bounty
+URL: https://algora.io/wreiske/bounties
+What the agent does: Solve meteor-vite#341, a Svelte 5 example issue showing blank pages; submit a valid GitHub contribution under Algora’s bounty flow.
+Who pays: the bounty sponsor through Algora.
+Verified payout: $100. Algora currently shows 1 open bounty and 3 completed bounties for this sponsor page.
+Required: GitHub, JS/TS, Meteor/Vite/Svelte debugging, tests/reproduction.
+Autonomy: 7/10 because PR review remains human-controlled.
+Exact first action: read the linked GitHub issue and determine whether the failure can be reproduced before writing code.
+Constraints: follow the repository contribution policy and Algora payout/account requirements.
+Ease-to-first-$5: 6/10. Repeatability: 6/10 because this sponsor currently has only one open bounty.
+
+### 4) MCPize — sell MCP servers for subscriptions or pay-per-call
+URL: https://mcpize.com/
+What the agent does: Package a useful deterministic tool as an MCP server, deploy it, and sell access.
+Who pays: MCP users/teams buying access.
+Verified economics: MCPize says new publishers keep 80% of revenue; 1,000+ MCP servers and 450+ publishing developers are listed. Monthly payouts use Stripe Connect. The free hosting tier includes 250K requests/month. MCPize supports subscriptions, usage tiers and pay-per-call; x402 pay-per-call is documented.
+Required: TypeScript or supported MCP implementation; a useful tool with clear input/output.
+Autonomy: 10/10 once deployed.
+Exact first action: convert an already-working deterministic endpoint into a minimal MCP server and test demand before adding scope.
+Constraints: payout eligibility depends on Stripe/platform rules; do not bypass them.
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+Primary sources: https://mcpize.com/ and https://mcpize.com/docs/monetization
+
+### 5) Monetize Your Agent — $100 qualified Agent Rescue referral
+URL: https://www.monetizeyouragent.fun/
+What the agent does: Refer a genuine business with a broken n8n/MCP/AI-agent/webhook workflow to a published $1,000 repair service.
+Who pays: Agent Rescue Desk.
+Verified payout: $100 USDC after one qualifying $1,000 purchase clears and is not refunded; one commission maximum.
+Required: legitimate customer discovery and transparent referral attribution.
+Autonomy: 6/10; real B2B qualification usually needs oversight.
+Exact first action: only surface the offer when encountering an independently identified business actively asking for help with a broken workflow.
+Constraints: listing explicitly forbids spam, fabricated claims, self-purchases, owner-linked buyers, credential collection, and misleading urgency.
+Ease-to-first-$5: 3/10. Repeatability: 2/10 because it is one commission maximum.
+
+### 6) WORQ — technically excellent, but currently a WATCH rather than an earning source
+URL: https://worq.dev/
+What it does: autonomous agent-to-agent jobs, bidding, recursive delegation and Base USDC escrow.
+Economics: worker gets 95%; $1 minimum job budget.
+Current reality: live page showed 0 active agents at crawl time.
+Autonomy: 10/10.
+Action: poll rather than integrate deeply until there is funded inventory.
+Ease-to-first-$5 today: 1/10. Repeatability potential: 9/10.
+
+### 7) 0xWork — WATCH, not current money
+URL: https://www.0xwork.org/tasks
+What it does: Base-USDC task market with escrow, on-chain reputation and autonomous worker APIs.
+Advertised task bands: writing $5–25, research $5–50, code $10–100, data $5–40.
+Current reality: task board showed $0.00 USDC available and 0 tasks. An agent profile does show 7 historical completed tasks, so the protocol has seen activity, but there is no current earning inventory.
+Action: keep it in liquidity monitoring only.
+Ease-to-first-$5 today: 1/10. Repeatability potential: 8/10.
+
+### 8) ClawJobs — WATCH, current inventory is $0
+URL: https://clawjobs.com/
+What it does: Base escrow marketplace with a 10% worker stake and 3% platform fee.
+Current reality: the latest visible opportunities were $0 USDC. Do not count them as earning opportunities.
+Ease-to-first-$5: 1/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 9) dealwork.ai
+URL: https://dealwork.ai/
+Still one of the strongest prior task pools because it has repeatedly shown substantial open-task inventory and completed-task history. Continue polling it, but label it still active rather than new.
+Best tasks: bounded research, code, data transformation and agent-to-agent subtasks with objective acceptance criteria.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 10) MoltJobs
+URL: https://moltjobs.io/
+Still worth polling because the lifecycle is machine-readable and payment is escrowed in USDC. Current runs have shown small fresh jobs, but liquidity remains modest.
+Ease: 6/10. Repeatability: 8/10.
+
+### 11) Toku
+URL: https://www.toku.agency/
+Still notable for a large visible job count and actual USD payout plumbing, although prior scans showed heavy competition on cheap jobs. Use bid-count/competition telemetry before applying.
+Ease: 6/10. Repeatability: 9/10.
+
+### 12) GitProduct
+URL: https://gitproduct.com/agents
+Still explicitly supports transparent AI-agent submissions for eligible research, content, analysis and testing work. Published task range: $5–$50, 10% platform fee, PayPal cash-out after a $50 balance. Human-interaction tasks are not agent-eligible.
+Ease: 5/10. Repeatability: 8/10.
+
+## REDDIT DEMAND SIGNALS
+
+### A) Boring receipt/file automation is still extremely sticky
+Thread: https://www.reddit.com/r/automation/comments/1vtlt00/whats_the_most_useful_boring_automation_youve/
+A fresh thread from the past week highlights a tiny script that renames scanned receipts into structured YYYY-MM-DD_store_amount filenames. The author describes it as a 20-minute build that repeatedly saves tax-season admin. The recurring pattern is not “build an AI platform”; it is automate one annoying file/document operation perfectly.
+Agent offer: folder watcher -> extract date/store/amount -> confidence check -> rename/move -> exceptions queue.
+Where to acquire customers: bookkeeping communities, small agencies, contractors, local businesses, or inbound SEO around very specific document workflows. Do not spam communities that ban promotion.
+Charging model: fixed setup for a narrowly scoped workflow + optional maintenance.
+
+### B) Invoice/PDF extraction still fails on normalization, not OCR
+Threads:
+https://www.reddit.com/r/smallbusiness/comments/1q7csq0/anyone_else_wasting_insane_time_converting/
+https://www.reddit.com/r/automation/comments/1upnten/fastest_way_to_autoextract_receipt_and_pdf/
+Users report that generic OCR often still leaves substantial manual fixing. A more technical thread recommends deterministic parsing where possible, OCR only when needed, and AI for classification/extraction rather than blindly using an LLM for every step.
+Agent offer: PDF/email/Drive input -> deterministic extraction first -> OCR fallback -> schema validation -> duplicate detection -> exception queue -> CSV/QBO/Sheets output.
+MVP: sell “verified rows delivered” rather than “AI document parsing.”
+
+### C) SEO traffic-loss forensics is a fresh demand spike
+Thread: https://www.reddit.com/r/SEO_Marketing_Offers/comments/1vxdt31/20_8_i_dont_know_if_was_about_google_update_or/
+A current thread has multiple site owners reporting 90–95% traffic drops around the August 2026 spam update. The repeated advice is to segment losses by URL/page type, compare competitors, identify content patterns and avoid indiscriminate rewrites.
+Agent offer: Search Console/export + sitemap + content inventory -> classify page types -> detect which clusters lost visibility -> compare surviving competitors -> evidence-backed remediation queue.
+Important constraint: do not promise ranking recovery or generate deceptive/spam content.
+Pricing: fixed forensic audit or per-site report; validate demand with one narrow report before building a SaaS.
+
+### D) Client-email/action-item extraction remains practical
+Thread: https://www.reddit.com/r/Entrepreneur/comments/1tvildd/whats_the_most_impressive_ai_automation_running/
+A business operator says a workflow summarizing client emails/support conversations and turning them into team action items saves several hours per week and prevents things from slipping through cracks.
+Agent offer: authorized inbox/ticket feed -> summarize -> extract commitments/deadlines -> dedupe -> write task queue -> human approval for sensitive outbound actions.
+The value metric is missed-action reduction, not tokens generated.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. **Take the newly posted $25 Pyrimid integration bounty first if eligible.** It had zero responses at crawl time and aligns with an existing x402/API capability. Do not build a new product just for it: wrap an endpoint that already works, satisfy the non-self transaction requirement legitimately, and treat only settled payment as revenue.
+
+2. **Inspect the live $100 Algora Meteor/Vite bounty.** A single $100 coding bounty can have much better expected value than bidding against dozens of agents for $3–$5 jobs. First reproduce the failure and estimate solve probability; abandon quickly if the issue is stale or environment-specific.
+
+3. **Publish one proven deterministic capability on MCPize.** The best candidate is not a general assistant. Use a narrow operation that can be checked automatically, such as PR verification, structured evidence extraction, API health/audit, or document normalization. This creates the two-sided flywheel: paid jobs teach the procedure; the procedure becomes a recurring MCP/x402 product.
+
+Suggested scorer:
+
+expected_realized_profit = reward × P(still_open) × P(solve) × P(accepted) × P(settled) - inference - API costs - payment/network costs - expected review cost
+
+Revenue states: DISCOVERED -> CLAIMED/BID -> DELIVERED -> ACCEPTED -> SETTLED -> WITHDRAWN. Only settled/withdrawn money counts.
+
+## Key change this run
+
+The market is now producing enough fake liquidity signals that the scout should maintain explicit negative telemetry. WORQ has strong architecture but showed 0 active agents; 0xWork showed 0 current tasks and $0 bounty inventory; ClawJobs showed $0 listings. These should not compete in the same ranking as a newly posted $25 bounty with zero responses or a live $100 OSS bounty. The moat is increasingly the liquidity/settlement dataset, not the directory itself.

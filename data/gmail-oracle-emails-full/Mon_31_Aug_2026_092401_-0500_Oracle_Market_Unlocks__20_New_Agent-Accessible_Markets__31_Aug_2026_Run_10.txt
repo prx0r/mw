@@ -1,0 +1,158 @@
+Subject: Oracle Market Unlocks — 20 New Agent-Accessible Markets — 31 Aug 2026 (Run 10)
+Date: Mon, 31 Aug 2026 09:24:01 -0500
+Message ID: 1a05834ab6e73763
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new markets
+
+**Date:** 31 Aug 2026
+
+This scan treats novelty as a hard constraint. It excludes the long list already covered in earlier Oracle reports (Atlassian Forge, monday.com, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, WooCommerce, HubSpot, JetBrains, Fab, Unity, UEFN, Canva, Creative Market, Minecraft, Adobe Stock, Envato, Telegram Mini Apps, VRChat, WordPress, Zoom, Teams, Poe, CGTrader, Salesforce AgentExchange, ServiceNow, LINE, Databricks, Wix, Shopify, RapidAPI, AWS/Snowflake/Google Cloud marketplaces, Discord, Bubble, FlutterFlow, Coda, Figma, VS Code, Edge, Firefox, Xero, Zendesk, Zoho, Pipedrive, Foundry, QuickBooks, Intercom, Freshworks, FiveM/Tebex, itch.io, GmodStore, Fantasy Grounds, MyFonts, DAZ, Roll20, IMVU, Second Life, Creative Fabrica, TurboSquid, Airtable, Autodesk Design & Make, Grafana, Stripe Apps, Adobe Creative Cloud Marketplace, AppSource/Power BI, Whop, SketchUp, Adobe Commerce, Garmin, Ecwid, PrestaShop, Shopware, Galaxy Store, Alexa Skills, SAP Store, OpenCart, Reallusion, Joomla, Oracle Marketplace, Splunkbase, Apify, Vercel Marketplace, PromptBase Skills, Nexus, Modrinth, HighLevel, Obsidian, DataBazaar, Square, Heroku Add-ons, Clover, Odoo, Craft CMS, Concrete CMS, WHMCS, CS-Cart, Statamic, October CMS, WeChat, Alipay, Codester, SellMyApp, Design Bundles, UI8, ArtStation, RenderHub, Cubebrush, Pond5, ActiveCampaign, Duda, Walmart, SHOPLINE, Amazon SP-API Appstore, Asana, Lightspeed, Etsy, Leanpub, Twitch Extensions, Zazzle, Klaviyo, Sage, MYOB, eBay, Ghost, Shopify Theme Store, Glide, ZEPETO and n8n templates).
+
+H-level shorthand used here: **H0** = essentially machine-operable after credentials; **H1** = one-time human identity/account/review/consent step; **H2** = recurring human subjective or compliance approval; **H3** = material recurring human production; **H4** = fundamentally human/offline. I do not count mandatory identity, tax, legal, age or payment verification as something Moltwork should try to bypass.
+
+## Ranked table
+
+| Rank | Market | Composite /25 | Best wedge | Post-setup H |
+|---:|---|---:|---|---|
+| 1 | UiPath Marketplace | 24 | Paid Custom Activities + Business Solutions | H1 |
+| 2 | Google Workspace Marketplace | 23 | Admin/finance/compliance micro-add-ons | H1–H2 |
+| 3 | Squarespace Extensions / Developer Apps | 22 | Merchant/creator workflow SaaS | H1 |
+| 4 | Mendix Marketplace | 22 | Commercial enterprise components | H1–H2 |
+| 5 | Okta Integration Network | 21 | Long-tail SSO/SCIM integrations + onboarding automation | H1–H2 |
+| 6 | WeWeb Marketplace | 21 | Paid/relicensed frontend libraries and native bridges | H1 |
+| 7 | RingCentral App Gallery | 20 | Presence/routing/admin micro-SaaS | H1–H2 |
+| 8 | Dropbox App Center | 19 | File-governance and content-workflow SaaS | H2 |
+| 9 | Cricut Creator Program / Design Space | 19 | Tested utility-style project/template families | H2 |
+| 10 | BeatStars Marketplace | 18 | Sound kits, producer utilities, coherent niche packs | H2 |
+| 11 | aescripts + aeplugins | 18 | After Effects/Premiere/Resolve workflow plugins | H1–H2 |
+| 12 | GameDev Market | 17 | Original, rigorously validated game-production assets | H2 |
+| 13 | Patreon Shops | 17 | Continuously maintained technical/digital products | H1–H2 |
+| 14 | Threadless Marketplace | 16 | Parametric personalization/product families | H2 |
+| 15 | Spoonflower Design Library | 16 | Repeat-pattern systems and specialist surface design | H2 |
+| 16 | Displate Marketplace | 15 | Original poster systems with automated print QA | H2 |
+| 17 | Redbubble Marketplace | 13 | Niche utility/design families only | H2 |
+| 18 | Freepik Contributor market | 13 | High-utility vectors/templates with provenance QA | H2 |
+| 19 | Shutterstock Contributor market | 10 | Data-driven niche photo/video portfolios | H2 |
+| 20 | Storyblocks contributor library | 9 | Highly specific stock/video utility footage | H2–H3 |
+
+The score is a 5-factor composite: opportunity value, agent suitability, automation feasibility, competition (inverted), and novelty.
+
+---
+
+## 1. UiPath Marketplace — 24/25
+
+**What agents can sell.** Paid Custom Activities (.NET libraries), full Business Solutions containing automations/data/tests/APIs/configuration, and—through eligible partners—professional services. UiPath explicitly supports Marketplace monetization, Stripe-backed payments, security certification, and direct paid listings.
+
+**Autonomous loop.** Oracle mines UiPath forum/Reddit/customer workflows for repeated missing primitives → specialist worker scaffolds an activity or Business Solution → disposable Orchestrator/Studio fixture executes happy-path/failure/retry/security cases → Harbor World validates types, idempotence, credentials, logging and performance → worker creates listing, docs, screenshots, fulfillment instructions and licensing hooks → HumanQueue handles required entity/Marketplace review → publish → observe support tickets/downloads/sales → regression-test every UiPath release and patch automatically.
+
+**Human dependency.** H1 after seller/entity onboarding; security/product review is mandatory but mostly packageable. Do not automate identity/tax/legal acceptance.
+
+**Frontier infrastructure.** UiPath Marketplace monetization plus UiPath’s TypeScript SDK, CLI/coding-agent skills and cloud APIs make the underlying artifact unusually machine-buildable. A June 2026 UiPath discussion specifically pointed developers toward the TypeScript SDK and UiPath coding-agent skills for custom activities.
+
+**Demand/community.** UiPath’s own monetization rules require real business value and vendor support. Community discussions show developers still struggle with custom-activity UI and enterprise automation construction, while certified developers continue to market these skills as specialist labor.
+
+**Why agents fit.** This is code + deterministic workflow execution + repetitive compatibility maintenance. Excellent Harbor surface.
+
+**Moltwork assets.** `UiPathPack`, `CustomActivityWorld`, Orchestrator fixture generator, security evaluator, licensing/publishing Process, UiPath specialist School/Worker.
+
+**Economics.** Attractive when the component replaces repeated consulting hours or brittle bespoke workflows. Unattractive for generic “AI assistant” activities with free equivalents or anything requiring long enterprise services delivery.
+
+Official: https://docs.uipath.com/marketplace/automation-cloud/latest/user-guide/marketplace-monetization
+Community: https://www.reddit.com/r/UiPath/comments/1u680yi/how_to_create_ui_for_custom_activities_in_uipath/
+
+## 2. Google Workspace Marketplace — 23/25
+
+**Major-new-unlock exception:** Google Workspace was previously mentioned as infrastructure, but the Marketplace itself was not ranked as an economic Venue. This run promotes it because Google’s late-August 2026 Workspace MCP rollout, current Marketplace publishing docs, paid-app filtering, OAuth tooling and machine-readable APIs materially change the autonomy level.
+
+**What agents can sell.** Sheets/Docs/Gmail/Drive/Calendar/Classroom/Chat add-ons and web apps with external paid plans. Google says Marketplace users can filter by Paid; developers take payments directly rather than Google processing them.
+
+**Loop.** Mine administrator/accountant/operations complaints → construct Apps Script or external add-on → create synthetic Workspace domain/fixtures → Harbor checks permissions, spreadsheet/document invariants, rate limits, privacy and uninstall behavior → generate OAuth scope justification/demo video/store assets → Google review → deploy → monitor installs, user analytics and external subscriptions → maintain against Workspace API changes.
+
+**Human dependency.** H1 for benign scopes; H2 where restricted scopes trigger independent security assessment. Account/security verification remains human.
+
+**Demand.** A June 2026 developer reported 102,000 Workspace Marketplace installs in 45 days for a Sheets admin add-on. Another developer described a few thousand downloads but weak retention and 5–6 alternatives in many niches—good evidence of both real reach and heavy saturation.
+
+**Why agents fit.** Apps Script/API work is compact and testable; MCP now reduces tool integration cost further. Oracle must optimize for retention, not installs.
+
+**Assets.** `WorkspacePack`, OAuth-scope evaluator, synthetic-domain World, install→activation evaluator, MarketplaceSubmissionProcess, Workspace-admin specialist.
+
+**Economics.** Excellent for recurring admin/finance/compliance work; poor for one-shot utilities with low willingness to pay.
+
+Official publishing: https://developers.google.com/workspace/marketplace/how-to-publish
+Pricing discovery: https://knowledge.workspace.google.com/marketplace/find-and-install-an-app-in-the-marketplace
+Community: https://www.reddit.com/r/GoogleAppsScript/comments/1tvrs4s/we_crossed_102000_installs_on_google_workspace/
+
+## 3. Squarespace Extensions / Developer Apps — 22/25
+
+**Frontier unlock.** On July 27, 2026 Squarespace moved OAuth credential management from manual support tickets to self-service Developer Apps: instant client IDs/secrets, self-service rotation and a direct production-review flow. Its Commerce APIs also gained 2026 updates including Contacts, contact webhooks, payment-state filtering and the Discounts API.
+
+**What agents can sell.** Subscription integrations around commerce operations, memberships, fulfillment, customer segmentation, data QA, migrations and creator workflows, distributed through the Squarespace extension ecosystem or marketed as a Squarespace-native SaaS.
+
+**Loop.** Detect merchant complaint → generate OAuth app → test against demo store → Harbor replays product/order/contact/webhook cases → generate privacy/scopes/onboarding package → production review → extension distribution/external billing → webhook/usage telemetry → automatic compatibility release.
+
+**H-level.** H1 after production review; external billing/KYC stays human at setup.
+
+**Why suited.** The historical provisioning bottleneck disappeared. Commerce is structured, event-driven and easy to fixture.
+
+**Assets.** `SquarespacePack`, CommerceWorld, webhook replay evaluator, OAuth least-privilege Skill, MarketplaceSubmissionProcess.
+
+**Economics.** Attractive when replacing repeated agency/manual merchant work; weak if merely duplicating native blocks.
+
+Official unlock: https://developers.squarespace.com/changes/self-service-oauth-credential-management
+2026 API changes: https://developers.squarespace.com/commerce-apis/changelog
+
+## 4. Mendix Marketplace — 22/25
+
+**What agents can sell.** Commercial enterprise components/solutions through Mendix’s Component Partner program. Mendix explicitly describes Marketplace participation as a way to create new income streams and supports commercial product listings with contact referrals.
+
+**Loop.** Mine integration/component gaps → generate Studio Pro component/widget/module → synthetic Mendix app → Harbor installation/version/security/API tests → listing/compliance package → partner review → listing → lead/sale → support and version maintenance.
+
+**Human dependency.** H1–H2 because joining the partner program and commercial compliance are real gates; the technical lifecycle is highly automatable.
+
+**Demand/community.** Mendix is still producing current 10.x/11.x releases in 2026, while community demand includes advanced integration expertise across SAP/Salesforce/Snowflake. That suggests the strongest paid components are boring enterprise bridges and validators rather than generic UI widgets.
+
+**Why agents fit.** Model-driven artifacts and versioned components are deterministic enough for regression Worlds.
+
+**Assets.** `MendixPack`, multi-version Studio World, component install/uninstall evaluator, enterprise-integration School.
+
+**Economics.** High ACV potential, slower feedback than creator markets. Best where one component displaces consulting.
+
+Official: https://docs.mendix.com/appstore/partner-program/
+
+## 5. Okta Integration Network — 21/25
+
+**What agents can monetize.** OIN listings themselves are distribution rather than native checkout, but they can drive paid SaaS/integration revenue. Okta advertises 8,000+ OIN integrations and lets technology partners publish into the catalog.
+
+**Loop.** Oracle finds frequently requested/nonexistent SSO/SCIM integrations → worker discovers vendor auth/provisioning docs → generates OIDC/SAML/SCIM connector and OIN metadata → Harbor spins Okta Integrator Free Plan + mock SaaS tenant, exercises joiner/mover/leaver/deprovision/failure cases → OIN Wizard submission → review → SaaS subscription/service revenue → regression against API/schema changes.
+
+**Human dependency.** H1–H2 for partner/publisher approval and vendor coordination.
+
+**Demand/community.** June 2026 identity practitioners reported 16-week/4-month app-onboarding delays driven by discovery/mapping/manual sign-off; another practitioner measured 3–8 hours for modern SaaS but months for legacy integrations. That is a direct economic pain corpus.
+
+**Why agents fit.** The work is repetitive protocol mapping, metadata extraction, testing and evidence generation.
+
+**Assets.** `OktaPack`, SAML/OIDC/SCIM Worlds, entitlement-mapping evaluator, discovery Skill, IAM specialist Worker.
+
+**Economics.** Attractive if coupled to a paid SaaS or integration service. Less attractive as a free connector alone unless it is acquisition infrastructure.
+
+Official: https://www.okta.com/integrations/
+Community: https://www.reddit.com/r/okta/comments/1txedfb/onboarding_an_app_to_okta_is_4_months_normal/
+
+## 6. WeWeb Marketplace — 21/25
+
+**What agents can sell/distribute.** Reusable frontend libraries/components and integrations through WeWeb’s Marketplace; commercial value can be captured through paid companion SaaS/licensing/support even where Marketplace distribution itself is not the checkout.
+
+**Frontier unlock.** WeWeb now exposes an MCP build surface. August 2026 community posts confirm MCP access on paid tiers and direct use through coding agents. Community developers are already publishing native-functionality libraries in the Marketplace.
+
+**Loop.** Discover missing native/browser/mobile capability → agent builds library → WeWeb fixture app → Harbor checks component props/events/actions/responsive behavior → publish library → external license/subscription if applicable → watch support/forum → patch.
+
+**H-level.** H1. Human review is primarily marketplace/account/commercial packaging.
+
+**Why agents fit.** MCP makes the IDE itself substantially more machine-operable. Components are small, composable and regression-testable.
+
+**Assets.** `WeWebPack`, component World, browser/device evaluator, MCP-builder Skill, cross-no-code porting Process.
+
+**Economics.** Attractive for native/mobile/API capabilities repeatedly requested by builders; weak for trivial components users can prompt-generate themselves.
+
+Community/MCP e

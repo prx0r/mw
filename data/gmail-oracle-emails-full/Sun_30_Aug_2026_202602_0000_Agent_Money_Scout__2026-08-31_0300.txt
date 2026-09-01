@@ -1,0 +1,181 @@
+Subject: Agent Money Scout — 2026-08-31 03:00
+Date: Sun, 30 Aug 2026 20:26:02 +0000
+Message ID: 1a05459be1aababa
+================================================================================
+
+# Agent Money Scout — 2026-08-31 03:00
+
+## Executive signal
+
+Fresh verification keeps AgentPact and dealwork.ai at the top for immediate bounded software/data work. The best genuinely NEW discovery this run is WorkProtocol: it reports 736 agents, 35 jobs posted and 1,325 USDC settled, with prior verified payouts of 85 and 90 USDC for coding jobs. Molted is also worth adding as a zero-fee Base/x402 job adapter, but I could not verify enough current live job liquidity to rank it above established markets.
+
+## NEW THIS RUN
+
+### 1) WorkProtocol — https://workprotocol.ai/
+What the agent does: bug fixes, features, refactoring, code review, ETL/data cleaning, research reports, docs and design tasks with structured acceptance criteria.
+Who pays: job requester; USDC is locked in Base escrow before work begins.
+Verified economics: platform reports 1,325 USDC settled across 12 completed jobs; public activity includes 85 USDC paid for an environment-variable validation/documentation tool and 90 USDC for a git-history analyzer. Its HN page says jobs have a 50-USDC minimum and a 5% completed-job fee; early agents may receive fee waivers.
+Required: agent registration, Base wallet for payment, REST/A2A/MCP or SDK; coding agents can submit PRs and test evidence.
+Autonomy: 10/10 for code jobs because a reference agent can browse, evaluate, claim, work, deliver and receive auto-verification.
+First action: poll /api/jobs?status=open&category=code and only claim when the acceptance test is reproducible. Note: the platform's HN page currently says 0 jobs available now, so this is a high-quality adapter to monitor rather than a guaranteed immediate job.
+Eligibility: no universal age/geography rule was surfaced in the pages checked. Do not assume eligibility; follow wallet/payment/legal rules and do not bypass account restrictions.
+Ease-to-first-$5: 4/10 today. Repeatability: 9/10.
+
+### 2) Molted — https://molted.work/
+What the agent does: data processing, code review, research, summarization, API integrations and other verifiable jobs posted by agents.
+Who pays: hiring agent/job poster directly wallet-to-wallet in Base USDC via x402.
+Verified economics: real Base-mainnet USDC; platform states no platform fee and no custody. I did not find trustworthy public job-volume or payout totals, so advertised capability is not counted as demand.
+Required: @molted/cli or REST API, Base wallet, ability to bid and submit proof.
+Autonomy: 10/10.
+First action: run the public open-job query and require a non-zero explicit reward before bidding.
+Eligibility: wallet/network and any account-provider rules apply; no bypassing identity or age restrictions.
+Ease: 3/10. Repeatability: 9/10 potential.
+
+### 3) AgentsMarketplace on X Layer — https://www.agentsmarketplace.app/
+What the agent does: expose machine-callable APIs such as analysis, validation, data transforms or QA.
+Who pays: users/agents invoking the endpoint via x402.
+Pricing: seller-defined; the platform's own examples include $0.01-$0.05 per call. Settlement supports USDC/USDT/USDG through OKX infrastructure.
+Required: deployed endpoint, OKX OnchainOS developer credentials, wallet, on-chain registration.
+Autonomy: 10/10.
+First action: cross-list an already proven endpoint rather than building a speculative service specifically for this marketplace.
+Eligibility: OKX/network/payment-provider requirements apply; verify normal account eligibility before use.
+Ease: 3/10. Repeatability: 10/10 if organic buyers appear.
+
+### 4) ClawTasks — https://openclaw-ai.online/clawtasks/
+What the agent does: complete Base-USDC bounties posted by other agents.
+Who pays: bounty poster via on-chain escrow.
+Payout: task-specific; I could verify the platform's Base escrow model but not a current high-value live listing this run.
+Required: OpenClaw-compatible agent/wallet or equivalent integration.
+Autonomy: 10/10.
+First action: monitor paid-only live bounties and ignore anything without explicit funded USDC.
+Eligibility: normal wallet/account/legal rules apply.
+Ease: 2/10 today. Repeatability: 8/10 potential.
+
+### 5) New direct-customer play: August Google update diagnostic
+Evidence: multiple current Reddit threads report severe visibility collapses around Google's August 2026 spam update, including sites remaining indexed but losing almost all impressions/keywords.
+Customer: site owners, publishers, SEO agencies.
+Agent workflow: ingest authorized GSC pre/post data + page/query changes + index status + backlink changes -> cluster losses -> technical/update/content hypotheses -> evidence-ranked diagnostic -> human review.
+Where to acquire customers: existing SEO communities or agency relationships where service offers are permitted; avoid unsolicited/spam outreach.
+How to charge: fixed diagnostic first, recurring weekly monitoring second.
+MVP: upload two GSC exports + indexing/backlink snapshot -> produce loss map and prioritized checks. Do not promise rankings or manipulate search systems.
+Ease: 8/10. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6) AgentPact — https://agentpact.xyz/needs
+Current live board: 200 Needs. Strong items include Python code review 5-10 USDC; API automation 10-25; Python code/security review 10-25; web-scraping automation 10-25; data analysis/visualization 10-25; infographic 5-10; technical SEO 5; Python/data execution 5; OHLCV validation 5-15; transcription 7-14; BTC analysis 10-20; technical summary 5-25. There is extensive sub-dollar test noise.
+Agent work: Python/API QA, automation, permitted public-data extraction, analysis, transcription and SEO diagnostics.
+Who pays: Need/deal poster.
+Required: AgentPact integration and supported USDC settlement path.
+Autonomy: 10/10.
+First action: filter reward >= 5 USDC and prioritize API automation, security/code review, and data-analysis tasks.
+Ease: 9/10. Repeatability: 9/10.
+
+### 7) dealwork.ai — https://dealwork.ai/
+Recent state: around 156 open tasks, 264 completed and 2.5K workers. Prior public examples include an 80-dollar production API delivered by an AI agent with tests and a 5-dollar AI-to-AI contract. Funds are escrowed before work.
+Agent work: coding, APIs, research, structured data and docs.
+Who pays: humans or agents through escrow.
+Autonomy: 9/10.
+First action: ingest all open tasks and rank only those where acceptance can be independently reproduced.
+Ease: 9/10. Repeatability: 9/10.
+
+### 8) OpenAnt — https://openant.ai/
+Current primary figures: 12.8K total tasks, 1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out, $128K posted. USDC escrow on Solana/Base. Current remote example: analyze SKU sales and output five insights plus a chart.
+Agent work: remote analysis and digital production; exclude physical/GPS/photo tasks.
+Who pays: task poster.
+Autonomy: 10/10 for remote digital work.
+First action: filter remote + digital + explicit reward + objective proof.
+Ease: 8/10. Repeatability: 9/10.
+
+### 9) BotWork — https://www.botwork.network/tasks/
+Current advertised categories: code review from $10; data analysis and financial analysis from $5; product management and presentations from $5; market research from $2; content from $4. Agent owners receive 90% of approved task value under BotWork's Base escrow split.
+Agent work: code review, debugging, data analysis, research and bounded content.
+Required: TypeScript SDK, webhook API or A2A integration.
+Autonomy: 9/10.
+First action: deploy one narrow code-review/data worker and observe whether genuine paid jobs arrive before deeper integration.
+Ease: 7/10. Repeatability: 9/10.
+
+### 10) MoltJobs — https://moltjobs.io/open-jobs
+Current public job: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer; roughly five days remain. Every listing is described as funded with USDC in on-chain escrow.
+Agent work: research/specification plus legitimate buyer contact.
+Required: REST/CLI/MCP; some jobs require certifications.
+Autonomy: 8/10.
+First action: inspect the 5-USDC job. Any outreach must be specific, permitted and non-spammy.
+Ease: 7/10. Repeatability: 8/10.
+
+### 11) Taskmarket — https://taskmarket.dev/
+Still proves real settlement, but competition remains high on public bounties. Use reward * P(win) - execution cost rather than headline reward.
+Agent work: coding, benchmarks, research, datasets and artifacts.
+Who pays: escrow-funded requester.
+Autonomy: 10/10.
+First action: select claim/pitch/benchmark tasks or unusually low-submission bounties.
+Ease: 5/10. Repeatability: 9/10.
+
+### 12) t2000 — https://t2000.ai/
+Strongest structural value remains task -> proven procedure -> fixed service -> paid API. Public seller profiles and receipts have shown real USDC settlement, but recent inventory has been dominated by tiny ecosystem/bootstrap work.
+First action: reject referral/payment-loop tasks unless they create reusable reputation or integration value.
+Ease: 5/10. Repeatability: 10/10.
+
+### 13) APIHub / x402 surfaces
+APIHub and similar x402 catalogues remain distribution rails, not first-dollar demand engines. Cross-list only procedures that first earn through real jobs or customers.
+Best candidates: /verify-pr, /api-sanity, /data-quality, /automation-health.
+Ease: 3/10. Repeatability: 10/10 if organic calls develop.
+
+## REDDIT DEMAND SIGNALS
+
+### 14) Google-update forensic diagnostic
+Threads from Aug 18-29 report sites losing almost all Search Console impressions/keywords while remaining indexed, with owners unsure whether the cause is the August spam update, backlinks, technical issues or content/sitewide quality.
+Recurring pain: site owners have data but no reliable decomposition before making risky changes.
+Offer: GSC change-point analysis + affected page/query clusters + index/technical checks + backlink-change correlation + evidence-ranked hypotheses.
+MVP: fixed one-off diagnostic; human decides changes.
+
+### 15) Hardware/customer-support deflection
+A hardware-business operator reports repetitive customer questions consuming significant staff time; a KB-grounded assistant reportedly automated roughly 70-80% of repetitive emails while escalating difficult cases.
+Recurring pattern: FAQ questions plus images/docs are repetitive but edge cases need humans.
+Offer: authorized support inbox -> retrieve KB evidence -> draft answer/confidence -> human exception.
+MVP: top-20 questions and an escalation queue.
+
+### 16) Weekly operations consolidation
+A current AI-agent discussion describes founders manually pulling metrics from dashboards, copying leads into CRMs, sending repetitive follow-ups, chasing invoices, cleaning CSVs and synchronizing status across tools.
+Recurring pattern: small deterministic cross-app chores are more immediately valuable than a vague general-purpose agent.
+Offer: pick one Monday workflow and automate it end-to-end with logs and exception handling.
+MVP: dashboard -> weekly summary, or form -> CRM validation, not a universal assistant.
+
+### 17) SEO change monitoring
+Fresh Reddit posts around the August update show site owners struggling to distinguish algorithm updates from backlink changes or technical/indexing problems.
+Offer: recurring monitor that records GSC deltas, major backlink changes, index state and site releases, then generates a timestamped causal-evidence packet whenever visibility falls beyond a threshold.
+Where to sell: agencies and publishers with multiple sites.
+Charge: recurring monthly monitoring after a paid setup audit.
+
+### 18) Workflow verification / silent-failure detection
+Prior runs repeatedly found n8n/automation operators reporting that green executions can still fail to produce the promised business outcome.
+Offer: expected event + deadline + downstream receipt + baseline -> HEALTHY / FAILED / SILENT.
+Customer: automation agencies and SMB operators.
+MVP: one workflow and one independently verified outcome.
+Repeatability: 10/10.
+
+### 19) QA evidence worker for AI-generated code
+Demand pattern remains strong: generated code/tests are cheap, but deciding what to test, reproducing bugs and proving critical flows still require effort.
+Offer: repo/PR + requirements -> changed surfaces -> risk-ranked tests -> evidence -> PASS / FAIL / REVIEW.
+MVP: /verify-pr.
+Repeatability: 10/10.
+
+### 20) Data-quality worker
+The live AgentPact board itself now repeatedly contains CSV dedupe, OHLCV validation, data-analysis and API-sanity requests. This is direct demand rather than speculative product ideation.
+Offer: CSV/JSON/API payload -> schema validation -> dedupe/consistency checks -> summary + machine-readable evidence.
+Customer acquisition: start from paid marketplace jobs, then convert the procedure into a fixed service/API.
+Ease: 9/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. AgentPact first. Target the live 10-25 USDC API automation, Python security/review and data-analysis tasks. Use a hard $5 floor and reject vague or unverified acceptance criteria.
+
+2. Add WorkProtocol to the opportunity oracle, but as a monitor rather than an immediate execution priority. Its settlement history is materially stronger than most new agent markets, and its GitHub-native auto-verification design fits coding workers extremely well; however, its current public page says zero jobs are available right now.
+
+3. Standardize one earning worker around /verify-pr + /api-sanity + /data-quality. The same worker maps directly onto AgentPact, dealwork, BotWork and OSS-bounty work. After it earns directly, cross-list the proven procedure on x402/API marketplaces.
+
+Current routing priority: AgentPact -> dealwork.ai -> OpenAnt remote digital -> BotWork genuine paid tasks -> WorkProtocol when a fresh job appears -> high-EV OSS bounties -> MoltJobs -> selective Taskmarket -> externally useful t2000 work.
+
+Accounting rule: only settled or genuinely withdrawable real-money value counts as earnings. Marketplace GMV, illustrative cards, internal credits, test funds, unpriced tokens, stale listings and submitted-but-unpaid work count as $0.
+
+Primary sources checked this run: https://agentpact.xyz/needs ; https://dealwork.ai/ ; https://openant.ai/ ; https://moltjobs.io/open-jobs ; https://www.botwork.network/tasks/ ; https://workprotocol.ai/ ; https://molted.work/ ; https://www.agentsmarketplace.app/ ; Reddit threads including https://www.reddit.com/r/SEO/comments/1vzw2tl/august_2026_google_update_hit_my_site_hard_what/ , https://www.reddit.com/r/TechSEO/comments/1vrl8bq/sudden_google_search_console_impressions_drop/ , and https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/ .

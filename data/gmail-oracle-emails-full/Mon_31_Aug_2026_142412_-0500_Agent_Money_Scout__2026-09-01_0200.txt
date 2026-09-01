@@ -1,0 +1,189 @@
+Subject: Agent Money Scout — 2026-09-01 02:00
+Date: Mon, 31 Aug 2026 14:24:12 -0500
+Message ID: 1a059477dc040da7
+================================================================================
+
+Agent Money Scout — 2026-09-01 02:00
+
+Current execution ranking: MoltJobs → AgentPact → dealwork.ai → Complete Codes → Apify Store productization → selected OpenJobs/Opire → distribution rails only after demand.
+
+NEW THIS RUN
+
+1) Reddit Developer Funds H2 2026
+URL: https://support.reddithelp.com/hc/en-us/articles/50860336905108-Reddit-Developer-Funds-H2-2026-Terms
+What: Build a Devvit app/game/mod tool. Reddit pays based on qualified installs and engagement.
+Who pays: Reddit.
+Verified payout: $4,000 one-time at 5,000 average Daily Qualified Engagers; recurring monthly payouts after Tier 1 range from $0 to $25,000 based on prior-month average engagement. Install payouts: $500 at 50 qualified installs, cumulative $1,500 at 250, cumulative $3,500 at 1,000.
+Tools: Devvit, TypeScript/Node, Reddit app review, community distribution.
+Autonomy: 8/10. An agent can build/test/iterate, but publishing, policy compliance and community fit require accountable human oversight.
+First action: build one narrow high-retention utility or game for an existing SFW community, submit for App Review, then grow real engagement—no manipulation.
+Constraints: program runs Aug 1–Dec 31, 2026. Earner must meet Reddit Earn eligibility, be 18+/local minimum age, reside in a supported country, enroll with identity/tax/banking details and Stripe. Cambodia is not listed among supported payout countries in the current help page.
+Ease first $5: 2/10. Repeatability: 10/10 if distribution is solved.
+
+2) Apify Store — publish autonomous scraping/automation Actors
+URL: https://apify.com/store
+Monetization docs: https://help.apify.com/en/articles/8684010-make-money-publishing-your-actors-on-apify-store
+What: Build an Actor for scraping, monitoring, extraction, enrichment, automation or an API-like workflow and charge per event/result/usage.
+Who pays: Apify Store users; Apify handles billing and monthly payouts.
+Verified economics: creators choose prices. Apify states its most successful independent creators exceed $10,000 MRR and many exceed $1,000/month. Pay-per-event profit is generally 80% of revenue minus platform usage costs unless costs are passed through.
+Tools: JS/TS/Python, Apify SDK/CLI, optional proxies/browser automation.
+Autonomy: 10/10 once deployed.
+First action: identify a recurring extraction/monitoring procedure that is already demanded, make it a reliable Actor, publish it with pay-per-event pricing.
+Constraints: platform/account/payment terms apply; platform usage can erase margin if pricing is wrong.
+Ease first $5: 6/10. Repeatability: 10/10.
+
+3) AgentsMarketplace on X Layer
+URL: https://agentsmarketplace.app/
+What: Register a callable agent endpoint, set pricing, receive USDC/USDT/USDG via x402 when users invoke it.
+Who pays: users/other agents.
+Verified payout/pricing: provider sets price; no reliable platform-wide seller earnings figure found this run.
+Tools: hosted API/agent endpoint, wallet, x402-compatible integration.
+Autonomy: 10/10.
+First action: cross-list an already proven API/service; do not build something solely for this marketplace until outside demand exists.
+Constraints: wallet/payment/account rules apply; current buyer liquidity is not proven enough to rank above task boards.
+Ease first $5: 2/10. Repeatability: 9/10 if buyers appear.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+4) MoltJobs
+URL: https://moltjobs.io/open-jobs
+What: AI agents browse, bid, deliver and get paid in USDC from Base escrow via API/CLI/MCP.
+Who pays: job poster.
+Verified current listing: 5 USDC for turning three live job postings into ready-to-fund MoltJobs specs and contacting buyers; current page says funded USDC escrow.
+Tools: MoltJobs API/CLI/MCP, research/writing/coding depending on job.
+Autonomy: 9/10.
+First action: poll OPEN jobs and take the newest funded >=$5 job with objective acceptance. Avoid bulk/spam outreach; use only legitimate individualized contact when a task requires it.
+Constraints: certification can gate bidding; 5% escrow fee; human/account owner responsibility applies.
+Ease: 8/10. Repeatability: 8/10.
+
+5) AgentPact
+URL: https://agentpact.xyz/
+What: Agents post offers/needs, match, contract milestones and settle USDC on Base.
+Who pays: deal buyer.
+Verified marketplace state: 206 open Needs, 153 active Offers, 19 live Deals, 638 agents on current primary page. Prior live checks found recurring 5–25 USDC code/API/data work.
+Tools: MCP/Python/npm/API.
+Autonomy: 10/10.
+First action: filter reward >= $5 + clear scope + objective acceptance + settleable.
+Constraints: security work only against explicitly authorized code/systems.
+Ease: 9/10. Repeatability: 9/10.
+
+6) dealwork.ai
+URL: https://dealwork.ai/
+What: escrowed code/API/research/data jobs, including AI-to-AI contracts.
+Who pays: requester.
+Verified prior/current state: roughly 157–161 open tasks and 264 completed; platform documents an $80 production API delivered by an AI worker and a $5 autonomous AI-to-AI contract.
+Tools: coding/research/data stack.
+Autonomy: 9/10.
+First action: ingest all live tasks; bid only where acceptance tests can be independently reproduced.
+Constraints: responsible human/legal owner requirement; fees apply.
+Ease: 9/10. Repeatability: 9/10.
+
+7) Complete Codes
+URL: https://www.complete.codes/en/agents
+What: discover funded GitHub Sprints, implement work, submit PR; eligible merged code triggers Base-USDC payout.
+Who pays: repo sponsor/funder.
+Payout: sprint-specific; API exposes next payout. No proposal auction is required.
+Tools: GitHub, repo language/toolchain, MCP/REST.
+Autonomy: 9/10.
+First action: list funded repos with minimum payout >=$5 and rank by reproducibility + maintainer merge velocity.
+Constraints: payout/account rules apply.
+Ease: 7/10. Repeatability: 10/10.
+
+8) OpenJobs
+URL: https://openjobs.bot/
+What: autonomous jobs with applications, submissions and on-chain escrow.
+Who pays: poster.
+Verified primary stats: 212 registered agents, 152 total jobs posted, 146 completed, 10,726 total volume; settlement supports USDC and WAGE on Solana mainnet.
+Tools: REST/MCP/LangChain/CrewAI/OpenAI SDKs.
+Autonomy: 10/10.
+First action: scan USDC-only funded jobs >=$5. Do not value WAGE as dollars without independently verified liquidity.
+Constraints: wallet/account eligibility applies.
+Ease: 4/10. Repeatability: 9/10.
+
+9) Opire
+URL: https://app.opire.dev/home
+What: GitHub issue bounties; solve issue, test, PR.
+Who pays: bounty sponsor.
+Payout: issue-specific; platform has demonstrated real payouts but contains stale/anomalous listings.
+Tools: GitHub and project toolchain.
+Autonomy: 8/10.
+First action: verify upstream issue status, sponsor/reward, maintainer activity, competing PRs and local reproducibility before coding.
+Constraints: payment-provider/account rules apply.
+Ease: 5/10. Repeatability: 8/10.
+
+10) Taskmarket
+URL: https://taskmarket.dev/
+What: agent tasks/bounties with USDC settlement.
+Who pays: task poster.
+Current economics: recent worthwhile tasks have attracted very high submission counts; tiny jobs are usually negative EV.
+Tools: varies.
+Autonomy: 10/10.
+First action: execute only >=$5 tasks after competition-adjusted EV check: payout × P(win) − execution cost.
+Constraints: task-specific.
+Ease: 2/10. Repeatability: 9/10 if inventory improves.
+
+11) BotGuild
+URL: https://botguild.ai/app/gigs/
+What: REST/MCP/webhook agent jobs with Base escrow.
+Who pays: gig poster.
+Verified prior live board: 89 gigs, but open-beta economics mostly $0.10–$0.99.
+Autonomy: 9/10.
+First action: optionally complete one tiny task to validate settlement, then scan only >=$5.
+Ease: 2/10. Repeatability: 9/10 if budgets rise.
+
+12) AgentBazaar
+URL: https://www.agentbazaar.dev/
+What: list callable A2A/MCP/REST agent services and receive USDC on Solana.
+Who pays: humans or agents invoking the service.
+Verified economics: agent keeps 97%, platform fee 3%; registration/discovery free.
+Autonomy: 10/10.
+First action: cross-list a procedure that already earned on task boards; track unique external buyers.
+Ease: 3/10. Repeatability: 10/10 with demand.
+
+13) gigs.sh
+URL: https://gigs.sh/
+What: discovery directory for agent-work platforms.
+Who pays: not a direct payer.
+First action: use as a candidate generator only, then primary-source verify each marketplace.
+Ease direct $5: 1/10. Discovery repeatability: 10/10.
+
+REDDIT DEMAND SIGNALS
+
+14) Workflow reliability / verification
+Recurring current Devvit and automation tooling shows the same pattern: users value triage, retries, safe escalation, duplicate-action prevention and human review more than unconstrained autonomy.
+Offer: workflow JSON + execution logs → retry/idempotency/auth/schema/cost audit → evidence-backed PASS/REVIEW report.
+Customer: n8n/Make/Zapier agencies and ops teams.
+Acquisition: automation communities that permit service offers, referrals, inbound technical content.
+MVP: audit one workflow for a fixed fee.
+Ease: 9/10. Repeatability: 10/10.
+
+15) Reddit moderation triage tools
+Current Reddit Developer Platform apps repeatedly solve report/modmail triage, duplicate effort, missing-information collection and rule matching.
+Offer: configurable moderation copilot for communities or community-management agencies; keep final enforcement human-controlled.
+Customer: large community operators/agencies.
+MVP: incoming report/modmail → classify → summarize context → suggest rule → human approval.
+Ease: 7/10. Repeatability: 9/10.
+
+16) Browser automation reliability maintenance
+Recurring automation demand is not just 'build a browser bot'; it is maintaining selectors, credentials, retries, locks, rate limits and exception paths.
+Offer: authorized browser workflow → deterministic-first implementation → assertions/screenshots → agent fallback → exception queue.
+Customer: SMB ops/automation agencies.
+MVP: stabilize one brittle recurring browser task.
+Ease: 8/10. Repeatability: 10/10.
+
+17) Document/invoice operations
+Recurring demand remains extraction + validation + writing into the real system, not OCR alone.
+Offer: email/upload → extract → validate/duplicate-check → accounting/CRM/Sheet write → exception queue.
+Customer: bookkeepers, accounting firms, ecommerce/ops teams.
+MVP: process 20 documents and return validated import + exceptions.
+Ease: 9/10. Repeatability: 10/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) Poll MoltJobs, AgentPact and dealwork through one universal worker. Use EV = payout × P(acceptance) × P(win) − runtime/model/API cost. These still offer the shortest route to a genuine first $5.
+
+2) Productize one procedure on Apify. This is the best new channel because Apify has established billing, hosting, distribution and documented creator revenue. Strong candidates: hard-to-maintain scraper, change monitor, structured competitor/research extraction, or API-backed enrichment. Start from a procedure already demanded by paid jobs rather than guessing.
+
+3) Treat Reddit Developer Funds as a strategic build, not immediate cash. H2 is live through Dec 31 and can reach substantial payouts, but success requires real engagement and strict Earn eligibility. A utility with recurring community value (moderation triage, evidence/verification, structured research, daily data experience) is a better fit than a generic chatbot.
+
+Overall strategy: paid job → repeated procedure → packaged service → Store/API/A2A/x402 distribution only after willingness-to-pay is proven.

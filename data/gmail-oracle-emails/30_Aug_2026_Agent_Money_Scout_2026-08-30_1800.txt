@@ -1,0 +1,170 @@
+Subject: Agent Money Scout — 2026-08-30 18:00
+Date: Sun, 30 Aug 2026 11:24:55 +0000
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a0526a53c89f3b8
+================================================================================
+
+Agent Money Scout — 2026-08-30 18:00
+
+NEW THIS RUN
+
+1) ClawHunt — https://clawhunt.store/
+What it is: New AI-agent bounty marketplace with autonomous browse/bid/solve/submit API flow, escrow, GitHub issue integration, and 75% of accepted bid paid to solving agent (25% platform fee).
+What the agent does: Technical problem solving, coding, debugging, GitHub issue work, evidence-backed deliverables.
+Who pays: Problem poster after accepting a fixed-price agent bid.
+Payout: Agent sets bid; 75% of accepted bid to solver. I could not verify enough completed payout volume yet to give an earning range.
+Requirements: Agent webhook/API integration and crypto withdrawal wallet; public docs at clawhunt.store/docs.
+Autonomy: 10/10 technically.
+First action: Register one existing coding/review worker, browse open bounties, and submit bids only when escrow is funded and acceptance criteria are objective.
+Constraints: Public pages checked did not expose a clear age/geography rule; payment-provider/wallet eligibility still applies. Do not bypass it.
+Ease first $5: 5/10. Repeatability: 9/10 if buyer liquidity appears.
+Evidence: https://clawhunt.store/
+
+2) AIGEN Open Bounty Protocol — https://cryptogenesis.duckdns.org/work/board
+What it is: Permissionless Base/Optimism bounty protocol with MCP + JSON work board and 0.5% protocol fee.
+What the agent does: Research, translation, code, structured deliverables or other missions specified by creators.
+Who pays: Mission creator funding USDC/ETH/AIGEN.
+Payout: Per mission; public documentation reports real on-chain payout proof but early liquidity. No invented average.
+Requirements: Agent ID, public wallet, API/MCP client.
+Autonomy: 10/10.
+First action: Query /work/board and execute only missions showing funded real-money rewards and clear verification rules.
+Constraints: Very early market. Verify the actual reward currency/value before work; do not count unpriced tokens as dollars.
+Ease first $5: 4/10. Repeatability: 8/10.
+Source: https://claudemarketplaces.com/mcp/org.duckdns.cryptogenesis/safe-agent
+
+3) ShipRadar — https://shipradar.quest/
+What it is: New meta-radar indexing paid GitHub, Superteam, Devpost and other builder work with reward, competition and escrow signals. It is discovery infrastructure, not the payer.
+Current examples found: $3,000 Cognitive-OS research bounty, $200 Memanto memory-migration bounty, $100 GORM bug bounty and multiple active hackathons/bounties.
+Who pays: Underlying GitHub maintainer / bounty sponsor / competition sponsor.
+Payout: Varies; ShipRadar surfaces listed reward but explicitly distinguishes payout-verified vs no-escrow opportunities.
+Requirements: Depends on underlying listing.
+Autonomy: 8/10 for discovery and ranking; submission often needs platform-specific handling.
+First action: Add ShipRadar to the oracle as a candidate generator, then verify every result at the primary source before execution.
+Constraints: Never treat mirrored reward text as guaranteed payment.
+Ease first $5: 6/10 as a discovery channel. Repeatability: 10/10.
+
+4) Memanto Great Memory Migration — https://github.com/moorcheh-ai/memanto/issues/1609
+What the agent does: Build a reproducible agent-memory migration showcase using Memanto + Open Knowledge Format; options include adding a new migration adapter, demonstrating a real migration, or building a portable OKF workflow.
+Who pays: Memanto bounty sponsor.
+Advertised payout: $200 USD for accepted work.
+Requirements: GitHub, Memanto CLI, reproducible code/data/demo; the official issue remains open.
+Autonomy: 8/10 — coding/research can be highly agentic; final demo/PR needs review.
+First action: Read issue #1609 and choose the smallest high-value path, preferably a missing adapter with deterministic tests.
+Constraints: Payment handling is described by sponsor; verify eligibility/payment terms before committing substantial work.
+Ease first $5: 6/10. Repeatability: 4/10 (one-off bounty, but good specialist training data).
+
+5) WasiAI marketplace — https://www.wasiai.io/
+What it is: A2A+x402 marketplace where a provider points to an agent URL, sets a price, and receives 90% of each USDC payment. First two published agents are free.
+What the agent does: Serve a callable specialist such as structured research, validation, QA, document normalization, or monitoring.
+Who pays: Agents/users making calls.
+Pricing: Seller-defined; the public example is $0.05 USDC/call. Seller keeps 90%.
+Requirements: Hosted agent endpoint; WasiAI SDK or compatible HTTP flow.
+Autonomy: 10/10 after deployment.
+First action: Cross-list an already-proven endpoint. Do not build a new product solely for this marketplace.
+Constraints: Market liquidity is not sufficiently proven for this to outrank actual job boards.
+Ease first $5: 3/10. Repeatability: 10/10 if organic calls develop.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+6) AgentPact — https://agentpact.xyz/needs
+Fresh today: 200 Needs. High-signal live entries include Python code review 5–10 USDC; API automation pipeline 10–25; Python code/security review 10–25; urgent web-scraping automation 10–25; data analysis + visualization 10–25; OHLCV validation 5–15; transcription 7–14; technical SEO 5–10; Python/data execution 5 USDC.
+What the agent does: Python/code review, APIs, data transformation, permitted public-data extraction, analysis, SEO, transcription.
+Who pays: Need poster through negotiated deal/optional Base-USDC settlement.
+Requirements: AgentPact registration/API/MCP; wallet for USDC settlement.
+Autonomy: 10/10.
+First action: Target the 5–25 USDC Python/API/data cluster, not the flood of $0.01–$1 test needs.
+Constraints: Scraping must respect site permission/ToS; avoid tasks involving deceptive outreach or account manipulation.
+Ease first $5: 9/10. Repeatability: 9/10.
+
+7) dealwork.ai — https://dealwork.ai/
+Fresh today: 2.5K workers, 157 open tasks, 264 completed. Escrow funded before work. Public example: AI delivered an $80 production API endpoint with tests; another AI-to-AI contract paid $5. AI-to-AI fee 3%; normal fee 10%.
+What the agent does: APIs, coding, research, data, documentation, transformations.
+Who pays: Human or AI task poster.
+Autonomy: 9/10.
+First action: Read dealwork.ai/skill.md, connect the worker, pull all open tasks, and bid only where acceptance is objectively testable.
+Ease first $5: 9/10. Repeatability: 9/10.
+
+8) t2000 — https://t2000.ai/jobs
+Fresh today: 110 open, 79 in progress, 1,224 settled, $978.53 settled USDC. Many open tasks are $0.25–$1 ecosystem bootstrapping jobs, so raw count overstates opportunity quality.
+What the agent does: Open jobs, fixed services, eventually instant APIs.
+Who pays: Marketplace buyers with budget locked at posting.
+Fees: Services 5%; API calls 0% marketplace fee.
+Autonomy: 10/10.
+First action: Filter out referral/payment-loop/bootstrap work and keep only externally useful tasks with net expected reward >= $5 or strong reputation/productization value.
+Ease first $5: 7/10. Repeatability: 10/10.
+
+9) Taskmarket — https://taskmarket.dev/
+Fresh today: 17 open tasks, 26.9K agents, 2,382.947764 USDC posted volume. Live 24.2-USDC task has 118 submissions; 1.297426-USDC task has 160; 0.327-USDC task has 170. Leaderboard shows workers with 120.776268 and 78.624908 USDC earned.
+What the agent does: Research, data, code, benchmarks, structured artifacts.
+Who pays: Requester funding Base-USDC escrow.
+Autonomy: 10/10.
+First action: Rank by payout × estimated win probability minus compute/tool cost. Never rank by headline reward alone.
+Ease first $5: 6/10. Repeatability: 9/10.
+
+10) MikroTask — https://mikrotask.com/
+Fresh visible task: open £5 500-word article job; 15 applicants, due tomorrow. Platform explicitly supports AI-agent sellers. Fixed tiers £5/£10/£25/£50; payouts advertised in USD, USDT or USDC after approval. Existing agent offers include £10 transcription, £20 product research, £25 Python data automation and higher-ticket builds.
+What the agent does: Research, drafting, data cleanup, transcription, code.
+Autonomy: 8/10 due buyer review.
+First action: Apply to buyer-posted tasks or list one narrow specialist, not a generic 'AI agent' gig.
+Constraints: Verify seller/payment eligibility before relying on payout rail.
+Ease first $5: 8/10. Repeatability: 8/10.
+
+11) MoltJobs — https://moltjobs.io/open-jobs
+Fresh today: one 5-USDC funded job remains visible: turn 3 live job postings into ready-to-fund MoltJobs specifications and contact the buyer; posted 5 days ago, ends in 5 days. Every task is funded in on-chain USDC escrow. API/SDK/MCP available; 5% fee and most bidding requires certification.
+What the agent does: Research, job normalization/spec drafting and legitimate buyer contact.
+First action: Inspect this 5-USDC task and only contact people in a specific, permitted, non-spammy way.
+Ease first $5: 7/10. Repeatability: 8/10.
+
+12) OpenJobs — https://openjobs.bot/jobs
+Still live as an agent-work marketplace; today's public jobs page did not expose enough details to verify a new high-value USDC listing. Keep it in the scanner rather than spending compute speculatively.
+What the agent does: Coding/research/data tasks.
+Who pays: Job poster through Solana settlement.
+Autonomy: 10/10.
+First action: Wake worker only for fresh USDC-denominated listings with deterministic verification.
+Ease first $5 today: 4/10. Repeatability: 9/10.
+
+REDDIT DEMAND SIGNALS
+
+13) Agent observability / outcome verification
+Fresh pattern: automation operators increasingly want readable event logs showing what data an agent used, what rule/action it applied, what it skipped, confidence, approvals, and what happened afterward. The recurring complaint is not 'we need more autonomy' but 'we need to know what the agent did and whether the business outcome occurred.'
+Evidence: https://www.reddit.com/r/MarketingAutomation/best/
+Offer: /automation-health — expected event + deadline + downstream receipt + action/event log -> HEALTHY / FAILED / SILENT / REVIEW.
+Customer: automation agencies and small SaaS/ops teams.
+Acquisition: legitimate n8n/Make/Zapier and automation communities, consulting referrals, current marketplace customers.
+Charge: fixed setup/audit first; recurring monitoring after proving value.
+Ease first $5: 9/10. Repeatability: 10/10.
+
+14) Revenue-model / meeting / reporting prep agent
+A recent ClaudeAI use-case thread describes people repeatedly using agents to update revenue forecasts, prepare pipeline-meeting briefs, update board slides, sync meeting notes, create daily meeting digests and surface unanswered emails.
+Thread: https://www.reddit.com/r/ClaudeAI/comments/1rn9ojd/what_are_your_best_cowork_examples_use_cases/
+Problem pattern: high-value workers spend repeated time gathering context across CRM/notes/email before meetings and reports.
+Agent workflow: authorized CRM + notes + metrics -> reconcile -> briefing/update draft -> human review.
+Customer: consultants, small sales teams, founders.
+Immediate MVP: 'Monday pipeline prep' or 'meeting brief from CRM + notes' rather than an all-purpose executive agent.
+Charge: setup + weekly/monthly recurring fee.
+Ease first $5: 8/10. Repeatability: 10/10.
+
+15) AI-built software verification service
+Fresh developer discussion shows a recurring failure mode: people can ship React/web apps with AI while lacking deep understanding of what the generated code actually does; another developer explicitly says AI-generated advice often breaks when tested and can consume hours/days to repair.
+Evidence: https://www.reddit.com/r/developers/rising/
+Offer: /verify-build or /verify-pr — repo + requirements -> run tests -> trace critical flows -> security/config sanity checks -> evidence-backed PASS/FAIL/REVIEW.
+Customer: vibe-coded founders, small agencies, teams shipping lots of agent-generated PRs.
+Acquisition: coding marketplaces, GitHub bounty customers, permitted founder/developer communities.
+MVP: fixed-price verification of one PR or one critical user flow.
+Ease first $5: 9/10. Repeatability: 10/10.
+
+BEST 3 ACTIONS TO TRY NOW
+
+1) AgentPact first. The live 5–25 USDC Python/API/data cluster is the cleanest immediate path. Build one worker that can do API sanity checks, Python review, JSON/CSV transforms and data validation. Ignore sub-$1 test noise.
+
+2) Add ShipRadar as the oracle's novelty/discovery input, not as an execution dependency. It surfaced the open $200 Memanto bounty and multiple real GitHub/Superteam opportunities. Every candidate must then be verified at its primary source for open status, payout, competition and eligibility.
+
+3) Productize /verify-pr + /automation-health only after direct paid work. The job-market worker should accumulate successful procedures and tests; then convert repeated work into fixed services and x402/MCP endpoints. WasiAI/AIGEN are useful distribution rails, but distribution should follow proven demand.
+
+Current execution order:
+AgentPact -> dealwork.ai -> Taskmarket when EV works -> MikroTask -> MoltJobs -> t2000 filtered external work -> OpenJobs when fresh USDC appears.
+
+Scoring rule:
+expected_net = reward × P(still open) × P(funded) × P(solve) × P(accepted/win) × P(settled) - inference/API/tool/review costs.
+
+Count only settled/withdrawn real-money value as earnings. Testnet balances, unpriced tokens, internal credits, stale cards, platform GMV, submitted-but-unpaid work, and illustrative listings count as zero.

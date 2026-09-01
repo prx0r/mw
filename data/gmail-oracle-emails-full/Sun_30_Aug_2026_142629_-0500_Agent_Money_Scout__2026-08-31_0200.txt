@@ -1,0 +1,231 @@
+Subject: Agent Money Scout — 2026-08-31 02:00
+Date: Sun, 30 Aug 2026 14:26:29 -0500
+Message ID: 1a054233986dd8ed
+================================================================================
+
+# Agent Money Scout — 2026-08-31 02:00
+
+Freshest useful additions this run: BotWork, OpenTask, Tollbooth, BotGuild, and Go Agents Go. The immediate-work leaderboard still favors AgentPact, dealwork.ai, OpenAnt, MoltJobs, and selective Taskmarket/OSS bounties.
+
+IMPORTANT ELIGIBILITY NOTE: many work marketplaces, payout processors, stablecoin wallets, Stripe/KYC flows, and contractual platforms require users to be 18+. Do not bypass age, identity, regional, payment-provider, or account rules. OpenTask explicitly requires users to be at least 18. For every other platform below where the public pages checked did not state a clear minimum age, verify eligibility before registering or connecting payment rails.
+
+## NEW THIS RUN
+
+### 1. BotWork — strongest new marketplace signal
+URL: https://www.botwork.network/
+Tasks: https://www.botwork.network/tasks/
+What the agent does: research, software/code review, CSV/data analysis, copy, product work, presentations, customer-support drafts, and other bounded digital tasks.
+Who pays: clients posting tasks through BotWork.
+Verified pricing/economics: current task categories show code review from $10, data analysis from $5, presentations from $5, product management from $5, research from $2, SEO audits from $3, and other task categories. BotWork says Base escrow distributes 90% to the agent, 5% to relay nodes, 5% to protocol.
+Required: a running agent via TypeScript SDK, webhook API, or A2A endpoint; compatible payment/account setup.
+Autonomy: 9/10.
+Exact first action: verify age/account/payment eligibility, then inspect the live task feed and register only a narrow worker with an existing capability such as code review or data analysis. Do not build a bespoke BotWork integration until a real paid task is visible.
+Constraints: public pages checked did not establish a universal minimum age; payment/account rules still apply. Do not bypass them.
+Ease to first $5: 7/10 if eligible.
+Repeatability: 9/10.
+
+### 2. OpenTask — 84 open tasks, but 18+ only
+URL: https://opentask.ai/
+Find work: https://opentask.ai/find-work
+Terms: https://opentask.ai/terms
+What the agent does: respond to scoped tasks through hire-first bids, completed-work rewards, or ranked challenges; suitable work includes coding, research, QA, data and automation.
+Who pays: task owners.
+Verified activity: OpenTask reports 84 open tasks right now, 288 published agents, 37 tasks posted in the past 30 days, 2,606 offers, 7 contracts, and 0 completed-and-paid public records. Fee: 4.5% on payments.
+Required: OpenTask account; optional Codex/Claude/OpenClaw integration.
+Autonomy: 8/10.
+Exact first action: if under 18, skip this platform. If legally eligible, browse actual open tasks rather than the illustrative $750–$1,250 examples.
+Constraints: terms explicitly require users to be at least 18 and legally able to contract.
+Ease: 0/10 if under 18; otherwise 5/10 because payment history is still zero.
+Repeatability: 8/10 potential.
+
+### 3. Tollbooth — x402 marketplace with small but real settlement
+URL: https://www.trytollbooth.com/
+What the agent does: sell an existing API, automation, or cloneable agent profile through x402.
+Who pays: agents/users invoking or buying the service.
+Verified traction: 103 services listed, 7 verified endpoints, 4 calls served, $0.080 settled in USDC. A live AI-chat service shows $0.02/call and four calls.
+Required: hosted endpoint/API and compatible x402 payment setup.
+Autonomy: 10/10.
+Exact first action: only if payment eligibility is satisfied, cross-list a capability that already earns elsewhere; treat the current $0.08 network settlement as proof-of-function, not proof of meaningful demand.
+Constraints: public age rule was not clearly surfaced; payment/wallet rules apply.
+Ease: 2/10.
+Repeatability: 10/10 if buyer traffic develops.
+
+### 4. BotGuild — useful learning market, not $5 income yet
+URL: https://botguild.ai/
+Gig board: https://botguild.ai/app/gigs/
+What the agent does: bid, negotiate, deliver, and build reputation for QA, ETL, research, coding and automation tasks.
+Who pays: gig posters through on-chain escrow.
+Verified inventory: 89 gigs visible. The platform explicitly says open-beta gigs currently run only $0.10–$0.20. One fresh open digest job pays $0.20; a recent QA smoke-test task asks for page/API checks and evidence.
+Required: handler account/bot, REST/MCP/webhook stack; humans ratify critical steps.
+Autonomy: 7/10.
+Exact first action: use it only to test an autonomous contracting loop or build reputation; it is currently below a sensible $5 revenue floor.
+Constraints: public minimum age was not established in the pages checked; verify before registration.
+Ease to first $5: 2/10 at current payout levels.
+Repeatability: 8/10 potential.
+
+### 5. Go Agents Go — sell agents per task/day/month
+URL: https://www.goagentsgo.com/
+What the agent does: offer data scraping, content, automation or other task-based agent services.
+Who pays: marketplace clients.
+Advertised pricing: per-task from $5, daily passes from $20/day, monthly subscriptions from $99/month.
+Required: list an agent and connect the platform's delivery/payment flow.
+Autonomy: 8/10.
+Exact first action: verify eligibility and live buyer demand before listing; pricing is advertised marketplace pricing, not verified seller earnings.
+Constraints: age/geography/payout terms were not clear in the public page checked.
+Ease: 4/10.
+Repeatability: 8/10 potential.
+
+### 6. Bounty Bureau / OSS-bounty oracle — still worth expanding
+URL: https://bountybureau.com/
+What the agent does: use the scanner to find potentially funded open GitHub work, then verify the original issue and bounty platform before writing code.
+Who pays: underlying bounty sponsor/platform.
+Current prior-run signal: 52 open-for-claim opportunities and $2,934 on offer were previously verified; re-check each candidate before execution.
+Required: GitHub coding/test worker plus eligible payout account on the underlying platform.
+Autonomy: 8/10.
+Exact first action: score only open, unassigned, funded issues with reproducible tests and active maintainers.
+Constraints: underlying platform eligibility controls payout.
+Ease: 7/10.
+Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7. AgentPact — still the first queue to inspect
+URL: https://agentpact.xyz/needs
+What the agent does: Python/API review, data analysis, research, validation and other bounded agent work.
+Who pays: buyers who post Needs and accept deals/milestones.
+Payout: recent live scans repeatedly showed 5–25 USDC coding/API/data needs among heavy sub-dollar test noise. The public overview also documents Base-USDC escrow-backed deals.
+Required: AgentPact API/MCP/Python/npm agent; payment eligibility for settled deals.
+Autonomy: 10/10.
+Exact first action: if legally/payment eligible, filter to reward >= $5, fresh timestamps, objective acceptance criteria, and funded/settleable deals; ignore sub-dollar test traffic.
+Constraints: verify account/wallet age and geographic requirements; do not bypass them.
+Ease: 9/10 if eligible.
+Repeatability: 9/10.
+
+### 8. dealwork.ai — strongest broad job inventory
+URL: https://dealwork.ai/
+What the agent does: code, APIs, data transformation, research, documentation and agent-to-agent contracts.
+Who pays: humans or agents through escrow.
+Verified prior-run state: ~156–158 open tasks and 264 completed; public examples include an $80 AI-delivered production API and a $5 AI-to-AI job.
+Required: dealwork worker integration and eligible payment/account setup.
+Autonomy: 9/10.
+Exact first action: ingest open work and bid only where acceptance criteria can be reproduced locally before submission.
+Constraints: obey account/payment/age/geography rules.
+Ease: 9/10 if eligible.
+Repeatability: 9/10.
+
+### 9. OpenAnt — largest verified agent-native work network
+URL: https://openant.ai/
+Tasks: https://openant.ai/tasks
+What the agent does: remote analysis/data/digital-production tasks; the board also includes physical/GPS work, which should be filtered out for a software agent.
+Who pays: task posters through escrow.
+Verified scale today: 12.8K total tasks, 1.2K open, 420 in progress, 11.3K completed. Current visible remote example: analyze SKU sales and output five insights plus a chart.
+Required: OpenAnt skill/agent integration and eligible payout setup.
+Autonomy: 10/10 for remote digital work.
+Exact first action: filter to remote + digital + explicit reward + machine-verifiable deliverable.
+Constraints: do not attempt physical/location work that requires a person; verify age/payment eligibility.
+Ease: 8/10 if eligible.
+Repeatability: 9/10.
+
+### 10. MoltJobs — one explicit 5-USDC job remains
+URL: https://moltjobs.io/open-jobs
+Current listing: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer; about five days remain.
+Who pays: poster; every listed job is described as funded in Base-USDC escrow.
+Required: MoltJobs API/MCP/CLI worker; protected jobs may require certification.
+Autonomy: 8/10.
+Exact first action: inspect the job only if eligible; any contact with buyers must be specific, permitted and non-spammy.
+Constraints: payment/account eligibility applies.
+Ease: 7/10 if eligible.
+Repeatability: 8/10.
+
+### 11. Taskmarket — real settlement, high competition
+URL: https://taskmarket.dev/
+Verified today: 17 open tasks, 26.9K registered agents, 2,382.95 USDC funded volume. Current visible tasks show hundreds of submissions on small rewards; a separate 20-USDC app task had 72 submissions in a recent scan. A settled historical 0.5-USDC task paid 0.4625 USDC net after the 7.5% fee.
+What the agent does: coding, research, data, benchmark and artifact tasks.
+Who pays: funded requester.
+Autonomy: 10/10.
+Exact first action: participate only when expected value = reward × P(win) − execution/tool cost is positive. Prefer low-submission or claim/pitch/benchmark modes.
+Constraints: wallet/payment eligibility applies.
+Ease: 5/10.
+Repeatability: 9/10.
+
+### 12. t2000 — real settlement, but current work is often tiny
+URL: https://t2000.ai/
+What the agent does: claim open jobs, deliver, then convert successful procedures into fixed services or paid APIs.
+Who pays: buyers with USDC locked at post.
+Verified settlement: public receipts show real payouts such as $0.01 -> $0.0095 net, $0.08 -> $0.076 net, and $0.50 -> $0.475 net after 5%. Seller profiles show $57.75, $140.66 and $150 settled.
+Required: t2000 Passport/agent integration and payment eligibility.
+Autonomy: 9/10.
+Exact first action: ignore referral/promo/payment-loop work and target only externally useful tasks that can become reusable services.
+Constraints: platform/payment rules apply.
+Ease: 5/10.
+Repeatability: 10/10 as a productization ladder.
+
+### 13. MikroTask — fixed-price AI-friendly work
+URL: https://mikrotask.com/
+What the agent does: research, drafting, data cleanup and other bounded digital work.
+Who pays: task buyer.
+Verified pricing: fixed tiers £5 / £10 / £25 / £50; payout advertised in USD, USDT or USDC after approval.
+Required: marketplace account/payment method.
+Autonomy: 8/10.
+Exact first action: verify eligibility and target buyer-posted work or one narrow £5 service rather than a generic AI offering.
+Constraints: public pages checked do not provide enough clarity on under-18 seller eligibility; verify first.
+Ease: 8/10 if eligible.
+Repeatability: 8/10.
+
+### 14. APIHub — proven payment infrastructure, not guaranteed demand
+URL: https://apihub.io/
+What the agent does: sell a callable API/MCP capability.
+Who pays: machine callers.
+Verified economics: providers set roughly $0.001–$10+ per call, keep 90%, and receive automated Base-USDC settlement.
+Required: hosted API and compatible payment/account setup.
+Autonomy: 10/10.
+Exact first action: only cross-list a capability after it earns through direct work.
+Constraints: verify payment eligibility; do not bypass wallet/account requirements.
+Ease: 3/10.
+Repeatability: 10/10 if organic traffic develops.
+
+## REDDIT DEMAND SIGNALS
+
+### 15. Weekly SEO triage agent
+Thread: https://www.reddit.com/r/SEO_Xpert/comments/1vypo2g/whats_the_most_repetitive_part_of_your_seo_job/
+Fresh signal: users specifically identify the weekly GSC audit as repetitive: pull winners/losers, identify declining clicks/impressions, cross-check indexing/crawl issues, and output a prioritized action list.
+Customer: SEO agencies and multi-site operators.
+Agent workflow: authorized GSC data -> weekly deltas -> crawl/index checks -> prioritized review queue -> human SEO judgment.
+Where to acquire customers: existing agencies, SEO communities where solicitation is explicitly allowed, direct referrals, or permission-based outreach; do not spam Reddit threads.
+How to charge: fixed weekly report/setup, then recurring monitoring.
+MVP: one-site weekly GSC triage report.
+Ease: 9/10.
+Repeatability: 10/10.
+
+### 16. Support deflection + human escalation for product businesses
+Thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/
+Demand evidence: a hardware business says 70–80% of repetitive customer emails were automated using a knowledge-grounded assistant, saving substantial team time, while complex cases stayed with humans.
+Customer: hardware/e-commerce/SaaS support teams.
+Workflow: inbound question + permitted images/docs -> KB retrieval -> draft/answer confidence -> human escalation on uncertainty.
+Charge: setup + monthly monitoring/KB maintenance.
+MVP: top-20 FAQ resolver with escalation log.
+Ease: 8/10.
+Repeatability: 10/10.
+
+### 17. Post-Google-update SEO diagnostic agent
+Thread: https://www.reddit.com/r/SEO/comments/1vzw2tl/august_2026_google_update_hit_my_site_hard_what/
+Demand evidence: site owners affected by the August 2026 update are asking for structured diagnosis before making risky changes, with Search Console, backlink and indexing data already available.
+Customer: publishers/e-commerce/site owners.
+Workflow: before/after GSC export + index/crawl data + content inventory -> classify likely technical/content/intent/link patterns -> evidence-backed review queue. Do not promise ranking recovery.
+Charge: fixed diagnostic report.
+MVP: 20-page/page-query loss decomposition.
+Ease: 8/10.
+Repeatability: 8/10.
+
+### 18. Construction document parser
+Thread: https://www.reddit.com/r/AiAutomations/comments/1vdm8sg/what_repetitive_business_task_did_you_automate/
+Demand evidence: a commenter names document parsing for a construction contractor as a real automation they built.
+Customer: contractors, subcontractors and construction admin teams.
+Workflow: authorized document -> classify/extract -> schema validation -> project/job mapping -> exception queue.
+Charge: per-document batch or monthly workflow fee.
+MVP: one document type into a validated spreadsheet/database row.
+Ease: 8/10.
+Repeatability: 9/10.
+
+### 19. Multi-site SEO operations/reporting
+Thread: https://www.reddit.com/r/Agentic_SEO/comments/1v1jbfs/after_1_year_of_building_we_final

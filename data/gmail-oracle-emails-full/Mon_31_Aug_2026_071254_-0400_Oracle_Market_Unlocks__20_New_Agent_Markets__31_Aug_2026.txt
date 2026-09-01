@@ -1,0 +1,186 @@
+Subject: Oracle Market Unlocks — 20 New Agent Markets — 31 Aug 2026
+Date: Mon, 31 Aug 2026 07:12:54 -0400
+Message ID: 1a05785b34155f35
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new markets
+
+I excluded markets already covered in prior Oracle reports: Autodesk, Grafana, Stripe, Adobe CC/Commerce, Power BI/AppSource, Whop, SketchUp, Garmin, Ecwid, PrestaShop, Shopware, Samsung Galaxy Store, Alexa, SAP, OpenCart, Reallusion, Joomla, Oracle Marketplace, Splunkbase, Xero, Zendesk, Zoho, Pipedrive, Foundry VTT, QuickBooks, Intercom, Freshworks, FiveM/Tebex, itch.io, GmodStore, Fantasy Grounds, MyFonts, DAZ, Roll20, IMVU, Second Life, Creative Fabrica, TurboSquid, Airtable, Stream Deck, Overwolf, Hytale, CurseForge, Superhive/Blender, MyMiniFactory, Cults, Thangs, TPT, Telegram Mini Apps, VRChat Avatar Marketplace, WordPress SaaS plugins, Zoom, Microsoft Teams, Salesforce AgentExchange, ServiceNow, LINE MINI Apps, Databricks, Wix, Shopify, RapidAPI, AWS Data Exchange, Snowflake, GCP Marketplace, Discord Premium Apps, Bubble, FlutterFlow, Coda, Figma, VS Code, Edge, Firefox, BigCommerce, Atlassian, monday.com, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, Miro, WooCommerce, HubSpot, JetBrains, Fab, Unity, UEFN, Canva, Creative Market, Minecraft Marketplace, Adobe Stock, Envato, Gumroad, Etsy and Roblox.
+
+## Ranked shortlist
+
+| Rank | Market | Score /25 | Best wedge | Practical autonomy |
+|---|---|---:|---|---|
+| 1 | Apify Store | 25 | MCP/API-native scrapers, automations, agent tools | H1 → near-H0 |
+| 2 | Vercel Marketplace — AI Agents & Services | 24 | agent services / developer infra with native provisioning + billing | H2 onboarding, H0 ops |
+| 3 | Datadog Marketplace | 23 | observability integrations, data sources, remediation agents | H2 → H1 |
+| 4 | HighLevel Template Marketplace | 23 | funnels/sites/forms + Conversation/Voice AI templates | H1 |
+| 5 | PromptBase Agent Skills | 23 | sell validated SKILL.md procedural assets | H1 |
+| 6 | Fireberry Marketplace | 22 | narrow CRM workflow apps and integrations | H1–H2 |
+| 7 | DataBazaar | 22 | agent-generated lawful datasets sold natively through MCP/API | H1–H2 |
+| 8 | Nexus Mods | 21 | continuously maintained mods; upload/update API + Donation Points | H1–H2; payout eligibility restrictions |
+| 9 | Modrinth | 21 | maintained Minecraft mods/plugins/resource packs | H1–H2 |
+| 10 | TensorArt | 21 | specialized models and ComfyFlow/AI tools | H2 |
+| 11 | Civitai | 20 | specialist LoRAs/models with paid access/per-generation licensing | H2 |
+| 12 | Raycast Store | 20 | workflow extensions replacing small Mac utilities | H1 |
+| 13 | Datarade | 20 | high-value compliant industry datasets/data-as-a-service | H2 |
+| 14 | spike.land MCP App Store | 20 | composable MCP-native micro-apps | H1; early market |
+| 15 | Obsidian Community | 19 | paid specialist plugins / themes with automated safety review | H1 |
+| 16 | Glide Template Store | 19 | complete vertical no-code apps | H1 |
+| 17 | Webstudio Marketplace | 18 | paid site/section/integration templates | H1 |
+| 18 | Ghost Marketplace | 18 | publication themes + automated compatibility maintenance | H1 |
+| 19 | Carrd Maker Program | 17 | conversion-focused one-page business templates | H1 |
+| 20 | TensorHub Creator Incentive | 17 | original AI models paid by run/unique usage | H2 / experimental |
+
+## 1. Apify Store — strongest market in this batch
+
+**What agents sell:** Actors: web-data extractors, monitoring tools, automation endpoints, data processors, AI utilities and MCP servers.
+
+**Why now:** Apify says its Store has 65,717 tools/automations, ~3,900 community developers, and is paying roughly **$1.5M per month** to creators. Actors are automatically callable through API and MCP. Apify's April 14, 2026 pricing change is explicitly motivated by AI agents: fixed rentals are being replaced with granular pay-per-event pricing so autonomous clients can pay for specific useful actions.
+
+**Autonomous workflow:** Oracle mines recurring API/data/tool demand → worker creates Actor from Python/JS template → fixture sites + Harbor anti-breakage tests → deploy Actor → set pay-per-event pricing → Store publishes it → users/agents call through API/MCP → Apify handles execution/billing/invoicing → Worker observes runs/errors → patches automatically.
+
+**Human dependency:** one-time account/payout/identity and policy review = H1; product loop after that is unusually close to H0.
+
+**Reddit/community:** March 2026 creators reported wildly uneven income; one new developer said about $10 after a month. That contrasts with Apify's official claim that top independent creators exceed $10k MRR. Translation: demand exists, but Oracle must find missing/high-value Actors instead of cloning obvious scrapers.
+
+**Moltwork assets:** `ApifyPack`, Actor Venue, scraper World, website-change regression evaluator, PPE pricing process, anti-breakage specialist worker.
+
+**Attractive when:** repeated demand, low per-run infra cost, source stability, structured results. **Bad when:** crowded scraper, brittle anti-bot dependency, infrastructure cost consumes price.
+
+Official: https://apify.com/partners/actor-developers
+
+## 2. Vercel Marketplace — AI Agents & Services
+
+**What agents sell:** deployable agent services, browser automation, AI testing, security/remediation services, data/search infrastructure or narrowly scoped developer agents.
+
+**Infrastructure unlock:** Vercel now has a dedicated **AI Agents & Services** Marketplace category with unified auth, provisioning and billing. Its Partner API supports system-authenticated background operations, resource provisioning, billing and automatic lifecycle management.
+
+**Workflow:** detect common Vercel project pain → build hosted agent/service → implement Marketplace Partner API → synthetic Vercel project World tests create/update/delete/credential rotation → provider review → native provisioning/billing → monitor installations/usage → autonomous maintenance.
+
+**Demand:** Vercel says initial Marketplace providers have seen significant user acquisition. Community discussion in March 2026 noted Vercel now fully supports MCP Apps/custom MCP servers, increasing the addressable agent-tool surface.
+
+**H-level:** provider/company approval is H2; normal provisioning and service delivery can be H0.
+
+**Moltwork:** `VercelProviderPack`, provisioning World, lifecycle/idempotence evaluator, integration-certification Process.
+
+Official: https://vercel.com/marketplace/program
+Docs: https://vercel.com/docs/integrations/create-integration/marketplace-api
+
+## 3. Datadog Marketplace
+
+**What agents sell:** data-source integrations, security/observability apps, specialist dashboards, automated remediation workflows and AI-agent capabilities around telemetry.
+
+**Demand:** Datadog officially advertises Marketplace access to **25,000+ customers**, says partners can earn revenue, and provides prebuilt scaffolding while Datadog handles metering/billing.
+
+**Workflow:** identify unsupported SaaS/vendor/log source → create integration using Datadog APIs/OpenTelemetry/Agent → replay telemetry fixtures → Harbor checks parsing, cardinality, performance and alert correctness → Marketplace review → metered usage → continuously update when upstream schemas change.
+
+**Human dependency:** partner/review/security onboarding H2; updates and execution H1.
+
+**Best moat:** persistent connector maintenance. Agent spots upstream API/schema changes before users report broken dashboards.
+
+Official: https://www.datadoghq.com/marketplacepartners/
+
+## 4. HighLevel Template Marketplace
+
+**What agents sell:** Forms, Funnels, Email Templates and Websites; HighLevel also explicitly supports selling Conversation AI and Voice AI templates.
+
+**Why this is timely:** the Template Library was integrated directly into the Marketplace in 2026. Paid templates are discovered, previewed, purchased and installed inside HighLevel; seller/developer profiles are automatically created during the flow.
+
+**Workflow:** mine agency/client complaints → build vertical funnel/site/form/AI-agent template in sandbox account → synthetic lead/conversion fixtures → copy/layout/link/accessibility checks → listing metadata → Marketplace review → one-time sale → observe installs/reviews → clone successful vertical family.
+
+**Demand signal:** the target buyer isn't a general consumer; HighLevel agencies repeatedly need deployable assets for dentists, gyms, realtors, clinics, etc., making verticalization measurable.
+
+**H-level:** Marketplace review/account/payment H1; production/test can be H0-ish.
+
+**Moltwork:** `HighLevelPack`, funnel World, conversion-integrity evaluator, vertical-template School, Marketplace submission Process.
+
+Official: https://marketplace.gohighlevel.com/docs/marketplace-modules/TemplateLibrary/index.html
+AI templates: https://marketplace.gohighlevel.com/docs/marketplace-modules/ConversationsAIandVoiceAI/
+
+## 5. PromptBase Agent Skills
+
+**New unlock:** PromptBase now explicitly accepts and sells **Agent Skills as `SKILL.md` files**, not just prompts. Marketplace sales charge 20%; seller-referred sales can be 0% fee. Its February 2026 Select subscription also pays creators $1 each time a subscriber downloads an opted-in asset.
+
+**What agent sells:** narrow procedural expertise: code-review process, API migration skill, accessibility audit, marketplace submission process, research methodology, CAD checklist, etc.
+
+**Workflow:** Oracle sees repeated profitable procedure → Trace2Skill/worker distills skill → Harbor compares worker-with/without-skill on hidden tasks → publish only statistically useful skills → Marketplace sale/download → monitor ratings/sales → version skill from real outcomes.
+
+This is extremely Moltwork-native because the product can literally be the validated artifact generated by post-run learning.
+
+**H-level:** H1 review/payout. Generation/evaluation/versioning H0.
+
+**Demand:** PromptBase's marketplace is huge and 2026 introduced a second subscription revenue path. The risk is extreme saturation; raw prompt spam is worthless. Evaluated specialist Skills are the wedge.
+
+Official: https://promptbase.com/sell
+Select: https://promptbase.com/blog/promptbase-select-creators
+
+## 6. Fireberry Marketplace
+
+**What agents sell:** CRM apps: vertical workflows, enrichment, data QA, sync, reporting and unsupported integrations.
+
+**Strong machine surface:** Fireberry's CLI has explicit `marketplace clone` and `marketplace deploy` flows. Marketplace terms support both Fireberry-billed and developer-billed paid apps, and Fireberry may handle invoicing, collection, cancellations/refunds and tax docs for its billed apps.
+
+**Workflow:** reproduce CRM gap → private-app build/test → fork to marketplace app with CLI → CRM fixture World → deploy → listing/review → billing → monitor install errors → update via CLI.
+
+**H-level:** review/legal/payment H1–H2; code lifecycle H1.
+
+**Moltwork:** CRM World, Fireberry Venue, manifest checker, webhook evaluator, deploy Skill.
+
+Docs: https://developers.fireberry.com/docs/cli
+Terms: https://www.fireberry.com/legal/marketplace-listing-terms
+
+## 7. DataBazaar — agent-native data marketplace
+
+**What agents sell:** lawful machine-ready datasets, derived/enriched public data, benchmarks, structured indexes and recurring snapshots.
+
+**Why Oracle should care:** DataBazaar exposes MCP tools for `search_datasets`, `buy_now`, `create_listing`, `publish_listing` and data-gap bounties, plus REST/OpenAPI and agent registration. Payment is escrowed through Stripe and released after successful download.
+
+**Workflow:** Oracle notices repeated data gap → agent gathers only licensable/public data → provenance/PII checks → schema + sample → publish via MCP → buyer agents inspect sample → purchase automatically → settlement → refresh version on cadence.
+
+**H-level:** H1–H2 for seller/payment/compliance. Once authorized, listing and sale can be H0.
+
+**Moat:** provenance/evaluator infrastructure. The asset isn't 'scraped data'; it's a legally distributable, schema-verified, freshness-measured dataset.
+
+Market: https://databazaar.io/
+
+## 8. Nexus Mods — March 2026 upload API unlock
+
+**New frontier:** on **March 17, 2026**, Nexus Mods opened its Upload API beta to the wider mod-author community, initially for updating mods. That materially changes maintenance autonomy.
+
+**Economic surface:** mods remain free, but opted-in authors can earn Nexus Donation Points from their mods; DP is denominated at $0.001 each. The payout/reward system has eligibility rules, including age restrictions, so it is not a surface to use unless the creator independently meets them; do not attempt to bypass those requirements.
+
+**Best product:** compatibility-maintained utility mods rather than content spam.
+
+**Workflow:** monitor game patch → run mod against deterministic save/test fixture → patch compatibility → package → update via Upload API → observe crash/issues/downloads → next patch.
+
+**Demand:** the platform's explicit 'Creator Friction' program is evidence that upload/update labor is important enough to automate. The biggest opportunity is persistent maintenance of genuinely useful mods.
+
+**H-level:** initial mod creation/publishing/community/IP judgment H2; updates can fall toward H1.
+
+Official update: https://www.nexusmods.com/skyrimspecialedition/news/15454
+DP: https://help.nexusmods.com/article/112-donation-points-faq
+
+## 9. Modrinth
+
+**What agents produce:** Minecraft mods, plugins, modpacks and resource packs; creators receive a share of platform ad revenue.
+
+**Demand/economics:** Modrinth says project owners earn creator revenue; a 2024 platform change increased creator revenue dramatically. Community posts corroborated noticeable jumps in earnings.
+
+**Critical 2026 constraint:** Modrinth announced stricter AI disclosures/rules in August 2026 after project submissions reportedly doubled from ~2,500/week to >5,000/week. Fully AI-generated slop is exactly the wrong strategy.
+
+**Workflow:** human/product owner defines genuine utility → agent implements/tests/version-matrices it → human creative/IP review → publish → monitor issue tracker and Minecraft loaders/versions → continuous compatibility patches.
+
+**H-level:** H2 because meaningful human authorship/creative control matters; maintenance H1.
+
+**Moltwork wedge:** quality-first Worlds proving compatibility and non-regression, not mass generation.
+
+Official monetization: https://modrinth.com/news/article/creator-monetization/
+
+## 10. TensorArt
+
+**What agents sell:** original models, ComfyFlow workflows and AI Tools. TensorArt supports paid downloads/runs, Pro usage revenue, referral revenue and creator incentive programs.
+
+**Fresh change:** on **July 22, 2026**, TensorArt restructured creator incentives into TenStar Fund + Pro Model + Pro Tools tracks, with tighter focus on selected new base models and Pro usage.
+
+**Workflow:** detect unmet visual workflow → train/compose original model/tool with rights-cleared data → automated benchmark for prompt adherence, consistency and artifact failure → human aesthetic/IP review → publish → measur

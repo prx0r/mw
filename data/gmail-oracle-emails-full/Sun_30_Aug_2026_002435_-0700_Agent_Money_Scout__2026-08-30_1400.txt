@@ -1,0 +1,321 @@
+Subject: Agent Money Scout — 2026-08-30 14:00
+Date: Sun, 30 Aug 2026 00:24:35 -0700
+Message ID: 1a0518e4c79fbf7b
+================================================================================
+
+# Agent Money Scout — 2026-08-30 14:00
+
+## Executive signal
+
+This run found five worthwhile new surfaces, but only one is a material infrastructure change: **BNB Agent Studio v2 now lets agents charge for their work and receive on-chain payment directly**. **Circle Agent Marketplace** is also a serious new distribution rail for paid APIs. **BotHire** is the most interesting fresh proof-of-commerce experiment because it reports real Base settlement, but only **$3 total settled**, so it is not yet a high-liquidity earning source.
+
+For direct work right now, the strongest queue remains roughly: **AgentPact → dealwork.ai → t2000 → fresh Taskmarket tasks → OpenJobs → MikroTask**, with MoltJobs and agentsbay kept as secondary scanners.
+
+# NEW THIS RUN
+
+## 1. BNB Agent Studio v2
+Primary: https://www.bnbchain.org/en/blog/bnb-agent-studio-v2-your-agents-your-rules
+
+What the agent does: deploy a specialist agent that exposes a paid x402-compatible service. Examples that avoid financial-risk work: code review, API QA, structured research, document transformation, monitoring, or data validation.
+
+Who pays: any buyer/agent that hires or calls the seller agent.
+
+Payout/pricing: seller-defined. BNB Chain does not publish a universal payout range. Payment settles on-chain to the seller agent wallet.
+
+Requirements: BNB Agent Studio, Python or TypeScript agent, x402 receiving interface, compatible wallet. Studio v2 is live and supports seller agents.
+
+Autonomy: 10/10.
+
+Exact first action: wrap one already-proven specialist as a seller agent and set a small fixed price; do not build a speculative agent solely for the marketplace.
+
+Constraints: normal wallet/legal/account eligibility applies; do not bypass age, identity, jurisdiction or payment restrictions.
+
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+## 2. Circle Agent Marketplace / Agent Stack
+Primary: https://agents.circle.com/services
+Seller docs: https://agents.circle.com/sell
+
+What the agent does: expose a deterministic HTTP capability and charge per request in USDC.
+
+Who pays: AI agents/developers discovering the endpoint through Circle's machine-readable marketplace.
+
+Pricing: provider-defined. Circle's seller docs show a simple example of pricing an endpoint at $0.01/call. Current marketplace services range from free to sub-dollar calls, depending on endpoint.
+
+Requirements: hosted API/OpenAPI description, Circle x402/Gateway middleware, seller wallet/balance setup.
+
+Autonomy: 10/10 once published.
+
+Exact first action: take one proven endpoint such as /verify-pr, /automation-health, /structured-evidence, /document-normalize, or /release-check and run Circle's agent-readiness check against its domain.
+
+Constraints: sell only data/services you have rights to provide; follow normal wallet/payment eligibility.
+
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+## 3. BotHire
+Primary: https://www.bothire.io/
+Machine spec: https://www.bothire.io/skill.md
+
+Current evidence: the live page reports **14 autonomous agents, 127 skills, and $3 USDC settled on-chain**. It says each settlement is inspectable on Base.
+
+What the agent does: register skills, get hired by other agents, deliver, and settle through ownerless Base-USDC escrow.
+
+Who pays: other autonomous agents.
+
+Payout: seller-defined; current total settled volume is only $3, so do not infer a normal job size.
+
+Requirements: Base wallet, skill registration, BotHire machine interface. Humans cannot transact directly on the marketplace; it is explicitly machine-facing.
+
+Autonomy: 10/10.
+
+Exact first action: let an existing worker read skill.md and register one narrow skill. Spend essentially zero bespoke engineering until a real external hire appears.
+
+Constraints: normal wallet/legal eligibility still applies to the person responsible for the agent.
+
+Ease-to-first-$5: 3/10. Repeatability: 9/10 if liquidity grows.
+
+## 4. AgentsMarketplace on X Layer
+Primary: https://agentsmarketplace.app/
+
+What the agent does: list an HTTP/agent endpoint with a price; buyers call it and x402 settles USDC/USDT/USDG on X Layer.
+
+Who pays: marketplace users and other agents.
+
+Payout/pricing: seller-defined; I found no reliable current seller-income distribution or transaction-volume figure.
+
+Requirements: X Layer-compatible wallet, service endpoint, x402 registration.
+
+Autonomy: 10/10.
+
+Exact first action: cross-list an already-running code/research/data endpoint; do not build anything specifically for this market until a paid call appears.
+
+Constraints: wallet/jurisdiction/payment rules apply normally.
+
+Ease-to-first-$5: 3/10. Repeatability: 9/10.
+
+## 5. Agent Bazaar
+Primary: https://agent-bazaar.com/
+
+What the agent does: sell pay-per-use skills callable through x402 on Base.
+
+Current evidence: public marketplace advertises **28+ skills** spanning code, data and other utilities. I did not find trustworthy seller-volume or seller-income evidence.
+
+Who pays: AI agents purchasing skills per call.
+
+Requirements: publish a callable skill/API and make it discoverable through the marketplace.
+
+Autonomy: 10/10.
+
+Exact first action: cross-list a deterministic capability already proven elsewhere; set a low test price and watch for a real external purchase.
+
+Constraints: normal wallet/legal/payment eligibility.
+
+Ease-to-first-$5: 3/10. Repeatability: 9/10.
+
+# STILL ACTIVE FROM PRIOR RUNS
+
+## 6. AgentPact
+https://agentpact.xyz/
+
+AgentPact remains one of the strongest direct agent-work structures: offers, needs, negotiated deals, Base-USDC escrow, MCP/Python/npm support. Prior live runs verified current buyer needs in code review, API automation, data and security review plus completed 5–15 USDC deals.
+
+Agent work: code review, API QA, data transformation, research, automation.
+
+Who pays: the buyer posting the Need.
+
+Exact first action: maintain one narrow Offer and continuously query matched Needs instead of passively waiting.
+
+Autonomy 10/10. Ease 8/10. Repeatability 9/10.
+
+## 7. dealwork.ai
+https://dealwork.ai/
+
+Fresh primary-source state: **2.5K workers, 156 open tasks, 264 completed tasks**. A verified example shows an AI agent completing an **$80 production API endpoint with tests**. Escrow is funded before work starts. Fees are 10% normally and 3% AI-to-AI.
+
+Agent work: APIs, coding, research, analysis, data transformation, documentation.
+
+Exact first action: pull the full live feed and bid only on tasks with machine-testable acceptance criteria.
+
+Autonomy 9/10. Ease 8/10. Repeatability 9/10.
+
+## 8. t2000
+https://t2000.ai/
+
+Current homepage continues to show public sellers with **$57.75, $140.66 and $150 settled**. The strategically useful model remains: open job → fixed service → instant paid API. Services charge 5% on settlement; API calls are currently advertised at 0% marketplace fee.
+
+Agent work: digital services and APIs.
+
+Exact first action: scan newly funded open jobs; use tiny jobs only when they prove integration/reputation, then turn the procedure into a fixed service.
+
+Autonomy 10/10. Ease 8/10. Repeatability 10/10.
+
+## 9. Taskmarket
+https://taskmarket.dev/
+
+Current dashboard: **19 open tasks and 2,380.71 USDC funded volume**. Buyers fund tasks, multiple agents compete, and the accepted result receives escrowed USDC.
+
+Important caveat from prior runs: some pages can display `open` while their due date is expired, so status alone is not enough.
+
+Exact first action: require `status=open AND due_at>now AND escrow=funded`, then calculate expected value from reward, competition and solve probability.
+
+Autonomy 10/10. Ease 6/10. Repeatability 9/10.
+
+## 10. OpenJobs
+https://openjobs.bot/
+
+Current homepage reports **193 AI agents, 159 jobs posted, 138 jobs completed and 9,656 total volume** on Solana mainnet.
+
+Agent work: coding, research, data and other verifiable digital outputs.
+
+Who pays: job posters through escrow.
+
+Exact first action: query fresh USDC jobs and rank by deterministic verifiability.
+
+Autonomy 10/10. Ease 7/10. Repeatability 9/10.
+
+## 11. MikroTask
+https://mikrotask.com/
+
+Current marketplace explicitly accepts AI-agent sellers and has fixed tiers of **£5 / £10 / £25 / £50**, with payout advertised in USD, USDT or USDC. The public board currently shows an open **£5 500-word article** task due tomorrow with 15 applicants.
+
+Agent work: research, drafts, data cleanup, transcription, code and other bounded digital work.
+
+Exact first action: prioritize fresh buyer-posted jobs over creating another generic seller listing.
+
+Constraints: verify account/payment eligibility before using the payout rail.
+
+Autonomy 8/10. Ease 8/10. Repeatability 8/10.
+
+## 12. MoltJobs
+https://moltjobs.io/open-jobs
+
+Infrastructure remains strong: MCP, REST, CLI, webhooks, Base-USDC escrow, 10 free bids/month, 5% fee. Current public jobs are four recent **2-USDC** publication tasks, so present economics are weak.
+
+Exact first action: keep the connector polling for code/research/data work above your expected-value floor; skip promotional work unless every account/disclosure/platform rule is genuinely satisfied.
+
+Autonomy 9/10. Ease 3/10. Repeatability 8/10.
+
+## 13. agentsbay
+https://www.agentsbay.ai/
+
+Current page reports **27 registered agents, 774 jobs settled, about $1.5K USDC in escrow, and ~6-minute average verification**.
+
+Agent work: digital tasks with machine-verifiable artifacts.
+
+Who pays: job posters; USDC escrow on Polygon.
+
+Exact first action: inspect current jobs and reject malformed or implausible listings automatically.
+
+Autonomy 10/10. Ease 6/10. Repeatability 9/10.
+
+# REDDIT DEMAND SIGNALS
+
+## 14. Automation outcome watchdog
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+Fresh Aug 29 signal: operators report workflows can appear green while the intended downstream action never occurs. Dead tokens, rejected templates and broken webhooks can fail silently.
+
+Recurring problem pattern: teams monitor whether the workflow ran, not whether the business result happened.
+
+Agent workflow: expected event + deadline + downstream receipt/state → HEALTHY / FAILED / SILENT.
+
+Customer: n8n/Make/Zapier agencies and businesses.
+
+How to charge: fixed setup/audit, then monthly monitoring.
+
+MVP: one external expectation store + one downstream-state verifier + one alert channel.
+
+Ease 9/10. Repeatability 10/10.
+
+## 15. Verified invoice / month-end normalizer
+Thread: https://www.reddit.com/r/automation/comments/1ug9h20/an_accounting_team_showed_me_their_monthend/
+
+A June 2026 thread with 168 votes describes PDF invoices in email, receipt photos in Slack, supplier statements in drives and bank exports being manually copied into spreadsheets. The proposed workflow extracted fields, flagged missing info/duplicates and created a review queue.
+
+Agent workflow: authorized documents → extraction → fixed schema → validation → duplicates/missing-data checks → human review queue.
+
+Customer: bookkeeping firms and SMB finance operations.
+
+How to charge: per-document or monthly processing bundle.
+
+MVP: invoice/receipt → validated CSV/JSON + exceptions.
+
+Ease 8/10. Repeatability 10/10.
+
+## 16. QA verification orchestrator
+Thread: https://www.reddit.com/r/QualityAssurance/comments/1vsh07o/feeling_exhausted_due_to_ai/
+
+Fresh Aug 19 discussion with 133 votes: QA practitioners say AI now generates scripts/tests quickly, but their workload shifts toward planning, communication and deciding what/how to test; commenters complain quantity/coverage is replacing useful exploratory testing.
+
+Recurring problem: generation is cheap; deciding what matters and verifying behavior remains expensive.
+
+Agent workflow: PR/issue + acceptance criteria → changed-surface map → risk-ranked tests → execute reliable subset → evidence → PASS/FAIL/REVIEW.
+
+Customer: software teams using coding agents.
+
+Charge: per PR/bug first, then CI subscription.
+
+Ease 9/10. Repeatability 10/10.
+
+## 17. Accounting document-chasing worker
+Thread: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+
+A recent Aug 23 post with 96 votes identifies repeated manual work around client messages, document chasing, compliance reminders and invoice follow-ups.
+
+Safe bounded workflow: authorized client record → missing item? → approved reminder → receipt/status → human exception.
+
+Customer: accounting/bookkeeping firms. Keep accounting/compliance judgment with qualified humans.
+
+Charge: setup + recurring monthly automation/monitoring.
+
+Ease 7/10. Repeatability 9/10.
+
+## 18. Freelancer invoice reminder worker
+Threads:
+https://www.reddit.com/r/Freelancers/comments/1sdk0d6/how_do_you_manage_invoicing_and_payment_reminders/
+https://www.reddit.com/r/FreelanceIndia/comments/1rbm9c5/built_a_small_system_that_automatically_handles/
+
+Freelancers describe falling behind on invoices and reminders as clients have different schedules. Existing workflows automate draft reminders based on how overdue an invoice is.
+
+Agent workflow: invoice due state → draft/send approved reminder → update status → escalate exception.
+
+Customer: freelancers and micro-agencies.
+
+MVP: Google Sheet/CRM + Gmail draft reminders + status dashboard.
+
+Ease 8/10. Repeatability 9/10.
+
+## 19. Production automation hardening / monitoring
+Thread: https://www.reddit.com/r/n8n/comments/1tdkfir/how_do_you_monitor_automation_failures/
+
+Operators managing multiple workflows/client projects say native run history and error emails become messy and ask how to centralize monitoring/documentation.
+
+Agent workflow: workflow/config/logs → missing error paths → retries/backoff → webhook health → credential drift → observability gaps → risk-ranked runbook.
+
+Customer: automation agencies.
+
+MVP: sanitized workflow export + execution sample → production-readiness report.
+
+Ease 8/10. Repeatability 10/10.
+
+## 20. Support ticket triage with human gates
+Thread: https://www.reddit.com/r/automation/comments/1rjjx3z/anyone_here_actually_trust_ai_for_ticket_triage/
+
+Production users report AI works well for first-pass tagging, routing and summarizing but becomes unreliable on unusual/high-risk edge cases.
+
+Agent workflow: ticket → summary/category/urgency/confidence/risk flags → route + draft response → human review when confidence/risk thresholds trigger.
+
+Customer: small SaaS/support teams.
+
+MVP: one helpdesk inbox → validated JSON triage + review queue.
+
+Ease 8/10. Repeatability 10/10.
+
+# FILTERED / DOWNGRADED
+
+- ClawTasks: currently explicitly free-task only, so it is not a current earning source: https://clawtasks.com/
+- AuraGate: explicitly Arc testnet; displayed USDC is not real-money income: https://auragate.app/
+- Agentic Market / other x402 directories with no buyer activity: useful distribution experiments, not direct earning priorities until real paid calls appear.
+- Any task involving spam, fake reviews, deceptive promotion, unauthorized access/scraping, credential resale, gambling, adult content, unsafe work, or bypassing age/identity/geography/payment rules is excluded.
+
+# BEST 3 ACTIONS TO TRY N

@@ -1,0 +1,160 @@
+Subject: Agent Money Scout — 2026-08-29 03:00
+Date: Fri, 28 Aug 2026 15:22:29 -0500
+Message ID: 1a04a09c59a02dd2
+================================================================================
+
+# Agent Money Scout — 2026-08-29 03:00
+
+## NEW THIS RUN
+
+### 1. AnyTasks — best fresh first-$10 candidate
+URL: https://anytasks.io/
+What the agent does: complete bounded remote tasks such as localization QA, research, writing, data entry, or simple development.
+Who pays: task poster through Stripe.
+Verified economics: workers keep 90%. The live board currently shows one non-example remote task: Brazilian Portuguese localization QA for $10. Many other visible cards are explicitly marked examples and are not counted as live inventory.
+Requirements: marketplace account, relevant task skill, Stripe/payment eligibility.
+Autonomy: 7/10.
+First action: inspect the live non-example tasks, then apply only to tasks explicitly permitting AI-assisted or agent work.
+Constraints: comply with task-specific AI-use rules and Stripe/account eligibility; do not bypass age or identity requirements.
+Ease-to-first-$5: 8/10. Repeatability: 7/10.
+
+### 2. WorkProtocol — strongest new machine-native bounty protocol
+URL: https://workprotocol.ai/hn
+What the agent does: claim structured jobs, produce PRs/reports/code artifacts, pass automated or human verification.
+Who pays: job sponsor funding USDC escrow on Base.
+Verified economics: platform currently reports 719 agents, 35 jobs posted, 12 completed, and 1,325 USDC settled. Minimum job budget is $50 USDC.
+Requirements: Base wallet, agent/API integration, job-specific coding/research skills.
+Autonomy: 10/10.
+First action: query open jobs and prioritize tasks with deterministic acceptance checks such as tests/builds.
+Constraints: wallet/platform eligibility applies; no age or identity workarounds.
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+### 3. AgentsMarketplace on X Layer — sell one endpoint per call
+URL: https://www.agentsmarketplace.app/
+What the agent does: expose a paid API endpoint; other agents call it through x402.
+Who pays: agent/user invoking the API.
+Verified economics: service owners set per-call USD prices; settlement supports USDC/USDT/USDG on X Layer via OKX x402.
+Requirements: deployed endpoint, OKX developer API key/wallet, machine-readable service definition.
+Autonomy: 10/10.
+First action: wrap an existing deterministic endpoint such as /verify-pr, /extract-evidence, /api-health, or /normalize-data.
+Constraints: OKX/wallet jurisdiction and age/account rules apply; use only an eligible account.
+Ease-to-first-$5: 4/10. Repeatability: 10/10.
+
+### 4. CrewHub — A2A marketplace with Stripe cash-out
+URL: https://crewhubai.com/guide/
+What the agent does: receive A2A tasks through a JSON-RPC endpoint and complete them programmatically.
+Who pays: marketplace users buying agent tasks.
+Verified economics: developers earn 90% of completed-task credits; CrewHub retains 10%; payouts are via Stripe Connect.
+Requirements: A2A endpoint, /.well-known/agent.json, Stripe Connect.
+Autonomy: 9/10 after onboarding.
+First action: register one existing A2A-compatible specialist rather than building a new general agent.
+Constraints: Stripe/account eligibility applies; minors should not bypass provider age/KYC rules.
+Ease-to-first-$5: 4/10. Repeatability: 9/10.
+
+### 5. AgenticInvictus — direct hire + open bidding
+URL: https://www.agenticinvictus.com/
+What the agent does: bid on data extraction, analysis, automation, research, and repeatable tasks, or be hired directly.
+Who pays: job poster; budget held in escrow.
+Verified economics: pay-on-delivery/escrow model is live, but I could not verify reliable current payout distribution, so no median reward is claimed.
+Requirements: deployed/registered agent and task-specific skills.
+Autonomy: 8/10.
+First action: inspect genuine current jobs before investing integration effort.
+Constraints: follow platform/payment eligibility and task-specific AI rules.
+Ease-to-first-$5: 4/10. Repeatability: 8/10.
+
+### 6. Graded.sh demand-arbitrage play
+URL: https://graded.sh/
+What the agent does: use live x402 demand telemetry to identify high-demand, weakly served APIs, then ship a better compliant alternative.
+Who pays: future API users through x402, not Graded itself.
+Verified economics: Graded currently indexes 3,851 x402 services across 2,020 domains. Examples include X search at 33k calls/30 payers, Exa search at 18k calls/242 payers, and award-seat search at 6.8k calls/8 payers over 30 days.
+Requirements: ability to build/host an API and accept x402 payments.
+Autonomy: 10/10 once deployed.
+First action: rank services by 30-day demand, payer count, grade, and price; identify a capability you can legally reproduce or improve without copying proprietary data/code.
+Constraints: obey upstream API licences/ToS and payment eligibility.
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7. MoltJobs
+URL: https://moltjobs.io/
+Still active. Machine-readable jobs, 10 free bids/month, 5% escrow fee, USDC on Base. Best for research, code, scraping, and objectively verifiable outputs.
+Ease 7/10. Repeat 9/10.
+
+### 8. Clawlancer
+URL: https://clawlancer.ai/
+Still active. REST/MCP register → browse → claim → deliver → settlement. Advertised fees remain 1–2.5%.
+Ease 7/10. Repeat 8/10.
+
+### 9. dealwork.ai
+URL: https://dealwork.ai/
+Still one of the stronger visible job feeds. Prior run showed ~154 open tasks and 264 completed tasks. Continue polling rather than assuming inventory remains unchanged.
+Ease 9/10. Repeat 9/10.
+
+### 10. SporeAgent
+URL: https://www.sporeagent.com/
+Still live and MCP-native. Platform reports 1,247 agents and $48,210 paid out, but its public $45/$80/$120 example tasks are old and should not be treated as fresh openings.
+Ease 6/10. Repeat 8/10.
+
+### 11. AgentGigs
+URL: https://www.agentgigs.io/
+Still live. After one-time human verification/payment setup, the agent can browse, apply, deliver, and earn through API/webhooks.
+Ease 5/10. Repeat 9/10.
+
+### 12. Mercatai
+URL: https://www.mercatai.eu/ai-agents
+Still live. API-native B2B jobs, first 10 tasks at 0% marketplace fee, then standard platform fees; Stripe/SEPA rails.
+Ease 5/10. Repeat 9/10.
+
+### 13. AgentBazaar
+URL: https://www.agentbazaar.dev/
+Still a strong capability-sales surface. Free registration, x402-style quoting/settlement, 97% to agent and 3% to platform according to the site.
+Ease 4/10. Repeat 10/10.
+
+### 14. Agoragentic
+URL: https://agoragentic.com/earn.html
+Still active as an x402-style capability market: 756 registered agents, 68 public services, 801 invocations, with seller share advertised at 97% when paid settlement is enabled.
+Ease 4/10. Repeat 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 15. Small-business automation: repetitive support + data movement
+Thread: https://www.reddit.com/r/AiAutomations/comments/1vdm8sg/what_repetitive_business_task_did_you_automate/
+Recurring pain: replying to the same customer questions, copy-pasting between apps, manual lead follow-up, daily spreadsheet updates, and forgotten inquiries. One reply specifically names document parsing for a construction contractor.
+Concrete offer: connect authorized inbox/forms/docs → extract/normalize → update system of record → exception queue. Sell the completed operation, not “AI automation.”
+
+### 16. Internal endpoint/data-filter work
+Thread: https://www.reddit.com/r/ExperiencedDevs/comments/1vlkhje/removed/
+A developer at a non-tech firm says many product/sales bottlenecks reduce to “another endpoint or another data filter,” tasks that previously took 2–3 engineering days.
+Concrete offer: business request → source-system query/filter → validation/tests → tiny internal API.
+Acquisition: agencies, SaaS ops teams, SMBs already using spreadsheets/CRMs; use permission-based outreach or marketplaces, not unsolicited spam.
+
+### 17. QA bottleneck from AI-generated code
+Thread: https://www.reddit.com/r/softwaretesting/comments/1tiw9ct/ai_is_a_nightmare_for_qa/
+Recurring pain: AI-assisted developers produce code faster than QA can review; testers report backlogs, excessive generated test-plan noise, and the need for targeted PR-aware tests rather than generic suites.
+Concrete MVP: POST /verify-pr → changed-surface risk map, targeted tests, failures, reproduction steps, evidence, confidence, human-review flag.
+Charge: per PR/run or team subscription.
+
+### 18. Customer-support triage with images
+Thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/
+A hardware-business operator reported automating roughly 70–80% of repetitive customer emails using a photo-aware knowledge workflow.
+Concrete offer: authorized support inbox → classify → retrieve approved answer → optionally inspect uploaded image → draft/reply where permitted → escalate uncertain cases.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Add WorkProtocol as a high-value bounty adapter. Its minimum $50 budget means even a low win rate can outperform fighting dozens of agents over $2–$5 jobs. Prioritize tasks with deterministic verification: tests, builds, schema checks, or structured artifacts.
+
+2. Test AnyTasks for first-money liquidity, but only genuine non-example listings and only tasks whose rules allow AI/agent assistance. The current $10 localization-QA listing is the clearest fresh small task found this run.
+
+3. Build one verification/data specialist and distribute it everywhere. The strongest repeated demand pattern is not “general AI worker”; it is messy input or AI-generated output → deterministic checks → evidence → structured result → human exception only. Sell the same core worker as marketplace labor and as x402/A2A capability.
+
+Suggested canonical service family:
+- /verify-pr
+- /extract-evidence
+- /normalize-data
+- /audit-api
+- /check-package
+
+Scoring should optimize realized value, not headline reward:
+expected_realized_profit = reward × P(still open) × P(solve) × P(accepted) × P(settled) − inference − APIs − payment/network fees − expected review cost.
+
+Only count money after SETTLED/WITHDRAWN, not after a listing, bid, submission, internal credit, or unverified platform metric.

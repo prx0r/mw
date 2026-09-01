@@ -1,0 +1,202 @@
+Subject: Agent Money Scout — 2026-08-30 15:00
+Date: Sun, 30 Aug 2026 08:26:05 +0000
+Message ID: 1a051c69a43d5514
+================================================================================
+
+# Agent Money Scout — 2026-08-30 15:00
+
+## NEW THIS RUN
+
+### 1. OpenPod — strongest new agent-native software-work surface
+URL: https://openpod.work/
+
+OpenPod is an open marketplace where project owners post software projects, AI agents apply for PM/Lead/Worker positions, work tickets, submit GitHub PRs, and get paid for accepted deliverables. Its public API is unusually complete: self-registration, project browsing, applications, heartbeat polling, tickets, chat, GitHub tokens/PR verification, webhooks and payout approval. Platform fee: 10%.
+
+What the agent does: coding, review, research and project-ticket work. Who pays: human/agent project owner. Payout: project/ticket specific; no trustworthy general payout range surfaced this run. Requirements: free agent registration/API key; GitHub access only after assignment. Autonomy: 9/10.
+
+Exact first action: register a narrow coding/review worker, query GET /api/agent/v1/projects?status=open, and apply only where the budget and acceptance criteria are explicit.
+
+Eligibility: no explicit age rule surfaced in the primary pages checked; normal payment/account rules still apply and should never be bypassed.
+
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+### 2. BotBounty.ai — no-signup bounty API with Base ETH settlement
+URL: https://www.botbounty.ai/
+
+BotBounty exposes a direct agent loop: GET /api/agent/bounties → claim → complete → submit → get paid in ETH on Base. Its homepage advertises a $10 minimum bounty and categories including code, research, data and automation, with escrow and competitive submissions. The site says no signup is needed for agents to start making API calls.
+
+What the agent does: scripts/APIs/debugging, research, data cleaning/ETL, automation. Who pays: funded bounty posters. Payout: bounty-specific; homepage advertises $10 minimum. Requirements: agent that can call the API and a compatible Base payout setup. Autonomy: 10/10.
+
+Exact first action: fetch https://botbounty.ai/skill.md and query the live bounty endpoint. Do not execute until a genuinely funded active bounty is visible.
+
+Important caveat: I could not verify live bounty inventory or settlement history from the public index, so this is promising plumbing, not yet top-tier proven liquidity.
+
+Ease-to-first-$5: 6/10. Repeatability: 8/10.
+
+### 3. Atelier — live agent-service marketplace with USDC per job
+URL: https://useatelier.ai/
+
+Atelier lets builders list specialist agents and receive USDC per job. Its site describes code review, SEO audits, research, image/video and ops specialists, with a 10% platform fee and x402 agent-to-agent subcontracting. It says the median deliverable is under $10 and positions services around $1/task, $5/week or subscriptions; those are platform statistics rather than independent seller-income proof.
+
+What the agent does: bounded specialist work such as code review, SEO audit, research or ops. Who pays: human/agent buyers. Payment: USDC on Solana/Base; seller-defined job pricing. Autonomy: 10/10.
+
+Exact first action: list one already-proven non-financial specialist and ignore Atelier’s separate trading/yield features.
+
+Ease-to-first-$5: 4/10. Repeatability: 9/10.
+
+### 4. MoltyBounty — tiny but real agent/human bounty surface
+URL: https://www.moltybounty.com/
+
+MoltyBounty supports paid agent bounties up to $50 USDC and a machine-readable skill at https://moltybounty.com/skill.md. Its public leaderboard shows agents with completed-task counts (for example 4, 2, 1, 5 and 12 completed tasks across visible profiles), which at least demonstrates workflow activity.
+
+What the agent does: user-defined digital tasks. Who pays: bounty poster. Payout: 0–$50 USDC per bounty. Requirements: agent API plus wallet address to cash out. Autonomy: 9/10.
+
+Exact first action: load the skill, inspect paid—not volunteer—bounties, and only claim tasks with explicit deliverables and reward.
+
+Ease-to-first-$5: 5/10. Repeatability: 7/10.
+
+### 5. Superteam Earn — substantial bounty/grant surface, but eligibility is listing-specific
+URL: https://superteam.fun/earn/
+
+Superteam Earn has active Solana bounties, projects and grants and a first-class agent-compatible skill surface. Current pages show live grant opportunities up to $10K USDG/USDC, while prior completed software bounties demonstrate 1,000–1,500 USDC prize structures. Some listings are tightly regional, so every listing must be checked individually.
+
+What the agent does: development, research, content, automation and open-source bounty work. Who pays: Solana ecosystem teams/Superteams. Payout: listing-specific, often USDC/USDG. Requirements: profile/application; some payouts require identity checks. Autonomy: 5/10 because applications and judging are human-heavy.
+
+Exact first action: filter for global, agent-allowed opportunities whose deadline is still open; reject country-restricted or eligibility-incompatible listings.
+
+Ease-to-first-$5: 4/10. Repeatability: 7/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. dealwork.ai — strongest broad live queue
+URL: https://dealwork.ai/
+
+Fresh primary-source state: 2.5K workers, 156 open tasks, 264 completed tasks and ~1.1-day typical delivery. The platform still shows a concrete $80 human→AI production API task completed with tests. Funds are escrowed before work starts; fees are 10% normally and 3% AI→AI.
+
+Work: APIs/code, research, transformations and documentation. Autonomy: 9/10. First action: pull the 156-task feed and bid only when acceptance criteria are machine-testable.
+
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 7. t2000 — strongest job → service → API ladder
+URL: https://t2000.ai/
+
+The current marketplace shows public sellers with $57.75, $140.66 and $150 settled, plus verifiable settlement receipts. Services charge 5% at settlement; API calls currently show 0% marketplace fee.
+
+Work: open jobs, fixed-price specialist services and instant APIs. Autonomy: 10/10. First action: scan current open jobs but filter aggressively: many ecosystem tasks are cent-level and useful mainly for reputation/integration testing.
+
+Ease-to-first-$5: 7/10. Repeatability: 10/10.
+
+### 8. Taskmarket — real funded work, heavy competition
+URL: https://taskmarket.dev/
+
+Fresh state: 19 open tasks, 26.7K agents, 2,380.714419 USDC funded volume. Current live examples include a 24.2-USDC task with 68 submissions; a separate 20-USDC app-build bounty has 72 submissions with one day left. Top public earners include 119.775968 and 78.624908 USDC.
+
+Work: code, research, data, evaluation, artifacts. Autonomy: 10/10. First action: rank by expected value, not payout: reward × P(win) − tool/compute cost.
+
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+### 9. OpenJobs
+URL: https://openjobs.bot/
+
+Current primary page reports 193 registered agents, 159 jobs posted, 138 completed and 9,656 total volume on Solana mainnet. It supports SDKs for LangChain, OpenAI and CrewAI-style workers.
+
+Work: coding, research, data and verifiable digital deliverables. Autonomy: 10/10. First action: query fresh USDC jobs with objective verification.
+
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+### 10. MikroTask
+URL: https://mikrotask.com/
+
+MikroTask explicitly supports AI-agent sellers at fixed £5 / £10 / £25 / £50 tiers, with USD, USDT or USDC payouts after buyer approval. Agent-suitable categories include research, drafts and data cleanup.
+
+Autonomy: 8/10. First action: prioritize buyer-posted tasks rather than creating another generic AI-agent listing.
+
+Ease-to-first-$5: 8/10. Repeatability: 8/10.
+
+### 11. MoltJobs
+URL: https://moltjobs.io/open-jobs
+
+The current board has four fresh 2-USDC promotional jobs. They are genuinely escrowed but require a pre-existing public account, visible disclosure, 50+ followers and a 120-hour proof hold. The underlying stack—REST, CLI, MCP, webhooks, Base-USDC escrow, 10 free monthly bids, 5% fee—is excellent, but present inventory is poor.
+
+First action: keep the scanner connected and wait for code/research/data work rather than forcing current promotional tasks.
+
+Ease-to-first-$5: 3/10. Repeatability: 8/10.
+
+### 12. WorkProtocol — proven settlement, zero open jobs right now
+URL: https://workprotocol.ai/
+
+Current primary state: 734 agents, 35 jobs posted, 12 completed and 1,325 USDC settled. It has public 85- and 90-USDC completed code jobs and automated verification, but its current job page says 0 jobs available now. Minimum job budget is $50 USDC.
+
+First action: poll only; do not spend execution time until a new funded job appears.
+
+Ease-to-first-$5 now: 1/10. Repeatability if inventory returns: 9/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 13. QA bug-investigation / verification worker
+Reddit: https://www.reddit.com/r/QualityAssurance/comments/1vzso59/qa_roles_has_changed/
+
+A fresh August 27 thread describes one SDET orchestrating multiple AI workers. A practitioner says a predefined bug-investigator agent found the root cause of a bug, after which the dev lead asked it to implement the fix. Separate August discussion says QA workload is shifting toward deciding what matters to test rather than mechanically writing scripts.
+
+Problem pattern: code generation got cheap; evidence-based verification did not.
+
+Offer: /investigate-bug or /verify-pr — issue/PR → reproduce → changed-surface map → risk-ranked tests → root cause → evidence → PASS/FAIL/REVIEW.
+
+Customer: AI-heavy software teams and dev agencies. Acquisition: legitimate QA/dev communities, marketplaces, referrals. Charge: per bug/PR first, recurring CI later.
+
+Ease-to-first-$5: 9/10. Repeatability: 10/10.
+
+### 14. Workflow cost auditor
+Reddit: https://www.reddit.com/r/n8n/comments/1vgi240/i_built_a_free_tool_that_shows_the_real_monthly/
+
+An automation builder reports retry loops, sub-workflows and premium-model calls making actual client workflow costs 3–4× quoted cost.
+
+Offer: workflow JSON + run volume → paid-node/model map → retries/loops → expected monthly cost → worst-case exposure → fixes.
+
+Customer: n8n/Make/Zapier agencies. MVP: upload sanitized workflow export, receive top five cost bombs and a quote-safe monthly estimate.
+
+Ease-to-first-$5: 9/10. Repeatability: 10/10.
+
+### 15. Accounting document-chasing / invoice ops
+Reddit: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+Reddit: https://www.reddit.com/r/n8nbusinessautomation/comments/1vkgayo/invoice_automation_in_n8n_extract_data_from_many/
+
+Recent threads repeatedly identify document chasing, invoice follow-ups, batch invoice extraction and missing-data review as painful repetitive work.
+
+Offer: authorized document → extract fixed schema → validate → duplicate/missing check → VERIFIED or HUMAN REVIEW; optionally add approved reminder workflow for missing documents/unpaid invoices.
+
+Customer: bookkeeping firms and small finance teams. Keep accounting judgment and payment approval with humans.
+
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### 16. Fast lead-response worker
+Reddit: https://www.reddit.com/r/nocode/comments/1vhvxl5/if_you_build_automations_for_clients_a/
+
+One automation builder describes a deployable client workflow that scores inbound leads, drafts a reply, routes spam to review and responds quickly; they explicitly frame the measurable outcome—fast lead response—as easy to charge for.
+
+Offer: authorized inbound lead → score → structured draft → approval/route → CRM log; no spam scraping or unsolicited outreach.
+
+Customer: small businesses with inbound forms/inboxes. Charge: setup + maintenance.
+
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 17. Freelancer admin bundle
+Reddit: https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+
+A current implementation bundles proposals, contracts, invoice reminders, onboarding, weekly updates and testimonial requests. The highest-value starting pair is invoice chasing + weekly client update, with human approval on outbound communications.
+
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+## FILTERED / DOWNGRADED
+
+ClawTasks is still explicitly free-task only, so it is not a current earning source. WorkProtocol has real settlement but zero open jobs today. MoltJobs currently has fresh inventory but only 2-USDC promotional tasks with significant account/disclosure/hold requirements. Trading, prediction markets, gambling, spam, fake reviews, deceptive promotion, credential resale and unauthorized access/scraping are excluded.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Add OpenPod and BotBounty as scanners, not yet as primary execution targets. Current execution order: dealwork.ai → t2000 → Taskmarket when EV is good → OpenJobs → MikroTask. OpenPod moves up immediately if its API exposes a fresh funded software project; BotBounty moves up if the live bounty endpoint exposes genuine $10+ funded inventory.
+
+2. Build /verify-pr + /investigate-bug as the next specialist. Fresh QA demand evidence is unusually strong, and the same worker maps directly to code-review/API-debugging jobs on agent marketplaces.
+
+3. Build /automation-health-cost as the first recurring-revenue product: expected event + deadline + downstream state + execution cost → HEALTHY / FAILED / SILENT / COST ANOMALY. The repeated external evidence says workflow generation is getting cheap while verification, monitoring and cost control remain expensive.
+
+Core rule: paid task first → extract successful procedure → tests/failure cases → fixed service → paid API/portable skill. Do not build specifically for a marketplace until it demonstrates buyer liquidity.

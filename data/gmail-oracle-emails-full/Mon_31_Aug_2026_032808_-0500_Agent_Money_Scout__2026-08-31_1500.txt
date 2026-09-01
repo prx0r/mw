@@ -1,0 +1,210 @@
+Subject: Agent Money Scout — 2026-08-31 15:00
+Date: Mon, 31 Aug 2026 03:28:08 -0500
+Message ID: 1a056eed69a3fbd2
+================================================================================
+
+# Agent Money Scout — 2026-08-31 15:00
+
+Current execution ranking: AgentPact → dealwork.ai → OpenAnt remote/digital → MoltJobs concrete funded job → selective Opire → DeskCrew positive-EV bounties. SporeAgent and WorkProtocol have both fallen out of the immediate queue because their live job pages currently show zero available/open tasks. Taskmarket is also downgraded: 10 open tasks, but the visible board is dominated by $0.05 work and a $0.327 task with 206 submissions.
+
+Only settled or clearly withdrawable real-money value counts as earnings. Platform GMV, advertised prices, test assets, internal credits, illiquid tokens and unpaid submissions count as $0. For wallet/KYC/contract platforms, the human operator must independently satisfy age, identity, geography and payment-provider requirements; do not bypass them.
+
+## NEW THIS RUN
+
+### 1. DeskCrew Bounty Boards
+URL: https://deskcrew.io/bounties
+Agent work: research, written answers, reviews and support-style tasks. A human approves the result.
+Who pays: the bounty-board owner.
+Verified economics: 1 task open right now; rewards can start at $0.25; the winning agent keeps 85% and is paid in USDC. Agents can read the board free, but each submission costs a few cents.
+Tools: any HTTP-capable agent, compatible USDC settlement chain.
+Autonomy: 10/10.
+First action: read the free board and calculate expected value before submitting: reward × estimated approval probability − entry fee − compute. Skip anything that cannot plausibly clear $5 over several wins.
+Constraints: public age/contract requirements were not clearly surfaced; only participate if the human operator is legally/payment-rail eligible.
+Ease first $5: 4/10. Repeatability: 8/10.
+Source: https://deskcrew.io/bounties
+
+### 2. x402 Arena
+URL: https://x402arena.gg/
+Agent work: expose a paid developer/data/utility endpoint and receive USDC per query.
+Who pays: agents/buyers calling the x402 endpoint.
+Verified activity: 339 agents, $109.38 total revenue, 10,799 queries and 81 buyers.
+Important caveat: revenue is extremely concentrated. The top 15 leaderboard entries each show the same $7.15 / 715 queries / 1 buyer pattern; more organic-looking entries below them are mostly $0.08–$0.20. Treat this as a distribution probe, not proof a random API earns.
+Tools: hosted x402 endpoint + compatible wallet.
+Autonomy: 10/10.
+First action: cross-list a capability already proven by paid task work; measure unique external buyers, not raw calls.
+Constraints: verify legal/payment eligibility first.
+Ease first $5: 3/10. Repeatability: 9/10 if external demand exists.
+Source: https://x402arena.gg/
+
+### 3. Agent402 revenue rail
+URL: https://agent402.tools/revenue
+Agent work: sell reports, monitors, credits or paid API calls through x402/MPP/card rails.
+Who pays: external agents/customers.
+Verified activity: the revenue page reports 5,727 external payments and $80.1493 external on-chain revenue all-time, plus two $7 total card purchases. It explicitly excludes its own canary/test money from earnings. Recent-window external revenue was only $0.0970, so current demand is thin.
+Tools: sellable endpoint/report/monitor and compatible payment integration.
+Autonomy: 10/10.
+First action: use it only to monetize a capability with demonstrated demand elsewhere; do not build a speculative endpoint solely for this rail.
+Ease first $5: 3/10. Repeatability: 9/10 if the product already has demand.
+Source: https://agent402.tools/revenue
+
+### 4. Agent Bounties
+URL: https://agentbounties.app/
+Agent work: deterministic code/data/digital tasks with precommitted verification and Base-USDC settlement.
+Who pays: bounty creator via canonical escrow.
+Concrete funded task: GitHub issue #870 is marked funded and ready-to-earn with a 1.00 USDC solver reward and 0.10 USDC refundable claim bond. The protocol also documents 3 USDC daily and 26 USDC weekly solver-leaderboard prizes, requiring at least 2 USDC of qualifying settled solver rewards.
+Tools: code agent, GitHub, Base-compatible settlement tooling.
+Autonomy: 9/10.
+First action: inspect the ready-to-earn feed and choose only tasks with confirmed funding, objective verification and positive net value. Do not post any bond unless the operator is legally eligible and understands the downside.
+Ease first $5: 3/10. Repeatability: 8/10.
+Sources: https://agentbounties.app/ and https://github.com/NSPG13/agent-bounties/issues/870
+
+### 5. AgentLancer
+URL: https://agentlancer.io/
+Agent work: publish scoped services or quote real posted jobs, then deliver through contract + escrow.
+Who pays: requester.
+Payment rails: card, USDT and USDC.
+Critical traction fact: the platform itself says verified earnings are still zero; it currently shows activity metrics instead and acknowledges conversion from homepage traffic into service discovery is a bottleneck.
+Autonomy: 9/10.
+First action: inspect the real open-job feed for a paid buyer; do not build marketplace-specific infrastructure or buy anything until a verified settlement appears.
+Ease first $5: 2/10. Repeatability: 8/10 potential.
+Source: https://agentlancer.io/
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. AgentPact — still #1
+URL: https://agentpact.xyz/needs
+Current board: 200 Needs. High-signal examples include Python code review 5–10 USDC; API automation 10–25; authorized Python/security review 10–25; web-scraping automation 10–25; data analysis + visualization 10–25; Python scraping automation 10–25.
+Who pays: Need/deal buyer.
+Tools: Python/API/data worker + AgentPact API/MCP.
+Autonomy: 10/10.
+First action: filter reward >= $5, clear scope, objective acceptance and settleable payment. Prioritize API automation → code QA → data analysis. Security work only on explicitly authorized code/systems.
+Ease first $5: 9/10. Repeatability: 9/10.
+Source: https://agentpact.xyz/needs
+
+### 7. dealwork.ai
+URL: https://dealwork.ai/
+Current state: 2.5K workers, 155 open tasks, 264 completed. The platform documents an $80 production API delivered by an AI worker and escrow-protected work.
+Agent work: code, API integration, data transformation, research and documentation.
+Who pays: human or agent requester.
+Autonomy: 9/10.
+First action: ingest the open-task feed and bid only when the agent can independently reproduce the acceptance test.
+Ease first $5: 9/10. Repeatability: 9/10.
+Source: https://dealwork.ai/
+
+### 8. OpenAnt
+URL: https://openant.ai/
+Current state: 12.8K total tasks, 1.2K open, 646 settled, $34.4K paid out and $128K total posted; 0% beta fee. Current remote examples include SKU-sales analysis producing five insights + a chart and a promo-video task from supplied assets.
+Who pays: task poster through escrow.
+Tools: API/MCP/skills; USDC settlement.
+Autonomy: 10/10 for digital jobs.
+First action: filter remote + digital + explicit reward + objective proof. Reject GPS/photo/physical-presence work.
+Ease first $5: 8/10. Repeatability: 9/10.
+Source: https://openant.ai/
+
+### 9. MoltJobs
+URL: https://moltjobs.io/open-jobs
+Concrete live job: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specifications and contact the buyer; posted six days ago, about four days remain. Jobs are funded in Base-USDC escrow.
+Tools: API/CLI/MCP; protected jobs can require machine-graded evals.
+Autonomy: 8/10 because the job includes legitimate human outreach.
+First action: inspect that exact funded listing and only perform individually relevant, permitted contact—no bulk outreach.
+Ease first $5: 7/10. Repeatability: 8/10.
+Source: https://moltjobs.io/open-jobs
+
+### 10. Opire
+URL: https://app.opire.dev/home
+Current dashboard: 373 rewards available and $4,975.87 paid out. The displayed aggregate open value is distorted by obviously anomalous giant rewards, so ignore it.
+Agent work: OSS issue reproduction, patch, tests, PR.
+Who pays: bounty sponsor.
+Tools: GitHub + repo toolchain.
+Autonomy: 8/10.
+First action: evaluate issue-by-issue: repo freshness → issue still open → maintainer activity → competing PRs → reproducible tests → real payout amount.
+Ease first $5: 5/10. Repeatability: 8/10.
+Source: https://app.opire.dev/home
+
+### 11. Taskmarket — downgraded
+URL: https://taskmarket.dev/
+Current state: 10 open tasks, ~27K agents, 2,383.097764 USDC posted volume. Visible jobs are mostly $0.05 tasks; the $0.327 task-board research bounty has 206 submissions. Real settlement is proven by leaderboard agents with 120.776268 and 78.624908 USDC earned.
+First action: scanner only until >=$5 claim/pitch/benchmark work returns. Avoid low-value work whose expected value is negative.
+Ease first $5 today: 2/10. Repeatability: 9/10.
+Source: https://taskmarket.dev/
+
+### 12. SporeAgent — no live work now
+URL: https://www.sporeagent.com/tasks
+Current primary task page: 0 tasks available. Earlier $45/$80/$120 listings should no longer be treated as live.
+First action: monitor only.
+Ease first $5 today: 0/10. Repeatability when inventory returns: 9/10.
+Source: https://www.sporeagent.com/tasks
+
+### 13. WorkProtocol — no live jobs now
+URL: https://workprotocol.ai/jobs
+Current primary page: 0 jobs found / no open jobs right now. Recently completed agent jobs include 85 USDC env-var validation tooling, 90 USDC git-history analysis and other structured coding tasks, so the market has genuine history but no current execution queue.
+First action: monitor new funded jobs; do nothing until one appears.
+Ease first $5 today: 0/10. Repeatability: 9/10 when inventory returns.
+Source: https://workprotocol.ai/jobs
+
+### 14. gigs.sh
+URL: https://gigs.sh/
+Use: discovery oracle for agent-native earning platforms; reverify every candidate on the primary marketplace before execution.
+Who pays: nobody directly—this is research infrastructure.
+Autonomy: 10/10 as a scanner input.
+First action: use it to discover domains, dedupe against prior runs, then primary-source verify liquidity/status.
+Ease first $5 directly: 1/10. Scouting repeatability: 10/10.
+Source: https://gigs.sh/
+
+## REDDIT DEMAND SIGNALS
+
+### 15. Workflow cost/reliability guard
+Thread: https://www.reddit.com/r/automation/comments/1w21d6b/how_do_you_prevent_runaway_automation_costs/
+Demand evidence: an operator running ~200 daily n8n workflows reports one bad IF condition causing 47,000 executions in six hours, ~$2,500 direct costs, three days of cleanup and risk to a $45K/year client.
+Offer: workflow JSON + execution history + model/API prices → loops/retries → worst-case spend → unsafe writes → canary plan → PASS/REVIEW.
+Acquire customers: automation agencies, referrals and communities where offers are allowed.
+Charge: fixed pre-deploy audit, then monitoring subscription.
+MVP: one workflow in, risk/cost report out.
+Ease first $5: 9/10. Repeatability: 10/10.
+
+### 16. n8n-to-code migration
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1w3298g/at_what_point_does_an_n8n_workflow_become_harder/
+Demand pattern: a Google Trends→news→parsing→filtering→scoring→research→AI→publishing workflow accumulated enough JS, cross-node expressions and branches that debugging became harder than normal code.
+Offer: workflow JSON + runtime stats → identify code-worthy hot paths → Python/TypeScript service → tests/logging → migration plan.
+MVP: migrate one deterministic subsystem.
+Ease: 9/10. Repeatability: 10/10.
+
+### 17. Stateful workflow debugger
+Thread: https://www.reddit.com/r/n8n/comments/1w2hp48/stuck_on_my_first_n8n_project_could_use_some/
+Demand pattern: generic AI advice fails because it does not know the actual workflow state; users need node-level diagnosis from real JSON/execution errors.
+Offer: workflow graph + failing execution + exact error → minimal failing path → targeted patch → rerun evidence.
+MVP: upload/export workflow + error; get one-node-at-a-time diagnosis.
+Ease: 8/10. Repeatability: 9/10.
+
+### 18. RAG grounding verifier
+Thread: https://www.reddit.com/r/n8n/comments/1w2ovq8/i_built_a_nocode_rag_pipeline_in_n8n_that_turns/
+Demand signal: a fresh RAG implementation explicitly adds a validation stage to reject answers when retrieved document context is inadequate.
+Offer: question + retrieved passages + proposed answer → claim decomposition → passage support → citation coverage → SUPPORTED / UNSUPPORTED / INSUFFICIENT.
+Customer: internal-doc assistants, support systems and document QA.
+Ease: 8/10. Repeatability: 10/10.
+
+### 19. SEO audit evidence worker
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1w1edcv/meet_my_new_project_sitescan_ai/
+Demand pattern: manually combining Screaming Frog exports, PageSpeed results and duplicate metadata checks across tools is time-consuming.
+Offer: authorized crawl/export + PageSpeed → duplicate/meta/internal-link/performance findings → evidence-backed review queue. Do not auto-publish risky changes without human approval.
+Customer: SEO agencies and multi-site operators.
+Ease: 8/10. Repeatability: 9/10.
+
+### 20. Narrow small-business automation
+Thread: https://www.reddit.com/r/automation/comments/1vk3aig/anyone_here_actually_make_money_doing_ai/
+Demand pattern: small-service-business automation is real but buyers care about concrete outcomes—lead follow-up, scheduling, CRM updates, reminders and admin—not a generic 'AI employee'. Community advice converges on picking one niche and selling hours saved.
+Offer: one process only → baseline time/error cost → automate → logs/exceptions → before/after evidence.
+Acquisition: referrals and permitted service communities, not spam.
+Ease: 8/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Execute AgentPact + dealwork + OpenAnt. These are currently the strongest live queues. Normalize all three into one scorer: EV = payout × acceptance probability × win probability − compute/runtime cost. Reject stale, vague, non-withdrawable or heavily contested jobs before inference begins.
+
+2. Keep MoltJobs' exact 5-USDC funded spec job as the fastest concrete one-off target, while removing SporeAgent and WorkProtocol from execution until their live boards become non-zero again.
+
+3. Productize /workflow-guard beside /verify-pr and /api-sanity. The strongest fresh independent demand is production automation reliability: runaway retries, silent model escalation, bad workflow structure and difficult debugging. A launchable offer is: 'Submit one production workflow; receive a pre-deploy report covering loops, retries, model/API spend, unsafe writes, canary tests and kill-switch thresholds.'
+
+Current routing order: AgentPact → dealwork.ai → OpenAnt remote/digital → MoltJobs funded 5-USDC job → selective Opire → DeskCrew only when expected value is positive → Taskmarket only after better inventory returns. SporeAgent and WorkProtocol: monitor-only today.
+
+x402 conclusion: do not build random paid APIs hoping discovery creates demand. August data shows the x402 market is highly concentrated and median seller revenue is tiny. Prove a procedure through paid work first, then expose the repeated procedure as an API.

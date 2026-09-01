@@ -1,0 +1,730 @@
+Subject: Oracle Market Unlocks — 20 New Agent Markets — 2026-08-31 16:04 ICT
+Date: Mon, 31 Aug 2026 05:11:54 -0400
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a05716e800f8f2e
+================================================================================
+
+# Oracle Market Unlocks — 20 NEW markets
+
+**31 Aug 2026 — run focused on markets not covered in prior scans.**
+
+This scan deliberately excludes previously covered surfaces including Atlassian, monday.com, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, Miro, WooCommerce, HubSpot, JetBrains, Fab, Unity, Fortnite/UEFN, Canva, Creative Market, Minecraft Marketplace, Adobe Stock, Envato, Gumroad, Telegram Mini Apps, VRChat, WordPress, Zoom, Teams, Slack, Poe, CGTrader, Salesforce, ServiceNow, LINE, Databricks, Wix, Shopify, RapidAPI, AWS/Snowflake/GCP marketplaces, Discord Premium Apps, Bubble, FlutterFlow, Coda, Figma, VS Code/Edge/Firefox, BigCommerce, Stream Deck, Overwolf, Hytale/BuiltByBit, CurseForge, Superhive and the 3D-print marketplaces.
+
+## Ranking
+
+| # | Market | Score /25 | Best agent wedge | H-level |
+|---|---|---:|---|---|
+| 1 | Xero App Store | 22 | narrow accountant workflow apps + reconciliation QA | H1–H2 |
+| 2 | Zendesk Marketplace | 22 | replacement/last-mile integrations, especially Jira-style sync | H1 |
+| 3 | Zoho Marketplace | 22 | “last 10%” workflow extensions across 100M+ user ecosystem | H1–H2 |
+| 4 | Pipedrive Marketplace | 21 | missing sales-workflow micro-apps and dynamic personalization | H1 |
+| 5 | Foundry VTT Marketplace | 21 | maintained utility modules + premium campaign tooling | H1–H2 |
+| 6 | QuickBooks App Marketplace | 20 | vertical accounting workflow adapters, not generic middleware | H2 |
+| 7 | Intercom App Store | 20 | support QA, reporting, escalation and Fin-adjacent apps | H1 |
+| 8 | Freshworks Marketplace | 20 | Platform v3 apps + automated migration/compatibility products | H1 |
+| 9 | Cfx Marketplace / Tebex (FiveM) | 20 | server administration, observability and workflow scripts | H2 |
+| 10 | itch.io asset marketplace | 19 | highly-specific ready-to-use dev asset/tool packs | H1 |
+| 11 | GmodStore | 19 | maintained server-admin, moderation and performance add-ons | H1–H2 |
+| 12 | Fantasy Grounds Forge | 19 | compatibility-maintained Lua extensions | H1–H2 |
+| 13 | MyFonts | 19 | specialist font families + variable/multilingual fonts | H2 |
+| 14 | DAZ 3D Published Artists | 18 | procedural 3D utility/content packs | H2 |
+| 15 | Roll20 Marketplace | 18 | ready-to-play adventures/maps/tools with automated QA | H2 |
+| 16 | IMVU Creator Catalog | 17 | derivable mesh/texture product families | H2 |
+| 17 | Second Life Marketplace | 17 | scripted utilities + merchant-resource product families | H2 |
+| 18 | Creative Fabrica | 16 | machine-validated craft/font bundles, not generic AI art | H2 |
+| 19 | TurboSquid | 16 | parametric industrial/architectural niche models | H1–H2 |
+| 20 | Airtable Interface Extensions / Marketplace | 15 | interface workflow gaps; WATCH rather than build-first | H2 |
+
+Scoring dimensions: expected opportunity value, agent suitability, automation feasibility, competitive intensity (lower competition scores higher), novelty.
+
+---
+
+## 1. Xero App Store — accountant micro-SaaS and workflow reliability
+
+**Why now:** Xero says the App Store reaches **4.4M+ customers**. On 2 March 2026 it introduced new developer tiers and granular OAuth scopes; its current developer site also exposes an **AI toolkit including an MCP Server, Agents Toolkit and Prompt Library**. New apps use granular scopes from 2 March 2026, which makes narrow least-privilege agent tools easier to justify than broad accounting integrations.
+
+**What to sell:** reconciliation QA, invoice anomaly review, evidence-pack generation for accountants, vertical report packs, accountant/client handoff tools, practice-specific workflow utilities. Avoid another generic “one accounting API” abstraction: Reddit devs explicitly note Codat/Rutter already dominate that layer.
+
+**Autonomous loop:** Oracle mines Xero/accounting complaints → generates a narrow app hypothesis → builds against sandbox/API → Harbor World replays synthetic ledgers and hidden accounting edge cases → OAuth/test customers → certification package → listing → webhooks capture usage/errors → agent maintains compatibility and improves onboarding. Human: company/payment setup, certification/security declarations and initial customer authorization. Recurring work can approach H1.
+
+**Demand/pain:** Xero markets the App Store as a lead channel to 4.4M customers. A current April 2026 Reddit thread complains that the new scope model can make testing report endpoints difficult before reaching user thresholds — a useful indication that compliance/test infrastructure itself has value.
+
+**Moltwork assets:** `XeroPack`, Xero Venue/API adapter, accounting-fixture Harbor World, OAuth-scope preflight evaluator, reconciliation Skill, certification Process, specialist `xero-accountant-worker`.
+
+Official: https://developer.xero.com/grow-with-xero ; https://developer.xero.com/pricing
+
+## 2. Zendesk Marketplace — replace abandoned/brittle enterprise integrations
+
+**What agents can sell:** paid Zendesk sidebar apps, sync bridges, escalation tools, attachment/comment mirroring, QA/reporting apps and preview apps for specific enterprise customers. Zendesk explicitly supports **paid Marketplace apps** and preview apps; new app review is typically 1–3 weeks.
+
+**Concrete wedge:** the current August 2026 Zendesk subreddit has users discovering that the long-used Zendesk/Jira integration disappeared/sunset and saying the native integration struggled to carry comments. One respondent built a custom replacement. That is almost a textbook Oracle opportunity: watch disappearing first-party integrations and rapidly produce maintained replacements.
+
+**Autonomous loop:** monitor Zendesk release notes + Marketplace removals + Reddit → extract exact missing behavior → build ZAF iframe/server app → synthetic tickets/Jira fixtures → deterministic bidirectional-sync tests → generate listing/start guide/privacy material → human submits organization/review → agent monitors API changes, reviews and support tickets → auto-patches and regrades.
+
+**H-level:** H1 after one-time Marketplace account/review; H2 only when customer-specific permissions/security review is needed.
+
+**Moltwork assets:** `ZendeskPack`, ticket-sync World, comment/attachment fidelity evaluator, MarketplaceSubmissionProcess, Zendesk specialist worker.
+
+Official: https://developer.zendesk.com/documentation/marketplace/publishing-to-the-marketplace/submit-your-app/
+
+## 3. Zoho Marketplace — sell the missing “last 10%” across a huge suite
+
+**Why attractive:** Zoho’s current partner pages advertise **100M+ users**. Developers can build and sell extensions; Zoho handles Marketplace payments. Extension pricing can be paid, trial or free.
+
+**Pain signal:** a February 2026 r/Zoho thread describes the recurring problem not as missing major modules but as the final 10%: unreliable sync, dashboards that show the wrong operational metric, awkward search defaults, and inconsistent cross-app behavior. Those are unusually good agent-generated extension targets because they are narrow and measurable.
+
+**What to build:** cross-product sync reliability monitors, invoice/CRM last-mile actions, custom dashboard panels, industry-specific modules, search/record utilities, connectors for niche third-party software.
+
+**Workflow:** Oracle clusters recurring Zoho complaints → chooses one product/extension point → Developer Console/sandbox → generate extension + Deluge/API code → Harbor synthetic org → install/uninstall/permission regression suite → listing assets/docs → human partner approval/demo → agent monitors ratings, churn and API changes.
+
+**H-level:** H1/H2 due partner application and 2–3 week functional/security/content review; normal updates/support are highly automatable.
+
+**Assets:** Zoho product-family Packs, extension scaffold Skill, cross-app integration World, permission evaluator, reviewer-response Process.
+
+Official: https://www.zoho.com/marketplace/become-a-partner.html
+
+## 4. Pipedrive Marketplace — sales-workflow micro-app factory
+
+**Demand:** Pipedrive exposes developers to **100,000+ companies**; its Marketplace has 400+ integrations, and Pipedrive says around 60% of customers have integrated at least one app. Marketplace users with apps use 4+ apps daily on average.
+
+**2026 pain:** an April 2026 r/pipedrive post from an implementation shop lists baffling missing features such as dynamic personalization fields inside email hyperlinks and other everyday sales-ops gaps. That is ideal Oracle input.
+
+**Agent product:** dynamic link/personalization extension, quote follow-up automation, lead enrichment helpers, vertical pipeline validators, data-quality repair, niche CRM-to-industry-system bridges.
+
+**Loop:** scrape feature complaints → reproduce in sandbox → build API/webhook app → replay deals/contacts in Harbor → test OAuth scopes, duplicate prevention and idempotence → create onboarding guide/listing → human review → measure installs, activation and churn → maintenance worker handles Pipedrive API changes.
+
+**H:** H1.
+
+**Assets:** `PipedrivePack`, CRM fixture World, webhook/idempotence evaluator, onboarding Skill, app-maintenance worker.
+
+Official: https://developers.pipedrive.com/ ; https://www.pipedrive.com/en/marketplace/about
+
+## 5. Foundry VTT Marketplace — compatibility maintenance is the product
+
+**Why now:** Foundry launched its unified Marketplace in 2025 and reported **500+ premium modules from 60+ creators** within its first months. Its February 2026 first-anniversary sale generated substantial community attention.
+
+**Pain signal:** on 29 August 2026, a highly-upvoted r/FoundryVTT thread complained that a paid Marketplace purchase had already become obsolete/unusable after updates. Older community discussions similarly warn about premium modules being abandoned. This creates a strong agent moat: continuous compatibility maintenance.
+
+**What to sell:** system-agnostic GM workflow tools, content conversion/packaging utilities, campaign QA, ruleset compatibility layers, maintained premium modules. The strongest thesis is not “AI writes module once”; it is “agent maintains module against every Foundry/ruleset release.”
+
+**Loop:** watch Foundry/ruleset releases → run matrix of versions in Harbor → reproduce breakages → patch → regrade hidden campaign fixtures → package manifest/Git release → human Marketplace approval where required → publish updates → watch support/reviews.
+
+**H:** H1–H2. Product creation/maintenance is near-H0; partner listing/review is human.
+
+**Assets:** Foundry World matrix, version-compatibility evaluator, module-update Process, system-specific Schools, persistent maintainer worker.
+
+Official: https://foundryvtt.com/article/year-in-review-2025/ ; https://foundryvtt.com/article/premium-content/
+
+## 6. QuickBooks App Marketplace — vertical workflow fixes, not generic API middleware
+
+**Why interesting:** Intuit maintains QBO APIs, webhooks, OAuth, sandbox and Apps.com. Its 2026 App Partner Program tightened compliance: Marketplace apps require assessment plus security, technical and marketing reviews.
+
+**Pain:** April 2026 Reddit developers describe QBO integrations taking much longer than expected because of OAuth, webhooks, API limits and confusing object behavior; another comment says broad accounting API abstraction is already dominated by Codat/Rutter. Users also complain about unstable core workflows.
+
+**Correct wedge:** vertical-specific apps: law-firm time/billing integrity, contractor estimate/invoice bridges, multi-company reporting, migration verification, invoice/customer sync QA. Use an agent to own the ugly edge cases of one workflow rather than competing as a generic accounting API.
+
+**Loop:** Oracle identifies repeated vertical pain → QBO sandbox → agent builds narrowly-scoped integration → Harbor accounting fixtures → webhook/retry/rounding/date edge tests → security package → human Intuit review → usage/error monitoring → auto-maintenance.
+
+**H:** H2 at onboarding/certification, H1 operationally.
+
+Official: https://developer.intuit.com/ ; Intuit App Partner Program Guide
+
+## 7. Intercom App Store — QA and escalation infrastructure around AI support
+
+**Demand:** Intercom explicitly invites developers to list apps to **25K+ customers**, with a free development workspace and App Partner Program.
+
+**What to build:** Fin-response QA/evidence capture, escalation packet generation, cross-tool ticket sync, customer-history summarization, SLA anomaly detection, issue clustering and post-resolution analysis.
+
+**Why agents fit:** support data is structured, APIs/SDKs are mature, quality can be evaluated with replayable conversation fixtures, and the maintenance loop benefits from persistent worker memory.
+
+**Loop:** mine support-team complaints → build public app → replay conversations/tickets → evaluator checks correct routing, no duplicate writes and evidence preservation → auto-generate Start Guide/screenshots → human review → monitor installs/events → agent handles support and revisions.
+
+**H:** H1.
+
+**Assets:** Intercom Pack, support-conversation World, escalation evaluator, listing/start-guide Process.
+
+Official: https://developers.intercom.com/ ; https://developers.intercom.com/docs/publish-to-the-app-store/listing-your-app
+
+## 8. Freshworks Marketplace — the 2026 Platform v3 migration creates a temporary opening
+
+**Frontier change:** Marketplace Platform v2.3 was fully deprecated on **30 May 2026**; new v2.3 apps had already been disabled from 30 January. Freshworks is pushing developers to Platform v3.0. App submission now includes AI-assisted categorization.
+
+**Opportunity:** build new v3-native apps while incumbents carry migration debt; or productize automated porting/compatibility verification for old Freshdesk/Freshservice apps. Narrow support workflows, ticket QA and integrations are especially suited.
+
+**Loop:** Oracle finds low-rated/abandoned v2.x functions → inspect public behavior/docs → generate v3 app → Harbor ticket fixtures → migration diff + permission regression → app package/listing → human review → monitor Freshworks changelog and update automatically.
+
+**H:** H1.
+
+**Assets:** `FreshworksV3Pack`, v2→v3 migration Skill, compatibility World, manifest evaluator, migration specialist worker.
+
+Official: https://developers.freshworks.com/docs/app-sdk/v3.0/ ; migration timeline in Freshworks developer docs.
+
+## 9. Cfx Marketplace / Tebex for FiveM — curated server infrastructure assets
+
+**Why now:** the Cfx Marketplace is currently a **closed beta / invite-only** curated marketplace for scripts, maps, vehicles and other assets. Tebex says approved partners can list directly from their stores and the Cfx Marketplace takes no additional commission; submissions are expected to open more broadly after beta.
+
+**Agent wedge:** server administration dashboards, moderation tools, deployment/update utilities, performance/observability scripts, role/permission workflows, data migration and compatibility utilities. Avoid commodity content where differentiation is visual rather than measurable.
+
+**Loop:** monitor server-owner complaints and Cfx releases → build Lua/JS resource → spin ephemeral FiveM test server → Harbor scenarios verify installation, startup, permission behavior, latency and upgrade safety → package Tebex product → human partner/review gate → publish → telemetry/support → auto-maintain.
+
+**H:** H2 until partner access/review; production loop H1.
+
+**Assets:** FiveM World, ephemeral server harness, performance evaluator, package-release Process.
+
+Official: https://docs.tebex.io/creators/growth-and-success/cfx-marketplace
+
+## 10. itch.io asset marketplace — unusually automation-friendly publishing
+
+**2026 unlock:** on **18 May 2026**, itch added direct butler uploading to the desktop app. More importantly for agents, `butler` is already a first-party CLI designed for CI/CD; it can validate manifests/builds and push only changed files. itch lets creators set their own revenue share, including 0% platform share.
+
+**Products:** Godot/Unity-ready UI packs, tiny tools/plugins, shader/VFX kits, audio systems, procedural generators, internally consistent themed art packs. The valuable unit is not “100 random images”; it is a ready-to-use package that passes engine-specific validators.
+
+**Demand:** 2026 Reddit examples show new asset packs getting paid sales and creator bundles earning thousands, but postmortems warn that visibility and conversion are brutal. This is perfect for Oracle: niche research matters more than raw generation volume.
+
+**Loop:** scrape game-dev requests/trends → build asset hypothesis → generator produces pack → engine-specific Harbor World imports it into sample projects → validator checks dimensions/naming/licenses/performance → `butler validate` → human creates initial project/store identity → `butler push` automatically updates → agent watches analytics/comments and iterates.
+
+**H:** H1; one of the cleanest markets here.
+
+**Assets:** itch Venue with butler, engine-specific asset Worlds, visual-consistency assessor, metadata/thumbnail Process.
+
+Official: https://itch.io/updates/pushing-builds-with-butler-is-now-in-the-itch-app ; https://itch.io/docs/butler/
+
+## 11. GmodStore — paid maintained server add-ons
+
+**Market:** GmodStore is explicitly built around selling scripts/add-ons, creator payouts, product reviews and seller support. It now has an AI Usage Policy and structured product-submission standards.
+
+**Demand:** Garry’s Mod remains active in 2026; Reddit users describe tens of thousands of daily players and active servers, while the ecosystem repeatedly suffers from addon removal/abandonment. A persistent maintenance worker can be more valuable than a one-shot addon author.
+
+**Products:** admin panels, permission systems, server observability, moderation queues, roleplay workflow tools, deployment/update helpers, performance instrumentation.
+
+**Loop:** mine server-owner pain → generate addon → start clean server fixture → scripted multi-player/admin tests → lint/security/perf gates → listing assets → human product review → agent continuously tests against GMod/server-framework updates and responds to tickets.
+
+**H:** H1–H2.
+
+**Assets:** GMod server World, Lua static/security assessor, compatibility matrix, support worker.
+
+Official: https://www.gmodstore.com/help/developers ; https://www.gmodstore.com/help/script-submissions
+
+## 12. Fantasy Grounds Forge — tiny but exceptionally testable extension economy
+
+**Market:** Fantasy Grounds Forge allows creators to sell/share extensions and automatically delivers updates. Current Forge listings show paid utility extensions. SmiteWorks previously reported **1,624 extensions** and explicitly notes that core updates can break community extensions.
+
+**Opportunity:** version-maintained automation extensions, campaign management, inventory/workflow tools, ruleset adapters and compatibility repair. The important moat is regression testing across rulesets + extensions.
+
+**Loop:** watch Fantasy Grounds TEST/live releases → execute Lua extension in fixture campaigns → cross-extension compatibility suite → package build → human Forge moderation/review → release → auto-update reaches subscribers → support agent triages errors and patches.
+
+**H:** H1–H2.
+
+**Assets:** Fantasy Grounds World matrix, Lua extension evaluator, conflict detector, long-lived maintainer worker.
+
+Official: https://forge.fantasygrounds.com/
+
+## 13. MyFonts — programmatically generated, rigorously tested type families
+
+**Market economics:** MyFonts is explicitly a commercial font marketplace. Monotype says typical single-style pricing is roughly **$20–$35** for display fonts; MyFonts earnings are paid monthly. Artists can distribute non-exclusively under their own foundry name.
+
+**Agent wedge:** niche multilingual families, variable-font axes, fonts for specific technical/display use cases, companion icon fonts, systematic style expansions of original families. This only works if the Lab has strong typography evaluation; low-effort generated glyph sets will fail quality/reputation tests.
+
+**Loop:** Oracle mines underserved language/style/search combinations → agent designs family → FontTools/Harbor validates Unicode coverage, outlines, kerning, hinting, interpolation and rendering → visual judge + human art-direction gate → submission → monitor sales/search/reviews → generate validated family extensions.
+
+**H:** H2 because originality/art direction and foundry acceptance remain human-sensitive.
+
+**Assets:** Font World, glyph-validity evaluator, kerning/interpolation assessor, family-expansion Skill.
+
+Official: https://foundrysupport.monotype.com/hc/en-us/articles/360028863311-Get-Started
+
+## 14. DAZ 3D Published Artist marketplace — procedural asset families with serious QA
+
+**Demand/economics:** DAZ says its marketplace gets **tens of millions of monthly page views**, markets products to an opt-in list of hundreds of thousands, and gives Published Artists 50% of net revenue. Its 2026 Artist Sale page shows 13,000+ artist items.
+
+**Products:** poses, lighting rigs, scene utilities, shaders/materials, morph systems, environment kits, procedural clothing/accessory families, productivity scripts.
+
+**Why agents fit:** Daz/Blender workflows are scriptable and assets have strong structural QA surfaces: missing textures, rigging, naming, morph compatibility, render tests, packaging. DAZ itself has a strong QA team, so a Harbor preflight can optimize for acceptance.
+
+**Loop:** demand research → procedural generation/modeling → automated Blender/Daz validation/render suite → human subjective-quality review → Published Artist submission → sales/review monitoring → variants and updates.
+
+**H:** H2.
+
+Official: https://www.daz3d.com/community/community-publishing
+
+## 15. Roll20 Marketplace — ready-to-play content factory, but niche carefully
+
+**Demand/economics:** Roll20 advertises **15M+ players**, creators keep **70% of sales**, and says the average creator makes hundreds of dollars per year for each Marketplace title.
+
+**Best agent products:** niche adventures, encounter/map packs with full dynamic-lighting setup, token/status packs, ready-to-play campaign conversions where IP rights are clean. Avoid generic tokens: creator discussions describe those as saturated.
+
+**Loop:** Oracle finds underserved system/theme → generates original content/assets → Roll20 fixture imports → evaluator checks file size, grid alignment, dynamic lighting, broken links, handouts/macros and ownership metadata → human originality/review gate → Marketplace submission → sales/reviews → agent updates and bundles.
+
+**H:** H2 due content review and subjective originality.
+
+**Assets:** Roll20 World, map/grid/light evaluator, adventure consistency School, packaging Process.
+
+Official: https://pages.roll20.net/partners
+
+## 16. IMVU Creator Catalog — derivation-chain micro-manufacturing
+
+**Market mechanic:** IMVU has an explicit Creator economy. Meshes and textures are supposed to be sold through the Catalog’s derivation chain: creators submit derivable products, set profit and earn credits/cash as others derive/buy. Its Tier program rewards active shops and requires fresh sellable products for the top tiers.
+
+**Agent products:** general-audience clothing, furniture, accessories, room props, texture variations and derivable base meshes. A worker could discover undersupplied style/fit combinations, produce variants, validate clipping/materials and manage a large coherent catalog.
+
+**Loop:** market scrape → niche/style hypothesis → generate/fit asset → IMVU Creator tool validation/screenshots → human visual/IP check → catalog submission → sales/tier telemetry → variants → refresh catalog.
+
+**H:** H2 because desktop creator tooling, subjective style and account/payout checks remain human-heavy.
+
+**Assets:** IMVU avatar-fit World, clipping/texture assessor, derivation-lineage tracker, catalog manager worker.
+
+Official: https://support.imvu.com/support/solutions/articles/154000197181-creator-tier-program
+
+## 17. Second Life Marketplace — scripted utilities and merchant-resource products
+
+**Market:** Second Life still has active 2026 Marketplace listings priced in L$, including full-permission merchant resources and scripted/mesh objects. The platform’s distinctive advantage is that software-like value can be embedded in virtual objects via LSL, while merchant-resource kits can enable downstream creators.
+
+**Agent wedge:** productivity/admin HUDs, event/vendor tools, scripted home utilities, original furniture/decor systems, full-permission merchant resources, texture/mesh families. Avoid simply flooding commodity assets.
+
+**Loop:** discover search/review gaps → generate mesh/script → automated LSL/static tests + in-world smoke via controlled avatar → visual/IP human gate → browser listing → sales/reviews → support agent and variant generator.
+
+**H:** H2 because in-world testing and listing/account steps are still not cleanly API-first.
+
+**Moltwork asset:** SecondLife Pack, LSL evaluator, permission/licensing checker, browser Venue, in-world test worker.
+
+Marketplace: https://marketplace.secondlife.com/
+
+## 18. Creative Fabrica — recurring-download economics, but quality filtering is mandatory
+
+**Demand/economics:** Creative Fabrica says it has **1M+ monthly users**. Designers can earn 50% on platform-referred single sales, 75% on self-referred sales, and recurring subscription income based on downloads.
+
+**Products:** machine-embroidery designs, cutting-machine SVG families, craft templates, fonts, printable systems and coherent design bundles. Generic AI-generated graphics are a weak thesis because supply is easy and quality/reputation risk is high.
+
+**Loop:** Oracle mines craft/search seasonality → generate coherent original pack → format-specific Harbor validators (SVG path integrity, embroidery stitch constraints, font glyph checks, print bounds) → human originality/art-direction gate → upload/list → download/sale telemetry → iterate bundles.
+
+**H:** H2.
+
+**Assets:** craft-format Worlds, IP/originality preflight, bundle consistency evaluator, seasonal research Process.
+
+Official: https://help.creativefabrica.com/hc/en-us/articles/4401898664722-Why-should-I-open-a-store-on-Creative-Fabrica
+
+## 19. TurboSquid — sell boring, highly-specific 3D utility instead of generic art
+
+**Demand/economics:** TurboSquid currently advertises **1.5M+ 3D models**. Artists can publish through Squid.io; its exclusivity program can pay royalties up to 80%.
+
+**Community reality:** 2025–26 seller discussions say generic models often sell poorly and royalties can feel low; sellers repeatedly advise finding a specific profitable niche rather than spraying random models. That is exactly why Oracle matters.
+
+**Best agent wedge:** parametric industrial components, architecture/MEP props, region-specific infrastructure, scientifically/technically precise objects, LOD/format bundles, game-ready boring objects that buyers need but artists dislike making.
+
+**Loop:** search unmet model queries → procedural Blender/CAD generation → geometry/UV/material/LOD/unit-scale validators → multi-render preview → human IP/quality gate → Squid.io publish → sales/search monitoring → family expansion.
+
+**H:** H1–H2.
+
+**Assets:** 3D Model World, topology/LOD evaluator, render pipeline, catalog-expansion worker.
+
+Official: https://www.turbosquid.com/Selling-3D-Models
+
+## 20. Airtable Interface Extensions / Marketplace — valuable needs, but currently WATCH
+
+**Why it makes the list despite low score:** Airtable still supports the Blocks SDK/CLI and newer Interface Extensions; current docs show local `block release` publishing. In 2026, the Web API also gained more attachment functionality. Users clearly need document/data-entry workflow extensions.
+
+**But:** 2026 community posts report Marketplace submission outages and multi-month review queues; one April thread speculates the old extension Marketplace is being deprioritized as Airtable shifts toward AI app building. Therefore this is not a build-first market today.
+
+**Product candidates if the channel stabilizes:** direct file/attachment workflow helpers, document-management interfaces, schema QA, bulk operations, vertical data-entry interfaces.
+
+**Loop:** Oracle monitors Airtable developer/review status → maintain ready extension backlog → build/test via Blocks SDK → CLI release to private/custom base first → only submit publicly when review throughput is demonstrably healthy.
+
+**H:** H2 because marketplace review is currently the bottleneck.
+
+**Assets:** Airtable Pack, SDK/CLI Venue, schema/permission World, marketplace-health signal.
+
+Official: https://support.airtable.com/articles/9826964755-creating-custom-extensions-with-airtable-blocks-sdk
+
+---
+
+# Frontier Unlocks
+
+1. **Xero’s 2 Mar 2026 platform shift:** granular scopes + tiered app plans, and the current developer surface includes an MCP Server/Agents Toolkit. Narrow agent tools can now ask for less privilege and are easier to certify/explain.
+2. **Freshworks Platform v3.0:** v2.3 was fully deprecated 30 May 2026. Incumbent migration debt creates an opening for v3-native apps and compatibility/migration agents.
+3. **itch.io butler became even more accessible on 18 May 2026:** first-party CLI already supports CI/CD, validation and delta uploads; the desktop app now wraps the same pipeline. This is one of the closest creator markets to H0 publishing after account setup.
+4. **Cfx Marketplace beta:** still invite-only, but it creates a curated FiveM asset channel with no extra Cfx/Tebex Marketplace commission and is explicitly planned to open to more partners after beta.
+5. **Foundry Marketplace maturity:** >500 premium modules / >60 creators soon after launch, and 2026 complaints now reveal the next market: continuous compatibility maintenance, not just creation.
+6. **Airtable Interface Extensions:** the technical surface is moving, but the public-review channel is unstable. Oracle should monitor this as a market-unlock event rather than spend now.
+
+# Human Dependency Reduction — highest-value next targets
+
+**1. Certification/review package generation.** Across Xero, Intuit, Zendesk, Intercom, Zoho and Freshworks, the agent can already generate code; the recurring friction is screenshots, privacy/security answers, scopes, onboarding docs, demo fixtures and reviewer responses. Build a generic `MarketplaceSubmissionProcess` with Pack-specific adapters.
+
+**2. OAuth/account provisioning without exposing secrets.** Keep human consent/KYC human, but use credential references and a trusted auth broker so after one authorization the worker can run H0/H1 without ever seeing raw tokens.
+
+**3. Compatibility matrices.** Foundry, Fantasy Grounds, GmodStore/FiveM and enterprise APIs all reward continuous maintenance. A Lab that automatically checks every upstream release against all products creates real defensibility.
+
+**4. Browser-only listing steps.** Where policy allows automation but no official API/CLI exists, track these as structured `human.manual_upload` / `human.manual_listing` dependencies. Resolve with WebMCP when sites expose it; otherwise compliant browser automation; HumanQueue last.
+
+**5. Subjective creator QA.** Do not eliminate the final human art-direction/IP gate in typography/3D/virtual goods yet. Instead make it tiny: agents generate + deterministic validators reject 90% of bad output, then a human reviews only shortlisted candidates.
+
+# Recommended experiments
+
+**A. Xero micro-app:** choose one accountant pain with deterministic financial fixtures. Proves enterprise API + certification + real SaaS demand.
+
+**B. Foundry compatibility worker:** take a small utility module and make “always compatible” the product. Proves persistent agent maintenance + Harbor version matrix.
+
+**C. itch.io engine-ready asset pack:** choose an underserved Godot/Unity asset requirement, automate validation and publishing through butler. Proves near-H0 creator-market production.
+
+**D. Zendesk replacement integration:** watch sunset/broken incumbent integrations and ship a narrow replacement. Proves Oracle can turn platform change into immediate economic opportunity.
+
+## Core Oracle conclusion
+
+The valuable new primitive is still not another taxonomy. It is a **human-dependency resolver** attached to the existing H0–H4 model. The Oracle should continuously ask: `What step prevents this market from being H0/H1 today? Has an API, MCP, CLI, new app-store policy or compatible browser tool appeared that removes it?` The moat is the accumulated execution plans, compatibility tests, Marketplace-specific submission processes and outcome evidence — not merely knowing the marketplace exists.
+Oracle Market Unlocks — 20 NEW markets
+<p><strong>31 Aug 2026 — run focused on markets not covered in prior scans.</strong></p>
+<p>This scan deliberately excludes previously covered surfaces including Atlassian, monday.com, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, Miro, WooCommerce, HubSpot, JetBrains, Fab, Unity, Fortnite/UEFN, Canva, Creative Market, Minecraft Marketplace, Adobe Stock, Envato, Gumroad, Telegram Mini Apps, VRChat, WordPress, Zoom, Teams, Slack, Poe, CGTrader, Salesforce, ServiceNow, LINE, Databricks, Wix, Shopify, RapidAPI, AWS/Snowflake/GCP marketplaces, Discord Premium Apps, Bubble, FlutterFlow, Coda, Figma, VS Code/Edge/Firefox, BigCommerce, Stream Deck, Overwolf, Hytale/BuiltByBit, CurseForge, Superhive and the 3D-print marketplaces.</p>
+
+Ranking
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Market</th>
+<th>Score /25</th>
+<th>Best agent wedge</th>
+<th>H-level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Xero App Store</td>
+<td>22</td>
+<td>narrow accountant workflow apps + reconciliation QA</td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Zendesk Marketplace</td>
+<td>22</td>
+<td>replacement/last-mile integrations, especially Jira-style sync</td>
+<td>H1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Zoho Marketplace</td>
+<td>22</td>
+<td>“last 10%” workflow extensions across 100M+ user ecosystem</td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Pipedrive Marketplace</td>
+<td>21</td>
+<td>missing sales-workflow micro-apps and dynamic personalization</td>
+<td>H1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Foundry VTT Marketplace</td>
+<td>21</td>
+<td>maintained utility modules + premium campaign tooling</td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>QuickBooks App Marketplace</td>
+<td>20</td>
+<td>vertical accounting workflow adapters, not generic middleware</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Intercom App Store</td>
+<td>20</td>
+<td>support QA, reporting, escalation and Fin-adjacent apps</td>
+<td>H1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Freshworks Marketplace</td>
+<td>20</td>
+<td>Platform v3 apps + automated migration/compatibility products</td>
+<td>H1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Cfx Marketplace / Tebex (FiveM)</td>
+<td>20</td>
+<td>server administration, observability and workflow scripts</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>itch.io asset marketplace</td>
+<td>19</td>
+<td>highly-specific ready-to-use dev asset/tool packs</td>
+<td>H1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>GmodStore</td>
+<td>19</td>
+<td>maintained server-admin, moderation and performance add-ons</td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Fantasy Grounds Forge</td>
+<td>19</td>
+<td>compatibility-maintained Lua extensions</td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>MyFonts</td>
+<td>19</td>
+<td>specialist font families + variable/multilingual fonts</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>14</td>
+<td>DAZ 3D Published Artists</td>
+<td>18</td>
+<td>procedural 3D utility/content packs</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Roll20 Marketplace</td>
+<td>18</td>
+<td>ready-to-play adventures/maps/tools with automated QA</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>IMVU Creator Catalog</td>
+<td>17</td>
+<td>derivable mesh/texture product families</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Second Life Marketplace</td>
+<td>17</td>
+<td>scripted utilities + merchant-resource product families</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Creative Fabrica</td>
+<td>16</td>
+<td>machine-validated craft/font bundles, not generic AI art</td>
+<td>H2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>TurboSquid</td>
+<td>16</td>
+<td>parametric industrial/architectural niche models</td>
+<td>H1–H2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Airtable Interface Extensions / Marketplace</td>
+<td>15</td>
+<td>interface workflow gaps; WATCH rather than build-first</td>
+<td>H2</td>
+</tr>
+</tbody>
+</table>
+<p>Scoring dimensions: expected opportunity value, agent suitability, automation feasibility, competitive intensity (lower competition scores higher), novelty.</p>
+
+
+
+1. Xero App Store — accountant micro-SaaS and workflow reliability
+<p><strong>Why now:</strong> Xero says the App Store reaches <strong>4.4M+ customers</strong>. On 2 March 2026 it introduced new developer tiers and granular OAuth scopes; its current developer site also exposes an <strong>AI toolkit including an MCP Server, Agents Toolkit and Prompt Library</strong>. New apps use granular scopes from 2 March 2026, which makes narrow least-privilege agent tools easier to justify than broad accounting integrations.</p>
+<p><strong>What to sell:</strong> reconciliation QA, invoice anomaly review, evidence-pack generation for accountants, vertical report packs, accountant/client handoff tools, practice-specific workflow utilities. Avoid another generic “one accounting API” abstraction: Reddit devs explicitly note Codat/Rutter already dominate that layer.</p>
+<p><strong>Autonomous loop:</strong> Oracle mines Xero/accounting complaints → generates a narrow app hypothesis → builds against sandbox/API → Harbor World replays synthetic ledgers and hidden accounting edge cases → OAuth/test customers → certification package → listing → webhooks capture usage/errors → agent maintains compatibility and improves onboarding. Human: company/payment setup, certification/security declarations and initial customer authorization. Recurring work can approach H1.</p>
+<p><strong>Demand/pain:</strong> Xero markets the App Store as a lead channel to 4.4M customers. A current April 2026 Reddit thread complains that the new scope model can make testing report endpoints difficult before reaching user thresholds — a useful indication that compliance/test infrastructure itself has value.</p>
+<p><strong>Moltwork assets:</strong> <code>XeroPack</code>, Xero Venue/API adapter, accounting-fixture Harbor World, OAuth-scope preflight evaluator, reconciliation Skill, certification Process, specialist <code>xero-accountant-worker</code>.</p>
+<p>Official: https://developer.xero.com/grow-with-xero ; https://developer.xero.com/pricing</p>
+
+2. Zendesk Marketplace — replace abandoned/brittle enterprise integrations
+<p><strong>What agents can sell:</strong> paid Zendesk sidebar apps, sync bridges, escalation tools, attachment/comment mirroring, QA/reporting apps and preview apps for specific enterprise customers. Zendesk explicitly supports <strong>paid Marketplace apps</strong> and preview apps; new app review is typically 1–3 weeks.</p>
+<p><strong>Concrete wedge:</strong> the current August 2026 Zendesk subreddit has users discovering that the long-used Zendesk/Jira integration disappeared/sunset and saying the native integration struggled to carry comments. One respondent built a custom replacement. That is almost a textbook Oracle opportunity: watch disappearing first-party integrations and rapidly produce maintained replacements.</p>
+<p><strong>Autonomous loop:</strong> monitor Zendesk release notes + Marketplace removals + Reddit → extract exact missing behavior → build ZAF iframe/server app → synthetic tickets/Jira fixtures → deterministic bidirectional-sync tests → generate listing/start guide/privacy material → human submits organization/review → agent monitors API changes, reviews and support tickets → auto-patches and regrades.</p>
+<p><strong>H-level:</strong> H1 after one-time Marketplace account/review; H2 only when customer-specific permissions/security review is needed.</p>
+<p><strong>Moltwork assets:</strong> <code>ZendeskPack</code>, ticket-sync World, comment/attachment fidelity evaluator, MarketplaceSubmissionProcess, Zendesk specialist worker.</p>
+<p>Official: https://developer.zendesk.com/documentation/marketplace/publishing-to-the-marketplace/submit-your-app/</p>
+
+3. Zoho Marketplace — sell the missing “last 10%” across a huge suite
+<p><strong>Why attractive:</strong> Zoho’s current partner pages advertise <strong>100M+ users</strong>. Developers can build and sell extensions; Zoho handles Marketplace payments. Extension pricing can be paid, trial or free.</p>
+<p><strong>Pain signal:</strong> a February 2026 r/Zoho thread describes the recurring problem not as missing major modules but as the final 10%: unreliable sync, dashboards that show the wrong operational metric, awkward search defaults, and inconsistent cross-app behavior. Those are unusually good agent-generated extension targets because they are narrow and measurable.</p>
+<p><strong>What to build:</strong> cross-product sync reliability monitors, invoice/CRM last-mile actions, custom dashboard panels, industry-specific modules, search/record utilities, connectors for niche third-party software.</p>
+<p><strong>Workflow:</strong> Oracle clusters recurring Zoho complaints → chooses one product/extension point → Developer Console/sandbox → generate extension + Deluge/API code → Harbor synthetic org → install/uninstall/permission regression suite → listing assets/docs → human partner approval/demo → agent monitors ratings, churn and API changes.</p>
+<p><strong>H-level:</strong> H1/H2 due partner application and 2–3 week functional/security/content review; normal updates/support are highly automatable.</p>
+<p><strong>Assets:</strong> Zoho product-family Packs, extension scaffold Skill, cross-app integration World, permission evaluator, reviewer-response Process.</p>
+<p>Official: https://www.zoho.com/marketplace/become-a-partner.html</p>
+
+4. Pipedrive Marketplace — sales-workflow micro-app factory
+<p><strong>Demand:</strong> Pipedrive exposes developers to <strong>100,000+ companies</strong>; its Marketplace has 400+ integrations, and Pipedrive says around 60% of customers have integrated at least one app. Marketplace users with apps use 4+ apps daily on average.</p>
+<p><strong>2026 pain:</strong> an April 2026 r/pipedrive post from an implementation shop lists baffling missing features such as dynamic personalization fields inside email hyperlinks and other everyday sales-ops gaps. That is ideal Oracle input.</p>
+<p><strong>Agent product:</strong> dynamic link/personalization extension, quote follow-up automation, lead enrichment helpers, vertical pipeline validators, data-quality repair, niche CRM-to-industry-system bridges.</p>
+<p><strong>Loop:</strong> scrape feature complaints → reproduce in sandbox → build API/webhook app → replay deals/contacts in Harbor → test OAuth scopes, duplicate prevention and idempotence → create onboarding guide/listing → human review → measure installs, activation and churn → maintenance worker handles Pipedrive API changes.</p>
+<p><strong>H:</strong> H1.</p>
+<p><strong>Assets:</strong> <code>PipedrivePack</code>, CRM fixture World, webhook/idempotence evaluator, onboarding Skill, app-maintenance worker.</p>
+<p>Official: https://developers.pipedrive.com/ ; https://www.pipedrive.com/en/marketplace/about</p>
+
+5. Foundry VTT Marketplace — compatibility maintenance is the product
+<p><strong>Why now:</strong> Foundry launched its unified Marketplace in 2025 and reported <strong>500+ premium modules from 60+ creators</strong> within its first months. Its February 2026 first-anniversary sale generated substantial community attention.</p>
+<p><strong>Pain signal:</strong> on 29 August 2026, a highly-upvoted r/FoundryVTT thread complained that a paid Marketplace purchase had already become obsolete/unusable after updates. Older community discussions similarly warn about premium modules being abandoned. This creates a strong agent moat: continuous compatibility maintenance.</p>
+<p><strong>What to sell:</strong> system-agnostic GM workflow tools, content conversion/packaging utilities, campaign QA, ruleset compatibility layers, maintained premium modules. The strongest thesis is not “AI writes module once”; it is “agent maintains module against every Foundry/ruleset release.”</p>
+<p><strong>Loop:</strong> watch Foundry/ruleset releases → run matrix of versions in Harbor → reproduce breakages → patch → regrade hidden campaign fixtures → package manifest/Git release → human Marketplace approval where required → publish updates → watch support/reviews.</p>
+<p><strong>H:</strong> H1–H2. Product creation/maintenance is near-H0; partner listing/review is human.</p>
+<p><strong>Assets:</strong> Foundry World matrix, version-compatibility evaluator, module-update Process, system-specific Schools, persistent maintainer worker.</p>
+<p>Official: https://foundryvtt.com/article/year-in-review-2025/ ; https://foundryvtt.com/article/premium-content/</p>
+
+6. QuickBooks App Marketplace — vertical workflow fixes, not generic API middleware
+<p><strong>Why interesting:</strong> Intuit maintains QBO APIs, webhooks, OAuth, sandbox and Apps.com. Its 2026 App Partner Program tightened compliance: Marketplace apps require assessment plus security, technical and marketing reviews.</p>
+<p><strong>Pain:</strong> April 2026 Reddit developers describe QBO integrations taking much longer than expected because of OAuth, webhooks, API limits and confusing object behavior; another comment says broad accounting API abstraction is already dominated by Codat/Rutter. Users also complain about unstable core workflows.</p>
+<p><strong>Correct wedge:</strong> vertical-specific apps: law-firm time/billing integrity, contractor estimate/invoice bridges, multi-company reporting, migration verification, invoice/customer sync QA. Use an agent to own the ugly edge cases of one workflow rather than competing as a generic accounting API.</p>
+<p><strong>Loop:</strong> Oracle identifies repeated vertical pain → QBO sandbox → agent builds narrowly-scoped integration → Harbor accounting fixtures → webhook/retry/rounding/date edge tests → security package → human Intuit review → usage/error monitoring → auto-maintenance.</p>
+<p><strong>H:</strong> H2 at onboarding/certification, H1 operationally.</p>
+<p>Official: https://developer.intuit.com/ ; Intuit App Partner Program Guide</p>
+
+7. Intercom App Store — QA and escalation infrastructure around AI support
+<p><strong>Demand:</strong> Intercom explicitly invites developers to list apps to <strong>25K+ customers</strong>, with a free development workspace and App Partner Program.</p>
+<p><strong>What to build:</strong> Fin-response QA/evidence capture, escalation packet generation, cross-tool ticket sync, customer-history summarization, SLA anomaly detection, issue clustering and post-resolution analysis.</p>
+<p><strong>Why agents fit:</strong> support data is structured, APIs/SDKs are mature, quality can be evaluated with replayable conversation fixtures, and the maintenance loop benefits from persistent worker memory.</p>
+<p><strong>Loop:</strong> mine support-team complaints → build public app → replay conversations/tickets → evaluator checks correct routing, no duplicate writes and evidence preservation → auto-generate Start Guide/screenshots → human review → monitor installs/events → agent handles support and revisions.</p>
+<p><strong>H:</strong> H1.</p>
+<p><strong>Assets:</strong> Intercom Pack, support-conversation World, escalation evaluator, listing/start-guide Process.</p>
+<p>Official: https://developers.intercom.com/ ; https://developers.intercom.com/docs/publish-to-the-app-store/listing-your-app</p>
+
+8. Freshworks Marketplace — the 2026 Platform v3 migration creates a temporary opening
+<p><strong>Frontier change:</strong> Marketplace Platform v2.3 was fully deprecated on <strong>30 May 2026</strong>; new v2.3 apps had already been disabled from 30 January. Freshworks is pushing developers to Platform v3.0. App submission now includes AI-assisted categorization.</p>
+<p><strong>Opportunity:</strong> build new v3-native apps while incumbents carry migration debt; or productize automated porting/compatibility verification for old Freshdesk/Freshservice apps. Narrow support workflows, ticket QA and integrations are especially suited.</p>
+<p><strong>Loop:</strong> Oracle finds low-rated/abandoned v2.x functions → inspect public behavior/docs → generate v3 app → Harbor ticket fixtures → migration diff + permission regression → app package/listing → human review → monitor Freshworks changelog and update automatically.</p>
+<p><strong>H:</strong> H1.</p>
+<p><strong>Assets:</strong> <code>FreshworksV3Pack</code>, v2→v3 migration Skill, compatibility World, manifest evaluator, migration specialist worker.</p>
+<p>Official: https://developers.freshworks.com/docs/app-sdk/v3.0/ ; migration timeline in Freshworks developer docs.</p>
+
+9. Cfx Marketplace / Tebex for FiveM — curated server infrastructure assets
+<p><strong>Why now:</strong> the Cfx Marketplace is currently a <strong>closed beta / invite-only</strong> curated marketplace for scripts, maps, vehicles and other assets. Tebex says approved partners can list directly from their stores and the Cfx Marketplace takes no additional commission; submissions are expected to open more broadly after beta.</p>
+<p><strong>Agent wedge:</strong> server administration dashboards, moderation tools, deployment/update utilities, performance/observability scripts, role/permission workflows, data migration and compatibility utilities. Avoid commodity content where differentiation is visual rather than measurable.</p>
+<p><strong>Loop:</strong> monitor server-owner complaints and Cfx releases → build Lua/JS resource → spin ephemeral FiveM test server → Harbor scenarios verify installation, startup, permission behavior, latency and upgrade safety → package Tebex product → human partner/review gate → publish → telemetry/support → auto-maintain.</p>
+<p><strong>H:</strong> H2 until partner access/review; production loop H1.</p>
+<p><strong>Assets:</strong> FiveM World, ephemeral server harness, performance evaluator, package-release Process.</p>
+<p>Official: https://docs.tebex.io/creators/growth-and-success/cfx-marketplace</p>
+
+10. itch.io asset marketplace — unusually automation-friendly publishing
+<p><strong>2026 unlock:</strong> on <strong>18 May 2026</strong>, itch added direct butler uploading to the desktop app. More importantly for agents, <code>butler</code> is already a first-party CLI designed for CI/CD; it can validate manifests/builds and push only changed files. itch lets creators set their own revenue share, including 0% platform share.</p>
+<p><strong>Products:</strong> Godot/Unity-ready UI packs, tiny tools/plugins, shader/VFX kits, audio systems, procedural generators, internally consistent themed art packs. The valuable unit is not “100 random images”; it is a ready-to-use package that passes engine-specific validators.</p>
+<p><strong>Demand:</strong> 2026 Reddit examples show new asset packs getting paid sales and creator bundles earning thousands, but postmortems warn that visibility and conversion are brutal. This is perfect for Oracle: niche research matters more than raw generation volume.</p>
+<p><strong>Loop:</strong> scrape game-dev requests/trends → build asset hypothesis → generator produces pack → engine-specific Harbor World imports it into sample projects → validator checks dimensions/naming/licenses/performance → <code>butler validate</code> → human creates initial project/store identity → <code>butler push</code> automatically updates → agent watches analytics/comments and iterates.</p>
+<p><strong>H:</strong> H1; one of the cleanest markets here.</p>
+<p><strong>Assets:</strong> itch Venue with butler, engine-specific asset Worlds, visual-consistency assessor, metadata/thumbnail Process.</p>
+<p>Official: https://itch.io/updates/pushing-builds-with-butler-is-now-in-the-itch-app ; https://itch.io/docs/butler/</p>
+
+11. GmodStore — paid maintained server add-ons
+<p><strong>Market:</strong> GmodStore is explicitly built around selling scripts/add-ons, creator payouts, product reviews and seller support. It now has an AI Usage Policy and structured product-submission standards.</p>
+<p><strong>Demand:</strong> Garry’s Mod remains active in 2026; Reddit users describe tens of thousands of daily players and active servers, while the ecosystem repeatedly suffers from addon removal/abandonment. A persistent maintenance worker can be more valuable than a one-shot addon author.</p>
+<p><strong>Products:</strong> admin panels, permission systems, server observability, moderation queues, roleplay workflow tools, deployment/update helpers, performance instrumentation.</p>
+<p><strong>Loop:</strong> mine server-owner pain → generate addon → start clean server fixture → scripted multi-player/admin tests → lint/security/perf gates → listing assets → human product review → agent continuously tests against GMod/server-framework updates and responds to tickets.</p>
+<p><strong>H:</strong> H1–H2.</p>
+<p><strong>Assets:</strong> GMod server World, Lua static/security assessor, compatibility matrix, support worker.</p>
+<p>Official: https://www.gmodstore.com/help/developers ; https://www.gmodstore.com/help/script-submissions</p>
+
+12. Fantasy Grounds Forge — tiny but exceptionally testable extension economy
+<p><strong>Market:</strong> Fantasy Grounds Forge allows creators to sell/share extensions and automatically delivers updates. Current Forge listings show paid utility extensions. SmiteWorks previously reported <strong>1,624 extensions</strong> and explicitly notes that core updates can break community extensions.</p>
+<p><strong>Opportunity:</strong> version-maintained automation extensions, campaign management, inventory/workflow tools, ruleset adapters and compatibility repair. The important moat is regression testing across rulesets + extensions.</p>
+<p><strong>Loop:</strong> watch Fantasy Grounds TEST/live releases → execute Lua extension in fixture campaigns → cross-extension compatibility suite → package build → human Forge moderation/review → release → auto-update reaches subscribers → support agent triages errors and patches.</p>
+<p><strong>H:</strong> H1–H2.</p>
+<p><strong>Assets:</strong> Fantasy Grounds World matrix, Lua extension evaluator, conflict detector, long-lived maintainer worker.</p>
+<p>Official: https://forge.fantasygrounds.com/</p>
+
+13. MyFonts — programmatically generated, rigorously tested type families
+<p><strong>Market economics:</strong> MyFonts is explicitly a commercial font marketplace. Monotype says typical single-style pricing is roughly <strong>$20–$35</strong> for display fonts; MyFonts earnings are paid monthly. Artists can distribute non-exclusively under their own foundry name.</p>
+<p><strong>Agent wedge:</strong> niche multilingual families, variable-font axes, fonts for specific technical/display use cases, companion icon fonts, systematic style expansions of original families. This only works if the Lab has strong typography evaluation; low-effort generated glyph sets will fail quality/reputation tests.</p>
+<p><strong>Loop:</strong> Oracle mines underserved language/style/search combinations → agent designs family → FontTools/Harbor validates Unicode coverage, outlines, kerning, hinting, interpolation and rendering → visual judge + human art-direction gate → submission → monitor sales/search/reviews → generate validated family extensions.</p>
+<p><strong>H:</strong> H2 because originality/art direction and foundry acceptance remain human-sensitive.</p>
+<p><strong>Assets:</strong> Font World, glyph-validity evaluator, kerning/interpolation assessor, family-expansion Skill.</p>
+<p>Official: https://foundrysupport.monotype.com/hc/en-us/articles/360028863311-Get-Started</p>
+
+14. DAZ 3D Published Artist marketplace — procedural asset families with serious QA
+<p><strong>Demand/economics:</strong> DAZ says its marketplace gets <strong>tens of millions of monthly page views</strong>, markets products to an opt-in list of hundreds of thousands, and gives Published Artists 50% of net revenue. Its 2026 Artist Sale page shows 13,000+ artist items.</p>
+<p><strong>Products:</strong> poses, lighting rigs, scene utilities, shaders/materials, morph systems, environment kits, procedural clothing/accessory families, productivity scripts.</p>
+<p><strong>Why agents fit:</strong> Daz/Blender workflows are scriptable and assets have strong structural QA surfaces: missing textures, rigging, naming, morph compatibility, render tests, packaging. DAZ itself has a strong QA team, so a Harbor preflight can optimize for acceptance.</p>
+<p><strong>Loop:</strong> demand research → procedural generation/modeling → automated Blender/Daz validation/render suite → human subjective-quality review → Published Artist submission → sales/review monitoring → variants and updates.</p>
+<p><strong>H:</strong> H2.</p>
+<p>Official: https://www.daz3d.com/community/community-publishing</p>
+
+15. Roll20 Marketplace — ready-to-play content factory, but niche carefully
+<p><strong>Demand/economics:</strong> Roll20 advertises <strong>15M+ players</strong>, creators keep <strong>70% of sales</strong>, and says the average creator makes hundreds of dollars per year for each Marketplace title.</p>
+<p><strong>Best agent products:</strong> niche adventures, encounter/map packs with full dynamic-lighting setup, token/status packs, ready-to-play campaign conversions where IP rights are clean. Avoid generic tokens: creator discussions describe those as saturated.</p>
+<p><strong>Loop:</strong> Oracle finds underserved system/theme → generates original content/assets → Roll20 fixture imports → evaluator checks file size, grid alignment, dynamic lighting, broken links, handouts/macros and ownership metadata → human originality/review gate → Marketplace submission → sales/reviews → agent updates and bundles.</p>
+<p><strong>H:</strong> H2 due content review and subjective originality.</p>
+<p><strong>Assets:</strong> Roll20 World, map/grid/light evaluator, adventure consistency School, packaging Process.</p>
+<p>Official: https://pages.roll20.net/partners</p>
+
+16. IMVU Creator Catalog — derivation-chain micro-manufacturing
+<p><strong>Market mechanic:</strong> IMVU has an explicit Creator economy. Meshes and textures are supposed to be sold through the Catalog’s derivation chain: creators submit derivable products, set profit and earn credits/cash as others derive/buy. Its Tier program rewards active shops and requires fresh sellable products for the top tiers.</p>
+<p><strong>Agent products:</strong> general-audience clothing, furniture, accessories, room props, texture variations and derivable base meshes. A worker could discover undersupplied style/fit combinations, produce variants, validate clipping/materials and manage a large coherent catalog.</p>
+<p><strong>Loop:</strong> market scrape → niche/style hypothesis → generate/fit asset → IMVU Creator tool validation/screenshots → human visual/IP check → catalog submission → sales/tier telemetry → variants → refresh catalog.</p>
+<p><strong>H:</strong> H2 because desktop creator tooling, subjective style and account/payout checks remain human-heavy.</p>
+<p><strong>Assets:</strong> IMVU avatar-fit World, clipping/texture assessor, derivation-lineage tracker, catalog manager worker.</p>
+<p>Official: https://support.imvu.com/support/solutions/articles/154000197181-creator-tier-program</p>
+
+17. Second Life Marketplace — scripted utilities and merchant-resource products
+<p><strong>Market:</strong> Second Life still has active 2026 Marketplace listings priced in L$, including full-permission merchant resources and scripted/mesh objects. The platform’s distinctive advantage is that software-like value can be embedded in virtual objects via LSL, while merchant-resource kits can enable downstream creators.</p>
+<p><strong>Agent wedge:</strong> productivity/admin HUDs, event/vendor tools, scripted home utilities, original furniture/decor systems, full-permission merchant resources, texture/mesh families. Avoid simply flooding commodity assets.</p>
+<p><strong>Loop:</strong> discover search/review gaps → generate mesh/script → automated LSL/static tests + in-world smoke via controlled avatar → visual/IP human gate → browser listing → sales/reviews → support agent and variant generator.</p>
+<p><strong>H:</strong> H2 because in-world testing and listing/account steps are still not cleanly API-first.</p>
+<p><strong>Moltwork asset:</strong> SecondLife Pack, LSL evaluator, permission/licensing checker, browser Venue, in-world test worker.</p>
+<p>Marketplace: https://marketplace.secondlife.com/</p>
+
+18. Creative Fabrica — recurring-download economics, but quality filtering is mandatory
+<p><strong>Demand/economics:</strong> Creative Fabrica says it has <strong>1M+ monthly users</strong>. Designers can earn 50% on platform-referred single sales, 75% on self-referred sales, and recurring subscription income based on downloads.</p>
+<p><strong>Products:</strong> machine-embroidery designs, cutting-machine SVG families, craft templates, fonts, printable systems and coherent design bundles. Generic AI-generated graphics are a weak thesis because supply is easy and quality/reputation risk is high.</p>
+<p><strong>Loop:</strong> Oracle mines craft/search seasonality → generate coherent original pack → format-specific Harbor validators (SVG path integrity, embroidery stitch constraints, font glyph checks, print bounds) → human originality/art-direction gate → upload/list → download/sale telemetry → iterate bundles.</p>
+<p><strong>H:</strong> H2.</p>
+<p><strong>Assets:</strong> craft-format Worlds, IP/originality preflight, bundle consistency evaluator, seasonal research Process.</p>
+<p>Official: https://help.creativefabrica.com/hc/en-us/articles/4401898664722-Why-should-I-open-a-store-on-Creative-Fabrica</p>
+
+19. TurboSquid — sell boring, highly-specific 3D utility instead of generic art
+<p><strong>Demand/economics:</strong> TurboSquid currently advertises <strong>1.5M+ 3D models</strong>. Artists can publish through Squid.io; its exclusivity program can pay royalties up to 80%.</p>
+<p><strong>Community reality:</strong> 2025–26 seller discussions say generic models often sell poorly and royalties can feel low; sellers repeatedly advise finding a specific profitable niche rather than spraying random models. That is exactly why Oracle matters.</p>
+<p><strong>Best agent wedge:</strong> parametric industrial components, architecture/MEP props, region-specific infrastructure, scientifically/technically precise objects, LOD/format bundles, game-ready boring objects that buyers need but artists dislike making.</p>
+<p><strong>Loop:</strong> search unmet model queries → procedural Blender/CAD generation → geometry/UV/material/LOD/unit-scale validators → multi-render preview → human IP/quality gate → Squid.io publish → sales/search monitoring → family expansion.</p>
+<p><strong>H:</strong> H1–H2.</p>
+<p><strong>Assets:</strong> 3D Model World, topology/LOD evaluator, render pipeline, catalog-expansion worker.</p>
+<p>Official: https://www.turbosquid.com/Selling-3D-Models</p>
+
+20. Airtable Interface Extensions / Marketplace — valuable needs, but currently WATCH
+<p><strong>Why it makes the list despite low score:</strong> Airtable still supports the Blocks SDK/CLI and newer Interface Extensions; current docs show local <code>block release</code> publishing. In 2026, the Web API also gained more attachment functionality. Users clearly need document/data-entry workflow extensions.</p>
+<p><strong>But:</strong> 2026 community posts report Marketplace submission outages and multi-month review queues; one April thread speculates the old extension Marketplace is being deprioritized as Airtable shifts toward AI app building. Therefore this is not a build-first market today.</p>
+<p><strong>Product candidates if the channel stabilizes:</strong> direct file/attachment workflow helpers, document-management interfaces, schema QA, bulk operations, vertical data-entry interfaces.</p>
+<p><strong>Loop:</strong> Oracle monitors Airtable developer/review status → maintain ready extension backlog → build/test via Blocks SDK → CLI release to private/custom base first → only submit publicly when review throughput is demonstrably healthy.</p>
+<p><strong>H:</strong> H2 because marketplace review is currently the bottleneck.</p>
+<p><strong>Assets:</strong> Airtable Pack, SDK/CLI Venue, schema/permission World, marketplace-health signal.</p>
+<p>Official: https://support.airtable.com/articles/9826964755-creating-custom-extensions-with-airtable-blocks-sdk</p>
+
+
+
+Frontier Unlocks
+<ol>
+<li><strong>Xero’s 2 Mar 2026 platform shift:</strong> granular scopes + tiered app plans, and the current developer surface includes an MCP Server/Agents Toolkit. Narrow agent tools can now ask for less privilege and are easier to certify/explain.</li>
+<li><strong>Freshworks Platform v3.0:</strong> v2.3 was fully deprecated 30 May 2026. Incumbent migration debt creates an opening for v3-native apps and compatibility/migration agents.</li>
+<li><strong>itch.io butler became even more accessible on 18 May 2026:</strong> first-party CLI already supports CI/CD, validation and delta uploads; the desktop app now wraps the same pipeline. This is one of the closest creator markets to H0 publishing after account setup.</li>
+<li><strong>Cfx Marketplace beta:</strong> still invite-only, but it creates a curated FiveM asset channel with no extra Cfx/Tebex Marketplace commission and is explicitly planned to open to more partners after beta.</li>
+<li><strong>Foundry Marketplace maturity:</strong> &gt;500 premium modules / &gt;60 creators soon after launch, and 2026 complaints now reveal the next market: continuous compatibility maintenance, not just creation.</li>
+<li><strong>Airtable Interface Extensions:</strong> the technical surface is moving, but the public-review channel is unstable. Oracle should monitor this as a market-unlock event rather than spend now.</li>
+</ol>
+
+Human Dependency Reduction — highest-value next targets
+<p><strong>1. Certification/review package generation.</strong> Across Xero, Intuit, Zendesk, Intercom, Zoho and Freshworks, the agent can already generate code; the recurring friction is screenshots, privacy/security answers, scopes, onboarding docs, demo fixtures and reviewer responses. Build a generic <code>MarketplaceSubmissionProcess</code> with Pack-specific adapters.</p>
+<p><strong>2. OAuth/account provisioning without exposing secrets.</strong> Keep human consent/KYC human, but use credential references and a trusted auth broker so after one authorization the worker can run H0/H1 without ever seeing raw tokens.</p>
+<p><strong>3. Compatibility matrices.</strong> Foundry, Fantasy Grounds, GmodStore/FiveM and enterprise APIs all reward continuous maintenance. A Lab that automatically checks every upstream release against all products creates real defensibility.</p>
+<p><strong>4. Browser-only listing steps.</strong> Where policy allows automation but no official API/CLI exists, track these as structured <code>human.manual_upload</code> / <code>human.manual_listing</code> dependencies. Resolve with WebMCP when sites expose it; otherwise compliant browser automation; HumanQueue last.</p>
+<p><strong>5. Subjective creator QA.</strong> Do not eliminate the final human art-direction/IP gate in typography/3D/virtual goods yet. Instead make it tiny: agents generate + deterministic validators reject 90% of bad output, then a human reviews only shortlisted candidates.</p>
+
+Recommended experiments
+<p><strong>A. Xero micro-app:</strong> choose one accountant pain with deterministic financial fixtures. Proves enterprise API + certification + real SaaS demand.</p>
+<p><strong>B. Foundry compatibility worker:</strong> take a small utility module and make “always compatible” the product. Proves persistent agent maintenance + Harbor version matrix.</p>
+<p><strong>C. itch.io engine-ready asset pack:</strong> choose an underserved Godot/Unity asset requirement, automate validation and publishing through butler. Proves near-H0 creator-market production.</p>
+<p><strong>D. Zendesk replacement integration:</strong> watch sunset/broken incumbent integrations and ship a narrow replacement. Proves Oracle can turn platform change into immediate economic opportunity.</p>
+
+Core Oracle conclusion
+<p>The valuable new primitive is still not another taxonomy. It is a <strong>human-dependency resolver</strong> attached to the existing H0–H4 model. The Oracle should continuously ask: <code>What step prevents this market from being H0/H1 today? Has an API, MCP, CLI, new app-store policy or compatible browser tool appeared that removes it?</code> The moat is the accumulated execution plans, compatibility tests, Marketplace-specific submission processes and outcome evidence — not merely knowing the marketplace exists.</p>

@@ -1,0 +1,183 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Fresh Scan
+Date: Mon, 31 Aug 2026 14:19:46 -0500
+Message ID: 1a059436dd84418f
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This scan treats novelty as a hard constraint. I cross-checked the sent Oracle reports before researching candidates and excluded venues already covered in previous runs. The 20 below returned no prior exact-market hit in the Oracle corpus. I also rejected several tempting repeats (including VTEX, Discord Premium Apps, BigCommerce, Zoom App Marketplace, FlutterFlow, Overwolf, MyMiniFactory, Thangs, Teachers Pay Teachers, Cults3D and MCPize).
+
+**H-level shorthand:** H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human subjective/legal/QA/reviewer work; H3 = material recurring human production/customer sponsorship; H4 = fundamentally human/offline. Legitimate identity, legal, tax, payout, IP and safety gates should not be bypassed.
+
+**Scoring:** O = expected opportunity value, A = agent suitability, F = automation feasibility, C = competitive whitespace (higher = less crowded), N = novelty/timing. Total /25.
+
+| # | Market | O | A | F | C | N | Total | Post-setup H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | Zyla API Hub | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 2 | DroneDeploy App Market | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 3 | QuickNode Marketplace | 5 | 5 | 5 | 4 | 4 | **23** | H1–H2 |
+| 4 | AppHighway MCP Tool Marketplace | 4 | 5 | 5 | 4 | 5 | **23** | H1 |
+| 5 | Shoplazza App Store | 5 | 5 | 5 | 3 | 4 | **22** | H1 |
+| 6 | Bitrix24 Market | 5 | 5 | 5 | 3 | 4 | **22** | H1 |
+| 7 | Replit Extensions Store | 4 | 5 | 5 | 4 | 4 | **22** | H1 |
+| 8 | mod.io Marketplace | 5 | 5 | 4 | 3 | 4 | **21** | H2 |
+| 9 | Frappe Cloud Marketplace | 4 | 5 | 5 | 3 | 4 | **21** | H1 |
+| 10 | APILayer Marketplace | 5 | 5 | 5 | 2 | 4 | **21** | H1 |
+| 11 | dotMCP Marketplace | 4 | 5 | 5 | 3 | 4 | **21** | H1 |
+| 12 | Twilio Marketplace Add-ons | 5 | 5 | 4 | 3 | 3 | **20** | H1–H2 |
+| 13 | nopCommerce Marketplace | 4 | 5 | 5 | 3 | 3 | **20** | H1 |
+| 14 | DoliStore | 4 | 5 | 5 | 3 | 3 | **20** | H1 |
+| 15 | Food4Rhino | 4 | 5 | 4 | 4 | 3 | **20** | H1–H2 |
+| 16 | The Sims 4 Maker Marketplace | 5 | 4 | 3 | 3 | 4 | **19** | H2 |
+| 17 | VRChat Creator Economy / Avatar Marketplace | 4 | 4 | 4 | 3 | 4 | **19** | H2 |
+| 18 | Warframe TennoGen | 4 | 4 | 3 | 3 | 4 | **18** | H2 |
+| 19 | Dota 2 Item Workshop | 5 | 4 | 3 | 2 | 4 | **18** | H2 |
+| 20 | War Thunder Revenue Share Program | 4 | 4 | 3 | 3 | 3 | **17** | H2 |
+
+---
+
+## 1. Zyla API Hub — 24/25
+
+**What an agent can sell:** narrow production APIs: document transforms, difficult data normalization, regulatory/public-data wrappers, industry-specific lookup services, parsers, validators, enrichment and evidence services. The best wedge is not another generic AI endpoint; it is a capability where a developer would otherwise maintain brittle scraping/data plumbing.
+
+**Autonomous workflow:** Oracle mines developer pain, API requests and missing data surfaces → Worker builds API → imports OpenAPI/Postman description → Harbor `APIWorld` runs schema, latency, correctness, rate-limit, adversarial-input and uptime tests → pricing/free tier generated → publisher review/onboarding → listing → subscriptions/calls → Zyla handles billing/customer support → usage and errors feed Hydra → Worker patches and expands successful endpoints.
+
+**H-level:** H1. Publisher/payout identity and initial review remain human; execution, support triage and maintenance can be nearly H0.
+
+**Frontier infrastructure:** Zyla advertises one-click Postman import, API monitoring, unified subscription/billing and compatibility with MCP clients. It says publishers keep 80%, start at $0, and the network handles 3B+ API calls/month. That machine-callable distribution is the important part.
+
+**Demand/community:** public Reddit signal for Zyla specifically is thin, but current MCP discussions show clear demand for paid machine-callable services and frustration that MCP monetization remains fragmented. Marketplace-reported call volume is stronger evidence than a small subreddit here.
+
+**Moltwork assets:** `ZylaPack`, `APIWorld`, schema/correctness evaluator, pricing experiment Process, `APIProductSchool`, OpenAPI-to-product Skill, persistent API Worker.
+
+**Attractive if:** the endpoint has deterministic QA, low marginal COGS, recurring calls and differentiated data/process. **Unattractive if:** it is a thin LLM wrapper, depends on unstable scraping, or support/uptime costs exceed subscription revenue.
+
+Official: https://www.zylalabs.com/monetize-your-api
+
+---
+
+## 2. DroneDeploy App Market — 23/25
+
+**What an agent can sell:** construction/agriculture/inspection micro-apps: measurement QA, roof/solar analysis helpers, defect tagging, export transforms, compliance evidence, annotation automation, project synchronization, GIS/BIM adapters and reporting workflows.
+
+**Autonomous workflow:** mine UAV/construction workflows and App Market gaps → generate an app using DroneDeploy APIs → seed synthetic projects/maps → Harbor `DroneWorld` tests geometry, map layers, export correctness, permissions, failure recovery and cross-device behavior → generate listing/evidence → partner review → paid App Market listing → installs/revenue → monitor API/changelog/project failures → persistent Worker maintains it.
+
+**H-level:** H1–H2. Partner approval and domain assertions remain human; maintenance can approach H0. Physical-site ground truth remains a deliberate H2 gate for applications making safety/measurement claims.
+
+**Infrastructure:** DroneDeploy's developer FAQ explicitly supports publishing inside the UI and paid apps with a **70% developer / 30% DroneDeploy** split. App organization-wide install functionality was updated in March 2026, making deployment across customer teams easier.
+
+**Demand/community:** DroneDeploy is used for expensive real-world workflows where even small time savings can support business pricing. Community discussion around drone mapping consistently centers on software cost, export limitations and workflow fragmentation—good signs for targeted utilities, but also evidence that customers expect professional reliability.
+
+**Moltwork assets:** `DroneDeployPack`, `DroneWorld`, geospatial invariant evaluator, orthomosaic/report fixture generator, construction/inspection School, AppCertification Process.
+
+**Attractive if:** software saves field/analyst time or prevents reporting errors. **Unattractive if:** value depends on untestable computer-vision claims or recurring human site interpretation.
+
+Official: https://developer.dronedeploy.com/docs/faqs.html
+
+---
+
+## 3. QuickNode Marketplace — 23/25
+
+**What agents sell:** blockchain data APIs, transaction simulation/broadcast tools, compliance/risk signals, indexed datasets, RPC extensions, alerts and chain-specific developer utilities.
+
+**Workflow:** Oracle mines repeated RPC/data pain + new-chain releases → Worker builds REST/JSON-RPC/external add-on → disposable chain fixtures → Harbor checks deterministic responses, reorg behavior, latency, rate limits, health endpoint, billing boundaries and failure degradation → partner beta → publish → add-on enabled on QuickNode endpoints → Marketplace revenue → telemetry → continuous chain/version maintenance.
+
+**H-level:** H1–H2 due partner onboarding/testing; runtime is close to H0.
+
+**Infrastructure/demand:** QuickNode's current add-on catalog says third parties can publish data/transaction/compliance services to **700K+ developer accounts**; Marketplace docs were updated May 25, 2026. Partner docs provide boilerplate, beta testing and required health checks. The original revenue model gives developers 70% of Marketplace revenue.
+
+**Community intelligence:** web3 developers repeatedly pay to avoid running their own indexers/nodes and complain about provider/RPC inconsistencies. Competition is meaningful, so generic balance/token APIs are unattractive. Frontier chains, compliance data and high-value execution primitives are better.
+
+**Moltwork assets:** `QuickNodePack`, `ChainWorld`, reorg/latency evaluator, `RPCProductSchool`, health/SLA Skill, chain-launch Opportunity detector.
+
+**Attractive if:** each call has economic value and low marginal compute. **Unattractive if:** QuickNode itself commoditizes the feature or chain-specific demand disappears.
+
+Official: https://www.quicknode.com/add-ons and https://www.quicknode.com/guides/marketplace/marketplace-developers/how-to-create-a-rest-api-add-on-for-marketplace
+
+---
+
+## 4. AppHighway MCP Tool Marketplace — 23/25
+
+**What agents sell:** MCP-compatible functions priced per tool call: document parsers, structured-data transforms, domain lookups, data-quality checks, calculators, compliance checks and specialist analysis tools.
+
+**Workflow:** Oracle discovers high-frequency missing agent capability → build MCP server/tool → protocol + golden-set Harbor evaluation → security/side-effect classification → publish for review → one-click install into Claude/Cursor/Windsurf/custom agents → calls consume points → publisher receives usage revenue → per-call telemetry informs pricing and specialization.
+
+**H-level:** H1 for publisher/payout/review; the rest can be H0.
+
+**Infrastructure/demand:** current Marketplace claims **159 tools, 583K+ total installs and up to 90% revenue share** with unified auth and per-call points. Because the platform is young, treat these first-party metrics as claims to validate experimentally, not audited market size. Reddit's MCP community shows strong interest but also a warning: basic MCP wrappers are trivial, so only capabilities with a real proprietary/data/service backend are defensible.
+
+**Moltwork assets:** `AppHighwayVenue`, MCP conformance evaluator, per-call economics evaluator, ToolCard compiler, `MCPCommercializationProcess`, specialist Tool Worker.
+
+**Attractive if:** useful output is compact, measurable and repeated. **Unattractive if:** the tool is just formatting or something any agent can implement locally in minutes.
+
+Official: https://apphighway.com/en/marketplace
+
+---
+
+## 5. Shoplazza App Store — 22/25
+
+**What agents sell:** merchant micro-SaaS for cross-border stores: B2B ordering, catalog cleanup, feed QA, payment/risk operations, fulfillment adapters, migration tools, merchandising QA and reporting.
+
+**Workflow:** mine merchant support/review pain → build OAuth app against Admin API → developer-store fixture → replay orders/products/refunds/webhooks → Harbor commerce invariants → create listing/pricing → App Store review → merchant installs → recurring app charge → telemetry/churn/reviews → Worker updates.
+
+**H-level:** H1.
+
+**Infrastructure/demand:** Shoplazza says its partner program reaches **500,000+ retail/e-commerce businesses** and 500+ partners. App developers get Partner Center, OAuth/Open APIs, dev stores, App Store distribution and recurring-charge pricing. 2026 Shoplazza material emphasizes cross-border payment and merchant operations, which is exactly where narrow integrations have value.
+
+**Community:** English Reddit coverage is limited relative to Shopify. This is partly the opportunity: less public competition intelligence and fewer extension developers, but also harder demand discovery. Treat App Store installs/reviews and merchant communities as primary signal.
+
+**Moltwork assets:** `ShoplazzaPack`, `CommerceWorld`, webhook/idempotence evaluator, cross-border merchant School, Shopify→Shoplazza Porting Process.
+
+**Attractive if:** porting a successful commerce process is cheap. **Unattractive if:** acquisition depends entirely on external sales rather than App Store discovery.
+
+Official: https://www.shoplazza.com/partner
+
+---
+
+## 6. Bitrix24 Market — 22/25
+
+**What agents sell:** CRM/contact-center/workflow apps, vertical record utilities, data-quality tools, lead routing, reporting, telephony adapters and narrow industry workflows.
+
+**Workflow:** mine Market reviews/support forums → generate REST app → create synthetic CRM/deals/tasks/contact-center fixture → evaluate permissions, workflow triggers, duplicate writes, retries and migration behavior → submit → freemium app distribution → upgrades/subscriptions handled by developer model → install/usage/support telemetry → persistent Worker patches.
+
+**H-level:** H1.
+
+**Demand:** Bitrix24's current developer page claims **15M+ users, 780+ apps, 160+ developers and 900K+ downloads**, with a free REST API and freemium monetization. Those numbers imply unusually high users-per-developer compared with many western SaaS marketplaces.
+
+**Community:** Bitrix24 users often complain about complexity and configuration burden. That is favorable for small opinionated workflow apps, but the platform's breadth means support edge cases can explode.
+
+**Moltwork assets:** `BitrixPack`, `CRMWorld`, automation-trigger evaluator, vertical CRM Schools, migration Skill, Russian/English listing Process.
+
+**Attractive if:** one narrow workflow removes configuration pain for a broad user slice. **Unattractive if:** each customer expects bespoke CRM consulting.
+
+Official: https://www.bitrix24.com/apps/dev.php
+
+---
+
+## 7. Replit Extensions Store — 22/25
+
+**What agents sell:** IDE/deployment utilities, project analyzers, specialized generators, developer dashboards, migration/dependency tools and workflow extensions.
+
+**Workflow:** mine Replit developer pain → have a Worker build the extension inside Replit → fixture projects across languages → evaluator tests permissions, latency, workspace mutation, failure isolation and UI → store submission → subscription revenue → usage reports → Worker maintains against Replit changes.
+
+**H-level:** H1.
+
+**Infrastructure:** Replit's Extensions terms explicitly contemplate revenue-generating extensions and developer revenue share, with monthly revenue reports/payments. Replit's agent-first environment also lowers product-building friction dramatically.
+
+**2026 constraint/community:** Replit has been shifting product focus strongly toward Agent-created apps; community reactions include frustration about older developer-framework surfaces changing. That is both opportunity and platform risk. Build extensions tightly coupled to durable workflows, not internal UI assumptions.
+
+**Moltwork assets:** `ReplitPack`, `IDEWorld`, workspace-mutation evaluator, extension scaffold Skill, Replit-change watcher.
+
+**Attractive if:** extension improves workflows Agent itself does not already commoditize. **Unattractive if:** Replit absorbs the feature or deprecates the extension surface.
+
+Official terms: https://replit.com/extensions-terms
+
+---
+
+## 8. mod.io Marketplace — 21/25
+
+**What agents can sell:** premium UGC in games that enable mod.io Marketplace: maps, game modes, items, vehicles, level packs, cosmetic assets, scenarios and other game-specific mods.
+
+**Workflow:** Oracle identifies enabled game + underserved content cluster → Worker builds/modifies asset/code using game SDK → per-game Harbor World

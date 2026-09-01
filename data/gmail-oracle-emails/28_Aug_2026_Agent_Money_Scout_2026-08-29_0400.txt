@@ -1,0 +1,348 @@
+Subject: Agent Money Scout — 2026-08-29 04:00
+Date: Fri, 28 Aug 2026 16:26:14 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a04a442257f8f92
+================================================================================
+
+# Agent Money Scout — 2026-08-29 04:00
+
+This run found four worthwhile new earning surfaces plus several strong demand plays. The best fresh machine-native marketplace is VoxPact: EUR-denominated Stripe escrow, MCP-native bidding/delivery, and visible specialist prices from €3–€12+. OpenJobs is the strongest fresh crypto-native work protocol: USDC on Solana mainnet, no minimum and no fee for USDC settlement. Upwork also launched an official MCP server on August 10, 2026, but its Terms require users to be 18+, so it is not an actionable route for anyone under 18.
+
+## NEW THIS RUN
+
+### 1. VoxPact — https://voxpact.com/
+What the agent does: register a specialist, browse open jobs through MCP/API, bid, deliver, pass multi-pass validation, and receive EUR after buyer approval.
+Who pays: buyers posting direct-hire or open-bid jobs.
+Verified economics: first agent free; new agents start at a 10% platform fee, with fees falling to 6% at the highest trust tier. Public agent directory currently shows specialists from €3 for document summarization, €4 for structured extraction, €5 for translation, €8 for coding, and €12 for copywriting. Stripe processing passes through at cost. No payout minimum is advertised.
+Tools/skills: Python SDK or hosted MCP endpoint; Stripe-connected bank account; narrow reliable capability.
+Autonomy: 9/10 after account/payment onboarding.
+First action: inspect open jobs and publish one narrow capability such as extraction, research evidence, or code verification.
+Constraints: VoxPact Terms require the account owner to be at least 18 / legal majority. Do not attempt to bypass this.
+Ease-to-first-$5: 1/10 if under 18; 6/10 for an eligible adult operator. Repeatability: 9/10.
+Sources: https://voxpact.com/ ; https://voxpact.com/mcp ; https://voxpact.com/agents ; https://voxpact.com/terms
+
+Important liquidity note: VoxPact's public live feed currently says the marketplace is quiet, so integration should remain thin until jobs appear.
+
+### 2. OpenJobs — https://jobforbots.com/
+What the agent does: register, discover matching jobs, apply, checkpoint progress, submit deliverables, and inspect wallet/ledger status through MCP or the openjobs SDK.
+Who pays: job posters.
+Verified economics: USDC or WAGE settlement on Solana mainnet. The site explicitly says USDC has no fee and no minimum; WAGE transfers have a 0.5% transfer fee. Jobs are escrowed when accepted and outputs can be verified with sandboxed build/fetch checks.
+Tools/skills: MCP, REST or CrewAI SDK; Solana-compatible settlement; task capability.
+Autonomy: 10/10 technically.
+First action: query the live job feed and rank only USDC jobs with objective acceptance criteria.
+Constraints: verify any account/age/jurisdiction requirements before registering or receiving funds; do not bypass them.
+Ease-to-first-$5: 5/10 pending current job liquidity. Repeatability: 9/10.
+Source: https://jobforbots.com/
+
+### 3. Zentience marketplace — https://zentience.org/
+What the agent does: register, list capabilities, browse tasks, bid, deliver, and receive USDC after client approval using its marketplace endpoints/MCP tooling.
+Who pays: clients posting bounties or buying x402 services.
+Verified economics: marketplace completion routes 90% of the budget to the agent and 10% to the platform. The site is on Solana mainnet and shows a bounty form with a $0.50 USDC minimum. Its own inference service charges $0.05/query, demonstrating the same service-sale model.
+Tools/skills: REST/MCP, Solana-compatible payments, narrow service endpoint.
+Autonomy: 10/10 technically.
+First action: check the open-bounty endpoint before integrating; if inventory is weak, list a specialist service rather than waiting for jobs.
+Constraints: the site labels the software experimental. Prefer USDC-denominated work and treat platform-specific tokens as optional, not as revenue until actually settled. Follow any applicable wallet/account/age rules.
+Ease-to-first-$5: 4/10. Repeatability: 9/10.
+Source: https://zentience.org/
+
+### 4. Upwork official MCP — https://www.upwork.com/ai/mcp
+This is strategically important even though it is not available to minors. Upwork launched an official MCP server that can search jobs, draft/submit proposals, manage invitations/offers, submit milestone work, and track earnings. Binding actions remain confirmation-gated on Upwork.
+Who pays: ordinary Upwork clients.
+Pricing/payout: normal Upwork job budgets and standard Upwork fees; the MCP itself is free.
+Autonomy: 6/10 because proposals can be automated but confirmations/contracts remain controlled.
+First action for an eligible adult operator: connect https://mcp.upwork.com/mcp and query only jobs whose policies permit the intended AI assistance.
+Constraint: Upwork Terms require users to be 18 or the age of majority if higher. This must not be bypassed.
+Ease-to-first-$5: unavailable to under-18 users; otherwise potentially 7/10 because market liquidity is enormous. Repeatability: 9/10.
+Sources: https://www.upwork.com/ai/mcp ; https://www.upwork.com/legal
+
+### 5. AI Agent Marketplace — https://ai-agentmarketplace.ai/
+What the agent does: list an agent, receive webhook-dispatched tasks, execute, return a deliverable, and receive Stripe payout after approval.
+Who pays: business customers.
+Verified economics: provider receives 88%; platform takes 12%; provider plan costs $45/month.
+Critical current signal: its live database currently says 'No agents listed yet.' That means it is not worth paying $45/month to speculate on demand.
+Autonomy: 9/10 after setup.
+First action: none yet — watch for actual buyer/agent activity before paying for the provider plan.
+Ease-to-first-$5: 1/10 today. Repeatability: 8/10 if liquidity develops.
+Sources: https://ai-agentmarketplace.ai/ ; https://ai-agentmarketplace.com/how-it-works
+
+### 6. AgentMP — https://agentmp.ai/
+What the agent does: package and monetize a domain-specific agent with MCP-compatible discovery/deployment and published capabilities/limitations.
+Who pays: users deploying industry-specific agents.
+Verified payout/pricing: I could not verify a current standard provider payout or enough marketplace transaction history, so no payout claim is made.
+Autonomy: 8/10.
+First action: watch rather than integrate until revenue-share and usage are measurable.
+Ease-to-first-$5: 2/10. Repeatability: 8/10 if demand appears.
+Source: https://agentmp.ai/
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7. dealwork.ai — https://dealwork.ai/
+Still one of the strongest visible task pools from prior runs, with roughly 150+ open tasks and 264 completed tasks in recent scans. AI-to-AI contracts have been advertised at a lower fee than ordinary contracts. Best use: ingest as a high-priority work feed and rank by expected settled profit rather than headline payout.
+Ease: 9/10. Repeat: 9/10.
+
+### 8. MoltJobs — https://moltjobs.io/ and https://molt-jobs.com/
+Still one of the cleanest API-first loops: register → browse → apply/bid → deliver → USDC escrow settlement. Current public documentation advertises a 5% completion fee on molt-jobs.com; prior scans found very small but fresh USDC listings on moltjobs.io. Keep as a top polling source, but treat the two similarly named implementations as separate records in the dataset.
+Ease: 6/10. Repeat: 8/10.
+
+### 9. SporeAgent — https://www.sporeagent.com/
+Still reports 1,247 agents and $48,210 paid out platform-wide. Its visible $45 scraping, $80 FastAPI testing and $120 translation cards are hundreds of days old, so they are historical examples, not fresh inventory.
+Ease: 6/10. Repeat: 8/10.
+
+### 10. AgentGigs — https://www.agentgigs.io/
+Still live and genuinely automation-friendly: browse/apply/deliver entirely through REST after one-time human email verification and Stripe Connect setup. Use only where the account owner legitimately satisfies Stripe/platform eligibility.
+Ease: 5/10. Repeat: 9/10.
+
+### 11. Mercatai — https://www.mercatai.eu/ai-agents
+Still provides register → list tasks → bid → deliver through API, with the first 10 completed tasks advertised at 0% marketplace fee. EU/Stripe eligibility applies.
+Ease: 5/10. Repeat: 9/10.
+
+### 12. Agent402 — https://marketplace.agent402.app/
+Still reports 17K+ indexed services and lets providers register an endpoint for per-call USDC settlement. Better used as distribution for an already-proven capability than as a place to invent another generic agent.
+Ease: 4/10. Repeat: 10/10.
+
+### 13. PayanAgent — https://payanagent.com/
+Still aggregates 24,000+ x402 services and supports direct paid calls plus bespoke work requests/bids. Its public receipt feed is especially useful for measuring actual settlement rather than relying on marketplace claims.
+Ease: 4/10. Repeat: 10/10.
+
+### 14. gigs.sh — https://gigs.sh/
+Still tracks 46 verified agent-compatible earning platforms, last-update stamp 2026-05-18. Treat it as an upstream discovery/diff feed, not as a money opportunity itself.
+
+## REDDIT DEMAND SIGNALS
+
+### 15. Internal 'tiny endpoint/data filter' service
+Freshly relevant thread: https://www.reddit.com/r/ExperiencedDevs/comments/1vlkhje/
+A developer at a non-tech company describes most operational bottlenecks as 'another endpoint or another data filter' and says work that once required 2–3 days of engineering can now be attacked much faster with agents.
+Recurring problem: sales/product teams have small internal data transformations that never reach the top of the engineering backlog.
+Agent workflow: requirements → inspect source system → query/filter/transform → tests → tiny internal API → evidence/logging.
+Customer acquisition: small SaaS companies, agencies, ops-heavy firms; target specific public requests or inbound leads rather than spam.
+Charge: fixed price per operation plus maintenance.
+MVP: 'Give me the spreadsheet/API and the output you need; I return a tested endpoint and schema.'
+Ease: 7/10. Repeat: 9/10.
+
+### 16. PR verification / QA evidence
+Fresh thread: https://www.reddit.com/r/BuildAndScaleHQ/comments/1vueghj/is_qa_becoming_the_real_bottleneck_now_that/
+An August 21 discussion describes code volume rising with coding agents while the same QA capacity cannot keep up. Features sit in review because testing remains manual.
+Agent workflow: PR + issue/spec → changed-surface/risk map → targeted tests → unit/integration/API/browser checks → reproduce failures → evidence bundle → PASS/FAIL/HUMAN REVIEW.
+Customer acquisition: developer communities, GitHub apps/marketplaces, task marketplaces that already buy code review/testing.
+Charge: per verified PR/run or team subscription.
+MVP: POST /verify-pr returning tests_run, failures, regression risks, evidence, and confidence.
+Ease: 7/10. Repeat: 10/10.
+
+### 17. Document → verified structured record
+Recurring signal from prior Reddit scans remains strong: invoices/receipts/statements arrive across email, Slack, drives and exports; humans re-key them into spreadsheets/accounting systems.
+Agent workflow: ingest authorized document → extract → deterministic validation → dedupe → map to schema → confidence score → exception queue.
+Customer: bookkeeping/accounting firms, construction/trades offices, small ecommerce companies.
+Charge: per document or monthly volume tier.
+MVP: '50 invoices → validated CSV/JSON + exception report.'
+Ease: 8/10. Repeat: 10/10.
+
+### 18. Support triage with attachment understanding
+Prior high-signal Reddit example: a hardware-business operator reported automating roughly 70–80% of repetitive customer emails using a knowledge base plus customer-photo understanding.
+Agent workflow: authorized support inbox → classify → retrieve approved resolution → inspect attachment → draft/execute permitted routine action → escalate uncertainty.
+Customer: hardware/ecommerce/SaaS companies with repetitive support queues.
+Charge: per resolved ticket or monthly tier.
+MVP: one inbox + one knowledge base + human approval on uncertain/outbound-sensitive cases.
+Ease: 7/10. Repeat: 10/10.
+
+### 19. Agent-market liquidity oracle
+Evidence: this run found marketplaces ranging from genuine settlement and visible prices to platforms with zero agents or a quiet live feed. The user problem is increasingly not 'where can an agent work?' but 'where is money actually moving right now?'
+Agent workflow: crawl work/service markets → normalize listings → verify liveness → track new jobs, bids, acceptance, paid calls, settled payouts and withdrawal proof → estimate expected realized profit.
+Customer: agent operators, agent frameworks, marketplaces, investors/researchers.
+Where to acquire: agent-dev communities, MCP/x402 directories, GitHub projects, marketplace operators.
+Charge: free public API with paid higher-frequency/history/analytics later, or x402 per query.
+MVP endpoints: /work, /markets, /liquidity, /opportunity-score.
+Ease: 6/10. Repeat: 10/10.
+
+### 20. Job-to-skill productization
+Every successful paid job can become a reusable asset instead of dying as a one-off deliverable.
+Workflow: completed job → record tools/steps/tests/failures → distill deterministic procedure → benchmark → expose as workflow/API/MCP skill → cross-list across Agent402/PayanAgent/etc.
+Customer: other agents and developers who need the same capability repeatedly.
+Charge: per invocation or per workflow run.
+MVP: take the first reliably completed QA/research/data job and turn its procedure into one narrow paid endpoint.
+Ease: 6/10. Repeat: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Add OpenJobs as a thin work-source adapter. Its USDC path is unusually clean: Solana mainnet, escrow, no minimum and no USDC platform fee. Before committing compute, query current inventory and require objective acceptance criteria.
+
+2. Keep building around PR verification/data verification rather than a generic worker. Fresh Reddit demand keeps showing that AI makes production faster upstream while trust/review/QA becomes scarcer downstream. One specialist can both bid for QA/data jobs and sell the same deterministic capability per call.
+
+3. Make liquidity telemetry mandatory. The scout should rank markets by settled economic activity, not polished landing pages. Track:
+open_jobs_now; new_jobs_24h; unique_buyers_30d; median_reward; median_bids; time_to_fill; submissions; accepted; settled; withdrawn; paid_api_calls; unique_payers; provider_revenue_30d.
+
+Expected realized profit should be: reward × P(still open) × P(solve) × P(accepted) × P(settled) minus inference/API/payment/review costs. Only SETTLED/WITHDRAWN counts as revenue.
+
+## Bottom line
+The fresh addition worth watching most closely is VoxPact because it combines real-world EUR settlement, explicit specialist pricing, MCP-native job execution and validation — but it is 18+, and its live feed is currently quiet. OpenJobs is more interesting as an autonomous protocol because its USDC settlement path is mainnet and fee-free, though current job liquidity still needs measurement. The highest-conviction product opportunity remains verification: PR QA, evidence extraction, data normalization and other bounded operations whose output can be checked automatically.
+Agent Money Scout — 2026-08-29 04:00
+<p>This run found four worthwhile new earning surfaces plus several strong demand plays. The best fresh machine-native marketplace is VoxPact: EUR-denominated Stripe escrow, MCP-native bidding/delivery, and visible specialist prices from €3–€12+. OpenJobs is the strongest fresh crypto-native work protocol: USDC on Solana mainnet, no minimum and no fee for USDC settlement. Upwork also launched an official MCP server on August 10, 2026, but its Terms require users to be 18+, so it is not an actionable route for anyone under 18.</p>
+
+NEW THIS RUN
+
+1. VoxPact — https://voxpact.com/
+<p>What the agent does: register a specialist, browse open jobs through MCP/API, bid, deliver, pass multi-pass validation, and receive EUR after buyer approval.<br>
+Who pays: buyers posting direct-hire or open-bid jobs.<br>
+Verified economics: first agent free; new agents start at a 10% platform fee, with fees falling to 6% at the highest trust tier. Public agent directory currently shows specialists from €3 for document summarization, €4 for structured extraction, €5 for translation, €8 for coding, and €12 for copywriting. Stripe processing passes through at cost. No payout minimum is advertised.<br>
+Tools/skills: Python SDK or hosted MCP endpoint; Stripe-connected bank account; narrow reliable capability.<br>
+Autonomy: 9/10 after account/payment onboarding.<br>
+First action: inspect open jobs and publish one narrow capability such as extraction, research evidence, or code verification.<br>
+Constraints: VoxPact Terms require the account owner to be at least 18 / legal majority. Do not attempt to bypass this.<br>
+Ease-to-first-$5: 1/10 if under 18; 6/10 for an eligible adult operator. Repeatability: 9/10.<br>
+Sources: https://voxpact.com/ ; https://voxpact.com/mcp ; https://voxpact.com/agents ; https://voxpact.com/terms</p>
+<p>Important liquidity note: VoxPact’s public live feed currently says the marketplace is quiet, so integration should remain thin until jobs appear.</p>
+
+2. OpenJobs — https://jobforbots.com/
+<p>What the agent does: register, discover matching jobs, apply, checkpoint progress, submit deliverables, and inspect wallet/ledger status through MCP or the openjobs SDK.<br>
+Who pays: job posters.<br>
+Verified economics: USDC or WAGE settlement on Solana mainnet. The site explicitly says USDC has no fee and no minimum; WAGE transfers have a 0.5% transfer fee. Jobs are escrowed when accepted and outputs can be verified with sandboxed build/fetch checks.<br>
+Tools/skills: MCP, REST or CrewAI SDK; Solana-compatible settlement; task capability.<br>
+Autonomy: 10/10 technically.<br>
+First action: query the live job feed and rank only USDC jobs with objective acceptance criteria.<br>
+Constraints: verify any account/age/jurisdiction requirements before registering or receiving funds; do not bypass them.<br>
+Ease-to-first-$5: 5/10 pending current job liquidity. Repeatability: 9/10.<br>
+Source: https://jobforbots.com/</p>
+
+3. Zentience marketplace — https://zentience.org/
+<p>What the agent does: register, list capabilities, browse tasks, bid, deliver, and receive USDC after client approval using its marketplace endpoints/MCP tooling.<br>
+Who pays: clients posting bounties or buying x402 services.<br>
+Verified economics: marketplace completion routes 90% of the budget to the agent and 10% to the platform. The site is on Solana mainnet and shows a bounty form with a $0.50 USDC minimum. Its own inference service charges $0.05/query, demonstrating the same service-sale model.<br>
+Tools/skills: REST/MCP, Solana-compatible payments, narrow service endpoint.<br>
+Autonomy: 10/10 technically.<br>
+First action: check the open-bounty endpoint before integrating; if inventory is weak, list a specialist service rather than waiting for jobs.<br>
+Constraints: the site labels the software experimental. Prefer USDC-denominated work and treat platform-specific tokens as optional, not as revenue until actually settled. Follow any applicable wallet/account/age rules.<br>
+Ease-to-first-$5: 4/10. Repeatability: 9/10.<br>
+Source: https://zentience.org/</p>
+
+4. Upwork official MCP — https://www.upwork.com/ai/mcp
+<p>This is strategically important even though it is not available to minors. Upwork launched an official MCP server that can search jobs, draft/submit proposals, manage invitations/offers, submit milestone work, and track earnings. Binding actions remain confirmation-gated on Upwork.<br>
+Who pays: ordinary Upwork clients.<br>
+Pricing/payout: normal Upwork job budgets and standard Upwork fees; the MCP itself is free.<br>
+Autonomy: 6/10 because proposals can be automated but confirmations/contracts remain controlled.<br>
+First action for an eligible adult operator: connect https://mcp.upwork.com/mcp and query only jobs whose policies permit the intended AI assistance.<br>
+Constraint: Upwork Terms require users to be 18 or the age of majority if higher. This must not be bypassed.<br>
+Ease-to-first-$5: unavailable to under-18 users; otherwise potentially 7/10 because market liquidity is enormous. Repeatability: 9/10.<br>
+Sources: https://www.upwork.com/ai/mcp ; https://www.upwork.com/legal</p>
+
+5. AI Agent Marketplace — https://ai-agentmarketplace.ai/
+<p>What the agent does: list an agent, receive webhook-dispatched tasks, execute, return a deliverable, and receive Stripe payout after approval.<br>
+Who pays: business customers.<br>
+Verified economics: provider receives 88%; platform takes 12%; provider plan costs $45/month.<br>
+Critical current signal: its live database currently says ‘No agents listed yet.’ That means it is not worth paying $45/month to speculate on demand.<br>
+Autonomy: 9/10 after setup.<br>
+First action: none yet — watch for actual buyer/agent activity before paying for the provider plan.<br>
+Ease-to-first-$5: 1/10 today. Repeatability: 8/10 if liquidity develops.<br>
+Sources: https://ai-agentmarketplace.ai/ ; https://ai-agentmarketplace.com/how-it-works</p>
+
+6. AgentMP — https://agentmp.ai/
+<p>What the agent does: package and monetize a domain-specific agent with MCP-compatible discovery/deployment and published capabilities/limitations.<br>
+Who pays: users deploying industry-specific agents.<br>
+Verified payout/pricing: I could not verify a current standard provider payout or enough marketplace transaction history, so no payout claim is made.<br>
+Autonomy: 8/10.<br>
+First action: watch rather than integrate until revenue-share and usage are measurable.<br>
+Ease-to-first-$5: 2/10. Repeatability: 8/10 if demand appears.<br>
+Source: https://agentmp.ai/</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+7. dealwork.ai — https://dealwork.ai/
+<p>Still one of the strongest visible task pools from prior runs, with roughly 150+ open tasks and 264 completed tasks in recent scans. AI-to-AI contracts have been advertised at a lower fee than ordinary contracts. Best use: ingest as a high-priority work feed and rank by expected settled profit rather than headline payout.<br>
+Ease: 9/10. Repeat: 9/10.</p>
+
+8. MoltJobs — https://moltjobs.io/ and https://molt-jobs.com/
+<p>Still one of the cleanest API-first loops: register → browse → apply/bid → deliver → USDC escrow settlement. Current public documentation advertises a 5% completion fee on molt-jobs.com; prior scans found very small but fresh USDC listings on moltjobs.io. Keep as a top polling source, but treat the two similarly named implementations as separate records in the dataset.<br>
+Ease: 6/10. Repeat: 8/10.</p>
+
+9. SporeAgent — https://www.sporeagent.com/
+<p>Still reports 1,247 agents and $48,210 paid out platform-wide. Its visible $45 scraping, $80 FastAPI testing and $120 translation cards are hundreds of days old, so they are historical examples, not fresh inventory.<br>
+Ease: 6/10. Repeat: 8/10.</p>
+
+10. AgentGigs — https://www.agentgigs.io/
+<p>Still live and genuinely automation-friendly: browse/apply/deliver entirely through REST after one-time human email verification and Stripe Connect setup. Use only where the account owner legitimately satisfies Stripe/platform eligibility.<br>
+Ease: 5/10. Repeat: 9/10.</p>
+
+11. Mercatai — https://www.mercatai.eu/ai-agents
+<p>Still provides register → list tasks → bid → deliver through API, with the first 10 completed tasks advertised at 0% marketplace fee. EU/Stripe eligibility applies.<br>
+Ease: 5/10. Repeat: 9/10.</p>
+
+12. Agent402 — https://marketplace.agent402.app/
+<p>Still reports 17K+ indexed services and lets providers register an endpoint for per-call USDC settlement. Better used as distribution for an already-proven capability than as a place to invent another generic agent.<br>
+Ease: 4/10. Repeat: 10/10.</p>
+
+13. PayanAgent — https://payanagent.com/
+<p>Still aggregates 24,000+ x402 services and supports direct paid calls plus bespoke work requests/bids. Its public receipt feed is especially useful for measuring actual settlement rather than relying on marketplace claims.<br>
+Ease: 4/10. Repeat: 10/10.</p>
+
+14. gigs.sh — https://gigs.sh/
+<p>Still tracks 46 verified agent-compatible earning platforms, last-update stamp 2026-05-18. Treat it as an upstream discovery/diff feed, not as a money opportunity itself.</p>
+
+REDDIT DEMAND SIGNALS
+
+15. Internal ‘tiny endpoint/data filter’ service
+<p>Freshly relevant thread: https://www.reddit.com/r/ExperiencedDevs/comments/1vlkhje/<br>
+A developer at a non-tech company describes most operational bottlenecks as ‘another endpoint or another data filter’ and says work that once required 2–3 days of engineering can now be attacked much faster with agents.<br>
+Recurring problem: sales/product teams have small internal data transformations that never reach the top of the engineering backlog.<br>
+Agent workflow: requirements → inspect source system → query/filter/transform → tests → tiny internal API → evidence/logging.<br>
+Customer acquisition: small SaaS companies, agencies, ops-heavy firms; target specific public requests or inbound leads rather than spam.<br>
+Charge: fixed price per operation plus maintenance.<br>
+MVP: ‘Give me the spreadsheet/API and the output you need; I return a tested endpoint and schema.’<br>
+Ease: 7/10. Repeat: 9/10.</p>
+
+16. PR verification / QA evidence
+<p>Fresh thread: https://www.reddit.com/r/BuildAndScaleHQ/comments/1vueghj/is_qa_becoming_the_real_bottleneck_now_that/<br>
+An August 21 discussion describes code volume rising with coding agents while the same QA capacity cannot keep up. Features sit in review because testing remains manual.<br>
+Agent workflow: PR + issue/spec → changed-surface/risk map → targeted tests → unit/integration/API/browser checks → reproduce failures → evidence bundle → PASS/FAIL/HUMAN REVIEW.<br>
+Customer acquisition: developer communities, GitHub apps/marketplaces, task marketplaces that already buy code review/testing.<br>
+Charge: per verified PR/run or team subscription.<br>
+MVP: POST /verify-pr returning tests_run, failures, regression risks, evidence, and confidence.<br>
+Ease: 7/10. Repeat: 10/10.</p>
+
+17. Document → verified structured record
+<p>Recurring signal from prior Reddit scans remains strong: invoices/receipts/statements arrive across email, Slack, drives and exports; humans re-key them into spreadsheets/accounting systems.<br>
+Agent workflow: ingest authorized document → extract → deterministic validation → dedupe → map to schema → confidence score → exception queue.<br>
+Customer: bookkeeping/accounting firms, construction/trades offices, small ecommerce companies.<br>
+Charge: per document or monthly volume tier.<br>
+MVP: ‘50 invoices → validated CSV/JSON + exception report.’<br>
+Ease: 8/10. Repeat: 10/10.</p>
+
+18. Support triage with attachment understanding
+<p>Prior high-signal Reddit example: a hardware-business operator reported automating roughly 70–80% of repetitive customer emails using a knowledge base plus customer-photo understanding.<br>
+Agent workflow: authorized support inbox → classify → retrieve approved resolution → inspect attachment → draft/execute permitted routine action → escalate uncertainty.<br>
+Customer: hardware/ecommerce/SaaS companies with repetitive support queues.<br>
+Charge: per resolved ticket or monthly tier.<br>
+MVP: one inbox + one knowledge base + human approval on uncertain/outbound-sensitive cases.<br>
+Ease: 7/10. Repeat: 10/10.</p>
+
+19. Agent-market liquidity oracle
+<p>Evidence: this run found marketplaces ranging from genuine settlement and visible prices to platforms with zero agents or a quiet live feed. The user problem is increasingly not ‘where can an agent work?’ but ‘where is money actually moving right now?’<br>
+Agent workflow: crawl work/service markets → normalize listings → verify liveness → track new jobs, bids, acceptance, paid calls, settled payouts and withdrawal proof → estimate expected realized profit.<br>
+Customer: agent operators, agent frameworks, marketplaces, investors/researchers.<br>
+Where to acquire: agent-dev communities, MCP/x402 directories, GitHub projects, marketplace operators.<br>
+Charge: free public API with paid higher-frequency/history/analytics later, or x402 per query.<br>
+MVP endpoints: /work, /markets, /liquidity, /opportunity-score.<br>
+Ease: 6/10. Repeat: 10/10.</p>
+
+20. Job-to-skill productization
+<p>Every successful paid job can become a reusable asset instead of dying as a one-off deliverable.<br>
+Workflow: completed job → record tools/steps/tests/failures → distill deterministic procedure → benchmark → expose as workflow/API/MCP skill → cross-list across Agent402/PayanAgent/etc.<br>
+Customer: other agents and developers who need the same capability repeatedly.<br>
+Charge: per invocation or per workflow run.<br>
+MVP: take the first reliably completed QA/research/data job and turn its procedure into one narrow paid endpoint.<br>
+Ease: 6/10. Repeat: 10/10.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+<ol>
+<li>
+<p>Add OpenJobs as a thin work-source adapter. Its USDC path is unusually clean: Solana mainnet, escrow, no minimum and no USDC platform fee. Before committing compute, query current inventory and require objective acceptance criteria.</p>
+</li>
+<li>
+<p>Keep building around PR verification/data verification rather than a generic worker. Fresh Reddit demand keeps showing that AI makes production faster upstream while trust/review/QA becomes scarcer downstream. One specialist can both bid for QA/data jobs and sell the same deterministic capability per call.</p>
+</li>
+<li>
+<p>Make liquidity telemetry mandatory. The scout should rank markets by settled economic activity, not polished landing pages. Track:<br>
+open_jobs_now; new_jobs_24h; unique_buyers_30d; median_reward; median_bids; time_to_fill; submissions; accepted; settled; withdrawn; paid_api_calls; unique_payers; provider_revenue_30d.</p>
+</li>
+</ol>
+<p>Expected realized profit should be: reward × P(still open) × P(solve) × P(accepted) × P(settled) minus inference/API/payment/review costs. Only SETTLED/WITHDRAWN counts as revenue.</p>
+
+Bottom line
+<p>The fresh addition worth watching most closely is VoxPact because it combines real-world EUR settlement, explicit specialist pricing, MCP-native job execution and validation — but it is 18+, and its live feed is currently quiet. OpenJobs is more interesting as an autonomous protocol because its USDC settlement path is mainnet and fee-free, though current job liquidity still needs measurement. The highest-conviction product opportunity remains verification: PR QA, evidence extraction, data normalization and other bounded operations whose output can be checked automatically.</p>

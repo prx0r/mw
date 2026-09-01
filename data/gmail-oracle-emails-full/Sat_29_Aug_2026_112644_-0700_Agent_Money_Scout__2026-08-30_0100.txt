@@ -1,0 +1,178 @@
+Subject: Agent Money Scout — 2026-08-30 01:00
+Date: Sat, 29 Aug 2026 11:26:44 -0700
+Message ID: 1a04ec628eb764f8
+================================================================================
+
+# Agent Money Scout — 2026-08-30 01:00
+
+This run found two genuinely useful new distribution/work surfaces — BotWork and Clawget — plus one x402 marketplace worth watching. Immediate paid-task liquidity remains concentrated in Taskmarket, dealwork and t2000. WorkProtocol is live but currently shows 0 open jobs.
+
+## NEW THIS RUN
+
+### 1) BotWork — agent freelancing over web/Telegram
+URL: https://www.botwork.network/
+What the agent does: research, code, data processing, design/copy, or other bounded digital tasks delivered through a webhook/SDK worker.
+Who pays: users posting tasks through BotWork.
+Verified economics: 90% of each task goes to the working agent, 5% to relay nodes, 5% to BotWork. The site currently advertises 46 agents for hire and says task results typically return in 2–6 minutes. I did not find independently auditable seller-volume totals.
+Required: TypeScript SDK or webhook endpoint; account/payment eligibility must be satisfied normally.
+Autonomy: 9/10.
+Exact first action: register only an existing reliable worker capability (research/data/code), then see whether real paid tasks arrive before building BotWork-specific functionality.
+Eligibility/ToS: I did not find an explicit age clause in the indexed material; do not assume that means unrestricted eligibility. Check current account/payment terms before onboarding.
+Ease to first $5: 6/10. Repeatability: 9/10 if buyer traffic is real.
+
+### 2) Clawget — sell skills/workflows as downloadable agent capabilities
+URL: https://www.clawget.io/
+Creator docs: https://www.clawget.io/docs/getting-started/what-is-clawget
+What the agent does: package a reusable workflow, skill, data-processing tool, connector, or agent procedure and sell it repeatedly.
+Who pays: agents/operators buying marketplace packages.
+Verified economics: publisher keeps 92%; platform fee 8%; payouts in USDT. Clawget reports 167 agents, 29 creators and $1.3K revenue. Current seller guidance suggests common listing prices around $5–$50. However, several fresh listings I inspected still showed 0 sales, so buyer liquidity is not proven at the individual-listing level.
+Required: API/CLI-capable package, documentation, and a legitimate payout method.
+Autonomy: 9/10 after publishing.
+Exact first action: package a proven small capability such as API QA, CSV normalization, release verification, or workflow audit rather than a generic persona.
+Eligibility/ToS: no clear age rule was surfaced in the indexed documentation; verify current eligibility and payout rules before creating an account.
+Ease to first $5: 5/10. Repeatability: 9/10.
+
+### 3) x402 Bazaar — API monetization rail, but zero verified market volume right now
+URL: https://www.x402bazaar.org/
+What the agent does: expose a deterministic API endpoint and charge per request.
+Who pays: autonomous agents calling the endpoint.
+Verified pricing/economics: 95% provider revenue share; listed request prices start around $0.005/call. The site advertises 112 APIs.
+Critical caveat: its live traction panel currently shows 0+ payments processed, 0 external providers earning revenue and $0 USDC volume. So this is infrastructure, not current proven income.
+Required: HTTP API plus compliant payment setup.
+Autonomy: 10/10.
+Exact first action: cross-list only an already-running endpoint; spend essentially zero bespoke engineering effort until the marketplace records real external payments.
+Ease to first $5: 2/10 today. Repeatability: 9/10 if liquidity appears.
+
+### 4) QA Orchestrator / Bug Investigator agent — fresh demand pattern
+Reddit: https://www.reddit.com/r/QualityAssurance/comments/1vzso59/qa_roles_has_changed/
+Fresh Aug 27 discussion: QA teams are shrinking while one QA/orchestrator uses AI agents, Jira context and parallel workflows to investigate bugs and potentially implement fixes. The recurring paid problem is not “generate tests”; it is triage + evidence + root-cause isolation.
+Customer: AI-heavy software teams and agencies.
+Agent workflow: Jira/issue + PR -> reproduce -> changed-surface map -> targeted tests -> isolate root cause -> evidence packet -> optional patch -> human approval.
+Where to acquire customers: software agencies, GitHub-native communities, QA consultancies, teams already using coding agents.
+How to charge: per verified bug/PR initially; recurring CI/QA retainer later.
+Concrete MVP: POST /verify-pr or /investigate-bug returning PASS/FAIL/REVIEW, reproduction steps, failing tests, and evidence.
+Autonomy: 8/10.
+Ease to first $5: 8/10. Repeatability: 10/10.
+
+### 5) Workflow Cost Watchdog — a sharper extension of automation monitoring
+Reddit: https://www.reddit.com/r/n8n/comments/1vgi240/i_built_a_free_tool_that_shows_the_real_monthly/
+Current demand evidence: an n8n operator reports retry loops, hidden premium-model calls and sub-workflows making live costs 3–4× quoted estimates.
+Customer: n8n/Make automation freelancers and agencies.
+Agent workflow: workflow export + execution history -> identify loops/retries/paid API/model nodes -> estimate cost per successful outcome -> flag cost bombs -> suggest caps/cheaper routes.
+Where to acquire: n8n/automation communities and consultants who quote fixed-price projects.
+How to charge: one-off pre-deployment audit, then monthly anomaly monitoring.
+MVP: upload workflow JSON -> deterministic cost map + top 5 risk nodes + monthly range.
+Autonomy: 9/10.
+Ease to first $5: 8/10. Repeatability: 10/10.
+
+### 6) Accounting/client follow-up worker — boring but repeatable
+Reddit: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+Fresh Aug 23 signal: accounting firms repeatedly chase missing documents, send deadline reminders, invoice follow-ups, answer routine status questions and qualify new inquiries.
+Customer: accounting/bookkeeping firms.
+Agent workflow: authorized client record -> missing-item detection -> approved reminder -> track receipt -> update status -> exception queue.
+Who pays: firm/agency operating the process.
+How to charge: setup + recurring workflow maintenance.
+MVP: missing-document tracker + reminder drafts + escalation queue. Keep accounting/legal judgment with qualified humans.
+Autonomy: 8/10.
+Ease to first $5: 7/10. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 7) Taskmarket — strongest machine-readable funded task feed
+URL: https://taskmarket.dev/
+Fresh status: 19 open tasks, 26.7K agents, 2,380.714419 USDC posted/funded volume. Current 24.2-USDC task has 68 submissions. Live leaderboard shows top agents with 119.775968 USDC and 78.624908 USDC earned.
+What the agent does: research, data, coding and structured deliverables.
+Who pays: task requester; reward funded in escrow.
+Required: Taskmarket agent/skill and eligible Base-USDC payout setup.
+Autonomy: 10/10.
+Exact first action: rank tasks by net reward × estimated win probability before spending compute. High-reward contests with dozens of submissions may be poor EV.
+Ease to first $5: 8/10. Repeatability: 9/10.
+
+### 8) dealwork.ai — broadest live work pool
+URL: https://dealwork.ai/
+Fresh status: 2.5K workers, 264 completed tasks, 156 open tasks, ~1.1-day median hire-to-delivery. Platform shows a completed $80 human->AI API task and $5 AI->AI structured-data example.
+What the agent does: APIs, code, research, data transformations, documentation.
+Who pays: human or AI task poster through escrow.
+Fees: 10% normal contracts; 3% AI-to-AI.
+Required: responsible human/legal-entity owner for every agent account; API/skill.md integration.
+Autonomy: 9/10.
+Exact first action: connect one worker and only bid on jobs with objective acceptance criteria and funded escrow.
+Eligibility: current terms require a responsible human/legal-entity owner but the indexed terms did not state a numeric minimum age. Account/payment requirements still apply.
+Ease to first $5: 8/10. Repeatability: 9/10.
+
+### 9) t2000 — real current settlements, but much inventory is platform bootstrapping
+URL: https://t2000.ai/jobs
+Fresh status: 21 jobs open, 88 in progress, 1,148 settled, $942.23 settled USDC. Current claimable jobs include $1, $0.50 and $0.25 proof/integration tasks. Individual receipts show sellers actually receiving settlement after the 5% fee.
+What the agent does: open jobs, fixed-price services, or paid APIs.
+Who pays: job posters/API buyers.
+Fees: services 5% at settlement; API calls 0%.
+Required: t2000 Passport/account and eligible USDC setup.
+Autonomy: 9/10.
+Exact first action: use a tiny job only to validate the integration/reputation loop, then prioritize external/business-value jobs rather than protocol self-promotion.
+Ease to first $5: 6/10. Repeatability: 9/10.
+
+### 10) WorkProtocol — live protocol, currently no open jobs
+URL: https://workprotocol.ai/
+Fresh status: 734 registered agents, 35 jobs posted, 1,325 USDC settled. The agent page currently shows 0 open jobs. Recent activity shows a GitHub Actions log-parser job delivered ~10h ago; historical paid code tasks include 85 and 90 USDC.
+What the agent does: code, research, data, content, structured deliverables.
+Who pays: escrow-funded requester.
+Required: REST/SDK agent; Base-USDC settlement.
+Autonomy: 9/10.
+Exact first action: keep the SSE/RSS/webhook feed subscribed; do not spend execution effort until a suitable job appears.
+Ease to first $5 right now: 2/10 because inventory is zero. Repeatability: 9/10 if job flow resumes.
+
+### 11) Clawlancer — one $15 listing still stands out
+URL: https://www.clawlancer.ai/marketplace
+Fresh board: 50 listings. Most platform-seeded tasks pay $0.01–$0.03, but a $15 “small automation unit” listing remains visible; it asks for a runnable browser/CSV/API/Godot-style script, real stdout and SHA-256 artifact evidence.
+What the agent does: narrow coding/data automation.
+Who pays: listing buyer.
+Requirements: MCP/API worker and compliant Base-USDC wallet.
+Autonomy: 9/10.
+Exact first action: ignore penny tasks except as integration tests; investigate the $15 external listing or future $5+ listings.
+Ease to first $5: 6/10. Repeatability: 7/10.
+
+### 12) MoltJobs — still live, current inventory remains poor fit
+URL: https://moltjobs.io/open-jobs
+Current visible queue remains four 2-USDC publication jobs. One requires a real pre-existing public account, 50+ followers, sponsored disclosure and a 120-hour hold before payment.
+What the agent does: marketplace jobs through REST/MCP/CLI.
+Who pays: escrow-funded job poster.
+Autonomy: 9/10.
+Exact first action: keep polling for coding/research/data work; skip the current public-promotion tasks unless every account/disclosure/platform rule is legitimately satisfied.
+Ease to first $5 on current inventory: 3/10. Repeatability: 8/10.
+
+## REDDIT DEMAND SIGNALS
+
+1. Workflow outcome monitoring remains the strongest repeated pain. Today’s thread explicitly says a green n8n run does not prove the intended message/action happened: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+
+2. A separate workflow was reportedly dead for 17 days with no errors because it simply stopped being scheduled: https://www.reddit.com/r/n8n/comments/1w02g0o/after_a_workflow_sat_dead_for_17_days_with_zero/
+Pattern: expected-run watermarks + external heartbeats + actual downstream receipt verification.
+
+3. QA roles are moving toward one orchestrator controlling parallel agents and shared Jira context rather than a large manual test team: https://www.reddit.com/r/QualityAssurance/comments/1vzso59/qa_roles_has_changed/
+Pattern: bug triage, reproduction, test selection, evidence and approval are more valuable than raw test generation.
+
+4. Accounting firms repeatedly need document chasing, reminders, invoice follow-up and routine client status operations: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+Pattern: bounded recurring operations with an exception queue.
+
+5. Cost visibility is emerging as another reliability layer: https://www.reddit.com/r/n8n/comments/1vgi240/i_built_a_free_tool_that_shows_the_real_monthly/
+Pattern: workflow “success” can still be economically broken because retry storms or premium-model calls destroy margins.
+
+## FILTERED OUT / NOT ACTIONABLE
+
+TaskBounty has attractive coding bounties ($10 to a few hundred, solver gets 80%), but its Terms explicitly require users to be at least 18. It is therefore excluded from the actionable list.
+
+x402 Bazaar is listed above only as a distribution watch because its own live panel currently reports zero on-chain payment volume and zero external providers earning.
+
+WorkProtocol currently has zero open jobs, so it is a monitor-only source this hour.
+
+Any job requiring deceptive promotion, fake engagement, spam, prohibited data access, or bypassing platform/account rules is excluded.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Execute from Taskmarket + dealwork + t2000, not another dozen empty markets. Normalize every listing to:
+reward × P(funded) × P(still open) × P(solve) × P(accepted) × P(settled) − inference/API/payment/review cost.
+
+2. Build /automation-health as the first recurring specialist. Combine expected-run monitoring, downstream outcome verification and cost anomaly detection. This is the clearest repeated external pain across current Reddit signals.
+
+3. Package successful procedures into one reusable SKU, then cross-list rather than rebuilding. First candidates: /automation-health, /verify-pr, /api-qa, /normalize-document, /release-check. BotWork is useful for service delivery; Clawget is useful for packaged skills. x402 Bazaar should receive only zero-cost cross-listing until it demonstrates real buyer volume.
+
+Only SETTLED/WITHDRAWN real-money value should count as earnings. Testnet balances, internal credits, platform claims, illustrative listings and unfunded jobs remain separate.

@@ -1,0 +1,150 @@
+Subject: Oracle Market Unlocks — 20 New Agent Markets — 31 Aug 2026
+Date: Sun, 30 Aug 2026 22:08:51 -0700
+Message ID: 1a0563867d3d04c8
+================================================================================
+
+# Oracle Market Unlocks — 31 Aug 2026
+
+This report excludes the surfaces already discussed heavily (Roblox, Notion, Upwork, Etsy, Shopify, Kaggle). The ranking favors markets where agents can discover demand, produce repeatable artifacts, submit/publish through structured interfaces, observe outcomes, and earn with bounded H1/H2 human involvement.
+
+Scoring: Opportunity / Agent Fit / Automation / Novelty, each out of 10. H0-H4 is Moltwork's existing human-involvement axis; no new taxonomy is introduced.
+
+## Ranked 20
+
+### 1. Atlassian Marketplace — Forge workflow apps
+**Score:** 9.3 / 9.5 / 9.2 / 8.7
+**Money:** paid Jira/Confluence/JSM apps. Atlassian currently lets eligible Forge partners keep 100% of gross Marketplace revenue until $1M lifetime Forge revenue; standard post-threshold share is 83–84% depending on date.
+**Agent workflow:** mine Marketplace reviews/support forums for repeated workflow pain → generate Forge app → deterministic tests + Harbor World → deploy/test via Forge CLI → prepare listing → human approval/publisher onboarding → observe installs/revenue/reviews → iterate.
+**H-level:** H1 after one-time partner/payout/legal onboarding; listing review remains human/platform.
+**Why suited:** Forge apps are mostly structured TypeScript/React/API work with explicit manifests and repeatable tests. Agents can cheaply generate many vertical workflow micro-apps.
+**Moltwork assets:** AtlassianPack, Forge Venue adapter, Forge-app Harbor School, listing evaluator, support Skill, niche specialist Worker.
+**Economic thesis:** enterprise buyers + native recurring billing + unusually generous 2026 revenue incentive. Best niches are narrow internal workflows rather than generic AI assistants.
+**Risk:** security/review/support burden.
+Sources: https://www.atlassian.com/blog/development/updates-to-marketplace-revenue-share-2026 ; https://developer.atlassian.com/platform/marketplace/pricing-payment-and-billing/
+
+### 2. monday.com Marketplace — narrow operations apps/agents
+**Score:** 9.2 / 9.4 / 9.0 / 8.9
+**Money:** native paid Marketplace apps; monday says its ecosystem reaches 245,000+ customers. Apps below $200k lifetime revenue effectively keep all revenue before the 85/15 sharing threshold activates.
+**Agent workflow:** identify repeated board/automation pain → synthesize app/integration → test against monday sandbox → deploy → submit for review → native monetization → monitor listing engagement, sales and user journey → auto-support/iterate.
+**H-level:** H1/H2 because marketplace partnership, security questionnaire, listing agreement and review are human/legal gates.
+**Why suited:** highly structured GraphQL/API + workflow logic; repetitive customer-request patterns.
+**Assets:** mondayPack, API Skill, common-board scenario World, pricing evaluator, support worker.
+**Demand:** official marketplace explicitly pitches 245k+ customers and native monetization; partner tiers start at $5k ARR.
+**Risk:** support SLA/security obligations.
+Sources: https://developer.monday.com/apps ; https://developer.monday.com/apps/changelog/announcing-the-revshare-program
+
+### 3. GitHub Marketplace — paid developer workflow GitHub Apps
+**Score:** 9.1 / 9.6 / 9.2 / 8.4
+**Money:** flat-rate or per-seat monthly/annual paid GitHub Apps; GitHub handles billing and pays monthly.
+**Agent workflow:** mine GitHub issues/discussions for repeated repo-maintenance pain → build GitHub App → install/test on fixture repos → build Harbor benchmark → acquire first 100 installs → human organization verification/financial onboarding → Marketplace listing → consume Marketplace purchase events → iterate from usage.
+**H-level:** H1, but 100-install requirement and verified publisher onboarding slow first listing.
+**Why suited:** almost entirely code/API-driven and machine-verifiable.
+**Assets:** GitHub Venue, repo-task Worlds, webhook/eval suite, security Skill, app factory process.
+**Demand:** GitHub's paid plans support native billing, free trials and per-unit pricing.
+**Risk:** distribution to first 100 installs is the hard part, not implementation.
+Sources: https://docs.github.com/en/apps/github-marketplace/selling-your-app-on-github-marketplace ; https://docs.github.com/en/enterprise-cloud@latest/apps/github-marketplace/creating-apps-for-github-marketplace/requirements-for-listing-an-app
+
+### 4. Chrome Web Store — paid/freemium workflow extensions
+**Score:** 9.0 / 9.5 / 9.5 / 8.3
+**Money:** external subscription/one-time billing attached to extensions; current Reddit examples include six-figure lifetime extension portfolios and a $280k+ single-extension report.
+**Frontier unlock:** Chrome Web Store API v2 can programmatically publish/manage items and supports service accounts. Feb 2026 also added private publishing to approved external organizations, creating a B2B extension channel.
+**Agent workflow:** detect browser workflow pain → generate extension → Playwright tests → programmatic package/upload/publish → external Stripe/Paddle billing → telemetry/reviews → autonomous patch releases.
+**H-level:** H1 due one-time developer registration, trader/identity verification, store review.
+**Assets:** Chrome Venue, permission-security evaluator, browser workflow School, extension-factory Skill.
+**Reddit:** one Aug 2026 developer reports >100 extensions and six figures total; another reports $280k+ from Hoverify. The failure mode is discoverability and weak onboarding.
+**Risk:** most extensions earn nothing; needs real workflow pain and distribution.
+Sources: https://developer.chrome.com/docs/webstore/api ; https://developer.chrome.com/blog/cws-new-enterprise-publishing-option ; Reddit r/chrome_extensions Aug 2026.
+
+### 5. Reddit Devvit App Directory / Developer Funds — community-native apps
+**Score:** 8.9 / 9.4 / 9.3 / 9.6
+**Money:** Reddit's developer platform advertises Developer Funds up to $167k/app; current platform app pages in Aug 2026 reference H2 2026 install and engagement payouts. The official indexed fund page is still labeled H1 and ended July 31, so Oracle should flag program terms as VERIFY_CURRENT before committing spend.
+**Agent workflow:** crawl subreddit pain/mod requests → generate Devvit app → deterministic tests → playtest → publish → discover/install into matching communities → measure qualified installs/engagers → iterate.
+**H-level:** H1: human Reddit account, app review, identity/Stripe/tax onboarding.
+**Why suited:** apps are small TypeScript/web experiences, Reddit supplies hosting/Redis/scheduling, and demand is visible directly in communities.
+**Assets:** DevvitPack, community-demand miner, app-quality World, install-growth process.
+**Novel insight:** there is already a Community Market Devvit app pattern; agents could create highly niche tools for thousands of communities, not just generic consumer apps.
+Sources: https://developers.reddit.com/docs/ ; https://developers.reddit.com/app-registration ; https://developers.reddit.com/apps/consensus-canvas
+
+### 6. Framer Marketplace — narrow vertical templates + components/plugins
+**Score:** 8.7 / 9.2 / 8.5 / 7.4
+**Money:** creators keep 100% of paid Marketplace sales; templates can also generate referral commissions. Framer reports $753k total creator payouts in one cited month.
+**Agent workflow:** mine underserved verticals/search gaps → generate/test responsive template → screenshot/performance QA → submit to Marketplace → track remixes/sales/referrals → generate variants from observed winners.
+**H-level:** H1/H2 because creator onboarding and product review are manual.
+**Demand:** Reddit examples in 2026 range from $600–$900/month from free templates to $2k/month across 21 templates; others report major revenue declines and saturation.
+**Best angle:** don't mass-produce generic SaaS templates. Target obscure local/service verticals with buyer intent and reusable data/content components.
+**Assets:** FramerPack, vertical-demand scanner, visual QA World, conversion evaluator.
+Sources: https://www.framer.com/creators ; https://www.framer.com/help/articles/how-the-creator-program-works/ ; Reddit r/framer 2026.
+
+### 7. Webflow Marketplace — vertical business templates
+**Score:** 8.4 / 9.0 / 8.2 / 7.7
+**Money:** Webflow now pays Template Creators 95% commission on paid Marketplace template sales and allows fulfillment links for selling elsewhere.
+**Workflow:** identify underserved Webflow niches → generate site/template → test responsive/accessibility/performance → submit/review → sell across Marketplace + external storefront → observe sales → evolve.
+**H-level:** H1/H2 due creator/listing review.
+**Demand:** marketplace has real buyers but July 2026 Reddit reports declining views/sales and platform-price pressure.
+**Moat:** Oracle should search for demand-supply gaps rather than simply generate templates.
+**Assets:** WebflowPack, template QA World, niche scanner, cross-listing process.
+Source: https://webflow.com/updates/template-creator-enhancements
+
+### 8. Miro Marketplace — workflow/diagram apps
+**Score:** 8.4 / 9.3 / 8.9 / 9.0
+**Money:** Miro explicitly encourages paid Marketplace apps, recommends Stripe/Salable integrations, and cites a 60M+/70M-user global audience.
+**Frontier unlock:** Miro's docs now explicitly tell AI agents to use `llms.txt`, Markdown docs and OpenAPI endpoints. This is unusually agent-native documentation.
+**Workflow:** mine workflow gaps → generate Web SDK app → test boards → build proof-of-value installs → pass >50 MAU for 2 months and >10 unique-org installs → human Marketplace review → Stripe monetization → usage analytics.
+**H-level:** H2 initially because public Marketplace submission requires traction and 8–12 week review; H0/H1 operation after approval.
+**Assets:** Miro Venue, board fixture World, app evaluator, growth School.
+**Risk:** pre-listing traction requirement is meaningful.
+Sources: https://developers.miro.com/docs/publish-your-app ; https://developers.miro.com/docs/monetization
+
+### 9. WooCommerce Marketplace — merchant extensions
+**Score:** 8.3 / 9.3 / 8.2 / 8.3
+**Money:** Marketplace vendors receive 70% of sales.
+**Workflow:** mine merchant support/forums → build focused Woo extension → WordPress/Woo integration tests → documentation/demo → human partner application → review/security/UX checks → sell → auto-update/support.
+**H-level:** H2 at onboarding/review, H1 after acceptance.
+**Why suited:** extension behavior can be tested deterministically across containerized Woo stores.
+**Assets:** WooPack, fixture merchant stores, compatibility World, support Skill, upgrade evaluator.
+**Best niches:** ugly operational gaps where merchants currently stitch 2–3 plugins together.
+Source: https://developer.woocommerce.com/docs/woo-marketplace/getting-started/
+
+### 10. HubSpot App Marketplace — micro vertical CRM apps
+**Score:** 8.2 / 9.3 / 8.6 / 8.7
+**Money:** paid SaaS attached to Marketplace-distributed integrations; HubSpot provides listing analytics and trust benefits.
+**2026 unlock:** since May/June 2026 new public apps are built through the Projects-based platform/CLI, making app creation/deployment materially more machine-friendly. Legacy CRM Cards are being replaced with React App Cards by Oct 31 2026, creating a migration/problem-discovery window.
+**Workflow:** mine vertical CRM pain → generate Projects-based app + App Cards → CLI deploy → test portal → obtain installs → Marketplace quality review → external SaaS billing → monitor API activity analytics.
+**H-level:** H2 listing/certification; H1 operationally.
+**Assets:** HubSpotPack, CRM fixture World, app-card migration process, vertical lead-workflow Skills.
+Sources: https://developers.hubspot.com/changelog/legacy-public-app-creation-sunset ; https://developers.hubspot.com/changelog/deprecating-support-for-classic-legacy-crm-cards
+
+### 11. JetBrains Marketplace — paid IDE plugins
+**Score:** 8.1 / 9.5 / 8.7 / 8.5
+**Money:** paid plugins with monthly/annual subscriptions, fallback licenses, or perpetual licenses.
+**Workflow:** mine IDE issue trackers/subreddits → synthesize focused plugin → IDE integration tests → Marketplace upload → pricing/license configuration → telemetry/reviews → update.
+**H-level:** H1/H2 because seller onboarding/review/payment identity remain human.
+**Why suited:** code-heavy, narrow utilities, easy regression tests; an agent Lab can specialize by language/framework.
+**Opportunity:** vertical plugins for obscure frameworks, migration tooling, code-quality checks, local enterprise workflows.
+**Assets:** JetBrains Venue, plugin API Skill, IDE benchmark World.
+Sources: https://blog.jetbrains.com/platform/2025/01/introducing-perpetual-licenses-on-jetbrains-marketplace/ ; https://plugins.jetbrains.com/
+
+### 12. Fab — 3D/game-ready asset marketplace
+**Score:** 8.0 / 8.8 / 7.8 / 8.3
+**Money:** publishers keep 88% revenue; Fab combines audiences and supports multi-engine/multi-platform assets.
+**Workflow:** scrape search/categories/reviews for missing prop packs/materials → generate/model/retopo/LOD/texture → Blender/engine validation → screenshots/metadata → human publisher/review step → upload/list → observe sales/reviews → generate coherent packs.
+**H-level:** H2 because quality/review and 3D visual judgment are substantial; H1 for repeat submissions once trusted workflow exists.
+**Assets:** FabPack, 3D geometry QA World, style consistency evaluator, asset-pack worker.
+**Risk:** low-quality AI asset spam is easy; technical cleanliness and coherent themed packs are moat.
+Source: https://www.fab.com/o/become-a-publisher
+
+### 13. Unity Asset Store — code tools/shaders/editor utilities
+**Score:** 7.9 / 9.2 / 7.7 / 8.1
+**Money:** current Apr 2026 Provider Agreement pays providers 70% of sale price.
+**Workflow:** mine Unity dev pain → generate editor extension/shader/code utility → automated project/version compatibility matrix → docs/demo → submit/review → monitor reviews/support → patch.
+**H-level:** H2 review/support; H1 repeat operation.
+**Why agents fit better than 3D:** code utilities and shaders are much easier to evaluate automatically than art packs.
+**Reddit:** prior seller reported ~$2–3k lifetime from a $50 utility with essentially no marketing; comments emphasize support/reviews as key.
+**Assets:** UnityPack, multi-version test World, support agent, shader evaluator.
+Source: https://unity.com/legal/provider
+
+### 14. Fortnite UEFN islands + in-island digital items
+**Score:** 7.8 / 8.5 / 7.2 / 9.1
+**Money:** engagement payouts plus in-island item sales; Epic announced developers can sell items directly from islands and offered 100% of V-Bucks value during the initial 2026 incentive period.
+**Workflow:** discover under-served game loops → agent generates Verse/code/content variants → automated playtest bots/simulated telemetry where allowed → human creator-account/publishing policy checks → publish island/items → ingest engagement/revenue → evolve content.
+**H-level:** H2 due creative review/publishing and live-game quality; likely cannot be fully autonomous tod

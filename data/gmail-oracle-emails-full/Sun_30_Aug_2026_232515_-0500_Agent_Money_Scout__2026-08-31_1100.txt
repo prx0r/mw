@@ -1,0 +1,239 @@
+Subject: Agent Money Scout — 2026-08-31 11:00
+Date: Sun, 30 Aug 2026 23:25:15 -0500
+Message ID: 1a056107b096e2ec
+================================================================================
+
+# Agent Money Scout — 2026-08-31 11:00
+
+The immediate ranking remains **AgentPact → dealwork.ai → OpenAnt → MoltJobs → selective Taskmarket**. This run also uncovered two genuinely new agent-market surfaces — **g0** and **Moltjiji** — but neither has enough independently verified live buyer liquidity yet to displace the leaders. The strongest fresh direct-customer opportunity is a **workflow cost/reliability guardrail agent**: a current operator reported one bad n8n condition causing 47,000 runs, about $2.5K in direct costs, three days of cleanup, and risk to a $45K/year client.
+
+I excluded newly discovered marketplaces that explicitly require users to be 18+, rather than suggesting workarounds. I also excluded gambling/prediction-market work, spammy outreach, unsafe security activity, and anything requiring age/KYC/geography evasion.
+
+## NEW THIS RUN
+
+### 1. g0 — agent marketplace / service storefront
+URL: https://g0hub.com/
+
+What the agent does: coding, data analysis, research, design or other fixed-price services. Buyers can direct-hire an agent or post a task. g0 exposes REST, CLI, MCP and an SDK; its docs say agents receive about 90% after the platform fee and settle in USDC.
+
+Who pays: marketplace buyer. Verified payout/pricing: g0's current homepage shows a live-style feed with examples such as +$12 USDC for a React component, $45 escrowed for CSV analysis and +$25 for a logo. These are platform-reported activity signals; I did not find a public open-job endpoint proving current external demand.
+
+Requirements: hosted agent/webhook, API key, relevant coding/data/research skill, compatible payment setup. Autonomy: 10/10.
+
+Exact first action: browse the marketplace and list one narrow capability only if account/payment eligibility is satisfied; do not spend engineering time until an unrelated buyer appears.
+
+Eligibility: I could not verify a public minimum-age rule from the primary pages checked. Do not register or connect payment rails unless the platform's rules and local legal requirements permit it.
+
+Ease-to-first-$5: 4/10. Repeatability: 9/10 if buyer liquidity proves real.
+
+### 2. Moltjiji — MCP-native agent-to-agent marketplace
+URL: https://moltjiji.com/
+
+What the agent does: list a service, discover open jobs, submit proposals and deliver work. Its MCP integration supports USDC on Base and exposes market-intelligence tools for pricing/competition.
+
+Who pays: another agent or marketplace buyer. Payout: job-specific; I could not verify a useful current live payout distribution.
+
+Requirements: MCP-compatible worker; wallet only when real USDC changes hands. Autonomy: 10/10.
+
+Exact first action: use the read-only discovery surface to check real open jobs and budgets before connecting any payment rail.
+
+Eligibility: public age/contract rules were not clearly surfaced in this run; verify before registration or settlement.
+
+Ease: 3/10. Repeatability: 8/10 potential.
+
+### 3. Workflow cost-guard / kill-switch audit — strongest fresh direct-customer play
+Demand evidence: https://www.reddit.com/r/automation/comments/1w21d6b/how_do_you_prevent_runaway_automation_costs/
+
+A current operator running roughly 200 daily n8n workflows reports one bad IF condition causing **47,000 runs in six hours**, roughly **$2.5K direct costs**, three days of DB cleanup and risk to a **$45K/year client**. Their post-deployment guardrails now include per-workflow run caps, budget alerts, static analysis and canary execution.
+
+Customer/problem: automation agencies, n8n shops, SMB ops teams. Agent workflow: workflow JSON + execution history + pricing metadata → detect unbounded loops/retries, excessive model calls, missing rate/budget caps and unsafe write paths → return ranked guardrails and a dry-run plan.
+
+Where to acquire customers: existing client/referral network, automation communities that explicitly allow services, agency partnerships. Do not cold-spam communities that prohibit promotion.
+
+How to charge: fixed audit first, recurring monitoring after proof of value. MVP: upload one workflow → pre-deploy risk report + run/cost ceilings + exception policy.
+
+Autonomy: 9/10. Ease: 9/10. Repeatability: 10/10.
+
+### 4. Workflow architecture/pre-build reviewer
+Demand evidence: https://www.reddit.com/r/n8n/comments/1w2p3eh/ive_been_building_automation_workflows_for_months/
+
+A fresh August 30 post describes a recurring problem: builders jump straight into nodes, get 40 nodes deep and discover the architecture is wrong. The buyer need is not another workflow generator; it is a pre-build decomposition/checker.
+
+Agent workflow: plain-English process + integrations → deterministic vs judgment steps → state boundaries → retries/idempotency → error paths → expected costs → proposed node/module graph.
+
+Customer: automation freelancers and small agencies. MVP: 'describe the automation before you build it; receive a reviewed architecture + failure modes.'
+
+Autonomy: 9/10. Ease: 8/10. Repeatability: 10/10.
+
+### 5. Automation-to-code migration / hardening
+Demand evidence: https://www.reddit.com/r/AiAutomations/comments/1vlbhv3/132k_collected_in_2026_18kmonth_selling_ai/
+
+A recent operator reports roughly €132K collected in 2026 selling automation systems to mid-market companies and says that since coding agents improved they abandoned n8n for code on larger engagements. Treat the revenue figure as self-reported, but the pain pattern is useful.
+
+Offer: n8n/Make workflow + requirements → classify what should remain orchestration vs move to code → generate Python/TypeScript service + tests/logging/retries → parallel-run comparison → human-approved cutover.
+
+Customer: agencies and companies whose low-code systems have outgrown simple workflows. MVP: migrate one high-volume deterministic workflow.
+
+Autonomy: 8/10. Ease: 7/10. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. AgentPact — still #1
+URL: https://agentpact.xyz/needs
+
+Fresh primary board: **200 Needs**. Current useful entries include Python code review **5–10 USDC**, API automation **10–25**, authorized Python/security review **10–25**, web-scraping automation **10–25**, data analysis + visualization **10–25**, and several 2–5 USDC CSV/transform jobs. There is also heavy sub-dollar testing noise.
+
+Who pays: Need/deal buyer. Requirements: Python/API/data worker; AgentPact MCP/API; settlement eligibility where applicable. Autonomy: 10/10.
+
+Exact first action: browse public Needs and filter `budget >= 5`, objective acceptance criteria, and clearly authorized task scope. Any security review must be limited to code/systems the requester explicitly authorizes.
+
+Eligibility: I did not find a clear public age rule in this run; verify participation and payment rules before registering or settling.
+
+Ease: 9/10. Repeatability: 9/10.
+
+### 7. dealwork.ai — strongest broad queue
+URL: https://dealwork.ai/
+
+Fresh primary state: **2.5K workers, 156 open tasks, 264 completed tasks, ~1.1-day typical delivery**. Funds are escrowed before work. Primary examples include an **$80 production API** delivered by an AI agent with tests and a **$5 AI-to-AI** CSV-formatting job. AI-to-AI fee is 3%; standard contracts are 10%.
+
+Agent does: code, APIs, research, data transformation, documentation. Who pays: human or agent requester. Autonomy: 9/10.
+
+Exact first action: inspect the current task queue and only pursue work whose acceptance criteria can be reproduced independently.
+
+Eligibility/payment rules must be verified before account creation or payout setup.
+
+Ease: 9/10. Repeatability: 9/10.
+
+### 8. OpenAnt — strongest verified scale
+URL: https://openant.ai/
+
+Fresh primary metrics: **12.8K total tasks, 1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out and $128K posted**. A current remote example asks for SKU-sales analysis yielding five insights + a chart. Beta fee is 0%.
+
+Agent does: remote data/analysis/digital production. Who pays: task poster via USDC escrow. Autonomy: 10/10.
+
+Exact first action: filter to `remote + digital + explicit reward + objective proof`; ignore physical/GPS/photo jobs.
+
+Eligibility/payment requirements were not clearly stated on the public page; verify before participating.
+
+Ease: 8/10. Repeatability: 9/10.
+
+### 9. MoltJobs — exact funded $5 target still live
+URL: https://moltjobs.io/open-jobs
+
+The primary board still shows a **5-USDC** funded job: turn three live job postings into ready-to-fund MoltJobs specs and contact the buyers. It is funded in on-chain escrow and shows about five days remaining.
+
+Agent does: research/specification plus legitimate individual buyer contact. Requirements: REST/MCP/CLI; some protected work can require machine-graded certification. Autonomy: 8/10.
+
+Exact first action: inspect that exact job and confirm any buyer-contact step is allowed and individualized. No bulk outreach.
+
+Eligibility/payment rules must be checked before registration or settlement.
+
+Ease: 7/10. Repeatability: 8/10.
+
+### 10. Taskmarket — real payouts, still poor expected value on crowded bounties
+URL: https://taskmarket.dev/
+
+Fresh dashboard: **17 open tasks, 26.9K registered agents, 2,382.95 USDC funded volume**. Current examples include **24.2 USDC with 112+ submissions**, **1.297426 USDC with 155+ submissions**, and **0.327 USDC with 163+ submissions**. The live leaderboard shows individual agents with more than **120 USDC** and **78 USDC** earned.
+
+Agent does: research, HTML/data visualization, bounded build tasks. Who pays: task requester via escrow. Autonomy: 10/10.
+
+Exact first action: calculate `EV = reward × P(win) − execution cost`; prefer claim/pitch/benchmark formats and avoid expired-but-still-marked-open tasks.
+
+Eligibility/payment rules must be checked before joining.
+
+Ease: 4/10. Repeatability: 9/10.
+
+### 11. WorkProtocol — credible money, wait for inventory
+URL: https://workprotocol.ai/
+
+Primary figures: **734 agents, 35 jobs posted, 12 completed, 1,325 USDC settled**. Minimum advertised job budget is **50 USDC**; jobs can come from GitHub issues and use build/test verification.
+
+Agent does: coding, refactors, test fixes, data/research/docs. Who pays: requester through Base-USDC escrow. Autonomy: 10/10.
+
+Exact first action: monitor the actual open-job feed and act only when inventory appears with reproducible acceptance tests.
+
+Eligibility/payment rules must be verified before settlement.
+
+Ease today: 3/10. Repeatability: 9/10.
+
+### 12. ClawMolt — marketplace exists, but liquidity signal remains weak
+URL: https://www.clawmolt.ai/
+
+Primary pages advertise typical bounties of **$5–$50**, Stripe-backed escrow, and a free agent tier. The current live verified-agent feed still reports **NO_AGENTS_FOUND**, which is a weak traction signal despite the marketplace being operational.
+
+Agent does: coding, research, design, data analysis. Who pays: bounty poster. Autonomy: 9/10.
+
+Exact first action: inspect live bounty inventory before integrating. Do not pay for premium tiers before an unrelated paid task appears.
+
+Important: Stripe/account/KYC eligibility may restrict who can receive payouts. Do not attempt to bypass age or identity requirements.
+
+Ease: 3/10. Repeatability: 8/10 potential.
+
+### 13. AgentGigs — strongest proof-of-payment, but payout onboarding is a constraint
+URL: https://www.agentgigs.io/
+
+The site still displays a concrete research job with a **$300–$750 budget** where **$465 was transferred to an agent** after proofing. Agents can browse, apply, deliver and message through API. The free tier keeps 90% of approved jobs.
+
+The blocker: payouts require **human Stripe Connect KYC**. Do not participate unless the operator independently satisfies the platform/payment provider's age and identity rules; no workarounds.
+
+Exact first action if eligible: inspect `/jobs` or the available-jobs API before onboarding further. Autonomy after onboarding: 10/10.
+
+Ease: 2/10 unless already payment-eligible. Repeatability: 9/10 when inventory exists.
+
+### 14. BotGuild — real mechanics, beta rewards too small
+URL: https://botguild.ai/
+
+BotGuild uses non-custodial escrow, REST/MCP/webhooks and a 5% success fee. Current beta gigs are explicitly only **$0.10–$0.20**.
+
+Agent does: monitoring, data ETL, QA and small digital tasks. Who pays: gig poster. Autonomy: 9/10.
+
+Exact first action: treat it as an integration/reputation test only; it is not an efficient first-$5 path today.
+
+Ease: 2/10. Repeatability: 8/10 potential.
+
+## REDDIT DEMAND SIGNALS
+
+### 15. Support deflection with evidence + escalation
+Thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/
+
+A hardware-business operator reports that a KB-grounded assistant now handles roughly **70–80% of repetitive support emails**, including image-assisted questions, while humans take the exceptions.
+
+Product: approved KB + question/image → evidence retrieval → grounded draft → unsupported-claim check → confidence gate → human exception.
+
+Customer: hardware, e-commerce and SaaS support teams. MVP: top 20 FAQs + escalation queue. Acquire via referrals, service marketplaces and communities that permit offers.
+
+Ease: 8/10. Repeatability: 10/10.
+
+### 16. Weekly SEO triage
+Thread: https://www.reddit.com/r/WebsiteSEO/comments/1vz54h5/what_is_the_most_repetitive_part_of_your_seo/
+
+Fresh operators identify weekly reporting, finding pages losing traffic, internal-link discovery on old/large sites and backlink qualification as repetitive work. Human review remains important for final decisions.
+
+Product: authorized GSC/crawl data → winners/losers → anomalies → internal-link candidates → review queue.
+
+Customer: SEO agencies and multi-site operators. MVP: one site's weekly diagnostic.
+
+Ease: 9/10. Repeatability: 10/10.
+
+### 17. Automation-debt cleanup
+Thread: https://www.reddit.com/r/MarketingAutomation/comments/1vtd951/half_my_workflows_shouldnt_have_existed/
+
+A recent operator audited **40+ active workflows** and found only about **15** receiving regular use; many obsolete automations had become maintenance debt.
+
+Product: workflow inventory + execution history + dependencies → KEEP / CONSOLIDATE / RETIRE / REVIEW. Actual deletions remain human-approved.
+
+Ease: 9/10. Repeatability: 10/10.
+
+### 18. n8n production-hardening audit
+Thread: https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/
+
+An operator supporting six paying clients reports queue contention, **11GB accumulated execution logs**, webhook failures after restart and encryption-key recovery risks.
+
+Product: deployment + workflows + logs → concurrency, retention, webhook health, backup/key state, retries and exception handling → prioritized report. No destructive changes without human approval.
+
+Ease: 8/10. Repeatability: 10/10.
+
+### 19. One-process automation contract
+Thread: https://www.reddit.com/r/n8n/comments/1vev45x/how_n8n_helped_me_move_from_a_nontech_internship/
+
+A recent builder describes starting by automating one repetitive internal process and eve

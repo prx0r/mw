@@ -1,0 +1,229 @@
+Subject: Agent Money Scout — 2026-08-30 07:00
+Date: Sun, 30 Aug 2026 00:24:14 +0000
+Message ID: 1a0500d75d8ff8ef
+================================================================================
+
+# Agent Money Scout — 2026-08-30 07:00
+
+## Executive summary
+
+The strongest genuinely new opportunity this run is **A2A Market**: its live marketplace currently reports 127 agents, 284 listings, 89 trades, 12 bounties and $4,521 volume, with a live activity feed showing recent $2–$9 skill sales. These are platform-reported figures, but they are more useful than a registry that only shows listings. **Agora402** is also interesting as a low-cost x402 distribution rail because it exposes concrete discovery counts per service and lets native providers keep 100% of call revenue. **Skillzy** and **AgentPlace** are new reusable-skill storefronts, but payment-provider eligibility must be satisfied normally before treating them as actionable.
+
+For direct earning, the best current order remains **Claw Jobs → Hudle → Taskmarket → dealwork.ai → t2000**, with Claw Jobs particularly attractive because it still has real Bitcoin-funded research/code/documentation gigs above the $5 threshold.
+
+# NEW THIS RUN
+
+## 1) A2A Market — live skill trades + bounties
+URL: https://a2amarket.live/
+
+Live platform-reported state: **127 agents, 284 listings, 89 trades, 12 bounties, $4,521 volume**. Its current activity feed shows recent paid skill sales including **$6 code-review/optimization, $9 SEO-content optimization, and $2 translation**, alongside other listings. Payments use x402 USDC on Base.
+
+What the agent does: sells narrow reusable skills or completes marketplace bounties: code review, research, data processing, PDF extraction, technical writing, API integration, etc.
+Who pays: other agents/buyers.
+Verified/advertised payout: listing-specific; the live feed currently displays paid sales in the $2–$9 range. Platform-wide volume/top-earner numbers are self-reported, not independently audited.
+Required: agent registration, wallet, skill endpoint/package.
+Autonomy: **10/10**.
+First action: register one already-proven narrow capability and inspect the 12 live bounties before building anything marketplace-specific.
+Constraints: wallet/payment rules and applicable local eligibility still apply; do not bypass them.
+Ease first $5: **7/10**. Repeatability: **9/10**.
+
+## 2) Agora402 — x402 registry with measurable discovery
+URL: https://agora402.io/
+Pricing: https://agora402.io/pricing
+
+Current state: **51 live agents, 902,212 API discoveries, 13,333 page views**. Individual listings expose their own discovery counts; for example, the Document Parser is shown at **13,704 discoveries**, $0.005/call and 100% uptime.
+
+Native x402 sellers keep **100% of call revenue** after a one-time **$3 Starter** listing fee; managed-mode sellers receive 80% while Agora402 handles payments/proxying.
+
+What the agent does: exposes deterministic paid APIs such as document parsing, evidence extraction, release checks, workflow-health probes or repo intelligence.
+Who pays: machine callers.
+Required: HTTP endpoint + wallet; native x402 is economically preferable.
+Autonomy: **10/10**.
+First action: only list a capability that already works elsewhere; use the $3 tier, not featured placement, until an external paid call proves demand.
+Constraints: only sell data/services you are entitled to commercialize.
+Ease first $5: **5/10**. Repeatability: **10/10**.
+
+## 3) Skillzy — marketplace for portable agent skills/setups
+URL: https://skillzy.ai/
+Seller page: https://skillzy.ai/sell
+
+Skillzy sells skills, guides, full agent setups and scheduled loops across Claude/OpenClaw/ChatGPT/Hermes/n8n/Make/Zapier. Current visible paid listings include a **$99 coding doctrine**, **$9 Vibe-Code Repair Kit**, **$49 Gmail automation skill**, and full setups from roughly **$29–$179+**. Creators keep **80%**; listing is free.
+
+What the agent does: package a tested procedure once and sell it repeatedly.
+Who pays: humans/builders buying portable agent know-how.
+Required: files/SKILL.md/setup documentation and Stripe payout onboarding.
+Autonomy: **8/10** after publishing.
+First action: package a concrete outcome, not a generic prompt — e.g. `Vibe-Code Repair`, `API QA Preflight`, `Workflow Health Audit`, or `Evidence Pack Builder`.
+Constraints: payout-provider identity/age/geography rules must be satisfied normally. If the payout setup is not legitimately available, skip this channel rather than working around it.
+Ease first $5: **5/10**. Repeatability: **9/10**.
+
+## 4) AgentPlace — OpenClaw agent storefront
+URL: https://www.agentplace.sh/
+
+AgentPlace advertises **34+ premium agents** and a larger reviewed skill catalogue, with creators retaining **up to 90% of each sale**. The marketplace handles delivery/licensing so the creator can sell local SKILL.md-based agents without running servers.
+
+What the agent does: sells downloadable specialist agents such as competitor research, coding review, scraping, structured research or workflow diagnostics.
+Who pays: OpenClaw users.
+Advertised payout: up to 90% creator revenue share; I found no reliable current creator-income distribution.
+Required: agent package/SKILL.md and whatever seller payout setup AgentPlace requires.
+Autonomy: **8/10**.
+First action: cross-list one proven specialist; do not create an AgentPlace-only product until a sale occurs.
+Constraints: follow seller/payment eligibility and IP rules.
+Ease first $5: **4/10**. Repeatability: **9/10**.
+
+## 5) ClayCosmos — tiny but fully agent-native store
+URL: https://claycosmos.ai/
+
+ClayCosmos currently shows **3 stores and 26 products**. Visible offers include **$5 AI content generation**, **$3 automated news digest**, **$5 agent-store setup**, and **$2 research summaries**. Agents can bootstrap themselves from the site's seller `skill.md` and trade in USDC.
+
+What the agent does: sells recurring digests, research, store setup, data products or bounded services.
+Who pays: other agents/users.
+Payout: listing-specific; no trustworthy aggregate seller-revenue figure surfaced.
+Required: agent/store registration + seller skill flow.
+Autonomy: **10/10**.
+First action: list a low-compute research/data service that costs almost nothing to fulfill and use it purely as a demand probe.
+Constraints: avoid prohibited data resale and respect source licenses.
+Ease first $5: **4/10**. Repeatability: **8/10**.
+
+# STILL ACTIVE FROM PRIOR RUNS
+
+## 6) Claw Jobs — best immediate first-$5 queue
+URL: https://claw-jobs.com/
+
+Current primary-source state remains **17 open gigs, 8 completed, 321 users and 40,500 sats paid**. Visible real-Bitcoin jobs include **12,000 sats (~$12 displayed)** for structuring a dataset of 50+ AI-agent projects and **10,000 sats (~$10)** for reviewing TypeScript API routes. Payment is pre-funded in Lightning escrow and the platform fee is **1%**.
+
+What the agent does: research datasets, code review, documentation and small digital deliverables.
+Who pays: gig posters.
+Required: REST/SDK worker + legitimate Lightning receiving address.
+Autonomy: **9/10**.
+First action: inspect the 8k–12k sat jobs, estimate execution cost, then bid only on objectively verifiable tasks.
+Constraints: wallet-provider rules still apply; no bypassing identity/age/payment restrictions.
+Ease first $5: **8/10**. Repeatability: **8/10**.
+
+## 7) Hudle — real USDC completion evidence
+URL: https://hudle.io/
+
+Hudle still shows **11 completed gigs, 1 under review, 17 agents**, and a public top earner at **67 USDC**. Completed work includes 20–25 USDC documentation/research/protocol tasks. First 50 gigs are currently fee-free, with 39 slots remaining.
+
+What the agent does: research, technical writing, code/data work and audits.
+Who pays: funded gig posters.
+Required: agent registration through `https://hudle.io/skill.md` + Base-USDC payout route.
+Autonomy: **10/10**.
+First action: connect a research/code specialist and poll new funded gigs.
+Ease first $5: **8/10**. Repeatability: **8/10**.
+
+## 8) Taskmarket — strongest transparent funded market, but competition is brutal
+URL: https://taskmarket.dev/
+
+Fresh page state: **19 open tasks, 26.7K agents, 2,380.714419 USDC posted volume**. The live 24.2-USDC data task currently has **68 submissions** on the fetched primary page. A public worker profile shows **64.75 USDC across 7 completed tasks**, while the leaderboard includes agents above 100 USDC.
+
+What the agent does: data, research, code, benchmarks and structured artifacts.
+Who pays: escrow-funded requester.
+Required: Taskmarket skill/wallet.
+Autonomy: **10/10**.
+First action: calculate `net reward × estimated P(win)` before any inference spend.
+Constraints: avoid tasks involving restricted or unsafe activities even if listed.
+Ease first $5: **7/10**. Repeatability: **9/10**.
+
+## 9) dealwork.ai — broadest live inventory
+URL: https://dealwork.ai/
+
+Current primary-source state: **2.5K workers, 156 open tasks, 264 completed tasks, ~1.1-day typical delivery**. The site still gives a concrete example of an AI worker completing an **$80 production API endpoint with tests**. Human/AI contracts carry 10% fees; AI→AI is **3%**.
+
+What the agent does: coding, APIs, research, transformations, documentation, data work.
+Who pays: human or AI clients with escrow funded before work begins.
+Required: connect via `skill.md` and worker daemon.
+Autonomy: **9/10**.
+First action: onboard one specialist and only bid where acceptance criteria can be automatically checked.
+Ease first $5: **8/10**. Repeatability: **9/10**.
+
+## 10) t2000 — best job → service → API ladder
+URL: https://t2000.ai/
+
+The live site still shows public sellers with **$150 and $138.66 settled**. t2000 supports open jobs, fixed-price services and paid APIs. Fixed services have a **5% settlement fee**; API calls currently have **0% marketplace fee**.
+
+What the agent does: first completes jobs, then exposes successful routines as repeatable services/APIs.
+Who pays: marketplace buyers.
+Required: t2000 Passport/wallet integration.
+Autonomy: **9/10**.
+First action: use tiny jobs only if they build useful reputation, then convert the proven routine into a fixed service.
+Ease first $5: **7/10**. Repeatability: **9/10**.
+
+## 11) gigs.sh — still useful as a discovery index, not income
+URL: https://gigs.sh/
+
+It still indexes **46 verified agent-compatible platforms**, but its global verification date remains **2026-05-18**. Use it to discover unseen markets, never as proof that a platform has current liquidity.
+
+What the agent does: discovery only.
+Who pays: nobody directly.
+First action: feed unseen listings into a verification pipeline checking live inventory, funding, settlement and eligibility.
+Ease first $5: **3/10**. Repeatability as scouting infrastructure: **9/10**.
+
+# REDDIT DEMAND SIGNALS
+
+## 12) Law-firm intake/document/follow-up worker
+Thread: https://www.reddit.com/r/n8n/comments/1vywta1/built_a_full_ai_automation_system_for_a_law_firm/
+
+A fresh Aug 26 post with 117 votes describes repetitive law-firm work around incoming messages, documents, appointment intake, deadline tracking and follow-ups. The sellable product should automate administration, **not legal judgment**.
+
+Customer: law firms/authorized legal operations teams.
+Workflow: `authorized enquiry → classify routing metadata → acknowledgement → collect documents → summarize for lawyer → schedule/follow-up → human legal review`.
+How to charge: fixed setup + maintenance/monitoring; no universal market price verified.
+Acquisition: automation agencies/legal-tech consultants rather than mass unsolicited outreach.
+MVP: intake + document collection + lawyer-ready summary + follow-up queue.
+Autonomy: **7/10** because legal decisions stay human.
+Ease first $5: **7/10**. Repeatability: **9/10**.
+
+## 13) Accounting document-chasing worker
+Thread: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+
+A current 96-vote example identifies document chasing, deadline reminders, invoice follow-ups and routine client questions as repetitive manual work.
+
+Customer: bookkeeping/accounting firms.
+Workflow: `authorized client record → missing item? → approved reminder → receipt/status update → exception to human`.
+Charge: setup plus recurring maintenance/monitoring.
+MVP: missing-document tracker + reminder queue + receipt reconciliation.
+Constraints: keep accounting/compliance decisions with qualified humans.
+Autonomy: **8/10**.
+Ease first $5: **7/10**. Repeatability: **9/10**.
+
+## 14) Invoice-normalization worker
+Thread: https://www.reddit.com/r/n8n/comments/1u16eu4/i_built_this_n8n_automation_as_an_mvp_to_a_client/
+
+A builder reports an invoice-processing MVP leading to a **six-month paid contract with a US company**. The valuable layer is not generic OCR; it is structured extraction, validation and exception handling.
+
+Customer: SMB finance teams/bookkeepers.
+Workflow: `invoice → fixed schema → totals/ID validation → duplicate check → verified record OR exception`.
+MVP: PDF/image → validated JSON/CSV + evidence and exception reason.
+Autonomy: **8/10**.
+Ease first $5: **8/10**. Repeatability: **10/10**.
+
+## 15) n8n production hardening / reliability audit
+Thread: https://www.reddit.com/r/n8n/comments/1sr7pni/what_actually_breaks_when_you_run_n8n_selfhosted/
+
+An operator serving six paying clients reports concrete operational failures: execution contention, an **11GB execution database after two months**, webhook URL changes that caused **three days of lost leads**, and encryption-key recovery risk. This is strong evidence for a productized reliability audit.
+
+Customer: automation agencies running multiple client workflows.
+Workflow: `workflow/config/logs → queue/concurrency audit → retention/webhook/credential checks → failure simulations → prioritized fixes + runbook`.
+MVP: upload sanitized config/workflow + receive production-readiness report.
+Charge: fixed audit, then optional recurring health monitoring.
+Autonomy: **8/10**.
+Ease first $5: **8/10**. Repeatability: **10/10**.
+
+## 16) Freelancer admin worker
+Thread: https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+
+Current implementations repeatedly bundle proposal drafting, contracts, invoice reminders, onboarding, weekly updates and testimonial requests.
+
+Customer: freelancers/small agencies.
+Workflow: project/client record → proposal/onboarding/update/invoice-reminder drafts → explicit approval where appropriate → send/log.
+MVP: invoice chaser + weekly update bot.
+Autonomy: **8/10**.
+Ease first $5: **7/10**. Repeatability: **9/10**.
+
+# FILTERED OUT
+
+- **Aiphra** is a genuine agent marketplace, but its current Terms explicitly require users and sellers to be **18+**, so it is not included as an actionable route here.
+- **Apify Store** has strong creator economics, but its Store publishing terms also explicitly require the accepting publisher to be over 18, so it is not actionable here.
+- **ClawGig** remains excluded from the actionable queue because its terms previously verified an 18+ requirement.
+- Testnet balances, internal credits, illustrative cards, gambling/prediction-market services, spam/promoti

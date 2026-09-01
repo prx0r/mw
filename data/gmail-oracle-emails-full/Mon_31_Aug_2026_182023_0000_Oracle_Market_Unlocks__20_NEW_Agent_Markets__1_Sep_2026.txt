@@ -1,0 +1,177 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026
+Date: Mon, 31 Aug 2026 18:20:23 +0000
+Message ID: 1a0590d10424c455
+================================================================================
+
+# Oracle Market Unlocks — 20 NEW Agent-Accessible Markets
+
+**Research date:** 1 September 2026
+
+This pass treats novelty as a hard constraint. I cross-checked the sent Oracle reports in Gmail before researching candidates. The only repeat below is **Google Cloud Marketplace**, included under the user-specified “major new unlock” exception: on **26 August 2026**, Google published a first-class seller path for **A2A AI Agents as a Service**, including Agent Cards, Gemini Enterprise distribution, procurement, usage metering and Marketplace billing. The other 19 venues returned no prior Oracle report hit under their exact market names.
+
+**H-level shorthand:** H0 = essentially machine-operable after credentials; H1 = one-time human identity/account/review/consent; H2 = recurring human subjective/compliance/partner approval; H3 = material recurring human production/customer sponsorship; H4 = fundamentally human/offline. Identity, legal, tax, payment, age and platform-security checks are legitimate human gates and should not be bypassed.
+
+**Scoring:** O = expected opportunity value; A = agent suitability; F = automation feasibility; C = competitive whitespace (5 = less crowded); N = novelty/timing. Total /25.
+
+| # | Market | O | A | F | C | N | Total | Post-setup H |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | Google Cloud Marketplace — A2A AI Agents as a Service | 5 | 5 | 5 | 4 | 5 | **24** | H1–H2 |
+| 2 | Setapp Marketplace — Single-App Distribution | 5 | 5 | 5 | 4 | 5 | **24** | H1 |
+| 3 | Thinkific App Store | 5 | 5 | 5 | 3 | 4 | **22** | H1–H2 |
+| 4 | Webasyst Store | 4 | 5 | 5 | 4 | 4 | **22** | H1 |
+| 5 | BricsCAD Application Catalog / Online Store | 5 | 5 | 4 | 4 | 4 | **22** | H1–H2 |
+| 6 | Huawei AppGallery / HarmonyOS | 5 | 4 | 4 | 4 | 4 | **21** | H1–H2 |
+| 7 | XenForo Resource Manager paid add-ons | 4 | 5 | 5 | 3 | 4 | **21** | H1 |
+| 8 | Amazon Appstore for Fire devices | 4 | 5 | 5 | 2 | 4 | **20** | H1–H2 |
+| 9 | IconScout Contributor Marketplace + API licensing | 4 | 5 | 4 | 3 | 4 | **20** | H2 |
+| 10 | Construct Asset Store | 4 | 5 | 4 | 3 | 4 | **20** | H1–H2 |
+| 11 | Polymart | 4 | 5 | 4 | 3 | 3 | **19** | H1–H2 |
+| 12 | elementary AppCenter | 3 | 5 | 5 | 3 | 3 | **19** | H1 |
+| 13 | Printables Store / Clubs | 4 | 4 | 4 | 3 | 4 | **19** | H2 |
+| 14 | Skillshare Shop digital products | 4 | 4 | 3 | 3 | 4 | **18** | H2 |
+| 15 | Fontspring foundry marketplace | 4 | 4 | 3 | 3 | 4 | **18** | H2 |
+| 16 | MotionElements | 3 | 4 | 4 | 2 | 4 | **17** | H2 |
+| 17 | Vecteezy Contributor Marketplace | 3 | 4 | 4 | 1 | 4 | **16** | H2 |
+| 18 | Renderosity Marketplace | 3 | 4 | 3 | 2 | 4 | **16** | H2 |
+| 19 | Pinshape 3D Marketplace | 3 | 4 | 3 | 2 | 3 | **15** | H2 |
+| 20 | SpigotMC Premium Resources | 3 | 5 | 3 | 1 | 2 | **14** | H2 |
+
+---
+
+## 1. Google Cloud Marketplace — A2A AI Agents as a Service
+
+**Why this is here despite prior Google Cloud coverage.** This is a material new unlock, not a repeat. Google’s seller documentation updated **26 August 2026** now explicitly supports **AI Agents as a Service using the Agent2Agent (A2A) protocol**, alongside SaaS and Kubernetes packaging. Sellers provide an A2A Agent Card, integrate Marketplace procurement and metering, pass review, and can surface the agent to Gemini Enterprise users.
+
+**What agents can sell.** Bounded specialist agents: cloud-cost investigator, log-evidence agent, document-compliance checker, data-quality agent, support triage agent, vertical research agent, migration planner, security evidence collector, or other narrow A2A capabilities with measurable outputs.
+
+**Autonomous workflow.** Oracle mines buyer pain/changelogs → specialist Worker builds an A2A service → generates Agent Card → Harbor CloudAgentWorld provisions deterministic fixtures → evaluator checks capability discovery, schema fidelity, latency, cost, failure handling and unsafe action boundaries → Marketplace package + pricing generated → human publisher/security approval → listing → Google handles procurement/entitlements → Service Control/Marketplace metering tracks usage → revenue/usage/errors flow back to Hydra → Worker maintains product.
+
+**Human dependency.** H1–H2: publisher/legal/security approval and accountable claims remain human. Normal execution, metering and maintenance can approach H0.
+
+**Infrastructure.** A2A protocol; Gemini Enterprise Agent Marketplace; Google Cloud Marketplace Producer Portal; Partner Procurement API; Service Control API; Pub/Sub; Agent Registry; gcloud/Terraform registration.
+
+**Demand / constraints.** This is strategically important because Google has turned “agent” into a transactable Marketplace object rather than merely a workload running on cloud. Competition will accelerate rapidly, so the winning wedge is a measurable specialist capability, not generic chat.
+
+**Moltwork assets.** `GoogleA2APack`, `AgentCommerceWorld`, Agent Card compiler/evaluator, metering evaluator, security-boundary School, MarketplaceCertificationProcess, specialist commercial Worker.
+
+**Attractive if:** usage has a natural meter and value per call exceeds inference/ops/support cost. **Unattractive if:** procurement/security review is longer than product lifetime or the agent is an undifferentiated LLM wrapper.
+
+Official: https://cloud.google.com/marketplace/docs/partners/ai-agents
+
+---
+
+## 2. Setapp Marketplace — Single-App Distribution
+
+**New unlock.** In 2026 Setapp added direct **single-app purchases and subscriptions**, separate from its classic membership bundle. Current docs say developers receive **85% of subscription revenue** and **75% of one-time purchase revenue**; Setapp handles activation, licensing, billing, tax and first-line support. This is a major reduction in the non-code work required to monetize a small Mac/web utility.
+
+**What agents can sell.** Narrow Mac utilities: batch file/content operations, local data QA, developer helpers, media metadata tools, privacy-safe workflow utilities, menu-bar automation and specialist productivity software.
+
+**Workflow.** Oracle mines Mac workflow complaints → Worker creates app → macOS fixture/VM tests → Harbor checks install/update/uninstall, permissions, file-system safety, CPU/memory and UX invariants → generate app metadata/docs → human Setapp review/signing → Marketplace → transaction/licensing handled by Setapp → usage/revenue feedback → compatibility Worker follows macOS updates.
+
+**H-level.** H1. Code lifecycle can become close to H0; curation/signing/publisher identity remain human.
+
+**Demand/community.** Setapp says the catalog has 250+ apps in 2026. Community reaction to standalone sales is mixed: users explicitly complain about “AI-built slop” and abandoned apps, which makes **quality + perpetual maintenance** the agent opportunity rather than high-volume generation.
+
+**Moltwork assets.** `SetappPack`, MacVM World, entitlement/licensing evaluator, notarization/release Process, persistent Mac-specialist Worker.
+
+**Economics.** Strong for self-contained utilities with near-zero marginal support. Weak if the product needs constant handholding or duplicates an incumbent Setapp app.
+
+Official: https://docs.setapp.com/docs/setapp-marketplace-overview
+
+---
+
+## 3. Thinkific App Store
+
+Thinkific reports **50,000+ course creators, $650M+ earned by creators, 100M+ courses taken and 165+ countries**. Its third-party apps use OAuth, Admin APIs and programmable webhooks, and public apps undergo quality/security review.
+
+**What agents sell.** Course QA, completion/evidence reporting, cohort analytics, certificate workflows, content migration, CRM/community sync, learner-support triage, accessibility checks and vertical education operations.
+
+**Workflow.** Oracle mines creator/support pain → Worker implements OAuth app → synthetic Thinkific school with courses/users/orders → Harbor `CourseCommerceWorld` tests enrollment, refunds, deleted users, webhook retries, permissions and partial failure → listing/security docs generated → human review → app installed through Store → external SaaS/native app billing → events and retention tracked → Worker patches.
+
+**H-level.** H1–H2 due app review/privacy and educational-data responsibility.
+
+**Frontier infrastructure.** OAuth2, Admin API, Webhooks API; a **User Deleted webhook was added Feb 4, 2026**, improving lifecycle integrity.
+
+**Community signal.** Creator businesses repeatedly need Zapier-style glue and reporting; Thinkific itself positions Zapier as a way to automate tasks that are not covered by App Store apps, which is effectively a map of missing product opportunities.
+
+**Moltwork assets.** ThinkificPack, CourseWorld, webhook/idempotence evaluator, creator-ops School, OAuth installation Skill.
+
+**Economics.** Attractive when one app saves every creator recurring admin time. Unattractive if the feature is only relevant to a tiny plan tier or requires manual instructional-design work.
+
+Official: https://developers.thinkific.com/
+
+---
+
+## 4. Webasyst Store
+
+This is one of the most overlooked software marketplaces in the scan. Webasyst explicitly invites developers to build apps/plugins, provides front/back/access-rights/REST infrastructure, handles cloud hosting and Installer-based updates, supports basic/premium/freemium editions, and says developers receive **80% of app sales** with monthly payouts.
+
+**What agents sell.** Shop-Script catalog tools, CRM utilities, reporting, bulk edits, data-quality products, payment/shipping adapters, order workflows and niche ecommerce administration.
+
+**Workflow.** Mine Store/support gaps → generate PHP app/plugin → disposable Webasyst/Shop-Script fixture → install/upgrade/rollback/data-migration evaluation → screenshot/description packaging → Store submission → Installer handles delivery/updates → sales/ratings/support tracked → Worker maintains versions.
+
+**H-level.** H1.
+
+**Demand evidence.** Current Store products show real recurring economics: one Shop-Script plugin lists **800+ installs**, 43 ratings and pricing around $15.99 monthly / $49 yearly / $139 lifetime. The developer leaderboard shows long-lived vendors with dozens to hundreds of plugins.
+
+**Community constraint.** English-language Reddit signal is thin; this is partly a geography/language issue. Treat Store installs, ratings and developer longevity as stronger evidence than pretending Reddit is representative.
+
+**Moltwork assets.** WebasystPack, EcommerceAdminWorld, install/migration evaluator, Shop-Script School, multilingual listing Process.
+
+**Economics.** Very interesting because low competition + native update delivery can offset smaller total market size.
+
+Official: https://developers.webasyst.com/build-apps/
+
+---
+
+## 5. BricsCAD Application Catalog / Online Store
+
+Bricsys says **1,500+ external developers** create BricsCAD apps and **400+ publish directly to the Application Catalog**. Its developer surface emphasizes straightforward AutoCAD app porting through BRX/.NET/LISP and an Application Catalog/Online Store.
+
+**What agents sell.** CAD standards checks, layer/entity cleanup, batch drawing operations, BOM extractors, drawing QA, GIS/engineering adapters, quantity tools and AutoCAD→BricsCAD ports.
+
+**Workflow.** Oracle mines CAD forum requests → code or port application → Harbor CADWorld loads synthetic DWGs → evaluator checks geometry invariants, commands, undo behavior, performance and BricsCAD-version matrix → generate installer/docs → human developer/catalog approval → publisher commerce/listing → issues/versions monitored → compatibility Worker patches.
+
+**H-level.** H1–H2; publisher relationship and domain-engineering assertions remain human.
+
+**Demand.** CAD labor is expensive, so a utility saving minutes per drawing can support far higher prices than generic consumer software. The existing 400+ publisher count proves an established extension economy while remaining much smaller than AutoCAD’s ecosystem.
+
+**Agent suitability.** Excellent: CAD state can be generated, mutated and tested deterministically; agents are also unusually good at repetitive API-porting work.
+
+**Moltwork assets.** BricsCADPack, DWG World, geometry evaluator, AutoCADPortingProcess, CAD API School.
+
+Official: https://developer.bricsys.com/
+
+---
+
+## 6. Huawei AppGallery / HarmonyOS
+
+**What agents sell.** Huawei/HarmonyOS-specific utilities, developer integration tools, paid mobile utilities, subscription apps, HMS bridges and device-management/productivity apps.
+
+**2026 frontier.** AppGallery Connect supports paid apps, subscriptions/IAP and sandbox testing; Huawei’s server API guidance updated **April 7, 2026** recommends **Service Accounts**, which are replacing older API-client credentials. This is the kind of machine-to-machine credential improvement Oracle should score as an H-level reduction.
+
+**Workflow.** Mine HarmonyOS/Huawei developer/user gaps → Worker builds app/HMS integration → Huawei Cloud Phones + emulator fixtures → test IAP/ads/account lifecycle → human physical-device final check + publisher/payment setup → AppGallery submission → paid download/IAP → analytics/reviews → agent maintains OS/device compatibility.
+
+**H-level.** H1–H2. Physical hardware and payout/regional constraints are real.
+
+**Community signal.** A July 29, 2026 Godot developer reported there was no Huawei Ads/IAP plugin, built one, and validated it with **Huawei Cloud Phones**, but still needed a real device check. Another June 2026 indie described AppGallery as the most developer-friendly of several Chinese stores. Conversely, developers report cross-border payout friction. That is a textbook agent wedge plus a real commercial constraint.
+
+**Moltwork assets.** HuaweiPack, CloudPhoneWorld, HMS/IAP evaluator, physical-device HumanQueue, Godot/HarmonyOS integration School.
+
+Official: https://developer.huawei.com/consumer/en/
+
+---
+
+## 7. XenForo Resource Manager paid add-ons
+
+XenForo’s 2026 community remains extremely active: thousands of resource/add-on releases, **5.1K resource requests / 25K+ messages**, and a large development forum. Paid resources are listed in Resource Manager; commerce is generally handled off-site.
+
+**What agents sell.** Moderation/admin automation, membership UX, migration/importers, SEO/schema, spam protection, analytics, content workflows and integrations.
+
+**Workflow.** Mine the Resource Request forum → Worker builds add-on → disposable XenForo 2.3 database/forum → Harbor tests install/upgrade/uninstall, permissions, templates, jobs and data migrations → external billing/license endpoint + Resource listing → reviews/support → persistent worker tracks XenForo releases.
+
+**H-level.** H1. External payments increase infrastructure work but reduce marketplace dependence.
+
+**Demand/community.** January 2026 users complained about paid-membership add-ons with poor UX/support/bugs. Older unsupported add-ons breaking after XenForo upgrades are a recurring pattern. This strongly favors an “always maintained” Worker.
+
+**Moltwork assets.** XenForoPack, ForumWorld, migrati

@@ -1,0 +1,208 @@
+Subject: Agent Money Scout — 2026-08-30 04:00
+Date: Sat, 29 Aug 2026 16:24:33 -0500
+Message ID: 1a04f68f5554cb52
+================================================================================
+
+# Agent Money Scout — 2026-08-30 04:00
+
+The most useful genuinely new discovery this run is PayanAgent: an open-source Base/x402 marketplace that aggregates 24,000+ live offers and also supports bespoke requests, bids, fulfillment and signed settlement receipts. ClawFreelance is also new to this scout and claims substantial task volume, but its public task page does not expose enough rendered live inventory to independently verify those headline numbers, so I rank it below the established markets.
+
+## NEW THIS RUN
+
+### 1) PayanAgent — x402 offers + bespoke agent-work requests
+URL: https://payanagent.com/
+Terms: https://payanagent.com/terms
+What the agent does: register a specialist, list a fixed-price/API offer, or bid on bespoke requests; deliver via API and receive direct USDC settlement on Base.
+Who pays: other agents, SaaS buyers, or request posters.
+Payout/pricing: provider-set. Official example shows $0.25/call. Platform fee is advertised as $0; payment goes directly to seller. I did not invent a current seller-income number.
+Required: HTTP endpoint or agent worker, Base wallet, API key; SDK/MCP available.
+Autonomy: 10/10.
+Exact first action: register one narrow existing capability (e.g. code review / automation-health / structured-evidence), list it as an offer, and query /api/v1/requests for bespoke work before doing any bespoke integration.
+Eligibility/constraints: current Terms (updated 2026-04-18) do not state an age minimum, but users remain responsible for lawful wallet/transaction use in their jurisdiction. Do not bypass any wallet/provider eligibility rules.
+Ease-to-first-$5: 6/10. Repeatability: 10/10.
+Why new/high-signal: 24,000+ offers are aggregated into one catalog; the protocol also exposes public signed receipts and a full request→bid→fulfill→approve flow.
+
+### 2) ClawFreelance — agentic freelance/task aggregator
+URL: https://www.clawfreelance.com/en
+Tasks: https://www.clawfreelance.com/en/tasks
+Terms: https://www.clawfreelance.com/en/terms
+What the agent does: discover tasks aggregated from direct postings/open-source bounty sources, claim work, submit code/research artifacts, and get verified by PR merge, CI, owner approval, or peer review.
+Who pays: task posters / bounty sources.
+Advertised payout: task-specific; platform examples show $250–$500 USDC coding tasks, but I could not independently verify those individual cards as live. Platform reports 2,847 active agents, 12,453 completed tasks, $1.2M total earned and 847 open bounties; treat these as platform claims, not audited figures.
+Required: OpenClaw/custom worker, CLI/API, wallet.
+Autonomy: 9/10.
+Exact first action: query the real task API/CLI and only continue if a funded coding/research task is returned. Do not rely on marketing examples.
+Eligibility/constraints: current Terms contain no explicit age minimum but require lawful use, original work, no malicious code, no security circumvention, and cryptocurrency payment eligibility.
+Ease-to-first-$5: 5/10. Repeatability: 8/10 pending live-inventory verification.
+
+### 3) Mercatai — EU task marketplace for AI agents
+URL: https://www.mercatai.eu/ai-agents
+What the agent does: register via API, browse open/bidding tasks, bid, deliver, and receive SEPA/Stripe Connect settlement.
+Who pays: EU B2B task buyers.
+Payout: buyer-set EUR task price. Official economics: first 10 tasks 0% marketplace fee with 0.8% Stripe/SEPA fee; task 11+ platform fee 4.2% plus payment fee. Max transaction listed as €10,000.
+Categories: research, data analysis, content, code review, translation, document processing, market/competitor research and others.
+Required: API worker plus Stripe Connect/SEPA payout eligibility.
+Autonomy: 8/10.
+Exact first action: GET /api/v1/tasks and inspect actual open tasks before completing payout onboarding.
+Eligibility/constraints: EU/Czech-law service with Stripe/SEPA and AML/KYC conditions. Payout-provider eligibility can impose age/geography restrictions; do not use it if those requirements are not legitimately met.
+Ease-to-first-$5: 3/10 until eligibility/live inventory is confirmed. Repeatability: 8/10.
+
+### 4) Zentience Hive — Solana task marketplace
+URL: https://zentience.org/
+What the agent does: register, list tasks, bid, deliver work, then receive 90% of completed-task budget through x402; supports MCP plus REST.
+Who pays: task posters.
+Payout: 90% to agent / 10% platform; accepted assets advertised as USDC, SOL and platform token. No trustworthy current live-volume number verified this run.
+Required: API key, Solana-compatible wallet, worker.
+Autonomy: 9/10.
+Exact first action: query GET /marketplace/tasks and /marketplace/stats. Only integrate if actual funded external tasks are present.
+Eligibility/constraints: official docs label it experimental software; normal payment/wallet eligibility applies.
+Ease-to-first-$5: 3/10. Repeatability: 8/10 if liquidity appears.
+
+### 5) HireAIStaffs — competitive output marketplace
+URL: https://www.hireaistaffs.com/
+What the agent does: compete on writing, coding, research, data analysis, translation and similar tasks; buyer selects one deliverable and escrow releases to the winner.
+Who pays: human task posters.
+Payout: buyer-set; site does not expose a trustworthy current earning range. Stripe Connect settlement.
+Required: registered agent + eligible Stripe Connect payout.
+Autonomy: 8/10.
+Exact first action: inspect actual current tasks; do not build a custom integration before seeing funded inventory.
+Eligibility/constraints: Stripe/payment account eligibility applies; no bypassing age, identity or geography requirements.
+Ease-to-first-$5: 3/10. Repeatability: 8/10 pending liquidity.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6) Taskmarket — still top-tier
+URL: https://taskmarket.dev/
+Current primary-source snapshot: 19 open tasks, 26.7K agents, 2,380.714419 USDC posted volume. Live leaderboard includes 119.775968 and 78.624908 USDC earned by top agents. Current 24.2-USDC bounty has 68 submissions, demonstrating serious competition.
+What agent does: research, coding, visualization, analysis, structured artifacts.
+Who pays: requester funds escrow first.
+Required: Taskmarket skill/API + Base wallet.
+Autonomy: 10/10.
+Exact first action: install/query the skill, filter live tasks by reward and submission count, and only execute positive-EV work.
+Constraints: skip any task involving prohibited, deceptive, spammy, or external-platform-rule-violating actions.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 7) dealwork.ai — broadest serious live inventory
+URL: https://dealwork.ai/
+Current primary-source snapshot: 2.5K workers, 264 completed tasks, 156 open tasks, ~1.1-day typical delivery. Public example: AI delivered an $80 production-ready API task. Fees 10% standard, 3% AI→AI.
+What agent does: coding, APIs, research, data transformations, documentation.
+Who pays: human or agent clients through escrow.
+Required: skill.md onboarding/API worker.
+Autonomy: 9/10.
+Exact first action: connect one specialist and bid only where acceptance criteria are objectively testable.
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 8) t2000 — jobs + services + paid APIs
+URL: https://t2000.ai/
+What agent does: claim open work, sell fixed services, or expose pay-per-call APIs.
+Who pays: job posters/service/API buyers.
+Verified economics: job budgets lock in USDC; service settlements carry 5% fee; API calls 0% marketplace fee. Prior runs have verified public settlement receipts and seller totals, although the search index did not expose a fresher numeric settlement total this run.
+Autonomy: 9/10.
+Exact first action: use micro-jobs only for integration/reputation; prioritize externally useful services and API SKUs.
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+### 9) WorkProtocol — real settlement history, thin inventory
+URL: https://workprotocol.ai/hn
+Current official snapshot: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled. Minimum budget $50 USDC; funded escrow on Base; automated verification can use tests/build success.
+What agent does: code, research, ETL and other structured artifacts.
+Exact first action: subscribe/poll; claim only when deterministic acceptance criteria match your worker.
+Ease-to-first-$5 today: 4/10. Repeatability: 9/10.
+
+### 10) MoltJobs — infrastructure good, current tasks poor
+URL: https://moltjobs.io/open-jobs
+Current queue: four 2-USDC public-post jobs. One primary-source job requires an existing public account created before 2026-06-01, 50+ followers, clear paid/sponsored disclosure and a 120-hour hold before release.
+What agent does: normally job discovery → bid → deliver → Base-USDC settlement over REST/CLI/MCP.
+Who pays: job poster; funded escrow.
+Fee: 5%; 10 free bids/month.
+Exact first action: keep polling for code/research/data work. Do not chase promotional tasks unless every account/disclosure/community rule is legitimately satisfied.
+Ease-to-first-$5 now: 3/10. Repeatability: 8/10.
+
+### 11) Clawlancer — machine-native bounty rail
+URL: https://www.clawlancer.ai/
+What agent does: register, browse, claim, execute and deliver coding/research/writing/analysis tasks; automatic Base-USDC settlement.
+Who pays: bounty poster.
+Fees: advertised 1–2.5%.
+Required: MCP or REST worker, Base wallet/on-chain agent identity.
+Exact first action: poll for externally funded $5+ bounties; ignore penny seed tasks except for protocol testing.
+Autonomy: 10/10.
+Ease-to-first-$5: 5/10. Repeatability: 8/10.
+
+### 12) AgentHire — high claimed activity, still worth a thin adapter
+URL: https://www.agenthire.app/
+Platform reports 500+ active agents, 10K+ completed jobs and $50K+ volume processed; these are platform-reported figures. x402 on Solana; per-task USDC.
+What agent does: code review, translation, data/research and other narrow services.
+Exact first action: register one narrow specialist and independently measure genuine external paid demand.
+Autonomy: 10/10.
+Ease-to-first-$5: 6/10. Repeatability: 9/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 13) Automation Outcome Watchdog — strongest repeated product signal
+Evidence: https://www.reddit.com/r/n8n/comments/1tyzc1p/whats_your_worst_n8n_it_broke_and_i_had_no_idea/
+A client workflow silently flipped inactive and stopped syncing leads for three days; operators discuss external heartbeats because a dead workflow may generate no internal error at all.
+Related pattern: https://www.reddit.com/r/n8n/comments/1rx9dsn/3_failure_modes_that_still_break_ai_automations/
+Repeated failures: credential/auth drift, green executions with malformed/empty output, and missing exception ownership.
+Customer: n8n/Make/Zapier agencies and businesses.
+Workflow: expected event → independent heartbeat → verify actual downstream state → missing/late/malformed/duplicate? → evidence + alert.
+Acquire customers: automation consultants, client-service agencies and production workflow operators.
+Charge: setup + recurring monitoring; no universal price claimed.
+MVP: one expected-event type + one downstream receipt check + alert.
+Autonomy: 9/10.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### 14) PR / bug verification specialist
+Evidence pattern: current QA discussions repeatedly say AI makes script/test generation much faster while deciding what to test, reproducing failures and validating requirements remains costly.
+Offer: PR/issue + acceptance criteria → changed-surface analysis → targeted tests → reproduce failures → evidence packet → PASS / FAIL / HUMAN REVIEW.
+Customer: AI-heavy dev teams and agencies.
+Where to acquire: legitimate dev communities, agencies, or the coding marketplaces above.
+MVP: GitHub PR URL + requirements → deterministic verification report.
+Autonomy: 8/10.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### 15) Verified invoice/document processor
+Evidence: https://www.reddit.com/r/n8n/comments/1u16eu4/i_built_this_n8n_automation_as_an_mvp_to_a_client/
+A builder says a paid invoice-processing MVP won a six-month US-company contract. Another real-client example describes an accounting firm manually extracting PDF invoice data before automation.
+Additional signal: https://www.reddit.com/r/AiForSmallBusiness/comments/1tl2y0v/n8n_automation_build_invoice_bot/
+Offer: authorized invoice → fixed schema extraction → totals/ID validation → duplicate check → verified record OR exception queue.
+Customer: bookkeeping/accounting firms and SMB finance ops.
+MVP: PDF/email → validated structured record + exceptions; keep professional accounting judgment human-reviewed.
+Autonomy: 8/10.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### 16) Freelancer admin worker
+Evidence: https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+Repeated tasks: proposals, contracts, invoice reminders, onboarding, weekly client updates and testimonial requests.
+Customer: freelancers and tiny agencies.
+MVP: proposal + invoice reminder + weekly update using client/project data, with approval where appropriate.
+Acquire: freelancer/agency communities and existing contacts, not mass spam.
+Autonomy: 8/10.
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+### 17) Weekly reporting glue
+Evidence: https://www.reddit.com/r/automation/comments/1re8bc1/built_an_automation_this_week_that_saved_a_client/
+One client manually pulled Stripe/Airtable/Sheets data into a weekly report; the workflow automated the recurring collection, formatting and email delivery.
+Customer: small ops/finance/revenue teams.
+MVP: 2–3 authorized systems → normalize → reconcile → weekly summary → exception flag.
+Autonomy: 9/10.
+Ease-to-first-$5: 7/10. Repeatability: 10/10.
+
+### 18) Client-onboarding synchronizer
+Evidence: https://www.reddit.com/r/Entrepreneurs/comments/1s8k2qi/i_automated_client_onboarding_form_submission_to/
+Manual steps included welcome email, invoice creation, calendar booking, project tracker update and team notification; the automation reduced this to seconds.
+Customer: agencies and professional-service firms.
+MVP: authorized form → validate → CRM/project tracker → draft invoice → calendar → team notification → exception queue.
+Autonomy: 8/10.
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+### 19) Accounting document-chasing worker
+Evidence: https://www.reddit.com/r/automation/comments/1vvayrv/built_a_full_ca_firms_automation_suite_on_n8n/
+Recurring manual work: document chasing, deadline reminders, invoice follow-ups, routine client questions and lead qualification.
+Customer: accounting/bookkeeping firms.
+MVP: authorized client record → missing docs → approved reminder → receipt/status update → escalation queue.
+Keep tax/accounting judgments with qualified humans.
+Autonomy: 8/10.
+Ease-to-first-$5: 7/10. Repeatability: 9/10.
+
+### 20) Simple integration/reconciliation worker
+Evidence: https://www.reddit.com/r/n8n/comments/1r2ezbh/what_n8n_automations_are_you_actually_getting/
+Community examples repeatedly cite invoice/document processing, lead intake/routing, support triage and reporting glue as work that gets paid because it repla

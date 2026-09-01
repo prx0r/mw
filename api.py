@@ -971,3 +971,284 @@ def v1_crypto_ev():
             "monthly_potential": "$3,000-8,000",
         }
     }
+
+
+# ============================================
+# DASHBOARD — what the agent actually sees
+# ============================================
+
+@app.get("/v1/dashboard")
+def v1_dashboard():
+    """Dashboard: opportunities by problem space and H-level."""
+    from oracle.store import conn as _conn
+    conn_c = _conn()
+    
+    # By problem space (H0+H1 only)
+    by_space = conn_c.execute("""
+        SELECT category_id as space, COUNT(*) as n, SUM(reward_usd) as usd
+        FROM oracle_opps WHERE execution_mode IN ('H0', 'H1')
+        GROUP BY category_id ORDER BY n DESC
+    """).fetchall()
+    
+    # By H-level
+    by_hlevel = conn_c.execute("""
+        SELECT execution_mode as hlevel, COUNT(*) as n, SUM(reward_usd) as usd
+        FROM oracle_opps WHERE execution_mode IN ('H0', 'H1')
+        GROUP BY execution_mode ORDER BY execution_mode
+    """).fetchall()
+    
+    # Problem space × H-level cross-tab
+    cross = conn_c.execute("""
+        SELECT category_id as space, execution_mode as hlevel, COUNT(*) as n
+        FROM oracle_opps WHERE execution_mode IN ('H0', 'H1')
+        GROUP BY category_id, execution_mode ORDER BY category_id
+    """).fetchall()
+    
+    # Best per problem space
+    best_by_space = conn_c.execute("""
+        SELECT category_id as space, canonical_title, market_id, execution_mode, reward_usd
+        FROM oracle_opps
+        WHERE execution_mode IN ('H0', 'H1') AND reward_usd > 0
+        GROUP BY category_id
+        ORDER BY reward_usd DESC
+    """).fetchall()
+    
+    # Skipped H4
+    h4_ref = conn_c.execute("""
+        SELECT COUNT(*) as n, SUM(reward_usd) as usd
+        FROM oracle_opps WHERE execution_mode = 'H4'
+    """).fetchone()
+    
+    conn_c.close()
+    
+    return {
+        "by_problem_space": [{"space": r["space"], "n": r["n"], "usd": round(r["usd"] or 0, 2)}
+                              for r in by_space],
+        "by_hlevel": [{"hlevel": r["hlevel"], "n": r["n"], "usd": round(r["usd"] or 0, 2)}
+                       for r in by_hlevel],
+        "cross_tab": [{"space": r["space"], "hlevel": r["hlevel"], "n": r["n"]}
+                       for r in cross],
+        "best_per_space": [{"space": r["space"], "title": r["canonical_title"][:50],
+                             "source": r["market_id"], "reward_usd": round(r["reward_usd"] or 0, 2)}
+                            for r in best_by_space],
+        "skipped_h4": {"n": h4_ref["n"], "usd": round(h4_ref["usd"] or 0, 2)},
+    }
+
+
+@app.get("/v1/work/browse")
+def v1_work_browse(
+    hlevel: str = "",
+    space: str = "",
+    source: str = "",
+    min_reward: float = 0,
+    status: str = "",
+    skill: str = "",
+    limit: int = 50,
+    offset: int = 0,
+    sort: str = "reward_usd",
+    order: str = "desc",
+):
+    """Browse by problem space, H-level, source, reward, skill."""
+    conditions = []
+    params = []
+    
+    if hlevel:
+        conditions.append("o.execution_mode = ?")
+        params.append(hlevel)
+    if space:
+        conditions.append("o.category_id = ?")
+        params.append(space)
+    if source:
+        conditions.append("o.market_id = ?")
+        params.append(source)
+    if min_reward > 0:
+        conditions.append("o.reward_usd >= ?")
+        params.append(min_reward)
+    if status:
+        conditions.append("o.status = ?")
+        params.append(status)
+    
+    where = "WHERE " + " AND ".join(conditions) if conditions else ""
+    allowed_sorts = {"reward_usd", "first_seen_at", "last_seen_at", "created_at"}
+    if sort not in allowed_sorts:
+        sort = "reward_usd"
+    order_dir = "DESC" if order.lower() == "desc" else "ASC"
+    
+    from oracle.store import conn as _conn
+    conn_c = _conn()
+    rows = conn_c.execute(f"""
+        SELECT o.id, o.canonical_title, o.market_id, o.execution_mode,
+               o.category_id, o.reward_usd, o.status, o.deadline_at
+        FROM oracle_opps o
+        {where}
+        ORDER BY o.{sort} {order_dir}
+        LIMIT ? OFFSET ?
+    """, tuple(params) + (limit, offset)).fetchall()
+    
+    count_row = conn_c.execute(f"""
+        SELECT COUNT(*) as c FROM oracle_opps o {where}
+    """, tuple(params)).fetchone()
+    total = count_row["c"] if count_row else 0
+    conn_c.close()
+    
+    return {
+        "total": total, "limit": limit, "offset": offset,
+        "filters": {"hlevel": hlevel, "space": space, "source": source,
+                     "min_reward": min_reward},
+        "opportunities": [dict(r) for r in rows],
+    }
+
+
+@app.get("/v1/work/h0")
+def v1_work_h0(limit: int = 50):
+    """Fully autonomous opportunities — agent can do with zero human."""
+    from oracle.store import conn as _conn
+    conn_c = _conn()
+    rows = conn_c.execute("""
+        SELECT o.id, o.canonical_title, o.market_id, o.category_id,
+               o.reward_usd, o.status, o.deadline_at
+        FROM oracle_opps o
+        WHERE o.execution_mode = 'H0'
+        ORDER BY o.reward_usd DESC LIMIT ?
+    """, (limit,)).fetchall()
+    conn_c.close()
+    return {"hlevel": "H0", "label": "Fully autonomous", "count": len(rows),
+            "opportunities": [dict(r) for r in rows]}
+
+
+@app.get("/v1/work/h1")
+def v1_work_h1(limit: int = 50):
+    """One-time human setup, then autonomous."""
+    from oracle.store import conn as _conn
+    conn_c = _conn()
+    rows = conn_c.execute("""
+        SELECT o.id, o.canonical_title, o.market_id, o.category_id,
+               o.reward_usd, o.status, o.deadline_at
+        FROM oracle_opps o
+        WHERE o.execution_mode = 'H1'
+        ORDER BY o.reward_usd DESC LIMIT ?
+    """, (limit,)).fetchall()
+    conn_c.close()
+    return {"hlevel": "H1", "label": "One-time setup", "count": len(rows),
+            "opportunities": [dict(r) for r in rows]}
+
+
+@app.get("/v1/work/h2")
+def v1_work_h2(limit: int = 50):
+    """Human approval required per opportunity."""
+    from oracle.store import conn as _conn
+    conn_c = _conn()
+    rows = conn_c.execute("""
+        SELECT o.id, o.canonical_title, o.market_id, o.category_id,
+               o.reward_usd, o.status, o.deadline_at
+        FROM oracle_opps o
+        WHERE o.execution_mode = 'H2'
+        ORDER BY o.reward_usd DESC LIMIT ?
+    """, (limit,)).fetchall()
+    conn_c.close()
+    return {"hlevel": "H2", "label": "Human approval", "count": len(rows),
+            "opportunities": [dict(r) for r in rows]}
+
+
+@app.get("/v1/work/h3")
+def v1_work_h3(limit: int = 50):
+    """Human contributes materially."""
+    from oracle.store import conn as _conn
+    conn_c = _conn()
+    rows = conn_c.execute("""
+        SELECT o.id, o.canonical_title, o.market_id, o.category_id,
+               o.reward_usd, o.status, o.deadline_at
+        FROM oracle_opps o
+        WHERE o.execution_mode = 'H3'
+        ORDER BY o.reward_usd DESC LIMIT ?
+    """, (limit,)).fetchall()
+    conn_c.close()
+    return {"hlevel": "H3", "label": "Human contributes", "count": len(rows),
+            "opportunities": [dict(r) for r in rows]}
+
+
+@app.get("/v1/work/h4")
+def v1_work_h4(limit: int = 50):
+    """Fundamentally human-only."""
+    from oracle.store import conn as _conn
+    conn_c = _conn()
+    rows = conn_c.execute("""
+        SELECT o.id, o.canonical_title, o.market_id, o.category_id,
+               o.reward_usd, o.status, o.deadline_at
+        FROM oracle_opps o
+        WHERE o.execution_mode = 'H4'
+        ORDER BY o.reward_usd DESC LIMIT ?
+    """, (limit,)).fetchall()
+    conn_c.close()
+    return {"hlevel": "H4", "label": "Human-only", "count": len(rows),
+            "opportunities": [dict(r) for r in rows]}
+
+
+@app.get("/v1/unlocks")
+def v1_unlocks():
+    """Great marketplace unlocks — what's hot and agent-submittable.
+    
+    Based on market research: demand signals, submission friction, revenue paths.
+    """
+    return {"unlocks": [
+        {"rank": 1, "market": "Metaculus", "score": 10, "hlevel": "H0",
+         "demand": "1,220 open questions, $50K tournament",
+         "submission": "REST API, bot account ready, 1 API call",
+         "revenue": "Tournament prizes, free inference subsidized",
+         "agent_can_do": "YES — fully autonomous forecasting",
+         "what_to_build": "Forecasting bot, historical replay training"},
+        {"rank": 2, "market": "Chrome Web Store", "score": 9, "hlevel": "H1",
+         "demand": "AI sidebars +562%, Shopping +37.4%, Dev tools +82.7%",
+         "submission": "Chrome Web Store API v2, programmatic",
+         "revenue": "Self-hosted billing, top 10% make $3K-15K/mo",
+         "agent_can_do": "YES — agent builds extensions, submits via API",
+         "what_to_build": "AI writing sidebar, price tracker, dev tool"},
+        {"rank": 3, "market": "Atlassian Marketplace", "score": 9, "hlevel": "H1",
+         "demand": "ScriptRunner 35K installs, draw.io 68K installs",
+         "submission": "Forge CLI, 0% rev share first $1M",
+         "revenue": "83-100% to developer, subscription per-seat",
+         "agent_can_do": "YES — agent builds apps via Forge, deploys",
+         "what_to_build": "Jira workflow automation, Confluence integration"},
+        {"rank": 4, "market": "Reddit Devvit", "score": 9, "hlevel": "H1",
+         "demand": "Games, mod tools, community apps",
+         "submission": "devvit CLI, TypeScript, free hosting",
+         "revenue": "$167K max developer funds, tier-based payouts",
+         "agent_can_do": "YES — agent builds TS apps, submits via CLI",
+         "what_to_build": "Community game, mod tool, poll app"},
+        {"rank": 5, "market": "Gumroad", "score": 8, "hlevel": "H1",
+         "demand": "Digital products, templates, code, courses",
+         "submission": "REST API, create product + upload files",
+         "revenue": "95%+ to creator, direct sales",
+         "agent_can_do": "YES — agent creates products, uploads",
+         "what_to_build": "Code templates, prompt packs, mini-tools"},
+        {"rank": 6, "market": "DigitalOcean Marketplace", "score": 8, "hlevel": "H1",
+         "demand": "1-Click apps, droplet templates",
+         "submission": "REST API + Vendor portal",
+         "revenue": "75% vendor share",
+         "agent_can_do": "YES — agent builds Docker apps, submits",
+         "what_to_build": "One-click deployment templates"},
+        {"rank": 7, "market": "Railway Templates", "score": 8, "hlevel": "H1",
+         "demand": "Deploy templates, community contributions",
+         "submission": "Deploy API + OSS Partner",
+         "revenue": "25% commission on deploys",
+         "agent_can_do": "YES — agent creates templates, deploys",
+         "what_to_build": "Stack templates, starter kits"},
+        {"rank": 8, "market": "ActiveCampaign Marketplace", "score": 8, "hlevel": "H1",
+         "demand": "Integration apps, automation workflows",
+         "submission": "MCP Server + REST API",
+         "revenue": "Integration app revenue",
+         "agent_can_do": "YES — agent builds integrations",
+         "what_to_build": "CRM integrations, email automation"},
+        {"rank": 9, "market": "api0.app", "score": 7, "hlevel": "H1",
+         "demand": "API-as-product marketplace",
+         "submission": "x402 protocol",
+         "revenue": "Direct API sales",
+         "agent_can_do": "YES — agent creates and sells APIs",
+         "what_to_build": "Data APIs, utility APIs"},
+        {"rank": 10, "market": "Merkado AI Marketplace", "score": 7, "hlevel": "H1",
+         "demand": "AI agent apps",
+         "submission": "API",
+         "revenue": "AI agent marketplace",
+         "agent_can_do": "YES — agent builds AI tools for other agents",
+         "what_to_build": "AI utilities, agent connectors"},
+    ]}

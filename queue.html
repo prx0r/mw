@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oracle — Human Queue</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 20px; max-width: 800px; margin: 0 auto; }
+  h1 { color: #00ff88; font-size: 1.5em; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 0.85em; margin-bottom: 24px; }
+  .progress { background: #1a1a1a; border-radius: 8px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+  .progress-bar { background: #00ff88; height: 100%; transition: width 0.3s; }
+  .progress-text { color: #888; font-size: 0.8em; margin-bottom: 8px; }
+  .task { background: #161616; border: 1px solid #2a2a2a; border-radius: 10px; padding: 16px; margin-bottom: 12px; transition: all 0.2s; }
+  .task:hover { border-color: #444; }
+  .task.done { opacity: 0.5; border-color: #00ff8833; }
+  .task-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .task-num { background: #00ff88; color: #0a0a0a; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.85em; flex-shrink: 0; }
+  .task-num.done { background: #333; color: #666; }
+  .task-title { font-weight: 600; font-size: 1.05em; }
+  .task-meta { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: 600; }
+  .badge.critical { background: #ff444422; color: #ff6666; border: 1px solid #ff444444; }
+  .badge.high { background: #ffaa0022; color: #ffcc44; border: 1px solid #ffaa0044; }
+  .badge.medium { background: #00ff8822; color: #00ff88; border: 1px solid #00ff8844; }
+  .badge.low { background: #66666622; color: #999; border: 1px solid #66666644; }
+  .task-steps { background: #0a0a0a; border-radius: 6px; padding: 12px; margin-bottom: 10px; font-size: 0.88em; line-height: 1.6; }
+  .task-steps ol { padding-left: 20px; }
+  .task-steps li { margin-bottom: 4px; }
+  .task-steps code { background: #222; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; color: #00ff88; }
+  .task-actions { display: flex; gap: 8px; align-items: center; }
+  .btn { padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 0.85em; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-primary { background: #00ff88; color: #0a0a0a; }
+  .btn-primary:hover { background: #00cc6a; }
+  .btn-secondary { background: #222; color: #e0e0e0; border: 1px solid #333; }
+  .btn-secondary:hover { background: #333; }
+  .btn-done { background: #333; color: #666; }
+  .input-row { display: flex; gap: 8px; margin-top: 8px; }
+  .input-row input { flex: 1; background: #0a0a0a; border: 1px solid #333; border-radius: 6px; padding: 8px 12px; color: #e0e0e0; font-size: 0.9em; }
+  .input-row input:focus { outline: none; border-color: #00ff88; }
+  .input-row button { padding: 8px 16px; }
+  .status { font-size: 0.8em; margin-top: 6px; }
+  .status.ok { color: #00ff88; }
+  .status.error { color: #ff4444; }
+  .section-title { color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 10px; border-bottom: 1px solid #222; padding-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<h1>Oracle Human Queue</h1>
+<div class="subtitle">Click each link, follow the steps, paste the result. That's it.</div>
+
+<div class="progress-text" id="progress-text">0 / 11 complete</div>
+<div class="progress"><div class="progress-bar" id="progress-bar" style="width: 0%"></div></div>
+
+<div id="queue"></div>
+
+<script>
+const TASKS = [
+  {
+    id: 1,
+    title: "Metaculus Bot Token",
+    priority: "critical",
+    why: "$50K tournament closes Sep 6 — 5 days left",
+    url: "https://www.metaculus.com/futureeval/participate/",
+    urlLabel: "Open Metaculus →",
+    steps: [
+      "Click the link above",
+      "Sign up or login with Google/email",
+      "Go to the 'Participate' tab",
+      "Click 'Create Bot Token'",
+      "Copy the token (starts with a long string)",
+      "Paste it below"
+    ],
+    vaultKey: "METACULUS_TOKEN",
+    placeholder: "Paste your Metaculus bot token here..."
+  },
+  {
+    id: 2,
+    title: "Base Wallet Address",
+    priority: "critical",
+    why: "Unlocks AgentPact offers + x402 services",
+    url: "https://app.debank.com/",
+    urlLabel: "Open DeBank →",
+    steps: [
+      "Click the link above",
+      "Click 'Connect Wallet'",
+      "Select 'Create New Wallet' (or use existing)",
+      "Copy your 0x... address",
+      "Paste it below"
+    ],
+    vaultKey: "BASE_WALLET_ADDRESS",
+    placeholder: "0x... paste your Base wallet address"
+  },
+  {
+    id: 3,
+    title: "Claim Moltbook Agent",
+    priority: "high",
+    why: "Agent registered — needs your verification to post",
+    url: "https://www.moltbook.com/claim/moltbook_claim_oWp8EvzXlmGuAYTX1aQ_rlBKuVrM2ngA",
+    urlLabel: "Claim Agent →",
+    steps: [
+      "Click the link above",
+      "Verify your email (tradesprior@gmail.com)",
+      "Post a tweet saying: I'm claiming my AI agent \"oracle-agent\" on @moltbook 🦞",
+      "Paste the tweet URL below"
+    ],
+    vaultKey: null,
+    placeholder: "Paste tweet URL here..."
+  },
+  {
+    id: 4,
+    title: "MoltJobs API Key",
+    priority: "high",
+    why: "7 jobs × $5 USDC = $35 waiting, deadline Sep 3",
+    url: "https://moltjobs.io",
+    urlLabel: "Open MoltJobs →",
+    steps: [
+      "Click the link above",
+      "Login or create account",
+      "Go to Settings → API Keys",
+      "Click 'Create API Key'",
+      "Copy the key (starts with mj_live_...)",
+      "Paste it below"
+    ],
+    vaultKey: "MOLTJOBS_API_KEY",
+    placeholder: "mj_live_... paste your MoltJobs API key"
+  },
+  {
+    id: 5,
+    title: "dealwork.ai Activation",
+    priority: "high",
+    why: "164 tasks available, connect token already generated",
+    url: "https://dealwork.ai/login?redirect=%2Fdashboard%2Fagents%2Fconnect%3Ftoken%3DVMMxtlN14tL5a57RBR3zEBX3tFr3jNBnLaH01PTU2R0",
+    urlLabel: "Activate Connection →",
+    steps: [
+      "Click the link above",
+      "Login or create account",
+      "Authorize the agent connection",
+      "Done — I'll detect it automatically"
+    ],
+    vaultKey: null,
+    placeholder: null
+  },
+  {
+    id: 6,
+    title: "Kaggle Username",
+    priority: "high",
+    why: "$850K+ competitions (ARC-AGI, Pokémon, AI Security)",
+    url: "https://www.kaggle.com/settings",
+    urlLabel: "Open Kaggle Settings →",
+    steps: [
+      "Click the link above",
+      "Your username is at the top of the page",
+      "Type it below (you already have a token)"
+    ],
+    vaultKey: "KAGGLE_USERNAME",
+    placeholder: "Your Kaggle username..."
+  },
+  {
+    id: 7,
+    title: "Modrinth PAT",
+    priority: "medium",
+    why: "75% ad revenue, mod marketplace, 300 req/min",
+    url: "https://modrinth.com/settings/account",
+    urlLabel: "Open Modrinth →",
+    steps: [
+      "Click the link above",
+      "Scroll to 'API Tokens'",
+      "Click 'Create new token'",
+      "Name it 'oracle-agent'",
+      "Copy the token (starts with mrp_)",
+      "Paste it below"
+    ],
+    vaultKey: "MODRINTH_PAT",
+    placeholder: "mrp_... paste your Modrinth PAT"
+  },
+  {
+    id: 8,
+    title: "itch.io API Key",
+    priority: "medium",
+    why: "90%+ revenue share, game marketplace",
+    url: "https://itch.io/settings/api-keys",
+    urlLabel: "Open itch.io →",
+    steps: [
+      "Click the link above",
+      "Click 'Generate API Key'",
+      "Copy the key",
+      "Paste it below"
+    ],
+    vaultKey: "ITCH_API_KEY",
+    placeholder: "Paste your itch.io API key"
+  },
+  {
+    id: 9,
+    title: "Gumroad Access Token",
+    priority: "medium",
+    why: "90%+ revenue share, digital goods",
+    url: "https://gumroad.com/settings/advanced",
+    urlLabel: "Open Gumroad →",
+    steps: [
+      "Click the link above",
+      "Scroll to 'API'",
+      "Click 'Generate access token'",
+      "Copy the token",
+      "Paste it below"
+    ],
+    vaultKey: "GUMROAD_TOKEN",
+    placeholder: "Paste your Gumroad access token"
+  },
+  {
+    id: 10,
+    title: "Notion Integration Token",
+    priority: "medium",
+    why: "200+ integrations, API-first platform",
+    url: "https://www.notion.so/my-integrations",
+    urlLabel: "Open Notion →",
+    steps: [
+      "Click the link above",
+      "Click 'New integration'",
+      "Name it 'oracle-agent'",
+      "Select your workspace",
+      "Click 'Submit'",
+      "Copy the 'Internal Integration Token' (starts with secret_ or ntn_)",
+      "Paste it below"
+    ],
+    vaultKey: "NOTION_TOKEN",
+    placeholder: "secret_... or ntn_... paste token"
+  },
+  {
+    id: 11,
+    title: "HuggingFace Token",
+    priority: "medium",
+    why: "ML models, datasets, 200+ emails already",
+    url: "https://huggingface.co/settings/tokens",
+    urlLabel: "Open HuggingFace →",
+    steps: [
+      "Click the link above",
+      "Click 'Create new token'",
+      "Name it 'oracle-agent'",
+      "Select 'read' role",
+      "Click 'Create'",
+      "Copy the token (starts with hf_)",
+      "Paste it below"
+    ],
+    vaultKey: "HF_TOKEN",
+    placeholder: "hf_... paste your HuggingFace token"
+  }
+];
+
+let completed = new Set();
+
+function render() {
+  const queue = document.getElementById('queue');
+  const progress = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
+  
+  const done = completed.size;
+  const total = TASKS.length;
+  progress.style.width = (done / total * 100) + '%';
+  progressText.textContent = `${done} / ${total} complete`;
+  
+  let html = '';
+  let lastPriority = '';
+  
+  TASKS.forEach(task => {
+    if (task.priority !== lastPriority) {
+      lastPriority = task.priority;
+      const label = task.priority === 'critical' ? 'CRITICAL — Do First' :
+                    task.priority === 'high' ? 'HIGH — Do This Week' :
+                    task.priority === 'medium' ? 'MEDIUM — When Convenient' : 'LOW';
+      html += `<div class="section-title">${label}</div>`;
+    }
+    
+    const isDone = completed.has(task.id);
+    html += `
+      <div class="task ${isDone ? 'done' : ''}" id="task-${task.id}">
+        <div class="task-header">
+          <div class="task-num ${isDone ? 'done' : ''}">${isDone ? '✓' : task.id}</div>
+          <div class="task-title">${task.title}</div>
+        </div>
+        <div class="task-meta">
+          <span class="badge ${task.priority}">${task.priority}</span>
+          <span style="color:#888;font-size:0.8em">${task.why}</span>
+        </div>
+        <div class="task-steps">
+          <ol>
+            ${task.steps.map(s => `<li>${s}</li>`).join('')}
+          </ol>
+        </div>
+        <div class="task-actions">
+          <a href="${task.url}" target="_blank" class="btn btn-primary">${task.urlLabel}</a>
+          ${task.vaultKey ? `
+            <div class="input-row" style="flex:1">
+              <input type="text" id="input-${task.id}" placeholder="${task.placeholder}">
+              <button class="btn btn-secondary" onclick="saveKey(${task.id}, '${task.vaultKey}')">Save</button>
+            </div>
+          ` : ''}
+          ${!isDone ? `<button class="btn btn-done" onclick="markDone(${task.id})">Done</button>` : ''}
+        </div>
+        <div class="status" id="status-${task.id}"></div>
+      </div>
+    `;
+  });
+  
+  queue.innerHTML = html;
+}
+
+async function saveKey(taskId, vaultKey) {
+  const input = document.getElementById('input-' + taskId);
+  const status = document.getElementById('status-' + taskId);
+  if (!input || !input.value.trim()) return;
+  
+  status.textContent = 'Saving to vault...';
+  status.className = 'status';
+  
+  try {
+    const resp = await fetch('/api/vault/set', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ key: vaultKey, value: input.value.trim() })
+    });
+    const data = await resp.json();
+    if (data.ok) {
+      status.textContent = '✓ Saved to vault!';
+      status.className = 'status ok';
+      input.value = '';
+      markDone(taskId);
+    } else {
+      status.textContent = '✗ ' + (data.error || 'Failed');
+      status.className = 'status error';
+    }
+  } catch(e) {
+    status.textContent = '✗ Server offline — run: agent-vault vault credential set ' + vaultKey + '="..." --vault oracle';
+    status.className = 'status error';
+  }
+}
+
+function markDone(taskId) {
+  completed.add(taskId);
+  render();
+  localStorage.setItem('oracle-queue', JSON.stringify([...completed]));
+}
+
+// Load saved state
+try {
+  const saved = JSON.parse(localStorage.getItem('oracle-queue') || '[]');
+  saved.forEach(id => completed.add(id));
+} catch(e) {}
+
+render();
+</script>
+</body>
+</html>

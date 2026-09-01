@@ -1,0 +1,226 @@
+Subject: Agent Money Scout — 2026-08-29 05:00
+Date: Fri, 28 Aug 2026 17:25:24 -0500
+Message ID: 1a04a7a4ca738c36
+================================================================================
+
+# Agent Money Scout — 2026-08-29 05:00
+
+This run found four genuinely useful NEW monetization surfaces: Atrest.ai, Agensi, Alysium AgentHub, and Obolos. WURK is also worth tracking as a hybrid market because it already shows substantial real microtask activity and lets agent-run creators sell services/products, although much of the worker side is human-oriented.
+
+## NEW THIS RUN
+
+### 1) Atrest.ai — strongest new agent-to-agent task market
+URL: https://atrest.ai/
+
+What the agent does: autonomously accepts research, code-review, bug-fix, data-cleaning, API-integration, unit-testing, report-generation, scraping and similar digital tasks routed by capability.
+
+Who pays: other agents using the marketplace.
+
+Verified/advertised economics: the platform currently reports 105+ active agents, 1,200+ tasks completed and $48K+ USDC transacted. It advertises category pricing including code review $5–$25/task, data analysis $10–$50, bug fixing $8–$40, API integration $15–$60, unit testing $5–$20, competitive analysis $12–$45 and web scraping $3–$18. These figures are platform-reported, not independently audited.
+
+Required: compatible agent runtime, marketplace account/wallet, task execution tools, Base-compatible USDC setup as applicable.
+
+Autonomy: 10/10.
+
+Exact first action: inspect the live task feed, set strict guardrails for task categories and maximum compute cost, and auto-accept only jobs with objective acceptance criteria.
+
+Constraints: comply with any wallet/KYC/age/jurisdiction requirements. Do not bypass identity or age gates.
+
+Ease-to-first-$5: 8/10. Repeatability: 9/10.
+
+### 2) Agensi — sell the learned skill, not just the job
+URL: https://www.agensi.io/
+Creator guide: https://www.agensi.io/learn/how-to-sell-skills-on-agensi
+
+What the agent/operator sells: reusable SKILL.md packages that teach Claude Code, Codex CLI, Cursor, OpenClaw, Gemini CLI and other agents a specialist workflow.
+
+Who pays: developers buying skills.
+
+Verified economics: Agensi currently says creators receive 70% of each sale through Stripe Connect. Its current creator guide says most paid skills sit around $5–$15, with comprehensive domain skills around $20–$50. A separate Stripe-verified revenue tracker reported Agensi at $2,235 all-time revenue and $455 in the prior 30 days as of Aug 27, 2026. That third-party figure is useful evidence of actual money flow, but not a guarantee of seller earnings.
+
+Required: SKILL.md bundle, Stripe Connect, security review.
+
+Autonomy: 9/10 after publishing.
+
+Exact first action: convert one workflow that has already successfully completed paid work—e.g. PR verification, API audit, evidence extraction, data normalization—into a SKILL.md package and submit it to Agensi’s request-driven marketplace.
+
+Constraints: Stripe identity/age/geography rules apply. If not legally eligible for Stripe onboarding, do not attempt to register around those requirements.
+
+Ease-to-first-$5: 6/10. Repeatability: 10/10.
+
+### 3) Alysium AgentHub — paid specialist conversations
+URL: https://www.alysium.ai/blog/alysium-marketplace-agenthub
+
+What the agent does: packages a specialist knowledge agent and charges per conversation/use.
+
+Who pays: AgentHub buyers.
+
+Verified economics: creators choose per-conversation pricing and earnings route through Stripe Connect. Alysium says there is no payout minimum; earnings route on Stripe’s normal schedule after its platform fee. The platform does not publish enough current transaction volume for me to estimate realistic seller revenue.
+
+Required: creator application, agent, knowledge base, Stripe Connect.
+
+Autonomy: 9/10 after deployment.
+
+Exact first action: apply as a creator only with a narrow specialist that has evidence of demand, not a generic assistant.
+
+Good candidates: API due-diligence agent; PR-review evidence agent; research-citation agent; internal-data normalization agent.
+
+Constraints: standard identity and payment eligibility applies.
+
+Ease-to-first-$5: 4/10. Repeatability: 10/10 if the listing gets usage.
+
+### 4) Obolos — new Base/USDC autonomous work protocol
+URL: https://obolos.tech/en/
+
+What the agent does: post jobs, bid on jobs, negotiate signed milestones, deliver and receive USDC escrow after acceptance.
+
+Who pays: other agents/job posters.
+
+Verified economics: USDC on Base, escrowed settlement. I could not verify meaningful current job counts or total USDC settled from the public page, so I am deliberately not inventing a payout estimate.
+
+Required: MCP-compatible agent plus Base/USDC wallet.
+
+Autonomy: 10/10.
+
+Exact first action: connect its MCP/skill interface and query current jobs before doing any deeper integration. If inventory is thin, leave it as a polling adapter.
+
+Ease-to-first-$5: 4/10 pending liquidity. Repeatability: 9/10 if demand appears.
+
+### 5) WURK — hybrid microtask/service market worth mining
+URL: https://wurk.fun/
+Jobs: https://wurk.fun/jobs
+
+WURK is primarily an agent-to-human/human microtask economy, so I would not treat it as a pure autonomous-agent job board. But it now shows useful real-economy signals and lets creators publish stores/services/digital products that can be agent-backed.
+
+Current platform-reported activity: 101 active jobs, $138.46 distributed in the last 24 hours, 19.5K microjobs completed in the last 24 hours, and 2M+ completed all-time. Agent-to-human x402 microtasks start at $0.025 per response.
+
+Agent monetization angle: use an agent to operate a narrow creator service or digital-product store, while routing rare human-review steps to WURK only when needed.
+
+Example: agent performs document extraction → uncertain rows go to paid human verification → verified dataset sold as a service.
+
+Autonomy: 8/10 overall because some workflows intentionally include humans.
+
+Ease-to-first-$5: 4/10 for an agent-backed service. Repeatability: 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6) ClawGig
+https://clawgig.ai/
+
+Currently shows live jobs including a $25 agent-protocol research report, $5 SEO/deep-research content, $15 API integration, $15 landing page and $5 blog work. Agents can browse, propose and deliver via REST/MCP. Platform states 90% of approved payment goes to the agent.
+
+Ease: 8/10. Repeat: 8/10.
+
+### 7) Molted
+https://molted.work/
+
+Still provides autonomous bidding and direct USDC payment on Base with no custody/platform middleman. Best used as another thin adapter in the same work router.
+
+Ease: 6/10. Repeat: 9/10.
+
+### 8) AgentHire
+https://www.agenthire.app/
+
+Still reports 500+ active agents, 10K+ jobs completed and $50K+ volume processed, using x402 USDC on Solana. Treat those figures as platform-reported rather than independently audited.
+
+Ease: 5/10. Repeat: 9/10.
+
+### 9) Agrenting
+https://agrenting.com/
+
+Still advertises $0 monthly fees and 95% of completed-task revenue to providers. Supports OpenClaw, Hermes and custom agents over REST/WebSocket plus stablecoin settlement.
+
+Ease: 5/10. Repeat: 9/10.
+
+### 10) AgentGigs
+https://www.agentgigs.io/
+
+Still one of the strongest autonomous workflows after the required one-time email verification and legitimate Stripe Connect onboarding: browse → apply → deliver → earn via API/webhooks.
+
+Ease: 5/10. Repeat: 9/10.
+
+### 11) Mercatai
+https://www.mercatai.eu/ai-agents
+
+Still supports register → GET tasks → bid → deliver → Stripe Connect payout, with zero platform fee on the first ten tasks. Its ranking explicitly scores reputation 50%, price 30%, speed 20%, useful information for bid optimization.
+
+Ease: 5/10. Repeat: 9/10.
+
+### 12) SporeAgent
+https://www.sporeagent.com/
+
+Still reports 1,247 agents and $48,210 paid out. Visible example tasks are $45 scraping, $80 FastAPI testing and $120 translation, but they are hundreds of days old, so they are evidence of historic task shape rather than fresh inventory.
+
+Ease: 5/10. Repeat: 8/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 13) AI coding has created a verification/review tax
+A fresh Aug 28 discussion on r/developersIndia argues that building software is now dramatically cheaper/faster and explicitly proposes putting a coding agent directly into a CMS so normal website owners can request changes and approve a preview/diff. In the comments, the high-vote takeaway is that distribution is now the moat.
+
+Direct thread: https://www.reddit.com/r/developersIndia/comments/1w0iay4/
+
+This reinforces two products:
+1. change-request → safe preview/diff → approval → deploy;
+2. AI-generated PR → independent tests/evidence → PASS/FAIL/REVIEW.
+
+### 14) QA capacity is still the bottleneck
+An Aug 11 thread describes exactly the repeated pattern: AI tools make teams ship roughly 3x faster while verification/regression capacity remains unchanged.
+
+Thread: https://www.reddit.com/r/BuildAndScaleHQ/comments/1vljstk/
+
+MVP: POST /verify-pr returning tests run, failures, regression risks, reproduction steps, evidence and confidence.
+
+### 15) Agent marketplaces have a trust problem
+A March Reddit post from someone who tested multiple agent marketplaces reports nonresponsive agents, templated work, hallucinated research and allegedly gameable reputation signals. It is anecdotal, but the pattern matters.
+
+Thread: https://www.reddit.com/r/AIAgentsInAction/comments/1rsuu55/
+
+Opportunity: independent delivery verification / agent reputation based on settled jobs and reproducible evidence rather than self-reported stars.
+
+### 16) Skill buyers are already paying for reusable procedures
+Agensi’s early creator threads documented hundreds of downloads and first paid-skill activity; by late August, a Stripe-verified third-party tracker reports nonzero real revenue. The demand pattern is: developers do not want another generic agent—they want reliable reusable procedures for testing, code review, DevOps, API work and security.
+
+Relevant creator thread: https://www.reddit.com/r/SideProject/comments/1rr6k68/
+
+## CREATIVE SPECIFIC PLAYS
+
+### 17) Verification-as-a-service
+Customer: teams using coding agents.
+Workflow: PR/spec → changed-surface map → tests → runtime evidence → risk report → PASS/FAIL/REVIEW.
+Acquisition: agent marketplaces, GitHub-integrated developer communities, direct inbound landing page.
+Charge: per PR or monthly API quota.
+Immediate MVP: POST /verify-pr.
+Score: first-$5 7/10; repeatability 10/10.
+
+### 18) Skill factory from paid jobs
+Customer: developers using Claude Code/Codex/Cursor/OpenClaw.
+Workflow: successful paid task → extract reliable procedure → benchmark → package as SKILL.md → sell on Agensi/Alysium and other skill stores.
+Charge: $5–$50 one-time depending on depth.
+Immediate MVP: one skill built from a workflow that has already passed real acceptance criteria.
+Score: 6/10; repeatability 10/10.
+
+### 19) Agent-market liquidity oracle
+Customer: agent operators deciding where to deploy workers.
+Workflow: crawl markets → normalize open jobs → record reward, bids, age, acceptance, settlement and withdrawal → estimate realized EV.
+Charge: API subscription or x402 per query.
+Immediate MVP endpoints: /markets, /jobs, /liquidity, /opportunity-score.
+Score: 5/10; repeatability 10/10.
+
+### 20) Tiny-business-change agent
+Customer: small businesses with simple websites/internal tools.
+Workflow: request in plain English → inspect code/content → make bounded change → test → generate preview/diff → publish only after explicit approval.
+Acquisition: local agencies, web-maintenance providers, SMB communities.
+Charge: low monthly retainer or per accepted change.
+Immediate MVP: connect one Astro/WordPress/simple React site and support five safe change types.
+Score: 7/10; repeatability 9/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. **Add Atrest.ai as the next thin job adapter.** It has the strongest new combination of machine-native work categories, explicit task pricing, escrow and platform-reported transaction history. Do not write a new worker; route your existing specialists into it.
+
+2. **Convert one proven paid workflow into a sellable skill on Agensi.** This is the clearest new compounding channel this run. A one-off job teaches the procedure; the procedure becomes a reusable asset. The best first candidate remains PR verification/API audit/evidence extraction rather than a generic assistant.
+
+3. **Track realized settlement, not marketplace claims.** Every source should move through DISCOVERED → BID → WON → DELIVERED → ACCEPTED → SETTLED → WITHDRAWN. Rank opportunities by expected realized profit = reward × P(still open) × P(solve) × P(accepted) × P(settled) − inference/API/payment/review costs.
+
+The main strategic conclusion from this run is that the differentiated economic asset is becoming the **procedure library** accumulated from real jobs: tools that worked, failure cases, evaluator feedback, acceptance tests, APIs, schemas and domain-specific shortcuts. The same worker can monetize that knowledge both by bidding on future jobs and by selling the procedure itself as a skill/API.

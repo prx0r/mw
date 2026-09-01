@@ -1,0 +1,210 @@
+Subject: Agent Money Scout — 2026-08-28 23:00
+Date: Fri, 28 Aug 2026 11:25:45 -0500
+Message ID: 1a0493109166f160
+================================================================================
+
+# Agent Money Scout — 2026-08-28 23:00
+
+This run found 7 worthwhile NEW additions. I filtered out empty boards, testnet-only systems, and marketplaces whose public activity could not support a credible earning claim.
+
+## NEW THIS RUN
+
+### 1) dealwork.ai — strongest fresh direct-work source
+URL: https://dealwork.ai/
+
+What the agent does: browse open tasks, bid or claim, deliver code/research/data/writing/translation/automation work, and optionally hire another worker for a subtask.
+
+Who pays: human or AI task posters; escrow is funded before work starts.
+
+Verified economics: the live site currently reports 156 open tasks, 2.5K workers, 264 completed tasks, and ~1.1 day median hire-to-delivery. Human↔AI contracts carry a 10% fee; AI↔AI contracts carry 3%. The site gives real examples of $80 human→AI API work and $5 AI→AI formatting work. Platform figures are self-reported, so treat them as signals rather than audited financials.
+
+Tools/account: skill.md + REST API; human authorization during agent connection; HMAC-secured requests.
+
+Autonomy: 9/10 after onboarding.
+
+Exact first action: check marketplace/payment eligibility, then connect one existing worker through https://dealwork.ai/skill.md and pull the open-task feed. Only bid where acceptance criteria are deterministic.
+
+Constraints: platform/payment identity and age/geography rules apply. Do not bypass account or payment-provider restrictions.
+
+Ease to first $5: 9/10. Repeatability: 9/10.
+
+### 2) MoltMarket — clean autonomous coding-bounty loop
+URL: https://www.moltbotmarket.com/
+
+What the agent does: browse GitHub coding bounties, claim one, fix bugs/add features/write tests, submit a PR.
+
+Who pays: bounty posters.
+
+Verified economics: bounties start at $5; the worker receives 95% after approval. Work has a default 24-hour completion window. The public leaderboard currently shows $0 earned, so liquidity is not yet demonstrated even though the workflow is live.
+
+Tools/account: REST API, API key, GitHub coding capability.
+
+Autonomy: 10/10 after account setup.
+
+Exact first action: check eligibility, register an agent, then query https://moltbotmarket.com/api/v1/jobs?status=open and only claim a small testable issue.
+
+Constraints: Stripe/payment-account requirements apply and must be satisfied legitimately.
+
+Ease to first $5: 6/10 because public payout history is currently zero. Repeatability: 8/10 if task flow grows.
+
+### 3) SkillHQ — sell reusable agent skills rather than labor
+URL: https://skillhq.dev/
+
+What the agent/operator sells: validated Claude Code SKILL.md packages and Custom GPT configurations that solve repeatable tasks.
+
+Who pays: developers buying installable skills.
+
+Verified economics: 472+ curated skills advertised; skills are priced roughly €2–$50; creators receive 85% of each sale; zero listing fee advertised.
+
+Tools/account: package a useful, reusable skill; marketplace/Stripe-style seller onboarding as applicable.
+
+Autonomy: 10/10 after publishing because revenue can recur without accepting individual jobs.
+
+Exact first action: turn one proven worker procedure into a narrow paid skill—for example PR verification, API due diligence, or evidence-backed company research—and submit it for validation.
+
+Constraints: seller/payment eligibility and age requirements apply.
+
+Ease to first $5: 6/10. Repeatability: 10/10.
+
+### 4) GigSoul — simple x402 pay-per-call endpoint distribution
+URL: https://gigsoul.polsia.app/
+
+What the agent does: expose a useful HTTP endpoint that other agents call autonomously.
+
+Who pays: other agents consuming the endpoint.
+
+Verified economics: GigSoul advertises $0.05–$0.10 per call in USDC on Base. Its current depot visibly lists multiple $0.05/call agents. No reliable public revenue history was visible, so do not infer demand beyond the live listings.
+
+Tools/account: HTTP endpoint + x402-compatible service listing.
+
+Autonomy: 10/10.
+
+Exact first action: after checking legal/payment eligibility, list one already-working deterministic endpoint rather than building a new generalized agent.
+
+Constraints: payment/wallet eligibility applies; do not bypass age or identity restrictions.
+
+Ease to first $5: 4/10 because it requires roughly 50–100 paid calls at advertised prices. Repeatability: 10/10 if discovered.
+
+### 5) AgentMarket.space — live task feed with 18 open tasks
+URL: https://www.agentmarket.space/
+
+What the agent does: register skills, listen for tasks, bid, complete work, and earn platform credits.
+
+Who pays: task posters purchasing credits.
+
+Verified economics: public page currently shows 86 registered agents and 18 open tasks. 1 credit = $0.01 and the platform fee is 10%.
+
+Tools/account: agentmarket SDK/API; no crypto wallet advertised for basic participation.
+
+Autonomy: 9/10.
+
+Exact first action: check cash-out/payment eligibility and whether earned credits are currently withdrawable as real money before doing work. If verified, connect a research/writing worker and listen for matching tasks.
+
+Constraints: IMPORTANT: platform credits only count as earnings if a legitimate cash-out path is available to the operator. Payment/account age rules apply.
+
+Ease to first $5: 4/10 until cash redemption is independently verified. Repeatability: 7/10.
+
+### 6) AgentSwarmWork — webhook-native autonomous task marketplace
+URL: https://www.agentswarmwork.com/
+
+What the agent does: register a skill.md, receive matching jobs by webhook/WebSocket, perform data processing/research/code review/content work, submit, get approval, withdraw earnings.
+
+Who pays: task posters via escrow.
+
+Verified economics: real-payment flow is advertised, but I could not verify a useful current task count or payout distribution from the public page. Treat this as a new polling source, not a top revenue source yet.
+
+Tools/account: skill.md + webhook/WebSocket integration.
+
+Autonomy: 10/10 after setup.
+
+Exact first action: check payout eligibility and live task liquidity before implementing more than a thin adapter.
+
+Constraints: payment/account eligibility applies.
+
+Ease to first $5: 3/10. Repeatability: 8/10 if liquidity appears.
+
+### 7) Agent Bazaar (agent-bazaar.com) — paid skill marketplace
+URL: https://www.agent-bazaar.com/
+
+What the agent does: publish a pay-per-use skill/API/CLI capability that other agents purchase automatically.
+
+Who pays: autonomous agents consuming the skill.
+
+Verified economics: 28+ skills currently advertised; payment is per-use in USDC via x402 on Base. Public revenue/volume was not sufficiently visible to state a payout expectation.
+
+Tools/account: package the capability as a skill/API and list it.
+
+Autonomy: 10/10.
+
+Exact first action: publish an existing reliable capability, not a speculative new one, then track calls and settled revenue.
+
+Constraints: payment/wallet and applicable age/geography rules apply.
+
+Ease to first $5: 4/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+The strongest previously seen job sources remain Toku, TaskBounty, Opire, SporeAgent, Clawlancer, MoltJobs, TaskForce, Superteam Earn, GitProduct and BotBounty. The strongest passive-capability distribution surfaces remain x402 Arena, AgentPay Store, AgentBazaar, PayanAgent, AgenticTrade, the402, Agoragentic and Atelier.
+
+GitProduct remains particularly concrete for agent-deliverable product work: its official agent page says submissions are explicitly labeled as agent work, agents can browse/submit through API, payouts cash out via PayPal at a $50 balance, and a 10% platform fee applies. https://gitproduct.com/agents
+
+Superteam Earn remains a higher-ceiling but slower lane: its verified agent guide documents AGENT_ALLOWED/AGENT_ONLY opportunities and historical platform distributions exceeding $1.7M. https://earn.superteam.fun/
+
+Clawlancer remains one of the cleanest native flows: register → browse bounties → claim → deliver → USDC settlement, with public fees advertised around 1–2.5%. https://clawlancer.ai/
+
+Platforms that are currently empty or weak should not consume engineering time. Skarnfall, for example, currently shows 0 agents, 0 humans, 0 tasks and 0 completed work. https://skarnfall.com/
+
+## REDDIT DEMAND SIGNALS
+
+### A) QA/review is becoming the scarce downstream step
+A current August 21 thread describes teams using coding agents to increase PR/code output while QA capacity stays fixed, causing features to sit in review for days. The recurring pattern is simple: AI accelerates generation faster than organizations can verify it.
+Thread: https://www.reddit.com/r/BuildAndScaleHQ/comments/1vueghj/is_qa_becoming_the_real_bottleneck_now_that/
+
+Another August 18 thread describes a developer struggling to take ownership of AI-generated code for a problem that would previously have taken weeks, with the code compiling and stakeholders happy but human understanding/review becoming the bottleneck.
+Thread: https://www.reddit.com/r/cscareerquestions/comments/1vrl7bx/i_am_reviewing_ai_generated_code_for_a_problem/
+
+Immediate offer: “Give me a PR + issue/spec; receive tests, regression risks, reproduction evidence, dependency checks and PASS/FAIL/HUMAN-REVIEW.” Sell per verified PR/run.
+
+### B) Manual operations remain a large unglamorous opportunity
+An August 11 ExperiencedDevs discussion includes a developer saying most operations at a non-tech company are still manual and many business complaints reduce to another endpoint or data filter that previously took 2–3 engineering days.
+Thread: https://www.reddit.com/r/ExperiencedDevs/comments/1vlkhje/
+
+Immediate offer: a narrow internal-ops agent that turns one recurring manual workflow into an API-backed finished operation, with human review only for exceptions.
+
+### C) Customer support remains measurable and automatable
+A July 30 hardware-business owner reported that repetitive questions made up the bulk of support and that a photo-aware knowledge-base chatbot automated roughly 70–80% of emails, freeing staff for harder cases.
+Thread: https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out/
+
+Immediate offer: authorized support inbox → classify → retrieve approved answer/evidence → draft/resolve routine tickets → escalate uncertain cases.
+
+A useful negative signal: Reddit communities often prohibit unsolicited promotion or AI-generated spam. Use Reddit to detect demand patterns; acquire customers through channels where solicitation is permitted rather than spamming threads.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1) Add dealwork.ai to the top polling tier
+It has the strongest fresh liquidity signal this run: 156 open tasks, actual completed-task statistics, escrow, machine integration and low AI↔AI fees. Build one thin adapter, not another bespoke agent.
+
+Normalize each job into:
+
+source / task_id / reward / acceptance_criteria / deadline / competition / estimated_cost / P(success) / P(acceptance) / P(settlement) / expected_profit
+
+### 2) Productize PR verification as the second specialist
+Fresh Reddit evidence keeps pointing to code-generation abundance and review scarcity. A verification worker can earn two ways:
+
+- complete testing/code-review bounties on job marketplaces;
+- expose /verify-pr as a paid API/skill on SkillHQ, GigSoul and agent-skill marketplaces.
+
+Suggested output contract:
+
+repo, commit, requirements, tests_run, tests_added, failures, regression_risks, dependency_risks, reproduction_steps, evidence, confidence, human_review_required
+
+### 3) Separate “work markets” from “capability markets”
+The scout should maintain two revenue loops:
+
+WORK: dealwork.ai / Toku / TaskBounty / Opire / MoltJobs / Clawlancer → complete jobs → build evidence/reputation.
+
+CAPABILITY: SkillHQ / GigSoul / x402 Arena / AgentPay / AgentBazaar → sell the same accumulated procedure repeatedly.
+
+The strongest long-term asset is the specialist's execution memory: which APIs work, acceptance patterns, failure modes, task pricing, cost history, reviewer feedback and reusable verification procedures. Marketplaces are distribution; accumulated execution knowledge is the moat.
+
+Only count revenue at SETTLED/WITHDRAWN, never at listed, credited, testnet, or internal-credit stages.

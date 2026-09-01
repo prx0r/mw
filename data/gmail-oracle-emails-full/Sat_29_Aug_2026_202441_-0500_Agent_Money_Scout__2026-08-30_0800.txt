@@ -1,0 +1,258 @@
+Subject: Agent Money Scout — 2026-08-30 08:00
+Date: Sat, 29 Aug 2026 20:24:41 -0500
+Message ID: 1a05044cdde34bff
+================================================================================
+
+# Agent Money Scout — 2026-08-30 08:00
+
+The strongest new direct-work discovery this run is **OpenJobs**: its live Solana-mainnet marketplace currently reports **212 registered AI agents, 152 jobs posted, 146 completed jobs, and 10,726 total volume**, with USDC escrow, MCP/SDK integrations, and sandboxed verification. The strongest new paid-API distribution discovery is **APIHub**, which currently indexes **256 services (230 external)** and shows transaction counts on some live x402 services.
+
+## NEW THIS RUN
+
+### 1. OpenJobs — autonomous work on Solana mainnet
+URL: https://openjobs.bot/
+
+What the agent does: browse jobs, apply, execute research/code/data work, submit deliverables, and receive escrowed payment.
+Who pays: job posters.
+Payout: task-specific. Platform reports 10,726 total volume; no universal per-job payout claimed.
+Requirements: OpenJobs API key; USDC-compatible Solana wallet; optional MCP, LangChain, OpenAI, or CrewAI SDK.
+Autonomy: 10/10.
+First action: read https://openjobs.bot/skill.md, register the narrowest reliable worker you already have, then query only currently funded jobs.
+Constraints: USDC is fee-free/no minimum on the platform; its optional WAGE token has a transfer fee. Follow any wallet/legal eligibility requirements normally.
+Ease to first $5: **8/10**. Repeatability: **9/10**.
+
+Why it ranks high: primary-source stats show a remarkably high completed/post ratio: 146 completed from 152 posted, rather than a marketplace with hundreds of empty listings.
+
+### 2. TaskForce — milestone-based USDC work
+URL: https://www.task-force.app/
+API docs: https://www.task-force.app/docs/api
+
+What the agent does: development, QA/testing, research, data, writing and other structured digital work.
+Who pays: task creators funding milestone escrow.
+Payout: poster-selected USDC budget; no verified current payout range found, so none invented.
+Requirements: one API registration; the platform creates a Solana wallet during agent registration; submissions support evidence/screenshots.
+Autonomy: 9/10.
+First action: call the task-discovery endpoint and inspect real open inventory before doing any integration beyond registration.
+Constraints: milestone approval controls settlement; normal wallet/payment eligibility applies.
+Ease: **5/10**. Repeatability: **9/10 if real inventory is present**.
+
+### 3. APIHub — paid API marketplace with measurable usage
+URL: https://apihub.io/
+Marketplace: https://apihub.io/marketplace
+Provider docs: https://apihub.io/docs/providers/api-services
+
+What the agent does: expose a deterministic API that other agents pay to call.
+Who pays: agents/developers via prepaid credits or x402 USDC on Base.
+Pricing/payout: providers set **$0.001 to $10+ per call** and keep **90%**; payouts are batched daily. Current marketplace shows **256 services / 230 external**. Some listings expose transaction counts, e.g. OneSource with 56 transactions and x402scan with 54 on the current page.
+Requirements: stable HTTP API + Base-compatible payout wallet; APIHub proxies/metering so the upstream API does not need native x402 support.
+Autonomy: 10/10 after publishing.
+First action: cross-list a proven endpoint such as `/automation-health`, `/verify-pr`, `/api-qa`, or `/structured-evidence`; configure a small free quota then charge for serious usage.
+Constraints: APIHub's terms require the responsible individual/entity behind an agent to be **18+ or age of legal majority** and legally eligible to use crypto/payment services. Do not bypass this requirement.
+Ease: **4/10**. Repeatability: **10/10**.
+
+### 4. Tetto — paid agent calls, but currently devnet
+URL: https://tetto.io/
+Pricing: https://www.tetto.io/pricing
+
+What the agent does: sell a callable specialist such as code audit, memory, research, or implementation guides.
+Who pays: other agents/app developers.
+Pricing/payout: provider keeps **90%**; callers pay from **$0.001/call**. Current featured services include CodeAuditPro at $0.75/call, QualityAnalyzer at $0.10, and MotherGuide at $0.75.
+Requirements: Tetto-compatible agent endpoint + Solana wallet.
+Autonomy: 10/10.
+First action: **watch rather than prioritize**: its pricing page currently states settlements use **Solana devnet**, so I would not count this as real current income until mainnet settlement is confirmed.
+Ease now: **1/10**. Repeatability potential: **9/10**.
+
+### 5. A2A Colony — sell agent skills via card or Base USDC
+URL: https://www.a2acolony.com/
+
+What the agent does: provide research, code review, extraction, content, data, or communication capabilities through an API endpoint.
+Who pays: agents or human buyers.
+Advertised pricing: current examples include £9.99 one-time research/data skills, £10/use code review, and £29.99 SEO content. One featured research skill currently shows **1 acquisition**; many others show zero.
+Requirements: agent endpoint, listing, continuous health checks; payments via Stripe Connect or Base-USDC escrow.
+Autonomy: 9/10.
+First action: cross-list only an existing skill and measure whether a real purchase arrives.
+Constraints: Stripe/wallet eligibility applies; demand is still very thin.
+Ease: **3/10**. Repeatability: **8/10**.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. Claw Jobs — best visible first-$5 jobs
+URL: https://claw-jobs.com/
+
+Current primary-source state: **17 open gigs, 8 completed, 321 users, 40,500 sats paid**. Visible real-Bitcoin jobs include **12,000 sats (~$12 displayed)** for a structured 50+ AI-agent dataset, **10,000 sats (~$10)** for TypeScript API-route review, and **8,000 sats (~$8)** for an API integration guide.
+
+What agent does: research, datasets, code review, documentation.
+Who pays: escrow-funded gig poster.
+Payment: Bitcoin Lightning; **1% fee**.
+Requirements: REST/SDK worker + eligible Lightning address.
+Autonomy: 9/10.
+First action: target only real-Bitcoin listings (not testnet) with objective deliverables.
+Constraints: platform says no KYC, but any Lightning wallet/account rules still apply.
+Ease: **8/10**. Repeatability: **8/10**.
+
+### 7. Hudle
+URL: https://hudle.io/
+
+Current page: **11 completed gigs, 1 under review, 17 agents**. Top earner `javierai` shows **67 USDC earned**. Completed jobs displayed include 20–25 USDC documentation, research and protocol-design work. First 50 gigs are fee-free; 39 slots remain.
+
+What agent does: research, technical writing, code/data/audit work.
+Who pays: funded gig posters.
+Payment: Base-USDC smart-contract settlement.
+Autonomy: 10/10.
+First action: read https://hudle.io/skill.md and poll new funded gigs.
+Ease: **8/10**. Repeatability: **8/10**.
+
+### 8. Taskmarket
+URL: https://taskmarket.dev/
+
+Fresh primary-source state: **19 open tasks, 26.7K agents, 2,380.714419 USDC posted volume**. The 24.2-USDC `BRYAN'S HARD DATA` bounty currently has **68 submissions**. The live leaderboard shows workers at **119.775968** and **78.624908 USDC**. Historical receipts prove actual settlement, including a 6-USDC task paying 5.55 USDC net after the 7.5% fee.
+
+What agent does: research, code, data, media, benchmarks.
+Who pays: funded requester.
+Autonomy: 10/10.
+First action: compute expected value before execution: `net reward × probability of acceptance − execution cost`.
+Ease: **7/10** because competition is intense. Repeatability: **9/10**.
+
+### 9. dealwork.ai
+URL: https://dealwork.ai/
+
+Current page: **2.5K workers, 156 open tasks, 264 completed**, ~1.1-day typical delivery. Public examples include an AI worker completing an **$80 production API endpoint with tests** and an AI-to-AI $5 data-formatting task. Escrow is funded before work; normal contracts cost 10%, AI-to-AI 3%.
+
+What agent does: APIs, coding, data transformation, research and documentation.
+Who pays: human or AI client.
+Autonomy: 9/10.
+First action: connect one specialist through `skill.md`; bid only on tasks with machine-checkable acceptance criteria.
+Ease: **8/10**. Repeatability: **9/10**.
+
+### 10. t2000
+URL: https://t2000.ai/
+Jobs: https://t2000.ai/jobs
+
+Fresh state: **16 jobs open, 57 in progress, 1,167 settled, $957.43 settled USDC**. The services page shows **352 hire listings, 19 instant APIs, and $1.29 already paid via x402**. Individual agents show settled totals such as **$150, $138.66 and $57.75**.
+
+What agent does: claim jobs, list fixed-price services, or expose paid APIs.
+Who pays: job/service/API buyers.
+Fees: services **5% on settlement**, API/x402 calls **0% protocol fee**.
+Autonomy: 9/10.
+First action: use low-value jobs only to establish integration/reputation; move any proven procedure into a service/API.
+Constraints: terms require the account owner to be old enough to form a binding contract where they live.
+Ease: **7/10**. Repeatability: **9/10**.
+
+### 11. MoltJobs
+URL: https://moltjobs.io/open-jobs
+
+Current visible queue contains several **2-USDC** promotional/public-post jobs funded in escrow. They require a genuine pre-existing public account, sponsorship disclosure, 50+ followers and a **120-hour hold** before release. MoltJobs itself states it is new and small with very few completed jobs.
+
+What agent does: current tasks are mostly publication/proof jobs; future categories can include structured digital work.
+Who pays: escrow-funded poster.
+Payment: Base USDC; **5% fee**, 10 free bids/month.
+Autonomy: 9/10 technically.
+First action: keep polling for coding/research/data jobs rather than forcing the current promotional work.
+Constraints: only perform social/publication work when all destination-platform/account/disclosure rules are genuinely satisfied; no spam or deceptive promotion.
+Ease now: **3/10**. Repeatability: **8/10**.
+
+### 12. Clawlancer
+URL: https://www.clawlancer.ai/marketplace
+
+Current board: **50 listings**, with **48 starter gigs ≤$1**. Visible jobs are mostly $0.01–$0.03, although a negotiable 'small automation unit' listing remains. Agent onboarding is excellent: one API/MCP loop covers registration, discovery, claiming, delivery and USDC settlement.
+
+What agent does: research, writing, coding, analysis, data.
+Who pays: bounty posters.
+Fees: advertised **1–2.5%**.
+Autonomy: 10/10.
+First action: maintain the adapter but trigger execution only for meaningful externally funded jobs rather than penny seed tasks.
+Ease now: **3/10**. Repeatability: **8/10**.
+
+## REDDIT DEMAND SIGNALS
+
+### 13. Workflow-cost watchdog
+Demand evidence: https://www.reddit.com/r/n8n/comments/1vgi240/i_built_a_free_tool_that_shows_the_real_monthly/
+
+A current n8n builder reports client workflow costs becoming **3–4× the quoted amount** when retry loops, premium model calls and paid API nodes appeared in production.
+
+Problem pattern: businesses know what a workflow is supposed to cost, but not what retries/nesting/model selection will make it cost after deployment.
+
+Agent workflow:
+`workflow JSON + execution history → paid-node map → loops/retries → expected cost per successful outcome → monthly estimate → anomaly / fix report`
+
+Customer: n8n/Make automation agencies.
+Acquisition: legitimate automation communities, consultants, agency partnerships.
+Charge: fixed audit initially; recurring anomaly monitoring after trust is established.
+MVP: upload/export workflow → top five cost risks + estimated monthly range + remediation actions.
+Ease: **8/10**. Repeatability: **10/10**.
+
+### 14. Verified invoice/document worker
+Demand evidence: https://www.reddit.com/r/n8n/comments/1u16eu4/i_built_this_n8n_automation_as_an_mvp_to_a_client/
+
+One builder reports an invoice-processing MVP leading to a **six-month paid contract with a US company**.
+
+Do not sell generic OCR. Sell:
+`invoice → fixed schema → validate IDs/totals → duplicate check → verified record OR exception`
+
+Customer: bookkeeping firms and SMB finance teams.
+Who pays: firm/business.
+MVP: PDF/image → validated JSON/CSV + confidence/evidence + exception list.
+Human boundary: qualified humans retain accounting judgment and sensitive approvals.
+Ease: **8/10**. Repeatability: **10/10**.
+
+### 15. Accounting document-chasing worker
+Demand evidence: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+
+A recent high-engagement implementation highlights document chasing, invoice follow-ups, deadline reminders and routine client questions as repetitive work.
+
+Workflow:
+`authorized client record → missing item → approved reminder → receipt/status tracking → human exception`
+
+Customer: bookkeeping/accounting firms.
+MVP: missing-document tracker + reminder drafts + escalation queue.
+Do not automate professional accounting/compliance judgment.
+Ease: **7/10**. Repeatability: **9/10**.
+
+### 16. Freelancer back-office worker
+Demand evidence: https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+
+The recurring tasks are proposals, contracts, invoice reminders, onboarding, weekly client updates and testimonial requests.
+
+Workflow:
+`project/client state → template + structured variables → draft/send with approval gates → payment/status follow-up`
+
+Customer: freelancers and tiny agencies.
+MVP: invoice chaser + weekly-update worker.
+Ease: **7/10**. Repeatability: **9/10**.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+### 1. Add OpenJobs to the real work router immediately
+Current direct-work order:
+
+`Claw Jobs → OpenJobs → Hudle → dealwork.ai → Taskmarket → t2000`
+
+OpenJobs is the new standout because its primary-source stats show **146 completed jobs out of 152 posted** plus USDC settlement and machine-native MCP/SDK interfaces. Before doing work, calculate:
+
+`expected_net = reward × P(funded) × P(open) × P(solve) × P(accepted) × P(settled) − inference/tool/review costs`
+
+### 2. Build `/automation-health-cost` rather than another generic agent
+Combine the two strongest recurring operational pain signals:
+
+`expected execution + downstream business receipt + actual execution cost → HEALTHY / SILENT FAILURE / COST ANOMALY`
+
+First MVP:
+- workflow identifier
+- expected heartbeat/deadline
+- downstream receipt/state check
+- cost estimate per successful run
+- alert if missing/late/malformed/too expensive
+
+This is a concrete recurring product an automation agency can understand and pay for.
+
+### 3. Productize only after paid task proof
+The ladder should be:
+
+`paid job → proven procedure → tests/failure cases → fixed service → paid API`
+
+Once a procedure works on direct gigs, cross-list it on API markets. APIHub is the most interesting new rail this run because it provides a real marketplace with **256 services**, payment proxying, MCP discovery and per-service transaction counts. Strong SKUs remain `/automation-health`, `/verify-pr`, `/api-qa`, `/structured-evidence`, `/normalize-invoice`, and `/release-check`.
+
+## FILTERED OUT / CAUTIONS
+
+- **Tetto** is tracked but not treated as real earnings yet because its pricing page currently states USDC settlement occurs on **Solana devnet**.
+- **APIHub** has useful provider economics but its terms require the responsible human/entity behind an agent to meet its age/legal-majority eligibility requireme

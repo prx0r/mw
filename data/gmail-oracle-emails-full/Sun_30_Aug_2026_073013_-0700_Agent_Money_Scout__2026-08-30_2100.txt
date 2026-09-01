@@ -1,0 +1,198 @@
+Subject: Agent Money Scout — 2026-08-30 21:00
+Date: Sun, 30 Aug 2026 07:30:13 -0700
+Message ID: 1a05313fce60199f
+================================================================================
+
+# Agent Money Scout — 2026-08-30 21:00
+
+## Executive signal
+
+Fresh verification keeps AgentPact at #1 for first-dollar probability: its live Needs board currently shows 200 needs, including Python code review (5–10 USDC), API automation (10–25), Python security/code review (10–25), data analysis + visualization (10–25), Python/data execution (5), OHLCV validation (5–15), transcription (7–14), technical SEO (5–10), and more. dealwork.ai remains the strongest broad queue with 156 open tasks and 264 completed. TaskMarket has real settlement but heavy competition: a live 10-USDC Next.js/MLPerf task has 51 submissions, while a 24.2-USDC creative-data task has 122.
+
+NEW THIS RUN
+
+1) Agrenting — https://agrenting.com/
+What it is: live agent-first marketplace where autonomous agents self-register through a public API, publish capabilities/pricing, receive escrow-funded tasks, and keep 95% of completed-task revenue. No monthly fee. Stablecoin withdrawals via documented payout rails. Public marketplace examples show active agents priced around $5–$10/task, but many visible agents still show zero completed tasks/earnings, so liquidity is not yet proven.
+Agent work: research, summarization, coding, code review, automation, data cleanup, translation.
+Who pays: hirers selecting the agent.
+Advertised payout: provider gets 95% of task price; seller chooses price. Examples include $5, $5.50, $10/task.
+Tools: REST/MCP/callback-compatible agent; unique DID; provider API key.
+Autonomy: 10/10.
+First action: check platform/legal/payout eligibility first; if eligible, register a narrow $5–$10 specialist such as API sanity check or Python/data worker and keep it reachable for hires.
+Eligibility: public pages checked do not establish a universal age rule. Stablecoin/payout-provider restrictions, supported regions, and any legal notice returned by registration must be followed; do not bypass them.
+Ease first $5: 5/10. Repeatability: 9/10.
+
+2) OKX AI — https://www.okx.ai/
+What it is: live OKX-operated marketplace with both a Task Marketplace and Agent Marketplace. Agents can bid on jobs or sell pay-per-use services. Payments settle in USDT/USDG on X Layer; official docs say no OKX exchange account is required to start via Onchain OS, but an Agentic Wallet is needed.
+Live evidence: current tasks page shows active and completed tasks. Current provider pages show real sales counts, e.g. Bind has 5 total sold at 0.05 USDT/use and okXBT has 11 total sold at 0.01–0.02 USDT/use.
+Agent work: research, public-data lookup, code/services, structured information products, orchestration.
+Who pays: marketplace task posters or API/service callers.
+Payout: task/service specific; verified provider examples are priced in USDT per use.
+Tools: Onchain OS, Agentic Wallet, MCP-compatible agent.
+Autonomy: 10/10.
+First action: verify jurisdiction/account eligibility before onboarding; if eligible, inspect non-financial/non-gambling work and consider cross-listing a proven verification/research endpoint.
+Eligibility: OKX explicitly says availability varies by jurisdiction and some foreign services are prohibited to US users. Normal age/account/wallet requirements must be satisfied; do not bypass restrictions.
+Ease first $5: 5/10. Repeatability: 9/10.
+
+3) TaskForce — https://www.task-force.app/
+What it is: API-first work marketplace where humans and AI agents can browse tasks, apply, deliver milestones, and receive USDC. Platform advertises 0% worker fee and milestone escrow.
+Agent work: coding, QA/testing, data, writing, research, design-support.
+Who pays: task creator funding milestones.
+Payout: task-specific. Homepage illustrates $200–$500 tasks but these examples are not sufficient proof of current open liquidity, so do not count them as verified opportunities.
+Tools: API registration, agent challenge verification, auto-created Solana wallet, REST task workflow.
+Autonomy: 10/10.
+First action: check terms/eligibility, then query GET /api/agent/tasks and require a real current funded task before doing any work.
+Eligibility: age/geography terms were not clearly surfaced in the public pages checked; comply with wallet/payment restrictions.
+Ease first $5: 4/10. Repeatability: 9/10 potential.
+
+4) Agoragentic — https://agoragentic.com/earn.html
+What it is: paid agent-service marketplace on Base. Current primary page reports 756 agents, 68 public catalog services, and 801 invocations. Sellers receive 97% of paid invocation fees when settlement is enabled. $1 refundable seller bond.
+Live payment proof: its Receipt Reconciliation service documents a paid x402 canary that settled 0.10 USDC on Base.
+Agent work: expose callable verification/research/data/automation endpoint.
+Who pays: agent/service callers.
+Payout: seller-defined per call; provider retains 97%.
+Tools: hosted endpoint, API key, Base-compatible settlement.
+Autonomy: 10/10.
+First action: cross-list only a capability that already solved a paid task elsewhere; do not build speculatively for the catalog.
+Eligibility: follow any wallet/network/provider eligibility requirements.
+Ease first $5: 4/10. Repeatability: 10/10 if demand develops.
+
+5) WorkUSDC — https://workusdc.com/
+What it is: Base-USDC milestone marketplace focused on authorized defensive cyber/AI/data work. It has filters for payment-verified clients and fewer than 10 proposals.
+Important caveat: the public page currently renders the marketplace shell but no concrete public job cards. Freelancer proposals also cost 2 USDC, so this is poor expected value until live inventory is visible.
+Agent work: authorized defensive audit, Python automation, wallet UX review, data work.
+Who pays: clients funding escrow milestones.
+Payout: task-specific Base USDC.
+Tools: email account, profile, Base wallet; proposal credit costs 2 USDC.
+Autonomy: ~7/10.
+First action: do not pay the proposal fee until a funded job with budget, scope, and authorization is visible.
+Eligibility: platform explicitly requires legal, authorized, safe work and jurisdiction gating for high-risk cyber work. Normal age/payment eligibility applies.
+Ease first $5: 1/10. Repeatability: 7/10 potential.
+
+STILL ACTIVE FROM PRIOR RUNS
+
+6) AgentPact — https://agentpact.xyz/needs
+Current: 200 Needs. Best verified cluster: Python code review 5–10 USDC; API automation 10–25; Python code/security audit 10–25; data analysis + visualization 10–25; Python/data execution 5; OHLCV format check 5–15; transcription 7–14; technical SEO 5–10; BTC report 10–20. The board also contains a large amount of 0.01–1 USDC test noise.
+Agent work: Python/API QA, research, data validation, analysis, transcription.
+Who pays: buyer/deal poster.
+Tools: AgentPact API/MCP/npm/Python integration; Base-USDC settlement optional depending on deal.
+Autonomy: 10/10.
+First action: target the 5–25 USDC Python/API/data cluster and reject test/bootstrap traffic.
+Eligibility: public pages checked do not surface a universal age rule; wallet/payment rules still apply.
+Ease first $5: 9/10. Repeatability: 9/10.
+
+7) dealwork.ai — https://dealwork.ai/
+Current: 2.5K workers, 156 open tasks, 264 completed, ~1.1-day typical delivery. Public examples include an $80 AI-delivered production API endpoint with tests and a $5 AI-to-AI formatting contract. Escrow is funded before work; AI-to-AI fee is 3%, standard fee 10%.
+Agent work: code, APIs, research, transformations, data, documentation.
+Who pays: humans or agents.
+Autonomy: 9/10.
+First action: ingest all open tasks and bid only where acceptance criteria can be independently reproduced.
+Eligibility: comply with account/payment rules.
+Ease first $5: 9/10. Repeatability: 9/10.
+
+8) TaskMarket — https://taskmarket.dev/
+Current concrete task: 10-USDC Build Inference Chip Index task, 10 days left, 51 submissions. Another 24.2-USDC creative data task has 122 submissions with one day left. Settlement evidence exists: a completed 2-USDC task paid 1.85 USDC net after 7.5% fee.
+Agent work: code, research, benchmarks, datasets, interactive artifacts.
+Who pays: escrow-funded requester.
+Autonomy: 10/10.
+First action: enforce status=open AND due_at>now AND funded, then calculate EV = reward × P(win) – execution cost.
+Eligibility: Base-wallet rules apply; do not use if not eligible.
+Ease first $5: 6/10. Repeatability: 9/10.
+
+9) t2000 — https://t2000.ai/jobs
+Current: 94 open, 73 in progress, 1,247 settled, $986.23 settled USDC. Real receipt proof exists: a $0.10 job paid $0.095 after 5% fee. Seller profiles show much larger historical settlement totals. Current open mix still contains lots of low-value bootstrap work.
+Agent work: open jobs, fixed services, paid APIs.
+Who pays: buyers/posters.
+Autonomy: 10/10.
+First action: reject referral/payment-loop noise and focus on externally useful jobs that can later become a fixed service/API.
+Eligibility: wallet/network rules apply.
+Ease first $5: 6/10. Repeatability: 10/10.
+
+10) MoltJobs — https://moltjobs.io/open-jobs
+Current live job: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer; about five days remain. Jobs are funded with Base-USDC escrow. Platform provides MCP, CLI, REST, webhooks, certifications, 10 free bids/month, 5% success fee.
+Agent work: research/specification/coding/data tasks.
+Who pays: job poster.
+Autonomy: 9/10.
+First action: inspect the current 5-USDC spec task; any buyer contact must be specific, permitted, non-spammy, and compliant with the destination platform.
+Eligibility: account/wallet rules apply; protected jobs may require evals.
+Ease first $5: 7/10. Repeatability: 8/10.
+
+11) MikroTask — https://mikrotask.com/
+Current model: explicitly supports AI-agent sellers for research, drafting and data cleanup. Fixed tiers £5/£10/£25/£50; payout can be USD, USDT, or USDC after buyer approval.
+Agent work: research, data cleanup, writing, translation, code.
+Who pays: task buyer.
+Autonomy: 8/10.
+First action: monitor buyer-posted tasks or list one narrow agent capability at the £5 tier.
+Eligibility: seller/payment age and geography rules were not clearly surfaced on pages checked; verify before onboarding.
+Ease first $5: 8/10. Repeatability: 8/10.
+
+12) Toku.agency — https://www.toku.agency/
+Prior run verified 130+ open jobs and explicit $5/$25 examples. The direct page did not render reliably in this run, so mark it STILL ACTIVE / needs refresh rather than claiming a new live count.
+Agent work: research, writing, code, automation, analysis.
+Who pays: marketplace clients.
+Payout: 85% to agent via Stripe Connect, based on prior primary verification.
+Autonomy: 9/10.
+First action: only use after fresh inventory and Stripe eligibility are re-verified.
+Ease first $5: 6/10. Repeatability: 9/10.
+
+13) FiatDock — https://fiatdock.com/
+Current catalog: 57 services, 52 third-party, 43 buyable now, $0.001–$7/call, 11 free; seller gets 100% first 30 days and 99% after. Demand remains weak enough that this should be a cross-listing rail, not a product strategy.
+Agent work: paid MCP calls.
+Who pays: other agents.
+Autonomy: 10/10.
+First action: list a proven endpoint only after it earns through direct work.
+Eligibility: Base/wallet/payment-provider rules apply.
+Ease first $5: 3/10. Repeatability: 10/10 potential.
+
+14) AgentHire — https://www.agenthire.app/
+Prior verified state: self-reported 500+ active agents, 10K+ jobs completed, $50K+ volume, USDC/Solana and agent APIs. Actual public current job inventory remains too opaque to rank above AgentPact/dealwork.
+Agent work: code review, scraping/data tasks where authorized, translation, research.
+Who pays: human or agent requester.
+Autonomy: 10/10.
+First action: inspect funded live inventory before integrating heavily.
+Eligibility: current ToS/age/geography need verification before use.
+Ease first $5: 5/10. Repeatability: 9/10 if volume is real.
+
+REDDIT DEMAND SIGNALS
+
+15) Automation outcome watchdog
+Thread: https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+Pattern: green n8n execution does not prove the promised downstream message/action actually occurred. Dead tokens, rejected templates and dead webhooks fail silently.
+Customer: automation agencies / businesses already running production workflows.
+Agent workflow: expected event + deadline + downstream receipt + baseline → HEALTHY / FAILED / SILENT.
+Acquisition: legitimate n8n/automation communities, agencies, prior clients; no spam.
+Charge: fixed setup/audit, then recurring monitoring.
+MVP: one workflow, one business promise, external expectation store, delivery receipt check, daily exceptions.
+Ease first $5: 9/10. Repeatability: 10/10.
+
+16) Pre-deploy workflow cost/risk linter
+Thread: https://www.reddit.com/r/automation/comments/1w21d6b/how_do_you_prevent_runaway_automation_costs/
+Evidence: operator reports 47,000 runs in six hours and ~$2.5K direct cost after a bad condition. Another production-cost thread reports 500 retries in 10 minutes pushing a bill from $12 to $847 overnight.
+Customer: n8n/Make/Zapier agencies and ops teams.
+Workflow: workflow JSON → loop/retry analysis → model/API cost map → execution caps → canary/dry-run plan → ranked fixes.
+MVP: n8n-lint workflow.json.
+Charge: fixed audit initially.
+Ease first $5: 9/10. Repeatability: 10/10.
+
+17) n8n-to-code migration / architecture audit
+Thread: https://www.reddit.com/r/AgentsOfAI/comments/1w2296c/is_n8n_actually_finished/
+Demand pattern: multiple commenters say they moved deterministic jobs to Python/GitHub Actions/cron while using agents to maintain and patch failures; others prototype in agents then codify stable flows.
+Customer: teams whose workflow graphs have become accidental applications.
+Workflow: workflow export + requirements → classify deterministic code vs orchestration → migration plan → Python/FastAPI/GitHub Actions scaffold → tests.
+Charge: fixed migration audit + implementation.
+MVP: convert one brittle scheduled workflow into a tested Python job with logs/retries.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+18) WhatsApp automation reliability specialist
+Thread: https://www.reddit.com/r/n8n/comments/1w0r31n/everything_that_broke_while_i_was_building_a/
+Pattern: Meta account restrictions and expiring access tokens can look like n8n failures and remain hard to diagnose.
+Customer: legitimate WhatsApp Business operators and automation agencies.
+Workflow: credential expiry + account status + webhook heartbeat + delivery receipt + retry limits.
+MVP: read-only health report and test message path; keep sensitive account changes human-controlled.
+Charge: setup/audit + recurring checks.
+Ease first $5: 8/10. Repeatability: 9/10.
+
+19) Factual-grounding gate for content automation
+Thread: https://www.reddit.com/r/n8nforbeginners/comments/1w25iio/built_3_ai_workflows_in_n8n_just_wanted_to_share/
+Pattern: a content workflow correctly followed a brief but reproduced an invented statistic because compliance checked brief adherence rather than factual truth.
+Customer: content agencies / businesses generating scheduled content.

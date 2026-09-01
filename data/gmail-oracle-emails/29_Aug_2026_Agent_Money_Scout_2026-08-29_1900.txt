@@ -1,0 +1,315 @@
+Subject: Agent Money Scout — 2026-08-29 19:00
+Date: Sat, 29 Aug 2026 07:26:10 -0500
+From: Prior Trades <tradesprior@gmail.com>
+Message ID: 1a04d7c0a37e2feb
+================================================================================
+
+# Agent Money Scout — 2026-08-29 19:00
+
+## NEW THIS RUN
+
+### 1) agentsbay.ai — strongest fresh marketplace signal
+URL: https://agentsbay.ai/
+Primary source currently reports 27 registered agents, 774 jobs settled, about $1.5K USDC in escrow, and ~6 minute average verification time. Jobs use Polygon USDC escrow; providers submit artifacts and payment releases after verification. Commission is advertised as 0% below $1K lifetime GMV, tapering upward later.
+
+What an agent can do: research, code review, data work, competitive intelligence, SEO audits, pitch-deck generation, structured deliverables.
+Who pays: humans or agents posting/hiring through the market.
+Verifiable payout/pricing: service listings currently include PR/code review at $19, competitor intelligence at $27, pitch-deck creation at $29 and smart-contract review at $30. Do not interpret the bizarre high-value text in some open-job cards as trustworthy demand; the current open-job feed contains obvious low-quality/spam-looking entries.
+Requirements: API-capable agent plus a compatible payout wallet; platform/local eligibility must be checked before onboarding.
+Autonomy: 9/10.
+First action: inspect the current jobs API and service catalogue, then cross-list one already-working specialist rather than building something platform-specific.
+Ease to first $5: 6/10. Repeatability: 9/10.
+
+### 2) NEAR AI Agent Market — large established agent-work market
+URL: https://market.near.ai/
+Official NEAR documentation describes a marketplace where agents bid on tasks, execute autonomously and receive escrow-backed payment. Current service directories remain populated across development, research, code review, data, QA, automation and testing. gigs.sh's last verified snapshot (May 18) reported ~1.4K agents, ~3.8K jobs and ~$24.9K cumulative volume, so treat those numbers as an older checkpoint rather than today's liquidity.
+
+What an agent can do: code review, technical research, automation, data analysis, testing, documentation.
+Who pays: task posters and service buyers.
+Pricing: current services include examples around 5–10 USDC for research/audits; broader historic service pricing clusters roughly $12–$24.
+Requirements: compatible agent + permitted payment setup; comply with platform/local age/payment rules and never bypass restrictions.
+Autonomy: 9/10.
+First action: query live jobs, not the service directory, and score only funded work with objective acceptance criteria.
+Ease: 5/10. Repeatability: 9/10.
+
+### 3) Agent Wonderland — API-to-agent distribution rail
+URL: https://www.agentwonderland.com/sell
+Agent Wonderland lets an existing OpenAPI service be exposed through MCP/x402-style agent discovery while accepting fiat or USDC from buyers and routing provider payout through Stripe Connect. It advertises a flat 15% fee per successful call and supports per-call pricing or prepaid credits.
+
+What the agent sells: narrow API capabilities such as filing analysis, enrichment, evidence extraction, structured document normalization, release verification or API QA.
+Who pays: agent/human callers.
+Payout/pricing evidence: the site shows an illustrative Filings Analyst at $0.40/request and an enrichment example at $0.22/lead; these are marketplace examples, not independent proof of seller revenue.
+Requirements: working API/OpenAPI spec; payout-provider eligibility must be satisfied normally.
+Autonomy: 10/10 after deployment.
+First action: cross-list an endpoint that already solves a real job; don't build a new generic agent for this marketplace.
+Ease: 4/10 until real buyer traffic is verified. Repeatability: 10/10.
+
+### 4) AgentJob — pay-per-message agent marketplace
+URL: https://agent-job.ai/
+AgentJob advertises 10,000+ agents, per-message USDC settlement on Base, REST/MCP onboarding and a task square where humans post requests. The primary site was intermittently unavailable during this run, so its current task liquidity could not be independently verified.
+
+What an agent does: conversational research, analysis, coding help or other bounded services charged per interaction.
+Who pays: users who continue the conversation or post tasks.
+Payout: provider-set per-message pricing; no reliable current earnings figure verified this run.
+Requirements: API/MCP-capable agent and eligible payment setup.
+Autonomy: 9/10.
+First action: wait for the task/feed endpoint to be reliably reachable, then verify external paid traffic before investing integration time.
+Ease: 3/10. Repeatability: 8/10 if real demand exists.
+
+### 5) BountyBook — excellent architecture, zero work today
+URL: https://www.bountybook.ai/
+BountyBook is API/MCP-native: GET open jobs → claim → execute → submit → AI oracle verifies → USDC release. Its official board currently shows 0 open bounties. Successful payouts carry a 4% fee.
+
+What the agent does: long-running monitor/research/data tasks and other oracle-verifiable work.
+Who pays: bounty posters.
+Current payout: none available because there are 0 open bounties.
+Autonomy: 10/10.
+First action: poll; do not spend compute or integration effort until a funded bounty appears.
+Ease today: 1/10. Repeatability: 8/10 if liquidity returns.
+
+### 6) QA / PR verification as a direct service
+Evidence: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+The August 27 thread now has ~1.1K votes and reports developers becoming idle because AI-assisted coding throughput exceeded QA capacity. A separate enterprise-QA thread reports manual QA becoming the bottleneck while generic AI-driven tests remain slower/flakier in some workflows.
+
+Offer: PR URL + acceptance criteria → changed-surface map → targeted tests → reproduce failures → evidence packet → PASS/FAIL/HUMAN REVIEW.
+Customer: teams using Claude Code/Codex/Cursor heavily.
+Acquisition: GitHub-heavy teams, dev communities, marketplace coding jobs.
+Charging: per verified PR initially; recurring CI allowance later.
+MVP: `/verify-pr` accepting repo/PR + requirements and returning structured evidence.
+Ease: 8/10. Repeatability: 10/10.
+
+### 7) Professional-services intake automation
+Evidence: https://www.reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/
+A practitioner who automated workflows for 30+ professional-services firms reports the same recurring work repeatedly: intake forms, CRM entry, scheduling, confirmation email and spreadsheet/status updates.
+
+Offer: connect existing authorized form/inbox → validate → CRM → calendar → notification → exception queue.
+Customer: accountants, recruiters, consultants, agencies, small law firms.
+Charging: fixed implementation + maintenance.
+MVP: one supported stack rather than a universal agent.
+Ease: 7/10. Repeatability: 9/10.
+
+### 8) Automation Watchdog / outcome verification
+Recurring operator complaints show that a workflow can report success while the intended business outcome failed: dead webhooks, missing downstream records, malformed outputs, duplicate executions or silent schema drift.
+
+Offer: expected business event → independent canary/state check → timeout/duplicate/schema detection → evidence + alert + runbook.
+Customer: n8n/Make/Zapier agencies and businesses with production automations.
+Charging: setup + recurring monitoring per workflow/client.
+MVP: import workflow JSON + expected schedule/output and monitor last-good outcome.
+Ease: 8/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 9) dealwork.ai
+URL: https://dealwork.ai/
+Fresh primary-source crawl: ~2.5K workers, 264 completed tasks and 156 open tasks. Public examples include an $80 human→AI API job and a $5 AI→AI structured-data job. Strongest broad acquisition feed right now.
+Autonomy 9/10 · Ease 8/10 · Repeatability 9/10.
+
+### 10) Taskmarket
+URL: https://taskmarket.dev/
+Fresh primary source: 19 open tasks, 26.7K agents and 2,380.714419 USDC posted/funded volume. A current 24.2-USDC task is visible. Tasks expose competition and settlement state, which makes expected-value routing possible.
+Autonomy 10/10 · Ease 8/10 · Repeatability 9/10.
+
+### 11) WorkProtocol
+URL: https://workprotocol.ai/
+Current primary figures: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled; minimum job budget is $50. The public page currently surfaces a 90-USDC code job. Historic public receipts include released 100-USDC test jobs.
+Autonomy 9/10 · Ease 8/10 · Repeatability 9/10.
+
+### 12) t2000
+URL: https://t2000.ai/
+Still has visible recent settlements and seller-level settled totals. Current seller cards include $57.75, $125.56 and $100 settled, while recent activity shows $0.50 jobs settling. Supports both jobs and reusable APIs; services take 5%, API calls currently 0%.
+Autonomy 9/10 · Ease 7/10 · Repeatability 9/10.
+
+### 13) MoltJobs
+URL: https://moltjobs.io/open-jobs
+Still has four recent 2-USDC promotional/public-post jobs protected by escrow. Those particular tasks require genuine pre-existing public accounts, follower minimums, paid/sponsored disclosure and compliance with destination-community rules, so they are poor autonomous targets unless every requirement is legitimately satisfied. Better to keep polling for coding/research/data work.
+Autonomy 8/10 · Ease 4/10 · Repeatability 8/10.
+
+### 14) TaskBounty
+URL: https://www.task-bounty.com/for-agents
+Still one of the strongest coding-agent loops: production GitHub issues → reproduce → patch → tests → PR → sandbox verification → payout. Official docs advertise $10 to a few hundred dollars per bounty and an 80% solver share.
+Autonomy 9/10 · Ease 8/10 · Repeatability 9/10.
+
+### 15) gigs.sh
+URL: https://gigs.sh/
+Still useful as discovery infrastructure rather than an earnings source. It tracks 46 agent-compatible platforms, but the directory-wide verification timestamp remains May 18, 2026, so every candidate needs fresh liquidity verification.
+
+## REDDIT DEMAND SIGNALS
+
+1. QA capacity is the strongest recurring software signal. August 27 thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/ — ~1.1K votes; developers report AI coding throughput outrunning QA.
+2. Enterprise QA pain: https://www.reddit.com/r/softwaretesting/comments/1tiw9ct/ai_is_a_nightmare_for_qa/ — manual testing becomes bottleneck; AI-generated tests can be slow/flaky. Best product is selective risk-based verification, not 'AI tests everything'.
+3. Professional-services repetition: https://www.reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/ — intake, CRM updates, scheduling, confirmations and record synchronization repeat across law/accounting/recruiting/consulting.
+4. The broad pattern is shifting from 'build me an AI agent' to 'make this existing process reliable, measurable and maintainable.' That favors verification, reconciliation, monitoring and deterministic workflow products.
+
+## FILTERED OUT
+
+Toku.agency has 125+ open jobs and attractive current listings ($5 research/content tasks, $25 due-diligence task, services from roughly $3 upward), but its Terms explicitly require users to be at least 18. It is therefore excluded from the actionable list where that requirement is not met.
+
+OKX AI is a real July 2026 agent marketplace with escrow work and pay-per-call services, but it sits inside regulated digital-asset infrastructure with jurisdiction/eligibility restrictions. Do not use it unless all applicable age, regional and account requirements are satisfied; no bypassing restrictions.
+
+BountyBook: 0 open today.
+Algora searches checked this run showed no open bounties in several previously active repositories.
+Agent Earn uses Friendbot-style Stellar funding, indicating test/demo economics rather than dependable cash income; not counted.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Route direct work through dealwork + Taskmarket + WorkProtocol first. They have the best combination of current inventory, funded/settled evidence and meaningful reward sizes. Normalize each job to: reward, funded state, competition, deadline, acceptance tests, estimated execution cost, P(solve), P(accepted), P(settled), expected net.
+
+2. Build `/verify-pr` as the first specialist. Multiple independent 2026 signals now point to the same bottleneck: code generation accelerated faster than verification. The specialist can earn from marketplace coding/QA jobs first, then become a fixed-price service/API later.
+
+3. Build Automation Watchdog as the recurring-revenue sibling. The product checks the business outcome, not merely whether an n8n/Make/Zapier execution returned green. Sell setup + monthly monitoring to automation agencies and existing workflow owners.
+
+Core ranking formula:
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) − inference − APIs/tools − payment costs − review costs.
+
+Only SETTLED/WITHDRAWN money should count as earnings. Advertised GMV, testnet tokens, demo credits, unfunded bounties and marketplace listing counts stay separate.
+Agent Money Scout — 2026-08-29 19:00
+
+NEW THIS RUN
+
+1) agentsbay.ai — strongest fresh marketplace signal
+<p>URL: https://agentsbay.ai/<br>
+Primary source currently reports 27 registered agents, 774 jobs settled, about $1.5K USDC in escrow, and ~6 minute average verification time. Jobs use Polygon USDC escrow; providers submit artifacts and payment releases after verification. Commission is advertised as 0% below $1K lifetime GMV, tapering upward later.</p>
+<p>What an agent can do: research, code review, data work, competitive intelligence, SEO audits, pitch-deck generation, structured deliverables.<br>
+Who pays: humans or agents posting/hiring through the market.<br>
+Verifiable payout/pricing: service listings currently include PR/code review at $19, competitor intelligence at $27, pitch-deck creation at $29 and smart-contract review at $30. Do not interpret the bizarre high-value text in some open-job cards as trustworthy demand; the current open-job feed contains obvious low-quality/spam-looking entries.<br>
+Requirements: API-capable agent plus a compatible payout wallet; platform/local eligibility must be checked before onboarding.<br>
+Autonomy: 9/10.<br>
+First action: inspect the current jobs API and service catalogue, then cross-list one already-working specialist rather than building something platform-specific.<br>
+Ease to first $5: 6/10. Repeatability: 9/10.</p>
+
+2) NEAR AI Agent Market — large established agent-work market
+<p>URL: https://market.near.ai/<br>
+Official NEAR documentation describes a marketplace where agents bid on tasks, execute autonomously and receive escrow-backed payment. Current service directories remain populated across development, research, code review, data, QA, automation and testing. gigs.sh’s last verified snapshot (May 18) reported ~1.4K agents, ~3.8K jobs and ~$24.9K cumulative volume, so treat those numbers as an older checkpoint rather than today’s liquidity.</p>
+<p>What an agent can do: code review, technical research, automation, data analysis, testing, documentation.<br>
+Who pays: task posters and service buyers.<br>
+Pricing: current services include examples around 5–10 USDC for research/audits; broader historic service pricing clusters roughly $12–$24.<br>
+Requirements: compatible agent + permitted payment setup; comply with platform/local age/payment rules and never bypass restrictions.<br>
+Autonomy: 9/10.<br>
+First action: query live jobs, not the service directory, and score only funded work with objective acceptance criteria.<br>
+Ease: 5/10. Repeatability: 9/10.</p>
+
+3) Agent Wonderland — API-to-agent distribution rail
+<p>URL: https://www.agentwonderland.com/sell<br>
+Agent Wonderland lets an existing OpenAPI service be exposed through MCP/x402-style agent discovery while accepting fiat or USDC from buyers and routing provider payout through Stripe Connect. It advertises a flat 15% fee per successful call and supports per-call pricing or prepaid credits.</p>
+<p>What the agent sells: narrow API capabilities such as filing analysis, enrichment, evidence extraction, structured document normalization, release verification or API QA.<br>
+Who pays: agent/human callers.<br>
+Payout/pricing evidence: the site shows an illustrative Filings Analyst at $0.40/request and an enrichment example at $0.22/lead; these are marketplace examples, not independent proof of seller revenue.<br>
+Requirements: working API/OpenAPI spec; payout-provider eligibility must be satisfied normally.<br>
+Autonomy: 10/10 after deployment.<br>
+First action: cross-list an endpoint that already solves a real job; don’t build a new generic agent for this marketplace.<br>
+Ease: 4/10 until real buyer traffic is verified. Repeatability: 10/10.</p>
+
+4) AgentJob — pay-per-message agent marketplace
+<p>URL: https://agent-job.ai/<br>
+AgentJob advertises 10,000+ agents, per-message USDC settlement on Base, REST/MCP onboarding and a task square where humans post requests. The primary site was intermittently unavailable during this run, so its current task liquidity could not be independently verified.</p>
+<p>What an agent does: conversational research, analysis, coding help or other bounded services charged per interaction.<br>
+Who pays: users who continue the conversation or post tasks.<br>
+Payout: provider-set per-message pricing; no reliable current earnings figure verified this run.<br>
+Requirements: API/MCP-capable agent and eligible payment setup.<br>
+Autonomy: 9/10.<br>
+First action: wait for the task/feed endpoint to be reliably reachable, then verify external paid traffic before investing integration time.<br>
+Ease: 3/10. Repeatability: 8/10 if real demand exists.</p>
+
+5) BountyBook — excellent architecture, zero work today
+<p>URL: https://www.bountybook.ai/<br>
+BountyBook is API/MCP-native: GET open jobs → claim → execute → submit → AI oracle verifies → USDC release. Its official board currently shows 0 open bounties. Successful payouts carry a 4% fee.</p>
+<p>What the agent does: long-running monitor/research/data tasks and other oracle-verifiable work.<br>
+Who pays: bounty posters.<br>
+Current payout: none available because there are 0 open bounties.<br>
+Autonomy: 10/10.<br>
+First action: poll; do not spend compute or integration effort until a funded bounty appears.<br>
+Ease today: 1/10. Repeatability: 8/10 if liquidity returns.</p>
+
+6) QA / PR verification as a direct service
+<p>Evidence: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/<br>
+The August 27 thread now has ~1.1K votes and reports developers becoming idle because AI-assisted coding throughput exceeded QA capacity. A separate enterprise-QA thread reports manual QA becoming the bottleneck while generic AI-driven tests remain slower/flakier in some workflows.</p>
+<p>Offer: PR URL + acceptance criteria → changed-surface map → targeted tests → reproduce failures → evidence packet → PASS/FAIL/HUMAN REVIEW.<br>
+Customer: teams using Claude Code/Codex/Cursor heavily.<br>
+Acquisition: GitHub-heavy teams, dev communities, marketplace coding jobs.<br>
+Charging: per verified PR initially; recurring CI allowance later.<br>
+MVP: <code>/verify-pr</code> accepting repo/PR + requirements and returning structured evidence.<br>
+Ease: 8/10. Repeatability: 10/10.</p>
+
+7) Professional-services intake automation
+<p>Evidence: https://www.reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/<br>
+A practitioner who automated workflows for 30+ professional-services firms reports the same recurring work repeatedly: intake forms, CRM entry, scheduling, confirmation email and spreadsheet/status updates.</p>
+<p>Offer: connect existing authorized form/inbox → validate → CRM → calendar → notification → exception queue.<br>
+Customer: accountants, recruiters, consultants, agencies, small law firms.<br>
+Charging: fixed implementation + maintenance.<br>
+MVP: one supported stack rather than a universal agent.<br>
+Ease: 7/10. Repeatability: 9/10.</p>
+
+8) Automation Watchdog / outcome verification
+<p>Recurring operator complaints show that a workflow can report success while the intended business outcome failed: dead webhooks, missing downstream records, malformed outputs, duplicate executions or silent schema drift.</p>
+<p>Offer: expected business event → independent canary/state check → timeout/duplicate/schema detection → evidence + alert + runbook.<br>
+Customer: n8n/Make/Zapier agencies and businesses with production automations.<br>
+Charging: setup + recurring monitoring per workflow/client.<br>
+MVP: import workflow JSON + expected schedule/output and monitor last-good outcome.<br>
+Ease: 8/10. Repeatability: 10/10.</p>
+
+STILL ACTIVE FROM PRIOR RUNS
+
+9) dealwork.ai
+<p>URL: https://dealwork.ai/<br>
+Fresh primary-source crawl: ~2.5K workers, 264 completed tasks and 156 open tasks. Public examples include an $80 human→AI API job and a $5 AI→AI structured-data job. Strongest broad acquisition feed right now.<br>
+Autonomy 9/10 · Ease 8/10 · Repeatability 9/10.</p>
+
+10) Taskmarket
+<p>URL: https://taskmarket.dev/<br>
+Fresh primary source: 19 open tasks, 26.7K agents and 2,380.714419 USDC posted/funded volume. A current 24.2-USDC task is visible. Tasks expose competition and settlement state, which makes expected-value routing possible.<br>
+Autonomy 10/10 · Ease 8/10 · Repeatability 9/10.</p>
+
+11) WorkProtocol
+<p>URL: https://workprotocol.ai/<br>
+Current primary figures: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled; minimum job budget is $50. The public page currently surfaces a 90-USDC code job. Historic public receipts include released 100-USDC test jobs.<br>
+Autonomy 9/10 · Ease 8/10 · Repeatability 9/10.</p>
+
+12) t2000
+<p>URL: https://t2000.ai/<br>
+Still has visible recent settlements and seller-level settled totals. Current seller cards include $57.75, $125.56 and $100 settled, while recent activity shows $0.50 jobs settling. Supports both jobs and reusable APIs; services take 5%, API calls currently 0%.<br>
+Autonomy 9/10 · Ease 7/10 · Repeatability 9/10.</p>
+
+13) MoltJobs
+<p>URL: https://moltjobs.io/open-jobs<br>
+Still has four recent 2-USDC promotional/public-post jobs protected by escrow. Those particular tasks require genuine pre-existing public accounts, follower minimums, paid/sponsored disclosure and compliance with destination-community rules, so they are poor autonomous targets unless every requirement is legitimately satisfied. Better to keep polling for coding/research/data work.<br>
+Autonomy 8/10 · Ease 4/10 · Repeatability 8/10.</p>
+
+14) TaskBounty
+<p>URL: https://www.task-bounty.com/for-agents<br>
+Still one of the strongest coding-agent loops: production GitHub issues → reproduce → patch → tests → PR → sandbox verification → payout. Official docs advertise $10 to a few hundred dollars per bounty and an 80% solver share.<br>
+Autonomy 9/10 · Ease 8/10 · Repeatability 9/10.</p>
+
+15) gigs.sh
+<p>URL: https://gigs.sh/<br>
+Still useful as discovery infrastructure rather than an earnings source. It tracks 46 agent-compatible platforms, but the directory-wide verification timestamp remains May 18, 2026, so every candidate needs fresh liquidity verification.</p>
+
+REDDIT DEMAND SIGNALS
+<ol>
+<li>QA capacity is the strongest recurring software signal. August 27 thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/ — ~1.1K votes; developers report AI coding throughput outrunning QA.</li>
+<li>Enterprise QA pain: https://www.reddit.com/r/softwaretesting/comments/1tiw9ct/ai_is_a_nightmare_for_qa/ — manual testing becomes bottleneck; AI-generated tests can be slow/flaky. Best product is selective risk-based verification, not ‘AI tests everything’.</li>
+<li>Professional-services repetition: https://www.reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/ — intake, CRM updates, scheduling, confirmations and record synchronization repeat across law/accounting/recruiting/consulting.</li>
+<li>The broad pattern is shifting from ‘build me an AI agent’ to ‘make this existing process reliable, measurable and maintainable.’ That favors verification, reconciliation, monitoring and deterministic workflow products.</li>
+</ol>
+
+FILTERED OUT
+<p>Toku.agency has 125+ open jobs and attractive current listings ($5 research/content tasks, $25 due-diligence task, services from roughly $3 upward), but its Terms explicitly require users to be at least 18. It is therefore excluded from the actionable list where that requirement is not met.</p>
+<p>OKX AI is a real July 2026 agent marketplace with escrow work and pay-per-call services, but it sits inside regulated digital-asset infrastructure with jurisdiction/eligibility restrictions. Do not use it unless all applicable age, regional and account requirements are satisfied; no bypassing restrictions.</p>
+<p>BountyBook: 0 open today.<br>
+Algora searches checked this run showed no open bounties in several previously active repositories.<br>
+Agent Earn uses Friendbot-style Stellar funding, indicating test/demo economics rather than dependable cash income; not counted.</p>
+
+BEST 3 ACTIONS TO TRY NOW
+<ol>
+<li>
+<p>Route direct work through dealwork + Taskmarket + WorkProtocol first. They have the best combination of current inventory, funded/settled evidence and meaningful reward sizes. Normalize each job to: reward, funded state, competition, deadline, acceptance tests, estimated execution cost, P(solve), P(accepted), P(settled), expected net.</p>
+</li>
+<li>
+<p>Build <code>/verify-pr</code> as the first specialist. Multiple independent 2026 signals now point to the same bottleneck: code generation accelerated faster than verification. The specialist can earn from marketplace coding/QA jobs first, then become a fixed-price service/API later.</p>
+</li>
+<li>
+<p>Build Automation Watchdog as the recurring-revenue sibling. The product checks the business outcome, not merely whether an n8n/Make/Zapier execution returned green. Sell setup + monthly monitoring to automation agencies and existing workflow owners.</p>
+</li>
+</ol>
+<p>Core ranking formula:<br>
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) − inference − APIs/tools − payment costs − review costs.</p>
+<p>Only SETTLED/WITHDRAWN money should count as earnings. Advertised GMV, testnet tokens, demo credits, unfunded bounties and marketplace listing counts stay separate.</p>

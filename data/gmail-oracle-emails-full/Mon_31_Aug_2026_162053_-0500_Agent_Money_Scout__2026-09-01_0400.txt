@@ -1,0 +1,87 @@
+Subject: Agent Money Scout — 2026-09-01 04:00
+Date: Mon, 31 Aug 2026 16:20:53 -0500
+Message ID: 1a059b2512e742bb
+================================================================================
+
+# Agent Money Scout — 2026-09-01 04:00
+
+## NEW THIS RUN
+
+1. Toku.agency — https://www.toku.agency/
+Current primary page shows 130+ open jobs and 1,635+ listed agents. Concrete open job: Crypto Project Due Diligence & Token Analysis, budget $5–$25 per analysis: https://www.toku.agency/jobs/cmm5p2a5u000cjr04c6lnw14u . Agent does source-backed token/protocol due diligence; requester pays through Toku. Toku credits 85% of completed-job revenue to the agent wallet and uses Stripe Connect for real-USD withdrawal. Tools: web research, data analysis, report generation, Toku API. Autonomy 9/10. First action: bid only on $5+ jobs where acceptance criteria are clear; this particular job already has ~90 bids, so prioritize newer lower-competition jobs. Stripe/account/geography eligibility applies. Ease first $5: 6/10. Repeatability: 9/10.
+
+2. BountyBook — https://www.bountybook.ai/
+Permissionless Base-USDC bounty system: poster escrows USDC, agent claims via REST/MCP, AI oracle verifies, 4% success fee. However the primary board currently shows 0 open bounties and the docs explicitly call it an experimental early beta. Agent tools: EVM wallet, REST/MCP, task-specific runtime. Autonomy 10/10. First action: scanner only; execute when an open bounty >=$5 appears. Ease today: 0/10. Repeatability potential: 9/10.
+
+3. Anakin Forge Hackathon — https://anakin.io/hackathon/anakin-forge
+Online worldwide, Sep 7–14, 2026, free. Build a genuinely autonomous agent that reads live web content, reasons, and acts. Primary page says $1,000+ in prizes, with hardware prizes currently shown. Who pays: Anakin/sponsors. Tools: any agent stack, web/action tooling. Autonomy 7/10. First action: register and reuse an existing agent workflow rather than starting from zero. Check final prize/eligibility terms before investing major time. Ease first $5: 2/10. Repeatability: 3/10.
+
+4. Agents for Humans Hackathon — https://agentsforhumans.devpost.com/
+Deadline Sep 14, 2026, online, $40,000 cash. Build an autonomous agent with AWS Strands Agents SDK that handles repetitive tasks in the background. Who pays: AWS/Devpost prizes. Tools: Strands SDK and chosen APIs. Autonomy 7/10. First action: only enter if you satisfy the official eligibility rules; entrants must be above the legal age of majority in their country and several countries/territories are excluded. Ease first $5: 2/10. Repeatability: 3/10.
+
+5. PayanAgent — https://payanagent.com/
+Aggregates 24,000+ x402 services and supports bespoke requests plus paid service calls in USDC. This is more useful as distribution/discovery than guaranteed work. Agent does callable API/service work; buyers are other agents/users. Tools: x402 endpoint, wallet, MCP/HTTP. Autonomy 10/10. First action: cross-list only a capability already proven to sell elsewhere; do not confuse catalog size with buyer demand. Ease first $5: 2/10. Repeatability: 9/10 if demand exists.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+6. MoltJobs — https://moltjobs.io/open-jobs
+Primary board currently shows a funded 5-USDC job: turn 3 live job postings into ready-to-fund MoltJobs specs and contact the buyer. Funds are held in Base-USDC escrow; MoltJobs fee is 5%. Agent can browse, bid, submit and manage settlement through API/CLI/MCP. First action: poll OPEN and take the newest >=$5 task with objective acceptance criteria. Any outreach must be individualized and permitted. Autonomy 9/10. Ease: 8/10. Repeatability: 8/10.
+
+7. AgentPact — https://agentpact.xyz/needs
+Still one of the best recurring queues for $5–$25 Python/API/data/scraping work. Who pays: Need/deal requester through Base-USDC escrow. Tools: MCP/API plus task stack. First action: filter reward >=$5, clear scope, objective acceptance, settleable. Security work only on explicitly authorized systems/code. Autonomy 10/10. Ease: 9/10. Repeatability: 9/10.
+
+8. dealwork.ai — https://dealwork.ai/
+Primary page currently shows 157 open tasks, 2.5K workers, 264 completed tasks. Funds are escrowed before execution. It documents an $80 production API delivered by an AI worker and AI-to-AI contracts with a 3% fee. First action: ingest current jobs and reject anything whose acceptance test cannot be reproduced independently. Autonomy 9/10. Ease: 9/10. Repeatability: 9/10.
+
+9. Complete Codes — https://www.complete.codes/en/agents
+Funded GitHub repos are exposed through REST/MCP. Agent submits a PR and earns Base-USDC when a maintainer merges it; no bidding/proposals. Public API: https://api.complete.codes/v1/sprints?status=active&min_payout=5&sort=payout . First action: scan paid sprints >=$5 and rank by issue difficulty, CI/testability, and maintainer merge velocity. Autonomy 9/10. Ease: 7/10. Repeatability: 10/10.
+
+10. Atrest.ai — https://atrest.ai/
+DOWNGRADED. Homepage advertises 105+ agents, 1,200+ tasks, $48K+ USDC transacted and task bands such as $5–25 code review and $15–60 API integration. But its own developer docs at https://atrest.ai/docs state escrow is currently “mock mode (Supabase-backed).” Do not treat it as proven real-money work yet. First action: monitor until real on-chain settlement is documented. Ease: 1/10. Repeatability potential: 9/10.
+
+11. Apify Store — https://apify.com/store
+Publish a scraper/automation/AI tool as an Actor and get paid per run/event. Apify’s current creator program page says it pays $1.5M monthly across 3,900 community developers and handles execution, discovery and billing. Who pays: Store users. Tools: Python/JS/TS and Apify SDK. Autonomy 10/10 after deployment. First action: productize a repeated paid workflow such as change monitoring, structured extraction or enrichment. Price carefully because execution costs can erase margin. Ease first $5: 6/10. Repeatability: 10/10.
+
+12. OpenJobs — https://openjobs.bot/
+Agent-native job board with REST/MCP/SDK support and settlement in USDC or WAGE. First action: query only funded USDC jobs >=$5; do not translate WAGE into dollars without verified liquidity. Autonomy 10/10. Ease: 4/10. Repeatability: 9/10.
+
+13. Opire — https://app.opire.dev/home
+Real GitHub bounty payouts exist, but inventory is noisy/stale. Agent does bug fixes/features and gets paid by bounty sponsors. First action: verify upstream issue is still open, reward credible, maintainer active, no superior competing PR, and local tests reproduce before coding. Autonomy 8/10. Ease: 5/10. Repeatability: 8/10.
+
+14. gigs.sh — https://gigs.sh/
+Still useful as a discovery oracle for agent-native earning platforms, not as execution truth. Reverify every candidate against the primary source. Direct earning: 1/10. Discovery repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+15. Automation maintenance / reliability retainer
+Thread: https://www.reddit.com/r/AI_Agents/comments/1ueu197/has_anyone_actually_hired_an_ai_automation/
+A fresh Aug 31 comment says a paid lead-scraping automation worked for about two weeks, then silently broke and the builder disappeared; commenters note monthly retainers are common. Recurring problem: customers need monitoring and repair, not just initial automation. MVP: health checks + fixture run + schema/selector drift detection + alert + reproducible fix packet. Acquire through automation agencies, referrals, and communities that permit service offers. Charge setup + monthly monitoring. Ease: 9/10. Repeatability: 10/10.
+
+16. Fixed-price small business automation
+Thread: https://www.reddit.com/r/slavelabour/comments/1vkpaq6/offer_ill_automate_a_repetitive_business_task_for/
+Current seller offer demonstrates $49 for one trigger + up to two actions and $99 for a larger workflow with API integration/failure notifications. Customer problems: form-to-Sheets, lead-to-CRM, attachment extraction, reminders, service-to-service copying. MVP: one workflow, fixtures, error path, 7-day fix window. Ease: 8/10. Repeatability: 9/10.
+
+17. Simple lead workflow beats elaborate agent demos
+Thread: https://www.reddit.com/r/n8n/comments/1s5qquo/ive_built_30_automations_the_ones_making_clients/
+Practitioner reports a complex multi-agent system generated zero revenue, while a simple lead-finding/personalized-draft workflow produced 40+ booked sales calls/month for months. Safe offer: prospect discovery + enrichment + personalized draft + human-approved send queue + CRM. Avoid bulk unsolicited spam. Ease: 8/10. Repeatability: 10/10.
+
+18. One small automation can become recurring contract work
+Thread: https://www.reddit.com/r/n8n/comments/1vev45x/how_n8n_helped_me_move_from_a_nontech_internship/
+A poster says one internal automation eventually helped lead to a 30-hour/month automation contract. Pattern: identify one repetitive process, automate it reliably, quantify value, expand. Ease: 8/10. Repeatability: 10/10.
+
+19. WhatsApp commerce assistant
+Thread: https://www.reddit.com/r/n8n/comments/1rq486u/i_made_500_on_my_first_n8n_paid_project_building/
+Builder reports $500 for a bookstore WhatsApp automation handling repeated availability/pricing questions, media and order data. MVP: message -> intent -> inventory/order lookup -> permitted action -> structured order record -> human exception. Ease: 8/10. Repeatability: 9/10.
+
+20. Workflow verifier / reliability audit
+Recurring demand pattern across the threads: retries, brittle selectors, hidden failures, schema drift and absent support after launch. Customer: n8n/Make/Zapier agencies and SMB ops teams. Agent workflow: workflow + fixtures + execution logs -> auth/retry/idempotency/schema/cost checks -> evidence-backed PASS/REVIEW report. Acquire via automation communities that allow offers, inbound technical content, agencies and referrals. Charge fixed audit then monitoring retainer. Ease: 9/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Poll MoltJobs -> AgentPact -> dealwork every run and execute only when EV is positive: payout × P(acceptance) × P(win) - inference/API/runtime cost. These remain the shortest path to real money.
+
+2. Add Toku immediately as a new live job feed. It has 130+ open jobs and real USD withdrawal via Stripe Connect. Ignore highly contested old listings; target newly posted $5+ jobs before bid counts explode.
+
+3. Build a two-stage compounding system: paid task -> reusable procedure -> packaged Actor/service. Apify is currently the strongest distribution rail because it already has billing and creator payouts; x402/A2A marketplaces should be secondary cross-listing channels after willingness-to-pay has been proven.
+
+Important correction: Atrest.ai should no longer be treated as verified USDC earning infrastructure while its own docs describe escrow as mock mode.

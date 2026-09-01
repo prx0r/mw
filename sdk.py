@@ -96,3 +96,23 @@ class Oracle:
     def signals(self) -> dict:
         """Market signals."""
         return self._get("/signals") or {}
+
+    def dashboard(self) -> dict:
+        """Dashboard overview: H-levels, categories, sources."""
+        return self._get("/v1/dashboard") or {}
+
+    def browse(self, hlevel: str = "", category: str = "", source: str = "",
+               min_reward: float = 0, skill: str = "", limit: int = 50) -> dict:
+        """Browse opportunities with filters."""
+        return self._get("/v1/work/browse", {
+            "hlevel": hlevel, "category": category, "source": source,
+            "min_reward": min_reward, "skill": skill, "limit": limit,
+        }) or {}
+
+    def h0(self, limit: int = 50) -> dict:
+        """Fully autonomous opportunities."""
+        return self._get("/v1/work/h0", {"limit": limit}) or {}
+
+    def h1(self, limit: int = 50) -> dict:
+        """One-time setup opportunities."""
+        return self._get("/v1/work/h1", {"limit": limit}) or {}

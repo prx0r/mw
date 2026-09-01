@@ -1,0 +1,165 @@
+Subject: Oracle Market Unlocks — 20 New Agent-Accessible Markets — 31 Aug 2026
+Date: Mon, 31 Aug 2026 08:25:38 -0500
+Message ID: 1a057ff38a0a6212
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new markets
+
+**Date:** 31 Aug 2026
+
+This scan excludes the venues already covered in earlier Oracle reports (Atlassian, monday, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, Miro, WooCommerce, HubSpot, JetBrains, Fab, Unity, Fortnite, Canva, Creative Market, Minecraft Marketplace, Adobe Stock, Envato/Placeit, Gumroad, Telegram Mini Apps, VRChat, WordPress, Zoom, Teams, Slack, Poe, CGTrader, Salesforce AgentExchange, ServiceNow, LINE, Databricks, Wix, Shopify App Store, RapidAPI, AWS/Snowflake/GCP marketplaces, Discord, Bubble, FlutterFlow, Coda, Figma, VS Code, Edge/Firefox add-ons, BigCommerce, Stream Deck, Overwolf, Hytale/BuiltByBit, CurseForge, Superhive/Blender, MyMiniFactory/Cults/Thangs, Teachers Pay Teachers, Xero, Zendesk, Zoho, Pipedrive, Foundry, QuickBooks, Intercom, Freshworks, Cfx/Tebex, itch.io, GmodStore, Fantasy Grounds, MyFonts, DAZ, Roll20, IMVU, Second Life, Creative Fabrica, TurboSquid, Airtable, Autodesk, Grafana, Stripe Apps, Adobe Creative Cloud Marketplace, Power BI/AppSource, Whop, SketchUp, Adobe Commerce, Garmin, Ecwid, PrestaShop, Shopware, Galaxy Store, Alexa, SAP, OpenCart, Reallusion, Joomla, Oracle Marketplace, Splunkbase, Apify, Vercel Marketplace, Datadog, HighLevel, PromptBase, Nexus Mods, Modrinth, Obsidian, DataBazaar, Square, Heroku Add-ons, Clover, Odoo, Craft CMS, Concrete CMS, WHMCS, CS-Cart, Statamic, October CMS, WeChat/Alipay Mini Programs, Codester, SellMyApp, Design Bundles, UI8, ArtStation, RenderHub, Cubebrush and Pond5).
+
+Scores are **EV / Agent fit / Automation / Competitive headroom / Novelty**, each 1–5, total /25. H0–H4 uses the existing Moltwork autonomy taxonomy: H0 machine-operable end-to-end; H1 occasional human approval/setup; H2 material onboarding/review/manual submission; H3 repeated human work in the production loop; H4 human is effectively the primary performer.
+
+## Ranked shortlist
+
+| # | Market | Score | H-level after setup | Best wedge |
+|---|---|---:|---|---|
+| 1 | ActiveCampaign App Marketplace | 24 | H1 | Integration-fidelity + cross-app decision apps |
+| 2 | Duda App Store | 22 | H1 | White-label agency micro-SaaS |
+| 3 | Walmart Marketplace App Store | 22 | H1–H2 | Seller operations / listing / finance tools |
+| 4 | SHOPLINE App Store | 22 | H1 | B2B/wholesale merchant micro-apps |
+| 5 | Amazon Selling Partner Appstore | 21 | H1–H2 | Reimbursement, listing QA, exception ops |
+| 6 | Asana App Directory | 21 | H1 | Agent-aware task/workflow utilities |
+| 7 | Lightspeed eCom App Market | 21 | H1 | Merchant operations integrations |
+| 8 | Etsy Marketplace — digital products | 21 | H1 | Parameterized digital products with Seller API publishing |
+| 9 | Leanpub Store | 21 | H1–H2 | Continuously updated specialist technical books |
+| 10 | Twitch Extensions | 20 | H1–H2 | Interactive stream utilities monetized with Bits |
+| 11 | Zazzle Creator Marketplace | 20 | H1–H2 | Personalized product systems via Create-a-Product API |
+| 12 | Klaviyo App Marketplace | 20 | H2 | Reliable vertical integrations + Flow Templates |
+| 13 | Sage Marketplace | 20 | H2 | Accounting migration/data-quality adapters |
+| 14 | MYOB App Marketplace | 20 | H2 | Backup/export/migration/reconciliation tools |
+| 15 | eBay seller ecosystem | 19 | H2 | Agent-operated niche storefronts using official MCP/Sell APIs |
+| 16 | Ghost Theme Marketplace | 19 | H2 | Niche publication/member-site themes |
+| 17 | Shopify Theme Store | 18 | H2 | High-performance specialist storefront themes |
+| 18 | Glide Template Store | 18 | H2 | Operational vertical app templates |
+| 19 | ZEPETO Studio Items | 17 | H2 | Original modular fashion/accessory families |
+| 20 | n8n Workflow Template Library + affiliate economics | 17 | H1–H2 | Production-grade workflow products, not trivial JSON templates |
+
+---
+
+## 1. ActiveCampaign App Marketplace — 24/25
+
+**What an agent sells:** narrowly scoped integrations and workflow apps: ecommerce event reconciliation, lead-routing QA, CRM synchronization, campaign-data validators, industry-specific automations, and cross-app decision layers.
+
+**Why now:** ActiveCampaign says its ecosystem serves **180,000+ businesses** and its current developer portal explicitly exposes an **ActiveCampaign MCP Server**, REST APIs, self-serve App Studio and Marketplace publishing. The MCP layer matters because the same platform the worker is building for can increasingly be inspected and operated by an agent rather than via manual UI work.
+
+**Autonomous workflow:** Oracle mines community/support pain → spins up developer account/test fixtures → worker builds connector/app → Harbor replays contact/event/automation scenarios and idempotence failures → App Studio package/review → public Marketplace → own SaaS billing if needed → app telemetry/support issues → Hydra outcomes → maintenance worker patches regressions.
+
+**Human dependency:** H1 after seller/app approval; OAuth installation remains a user action. Marketplace review is an occasional external gate, not recurring production labor.
+
+**Demand/community:** users still report silent duplicate/mis-mapped contacts and cross-product integration failures. An ecommerce discussion in 2026 describes paying agencies thousands per month because tools exchange data but do not reason coherently across it.
+
+**Why agents fit:** integration work is repetitive, schema-heavy, fixture-testable and maintenance-intensive.
+
+**Moltwork assets:** `ActiveCampaignPack`, OAuth/event-replay World, sync-fidelity evaluator, integration School, cross-app orchestration Skill, persistent integration-maintainer Worker.
+
+**Attractive if:** recurring SaaS ARPU exceeds support/API costs and Oracle finds repeated pain across many accounts. **Unattractive if:** merely duplicating a mature native integration with no measurable reliability advantage.
+
+Sources: https://developers.activecampaign.com/ ; https://www.activecampaign.com/apps ; https://www.reddit.com/r/ActiveCampaign/
+
+## 2. Duda App Store — 22/25
+
+**What an agent sells:** white-label reporting, client-content QA, localization, compliance/site-audit utilities, form/data integrations, agency handoff tools and repeatable vertical site workflows.
+
+**Infrastructure:** Duda's app framework provides site-level APIs and an App Store billing system. Paid apps can use monthly/annual subscriptions and Duda handles the recurring subscription relationship. Duda also supports white-label apps, which is unusually useful because the buyer is often an agency deploying to many downstream sites.
+
+**Workflow:** mine agency forums/reviews → identify repeated multi-client task → generate app → test across fixture sites/templates → Harbor checks installation/uninstallation, permissions, DOM/content mutations and billing states → submit → agencies install across portfolios → subscription events/usage/support → automatically patch Duda API/template changes.
+
+**Human dependency:** H1 for developer verification/review. Customer installations are human-authorized but don't make the ongoing service H2.
+
+**Demand:** the economic signal is the platform structure itself: agencies manage many websites and Duda explicitly provides white-label distribution and recurring app billing. Community evidence is thinner than for Shopify/WordPress, which is also a reason competitive intensity may be lower.
+
+**Agent fit:** one bug or missing feature repeats over hundreds of near-identical sites; an agent can regression-test a matrix much more cheaply than an indie developer.
+
+**Assets:** `DudaPack`, SiteFixture World, multi-template compatibility evaluator, white-label release Process, agency-ops Worker.
+
+**Attractive if:** one agency install fans out to many sites. **Unattractive if:** app is a one-off cosmetic feature with high support burden.
+
+Sources: https://developer.duda.co/docs/app-store-payments ; https://developer.duda.co/docs/app-store-requirements
+
+## 3. Walmart Marketplace App Store — 22/25
+
+**What agents sell:** seller listing QA, catalog correction, inventory exceptions, fulfillment/reconciliation, returns/evidence workflows, pricing alerts and vertical seller operations.
+
+**Frontier unlock:** Walmart retired its old Delegated Access creation on **July 30, 2026** and is moving seller authorization to **OAuth 2.0 App Store** flows. Existing old access keys are being sunset around the end of September/October 1. Walmart also provides seller sandbox/app-connect simulation and an approved Solution Provider route.
+
+**Workflow:** detect seller pain/category → create OAuth app → synthetic catalog/order sandbox → build → Harbor validates cursor pagination, duplicate handling, rate limits, idempotence, order state transitions → Solution Provider review/demo → App Store listing → seller OAuth → external subscription billing/approved commercial model → telemetry and API-change maintenance.
+
+**Human dependency:** H2 during 3–5 week provider approval/demo; H1 afterward. Seller OAuth is consent, not manual production.
+
+**Demand/community:** 2026 sellers complain about onboarding, listing-quality and operational friction. One developer reported commercial connectors costing hundreds per month while still failing on edge cases, including duplicate behavior around item pagination.
+
+**Agent fit:** API integration correctness, retries and catalog QA are ideal deterministic Worlds.
+
+**Assets:** `WalmartPack`, SellerSandbox World, pagination/idempotence evaluator, OAuth migration Skill, marketplace-certification Process.
+
+**Attractive if:** narrow tools replace expensive unreliable connectors. **Unattractive if:** certification/support costs swamp a tiny seller niche.
+
+Sources: https://developer.walmart.com/ ; https://developer.walmart.com/us-marketplace/docs/solution-providers ; https://developer.walmart.com/us-marketplace/docs/oauth-authentication
+
+## 4. SHOPLINE App Store — 22/25
+
+**What agents sell:** B2B/wholesale ordering, merchant reporting, catalog/bulk-order tooling, inventory workflows, localization, CRM/fulfillment connectors.
+
+**Infrastructure:** public SHOPLINE apps use OAuth and REST/GraphQL Admin APIs, can be tested in developer stores, published to the app marketplace and monetized through app subscriptions/partner economics. API versions and webhooks give a structured maintenance surface.
+
+**Workflow:** Oracle mines merchant communities → creates developer-store fixtures → builds app → Harbor tests catalog/order/customer/webhook cases → marketplace metadata → review → OAuth install → subscription → observe churn/support/webhook errors → update every API version.
+
+**Human dependency:** H1–H2 for partner/review onboarding; normal lifecycle can be H1.
+
+**Current proof:** in July 2026 an indie developer publicly described launching a SHOPLINE app after identifying B2B buyer pain; the app adds SKU/name search, CSV bulk order and fast repeat wholesale ordering. That is exactly the small operational gap Moltwork should hunt.
+
+**Agent fit:** merchant workflows are structured, easy to fixture and highly repetitive.
+
+**Assets:** `ShoplinePack`, commerce World, B2B order evaluator, API-version School, marketplace submission Process.
+
+**Attractive if:** lower competition than Shopify offsets smaller installed base. **Unattractive if:** regional support/localization becomes continuously human-heavy.
+
+Sources: https://developer.shopline.com/docs/apps/ ; https://developer.shopline.com/docs/apps/authentication/
+
+## 5. Amazon Selling Partner Appstore — 21/25
+
+**What agents sell:** reimbursement/evidence tooling, listing QA, suppressed-listing diagnosis, margin anomalies, inventory exceptions, shipment reconciliation, returns/account-health reporting and niche operational dashboards.
+
+**Demand:** Amazon states that **1M+ sellers worldwide use apps built with SP-API**. Software partners set their own application pricing. This is a real software buyer market rather than a speculative tool directory.
+
+**Workflow:** mine Seller Forums/Reddit/API gaps → build SP-API app against sandbox/test seller → Harbor replays orders, listings, inventory, reports and throttling → security/profile review → Appstore listing → seller OAuth → subscription → errors/support/revenue into Hydra → compatibility worker monitors SP-API deprecations.
+
+**Human dependency:** H2 for SP-API roles/security/app review; H1 afterward. Some restricted-data roles may keep particular products H2.
+
+**Community pain:** sellers repeatedly complain that Amazon's own mobile/admin workflows leave gaps, while third-party tooling is fragmented and expensive.
+
+**Agent fit:** enormous API surface + repetitive seller tasks + measurable outputs. A specialist worker can become unusually competent in SP-API quirks.
+
+**Assets:** `AmazonSellerPack`, SellerOps World, listing/inventory reconciliation evaluator, throttling/retry Skill, SP-API School.
+
+**Attractive if:** tool prevents losses or saves recurring operator hours. **Unattractive if:** it requires restricted data, heavy manual seller support or competes with entrenched suites on a generic feature.
+
+Sources: https://developer-docs.amazon.com/sp-api/docs/what-is-the-selling-partner-api ; https://developer-docs.amazon.com/sp-api/docs/selling-partner-appstore
+
+## 6. Asana App Directory — 21/25
+
+**What agents sell:** hierarchy/subtask management, task QA, project hygiene, cross-tool synchronization, vertical workflows and agent-aware operations layers.
+
+**Frontier unlock:** Asana's current developer surface explicitly publishes **llms.txt, Markdown documentation and an OpenAPI index for AI agents**. The platform says its App Directory has 200+ partners and supports reviewed public integrations.
+
+**Workflow:** discover repeated workflow gap → inspect API/OpenAPI agentically → create OAuth integration → synthetic project/workspace → Harbor tests task creation, hierarchy, custom fields, permissions and event replay → App Directory review → external SaaS billing → usage/support → maintain.
+
+**Human dependency:** H1 after OAuth/app approval.
+
+**Community signal:** Feb 2026 users reported current AI/Asana integration gaps such as inability to reliably find tasks outside projects, assign a project when creating, or handle subtasks as expected.
+
+**Agent fit:** project-management state is machine-readable; correctness can be tested against expected graphs.
+
+**Assets:** `AsanaPack`, TaskGraph World, workflow invariant evaluator, OpenAPI Skill, project-ops Worker.
+
+**Attractive if:** solves a repeatable operational invariant. **Unattractive if:** Asana quickly absorbs the feature natively.
+
+Sources: https://developers.asana.com/docs/ ; https://asana.com/apps
+
+## 7. Lightspeed eCom App Market — 21/25
+
+**What agents sell:** inventory/catalog synchronization, vertical POS→ecommerce workflows, B2B operations, returns, merchandising QA and merchant reporting.
+
+**Demand/infrastructure:** Lightspeed says its developer ecosystem reaches **150k+ paying merchants** and explicitly positions App Market integrations as a source 

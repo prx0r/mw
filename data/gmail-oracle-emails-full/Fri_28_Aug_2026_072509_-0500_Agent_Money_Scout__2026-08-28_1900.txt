@@ -1,0 +1,67 @@
+Subject: Agent Money Scout — 2026-08-28 19:00
+Date: Fri, 28 Aug 2026 07:25:09 -0500
+Message ID: 1a04854c367eeb7c
+================================================================================
+
+# Agent Money Scout — 28 Aug 2026, 19:00
+
+## NEW THIS RUN
+
+1. **Mercatai — https://www.mercatai.eu/**
+EU-focused B2B marketplace where autonomous agents register by API, discover open tasks, bid, deliver, and get paid through Stripe/SEPA escrow. First 10 tasks have 0% platform fee; after that the agent receives 95% of task price. Categories include research, data analysis, code review, procurement, translation, legal/financial analysis, scraping, document processing, market research, and competitor analysis. Exact first action: POST /api/v1/agents and then poll GET /api/v1/tasks. Autonomy 9/10; first-$5 7/10; repeatability 9/10. Stripe Connect and applicable identity/payment eligibility must be satisfied.
+
+2. **Agoragentic — https://agoragentic.com/earn.html**
+Publish a machine-callable capability and earn per invocation. Platform reports 756 registered agents, 68 public catalog services, and 801 invocations. Seller keeps 97% when paid settlement is enabled; settlement is USDC on Base. $1 refundable staking bond. Exact first action: register via /api/quickstart, then POST a capability such as web scraping/research with endpoint URL and price. Autonomy 10/10; first-$5 5/10; repeatability 10/10. Important caveat: verify the Interchange paid-settlement operating state before counting revenue.
+
+3. **RevolutionAI — https://www.revolutionai.io/**
+MCP-native freelance marketplace across dev, design, marketing and creator work. Official site exposes an MCP server, AI matching, Stripe Connect payments, and examples such as a $2K landing-page design job. This is less fully autonomous than pure x402, but it gives an agent access to higher-ticket mainstream project work. First action: create an account/API key and connect @revolutionai/mcp-server. Autonomy 7/10; first-$5 6/10; repeatability 8/10. Account/payment eligibility applies.
+
+4. **AgentCab — https://www.agentcab.ai/about**
+Publish multiple agents with pricing and callback URLs; other agents discover them via REST, inspect JSON schemas, and invoke them autonomously. Stripe is required for withdrawals. This is a capability-sales surface rather than a job board. First action: publish one narrow tool with deterministic input/output. Autonomy 10/10; first-$5 4/10; repeatability 9/10.
+
+5. **Atelier x402 — https://useatelier.ai/x402**
+Agent-to-agent service marketplace on Solana and Base. It advertises 424 live agents and a 90/10 creator/platform revenue split. Agents can subcontract creative, technical and analytical work via x402 with USDC settlement. First action: list a specialist service that another agent could invoke during a workflow. Autonomy 10/10; first-$5 5/10; repeatability 9/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+6. **SporeAgent — https://www.sporeagent.com/**: still shows concrete task examples: $45 web scraping/data extraction, $80 FastAPI test generation, and $120 technical translation. MCP-native. Priority A.
+
+7. **Clawlancer — https://clawlancer.ai/**: still offers API/MCP registration, Base wallet creation, bounty claiming, delivery and USDC settlement. Priority A.
+
+8. **MoltJobs — https://github.com/Moltjobs/moltjobs-mcp**: official MCP supports browsing jobs, bidding, running work, submitting results and wallet operations. Priority A/B.
+
+9. **AgentGigs — https://www.agentgigs.io/**: fully API-driven browse/apply/deliver flow after one-time email verification and Stripe Connect onboarding. Good structure; watch liquidity. Priority B.
+
+10. **AgentHire — https://www.agenthire.app/**: x402/Solana marketplace; platform advertises 500+ active agents, 10K+ jobs and $50K+ volume, with capabilities such as code review, scraping and translation priced from cents. Priority B.
+
+11. **AgentBazaar — https://www.agentbazaar.dev/**: publish skills/services and receive x402 USDC calls. Best used as passive distribution, not relied on for bounty liquidity. Priority B.
+
+12. **AgentPay Store — https://agentpaystore.com/**: any HTTP endpoint can be listed; site says creators retain 82% of paid x402 calls. Priority B.
+
+13. **PayanAgent — https://payanagent.com/**: 24,000+ x402 offers aggregated, zero platform fee, supports instant buys and bespoke requests. Strong distribution layer.
+
+14. **CrewPort — https://crewport.ai/**: technically strong MCP/webhook contract architecture, but the public dashboard currently shows 0 verified operators, 0 clients, 0 contracts and $0 gross income. Keep on watchlist only.
+
+15. **QuestBoard — https://questboard-ochre.vercel.app/**: currently shows 0 active bounties, 0 XLM locked and 0 agents earning. Do not allocate build time yet.
+
+## REDDIT DEMAND SIGNALS
+
+16. **Invoice/document-to-ledger agent.** A June 2026 accounting workflow discussion describes PDFs in email, receipt photos in Slack, supplier statements in shared drives and bank exports manually copied into spreadsheets before accounting entry. A separate accounting-firm post reports 200+ invoices/month and around 15 hours/week of manual processing before automation. Product: authorized inbox/folder -> extract -> validate -> dedupe -> structured record -> human exception queue. Acquisition: bookkeeping/accounting firms. Charge per document or monthly volume.
+
+17. **Customer-support photo triage.** A July 30 hardware-business post reports that roughly 70–80% of repetitive customer emails were automated by a knowledge-backed assistant that could also inspect customer photos. Product: support email/photo -> classify -> retrieve approved knowledge -> draft response -> escalate uncertainty. Target hardware/e-commerce companies.
+
+18. **Lead follow-up + proposal reminder agent.** An August 10 small-business post explicitly lists lead follow-ups, email sorting, proposal reminders, task lists and weekly summaries as repetitive work the owner wants automated, while emphasizing they do not want a complex maintenance-heavy stack. Product: lead -> context -> permitted follow-up -> reminder -> CRM state -> human escalation.
+
+19. **CRM/lead scraper for founders.** A March 2026 automation practitioner reports shipping CRM capture/enrichment/follow-up systems and an M&A deal scraper that filters opportunities into a structured dashboard. This supports a paid service around continuous company/deal monitoring rather than generic research.
+
+20. **Operational QA/human-review layer.** Multiple small-business discussions converge on the same pattern: agents work best on repetitive, bounded operations with humans reviewing edge cases. The monetizable product is not “autonomy”; it is deterministic throughput plus a tiny exception queue.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. **Add Mercatai immediately to the job router.** It is the best genuinely new direct-work source this run because it has a complete machine flow: register -> discover -> bid -> deliver -> escrow release. Normalize its jobs into the existing EV scorer.
+
+2. **Publish the same specialist on Agoragentic + Atelier + AgentCab.** Use one capability such as `research/evidence -> structured JSON`, not three separate products. Marketplace adapters should be distribution only.
+
+3. **Build around documents/research/verification, not generic agency work.** The strongest recurring demand signals remain invoice extraction, lead follow-up, support triage, reporting and evidence-backed research. These all have objective completion conditions and are easier to automate safely than open-ended sales or judgment-heavy workflows.
+
+Recommended normalized scoring fields: source, task_id, task_type, reward, deadline, acceptance_criteria, estimated_compute_cost, estimated_runtime, competition, payment_confidence, success_probability, expected_profit, payout_status. Only count revenue as real when it reaches WITHDRAWN/SETTLED, not merely credited inside a platform.

@@ -1,0 +1,208 @@
+Subject: Agent Money Scout — 2026-08-30 00:00
+Date: Sat, 29 Aug 2026 10:26:31 -0700
+Message ID: 1a04e8f07b083ef6
+================================================================================
+
+# Agent Money Scout — 2026-08-30 00:00
+
+The strongest genuinely new surfaces this run are **Circle Agent Marketplace**, **Agensi**, and **Atrium**. Circle now gives API sellers an official machine-readable storefront with per-call USDC settlement; Agensi reports 4,500+ skills / 5,500+ users and pays creators 70%; Atrium is tiny but unusually transparent, showing 50 invocations and 16.098 USDC actually settled. For immediate task income, **Taskmarket, dealwork, WorkProtocol, t2000, TaskBounty** still have stronger evidence than most newly launched agent markets.
+
+## NEW THIS RUN
+
+### 1. Circle Agent Marketplace — official machine-paid API distribution
+URL: https://agents.circle.com/sell
+
+What the agent does: exposes one deterministic API capability — verification, extraction, monitoring, normalization, research, etc. Agents discover it in plain language and pay per call in USDC.
+Who pays: autonomous agents / developers consuming the endpoint.
+Payout/pricing: seller chooses per-call price; Circle's current examples show sub-cent calls. Settlement goes through Circle Gateway. I did not find a defensible provider-income figure, so no revenue estimate is claimed.
+Required: working HTTP/OpenAPI service, Circle/x402-compatible settlement, payout wallet/account permitted for the operator.
+Autonomy: 10/10 after deployment.
+First action: run one existing endpoint through Circle's seller-readiness checker, then add payment middleware and OpenAPI metadata.
+Constraints: verify Circle/payment/wallet eligibility for your age and jurisdiction; do not bypass account or identity restrictions.
+Ease first $5: 6/10. Repeatability: 10/10.
+
+### 2. Agensi — sell reusable SKILL.md products
+URL: https://www.agensi.io/
+
+Current primary-source numbers: 4,500+ skills and 5,500+ users. Creators keep 70%; payouts are via Stripe Connect or USDC on Solana through Zoneless. Minimum listed paid-skill example in its payment terms is $5, which yields $3.50 to the creator after the 30% platform share.
+What the agent does: packages a successful procedure as a portable skill or subscription skill.
+Who pays: users installing the skill through the store / supported agents.
+Required: reusable SKILL.md workflow, creator account, eligible payout rail.
+Autonomy: 8/10 after publication.
+First action: package a narrow result-oriented skill such as PR verification, structured invoice validation, workflow-health auditing, or evidence extraction.
+Constraints: Stripe/Zoneless account eligibility and geography rules apply normally.
+Ease first $5: 6/10. Repeatability: 9/10.
+
+### 3. Atrium — on-chain paid agent skills with actual settlement history
+URL: https://atriumhermes.tech/
+
+Current primary-source dashboard: 68 skills, 60 active, 50 invocations, **16.098 USDC settled**. Skills are paid per invocation on Base and creators can withdraw accrued balances. The marketplace also supports derived-skill royalties.
+What the agent does: publishes a portable agent skill; other agents pay each time it is invoked.
+Who pays: consuming agents.
+Payout: listing-specific; visible examples range from 0.002 USDC/call to 0.5 USDC/call.
+Required: CLI/MCP integration, skill manifest, wallet, Base transaction capability.
+Autonomy: 10/10.
+First action: publish one existing validated micro-skill rather than building an Atrium-only product.
+Constraints: normal wallet/account eligibility; avoid publishing capabilities or data you do not have rights to sell.
+Ease first $5: 4/10. Repeatability: 9/10.
+
+### 4. LVL — one-time x402 skill unlocks
+URL: https://lvlltd.com/
+
+LVL lets sellers list agent skills priced from **$0.05+ per unlock**. Free-tier marketplace sellers pay a **15% fee** on confirmed sales; the site also advertises a premium creator path with 0% marketplace fee. Payment is USDC through x402-style unlocks.
+What the agent does: sells reusable skill packs rather than per-task labor.
+Who pays: agents/builders unlocking the skill.
+Required: useful skill pack, QC approval, payment-compatible wallet/account.
+Autonomy: 9/10 after listing.
+First action: list a narrow skill with a free outline and a measurable paid implementation.
+Verified demand caveat: I could not verify meaningful current seller revenue, so treat it as a cheap cross-listing surface, not a primary acquisition channel.
+Ease first $5: 3/10. Repeatability: 8/10.
+
+### 5. ClawMolt — bounty infrastructure worth watching, not yet first-tier
+URL: https://www.clawmolt.ai/
+
+ClawMolt supports coding, research, design and data-analysis bounties, escrow via Stripe Connect, agent verification and autonomous delivery. Its marketing says bounties start at $5 and agents can earn USD or USDC. However, the current primary page showed **NO_AGENTS_FOUND** in its verified-agent live feed, and I could not verify current funded bounty volume.
+What the agent does: claims bounty, executes, submits result, receives escrow release.
+Who pays: bounty poster.
+First action: query live bounty inventory only; do not pay for hosting/infrastructure until real funded work is visible.
+Autonomy: 8/10.
+Ease first $5: 2/10 today. Repeatability: 7/10 if liquidity appears.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. Taskmarket
+URL: https://taskmarket.dev/
+
+Fresh primary page: **19 tasks open** and **2,380.71 USDC funded volume**. Buyers fund escrow, agents submit, and the accepted result receives USDC. Competition is often severe, so reward alone is misleading.
+Agent work: research, coding, data, structured artifacts.
+First action: inspect submission count and acceptance mechanic before executing.
+Autonomy: 10/10. Ease first $5: 8/10. Repeatability: 9/10.
+
+### 7. dealwork.ai
+URL: https://dealwork.ai/
+
+Fresh primary page: **2.5K workers, 264 completed tasks, 156 open tasks**, about 1.1-day median delivery. Public examples include a completed **$80 human→AI API task**. AI→AI work has a 3% marketplace fee; normal contracts 10%.
+Agent work: code, research, transformations, data, structured deliverables.
+First action: connect using its skill.md and bid only on escrowed jobs with objective acceptance criteria.
+Autonomy: 9/10. Ease first $5: 8/10. Repeatability: 9/10.
+
+### 8. WorkProtocol
+URL: https://workprotocol.ai/
+
+Fresh primary page: **734 agents, 35 jobs posted, 1,325 USDC settled**. The detailed protocol page says jobs have a **$50 minimum**, with Base-USDC escrow locked before execution and automated/human verification before release.
+Agent work: code, ETL/data, research, content, custom structured work.
+First action: inspect current jobs and reproduce acceptance tests before claiming.
+Autonomy: 9/10. Ease first $5: 8/10 when a suitable job is available. Repeatability: 9/10.
+
+### 9. t2000
+URL: https://t2000.ai/
+
+t2000 remains useful because it combines jobs, fixed services, and paid API calls. The current site continues to display public settled amounts; service settlements take 5%, while API calls currently take 0% marketplace fee.
+Agent work: claim open work, sell a service, or expose an API.
+First action: prioritize externally funded jobs/services; use tiny seed jobs only if they create useful reputation/integration history.
+Autonomy: 9/10. Ease first $5: 7/10. Repeatability: 9/10.
+
+### 10. TaskBounty
+URL: https://www.task-bounty.com/for-agents/codex-cli
+
+TaskBounty's current Codex documentation explicitly describes autonomous end-to-end work: find a GitHub bounty, clone, fix, test, PR, submit, sandbox verification, then payout. Official range: **$10–$100 per fix** on the Codex page; payouts can be USDC, ETH, BTC or USD bank transfer. First verified payout is released immediately; later payouts batch monthly and wait until cumulative balance reaches $50.
+Agent work: deterministic software bug fixes.
+First action: select a bug that can be reproduced cheaply; never submit unless local tests pass.
+Autonomy: 9/10. Ease first $5: 8/10. Repeatability: 9/10.
+
+### 11. MoltJobs
+URL: https://moltjobs.io/open-jobs
+
+Current visible inventory is still four **2-USDC** promotional-publication tasks rather than the coding/research work we want. One requires a genuine pre-existing public account, 50+ followers, clear sponsored disclosure, and a 120-hour proof hold before payment.
+Agent work: normally API-first job discovery/bidding/delivery over REST, CLI or MCP.
+Who pays: poster through Base-USDC escrow.
+First action: keep polling; skip current promotion jobs unless every platform/account/disclosure rule is legitimately satisfied.
+Autonomy: 9/10. Ease first $5 on current inventory: 3/10. Repeatability: 8/10.
+
+### 12. PayAPI Market
+URL: https://payapi.market/
+
+Still one of the strongest pay-per-call discovery rails. Latest primary page reports **91 live APIs, 588 endpoints**, and 74 listings carrying a settlement-verified badge; providers keep **100% of each settlement**. The badge requires the marketplace to have made a real x402 payment and received usable output.
+Agent work: sell a deterministic API capability.
+First action: cross-list a proven endpoint.
+Autonomy: 10/10. Ease first $5: 6/10. Repeatability: 10/10.
+
+### 13. Clawlancer
+URL: https://clawlancer.ai/
+
+Still active and machine-native: register → browse bounties → claim → deliver → USDC settlement. The site currently advertises 1–2.5% fees and says a claim/delivery transaction costs roughly $0.01 of Base gas. Prior live scans found one $15 external bounty among many penny-level platform-seeded tasks.
+First action: ignore cent-level jobs except for integration testing; route only meaningful external bounties.
+Autonomy: 10/10. Ease first $5: 6/10 when a worthwhile bounty is open. Repeatability: 8/10.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. Automation Watchdog — strongest recurring product signal
+Fresh threads: 
+https://www.reddit.com/r/n8n/comments/1w18bh9/how_do_you_find_out_a_clients_workflow_broke/
+https://www.reddit.com/r/n8n/comments/1w02g0o/after_a_workflow_sat_dead_for_17_days_with_zero/
+
+Two fresh threads now independently describe the same failure: workflows can stop running or complete “successfully” while the actual business outcome never happens. One workflow sat dead **17 days with zero errors**.
+Customer/problem: agencies and companies running n8n/Make/Zapier in production.
+Agent workflow: expected cadence/outcome → external heartbeat/canary → verify downstream receipt/state → detect missing/late/duplicate/malformed result → alert with evidence.
+Acquire customers: n8n/Make consultants, agencies, operations teams.
+Charge: setup + recurring monitoring. No universal defensible market price found, so none invented.
+MVP: monitor one workflow type and prove downstream receipt, not merely HTTP 200.
+Ease first $5: 8/10. Repeatability: 10/10.
+
+### 15. Verified Invoice Worker
+Demand evidence:
+https://www.reddit.com/r/n8n/comments/1u16eu4/i_built_this_n8n_automation_as_an_mvp_to_a_client/
+
+A builder reports that a paid invoice-processing MVP led to a **six-month contract** with a US company. The valuable part is not OCR alone; it is reliable document intake, extraction, validation, duplicate handling, downstream synchronization and exception routing.
+Customer: bookkeeping/accounting teams and SMB finance operations.
+Workflow: authorized invoice intake → fixed schema → validation/totals → duplicate check → verified record or exception.
+Acquire: accounting/automation consultants and SMB operators.
+Charge: fixed build + maintenance/usage.
+MVP: invoice PDF/image → validated JSON/CSV + evidence and exception reasons.
+Ease first $5: 8/10. Repeatability: 10/10.
+
+### 16. Freelancer Admin Worker
+Demand thread:
+https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+
+Recurring manual bundle: proposals, contracts, invoice reminders, onboarding messages, weekly client updates and testimonial requests.
+Customer: freelancers/small agencies.
+Workflow: project/client record → generate the needed admin artifact → approval where appropriate → send/update → status tracking.
+Acquire: freelance communities and existing CRM/Notion/Sheets users.
+Charge: setup package or small recurring maintenance fee.
+MVP: proposal generator + invoice chaser + weekly update workflow.
+Ease first $5: 7/10. Repeatability: 9/10.
+
+### 17. Mid-market Automation Hardener
+Demand thread:
+https://www.reddit.com/r/AiAutomations/comments/1vlbhv3/132k_collected_in_2026_18kmonth_selling_ai/
+
+An operator reports roughly **€132k collected during 2026 (~€18k/month)** selling automation systems to mid-market firms. This is self-reported, not audited, but the operational lesson is strong: larger clients have budget yet demand reliability because mistakes are expensive.
+Customer: companies with CRM/helpdesk/ERP/API integrations already in production.
+Workflow: workflow export + logs → dependency graph → retry/idempotency/credential/webhook audit → failure injection → reproducible defects → patch plan/runbook.
+Acquire: automation agencies/integration shops.
+Offer: “Send workflow export + execution logs; receive a production-readiness report with reproducible failure cases and prioritized fixes.”
+Ease first $5: 7/10. Repeatability: 10/10.
+
+## FILTERED / WATCHLIST
+
+MoltGuild: https://www.moltguild.com/town — primary page currently shows **0 quests completed, $0 USDC earned and 0 total bounties**. Good architecture, no income today.
+WORQ: https://worq.dev/ — advertises 95% worker share and $1 minimum job budget, but current page shows **0 active agents**.
+solveby.ai / TaskMaster: https://www.solveby.ai/ — currently **0 open requests** and uses internal credits, so it is not cash earnings.
+AuraGate: https://auragate.app/ — clearly marked **Arc Testnet demo**; testnet USDC is not real revenue.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+**1. Keep direct work acquisition concentrated on Taskmarket + dealwork + WorkProtocol + t2000 + TaskBounty.** These have the strongest combination of funded work, completed tasks, settlement evidence and deterministic task shapes. Rank every job by expected net value, not headline reward:
+
+`expected_net = reward × P(funded) × P(still open) × P(solve) × P(accepted) × P(settled) − inference/tool/payment/review costs`
+
+**2. Build `/automation-health` as the first recurring specialist.** The August 29–30 Reddit evidence is unusually coherent: workflow creation is easy; detecting silent failure after handover is not. The MVP should monitor expected business outcomes from outside the workflow engine.
+
+**3. Turn every successful paid procedure into a portable product and cross-list it.** Suggested ladder:
+
+`paid job → proven procedure → tests/failure cases → SKILL.md + API → Agensi / Atrium / PayAPI / Circle Agent Marketplace`
+
+Highest-confidence initial SKUs: `/automation-health`, `/verify-pr`, `/normalize-invoice`, `/structured-evidence`, `/api-health`, `/release-check`.
+
+Only **SETTLED/WITHDRAWN** real-money value should count as earnings. Do not count testnet assets, marketplace credits, claimed GMV, illustrative jobs, or unfunded listings. Use only platforms/payment rails for which the operator legitimately satisfies current age, 

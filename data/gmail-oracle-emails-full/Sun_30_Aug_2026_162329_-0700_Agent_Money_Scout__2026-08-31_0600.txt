@@ -1,0 +1,210 @@
+Subject: Agent Money Scout — 2026-08-31 06:00
+Date: Sun, 30 Aug 2026 16:23:29 -0700
+Message ID: 1a054fc33b55a395
+================================================================================
+
+# Agent Money Scout — 2026-08-31 06:00
+
+Fresh result: AgentPact and dealwork.ai remain the strongest immediate earning queues. OpenAnt still has the strongest verified scale. The best genuinely new surfaces this run are NEAR Agent Market, AgenticInvictus, BARD, Merxex, and Morpheus Protocol. One negative update matters too: ClawTasks has switched to free-task-only mode, so it is no longer an earning source and should be removed from the queue.
+
+I excluded platforms whose current terms clearly require users to be 18+. Where age/account rules were not clearly surfaced, do not register or connect payment rails unless the platform explicitly permits your age and jurisdiction.
+
+## NEW THIS RUN
+
+### 1. NEAR Agent Market — promising storefront + agent job market, but weak earnings transparency
+URL: https://market.near.ai/
+What the agent does: fixed-price code review, research, data cleanup, API testing, automation, technical writing, or bids on jobs.
+Who pays: marketplace buyers through NEAR escrow.
+Verified pricing/activity: current agent listings include 1 USDC JSON/CSV cleanup, 5 USDC code/workflow audits, 10–12 USDC research reports, and 18 USDC QA bundles. Individual agents show 3–68 jobs completed, but many profiles still show 0 earned, so do not treat completion counts as cash revenue.
+Tools/skills: HTTP/API-capable agent; NEAR Agent Market profile; public-source research/code/data skills.
+Autonomy: 9/10.
+Exact first action: list one narrow, deterministic 5 USDC service such as API sanity check or code review, then monitor for external orders before building more.
+Eligibility: age/contract requirements were not clearly surfaced in the pages checked; verify before registration or payout setup.
+Ease to first $5: 4/10. Repeatability: 9/10 if buyer demand materializes.
+
+### 2. AgenticInvictus — autonomous bidding with $10 minimum jobs
+URL: https://www.agenticinvictus.com/
+What the agent does: data extraction, analysis, automation, research, coding and other repeatable digital jobs.
+Who pays: clients funding jobs through platform escrow.
+Verified economics: minimum job budget $10; 15% platform fee. Sandbox compute is free for jobs <=$25 under 30 minutes, then fees can apply. Free tier allows one agent; Pro is $15/month and Pro Max $45/month.
+Tools/skills: upload an existing LangChain/AutoGen/CrewAI/SmolAgents/custom agent, or use their builder.
+Autonomy: 9/10; Auto Job Scan can bid automatically.
+Exact first action: use the free tier only and inspect real job inventory; do not pay for Pro until external paid work exists.
+Eligibility: age/account/payment eligibility not clearly surfaced in the pages checked; verify before signup.
+Ease: 4/10. Repeatability: 8/10.
+
+### 3. BARD — MCP-native bounties + portable work reputation
+URL: https://bard-six.vercel.app/
+What the agent does: browse funded bounties, claim first-come work, submit proposals, deliver artifacts, publish skills and build wallet-linked reputation.
+Who pays: human or agent bounty creators.
+Payout: approved work is paid in USDC; no reliable current typical payout or marketplace-volume number surfaced, so no amount is assumed.
+Tools/skills: MCP-capable agent; BARD-managed wallet or connected wallet.
+Autonomy: 10/10.
+Exact first action: query open funded work through MCP and execute only explicit non-zero rewards with objective acceptance criteria.
+Eligibility: age/contract rules not clearly surfaced; verify before account/wallet use.
+Ease: 3/10. Repeatability: 8/10 potential.
+
+### 4. Merxex — GraphQL-native AI-agent exchange
+URL: https://www.merxex.com/
+What the agent does: bid on code, research, data, automation, documentation and other jobs, or list reusable services.
+Who pays: humans or other agents.
+Verified economics: 2% flat contract fee. Registration is free. Stripe and Lightning are live; USDC Polygon is described as coming soon. No trustworthy live open-job count was visible on the primary page.
+Tools/skills: any HTTP/GraphQL-capable agent; cryptographic secp256k1 identity.
+Autonomy: 10/10.
+Exact first action: register only if eligible, query the GraphQL jobs feed, and do nothing further unless genuine funded work appears.
+Eligibility: age/payment rules were not clearly surfaced in the pages checked; do not assume eligibility.
+Ease: 3/10. Repeatability: 8/10 potential.
+
+### 5. Morpheus Protocol — operator marketplace for agent services
+URL: https://morpheusprotocol.dev/
+What the agent does: sell safe research, benchmarking, verification, documentation and other bounded digital services.
+Who pays: humans or agents hiring the listed service.
+Verified pricing: platform examples include agent verification/analysis services around $35–$60 and other professional services priced higher. These are listed prices, not verified seller revenue.
+Tools/skills: deployable agent, supported wallet, structured API output.
+Autonomy: 10/10.
+Exact first action: list a proven verification/research capability only after it has earned elsewhere; do not build a speculative service solely for this marketplace.
+Eligibility: age/account/wallet terms were not clearly surfaced; verify before joining.
+Ease: 3/10. Repeatability: 9/10 if buyers exist.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 6. AgentPact — still #1 immediate target
+URL: https://agentpact.xyz/needs
+Current board: 200 Needs.
+Live high-signal jobs include Python code review 5–10 USDC; API automation 10–25; Python code/security review 10–25; web-scraping automation 10–25; data analysis + visualization 10–25; infographic/chart 5–10; technical SEO 5; Python/data execution 5; OHLCV validation 5–15; transcription 7–14; BTC analysis 10–20; technical summaries 5–25.
+Who pays: buyer posting the Need/deal.
+Tools: AgentPact API/MCP/Python/npm; coding/data/research worker.
+Autonomy: 10/10.
+First action: hard-filter reward >=5 USDC, then target API automation -> code/security review -> data analysis. Avoid the large amount of $0.01–$1 testing noise.
+Eligibility: confirm account/payment rules before joining.
+Ease: 9/10. Repeatability: 9/10.
+
+### 7. dealwork.ai — strongest broad queue
+URL: https://dealwork.ai/
+Current primary state: 2.5K workers, 156 open tasks, 264 completed, about 1.1-day median delivery.
+Verified examples: an AI agent delivered an $80 production API with tests; the platform also documents a $5 AI-to-AI job. Funds are escrowed before work.
+Who pays: humans or agents.
+Tools: API-capable worker; code, research, data-transform and documentation skills.
+Autonomy: 9/10.
+First action: ingest all open tasks and bid only where acceptance can be reproduced independently.
+Eligibility: verify account/payment rules.
+Ease: 9/10. Repeatability: 9/10.
+
+### 8. OpenAnt — strongest verified scale
+URL: https://openant.ai/
+Current primary state: 12.8K total tasks, 1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out, $128K posted.
+What an agent can do: remote analysis, data and digital-production work. A visible example asks for SKU sales analysis with five insights and a chart.
+Who pays: task poster through USDC escrow on Solana/Base.
+Tools: OpenAnt skill/API/MCP-compatible agent.
+Autonomy: 10/10 for remote digital tasks.
+First action: filter remote + digital + explicit reward + objective proof; exclude physical/GPS/photo tasks.
+Eligibility: verify wallet/account rules; do not assume every task is age/location eligible.
+Ease: 8/10. Repeatability: 9/10.
+
+### 9. MoltJobs — one concrete funded 5-USDC job remains
+URL: https://moltjobs.io/open-jobs
+Current live job: 5 USDC to turn three live job postings into ready-to-fund MoltJobs specs and contact the buyer; about five days remain. The site says open jobs are funded with USDC in on-chain escrow.
+What the agent does: research/specification plus legitimate, individual buyer contact.
+Who pays: job poster.
+Tools: REST/MCP/CLI worker.
+Autonomy: 8/10.
+First action: inspect this specific listing; any contact must be relevant and non-spammy.
+Eligibility: verify account/payment rules.
+Ease: 7/10. Repeatability: 8/10.
+
+### 10. Taskmarket — real settlement, worsening competition
+URL: https://taskmarket.dev/
+Fresh state: 14 open tasks, 26.9K registered agents, 2,382.947764 USDC posted volume.
+Current examples: 24.2 USDC task has 138 submissions; 1.297426 USDC task has 173; 0.327 USDC task has 186. Top agents currently show 120.776268 and 78.624908 USDC earned.
+Who pays: funded task requester.
+Autonomy: 10/10.
+First action: calculate EV = reward × P(win) − execution cost. Prefer claim/pitch/benchmark tasks over huge winner-take-all races.
+Eligibility: verify account/wallet rules.
+Ease: 5/10. Repeatability: 9/10.
+
+### 11. t2000 — 66 open jobs, but much of the queue is bootstrap work
+URL: https://t2000.ai/jobs
+Fresh state: 66 open, 66 in progress, 1,280 settled, $993.51 settled USDC.
+Current visible jobs are dominated by 0.25–0.50 USDC loops such as buying ecosystem products or recruiting another agent. Public receipts prove genuine settlement, but this is not strong external demand.
+Who pays: marketplace buyers through locked USDC.
+Tools: t2000 Passport/agent connector.
+Autonomy: 10/10.
+First action: reject referral/payment-loop/bootstrap jobs unless they create genuine reusable reputation. Use t2000 mainly for paid job -> proven procedure -> fixed service -> paid API.
+Eligibility: Google/Passport/wallet terms must be satisfied normally.
+Ease: 4/10 today. Repeatability architecture: 10/10.
+
+### 12. Clawlancer — active but heavily downgraded
+URL: https://clawlancer.ai/marketplace
+Fresh state: 50 listings, 37 starter gigs <=$1. Most claimable bounties visible today are $0.01–$0.03. Several $5–$100 storefront offers show 0 sold.
+Who pays: bounty poster or storefront buyer.
+Tools: REST or clawlancer-mcp, Base wallet/identity.
+Autonomy: 10/10.
+First action: monitor only for funded bounties >=$5 or actual external purchases. Do not spend time farming pennies.
+Eligibility: verify account/wallet rules.
+Ease: 1/10 today. Repeatability: 8/10 potential.
+
+### 13. gigs.sh — scouting layer, not direct income
+URL: https://gigs.sh/
+Current directory: 46 verified platforms, but its verification snapshot is dated May 18, 2026.
+What the agent does: discover new task markets, bounties and payment rails.
+Who pays: nobody; this is discovery infrastructure.
+First action: use it to generate candidate domains, deduplicate against prior runs, and verify every platform from its primary source.
+Ease direct: 1/10. Scouting repeatability: 10/10.
+
+Important negative update: ClawTasks (https://clawtasks.com/) now explicitly says it is free-task-only and is winding down paid bounties. Remove it from the earning queue.
+
+## REDDIT DEMAND SIGNALS
+
+### 14. Workflow reliability / maintenance audit
+Thread: https://www.reddit.com/r/automation/comments/1w0k8nw/which_automation_did_you_regret_automating/
+Signal: current operators complain about API changes, flaky webhooks, duplicate runs, expiring credentials and silent failures; one commenter says automations against third-party dashboards without real APIs become selector/login whack-a-mole.
+Customer: automation agencies and SMB operations teams.
+Agent workflow: workflow exports + execution logs -> dependency/API map -> silent-failure tests -> credential/webhook checks -> KEEP/FIX/RETIRE report.
+Acquire: automation communities where service offers are allowed, referrals, agencies.
+Charge: fixed reliability audit, then optional monitoring.
+MVP: audit one workflow and return a failure map + reproducible health checks.
+Autonomy: 9/10. Ease: 9/10. Repeatability: 10/10.
+
+### 15. Weekly SEO triage
+Thread: https://www.reddit.com/r/SEO_Xpert/comments/1vypo2g/whats_the_most_repetitive_part_of_your_seo_job/
+Signal: weekly GSC audits, identifying winners/losers, crawl/indexing checks and prioritization are explicitly described as repetitive; judgment is still retained for final decisions.
+Customer: SEO agencies and multi-site operators.
+Workflow: authorized GSC + crawl/index data -> deltas/anomalies -> losing pages/queries -> prioritized human-review queue.
+Charge: setup + recurring weekly report.
+MVP: one site's weekly evidence report.
+Autonomy: 9/10. Ease: 9/10. Repeatability: 10/10.
+
+### 16. Google-update forensic evidence pack
+Thread: https://www.reddit.com/r/SEO/comments/1vzw2tl/august_2026_google_update_hit_my_site_hard_what/
+Signal: site owner has before/after Search Console, backlink and indexing data and explicitly wants a structured diagnosis before changing anything.
+Customer: publishers, stores and SEO agencies.
+Workflow: before/after GSC + indexing + backlink + deploy history -> change points -> affected clusters -> evidence-ranked hypotheses -> human review.
+Charge: fixed incident diagnostic.
+MVP: two GSC exports in, ranked evidence report out.
+Autonomy: 8/10. Ease: 8/10. Repeatability: 9/10.
+
+### 17. Cross-app data sync
+Thread: https://www.reddit.com/r/SaaS/comments/1vv2q41/looking_for_annoying_daily_tasks_or_workflows_you/
+Signal: users explicitly complain about repeatedly copying the same fields between tools and want a simple selective-field sync rather than a complicated automation platform.
+Customer: small businesses and teams using multiple SaaS tools.
+Workflow: authorized source field -> mapping -> destination field -> idempotency + conflict check -> exception log.
+Charge: fixed setup + maintenance.
+MVP: sync 3–5 fields between two tools with audit logs.
+Autonomy: 9/10. Ease: 8/10. Repeatability: 10/10.
+
+### 18. Small internal automation contracts
+Thread: https://www.reddit.com/r/n8n/comments/1vev45x/how_n8n_helped_me_move_from_a_nontech_internship/
+Signal: a builder reports turning one repetitive internal process into more automation work and eventually a 30-hour-per-month automation contract. The recurring work is APIs, data processing, debugging, documentation and error handling.
+Customer: startups/SMBs with one obvious manual process.
+Workflow: process inventory -> choose highest-frequency deterministic task -> automate -> add logs/errors/docs -> measure saved time.
+Charge: fixed pilot, then maintenance/retainer only if it works.
+MVP: automate exactly one repetitive process and prove the before/after result.
+Autonomy: 8/10. Ease: 8/10. Repeatability: 10/10.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. AgentPact first. The live 10–25 USDC API automation, Python security/code review, scraping and data-analysis needs still have the best combination of explicit budget, bounded output and autonomous execution.
+
+2. Standardize one /verify-pr + /api-sanity + /data-quality worker. That single worker maps directly onto AgentPact, dealwork, future NEAR/AgenticInvictus jobs, and direct-client reliability work. Output should always contain reproduction steps, tests, evidence, findings and PASS/FAIL/REVIEW.
+
+3. Build direct-demand reliability/SEO products before more marketplace integrations. The strongest fresh Reddit signals are not 'build me another general agent'; they are recurring evidence jobs: workflow health, weekly GSC triage, post-update diagnosis and cross-app data s

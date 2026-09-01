@@ -1,0 +1,176 @@
+Subject: Agent Money Scout — 2026-08-29 15:00
+Date: Sat, 29 Aug 2026 03:26:53 -0500
+Message ID: 1a04ca0fa10656fb
+================================================================================
+
+# Agent Money Scout — 2026-08-29 15:00
+
+This run deliberately prioritized new, payout-verifiable surfaces rather than recycling speculative agent marketplaces. The strongest genuinely new opportunity is Apify Store: its official creator page reports roughly $1.5M/month paid to 3,900 community developers, and Apify now exposes 20,000+ Actors through x402 so autonomous agents can buy them directly.
+
+## NEW THIS RUN
+
+### 1) Apify Store — publish a tool once, earn per run
+URL: https://apify.com/partners/actor-developers
+What the agent would do: package one narrow scraper, data processor, monitor, API wrapper, or automation as an Apify Actor, then let users/agents invoke it repeatedly.
+Who pays: Apify Store users and autonomous agents consuming the Actor.
+Verified economics: Apify says ~$1.5M is paid monthly to ~3,900 community developers. Paid Actors can use pay-per-event pricing; Apify’s help docs say platform costs plus a 20% commission are deducted from revenue/profit. Apify also says successful independent creators can make $1k+/month and top creators can exceed $10k/month, though those are not guarantees.
+Required tools/skills: Node/Python, Apify Actor SDK or normal HTTP tooling, a useful legal data source or workflow.
+Autonomy: 10/10 after deployment.
+Exact first action: inspect the Store for a boring recurring data task with obvious paid demand, then build the smallest Actor that produces a deterministic output and price it with PPE.
+Constraints: payout/identity requirements apply; respect site terms, robots/access controls, privacy and data licensing.
+Ease-to-first-$5: 7/10. Repeatability: 10/10.
+
+### 2) Apify x402 distribution — machine customers can now buy 20,000+ Actors
+URL: https://blog.apify.com/introducing-x402-agentic-payments/
+What the agent would do: publish an Actor that solves a machine-consumable task, then allow autonomous callers to pay in USDC through x402 without provisioning API keys.
+Who pays: AI agents needing web data/automation.
+Verified economics: Apify announced 20,000+ Actors accessible over x402 on June 30, 2026. Revenue is still governed by the Actor’s Store monetization; no per-Actor demand is guaranteed.
+Required: Actor + PPE pricing + structured output.
+Autonomy: 10/10.
+Exact first action: choose a capability that agents repeatedly need, e.g. public-page change detection, structured extraction, package/release monitoring, or permitted business-data normalization.
+Ease: 6/10. Repeatability: 10/10.
+
+### 3) Freelancer RailCall contest — $1,350 first-prize integration
+URL: https://www.freelancer.sg/jobs/automation/
+What the agent would do: build a new RailCall module/integration such as Slack, HubSpot, Airtable or Zendesk around a preview → approve → execute → signed-receipt workflow.
+Who pays: contest sponsor through Freelancer.
+Advertised payout: $1,350 USD first-place prize; listing showed 28 days remaining when checked.
+Required: API integration, signed handlers, automation engineering, documentation/demo.
+Autonomy: ~8/10 for build/test; a human should review and submit through the platform.
+Exact first action: inspect the existing live modules and choose an integration with a strong demo path rather than a broad platform connector.
+Constraints: Freelancer account and current platform eligibility/ToS apply; do not automate bidding/submission where prohibited.
+Ease: 5/10. Repeatability: 4/10.
+
+### 4) Freelancer production-hardening job — €250–€750 n8n system
+URL: https://www.freelancer.cl/projects/ai-chatbot/automation-expert-needed-complete
+What the agent would do: audit and harden an existing n8n/OpenAI automation stack: credentials, race conditions, retries, logging, WhatsApp/email flows, social publishing, error recovery and documentation.
+Who pays: project client.
+Advertised payout: €250–€750 fixed price; the page was open when checked.
+Required: n8n, OpenAI API, REST/webhooks, OAuth, Meta/WhatsApp, databases, production debugging.
+Autonomy: 7/10; human review/account actions remain appropriate.
+Exact first action: produce a scoped audit checklist and acceptance-test matrix before committing to the full build.
+Constraints: platform age/account/payment rules and ToS apply; no automated spam or unauthorized account access.
+Ease: 6/10. Repeatability: 9/10 as a service niche.
+
+### 5) BountyBot Network — authorized AI security bounties
+URL: https://www.bountybot.network/agents
+What the agent would do: inspect only explicitly authorized Solana bounty programs, analyze scoped code, and submit vulnerability reports through the platform API.
+Who pays: participating bounty programs.
+Advertised economics: BountyBot says the discovering agent receives 70% of a verified bounty. The site advertises 30+ target programs, but I did not find sufficient live payout telemetry this run to treat headline bounty examples as verified current earnings.
+Required: strong secure-code review/static analysis, Solana/Rust knowledge, wallet.
+Autonomy: 8/10 technically, but responsible human review is advisable before submission.
+Exact first action: retrieve the currently authorized target list and scope; do not analyze anything outside listed programs.
+Constraints: authorization/scope rules are mandatory. No exploitation outside approved programs.
+Ease: 3/10. Repeatability: 7/10.
+
+### 6) CrewPort — structurally good, currently zero liquidity
+URL: https://crewport.ai/
+Current evidence: 0 Stripe-verified operators, 0 registered clients, 0 contracts posted, $0 gross income.
+Model: AI crews bid on $5–$500 structured contracts with human operator review and a 10% platform fee.
+Action today: do not spend build time here. Keep as a watchlist adapter until funded contracts appear.
+Ease-to-first-$5 today: 1/10. Repeatability if liquidity emerges: 8/10.
+
+### 7) StacksTasker — testnet only, not money
+URL: https://stackstasker.com/
+Current evidence: one visible old task, but the platform explicitly states it currently runs on Stacks testnet, so no real funds are used.
+Action: useful only for protocol experimentation; exclude from earnings calculations.
+Ease-to-first-$5: 0/10 today.
+
+### 8) solveby.ai / TaskMaster — no open requests
+URL: https://www.solveby.ai/
+Current evidence: 5 agents, 3 services, 0 open requests, 2 completed jobs, 55 internal credits exchanged.
+Action: watchlist only. Do not count internal credits as cash earnings.
+Ease: 1/10. Repeatability: 5/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 9) WorkProtocol
+URL: https://workprotocol.ai/
+Fresh status: 719 agents, 35 jobs posted, 12 completed and 1,325 USDC settled; the current public page says 1 job is available now. Jobs have structured acceptance criteria and USDC/Base escrow; code jobs can be auto-verified.
+Exact action: poll the open job endpoint and only claim tasks where the acceptance tests are deterministic.
+Ease: 8/10. Repeatability: 9/10.
+
+### 10) t2000
+URL: https://t2000.ai/
+Fresh evidence: public activity shows $0.50 jobs settled about an hour before this run, and seller cards still show settled balances such as $57.75, $125.56 and $100.
+Model: funded open jobs + reusable service listings; 5% fee on services and 0% on API calls.
+Exact action: poll FUNDED jobs and score them by reward, scope and settlement likelihood.
+Ease: 7/10. Repeatability: 9/10.
+
+### 11) MoltJobs
+URL: https://moltjobs.io/open-jobs
+Fresh evidence: four jobs around 2 USDC each were posted roughly three hours before the latest crawl, with on-chain escrow advertised.
+Model: REST/CLI/MCP/webhook agent workflow, 10 free bids/month, 5% success fee, Base USDC.
+Exact action: only pursue tasks that do not require prohibited spam/public-post behavior and that have objectively verifiable outcomes.
+Ease: 5/10. Repeatability: 8/10.
+
+### 12) dealwork.ai
+URL: https://dealwork.ai/
+Still active: agent/human hybrid marketplace with escrow, outcome-based work, REST/skill.md integration and a 3% fee for AI-to-AI contracts.
+Exact action: keep as a first-tier poller for research, coding, data transformation and delegated tasks.
+Ease: 8/10. Repeatability: 9/10.
+
+### 13) Agent402 settlement index
+URL: https://agent402.tools/marketplace
+Fresh evidence: 2,746 distinct payees, 3,412 endpoints and 84,843 advertised tools. Some providers show large on-chain transaction counts, e.g. BlockRun 558k+ tx and x402.twit.sh 30k+ tx.
+What to do: use this as a demand-intelligence feed, not a marketplace-inventory vanity metric. Rank categories by recent settlements, distinct buyers, price and health.
+Ease: 6/10. Repeatability: 10/10.
+
+### 14) Apify-style recurring data products as a creative play
+Customer/problem: recruiters, market researchers, real-estate operators, agencies and other teams repeatedly need fresh structured public data.
+Evidence: a July 2026 Apify creator case study found PPE versions of many data Actors had materially more users than compute-time variants; examples included job and real-estate data tools.
+Agent workflow: fetch permitted public data → normalize → dedupe → validate → structured result → charge per event/result.
+Acquisition: Apify Store plus x402 distribution.
+Charge: PPE rather than a custom SaaS subscription.
+MVP: one data source, one schema, one deterministic output.
+Ease: 7/10. Repeatability: 10/10.
+
+### 15) Production-hardening agent for n8n/automation systems
+Customer/problem: teams have built AI automations quickly but struggle with retries, duplicate sends, credential handling, race conditions, monitoring and production reliability.
+Evidence: the live €250–€750 Freelancer job above explicitly asks for exactly this, and current automation job boards show related Zendesk/WhatsApp/n8n projects.
+Workflow: import workflow → map external dependencies → test paths → inject failure cases → fix retries/idempotency → instrument logs → produce runbook.
+Acquisition: conventional freelance boards, n8n/automation communities, or packaged fixed-price audit.
+Offer: “I production-test your n8n automation and return a fixed bug/risk list + hardened workflow.”
+Ease: 7/10. Repeatability: 10/10.
+
+## REDDIT DEMAND SIGNALS
+
+### QA/verification bottleneck remains extremely strong
+Thread: https://www.reddit.com/r/developersIndia/comments/1vzpxsn/all_devs_in_my_team_ran_out_of_work_ai_broke_the/
+Fresh status: ~1,126 votes. The poster says AI-assisted developers are producing work faster than QA can validate it; commenters explicitly note that AI is much better at generating code than QA and that developers need to test more before handing work downstream.
+Recurring pattern: code generation capacity rises faster than verification capacity.
+Sellable agent: PR changed-surface analysis → targeted unit/integration/browser/API tests → reproduce failures → evidence bundle → PASS/FAIL/HUMAN REVIEW.
+Offer: per-PR verification or CI subscription.
+
+### AI-native engineering itself is now explicitly being hired
+Thread: https://www.reddit.com/r/developersIndia/comments/1vcddp6/whos_hiring_monthly_megathread_august_2026/
+Current August hiring posts include roles asking for Claude Code, MCP CLIs, QuickBooks connectors, multi-agent orchestration, LLM APIs and client-facing AI integrations. One remote role advertises starting at £600/month plus Claude Max.
+Pattern: the valuable capability is increasingly “take a messy business integration and ship the whole automation,” not prompt-writing.
+Sellable agent/product: integration builder + verifier + documentation generator.
+
+### Job-application overload is painful and measurable
+Thread: https://www.reddit.com/r/UKJobs/comments/1vyrrnz/203_applications_later_ive_finally_received_an/
+A current post reports 203 applications before an offer, despite tailoring CVs, cover letters, researching companies and preparing assessments/interviews.
+Pattern: people spend large amounts of time on company research, tailoring, tracking and interview preparation.
+Safe MVP: human-reviewed job-application research packet — company summary, role-fit matrix, CV-tailoring suggestions, question prep and application tracker. Do not auto-submit applications or make false claims.
+
+### Backend/GenAI job-seekers report extreme application volume
+Thread: https://www.reddit.com/r/developersIndia/comments/1vxql1l/applied_to_around_1k_jobs_in_the_span_of_6_months/
+A developer with three years of backend/GenAI experience reports ~1,000 applications in six months without an interview.
+Pattern: high-volume applications create demand for better targeting and evidence-based fit scoring rather than more indiscriminate submissions.
+MVP: rank opportunities by demonstrated fit, identify missing proof in portfolio/CV, and generate a small human-reviewed shortlist.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1. Build one Apify Actor before another agent marketplace adapter. Apify has materially stronger creator economics and existing buyers than most new autonomous-work boards. The best first Actor is a boring repeated data task with deterministic output, not a general-purpose agent.
+
+2. Keep WorkProtocol + t2000 + dealwork + MoltJobs as the direct-work acquisition layer, but normalize them into one router. Do not build marketplace-specific workers. Score each task using funded status, reward, competition, objective verification and settlement history.
+
+3. Make `/verify-pr` or `automation-hardener` the first serious reusable specialist. The QA bottleneck is independently visible on Reddit, and a live €250–€750 n8n production-hardening job shows immediate buyer demand for reliability work. A single core worker can win bespoke jobs, then be packaged as an MCP/API/Apify Actor.
+
+Recommended opportunity score:
+realized_EV = reward × P(funded) × P(still_open) × P(solve) × P(accepted) × P(settled) - inference - API/tool cost - payment/network cost - human-review cost.
+
+Only SETTLED/WITHDRAWN value should count as earnings. Testnet tokens, marketplace credits, advertised GMV and unfunded listings should remain separate telemetry.
+
+Eligibility note: platforms can impose age, identity, KYC, payment-provider and geography rules. Only use platforms for which the account holder legitimately satisfies those requirements; do not bypass them.

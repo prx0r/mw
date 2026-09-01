@@ -1,0 +1,159 @@
+Subject: Agent Money Scout — 2026-08-29 22:00
+Date: Sat, 29 Aug 2026 08:21:15 -0700
+Message ID: 1a04e1c594850872
+================================================================================
+
+# Agent Money Scout — 2026-08-29 22:00
+
+## NEW THIS RUN
+
+### 1) AgentChain Labs
+URL: https://www.agentchainlabs.com/
+What the agent does: searches open jobs, submits proposals, delivers work, and withdraws earnings through a documented API/webhook workflow. Categories include programming, data/analytics, automation, research, writing, and AI services.
+Who pays: job posters funding escrow.
+Payout/pricing: job budgets start at $0.50; platform fee is 5%–15% depending on trust tier. I found no trustworthy public count of live paid jobs, so I am not inventing a payout range beyond the platform minimum.
+Requirements: account/API key, agent runtime able to call REST endpoints; supported settlement rails include USDC and several chains, with bank withdrawal advertised.
+Autonomy: 9/10.
+First action: create an agent/API key, query open jobs, and only bid on tasks with objective acceptance criteria and positive expected value.
+Constraints: account/payment/KYC/age/geography terms must be satisfied normally; do not bypass them.
+Ease-to-first-$5: 5/10. Repeatability: 9/10.
+
+### 2) datapoint.market
+URL: https://datapoint.market/
+What the agent does: sells an API, MCP tool, or dataset to other agents on a pay-per-call or paid-download basis.
+Who pays: AI-agent buyers.
+Pricing: seller sets the price. datapoint.market says the buyer pays a 10% protocol fee on top, with a $0.005 minimum protocol fee; seller keeps 100% of listed price.
+Requirements: own endpoint or dataset; x402-compatible payment setup; Base/Stellar/Solana support advertised.
+Autonomy: 10/10 after listing.
+First action: publish one already-useful structured-data endpoint such as /release-check, /package-health, /structured-evidence, or a licensed/public dataset with clear provenance.
+Constraints: only sell data you have the right to redistribute; no private/personal-data harvesting.
+Ease-to-first-$5: 5/10. Repeatability: 10/10.
+
+### 3) Obolo
+URL: https://www.obolopay.com/
+What the agent does: turns a REST API or MCP server into a paid machine-callable service.
+Who pays: other agents invoking the API/tool.
+Pricing: seller sets per-call price; the site illustrates a 90/10 split in an example ($0.0009 provider / $0.0001 Obolo on a $0.001 call), but I did not verify real provider revenue, so treat that as product economics rather than earnings evidence.
+Requirements: existing API/MCP endpoint and payout setup.
+Autonomy: 10/10.
+First action: cross-list an existing specialist rather than building an Obolo-specific product.
+Constraints: payment/account eligibility rules apply.
+Ease-to-first-$5: 4/10. Repeatability: 10/10.
+
+### 4) Payrelayer
+URL: https://payrelayer.com/for-developers
+What the agent does: sells metered API calls to x402-capable agents on Base.
+Who pays: machine clients.
+Pricing: provider-defined route pricing; automatic payouts and signed payment webhooks are advertised. I found no credible public buyer-volume figure, so no earnings estimate.
+Requirements: REST endpoint; one of the supported server frameworks/SDKs; Base-USDC settlement.
+Autonomy: 10/10.
+First action: wrap a reliable existing endpoint, run it in sandbox/test mode, then publish live only after the output and accounting are deterministic.
+Constraints: normal account/payment rules apply.
+Ease-to-first-$5: 4/10. Repeatability: 9/10.
+
+### 5) JustPayAI
+URL: https://justpayai.dev/docs/n8n
+What the agent does: runs a service through a webhook, receives a funded job, processes it in n8n/LLM tooling, submits the result, and receives USDC after acceptance.
+Who pays: service/job buyer.
+Pricing: official n8n documentation demonstrates a $0.50 USDC hired-service flow and states a 3% fee for jobs/campaign tasks in its agent skill documentation. However, the public homepage currently says “Coming soon,” so live marketplace liquidity is not verified.
+Requirements: API registration, callback URL/webhook, n8n or equivalent worker, Solana-USDC rails.
+Autonomy: 9/10 technically.
+First action: treat this as a watchlist integration until its public marketplace is clearly live; do not spend meaningful build time yet.
+Constraints: applicable payment/account rules must be satisfied normally.
+Ease-to-first-$5: 2/10 today. Repeatability: 8/10 if marketplace launches with demand.
+
+### 6) Production QA / PR verification service
+Demand evidence: recent QA discussions repeatedly report that AI coding dramatically increases output while QA capacity, exploratory testing, and test prioritization become the bottleneck.
+Customer: AI-heavy engineering teams.
+Agent workflow: PR + acceptance criteria -> changed-surface map -> risk-ranked tests -> unit/API/browser execution -> failure reproduction -> evidence packet -> PASS / FAIL / HUMAN REVIEW.
+Where to acquire customers: coding bounty boards, software agencies, dev communities, GitHub-native work markets.
+How to charge: per verified PR initially; monthly CI allowance once repeat demand exists.
+Concrete MVP: GitHub PR URL + acceptance criteria in, structured verification evidence out.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+### 7) Invoice/document normalization worker
+Demand evidence: August 2026 n8n discussions describe repeated invoice extraction from PDFs into Sheets, with real failure modes around vendor schema drift, batch failures, retries, Google Sheets quotas, duplicates, and incorrect field mapping.
+Customer: accounting firms, agencies, SMB finance teams.
+Workflow: authorized inbox/folder -> one invoice per item -> extract to fixed schema -> validate totals/date/vendor -> duplicate check -> write verified row OR exception queue.
+Where to acquire customers: accounting/automation communities and existing n8n consultants.
+How to charge: fixed setup or per verified record; monthly monitoring for recurring volume.
+MVP: six core fields plus duplicate detection and exception logging.
+Ease-to-first-$5: 8/10. Repeatability: 10/10.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 8) dealwork.ai
+URL: https://dealwork.ai/
+Fresh primary-source snapshot: 2.5K workers, 264 completed tasks, 156 open tasks. Public examples include a completed $80 human->AI API task and a $5 AI->AI structured-data task.
+Agent work: coding, research, data transformations, writing, structured outputs.
+Who pays: humans or other agents through escrow.
+Fees: 10% standard; 3% AI-to-AI.
+First action: connect via skill.md, pull live jobs, bid only where acceptance criteria are testable.
+Autonomy: 9/10. Ease: 8/10. Repeatability: 9/10.
+
+### 9) Taskmarket
+URL: https://taskmarket.dev/
+Fresh primary-source snapshot: 2,382.62 USDC funded volume. Public leaderboard shows multiple agents with real settled earnings, including 263.25 USDC for one worker; a settled 2-USDC task paid 1.85 USDC net after the 7.5% fee.
+Agent work: funded bounty/claim/pitch tasks across research, coding, data and artifact generation.
+Who pays: task requester via Base-USDC escrow.
+First action: rank tasks by reward * P(win) - execution cost. Avoid highly saturated 2-USDC tasks with 70–100+ submissions unless the job is near-zero cost.
+Autonomy: 10/10. Ease: 8/10. Repeatability: 9/10.
+
+### 10) t2000
+URL: https://t2000.ai/
+Fresh primary-source evidence still shows public on-chain settlement receipts and seller-level settled totals. Current agent directory includes sellers with $10.58, $9.90, $8.44, $6.16, $6.12 and $5.73 settled. API calls have a 0% protocol fee; normal escrowed services have a 5% settlement fee.
+Agent work: open jobs, fixed-price services, or paid APIs.
+Who pays: buyers/agents funding USDC jobs or calls.
+First action: use low-value open jobs only for reputation/integration testing, then move to reusable services or APIs with real external value.
+Autonomy: 9/10. Ease: 7/10. Repeatability: 9/10.
+
+### 11) Clawlancer
+URL: https://www.clawlancer.ai/marketplace
+Fresh marketplace snapshot: 50 listings. One externally posted $15 “small automation unit” asks for a runnable script, captured stdout, and SHA-256. Most platform-seeded bounties are only $0.01–$0.03.
+Agent work: coding, public research, writing, analysis, data.
+Who pays: bounty poster; Base-USDC.
+Requirements: API/MCP registration; small amount of Base ETH for gas may be required for claims/submissions.
+First action: target the $15+ externally useful listing; use cent-level seed jobs only to test integration.
+Autonomy: 10/10. Ease: 6/10. Repeatability: 8/10.
+
+### 12) WorkProtocol
+URL: https://workprotocol.ai/hn
+Latest primary-source snapshot found: 719 agents, 35 jobs posted, 12 completed, 1,325 USDC settled. Minimum funded job budget is $50.
+Agent work: GitHub-native code tasks, research, reports and structured artifacts.
+Who pays: job poster funding Base-USDC escrow.
+First action: query the currently available job feed and only claim tasks whose acceptance tests can be reproduced before execution.
+Autonomy: 9/10. Ease: 8/10 when inventory exists. Repeatability: 9/10.
+
+### 13) MoltJobs
+URL: https://moltjobs.io/
+Still live with REST/API/MCP/CLI support, 10 free bids/month, 5% success fee, and Base-USDC escrow.
+Agent work: whatever current jobs specify; recent inventory has skewed toward promotional-post tasks.
+First action: keep polling for research/code/data work. Reject tasks that would require spam, fake engagement, undisclosed promotion, or violations of another platform’s rules.
+Autonomy: 9/10. Ease on current inventory: 4/10. Repeatability: 8/10.
+
+### 14) TaskBounty
+URL: https://www.task-bounty.com/for-agents
+Still one of the cleanest coding-agent loops: GitHub issue -> reproduce -> patch -> tests -> PR -> sandbox verification -> payout.
+Advertised payout: $10 to a few hundred dollars; solver share 80%.
+First action: find a deterministic bug that can be reproduced cheaply before spending meaningful compute.
+Autonomy: 9/10. Ease: 8/10. Repeatability: 9/10.
+
+## REDDIT DEMAND SIGNALS
+
+1) QA is the new bottleneck. A recent r/AI_Agents post describes a team shipping features in a day with Claude Code/Codex but still experiencing low first-pass QA, reopened bugs, and repeated verification retries. An r/QualityAssurance post with 133 votes says AI removed much of the scripting grunt work while increasing planning, context switching, and decisions about what/how to test. Pattern: code generation is cheap; reliable acceptance evidence is not.
+
+2) Invoice extraction is not “solved” by OCR. Recent n8n/no-code threads specifically call out partial batch failures, vendor schema drift, retries, duplicate handling, field-map enforcement, Sheets write quotas, and incorrect downstream rows. Pattern: customers pay for verified records and exception handling, not raw extraction.
+
+3) Production automation needs operations, not just creation. Repeated 2026 n8n discussions show that as companies accumulate workflows, the recurring pain shifts to retries, credentials, dead webhooks, duplicate runs, schema drift, and silent business-outcome failures. Pattern: sell monitoring and verification after deployment.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+1) Route immediate work acquisition through dealwork + Taskmarket + t2000 + WorkProtocol. Do not keep integrating every new marketplace. Normalize jobs into: platform, reward, funded state, competition, acceptance criteria, estimated execution cost, P(solve), P(accepted), P(settled), expected net.
+
+2) Build /verify-pr as the first serious reusable specialist. It can win coding/QA gigs immediately, then become a fixed-price service, MCP tool, and paid API. The demand signal has now repeated across multiple independent QA/dev discussions.
+
+3) Build /automation-health behind it. Combine outcome verification, retries/idempotency checks, webhook/credential checks, duplicate detection, schema-drift checks, and cost anomaly monitoring. This converts one-off automation hardening into recurring revenue.
+
+Economic rule: only SETTLED/WITHDRAWN money counts as earnings. Testnet tokens, internal credits, marketplace GMV, illustrative cards, and unfunded listings stay separate.
+
+Eligibility: where a platform requires adulthood/legal-majority status, KYC, Stripe/bank verification, wallet ownership, or geographic eligibility, those requirements must be met normally. Do not bypass them.

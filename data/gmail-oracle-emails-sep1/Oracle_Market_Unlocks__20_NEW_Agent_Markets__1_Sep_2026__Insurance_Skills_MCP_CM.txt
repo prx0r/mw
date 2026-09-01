@@ -1,0 +1,149 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Insurance Skills, MCP CMS & Vertical Marketplaces
+Date: Mon, 31 Aug 2026 18:10:50 -0700
+Message ID: 1a05a84d48d36f8b
+================================================================================
+
+# Oracle Market Unlocks — 20 genuinely new agent-accessible markets
+
+**Research date:** 1 September 2026
+
+This pass treats novelty as a hard constraint. I searched the previously sent Oracle Market Unlocks corpus in Gmail before selecting the final set. Exact-name novelty checks returned no prior Oracle report hits for the final candidate family (Sikka, Dentulu, Socotra, Contentstack, Mirakl, Akeneo, Applied Systems Vendor Certification, Majesco EcoExchange, Guidewire, Vertafore, Contentful, SwipeSimple App Marketplace, Dify Creator Center, NativePHP Plugin Marketplace, Duck Creek Content Exchange, WebsiteFair, TheBoilerplates, Zagarack, Cenith and Teoru/CodesBazar). I also excluded the much larger already-covered corpus: Atlassian, monday, GitHub Marketplace, Chrome Web Store, Reddit Devvit, Framer, Webflow, Shopify, WooCommerce, HubSpot, Salesforce, ServiceNow, Xero, QuickBooks, Zendesk, Odoo, Apify, Vercel Marketplace, Datadog, HighLevel, Google Workspace Marketplace, UiPath, Okta OIN, WeWeb, and dozens of creator/game/API marketplaces from prior reports.
+
+**H shorthand:** H0 = machine-operable after credentials; H1 = one-time human account/KYC/review/consent; H2 = recurring/material human security/compliance/business approval; H3 = recurring human production/relationship-heavy; H4 = fundamentally human/offline. Mandatory identity, tax, legal and payment verification are legitimate gates, not targets for bypass.
+
+## Ranked shortlist
+
+| # | Market | Score /25 | Best wedge | H |
+|---|---|---:|---|---|
+| 1 | **Sikka.ai Marketplace + AI-API MCP** | 24 | Dental PMS reconciliation / scheduling / revenue-cycle agent tools | H1–H2 |
+| 2 | **Contentstack Marketplace + MCP Profile Hub** | 24 | Governed CMS agent tools / content QA / migration | H1–H2 |
+| 3 | **Socotra App Marketplace + Socotra Skills** | 24 | Insurance-core underwriting/policy/claims utilities | H2 |
+| 4 | **Mirakl Connect ecosystem** | 23 | Marketplace catalog normalization / agentic discoverability operations | H1–H2 |
+| 5 | **Applied Systems Vendor Certification ecosystem** | 23 | Applied Epic integrity / servicing / reconciliation integrations | H2 |
+| 6 | **Dentulu Developer Ecosystem Marketplace** | 23 | Dental admin / eligibility / patient-flow applications | H2 |
+| 7 | **Akeneo App Store** | 22 | Supplier-feed normalization and catalog QA | H1–H2 |
+| 8 | **Dify Creator Center & Template Marketplace** | 22 | Validated vertical agent workflows | H1 |
+| 9 | **Majesco EcoExchange + API Store** | 22 | Insurance data/rating/claims/payment apps | H2 |
+| 10 | **Contentful Marketplace** | 21 | Governance, cost-control, migration and editor utilities | H1–H2 |
+| 11 | **SwipeSimple App Marketplace** | 21 | Merchant reconciliation / vertical business tools | H2 |
+| 12 | **NativePHP Plugin Marketplace** | 21 | Paid native-device capability bridges | H1 |
+| 13 | **Duck Creek Content Exchange** | 20 | Insurance accelerators, extensions and managed integrations | H2 |
+| 14 | **Guidewire Marketplace** | 20 | Integration observability / failure recovery / policy workflows | H2–H3 |
+| 15 | **Vertafore Orange Partner ecosystem** | 20 | Agency-management integration products | H2 |
+| 16 | **CodesBazar** | 19 | Tested specialist APIs/agents/source-code products | H1 |
+| 17 | **WebsiteFair** | 18 | Maintained developer packages and vertical boilerplates | H1 |
+| 18 | **Cenith Roblox Asset Marketplace** | 18 | Verified Roblox systems/UI/plugin asset families | H2 |
+| 19 | **Zagarack Marketplace** | 17 | Vertical templates/process packs/courses produced from proven workflows | H1 |
+| 20 | **Teoru Verified AI Marketplace** | 16 | Commercial-ready evaluated AI-enhanced digital assets | H2 |
+
+The composite is opportunity value + agent suitability + automation feasibility + low competition + novelty, each 1–5. Scores intentionally penalize marketplaces with unclear demand or relationship-heavy gates even when technically interesting.
+
+---
+
+## 1. Sikka.ai Marketplace + AI-API MCP — 24/25
+
+**What can be sold.** Dental/veterinary/optometry/retail-health applications and agentic utilities on top of Sikka's unified PMS data layer: schedule-gap agents, failed-payment/revenue reconciliation, recall prioritization, eligibility evidence, appointment integrity and read-only practice diagnostics.
+
+**Why now / infrastructure.** Sikka explicitly markets an **AI-API MCP** that converts natural-language requests into authenticated API calls and clean JSON. Its ONE API normalizes many practice-management systems into one data model. The Marketplace says it contains integrations and agentic AI apps for dental, veterinary, optometry and retail healthcare.
+
+**Workflow.** Oracle mines practice complaints → worker chooses one bounded invariant → Sikka sandbox/fixture connector → DentalWorld replays appointments/patients/payments → evaluator checks no double-booking, date/range accuracy, payment-state consistency and least privilege → human HIPAA/security review → Marketplace/partner listing → external subscription/usage → production discrepancies and support cases feed the persistent worker.
+
+**Demand/community.** The platform claims broad PMS coverage; the market has chronic fragmented-system/data problems. Direct 2026 Reddit evidence is thinner than for PIM/CMS markets, so treat demand as vertical/platform evidence rather than claiming Reddit consensus.
+
+**Why agents fit.** Schema mapping, reconciliation and exception investigation are repetitive and objectively testable.
+
+**Moltwork assets.** `SikkaPack`, `DentalWorld`, PMS normalization evaluator, HIPAA least-privilege Skill, practice-data specialist Worker.
+
+**Attractive if:** read-only/high-value exceptions, low support burden, one product ports across PMSs. **Bad if:** autonomous clinical judgment, write-heavy workflows, or expensive compliance dominates ACV.
+
+Official: https://sikka.ai/marketplace ; https://sikka.ai/oneapi
+
+## 2. Contentstack Marketplace + MCP Profile Hub — 24/25
+
+**What can be sold.** Governed content agents, migration/QA apps, structured publishing utilities, taxonomy/asset compliance, localization checks, deployment guardrails and specialized MCP profiles.
+
+**Major frontier unlock.** Contentstack's first-party MCP lets Claude/Cursor/etc. read, create, update, publish and unpublish content, inspect workflows/version history, trigger Launch deployments and check logs. On **August 13, 2026**, Contentstack documented public unauthenticated tool-definition endpoints exposing names, descriptions, input schemas and REST/GraphQL request mappings. On **August 26, 2026**, its MCP Profile Hub docs described a Marketplace app that exposes constrained subsets of those tools to MCP clients.
+
+**Workflow.** Mine editor/developer friction → agent builds app in Developer Hub → synthetic Stack/entries/assets/locales → Harbor checks permissions, content-model validity, publication transitions, rollback and deployment state → generate Marketplace metadata/docs → human partner/security review → publish → install telemetry/support → worker patches against release changes.
+
+**Demand.** This is an established enterprise CMS Marketplace, and current 2026 documentation is being explicitly restructured for agents. The strongest wedge is governance rather than generic content generation.
+
+**Moltwork:** `ContentstackPack`, `CMSWorld`, workflow-state evaluator, MCP scope compiler, Marketplace submission Process, CMS specialist.
+
+**Economics:** strong if an app prevents bad publishes or migration labor; weak if it merely calls an LLM with no proprietary checks.
+
+Official: https://developers.contentstack.com/contentstack-mcp ; https://www.contentstack.com/docs/developers/build-your-own-mcp-tool-tool-definition-api ; https://www.contentstack.com/docs/marketplace/about-marketplace
+
+## 3. Socotra App Marketplace + Socotra Skills — 24/25
+
+**What can be sold.** Underwriting enrichment, policy-data integrity, classification, document/payment/claims utilities, filing/preflight tools and agent-operated insurance workflows.
+
+**Major unlock.** On **August 26, 2026**, Socotra announced public **Socotra Skills**, reusable instructions/workflows intended for Claude Code, Codex, Cursor and other agents to configure insurance products and execute Socotra workflows. Socotra says it is the first insurance core to publish Agent Skills. Its existing App Marketplace already distributes deployable insurance software/API apps.
+
+**Workflow.** Identify core-policy pain → Socotra Skill guides Worker → build app/integration → InsuranceCoreWorld generates policies, endorsements, cancellations, renewals and claims → evaluator checks premium/state transitions/idempotence/audit evidence → compliance/human review → App Marketplace → customer install/external commercial agreement → production events → persistent insurer-core Worker.
+
+**Demand.** Current Socotra Marketplace includes concrete APIs such as real-time industry classification and vehicle lookup. The new Skills release materially lowers engineering H-level even though selling into insurers remains H2.
+
+**Moltwork:** `SocotraPack`, InsuranceCoreWorld, policy-state-machine evaluator, regulatory evidence Process, underwriting specialist.
+
+**Attractive:** bounded workflows with deterministic policy states. **Bad:** discretionary underwriting/claims decisions without human authority.
+
+Official: https://www.socotra.com/socotra-becomes-first-insurance-core-to-publish-agent-skills/ ; https://marketplace.socotra.com/
+
+## 4. Mirakl Connect — 23/25
+
+**What agents perform/sell.** Rather than selling a plugin, the agent can operate **multichannel marketplace expansion as a repeatable paid service/product**: normalize catalogs, map categories/attributes, prepare compliant listings, optimize machine-readable product data, monitor rejects/inventory/order state and expand a merchant across Mirakl-connected channels.
+
+**Infrastructure.** Mirakl Connect exposes one Connect API for product, inventory, order and shipment operations with OAuth2, OpenAPI and Postman resources. Its current product positions AI-powered catalog transformation and **Agentic Activation** around making products discoverable in AI shopping surfaces.
+
+**Demand.** Mirakl's 2026 Seller Report says marketplace GMV in its dataset reached $14.6B in 2025, merchants entering marketplaces grew 26% YoY, and sellers on two+ marketplaces average about **17.5x** the GMV of single-channel sellers. Mirakl Connect spans 450+ marketplaces.
+
+**Community pain.** 2026 Reddit operators describe category mapping, mandatory attributes, localization, image rules, EAN/variant errors and repetitive manual channel onboarding; one operator described multichannel reconciliation being handled manually until a custom integration was built.
+
+**Workflow.** Merchant catalog → schema analyzer → choose channels → CatalogWorld validates required attributes → agent maps/transforms → human approves brand/legal claims → Connect API publishes → agent monitors rejects/orders/stock → fee or SaaS subscription.
+
+**Moltwork:** `MiraklPack`, `CatalogWorld`, channel-schema evaluator, localization Skill, multichannel Worker.
+
+**Attractive:** many-SKU merchant, multiple channels, measurable GMV/reject reduction. **Bad:** tiny catalogs or channel approval remains dominant.
+
+Official: https://www.mirakl.com/sellers/multichannel-selling/ ; https://www.mirakl.com/content/reports/2026-seller-report/
+
+## 5. Applied Systems Vendor Certification — 23/25
+
+**What can be sold.** Certified Applied Epic integrations: policy/CRM/accounting reconciliation, document intelligence, renewal evidence, submission routing, carrier-data quality and workflow diagnostics.
+
+**New unlock.** Applied launched its **Vendor Certification Program on August 12, 2026**, explicitly creating a clear single path for third-party vendors, faster/lower-cost activation for customers, certification for quality/reliability and access to latest Epic releases. Initial certified vendors include automation/AI-adjacent products.
+
+**Workflow.** Mine agency workflow → build Epic integration → InsuranceAgencyWorld with accounts/policies/activities/documents → test partial sync/retry/idempotence → generate security and certification evidence → H2 certification → external SaaS contract → monitor release compatibility → autonomous maintenance.
+
+**Demand.** Applied calls Epic the most widely used agency-management system; the new program itself is a strong platform signal that customers want specialty tools connected without bespoke integration work. Applied's 2026 releases also show agentic AI being embedded into insurance workflows.
+
+**Moltwork:** `AppliedEpicPack`, AgencyWorld, sync-integrity evaluator, certification compiler, insurance-agency Worker.
+
+**Attractive:** integration eliminates recurring agency labor and can sell across many agencies. **Bad:** long partner sales, sensitive write operations, or every customer requires custom implementation.
+
+Official: https://www1.appliedsystems.com/en-us/news/press-releases/2026/applied-systems-launches-new-vendor-certification-program/ ; https://www1.appliedsystems.com/en-us/about-us/ecosystem/certified-vendors/
+
+## 6. Dentulu Developer Ecosystem Marketplace — 23/25
+
+**What can be sold.** Dental administrative apps: scheduling, insurance/eligibility, patient intake, communications, revenue-cycle evidence, teledentistry workflow and practice analytics.
+
+**Infrastructure.** Dentulu's 2026 Developer Ecosystem advertises RESTful APIs, OAuth 2.0, webhooks, staging/production key management, testing/simulation tools and a Marketplace for showcasing applications.
+
+**Workflow.** Detect dental admin pain → generate OAuth app → staging tenant → DentalWorld fixtures → validate appointment/patient/payment/communication invariants → privacy/security package → Marketplace review → external subscription or partner contract → webhook telemetry → maintain.
+
+**Demand/community.** Dental software fragmentation and practice-management data access remain a recurring developer/operator problem; direct 2026 Reddit evidence for Dentulu itself is limited, so this is a high-novelty but lower-certainty demand bet than Sikka.
+
+**Why agents fit.** Administrative state is structured; recurring integrations and data cleanup benefit from persistent agents.
+
+**Moltwork:** `DentuluPack`, reusable DentalWorld shared with Sikka, OAuth/webhook evaluator, dental admin School.
+
+**Attractive:** narrow nonclinical workflow, cross-practice repeatability. **Bad:** clinical decision-making, low installed-base reach, bespoke onboarding.
+
+Official: https://ecosystem.dentulu.com/portal
+
+## 7. Akeneo App Store — 22/25
+
+**What can be sold.** Supplier-feed normalization, attribute/value mapping, product completeness QA, marketplace export, taxonomy/localization and ERP/commerce connectors.
+
+**Infrastructure.** Akeneo's App Store supports API-connected apps via OAuth; existing apps show event/API-driven sync and quote-based commercial models. The App Store contains a 

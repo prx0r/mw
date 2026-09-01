@@ -1,0 +1,230 @@
+Subject: Agent Money Scout — 2026-08-31 16:00
+Date: Mon, 31 Aug 2026 09:23:49 +0000
+Message ID: 1a05721d0de6c9c3
+================================================================================
+
+# Agent Money Scout — 2026-08-31 16:00
+
+Current execution ranking: **AgentPact → dealwork.ai → OpenAnt → MoltJobs → selective Opire/WorkProtocol monitoring**.
+
+The strongest genuinely new surfaces this run are **Emerging Tech Center's agent gig board** and **Laguna's agent affiliate-commerce rail**. Two useful negative findings: **SporeAgent still has 0 tasks** and **WorkProtocol still has 0 open jobs** right now, so neither belongs in the active execution queue.
+
+Only settled or clearly withdrawable real-money value counts as earnings. Internal credits, advertised service prices, test balances, GMV, and unpaid submissions count as $0. Any platform/account/payment age, identity, geography, or contractual rules must be satisfied as written; do not bypass them.
+
+## NEW THIS RUN
+
+### 1. Emerging Tech Center — public AI-agent gigs paid in USDC
+URL: https://emergingtechcenter.com/
+
+The Emerging Tech Center (ETC) in Phoenix explicitly operates a public jobs-and-gigs board containing **AI-agent gigs paid in USDC**, and exposes that board through MCP so agents can discover and apply directly. Its governance document says every paid listing publishes the dollar amount and paid work is settled in money or stablecoin.
+
+What the agent does: policy tracking, AI audit/research, content/data work and other scoped deliverables published to the board. Who pays: ETC / the gig sponsor. Tools: MCP or HTTP-capable agent; research/code/data skills depending on the listing. Autonomy: **9/10**.
+
+Exact first action: query the ETC gig board/MCP and keep only currently open AI-agent gigs with a published dollar amount and clear acceptance criteria. I verified the board and payment model from ETC's own site, but could not independently retrieve the current per-gig inventory in this run, so no payout amount is assumed here.
+
+Constraints: ETC is a US organization; individual gig eligibility may vary by listing. Verify contract/payment eligibility before applying.
+
+Ease to first $5: **5/10**. Repeatability: **8/10**.
+
+### 2. Laguna Network MCP — affiliate commissions earned by an agent
+URL: https://laguna.network/intl/en/mcp
+
+Laguna connects an AI agent to **200+ merchants** and pays commission when a user follows an agent-generated merchant link and completes a qualifying purchase. Commissions are paid in **USDC on Base**, can start accruing from an email identity, and can later be withdrawn to an EVM wallet; Laguna says a 1% withdrawal fee applies.
+
+What the agent does: transparently recommend products/deals that genuinely answer a user's request, look up eligible merchants, create tracked links and disclose the affiliate relationship. Who pays: merchant affiliate economics through Laguna. Payout: merchant-specific; Laguna shows examples such as Trip.com up to 9%, Agoda up to 6%, Airalo up to 10% and Klook up to 3.5%, but these are example/current displayed rates rather than guaranteed earnings.
+
+Tools: Laguna MCP; an audience or agent that already receives shopping/travel/product queries. Autonomy: **10/10**.
+
+Exact first action: add Laguna only to a useful existing deal/recommendation agent; generate links solely when a partnered merchant genuinely fits the request, always with an affiliate disclosure. Do not manufacture content or spam links merely to chase commissions.
+
+Constraints: merchant, affiliate, payment and local age/contract requirements may apply. Do not bypass them.
+
+Ease to first $5: **5/10 if you already have users**. Repeatability: **10/10 with distribution**.
+
+### 3. CrewPort — clean agent-freelance architecture, but zero liquidity today
+URL: https://crewport.ai/
+
+CrewPort supports MCP-connected agent crews, structured contracts, review gates and escrow. It advertises quick tasks at **$5–$20**, standard work at **$20–$100**, complex projects at **$100–$500**, with a 10% accepted-contract fee.
+
+But today's primary dashboard shows **0 Stripe-verified operators, 0 registered clients, 0 contracts posted and $0 gross income**. That makes it a useful monitor, not an earning target right now.
+
+Exact first action: none beyond monitoring. Do not spend engineering effort until outside contract inventory exists.
+
+Autonomy: **9/10**. Ease today: **0/10**. Repeatability potential: **8/10**.
+
+### 4. SeekClaw — 14 open jobs, but payment is internal credits rather than verified cash
+URL: https://www.seekclaw.com/
+
+SeekClaw reports **20 active agents, 14 open jobs, 3.5K completed jobs and 556.4K CLAW Credits earned**. It is highly autonomous: agents self-register, browse/apply, pass machine skill challenges and complete work through API.
+
+Critical issue: current rewards are **CLAW Credits**, not verified withdrawable dollars/USDC. I found no reliable cash-out mechanism on the primary pages checked. Therefore the earnings ledger values these credits at **$0 cash** until conversion/withdrawal is demonstrated.
+
+Exact first action: use it only to test the autonomous work loop or build reputation; do not spend paid compute chasing credits unless a real withdrawal rail is verified.
+
+Autonomy: **10/10**. Ease to first real $5: **1/10**. Repeatability: **7/10 if cash settlement appears**.
+
+## STILL ACTIVE FROM PRIOR RUNS
+
+### 5. AgentPact — still #1 immediate queue
+URL: https://agentpact.xyz/needs
+
+Current board: **200 Needs**. High-signal live work includes Python code review **5–10 USDC**, API automation **10–25**, authorized Python/security review **10–25**, web-scraping automation **10–25**, data analysis + visualization **10–25**, and Python scraping automation **10–25**.
+
+Who pays: Need/deal buyer via Base-USDC mechanics. Tools: Python/API/data worker + AgentPact API/MCP. Autonomy: **10/10**.
+
+Exact first action: filter `reward >= 5 AND objective acceptance AND clear scope AND settleable`, then prioritize API automation → code review → data work. Security review must stay limited to explicitly authorized code/systems.
+
+Ease: **9/10**. Repeatability: **9/10**.
+
+### 6. dealwork.ai — 157 open tasks
+URL: https://dealwork.ai/
+
+Fresh primary figures: **2.5K workers, 157 open tasks, 264 completed, ~1.1-day typical delivery**. Funds are escrowed before work. The site documents an **$80 production API delivered by an AI agent with full tests** and a **$5 AI-to-AI task**. AI-to-AI contracts have a 3% fee.
+
+Agent work: coding, APIs, data transformation, research and documentation. Autonomy: **9/10**.
+
+Exact first action: ingest the open queue and bid only where your worker can independently reproduce the acceptance criteria.
+
+Ease: **9/10**. Repeatability: **9/10**.
+
+### 7. OpenAnt — strongest verified marketplace scale
+URL: https://openant.ai/
+
+Current primary metrics: **12.8K total tasks, 1.2K open, 420 in progress, 11.3K completed, 646 settled, $34.4K paid out, $128K posted**. Visible remote work includes SKU-sales analysis requiring five insights + chart, and short digital production work. Settlement is USDC on Solana/Base; beta fee is 0%.
+
+Exact first action: filter `remote + digital + explicit reward + objective proof`, excluding GPS/photo/physical-presence work.
+
+Autonomy: **10/10**. Ease: **8/10**. Repeatability: **9/10**.
+
+### 8. MoltJobs — exact funded 5-USDC task remains live
+URL: https://moltjobs.io/open-jobs
+
+The board still shows **5 USDC** for turning three live job postings into ready-to-fund MoltJobs specs and contacting the buyers. It was posted six days ago and shows about **4 days remaining**. Every listed task is described as funded in on-chain USDC escrow.
+
+Exact first action: inspect this job. Any buyer contact must be individually relevant and permitted; do not bulk-message people.
+
+Autonomy: **8/10**. Ease: **7/10**. Repeatability: **8/10**.
+
+### 9. Taskmarket — real settlement, poor current EV
+URL: https://taskmarket.dev/
+
+Current dashboard: **10 open tasks, 27.1K agents, 2,383.097764 USDC posted volume**. The visible queue is dominated by **0.05-USDC** tasks and other tiny rewards. Payment is real, but current expected value is bad.
+
+Exact first action: scanner only until >=$5 reservation/pitch/benchmark inventory returns. Use `EV = reward × P(win) - execution cost`.
+
+Autonomy: **10/10**. Ease today: **2/10**. Repeatability: **9/10**.
+
+### 10. AuraGate — machine API sales remain real but tiny
+URL: https://auragate.app/
+
+Current primary metrics: **31 services, 1,228 paid requests, $2.58 USDC revenue, 42 unique buyers**. Anyone can expose an x402 service and get paid per request.
+
+Exact first action: cross-list only a capability that already earned money elsewhere. Measure unique external buyers, not self-tests or raw request count.
+
+Autonomy: **10/10**. Ease: **3/10**. Repeatability: **10/10 if organic demand emerges**.
+
+### 11. agentsbay.ai — active settlement claims, but inventory quality remains questionable
+URL: https://www.agentsbay.ai/
+
+Primary dashboard: **27 registered agents, 774 jobs settled, ~$1.5K USDC in escrow, 6-minute average verification**. The work loop is excellent—bid → artifact → verifier → Polygon-USDC release—but prior inspection found obviously implausible/gibberish open listings mixed into the board.
+
+Exact first action: accept nothing unless description, budget, escrow and acceptance criteria all look coherent and independently verifiable.
+
+Autonomy: **10/10**. Ease: **3/10**. Repeatability: **8/10 if genuine buyers dominate**.
+
+### 12. SporeAgent — still inactive
+URL: https://www.sporeagent.com/tasks
+
+The primary page still says **0 tasks available**. Earlier $45/$80/$120 listings are not live anymore.
+
+Exact first action: monitor only.
+
+Ease today: **0/10**.
+
+### 13. WorkProtocol — still no open jobs, but its completed jobs are informative
+URL: https://workprotocol.ai/jobs
+
+Current board still says **0 jobs found / no open jobs right now**. Recently completed work demonstrates meaningful payouts: environment-variable tool **85 USDC**, git-history analyzer **90**, Markdown linter **100**, GitHub Actions log parser **75**, WebSocket feature **150**, Python deduper **50**, MCP server **125**.
+
+This is strong evidence for the type of deterministic developer work autonomous agents can sell even though there is nothing to claim now.
+
+Exact first action: monitor the feed and immediately evaluate new jobs when they appear.
+
+Ease today: **0/10**. Repeatability when inventory exists: **9/10**.
+
+### 14. gigs.sh — discovery layer only
+URL: https://gigs.sh/
+
+Use it to discover obscure agent-economy domains, then independently verify every current job, payout and terms page before execution. It should never be the final `is_live=true` signal.
+
+Direct earning: **1/10**. Discovery repeatability: **10/10**.
+
+## REDDIT DEMAND SIGNALS
+
+### 15. Invoice/document automation — repeatedly bought by real small businesses
+Thread: https://www.reddit.com/r/AiForSmallBusiness/comments/1tl2y0v/n8n_automation_build_invoice_bot/
+Related fresh thread: https://www.reddit.com/r/n8nbusinessautomation/comments/1vkgayo/invoice_automation_in_n8n_extract_data_from_many/
+
+One builder describes a real accounting-firm client spending hours each week manually pulling invoice data from PDFs and entering it into Sheets; another says batch invoice extraction is one of the workflows people repeatedly ask for.
+
+Sell: `inbox/upload → document parse → structured fields → duplicate/validation checks → accounting/Sheet destination → exception queue`.
+
+Customer: accounting firms, bookkeeping firms, SMB finance teams. Where to acquire: referrals, local-business networks and communities that permit service offers. MVP: process 20 invoices into a validated spreadsheet with an exception report.
+
+Ease: **9/10**. Repeatability: **10/10**.
+
+### 16. Paid lead-intake + scheduling agent
+Thread: https://www.reddit.com/r/n8n/comments/1r2ezbh/what_n8n_automations_are_you_actually_getting/
+
+A respondent reports a law-firm client paying **1,200 BRL/month** for an AI sales/scheduling system that handles ad leads, follow-ups, reminders and a dashboard; they report 20–30 appointments/month and roughly eight client conversions.
+
+Sell one measurable outcome: `lead → qualify → schedule → remind → notify human → dashboard`, with humans retaining control over substantive legal advice.
+
+Customer: local professional services where missed leads are expensive. MVP: one intake channel + calendar + reminder loop.
+
+Ease: **8/10**. Repeatability: **10/10**.
+
+### 17. n8n-to-code migration / hot-path extraction
+Thread: https://www.reddit.com/r/n8n_ai_agents/comments/1w3298g/at_what_point_does_an_n8n_workflow_become_harder/
+
+A post today describes a Google Trends → news → parsing → filtering → scoring → research → AI → publishing workflow becoming harder to debug than conventional software because of accumulated JavaScript, cross-node expressions and branching.
+
+Sell: `workflow JSON + runtime history → identify code-worthy logic → generate FastAPI/TypeScript service → tests/logging → parallel comparison → human-approved cutover`.
+
+MVP: migrate one deterministic subsystem rather than an entire automation stack.
+
+Ease: **9/10**. Repeatability: **10/10**.
+
+### 18. Accounting/CA firm document chasing + compliance admin
+Thread: https://www.reddit.com/r/n8n/comments/1vw5ner/built_a_full_ca_firms_automation_suite_on_n8n/
+
+A recent accounting-firm automation bundles client support, document chasing, deadline reminders, invoice follow-ups and lead qualification—exactly the kind of repetitive back-office work with clear cadence and escalation rules.
+
+Sell a narrow first product: `required-document list → received/not received → scheduled reminder → escalation to human`.
+
+Do not automate professional tax/accounting judgments; keep regulated advice and final decisions human-controlled.
+
+Ease: **8/10**. Repeatability: **10/10**.
+
+### 19. Freelance-admin agent
+Thread: https://www.reddit.com/r/n8n/comments/1vhwaq0/build_a_free_n8n_toolkit_that_automates_the/
+
+Fresh workflow evidence shows recurring admin across proposals, invoice reminders, onboarding, weekly updates and testimonial requests. The pattern is repetitive, structured and easy to verify.
+
+Sell: `client/project record → proposal/update/reminder draft → approval → send/log`.
+
+MVP: invoice chasing + weekly client update for one freelancer/agency.
+
+Ease: **8/10**. Repeatability: **9/10**.
+
+## BEST 3 ACTIONS TO TRY NOW
+
+**1. Execute AgentPact + dealwork + OpenAnt through one worker.** Those three still have the best combination of live inventory, explicit payouts and agent-compatible execution. Normalize each opportunity to:
+
+`EV = payout × P(acceptance) × P(win) - model/API/runtime cost`
+
+Reject stale deadlines, vague acceptance, unverifiable payment and extreme competition before doing inference.
+
+**2. Add Emerging Tech Center as a fresh scanner source, not a bespoke integration.** Its own institutional docs explicitly promise USDC-denominated AI-agent gigs exposed through MCP. Query it each run and promote a listing only when the current dollar amount and acceptance criteria are visible.
+
+**3. Build the direct-customer product around bori

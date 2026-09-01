@@ -1,0 +1,205 @@
+Subject: Oracle Market Unlocks — 20 NEW Agent Markets — 1 Sep 2026 — Devvit, Stream Deck, Vertical App Stores & Agent-Native Commerce
+Date: Mon, 31 Aug 2026 23:10:26 -0500
+Message ID: 1a05b2944bb3e2c3
+================================================================================
+
+# Oracle Market Unlocks — 20 NEW Agent Markets
+
+Date: 1 Sep 2026
+
+Novelty rule: I excluded every venue surfaced in the prior Oracle runs available to this task. No repeats below. I also rejected generic bounty boards and downgraded marketplaces with attractive seller terms but no visible buyer-side signal.
+
+Scoring: 1–5 each for Opportunity Value (O), Agent Suitability (A), Automation Feasibility (F), Competitive Attractiveness (C; 5 = favorable/less saturated), Novelty (N). H0 = essentially autonomous; H1 = bounded human approval/account setup; H2 = recurring human review/relationship/certification; H3 = material skilled human production/physical validation; H4 = human remains principal worker.
+
+## Ranked table
+
+1. Reddit Developer Platform / App Directory + Developer Funds — 24/25 — O5 A5 F5 C4 N5 — H1
+2. Samsara App Marketplace — 24/25 — O5 A5 F5 C4 N5 — H1–H2
+3. Elgato Marketplace — 23/25 — O5 A5 F5 C4 N4 — H1
+4. Creatio Marketplace — 23/25 — O5 A5 F5 C4 N4 — H1
+5. Framer Marketplace — 23/25 — O5 A5 F5 C3 N5 — H1
+6. Craft CMS Plugin Store — 22/25 — O4 A5 F5 C4 N4 — H1
+7. Statamic Marketplace — 22/25 — O4 A5 F5 C4 N4 — H1
+8. Bubble Marketplace — 22/25 — O5 A5 F5 C3 N4 — H1
+9. JetBrains Marketplace — 21/25 — O5 A5 F4 C3 N4 — H1–H2
+10. SoundBetter Imagine Plugins / Storefront — 21/25 — O4 A4 F5 C4 N4 — H1–H2
+11. LottieFiles Creator Bazaar — 21/25 — O4 A5 F5 C3 N4 — H1
+12. Clink Skill Marketplace — 21/25 — O4 A5 F5 C4 N3 — H1
+13. Agensi Skill Marketplace — 20/25 — O3 A5 F5 C3 N4 — H1
+14. Capafy Skill Marketplace — 19/25 — O3 A5 F5 C3 N3 — H1
+15. mcprush — 19/25 — O3 A5 F5 C3 N3 — H1
+16. MCP Hive — 18/25 — O3 A5 F4 C3 N3 — H1
+17. Webooto Marketplace — 18/25 — O3 A5 F5 C3 N2 — H1
+18. Xuda Marketplace — 17/25 — O3 A5 F5 C2 N2 — H1
+19. FireAPI / FireHub — 17/25 — O3 A5 F5 C2 N2 — H1
+20. LogisBase Extension Marketplace — 16/25 — O3 A5 F4 C2 N2 — H1
+
+---
+
+## 1) Reddit Developer Platform / App Directory + Developer Funds
+
+What agents can sell/perform: interactive subreddit apps, moderator utilities, recurring games, community analytics, structured Q&A, verification widgets, daily puzzles, event utilities. The economic object is a deployed Devvit app rather than a freelancing job.
+
+Autonomous workflow: Oracle mines community requests and high-friction moderator workflows → AppWorker generates deterministic Devvit app → RedditWorld simulates post lifecycle, Redis state, install/uninstall, mobile/desktop Canvas behavior → evaluator checks retention loops, abuse resistance and policy constraints → `devvit publish --public` → App Directory installs → telemetry tracks qualified installs/engagement → Developer Funds or later approved payment features pay the owner → Worker iterates.
+
+Human dependency: H1. Human identity, Persona/Stripe/tax enrollment and final accountable publication remain. Product engineering can be close to H0.
+
+Infrastructure/unlock: Reddit Developer Platform, Devvit CLI, Redis, scheduled jobs, triggers, Hono/React, App Directory, platform telemetry. Reddit says 2,000+ developers had created apps across 31,000+ communities and described Developer Funds payouts reaching $116,500+ per app in its developer-program materials.
+
+Demand/community signal: 2026 published apps explicitly optimize around current Developer Funds qualification rules. Community apps can obtain distribution inside subreddits rather than needing external SEO. Practical constraint: Reddit rules and funding thresholds can change; direct payments should not be assumed until approved.
+
+Why agents fit: deterministic state machines, templated UI, repetitive testing and community-specific variant generation are ideal coding-agent work.
+
+Reusable Moltwork assets: `DevvitVenuePack`, `SubredditWorld`, retention evaluator, abuse/economy evaluator, `CommunityAppSchool`, `DevvitWorker`, publication process.
+
+Attractive if: one World can produce many narrowly tailored apps and qualified installs have measurable EV. Unattractive if funding becomes discretionary/temporary or moderator acquisition dominates engineering.
+
+Sources: https://developers.reddit.com/docs/blog/welcome ; https://developers.reddit.com/apps/consensus-canvas
+
+## 2) Samsara App Marketplace
+
+What agents can sell: fleet-state reconciliation, driver/vehicle exception detection, maintenance QA, fuel/idling analysis, compliance evidence, route/depot utilities, connectors.
+
+Workflow: scan fleet operator pain → synthesize app against Samsara OpenAPI → sandbox org → FleetWorld replays vehicles/drivers/trips/alerts/webhooks → evaluator checks idempotence, stale-data handling, permission minimization and false-alert rate → App Publisher → Marketplace certification → customer installs → API/webhook telemetry → subscription billed by vendor or integration commercial agreement → persistent Worker maintains releases.
+
+Human dependency: H1–H2. Sandbox/build is highly automatable; marketplace partnership/certification and customer/commercial setup can require humans.
+
+Frontier infrastructure: Samsara explicitly publishes `llms.txt`, Markdown versions of docs and OpenAPI endpoints for AI agents. Its Partner Developer Portal provides sandbox organizations and App Publisher for Marketplace apps.
+
+Demand: Samsara calls its Marketplace the fastest-growing ecosystem of turnkey integrations in its industry. Fleet users repeatedly complain about fragmented maintenance, telematics and workflow state across systems; adjacent markets previously showed strong reconciliation demand.
+
+Why agents fit: event-driven integration work has objective invariants and huge regression-test surface.
+
+Moltwork assets: `SamsaraVenuePack`, `FleetWorld`, webhook/idempotence evaluator, compliance evaluator, `FleetIntegrationSchool`, `FleetWorker`.
+
+Attractive if: a narrow read-only product avoids liability and ports into adjacent fleet marketplaces. Unattractive if partner acceptance/customer sponsorship is the true bottleneck.
+
+Sources: https://developers.samsara.com/docs/partner-developer-portal ; https://www.samsara.com/products/app-marketplace
+
+## 3) Elgato Marketplace
+
+What agents can sell: Stream Deck plugins, paid profiles, icon packs, LUTs, audio effects and workflow bundles. Best wedge: maintained integrations for professional software, not decorative assets.
+
+Workflow: mine repeated keyboard/menu workflows and broken integrations → generate plugin/profile → DesktopWorkflowWorld runs Stream Deck SDK fixtures and target-app automation → compatibility matrix across Stream Deck versions/OS → listing assets/docs generated → Marketplace review → native checkout → sales/reviews/support issues → Worker patches on upstream changes.
+
+Human dependency: H1. Account/Stripe and final creative/legal approval; otherwise highly autonomous.
+
+Infrastructure: official Marketplace SDK/docs; native product categories; Stripe Connect; 70/30 revenue split. The Marketplace visibly supports AI-content disclosure.
+
+Demand/community: strong 2026 pain. Users reported Discord and OBS plugins breaking after updates; one OBS failure was described as affecting the user’s ability to earn. Other 2026 developers continue shipping small utilities such as one-button printing and media-control plugins. FlowKits reports 8,300+ downloads for its workflow products.
+
+Why agents fit: every upstream software release becomes an automated regression task; agents can map hundreds of commands/state transitions faster than humans.
+
+Assets: `StreamDeckPack`, `DesktopWorkflowWorld`, upstream-compatibility evaluator, profile generator, `StreamDeckSchool`, app-specific specialist Workers.
+
+Attractive if: choose professional workflows where one saved action is repeated daily. Unattractive if product is a generic icon/profile easily copied.
+
+Sources: https://docs.elgato.com/monetization/revenue-share/ ; https://getflowkits.com/
+
+## 4) Creatio Marketplace
+
+What agents can sell: CRM workflow apps, data-quality modules, migration tools, dashboards, no-code components and vertical automations.
+
+Workflow: discover repeated Creatio workflow gaps → coding agent uses Creatio AI App Development Toolkit → CRMWorld fixtures contacts/cases/opportunities/processes → deterministic validation/security/e2e tests → package → Marketplace listing → installs → release/support telemetry → recurring license/off-platform commercial revenue depending product.
+
+Human dependency: H1. Final review, credentials and commercial/legal setup.
+
+2026 unlock: Creatio launched/updated an AI Application Development Toolkit that explicitly prepares workspaces for Codex, Claude, GitHub Copilot or terminal-based agents, including application generation, analytics, themes and Classic→Freedom UI migration.
+
+Demand: mature CRM deployments continually require migration and custom workflow work. The important new signal is not generic CRM demand but the collapse in build friction for agents.
+
+Community constraint: enterprise customers value compatibility/support over novelty; unsupported generated apps will fail commercially.
+
+Why agents fit: schema-driven app generation plus synthetic CRM fixtures and repeatable regression suites.
+
+Assets: `CreatioVenuePack`, `CRMWorld`, migration evaluator, permission evaluator, `CreatioSchool`, `CRMAppWorker`.
+
+Attractive if: package recurring migration/compliance pain. Unattractive if each buyer needs bespoke consulting.
+
+Source: https://marketplace.creatio.com/app/creatio-ai-application-development-toolkit
+
+## 5) Framer Marketplace
+
+What agents can sell: paid templates, plugins, components and vector sets.
+
+Workflow: scrape/cluster high-intent website niches → generate differentiated template/component → BrowserWorld validates responsive breakpoints, SEO, forms, CMS and performance → originality/design evaluator + human visual gate → Marketplace submission → direct sales + referral earnings → analytics → continuous version updates and niche variants.
+
+Human dependency: H1 because subjective design/provenance review still benefits from a human.
+
+Infrastructure: Framer Marketplace publishing, Community, AI-native Framer workflow, product previews, referral tracking. Framer says creators keep 100% of Marketplace earnings.
+
+Demand: official creator page states $6.5M paid in 2025 and shows $536k June creator payout / $753k November total in its current marketing. A creator profile reported $13,294 June revenue. Current creator discussion says AI agents changed creation economics but good templates still save prompts/credits and provide stronger visual bases.
+
+Why agents fit: agents can produce niche-specific copy/data/CMS structures and exhaustive responsive QA; key human moat is taste.
+
+Assets: `FramerPack`, `WebTemplateWorld`, responsive/performance evaluator, niche-demand Oracle, `FramerWorker`.
+
+Attractive if: narrow business templates + plugins with real workflow value. Unattractive if mass-produced generic SaaS templates compete on aesthetics alone.
+
+Sources: https://www.framer.com/creators ; https://www.framer.com/help/articles/how-the-creator-program-works/
+
+## 6) Craft CMS Plugin Store
+
+What agents can sell: paid Craft CMS/Commerce plugins solving migration, field, content-governance, ecommerce and operational problems.
+
+Workflow: mine support/forum gaps → implement Composer plugin → CraftWorld boots version matrix + Commerce fixtures → evaluator checks install/update/uninstall, migrations, permissions and backward compatibility → Plugin Store submission → native sale → support tickets/changelogs feed Worker.
+
+H1. Stripe/account and final publication; code lifecycle automatable.
+
+Infrastructure/economics: Craft distributes commercial plugins through its Plugin Store, takes 20%, covers transaction fees, and pays developers through linked Stripe accounts.
+
+Demand: historical store data shows meaningful developer payouts; current opportunity is maintenance/reliability, not sheer catalog growth.
+
+Community pain: CMS plugin buyers punish abandonment and update incompatibilities—exactly the recurring labor a persistent Worker can absorb.
+
+Assets: `CraftPack`, `CMSPluginWorld`, version-matrix evaluator, `CraftSchool`, `CMSPluginWorker`.
+
+Attractive if: high-value Commerce/admin utility with low support entropy. Unattractive if core can implement feature quickly or plugin requires agency-specific customization.
+
+Source: https://craftcms.com/terms-of-service
+
+## 7) Statamic Marketplace
+
+What agents can sell: Addons and Starter Kits with built-in licensing.
+
+Workflow: discover repetitive Laravel/Statamic pain → code addon/starter kit → link GitHub/Packagist → StatamicWorld tests installs, upgrades, content blueprints and control-panel behavior → tag release → Marketplace propagates update → sales/support telemetry → Worker patches.
+
+H1. Stripe identity and quality/signoff.
+
+Infrastructure: GitHub + Packagist linked publishing; tags push updates to customers; built-in licensing/validation; Stripe Connect. Creators receive 75% per official current creator page.
+
+Demand: active marketplace has $49/$75/$99/$199 commercial products, indicating real willingness to pay for niche developer tooling.
+
+Community constraint: small ecosystem means demand ceiling is lower, but competition is also lower.
+
+Why agents fit: Laravel/PHP packages are testable and release-driven.
+
+Assets: `StatamicPack`, `LaravelCMSWorld`, upgrade evaluator, `StatamicWorker`.
+
+Attractive if: persistent Worker can own an unglamorous must-have addon category. Unattractive if TAM is too small for ongoing support.
+
+Source: https://statamic.com/creator/begin
+
+## 8) Bubble Marketplace
+
+What agents can sell: paid plugins and templates, including recurring plugin licenses ($1–$100/month) and one-time products.
+
+Workflow: mine Bubble forum pain → agent generates plugin JS/API Connector/template → BubbleWorld creates fixture app and tests editor/runtime/mobile/responsive behavior → privacy/action schema evaluator → publish → native Marketplace billing → support/usage reviews → version maintenance.
+
+H1. Stripe and review.
+
+Infrastructure: Bubble Marketplace seller system and Stripe payouts; official docs support paid plugin subscriptions, one-time plugins and commercial template licenses.
+
+Demand: historic community analysis of Zeroqode estimated very substantial plugin economics; exact current creator revenue is not public, so treat as proof of market shape rather than 2026 revenue fact.
+
+Pain/saturation: generic templates are crowded; plugin wrappers around unstable APIs create support burden. Agents are best at maintained connectors and deterministic workflow primitives.
+
+Assets: `BubblePack`, `BubbleWorld`, API-schema evaluator, `BubblePluginWorker`.
+
+Attractive if: recurring plugin solves a difficult external integration. Unattractive if a user can reproduce it with Bubble’s native AI/API tooling in minutes.
+
+Sources: https://manual.bubble.io/account-and-marketplace/marketplace-policies ; https://manual.bubble.io/account-and-marketplace/building-templates
+
+## 9) JetBrains Marketplace
+
+What agents can sell: paid IDE plugins for I
