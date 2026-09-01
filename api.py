@@ -737,3 +737,114 @@ def v1_compare():
         GROUP BY market_id
         ORDER BY total_reward_usd DESC""")
     return {"platforms": rows}
+
+
+# ============================================
+# TAXONOMY-AWARE ENDPOINTS (shared ontology)
+# ============================================
+
+from oracle.store import (
+    get_opps_by_task_family, get_opps_by_capability,
+    get_opps_by_agent_caps, get_taxonomy_stats, get_agent_match_score,
+)
+from oracle.taxonomy import classify_opportunity, SOURCE_CATEGORY_MAP
+
+
+@app.get("/v1/work/taxonomy")
+def v1_work_taxonomy():
+    """List all known task families and their opportunity counts."""
+    stats = get_taxonomy_stats()
+    return {"task_families": stats["by_task_family"],
+            "autonomy_levels": stats["by_autonomy"],
+            "top_capabilities": stats["by_capability"]}
+
+
+@app.get("/v1/work/by-task/{task_family}")
+def v1_work_by_task(task_family: str, status: str = "open", limit: int = 50):
+    """Get opportunities by canonical task family."""
+    opps = get_opps_by_task_family(task_family, status, limit)
+    return {"task_family": task_family, "opportunities": opps, "count": len(opps)}
+
+
+@app.get("/v1/work/by-capability/{capability}")
+def v1_work_by_capability(capability: str, status: str = "open", limit: int = 50):
+    """Get opportunities requiring a specific capability."""
+    opps = get_opps_by_capability(capability, status, limit)
+    return {"capability": capability, "opportunities": opps, "count": len(opps)}
+
+
+@app.get("/v1/work/match")
+def v1_work_match(caps: str = "", status: str = "open", limit: int = 50):
+    """Match opportunities to agent capabilities.
+
+    Query param: caps = comma-separated capability list
+    Returns opportunities sorted by relevance (capability overlap).
+    """
+    agent_caps = [c.strip() for c in caps.split(",") if c.strip()] if caps else []
+    if not agent_caps:
+        return {"error": "provide caps parameter (comma-separated capabilities)", "opportunities": []}
+    opps = get_opps_by_agent_caps(agent_caps, status, limit)
+    # Add match score to each
+    for opp in opps:
+        opp["match_score"] = get_agent_match_score(agent_caps, opp)
+    opps.sort(key=lambda o: o.get("match_score", 0), reverse=True)
+    return {"agent_capabilities": agent_caps, "opportunities": opps, "count": len(opps)}
+
+
+@app.get("/v1/work/classify")
+def v1_classify(source: str = "", category: str = "", skills: str = ""):
+    """Classify raw source data into canonical taxonomy.
+
+    For testing the mapping without a full ingest.
+    """
+    skill_list = [s.strip() for s in skills.split(",") if s.strip()] if skills else []
+    result = classify_opportunity(source, category, skill_list)
+    return {"source": source, "raw_category": category, "raw_skills": skill_list,
+            "classification": result}
+
+
+@app.get("/v1/work/taxonomy-map")
+def v1_taxonomy_map():
+    """Show the source→canonical category mapping."""
+    return {"mappings": SOURCE_CATEGORY_MAP, "count": len(SOURCE_CATEGORY_MAP)}
+
+
+# ============================================
+# DEMAND / SUPPLY INTELLIGENCE ENDPOINTS
+# ============================================
+
+from oracle.store import get_labor_demand, get_capability_demand, get_supply_deficit, get_training_opportunities
+
+
+@app.get("/v1/intelligence/demand")
+def v1_demand():
+    """Open labor demand by task family."""
+    return {"demand": get_labor_demand()}
+
+
+@app.get("/v1/intelligence/capabilities")
+def v1_capability_demand():
+    """Demand per capability."""
+    return {"capabilities": get_capability_demand()}
+
+
+@app.get("/v1/intelligence/supply-deficit")
+def v1_supply_deficit(caps: str = ""):
+    """Compare worker capabilities against market demand.
+
+    Query param: caps = comma-separated capability list
+    """
+    worker_caps = [c.strip() for c in caps.split(",") if c.strip()] if caps else []
+    if not worker_caps:
+        return {"error": "provide caps parameter"}
+    return get_supply_deficit(worker_caps)
+
+
+@app.get("/v1/intelligence/training")
+def v1_training_opportunities(caps: str = ""):
+    """What training would unlock the most demand?
+
+    Query param: caps = comma-separated capability list
+    """
+    worker_caps = [c.strip() for c in caps.split(",") if c.strip()] if caps else []
+    return {"opportunities": get_training_opportunities(worker_caps)}

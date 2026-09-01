@@ -66,7 +66,8 @@ def run_once():
     print(f"[{time.strftime('%H:%M:%S')}] Ingesting...")
 
     # Work feed
-    work_fns = [bountybook, github, superteam, agenthansa, rentahuman, daydreams, openserv]
+    work_fns = [bountybook, github, superteam, agenthansa, rentahuman, daydreams, openserv,
+                nearai, agentlux, augmi, agentworld, atelier, clustly, taskforce, moltjobs]
     work_n = 0
     new_obs = 0
     for fn in work_fns:
@@ -85,7 +86,8 @@ def run_once():
     print(f"  Work: {work_n} ({new_obs} new observations)")
 
     # Service feed
-    svc_fns = [x402engine, x402list, the402, payapi, apify, smithery, openrouter, bittensor]
+    svc_fns = [x402engine, x402list, the402, payapi, apify, smithery, openrouter, bittensor,
+               skyfire, apihub, agentictrade, fal]
     svc_n = 0
     for fn in svc_fns:
         try:

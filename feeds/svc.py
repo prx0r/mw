@@ -212,3 +212,85 @@ def _norm_soon(s: dict) -> dict:
             "source_id": str(s.get("id","")), "name": s.get("name",""),
             "desc": (s.get("description") or "")[:500], "cat": s.get("category",""),
             "price": 0, "calls": 0, "rating": 0, "url": s.get("url",""), "extra": {}}
+
+
+# ─── Additional service sources ─────────────────────────────────────
+
+def skyfire() -> list[dict]:
+    """Skyfire — AI agent payment network."""
+    data = _get("https://skyfire.xyz/api/services?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("services", [])
+    return [_norm_skyfire(s) for s in items]
+
+
+def _norm_skyfire(s: dict) -> dict:
+    p = s.get("price", s.get("min_price", 0))
+    if isinstance(p, str):
+        try: p = float(p.replace("$",""))
+        except: p = 0
+    return {"id": f"sf:{s.get('id','')}", "src": "skyfire",
+            "source_id": str(s.get("id","")), "name": s.get("name",""),
+            "desc": (s.get("description","") or "")[:500], "cat": s.get("category",""),
+            "price": float(p) if p else 0, "calls": s.get("total_calls",0), "rating": 0,
+            "url": s.get("url",""), "extra": {"networks": s.get("networks",[])}}
+
+
+def apihub() -> list[dict]:
+    """APIHub — API marketplace."""
+    data = _get("https://apihub.io/api/v1/apis?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("apis", data.get("results", []))
+    return [_norm_apihub(a) for a in items]
+
+
+def _norm_apihub(a: dict) -> dict:
+    p = a.get("price", a.get("min_price", 0))
+    if isinstance(p, str):
+        try: p = float(p.replace("$",""))
+        except: p = 0
+    return {"id": f"hub:{a.get('id','')}", "src": "apihub",
+            "source_id": str(a.get("id","")), "name": a.get("name",""),
+            "desc": (a.get("description","") or "")[:500], "cat": a.get("category",""),
+            "price": float(p) if p else 0, "calls": a.get("total_calls",0), "rating": 0,
+            "url": a.get("url",""), "extra": {}}
+
+
+def agentictrade() -> list[dict]:
+    """AgenticTrade — agent service exchange."""
+    data = _get("https://agentictrade.io/api/services?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("services", [])
+    return [_norm_agentictrade(s) for s in items]
+
+
+def _norm_agentictrade(s: dict) -> dict:
+    p = s.get("price", 0)
+    if isinstance(p, str):
+        try: p = float(p.replace("$",""))
+        except: p = 0
+    return {"id": f"atrade:{s.get('id','')}", "src": "agentictrade",
+            "source_id": str(s.get("id","")), "name": s.get("name",""),
+            "desc": (s.get("description","") or "")[:500], "cat": s.get("category",""),
+            "price": float(p) if p else 0, "calls": s.get("total_calls",0), "rating": 0,
+            "url": s.get("url",""), "extra": {}}
+
+
+def fal() -> list[dict]:
+    """FAL — AI model hosting."""
+    data = _get("https://fal.ai/api/models?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("models", [])
+    return [_norm_fal(m) for m in items]
+
+
+def _norm_fal(m: dict) -> dict:
+    p = m.get("price", 0)
+    if isinstance(p, str):
+        try: p = float(p.replace("$",""))
+        except: p = 0
+    return {"id": f"fal:{m.get('id','')}", "src": "fal",
+            "source_id": str(m.get("id","")), "name": m.get("name",""),
+            "desc": (m.get("description","") or "")[:500], "cat": "ml",
+            "price": float(p) if p else 0, "calls": m.get("total_calls",0), "rating": 0,
+            "url": m.get("url",""), "extra": {"registry": m.get("registry","")}}

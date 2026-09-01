@@ -162,4 +162,199 @@ def _norm_openserv(i: dict) -> dict:
             "extra": {"upvotes": ups, "pickups": picks, "shipments": ships}}
 
 
+# ─── Additional work sources ─────────────────────────────────────────
+
+def nearai() -> list[dict]:
+    """NEAR AI Agent Market — agent tasks and bounties."""
+    data = _get("https://market.near.ai/api/v1/tasks?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("tasks", data.get("items", []))
+    return [_norm_nearai(t) for t in items]
+
+
+def _norm_nearai(t: dict) -> dict:
+    reward = 0
+    r = t.get("reward", t.get("reward_amount", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$","").replace(",",""))
+        except: pass
+    tags = t.get("tags", t.get("skills", []))
+    return {"id": f"near:{t.get('id','')}", "src": "nearai", "source_id": str(t.get("id","")),
+            "title": t.get("title", t.get("name","")), "desc": (t.get("description","") or "")[:500],
+            "cat": t.get("category","general"), "skills": tags if isinstance(tags, list) else [],
+            "reward": reward, "currency": t.get("token","NEAR"), "status": t.get("status","open"),
+            "posted": t.get("created_at", t.get("createdAt","")),
+            "url": f"https://market.near.ai/task/{t.get('id','')}",
+            "extra": {"network": "near"}}
+
+
+def agentlux() -> list[dict]:
+    """AgentLux — agent marketplace tasks."""
+    data = _get("https://agentlux.ai/api/tasks?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("tasks", [])
+    return [_norm_agentlux(t) for t in items]
+
+
+def _norm_agentlux(t: dict) -> dict:
+    reward = 0
+    r = t.get("reward", t.get("price", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$",""))
+        except: pass
+    return {"id": f"alx:{t.get('id','')}", "src": "agentlux", "source_id": str(t.get("id","")),
+            "title": t.get("title",""), "desc": (t.get("description","") or "")[:500],
+            "cat": t.get("category","general"), "skills": t.get("tags", t.get("skills",[])),
+            "reward": reward, "currency": t.get("currency","USD"),
+            "status": t.get("status","open"), "posted": t.get("created_at",""),
+            "url": f"https://agentlux.ai/task/{t.get('id','')}",
+            "extra": {}}
+
+
+def augmi() -> list[dict]:
+    """Augmi Marketplace — agent gigs."""
+    data = _get("https://augmi.world/api/gigs?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("gigs", [])
+    return [_norm_augmi(g) for g in items]
+
+
+def _norm_augmi(g: dict) -> dict:
+    reward = 0
+    r = g.get("reward", g.get("budget", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$",""))
+        except: pass
+    return {"id": f"aug:{g.get('id','')}", "src": "augmi", "source_id": str(g.get("id","")),
+            "title": g.get("title",""), "desc": (g.get("description","") or "")[:500],
+            "cat": g.get("category","general"), "skills": g.get("tags",[]),
+            "reward": reward, "currency": g.get("currency","USD"),
+            "status": g.get("status","open"), "posted": g.get("created_at",""),
+            "url": f"https://augmi.world/gig/{g.get('id','')}",
+            "extra": {}}
+
+
+def agentworld() -> list[dict]:
+    """AgentWorld — agent task board."""
+    data = _get("https://agentworld.me/api/tasks?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("tasks", [])
+    return [_norm_agentworld(t) for t in items]
+
+
+def _norm_agentworld(t: dict) -> dict:
+    reward = 0
+    r = t.get("reward", t.get("payment", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$",""))
+        except: pass
+    return {"id": f"aw:{t.get('id','')}", "src": "agentworld", "source_id": str(t.get("id","")),
+            "title": t.get("title",""), "desc": (t.get("description","") or "")[:500],
+            "cat": t.get("category","general"), "skills": t.get("tags",[]),
+            "reward": reward, "currency": t.get("currency","USD"),
+            "status": t.get("status","open"), "posted": t.get("created_at",""),
+            "url": f"https://agentworld.me/task/{t.get('id','')}",
+            "extra": {}}
+
+
+def atelier() -> list[dict]:
+    """Atelier — agent marketplace."""
+    data = _get("https://useatelier.ai/api/tasks?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("tasks", [])
+    return [_norm_atelier(t) for t in items]
+
+
+def _norm_atelier(t: dict) -> dict:
+    reward = 0
+    r = t.get("reward", t.get("price", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$",""))
+        except: pass
+    return {"id": f"atl:{t.get('id','')}", "src": "atelier", "source_id": str(t.get("id","")),
+            "title": t.get("title",""), "desc": (t.get("description","") or "")[:500],
+            "cat": t.get("category","general"), "skills": t.get("tags",[]),
+            "reward": reward, "currency": t.get("currency","USD"),
+            "status": t.get("status","open"), "posted": t.get("created_at",""),
+            "url": f"https://useatelier.ai/task/{t.get('id','')}",
+            "extra": {}}
+
+
+def clustly() -> list[dict]:
+    """Clustly — agent gigs."""
+    data = _get("https://clustly.ai/api/gigs?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("gigs", [])
+    return [_norm_clustly(g) for g in items]
+
+
+def _norm_clustly(g: dict) -> dict:
+    reward = 0
+    r = g.get("reward", g.get("budget", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$",""))
+        except: pass
+    return {"id": f"clu:{g.get('id','')}", "src": "clustly", "source_id": str(g.get("id","")),
+            "title": g.get("title",""), "desc": (g.get("description","") or "")[:500],
+            "cat": g.get("category","general"), "skills": g.get("tags",[]),
+            "reward": reward, "currency": g.get("currency","USD"),
+            "status": g.get("status","open"), "posted": g.get("created_at",""),
+            "url": f"https://clustly.ai/gig/{g.get('id','')}",
+            "extra": {}}
+
+
+def taskforce() -> list[dict]:
+    """TaskForce — Upwork for AI agents."""
+    data = _get("https://www.task-force.app/api/tasks?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("tasks", [])
+    return [_norm_taskforce(t) for t in items]
+
+
+def _norm_taskforce(t: dict) -> dict:
+    reward = 0
+    r = t.get("reward", t.get("budget", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$",""))
+        except: pass
+    return {"id": f"tf:{t.get('id','')}", "src": "taskforce", "source_id": str(t.get("id","")),
+            "title": t.get("title",""), "desc": (t.get("description","") or "")[:500],
+            "cat": t.get("category","general"), "skills": t.get("tags", t.get("skills",[])),
+            "reward": reward, "currency": t.get("currency","USDC"),
+            "status": t.get("status","open"), "posted": t.get("created_at",""),
+            "url": f"https://www.task-force.app/task/{t.get('id','')}",
+            "extra": {"escrow": t.get("escrow_type", "milestone")}}
+
+
+def moltjobs() -> list[dict]:
+    """MoltJobs — agent job board with escrow."""
+    data = _get("https://moltjobs.io/api/jobs?limit=100")
+    if not data: return []
+    items = data if isinstance(data, list) else data.get("jobs", [])
+    return [_norm_moltjobs(j) for j in items]
+
+
+def _norm_moltjobs(j: dict) -> dict:
+    reward = 0
+    r = j.get("reward", j.get("budget", 0))
+    if isinstance(r, (int, float)): reward = float(r)
+    elif isinstance(r, str):
+        try: reward = float(r.replace("$",""))
+        except: pass
+    return {"id": f"mj:{j.get('id','')}", "src": "moltjobs", "source_id": str(j.get("id","")),
+            "title": j.get("title",""), "desc": (j.get("description","") or "")[:500],
+            "cat": j.get("category","general"), "skills": j.get("tags", j.get("skills",[])),
+            "reward": reward, "currency": j.get("currency","USDC"),
+            "status": j.get("status","open"), "posted": j.get("created_at",""),
+            "url": f"https://moltjobs.io/job/{j.get('id','')}",
+            "extra": {"escrow": j.get("escrow_type", "base")}}
+
+
 import re

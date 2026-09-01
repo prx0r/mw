@@ -6,6 +6,7 @@ import sqlite3
 import time
 from pathlib import Path
 from .config import DB, DATA
+from .taxonomy import classify_opportunity
 
 DATA.mkdir(parents=True, exist_ok=True)
 
@@ -148,6 +149,11 @@ def init():
             application_required INT DEFAULT 0,
             canonical_url TEXT,
             confidence TEXT DEFAULT 'observed',
+            -- Shared ontology: canonical taxonomy from workerkit
+            task_family TEXT DEFAULT '',
+            canonical_capabilities TEXT DEFAULT '[]',
+            autonomy_level TEXT DEFAULT 'H1',
+            economic_surface TEXT DEFAULT 'BOUNTY',
             metadata TEXT,
             created_at TEXT,
             updated_at TEXT
@@ -358,6 +364,7 @@ def init():
         CREATE INDEX IF NOT EXISTS i_oopp_cat ON oracle_opps(category_id);
         CREATE INDEX IF NOT EXISTS i_oopp_reward ON oracle_opps(reward_usd);
         CREATE INDEX IF NOT EXISTS i_oopp_first ON oracle_opps(first_seen_at);
+        CREATE INDEX IF NOT EXISTS i_oopp_tf ON oracle_opps(task_family);
 
         CREATE INDEX IF NOT EXISTS i_oos_opp ON oracle_opp_sources(opportunity_id);
         CREATE INDEX IF NOT EXISTS i_oos_src ON oracle_opp_sources(source_id);
@@ -382,6 +389,25 @@ def init():
         CREATE INDEX IF NOT EXISTS i_odct_cat ON oracle_daily_cat(category_id);
         CREATE INDEX IF NOT EXISTS i_odct_date ON oracle_daily_cat(date);
     """)
+    c.commit()
+
+    # Migration: add taxonomy columns if missing
+    try:
+        c.execute("ALTER TABLE oracle_opps ADD COLUMN task_family TEXT DEFAULT ''")
+    except:
+        pass
+    try:
+        c.execute("ALTER TABLE oracle_opps ADD COLUMN canonical_capabilities TEXT DEFAULT '[]'")
+    except:
+        pass
+    try:
+        c.execute("ALTER TABLE oracle_opps ADD COLUMN autonomy_level TEXT DEFAULT 'H1'")
+    except:
+        pass
+    try:
+        c.execute("ALTER TABLE oracle_opps ADD COLUMN economic_surface TEXT DEFAULT 'BOUNTY'")
+    except:
+        pass
     c.commit()
 
 
@@ -422,19 +448,52 @@ def upsert_opp(o: dict) -> str:
     cat = o.get("cat", "")
 
     existing_canon = c.execute("SELECT * FROM oracle_opps WHERE id=?", (eid,)).fetchone()
-    c.execute("""INSERT OR REPLACE INTO oracle_opps
-        (id, canonical_title, canonical_description, market_id, status,
-         execution_mode, reward_amount, reward_currency, reward_usd,
-         first_seen_at, last_seen_at, canonical_url, confidence,
-         metadata, created_at, updated_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        (eid, o.get("title",""), o.get("desc",""), market_id,
-         o.get("status","open"), "autonomous",
-         reward, o.get("currency","USD"), reward,
-         existing_canon["first_seen_at"] if existing_canon else now, now,
-         o.get("url",""), "observed",
-         json.dumps({"src": src, "skills": skills, "cat": cat}),
-         existing_canon["created_at"] if existing_canon else now, now))
+
+    # Check if taxonomy columns exist
+    has_taxonomy = False
+    try:
+        c.execute("SELECT task_family FROM oracle_opps LIMIT 1")
+        has_taxonomy = True
+    except:
+        pass
+
+    if has_taxonomy:
+        # Classify using shared ontology
+        classification = classify_opportunity(src, cat, skills)
+        task_family = classification["task_family"]
+        canonical_caps = json.dumps(classification["capabilities"])
+        autonomy = classification["autonomy_level"]
+        econ_surface = classification["economic_surface"]
+
+        c.execute("""INSERT OR REPLACE INTO oracle_opps
+            (id, canonical_title, canonical_description, market_id, status,
+             execution_mode, reward_amount, reward_currency, reward_usd,
+             task_family, canonical_capabilities, autonomy_level, economic_surface,
+             first_seen_at, last_seen_at, canonical_url, confidence,
+             metadata, created_at, updated_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (eid, o.get("title",""), o.get("desc",""), market_id,
+             o.get("status","open"), "autonomous",
+             reward, o.get("currency","USD"), reward,
+             task_family, canonical_caps, autonomy, econ_surface,
+             existing_canon["first_seen_at"] if existing_canon else now, now,
+             o.get("url",""), "observed",
+             json.dumps({"src": src, "skills": skills, "cat": cat}),
+             existing_canon["created_at"] if existing_canon else now, now))
+    else:
+        c.execute("""INSERT OR REPLACE INTO oracle_opps
+            (id, canonical_title, canonical_description, market_id, status,
+             execution_mode, reward_amount, reward_currency, reward_usd,
+             first_seen_at, last_seen_at, canonical_url, confidence,
+             metadata, created_at, updated_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (eid, o.get("title",""), o.get("desc",""), market_id,
+             o.get("status","open"), "autonomous",
+             reward, o.get("currency","USD"), reward,
+             existing_canon["first_seen_at"] if existing_canon else now, now,
+             o.get("url",""), "observed",
+             json.dumps({"src": src, "skills": skills, "cat": cat}),
+             existing_canon["created_at"] if existing_canon else now, now))
 
     for skill_slug in skills:
         slug = skill_slug.lower().strip().replace(" ", "-")
@@ -541,19 +600,51 @@ def _upsert_canonical_opp(o: dict):
     skills = o.get("skills", [])
     cat = o.get("cat", "")
 
-    c.execute("""INSERT OR REPLACE INTO oracle_opps
-        (id, canonical_title, canonical_description, market_id, status,
-         execution_mode, reward_amount, reward_currency, reward_usd,
-         first_seen_at, last_seen_at, canonical_url, confidence,
-         metadata, created_at, updated_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        (eid, o.get("title",""), o.get("desc",""), market_id,
-         o.get("status","open"), "autonomous",
-         reward, o.get("currency","USD"), reward,
-         existing["first_seen_at"] if existing else now, now,
-         o.get("url",""), "observed",
-         json.dumps({"src": src, "skills": skills, "cat": cat}),
-         existing["created_at"] if existing else now, now))
+    # Check if taxonomy columns exist
+    has_taxonomy = False
+    try:
+        c.execute("SELECT task_family FROM oracle_opps LIMIT 1")
+        has_taxonomy = True
+    except:
+        pass
+
+    if has_taxonomy:
+        # Classify using shared ontology
+        classification = classify_opportunity(src, cat, skills)
+        task_family = classification["task_family"]
+        canonical_caps = json.dumps(classification["capabilities"])
+        autonomy = classification["autonomy_level"]
+        econ_surface = classification["economic_surface"]
+
+        c.execute("""INSERT OR REPLACE INTO oracle_opps
+            (id, canonical_title, canonical_description, market_id, status,
+             execution_mode, reward_amount, reward_currency, reward_usd,
+             task_family, canonical_capabilities, autonomy_level, economic_surface,
+             first_seen_at, last_seen_at, canonical_url, confidence,
+             metadata, created_at, updated_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (eid, o.get("title",""), o.get("desc",""), market_id,
+             o.get("status","open"), "autonomous",
+             reward, o.get("currency","USD"), reward,
+             task_family, canonical_caps, autonomy, econ_surface,
+             existing["first_seen_at"] if existing else now, now,
+             o.get("url",""), "observed",
+             json.dumps({"src": src, "skills": skills, "cat": cat}),
+             existing["created_at"] if existing else now, now))
+    else:
+        c.execute("""INSERT OR REPLACE INTO oracle_opps
+            (id, canonical_title, canonical_description, market_id, status,
+             execution_mode, reward_amount, reward_currency, reward_usd,
+             first_seen_at, last_seen_at, canonical_url, confidence,
+             metadata, created_at, updated_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (eid, o.get("title",""), o.get("desc",""), market_id,
+             o.get("status","open"), "autonomous",
+             reward, o.get("currency","USD"), reward,
+             existing["first_seen_at"] if existing else now, now,
+             o.get("url",""), "observed",
+             json.dumps({"src": src, "skills": skills, "cat": cat}),
+             existing["created_at"] if existing else now, now))
 
     # Link skills
     for skill_slug in skills:
@@ -750,3 +841,168 @@ def stats() -> dict:
     except:
         s["oracle_usd"] = 0
     return s
+
+
+# ============================================
+# TAXONOMY-AWARE QUERIES (shared ontology)
+# ============================================
+
+def get_opps_by_task_family(task_family: str, status: str = "open",
+                            limit: int = 50) -> list[dict]:
+    """Get opportunities matching a canonical task family."""
+    return q("""SELECT * FROM oracle_opps
+        WHERE task_family = ? AND status = ?
+        ORDER BY reward_usd DESC, last_seen_at DESC
+        LIMIT ?""", (task_family, status, limit))
+
+
+def get_opps_by_capability(capability: str, status: str = "open",
+                           limit: int = 50) -> list[dict]:
+    """Get opportunities requiring a specific capability."""
+    return q("""SELECT * FROM oracle_opps
+        WHERE canonical_capabilities LIKE ? AND status = ?
+        ORDER BY reward_usd DESC, last_seen_at DESC
+        LIMIT ?""", (f'%"{capability}"%', status, limit))
+
+
+def get_opps_by_agent_caps(agent_caps: list[str], status: str = "open",
+                           limit: int = 50) -> list[dict]:
+    """Get opportunities matching any of the agent's capabilities.
+
+    Returns opportunities where the agent has at least one required capability,
+    sorted by reward (highest first).
+    """
+    if not agent_caps:
+        return []
+    # Build LIKE conditions for each capability
+    conditions = " OR ".join(["canonical_capabilities LIKE ?"] * len(agent_caps))
+    params = [f'%"{cap}"%' for cap in agent_caps] + [status, limit]
+    return q(f"""SELECT * FROM oracle_opps
+        WHERE ({conditions}) AND status = ?
+        ORDER BY reward_usd DESC, last_seen_at DESC
+        LIMIT ?""", tuple(params))
+
+
+def get_taxonomy_stats() -> dict:
+    """Get statistics per task family."""
+    return {
+        "by_task_family": q("""SELECT task_family, COUNT(*) as count,
+            AVG(reward_usd) as avg_reward, SUM(reward_usd) as total_reward
+            FROM oracle_opps WHERE task_family != ''
+            GROUP BY task_family ORDER BY count DESC"""),
+        "by_autonomy": q("""SELECT autonomy_level, COUNT(*) as count
+            FROM oracle_opps WHERE autonomy_level != ''
+            GROUP BY autonomy_level ORDER BY count DESC"""),
+        "by_capability": q("""SELECT canonical_capabilities, COUNT(*) as count
+            FROM oracle_opps WHERE canonical_capabilities != '[]'
+            GROUP BY canonical_capabilities ORDER BY count DESC
+            LIMIT 20"""),
+    }
+
+
+def get_agent_match_score(agent_caps: list[str], opp: dict) -> float:
+    """Score how well an agent matches an opportunity (0.0 - 1.0).
+
+    Based on capability overlap between agent and required capabilities.
+    """
+    if not agent_caps:
+        return 0.0
+    try:
+        required = set(json.loads(opp.get("canonical_capabilities", "[]")))
+    except:
+        return 0.0
+    if not required:
+        return 0.5  # unknown requirements → neutral score
+    overlap = set(agent_caps) & required
+    return len(overlap) / len(required)
+
+
+# ============================================
+# DEMAND / SUPPLY INTELLIGENCE
+# ============================================
+
+def get_labor_demand() -> list[dict]:
+    """Open labor demand by task family (total USD)."""
+    return q("""SELECT task_family,
+        COUNT(*) as open_opportunities,
+        SUM(reward_usd) as total_demand_usd,
+        AVG(reward_usd) as avg_reward_usd,
+        COUNT(DISTINCT market_id) as source_count
+        FROM oracle_opps
+        WHERE status = 'open' AND task_family != ''
+        GROUP BY task_family
+        ORDER BY total_demand_usd DESC""")
+
+
+def get_capability_demand() -> list[dict]:
+    """Demand per capability extracted from canonical_capabilities JSON."""
+    # This is a rough extraction — JSON array matching
+    rows = q("""SELECT canonical_capabilities, reward_usd
+        FROM oracle_opps WHERE status = 'open' AND canonical_capabilities != '[]'""")
+    cap_demand: dict[str, dict] = {}
+    for row in rows:
+        try:
+            caps = json.loads(row["canonical_capabilities"])
+        except:
+            continue
+        for cap in caps:
+            if cap not in cap_demand:
+                cap_demand[cap] = {"capability": cap, "open_opportunities": 0,
+                                   "total_demand_usd": 0}
+            cap_demand[cap]["open_opportunities"] += 1
+            cap_demand[cap]["total_demand_usd"] += row.get("reward_usd", 0) or 0
+    result = sorted(cap_demand.values(), key=lambda x: x["total_demand_usd"], reverse=True)
+    for r in result:
+        r["total_demand_usd"] = round(r["total_demand_usd"], 2)
+    return result
+
+
+def get_supply_deficit(worker_caps: list[str]) -> dict:
+    """Compare worker capabilities against market demand.
+
+    Returns which capabilities the worker has vs what the market wants.
+    """
+    demand = get_capability_demand()
+    had = set(worker_caps)
+    demanded = {d["capability"]: d for d in demand}
+
+    matched = []
+    missing = []
+    for cap, info in demanded.items():
+        if cap in had:
+            matched.append(info)
+        else:
+            missing.append(info)
+
+    total_demand = sum(d["total_demand_usd"] for d in demand)
+    matched_demand = sum(d["total_demand_usd"] for d in matched)
+
+    return {
+        "worker_capabilities": worker_caps,
+        "matched_demand_usd": round(matched_demand, 2),
+        "missing_demand_usd": round(total_demand - matched_demand, 2),
+        "demand_coverage": round(matched_demand / max(1, total_demand), 4),
+        "matched": matched[:10],
+        "missing": missing[:10],
+    }
+
+
+def get_training_opportunities(worker_caps: list[str]) -> list[dict]:
+    """What training would unlock the most demand?
+
+    For each missing capability, estimate the demand it would unlock.
+    """
+    demand = get_capability_demand()
+    had = set(worker_caps)
+
+    opportunities = []
+    for d in demand:
+        if d["capability"] not in had:
+            opportunities.append({
+                "capability": d["capability"],
+                "demand_usd": d["total_demand_usd"],
+                "open_jobs": d["open_opportunities"],
+                "priority": "HIGH" if d["total_demand_usd"] > 10000 else "MEDIUM" if d["total_demand_usd"] > 1000 else "LOW",
+            })
+
+    return sorted(opportunities, key=lambda x: x["demand_usd"], reverse=True)

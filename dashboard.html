@@ -3,203 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moltwork Oracle</title>
+<title>Moltwork Oracle — Command Center</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'SF Mono', 'Fira Code', monospace; background: #0a0a0a; color: #e0e0e0; padding: 20px; }
-  h1 { color: #00ff88; font-size: 1.4em; margin-bottom: 4px; }
-  .subtitle { color: #666; font-size: 0.8em; margin-bottom: 20px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
-  .card { background: #111; border: 1px solid #222; border-radius: 6px; padding: 14px; }
-  .card .label { color: #666; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
-  .card .value { color: #00ff88; font-size: 1.8em; font-weight: bold; margin-top: 4px; }
-  .card .sub { color: #888; font-size: 0.75em; margin-top: 2px; }
-  .section { margin-bottom: 24px; }
-  .section h2 { color: #00ff88; font-size: 1em; margin-bottom: 10px; border-bottom: 1px solid #222; padding-bottom: 6px; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.8em; }
-  th { text-align: left; color: #666; font-weight: normal; text-transform: uppercase; font-size: 0.7em; letter-spacing: 1px; padding: 6px 8px; border-bottom: 1px solid #222; }
-  td { padding: 6px 8px; border-bottom: 1px solid #1a1a1a; }
+  body { font-family: 'SF Mono', 'Fira Code', monospace; background: #0a0a0a; color: #e0e0e0; padding: 16px; }
+  h1 { color: #00ff88; font-size: 1.4em; margin-bottom: 2px; }
+  .subtitle { color: #666; font-size: 0.75em; margin-bottom: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .card { background: #111; border: 1px solid #222; border-radius: 6px; padding: 12px; }
+  .card .label { color: #666; font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; }
+  .card .value { color: #00ff88; font-size: 1.6em; font-weight: bold; margin-top: 4px; }
+  .card .sub { color: #888; font-size: 0.7em; margin-top: 2px; }
+  .section { margin-bottom: 20px; }
+  .section h2 { color: #00ff88; font-size: 0.9em; margin-bottom: 8px; border-bottom: 1px solid #222; padding-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .section h2 .badge { background: #00ff88; color: #0a0a0a; font-size: 0.6em; padding: 2px 6px; border-radius: 3px; font-weight: bold; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.75em; }
+  th { text-align: left; color: #666; font-weight: normal; text-transform: uppercase; font-size: 0.65em; letter-spacing: 1px; padding: 5px 6px; border-bottom: 1px solid #222; }
+  td { padding: 5px 6px; border-bottom: 1px solid #1a1a1a; }
   tr:hover td { background: #151515; }
   .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .tag { display: inline-block; background: #1a1a1a; border: 1px solid #333; border-radius: 3px; padding: 1px 6px; font-size: 0.7em; margin: 1px; }
+  .tag.h0 { border-color: #00ff88; color: #00ff88; }
+  .tag.h1 { border-color: #ffaa00; color: #ffaa00; }
+  .tag.h2 { border-color: #ff6666; color: #ff6666; }
+  .tag.skill { border-color: #6688ff; color: #6688ff; }
+  .tag.money { border-color: #ffcc00; color: #ffcc00; }
+  .tag.live { border-color: #00ff88; color: #00ff88; }
+  .tag.blocked { border-color: #ff4444; color: #ff4444; }
   .bar { height: 6px; background: #00ff88; border-radius: 3px; margin-top: 4px; }
   .bar-bg { height: 6px; background: #1a1a1a; border-radius: 3px; width: 100%; }
-  .dist-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 0.8em; }
-  .dist-label { width: 70px; color: #888; }
+  .dist-row { display: flex; align-items: center; gap: 8px; margin: 3px 0; font-size: 0.75em; }
+  .dist-label { width: 80px; color: #888; }
   .dist-bar { flex: 1; }
   .dist-count { width: 40px; text-align: right; color: #00ff88; }
-  .event { padding: 4px 0; font-size: 0.8em; border-bottom: 1px solid #1a1a1a; }
-  .event .type { color: #00ff88; }
-  .event .time { color: #555; }
-  .event .title { color: #aaa; }
+  .queue-item { background: #111; border: 1px solid #222; border-radius: 6px; padding: 10px; margin-bottom: 6px; border-left: 3px solid; }
+  .queue-item.critical { border-left-color: #ff4444; }
+  .queue-item.high { border-left-color: #ffaa00; }
+  .queue-item.medium { border-left-color: #00ff88; }
+  .queue-item.low { border-left-color: #666; }
+  .queue-item input { background: #0a0a0a; border: 1px solid #333; border-radius: 4px; padding: 5px 8px; color: #e0e0e0; font-family: monospace; font-size: 0.8em; }
+  .queue-item input:focus { outline: none; border-color: #00ff88; }
+  .queue-item button { background: #00ff88; color: #0a0a0a; border: none; border-radius: 4px; padding: 5px 12px; cursor: pointer; font-weight: bold; font-size: 0.75em; }
+  .queue-item button:hover { opacity: 0.85; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
   #loading { color: #666; padding: 40px; text-align: center; }
 </style>
 </head>
 <body>
-
 <h1>MOLTWORK ORACLE</h1>
-<div class="subtitle">DefiLlama for autonomous work</div>
+<div class="subtitle">Economic intelligence for autonomous work — v2</div>
 
-<div id="loading">Loading...</div>
+<div id="loading">Loading data...</div>
+<div id="app" style="display:none"></div>
 
-<div id="dashboard" style="display:none">
+<script>
+// Static data from our registry (in production, this would come from the API)
+const MARKETS = [
+  {id:"metaculus",name:"Metaculus FutureEval",category:"monetized_scoreboard",skill_family:"F9",h_level:"H0",reward:"~$50K seasonal",status:"blocked",blocker:"Need bot token",deadline:"2026-09-06",api:"api.metaculus.com"},
+  {id:"kaggle",name:"Kaggle Competitions",category:"prize_market",skill_family:"F15",h_level:"H0",reward:"$850K+ total",status:"partial",blocker:"Need username for competitions API",deadline:"varies",api:"kaggle.com/api/v1"},
+  {id:"agentpact",name:"AgentPact",category:"job_market",skill_family:"F9",h_level:"H0",reward:"$5-$25/task",status:"live",blocker:null,deadline:"ongoing",api:"api.agentpact.xyz"},
+  {id:"moltbook",name:"Moltbook",category:"job_market",skill_family:"F9",h_level:"H0",reward:"varies",status:"live",blocker:"Needs human claim",deadline:"ongoing",api:"moltbook.com/api/v1"},
+  {id:"moltjobs",name:"MoltJobs",category:"job_market",skill_family:"F9",h_level:"H0",reward:"$5 USDC/task",status:"blocked",blocker:"Need API key",deadline:"2026-09-03",api:"api.moltjobs.io"},
+  {id:"openjobs",name:"OpenJobs",category:"job_market",skill_family:"F7",h_level:"H0",reward:"WAGE tokens",status:"live",blocker:null,deadline:"ongoing",api:"openjobs.bot/api"},
+  {id:"dealwork",name:"dealwork.ai",category:"job_market",skill_family:"F9",h_level:"H0",reward:"3-10% fee",status:"blocked",blocker:"Need browser auth",deadline:"ongoing",api:"dealwork.ai/api/v1"},
+  {id:"roblox",name:"Roblox Creator Economy",category:"creator_royalty",skill_family:"F5",h_level:"H0",reward:"DevEx revenue",status:"blocked",blocker:"Need API key + MCP",deadline:"ongoing",api:"apis.roblox.com"},
+  {id:"fortnite",name:"Fortnite/UEFN",category:"creator_royalty",skill_family:"F6",h_level:"H1",reward:"100% V-Bucks (2026)",status:"blocked",blocker:"Need account",deadline:"2027-01-31",api:"Unreal MCP"},
+  {id:"modrinth",name:"Modrinth",category:"creator_royalty",skill_family:"F12",h_level:"H1",reward:"75% ad revenue",status:"blocked",blocker:"Need PAT",deadline:"ongoing",api:"api.modrinth.com/v2"},
+  {id:"itchio",name:"itch.io",category:"creator_royalty",skill_family:"F7",h_level:"H1",reward:"90%+ revenue",status:"blocked",blocker:"Need API key",deadline:"ongoing",api:"api.itch.io"},
+  {id:"gumroad",name:"Gumroad",category:"creator_royalty",skill_family:"F12",h_level:"H1",reward:"90%+ revenue",status:"blocked",blocker:"Need access token",deadline:"ongoing",api:"api.gumroad.com/v2"},
+  {id:"curseforge",name:"CurseForge",category:"creator_royalty",skill_family:"F12",h_level:"H1",reward:"70% creator share",status:"blocked",blocker:"Need API key (approval)",deadline:"ongoing",api:"api.curseforge.com/v1"},
+  {id:"webflow",name:"Webflow Templates",category:"creator_royalty",skill_family:"F12",h_level:"H1",reward:"95% commission",status:"blocked",blocker:"Need OAuth",deadline:"ongoing",api:"api.webflow.com"},
+  {id:"framer",name:"Framer Marketplace",category:"creator_royalty",skill_family:"F12",h_level:"H1",reward:"100% sales",status:"blocked",blocker:"Need account",deadline:"ongoing",api:"web publishing"},
+  {id:"allora",name:"Allora Forge",category:"protocol_machine_work",skill_family:"F10",h_level:"H0",reward:"ALLO rewards",status:"blocked",blocker:"Need wallet + ALLO",deadline:"ongoing",api:"protocol-native"},
+  {id:"numerai",name:"Numerai",category:"protocol_machine_work",skill_family:"F15",h_level:"H0",reward:"NMR payouts",status:"blocked",blocker:"Need wallet + stake",deadline:"ongoing",api:"api.numer.ai"},
+  {id:"tools402",name:"tools402",category:"protocol_machine_work",skill_family:"F1",h_level:"H0",reward:"USDC per call",status:"blocked",blocker:"Need wallet + USDC",deadline:"ongoing",api:"x402 protocol"},
+  {id:"x402arena",name:"x402 Arena",category:"protocol_machine_work",skill_family:"F1",h_level:"H0",reward:"USDC per query",status:"blocked",blocker:"Need wallet",deadline:"ongoing",api:"x402 protocol"},
+  {id:"google_oss",name:"Google OSS Patch Rewards",category:"paid_verification",skill_family:"F11",h_level:"H0/H2",reward:"$500-$15K",status:"blocked",blocker:"Need GitHub PR",deadline:"rolling",api:"GitHub"},
+  {id:"vesuvius",name:"Vesuvius Challenge",category:"moonshot_challenge",skill_family:"F15",h_level:"H0/H2",reward:"$20K/month + $1M",status:"blocked",blocker:"Need research setup",deadline:"rolling",api:"Git + forms"},
+  {id:"toku",name:"toku.agency",category:"job_market",skill_family:"F9",h_level:"H0",reward:"$5-$25/task",status:"blocked",blocker:"Need API signup",deadline:"ongoing",api:"toku.agency/api"},
+  {id:"complete_codes",name:"Complete Codes",category:"job_market",skill_family:"F7",h_level:"H0",reward:"USDC per sprint",status:"live",blocker:"0 active sprints",deadline:"ongoing",api:"api.complete.codes/v1"},
+];
 
-  <!-- Overview Cards -->
-  <div class="grid" id="overview"></div>
+const SKILL_FAMILIES = [
+  {id:"F0",name:"Generic Coding",markets:1,verifier:"deterministic",training_env:"generic"},
+  {id:"F1",name:"API Endpoint",markets:15,verifier:"deterministic",training_env:"api_test_fixture"},
+  {id:"F2",name:"Browser Extension",markets:5,verifier:"browser_test",training_env:"browser_world"},
+  {id:"F3",name:"SaaS Integration",markets:20,verifier:"oauth_api_test",training_env:"saas_world"},
+  {id:"F4",name:"E-commerce",markets:18,verifier:"checkout_test",training_env:"commerce_world"},
+  {id:"F5",name:"Game Dev (Roblox)",markets:1,verifier:"studio_mcp",training_env:"roblox_world"},
+  {id:"F6",name:"Game Dev (Fortnite)",markets:1,verifier:"unreal_mcp",training_env:"uefn_world"},
+  {id:"F7",name:"Game Dev (General)",markets:3,verifier:"editor_test",training_env:"engine_world"},
+  {id:"F8",name:"Web Scraping",markets:10,verifier:"data_validation",training_env:"scraping_world"},
+  {id:"F9",name:"Research/Analysis",markets:20,verifier:"sourced_claims",training_env:"research_world"},
+  {id:"F10",name:"Forecasting",markets:3,verifier:"proper_scoring",training_env:"forecasting_world"},
+  {id:"F11",name:"Security",markets:5,verifier:"test_suite",training_env:"cve_world"},
+  {id:"F12",name:"Content/Template",markets:8,verifier:"screenshot_qa",training_env:"template_world"},
+  {id:"F13",name:"Workflow Automation",markets:10,verifier:"deterministic",training_env:"automation_world"},
+  {id:"F14",name:"3D/Creative",markets:10,verifier:"geometry_validate",training_env:"3d_world"},
+  {id:"F15",name:"Scientific ML",markets:3,verifier:"metrics_repro",training_env:"scientific_world"},
+  {id:"F16",name:"HR/CRM",markets:8,verifier:"api_sync_test",training_env:"crm_world"},
+  {id:"F17",name:"Finance",markets:10,verifier:"ledger_reconcile",training_env:"accounting_world"},
+  {id:"F18",name:"Distribution",markets:99,verifier:"sales_metrics",training_env:"distribution_world"},
+];
 
-  <!-- Market Table -->
-  <div class="section">
-    <h2>Markets</h2>
-    <table id="markets-table">
-      <thead><tr>
-        <th>Market</th><th class="num">Opps</th><th class="num">Total</th>
-        <th class="num">Median</th><th class="num">Avg</th><th>Last Active</th>
-      </tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
+const VAULT_KEYS = [
+  "AGENTPACT_API_KEY","AGENTPACT_AGENT_ID","MOLTBOOK_API_KEY","MOLTBOOK_AGENT_ID",
+  "MOLTBOOK_CLAIM_URL","DEALWORK_CONNECT_TOKEN","CLOUDFLARE_R2_ACCESS_KEY",
+  "CLOUDFLARE_R2_SECRET_KEY","CLOUDFLARE_ACCOUNT_ID","KAGGLE_TOKEN","KAGGLE_USERNAME",
+  "GITHUB_TOKEN","METACULUS_TOKEN","GMAIL_ADDRESS","GMAIL_CLIENT_ID",
+  "GMAIL_CLIENT_SECRET","GMAIL_REFRESH_TOKEN","OPENCODE_API_KEY"
+];
 
-  <!-- Two columns -->
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+const HUMAN_QUEUE = [
+  {priority:"critical",title:"Metaculus Bot Token",deadline:"Sep 6 (5 days!)",impact:"$50K tournament",url:"https://www.metaculus.com/futureeval/participate/",vaultKey:"METACULUS_TOKEN",placeholder:"Paste bot token..."},
+  {priority:"critical",title:"Base Wallet Address",deadline:"Now",impact:"Unlocks AgentPact + x402",url:"",vaultKey:"BASE_WALLET_ADDRESS",placeholder:"0x..."},
+  {priority:"high",title:"Moltbook Claim",deadline:"Now",impact:"Agent can post",url:"https://www.moltbook.com/claim/moltbook_claim_oWp8EvzXlmGuAYTX1aQ_rlBKuVrM2ngA",vaultKey:null,placeholder:null},
+  {priority:"high",title:"MoltJobs API Key",deadline:"Sep 3",impact:"7 × $5 jobs",url:"https://moltjobs.io",vaultKey:"MOLTJOBS_API_KEY",placeholder:"mj_live_..."},
+  {priority:"high",title:"dealwork Auth",deadline:"Now",impact:"164 tasks",url:"https://dealwork.ai/login?redirect=%2Fdashboard%2Fagents%2Fconnect%3Ftoken%3DVMMxtlN14tL5a57RBR3zEBX3tFr3jNBnLaH01PTU2R0",vaultKey:null,placeholder:null},
+  {priority:"medium",title:"Kaggle Username",deadline:"Now",impact:"$850K+ competitions",url:"https://www.kaggle.com/settings",vaultKey:"KAGGLE_USERNAME",placeholder:"kaggle username..."},
+  {priority:"medium",title:"itch.io API Key",deadline:"When convenient",impact:"Game marketplace",url:"https://itch.io/settings/api-keys",vaultKey:"ITCH_API_KEY",placeholder:"API key..."},
+  {priority:"medium",title:"Gumroad Token",deadline:"When convenient",impact:"Digital goods",url:"https://gumroad.com/settings/advanced",vaultKey:"GUMROAD_TOKEN",placeholder:"Access token..."},
+  {priority:"low",title:"Modrinth PAT",deadline:"When convenient",impact:"Mod marketplace",url:"https://modrinth.com/settings/account",vaultKey:"MODRINTH_PAT",placeholder:"mrp_..."},
+  {priority:"low",title:"Linear API Key",deadline:"When convenient",impact:"Project mgmt",url:"https://linear.app/settings/api",vaultKey:"LINEAR_API_KEY",placeholder:"lin_api_..."},
+];
 
-    <!-- Reward Distribution -->
-    <div class="section">
-      <h2>Reward Distribution</h2>
-      <div id="rewards-dist"></div>
+function render() {
+  const app = document.getElementById('app');
+
+  // Count stats
+  const totalMarkets = MARKETS.length;
+  const liveMarkets = MARKETS.filter(m => m.status === 'live').length;
+  const blockedMarkets = MARKETS.filter(m => m.status === 'blocked').length;
+  const totalSkills = SKILL_FAMILIES.length;
+  const totalMarketsServed = SKILL_FAMILIES.reduce((s,f) => s + f.markets, 0);
+  const vaultCount = VAULT_KEYS.length;
+
+  // Category breakdown
+  const cats = {};
+  MARKETS.forEach(m => { cats[m.category] = (cats[m.category]||0) + 1; });
+
+  // Skill family breakdown
+  const skillCounts = {};
+  MARKETS.forEach(m => { skillCounts[m.skill_family] = (skillCounts[m.skill_family]||0) + 1; });
+
+  app.innerHTML = `
+    <!-- Overview Cards -->
+    <div class="grid">
+      <div class="card">
+        <div class="label">Total Markets</div>
+        <div class="value">${totalMarkets}</div>
+        <div class="sub">${liveMarkets} live, ${blockedMarkets} blocked</div>
+      </div>
+      <div class="card">
+        <div class="label">Skill Families</div>
+        <div class="value">${totalSkills}</div>
+        <div class="sub">${totalMarketsServed} markets served</div>
+      </div>
+      <div class="card">
+        <div class="label">Vault Credentials</div>
+        <div class="value">${vaultCount}</div>
+        <div class="sub">Agent Vault at :8902</div>
+      </div>
+      <div class="card">
+        <div class="label">Categories</div>
+        <div class="value">${Object.keys(cats).length}</div>
+        <div class="sub">monetized programs</div>
+      </div>
+      <div class="card">
+        <div class="label">Human Queue</div>
+        <div class="value">${HUMAN_QUEUE.length}</div>
+        <div class="sub">${HUMAN_QUEUE.filter(q=>q.priority==='critical').length} critical</div>
+      </div>
     </div>
 
-    <!-- Top Skills -->
+    <!-- Two columns -->
+    <div class="two-col">
+
+      <!-- Category Distribution -->
+      <div class="section">
+        <h2>Market Categories <span class="badge">${Object.keys(cats).length}</span></h2>
+        ${Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([cat,count]) => {
+          const maxC = Math.max(...Object.values(cats));
+          return `<div class="dist-row">
+            <div class="dist-label">${cat.replace(/_/g,' ')}</div>
+            <div class="dist-bar"><div class="bar-bg"><div class="bar" style="width:${count/maxC*100}%"></div></div></div>
+            <div class="dist-count">${count}</div>
+          </div>`;
+        }).join('')}
+      </div>
+
+      <!-- Skill Family Distribution -->
+      <div class="section">
+        <h2>Skill Families <span class="badge">${totalSkills}</span></h2>
+        ${SKILL_FAMILIES.sort((a,b)=>b.markets-a.markets).map(f => {
+          const maxM = Math.max(...SKILL_FAMILIES.map(s=>s.markets));
+          const count = skillCounts[f.id] || 0;
+          return `<div class="dist-row">
+            <div class="dist-label">${f.id} ${f.name.slice(0,12)}</div>
+            <div class="dist-bar"><div class="bar-bg"><div class="bar" style="width:${f.markets/maxM*100}%"></div></div></div>
+            <div class="dist-count">${count}</div>
+          </div>`;
+        }).join('')}
+      </div>
+
+    </div>
+
+    <!-- All Markets Table -->
     <div class="section">
-      <h2>Top Skills</h2>
-      <table id="skills-table">
-        <thead><tr><th>Skill</th><th class="num">Opps</th><th class="num">Total</th></tr></thead>
-        <tbody></tbody>
+      <h2>All Markets <span class="badge">${totalMarkets}</span></h2>
+      <table>
+        <thead><tr>
+          <th>Market</th><th>Category</th><th>Skill</th><th>H</th><th>Reward</th><th>Deadline</th><th>Status</th>
+        </tr></thead>
+        <tbody>
+          ${MARKETS.sort((a,b) => {
+            const order = {live:0,blocked:1,partial:2};
+            return (order[a.status]||9) - (order[b.status]||9);
+          }).map(m => `
+            <tr>
+              <td><strong>${m.name}</strong></td>
+              <td><span class="tag">${m.category.replace(/_/g,' ')}</span></td>
+              <td><span class="tag skill">${m.skill_family}</span></td>
+              <td><span class="tag ${m.h_level.startsWith('H0')?'h0':m.h_level.startsWith('H1')?'h1':'h2'}">${m.h_level}</span></td>
+              <td class="num"><span class="tag money">${m.reward}</span></td>
+              <td>${m.deadline}</td>
+              <td><span class="tag ${m.status==='live'?'live':'blocked'}">${m.status}${m.blocker?' — '+m.blocker:''}</span></td>
+            </tr>
+          `).join('')}
+        </tbody>
       </table>
     </div>
 
-  </div>
-
-  <!-- Top Opportunities -->
-  <div class="section">
-    <h2>Top Opportunities</h2>
-    <table id="opps-table">
-      <thead><tr>
-        <th>Reward</th><th>Market</th><th>Title</th><th>Skills</th><th>First Seen</th>
-      </tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-  <!-- Recent Events -->
-  <div class="section">
-    <h2>Recent Events</h2>
-    <div id="events"></div>
-  </div>
-
-</div>
-
-<script>
-const API = '';
-
-async function fetch_(path) {
-  const r = await fetch(API + path);
-  return r.json();
-}
-
-function $(id) { return document.getElementById(id); }
-function fmt$(n) { return n >= 1000 ? '$' + (n/1000).toFixed(1) + 'K' : '$' + Math.round(n); }
-function fmtNum(n) { return n.toLocaleString(); }
-
-async function load() {
-  try {
-    const [totals, byMarket, dist, skills, opps, events] = await Promise.all([
-      fetch_('/v1/totals'),
-      fetch_('/v1/totals/by-market'),
-      fetch_('/v1/rewards/distribution'),
-      fetch_('/v1/totals/by-skill'),
-      fetch_('/v1/opportunities?limit=10&sort=reward_usd'),
-      fetch_('/v1/events?limit=15'),
-    ]);
-
-    // Overview cards
-    $('overview').innerHTML = [
-      { label: 'Active Opportunities', value: fmtNum(totals.active_opportunities), sub: `${totals.markets} markets` },
-      { label: 'Total Rewards', value: fmt$(totals.total_reward_usd), sub: `median ${fmt$(totals.median_reward_usd)}` },
-      { label: 'Avg Reward', value: fmt$(totals.avg_reward_usd), sub: `p90 ${fmt$(totals.p90_reward_usd)}` },
-      { label: 'Skills Tracked', value: fmtNum(totals.skills), sub: `${totals.categories} categories` },
-      { label: 'Observations', value: fmtNum(totals.observations), sub: `${totals.events} events` },
-    ].map(c => `
-      <div class="card">
-        <div class="label">${c.label}</div>
-        <div class="value">${c.value}</div>
-        <div class="sub">${c.sub}</div>
-      </div>
-    `).join('');
-
-    // Market table
-    const maxReward = Math.max(...byMarket.markets.map(m => m.total_reward_usd || 0));
-    $('markets-table').querySelector('tbody').innerHTML = byMarket.markets.map(m => `
-      <tr>
-        <td>${m.market_id}</td>
-        <td class="num">${fmtNum(m.opportunities)}</td>
-        <td class="num">${fmt$(m.total_reward_usd || 0)}</td>
-        <td class="num">${fmt$(m.avg_reward_usd || 0)}</td>
-        <td class="num">${fmt$(m.avg_reward_usd || 0)}</td>
-        <td>${(m.last_active || '').slice(0,10)}</td>
-      </tr>
-    `).join('');
-
-    // Reward distribution
-    const maxDist = Math.max(...dist.distribution.map(d => d.count));
-    $('rewards-dist').innerHTML = dist.distribution.map(d => `
-      <div class="dist-row">
-        <div class="dist-label">${d.range}</div>
-        <div class="dist-bar">
-          <div class="bar-bg">
-            <div class="bar" style="width:${maxDist ? (d.count/maxDist*100) : 0}%"></div>
+    <!-- Human Queue -->
+    <div class="section">
+      <h2>Human Queue <span class="badge">${HUMAN_QUEUE.length} actions</span></h2>
+      ${HUMAN_QUEUE.map(q => `
+        <div class="queue-item ${q.priority}">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <strong>${q.title}</strong>
+            <span style="color:#666;font-size:0.7em">${q.deadline}</span>
+          </div>
+          <div style="color:#888;font-size:0.75em;margin-bottom:6px">${q.impact}</div>
+          <div style="display:flex;gap:6px;align-items:center">
+            ${q.vaultKey ? `
+              <input type="text" id="input-${q.vaultKey}" placeholder="${q.placeholder}" style="flex:1">
+              <button onclick="saveToVault('${q.vaultKey}')">Save</button>
+            ` : ''}
+            ${q.url ? `<a href="${q.url}" target="_blank" style="background:#222;color:#00ff88;border:1px solid #333;border-radius:4px;padding:5px 10px;text-decoration:none;font-size:0.75em">Open →</a>` : ''}
+            <span id="status-${q.vaultKey||q.title}" style="font-size:0.7em;color:#666"></span>
           </div>
         </div>
-        <div class="dist-count">${d.count}</div>
+      `).join('')}
+    </div>
+
+    <!-- WorkerKit Ontology Link -->
+    <div class="section">
+      <h2>WorkerKit Ontology</h2>
+      <div style="background:#111;border:1px solid #222;border-radius:6px;padding:12px;font-size:0.8em">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+          <div>
+            <div style="color:#666;font-size:0.7em;text-transform:uppercase;margin-bottom:4px">Execution Stages</div>
+            <div style="color:#00ff88">discover → qualify → enter → work → submit → evaluate → settle → outcome</div>
+          </div>
+          <div>
+            <div style="color:#666;font-size:0.7em;text-transform:uppercase;margin-bottom:4px">Resolution Ladder</div>
+            <div style="color:#00ff88">official_api → openapi → mcp → webmcp → zapier → community_mcp → browser → human_queue</div>
+          </div>
+          <div>
+            <div style="color:#666;font-size:0.7em;text-transform:uppercase;margin-bottom:4px">Human Levels</div>
+            <div style="color:#00ff88">H0 autonomous → H1 one-time setup → H2 per-opportunity → H3 human contributes → H4 human-only</div>
+          </div>
+        </div>
       </div>
-    `).join('');
+    </div>
+  `;
 
-    // Skills table
-    $('skills-table').querySelector('tbody').innerHTML = skills.skills.slice(0,10).map(s => `
-      <tr>
-        <td>${s.slug}</td>
-        <td class="num">${fmtNum(s.opportunities)}</td>
-        <td class="num">${fmt$(s.total_reward_usd || 0)}</td>
-      </tr>
-    `).join('');
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+}
 
-    // Opportunities table
-    $('opps-table').querySelector('tbody').innerHTML = opps.opportunities.slice(0,10).map(o => `
-      <tr>
-        <td class="num" style="color:#00ff88;font-weight:bold">${fmt$(o.reward_usd || 0)}</td>
-        <td>${o.market_id}</td>
-        <td>${(o.canonical_title || '').slice(0,60)}</td>
-        <td>${(o.skill_list || '').split(',').slice(0,2).join(', ')}</td>
-        <td>${(o.first_seen_at || '').slice(0,10)}</td>
-      </tr>
-    `).join('');
-
-    // Events
-    $('events').innerHTML = events.events.map(e => `
-      <div class="event">
-        <span class="type">${e.event_type}</span>
-        <span class="title"> ${(e.canonical_title || '').slice(0,50)}</span>
-        <span class="time"> ${(e.observed_at || '').slice(0,16)}</span>
-      </div>
-    `).join('');
-
-    $('loading').style.display = 'none';
-    $('dashboard').style.display = 'block';
+async function saveToVault(key) {
+  const input = document.getElementById('input-' + key);
+  const status = document.getElementById('status-' + key);
+  if (!input || !input.value.trim()) return;
+  status.textContent = 'Saving...';
+  status.style.color = '#ffaa00';
+  try {
+    const resp = await fetch('/api/vault/set', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ key: key, value: input.value.trim() })
+    });
+    if (resp.ok) {
+      status.textContent = '✓ Saved';
+      status.style.color = '#00ff88';
+      input.value = '';
+    } else {
+      status.textContent = '✗ Failed';
+      status.style.color = '#ff4444';
+    }
   } catch(e) {
-    $('loading').textContent = 'Error: ' + e.message;
+    status.textContent = '✗ Use: agent-vault vault credential set ' + key + '="..." --vault oracle';
+    status.style.color = '#ff4444';
   }
 }
 
-load();
-setInterval(load, 30000);
+render();
 </script>
 </body>
 </html>
