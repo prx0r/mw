@@ -110,7 +110,9 @@ class Grant(BaseModel):
             max_tao=0.20,
             max_api_usd=5,
             max_registrations=1,
-            expires_at="2026-09-02T18:00:00Z",
+            required_tee="dstack",
+            required_runner_digest="sha256(...)",
+            required_worker_digest="sha256(...)",
         )
     """
     grant_id: str = Field(default_factory=lambda: f"MWGR-{int(datetime.now().timestamp())}")
@@ -124,6 +126,11 @@ class Grant(BaseModel):
     max_registrations: int = 0
     max_stake_tao: float = 0.0
     max_slippage_bps: int = 50
+    # TEE/attestation requirements (empty = localhost/testnet, no TEE required)
+    required_tee: str = ""  # "dstack", "", or specific provider
+    required_runner_digest: str = ""  # sha256 of approved runner binary
+    required_worker_digest: str = ""  # sha256 of approved worker version
+    required_attestation_policy: str = ""  # "strict", "", or custom
     expires_at: str = Field(default_factory=lambda: _future(6))
     status: GrantStatus = GrantStatus.ACTIVE
     spent_tao: float = 0.0
@@ -253,6 +260,9 @@ class Receipt(BaseModel):
             actual_spend_tao=0.128,
             status=ReceiptStatus.CONFIRMED,
             events=["uid_assigned:72"],
+            runtime_attestation="attestation_report",
+            signer_pubkey="ed25519...",
+            signature="...",
         )
     """
     receipt_id: str = Field(default_factory=lambda: f"RCT-{int(datetime.now().timestamp())}")
@@ -265,6 +275,10 @@ class Receipt(BaseModel):
     events: list[str] = Field(default_factory=list)
     error: str = ""
     remaining_grant_tao: float = 0.0
+    # TEE evidence (empty = localhost/testnet)
+    runtime_attestation: str = ""  # attestation report from dstack
+    signer_pubkey: str = ""  # ed25519 pubkey from dstack-derived key
+    signature: str = ""  # signature over run receipt
     created_at: str = Field(default_factory=_now)
     schema_version: str = "1.0.0"
 
