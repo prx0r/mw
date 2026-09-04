@@ -831,3 +831,134 @@ def agent_task_bounties() -> list[dict]:
         pass
     
     return results
+
+
+def gigs_sh_security_bounties() -> list[dict]:
+    """Fetch security bounty platforms from gigs.sh API."""
+    try:
+        req = urllib.request.Request(
+            "https://www.gigs.sh/api/v1/gigs?limit=100",
+            headers={"Accept": "application/json", "User-Agent": "Oracle-Scanner"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+            results = []
+            for g in data.get("results", []):
+                cats = g.get("categories", [])
+                if "security-bounty" in cats or "dev-bounty" in cats:
+                    results.append({
+                        "id": f"gigs:{g.get('slug', g.get('name',''))}",
+                        "src": "gigs_sh",
+                        "source_id": g.get("slug", ""),
+                        "title": g.get("name", g.get("title", "")),
+                        "desc": (g.get("description") or "")[:500],
+                        "cat": "security.bounty_platform" if "security-bounty" in cats else "coding.bounty",
+                        "skills": cats,
+                        "reward": 0,
+                        "currency": "USD",
+                        "status": "open",
+                        "posted": "",
+                        "url": g.get("url", ""),
+                        "extra": {
+                            "platform": g.get("name", ""),
+                            "categories": cats,
+                            "agent_allowed": g.get("agentAllowed", False),
+                            "api_url": g.get("apiUrl", ""),
+                        },
+                        "pool": "security" if "security-bounty" in cats else "coding",
+                    })
+            return results
+    except:
+        return []
+
+
+def algora_bounties() -> list[dict]:
+    """Algora — GitHub issue → PR → bounty platform."""
+    try:
+        req = urllib.request.Request(
+            "https://api.algora.io/bounties?status=open&limit=50",
+            headers={"Accept": "application/json", "User-Agent": "Oracle-Scanner"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+            results = []
+            for b in data if isinstance(data, list) else data.get("bounties", []):
+                reward = 0
+                if b.get("reward"):
+                    reward = float(str(b["reward"]).replace("$","").replace(",","") or 0)
+                results.append({
+                    "id": f"algora:{b.get('id','')}",
+                    "src": "algora",
+                    "source_id": str(b.get("id","")),
+                    "title": b.get("title",""),
+                    "desc": (b.get("description") or "")[:500],
+                    "cat": "coding.bounty",
+                    "skills": b.get("labels", []),
+                    "reward": reward,
+                    "currency": "USD",
+                    "status": "open",
+                    "posted": b.get("created_at","")[:10] if b.get("created_at") else "",
+                    "url": b.get("url", b.get("html_url", "")),
+                    "extra": {"platform": "algora", "repo": b.get("repo", "")},
+                    "pool": "coding",
+                })
+            return results
+    except:
+        return []
+
+
+def superteam_earn() -> list[dict]:
+    """Superteam Earn — Solana bounties with explicit AI Agent API."""
+    try:
+        req = urllib.request.Request(
+            "https://earn.superteam.fun/api/listings?status=open&limit=50",
+            headers={"Accept": "application/json", "User-Agent": "Oracle-Scanner"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+            items = data if isinstance(data, list) else data.get("listings", data.get("data", []))
+            results = []
+            for b in items:
+                reward = 0
+                if b.get("reward_amount"):
+                    reward = float(str(b["reward_amount"]).replace(",","") or 0)
+                results.append({
+                    "id": f"st:{b.get('id','')}",
+                    "src": "superteam_earn",
+                    "source_id": str(b.get("id","")),
+                    "title": b.get("title",""),
+                    "desc": (b.get("description") or "")[:500],
+                    "cat": "coding.bounty",
+                    "skills": b.get("tags", []),
+                    "reward": reward,
+                    "currency": b.get("reward_token", "USD"),
+                    "status": "open",
+                    "posted": b.get("created_at","")[:10] if b.get("created_at") else "",
+                    "url": f"https://earn.superteam.fun/listing/{b.get('id','')}",
+                    "extra": {"platform": "superteam_earn", "has_agent_api": True},
+                    "pool": "coding",
+                })
+            return results
+    except:
+        return []
+
+
+def intigriti_bounties() -> list[dict]:
+    """Intigriti — security bug bounty platform."""
+    # Intigriti doesn't have a public API, but we can list known programs
+    programs = [
+        {"name": "Intigriti Platform", "url": "https://app.intigriti.com", "desc": "Security bug bounties across multiple programs. Payouts vary by program."},
+    ]
+    return [{
+        "id": f"intigriti:platform",
+        "src": "intigriti",
+        "source_id": "intigriti",
+        "title": p["name"],
+        "desc": p["desc"],
+        "cat": "security.bounty_platform",
+        "skills": ["security", "web", "mobile", "api"],
+        "reward": 0,
+        "currency": "USD",
+        "status": "open",
+        "posted": "",
+        "url": p["url"],
+        "extra": {"platform": "intigriti", "note": "No public API — manual signup required"},
+        "pool": "security",
+    } for p in programs]
