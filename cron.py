@@ -68,7 +68,8 @@ def run_once():
     # Work feed
     work_fns = [bountybook, github, superteam, agenthansa, rentahuman, daydreams, openserv,
                 nearai, agentlux, augmi, agentworld, atelier, clustly, taskforce, moltjobs,
-                metaculus, immunefi, github_security_advisories, hackerone_programs]
+                metaculus, immunefi, github_security_advisories, hackerone_programs,
+                ai_bug_bounties, gittensor_sn74, gittensor_scanning_feed, agent_task_bounties]
     work_n = 0
     new_obs = 0
     for fn in work_fns:

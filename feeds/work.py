@@ -626,3 +626,208 @@ def _norm_hackerone(p: dict) -> dict:
 # Filter out None values from security feeds
 def _filter_none(items: list) -> list:
     return [i for i in items if i is not None]
+
+
+# ──────────────────────────────────────────────
+# NEW SECURITY FEEDS — AI Bug Bounties + Gittensor
+# ──────────────────────────────────────────────
+
+def ai_bug_bounties() -> list[dict]:
+    """Static list of active AI security bug bounty programs.
+    These don't have public APIs — curated from primary sources."""
+    programs = [
+        {
+            "title": "OpenAI Safety Bug Bounty",
+            "desc": "Prompt injection, data exfiltration, autonomous actions in agentic products. Up to $7,500.",
+            "url": "https://bugcrowd.com/openai",
+            "platform": "bugcrowd",
+            "max_usd": 7500,
+            "scope": "ChatGPT Agent, Browser, agentic products",
+            "reqs": "50% reproducibility. Simple jailbreaks out of scope.",
+            "cat": "security.ai_prompt_injection",
+        },
+        {
+            "title": "OpenAI GPT-5.5 Bio Bounty",
+            "desc": "Biosafety jailbreaks against GPT-5.5 guardrails. $25,000 single winner.",
+            "url": "https://openai.com/index/safety-bug-bounty/",
+            "platform": "application",
+            "max_usd": 25000,
+            "scope": "Biosafety only, NDA required",
+            "reqs": "Invite-only, closes June 2026 (may have closed)",
+            "cat": "security.ai_biosafety",
+        },
+        {
+            "title": "Anthropic Safety Bug Bounty",
+            "desc": "Universal jailbreak of Constitutional Classifiers. Up to $35,000.",
+            "url": "https://hackerone.com/anthropic",
+            "platform": "hackerone",
+            "max_usd": 35000,
+            "scope": "Core safety focus — Constitutional Classifiers",
+            "reqs": "Must demonstrate universal jailbreak",
+            "cat": "security.ai_safety",
+        },
+        {
+            "title": "Google AI VRP",
+            "desc": "AI bugs with conventional security impact. Up to $30,000.",
+            "url": "https://bughunters.google.com/about/rules/ai-vrp",
+            "platform": "bug_hunters",
+            "max_usd": 30000,
+            "scope": "AI bugs with downstream security impact only",
+            "reqs": "Prompt injection/jailbreaks WITHOUT security impact explicitly excluded",
+            "cat": "security.ai_security",
+        },
+        {
+            "title": "Microsoft AI Bounty",
+            "desc": "Copilot and AI products. Up to $30,000. $250 floor.",
+            "url": "https://www.microsoft.com/en-us/msrc/bounty-ai",
+            "platform": "msrc",
+            "max_usd": 30000,
+            "scope": "Copilot, AI products, prompt injection WITH security impact",
+            "reqs": "Excludes prompt injection lacking security impact",
+            "cat": "security.ai_security",
+        },
+        {
+            "title": "Mozilla 0din",
+            "desc": "LLM-specific bounty. Prompt injection, jailbreaks, data leakage. Up to $15,000.",
+            "url": "https://0din.ai",
+            "platform": "0din",
+            "max_usd": 15000,
+            "scope": "OWASP LLM Top 10, training data leakage, DoS",
+            "reqs": "Tiered by category, weights disclosure is top tier",
+            "cat": "security.ai_llm",
+        },
+        {
+            "title": "xAI/Grok Security",
+            "desc": "Grok models, X integrations, xAI API. Prompt injection, unauthorized data access.",
+            "url": "https://hackerone.com/x",
+            "platform": "hackerone",
+            "max_usd": None,
+            "scope": "Grok models, X web/mobile, xAI API",
+            "reqs": "Payouts not publicly documented",
+            "cat": "security.ai_llm",
+        },
+    ]
+    results = []
+    for p in programs:
+        results.append({
+            "id": f"aibounty:{p['platform']}:{p['title'][:30].replace(' ','_')}",
+            "src": "ai_bug_bounties",
+            "source_id": p['platform'],
+            "title": p['title'],
+            "desc": p['desc'],
+            "cat": p['cat'],
+            "skills": ["security", "ai-security", "prompt-injection", "llm"],
+            "reward": p['max_usd'] or 0,
+            "currency": "USD",
+            "status": "open",
+            "posted": "2026-03-25",
+            "url": p['url'],
+            "extra": {
+                "platform": p['platform'],
+                "max_usd": p['max_usd'],
+                "scope": p['scope'],
+                "requirements": p['reqs'],
+            },
+            "pool": "security",
+        })
+    return results
+
+
+def gittensor_sn74() -> list[dict]:
+    """Gittensor SN74 — OSS mining. Pays TAO for merged PRs."""
+    return [{
+        "id": "gittensor:sn74:oss_mining",
+        "src": "gittensor",
+        "source_id": "sn74",
+        "title": "Gittensor SN74 — Open Source Contribution Mining",
+        "desc": "Earn TAO by making merged pull requests to whitelisted open-source repos. No GPU needed. Scoring: merged_pr × code_quality × repo_weight × language_factor.",
+        "cat": "bittensor.oss_mining",
+        "skills": ["coding", "open-source", "python", "any-language"],
+        "reward": 0,
+        "currency": "TAO",
+        "status": "open",
+        "posted": "2025-09-28",
+        "url": "https://gittensor.io",
+        "extra": {
+            "subnet": 74,
+            "miners_registered": 245,
+            "miners_earning": 11,
+            "registration_cost_tau": 0.5,
+            "whitelist_repos": ["gittensor-ai-lab/sparkinfer"],
+            "emission_share": 0.4,
+            "maintainer_cut": 0.4,
+            "scoring": "merged_pr × code_quality × repo_weight × language_factor",
+            "notes": "Whitelist currently small (1 repo). Watch for expansion. No GPU needed — just dev machine.",
+        },
+        "pool": "bittensor",
+    }]
+
+
+def gittensor_scanning_feed() -> list[dict]:
+    """Scan for new Gittensor-related repos and tools on GitHub."""
+    try:
+        req = urllib.request.Request(
+            "https://api.github.com/search/repositories?q=gittensor+in:name,description&sort=updated&per_page=20",
+            headers={"Accept": "application/vnd.github.v3+json", "User-Agent": "Oracle-Scanner"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+            results = []
+            for item in data.get("items", []):
+                results.append({
+                    "id": f"gh:{item['full_name']}",
+                    "src": "github_scan",
+                    "source_id": str(item['id']),
+                    "title": item['full_name'],
+                    "desc": (item.get('description') or '')[:500],
+                    "cat": "bittensor.tool",
+                    "skills": ["bittensor", "mining", "tool"],
+                    "reward": 0,
+                    "currency": "USD",
+                    "status": "open",
+                    "posted": (item.get('created_at') or '')[:10],
+                    "url": item['html_url'],
+                    "extra": {
+                        "stars": item.get('stargazers_count', 0),
+                        "language": item.get('language'),
+                        "forks": item.get('forks_count', 0),
+                        "updated": (item.get('updated_at') or '')[:10],
+                    },
+                    "pool": "bittensor",
+                })
+            return results
+    except:
+        return []
+
+
+def agent_task_bounties() -> list[dict]:
+    """Scan agent bounty platforms (TaskBounty, Atrest, Taskmarket)."""
+    results = []
+    
+    # TaskBounty — GitHub bugs with bounties
+    try:
+        req = urllib.request.Request(
+            "https://api.taskbounty.ai/tasks?limit=50&status=open",
+            headers={"Accept": "application/json", "User-Agent": "Oracle-Scanner"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+            for t in data.get("tasks", []):
+                results.append({
+                    "id": f"tb:{t.get('id','')}",
+                    "src": "taskbounty",
+                    "source_id": str(t.get("id","")),
+                    "title": t.get("title",""),
+                    "desc": (t.get("description") or "")[:500],
+                    "cat": "coding.bounty",
+                    "skills": t.get("tags", []),
+                    "reward": float(t.get("bounty", 0)),
+                    "currency": "USD",
+                    "status": "open",
+                    "posted": t.get("created_at","")[:10],
+                    "url": f"https://taskbounty.ai/task/{t.get('id','')}",
+                    "extra": {"platform": "taskbounty", "payout_pct": 80},
+                    "pool": "coding",
+                })
+    except:
+        pass
+    
+    return results
