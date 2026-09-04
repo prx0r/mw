@@ -1252,3 +1252,95 @@ def v1_unlocks():
          "agent_can_do": "YES — agent builds AI tools for other agents",
          "what_to_build": "AI utilities, agent connectors"},
     ]}
+
+
+@app.get("/v1/security")
+def v1_security():
+    """Security income opportunities — bug bounties, bounty platforms, Gittensor mining.
+    
+    Returns all security-related opportunities from the oracle, ranked by category.
+    """
+    from oracle.store import conn
+    c = conn()
+    
+    # Get all security-related opportunities
+    rows = c.execute("""
+        SELECT id, canonical_title, canonical_description, market_id, status,
+               reward_amount, reward_currency, task_family, canonical_url,
+               canonical_capabilities, autonomy_level, first_seen_at
+        FROM oracle_opps
+        WHERE market_id IN ('github_security', 'ai_bug_bounties', 'gittensor', 
+                            'gigs_sh', 'intigriti', 'immunefi')
+           OR task_family LIKE '%security%'
+           OR canonical_title LIKE '%bounty%'
+           OR canonical_title LIKE '%security%'
+           OR canonical_title LIKE '%Gittensor%'
+        ORDER BY reward_amount DESC
+    """).fetchall()
+    
+    c.close()
+    
+    opportunities = []
+    for row in rows:
+        opportunities.append({
+            "id": row[0],
+            "title": row[1],
+            "description": row[2],
+            "market": row[3],
+            "status": row[4],
+            "reward": row[5],
+            "currency": row[6],
+            "task_family": row[7],
+            "url": row[8],
+            "capabilities": json.loads(row[9]) if row[9] else [],
+            "autonomy": row[10],
+            "first_seen": row[11],
+        })
+    
+    # Categorize
+    ai_bounties = [o for o in opportunities if o["market"] == "ai_bug_bounties"]
+    security_bounties = [o for o in opportunities if o["market"] in ("github_security", "gigs_sh", "intigriti", "immunefi")]
+    gittensor = [o for o in opportunities if o["market"] == "gittensor"]
+    other = [o for o in opportunities if o["market"] not in ("ai_bug_bounties", "github_security", "gigs_sh", "intigriti", "immunefi", "gittensor")]
+    
+    return {
+        "total": len(opportunities),
+        "by_category": {
+            "ai_bug_bounties": len(ai_bounties),
+            "security_bounty_platforms": len(security_bounties),
+            "bittensor_mining": len(gittensor),
+            "other": len(other),
+        },
+        "ai_bounties": ai_bounties,
+        "security_platforms": security_bounties,
+        "bittensor": gittensor,
+        "signup_guide": {
+            "hackerone": "hackerone.com/register",
+            "bugcrowd": "bugcrowd.com/register",
+            "0din": "0din.ai",
+            "github_pat": "github.com/settings/tokens",
+            "gittensor": "gittensor.io",
+            "algora": "algora.io",
+            "superteam_earn": "earn.superteam.fun",
+            "clustly": "clustly.ai",
+            "bountybook": "bountybook.ai",
+            "intigriti": "app.intigriti.com",
+            "immunefi": "immunefi.com",
+            "hackenproof": "hackenproof.com",
+        },
+    }
+
+
+@app.get("/v1/security/ai-bounties")
+def v1_security_ai_bounties():
+    """AI-specific bug bounty programs with payouts."""
+    programs = [
+        {"name": "OpenAI Safety", "platform": "bugcrowd", "url": "https://bugcrowd.com/openai", "max_usd": 7500, "scope": "Prompt injection, data exfil, autonomous actions", "reqs": "50% reproducibility"},
+        {"name": "OpenAI GPT-5.5 Bio", "platform": "application", "url": "https://openai.com/index/safety-bug-bounty/", "max_usd": 25000, "scope": "Biosafety jailbreaks", "reqs": "Invite-only, NDA"},
+        {"name": "Anthropic Safety", "platform": "hackerone", "url": "https://hackerone.com/anthropic", "max_usd": 35000, "scope": "Constitutional Classifiers jailbreak", "reqs": "Universal jailbreak required"},
+        {"name": "Google AI VRP", "platform": "bug_hunters", "url": "https://bughunters.google.com/about/rules/ai-vrp", "max_usd": 30000, "scope": "AI bugs with security impact", "reqs": "No pure jailbreaks"},
+        {"name": "Microsoft AI", "platform": "msrc", "url": "https://www.microsoft.com/en-us/msrc/bounty-ai", "max_usd": 30000, "scope": "Copilot + AI products", "reqs": "$250 floor"},
+        {"name": "Mozilla 0din", "platform": "0din", "url": "https://0din.ai", "max_usd": 15000, "scope": "LLM Top 10, data leakage", "reqs": "Tiered by category"},
+        {"name": "xAI/Grok", "platform": "hackerone", "url": "https://hackerone.com/x", "max_usd": None, "scope": "Grok models, X integrations", "reqs": "Undocumented payouts"},
+    ]
+    return {"programs": programs, "total": len(programs), "max_combined_usd": sum(p["max_usd"] or 0 for p in programs)}
